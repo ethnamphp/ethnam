@@ -1215,7 +1215,7 @@ class Ethna_Controller
     /**
      *  実行するアクション名を返す
      *
-     *  @access private
+     *  @access protected
      *  @param  mixed   $default_action_name    指定のアクション名
      *  @return string  実行するアクション名
      */
