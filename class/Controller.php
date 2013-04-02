@@ -1219,7 +1219,7 @@ class Ethna_Controller
      *  @param  mixed   $default_action_name    指定のアクション名
      *  @return string  実行するアクション名
      */
-    private function _getActionName($default_action_name, $fallback_action_name)
+    protected function _getActionName($default_action_name, $fallback_action_name)
     {
         // フォームから要求されたアクション名を取得する
         $form_action_name = $this->_getActionName_Form();
