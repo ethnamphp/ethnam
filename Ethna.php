@@ -176,6 +176,9 @@ define('FORM_TYPE_BUTTON', 9);
 /** フォーム型: hidden */
 define('FORM_TYPE_HIDDEN', 10);
 
+/** HTML 5 */
+/** フォーム型: email */
+define('FORM_TYPE_EMAIL', 101);
 
 /** エラーコード: 一般エラー */
 define('E_GENERAL', 1);

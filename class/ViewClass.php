@@ -622,6 +622,10 @@ class Ethna_ViewClass
             $input = $this->_getFormInput_Textarea($name, $def, $params);
             break;
 
+        case FORM_TYPE_EMAIL:
+            $input = $this->_getFormInput_Email($name, $def, $params);
+            break;
+
         case FORM_TYPE_TEXT:
         default:
             $input = $this->_getFormInput_Text($name, $def, $params);
@@ -1092,6 +1096,17 @@ class Ethna_ViewClass
         return $this->_getFormInput_Html('textarea', $params, $element);
     }
     // }}}
+
+    /**
+     *  フォームタグを取得する(type="email")
+     *
+     *  中身は未実装です。
+     *  子クラス側でオーバーライドして使ってください
+     */
+    function _getFormInput_Email($name, $def, $params)
+    {
+        return $this->_getFormInput_Text($name, $def, $params);
+    }
 
     // {{{ _getFormInput_Text
     /**
