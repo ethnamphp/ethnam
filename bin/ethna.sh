@@ -6,6 +6,8 @@
 #
 #
 
+THIS_DIR=$(cd $(dirname $0); pwd)
+ETHNA_HOME=$(dirname $THIS_DIR)
 CUR_DIR="$PWD"
 
 if test -z "$ETHNA_HOME"
