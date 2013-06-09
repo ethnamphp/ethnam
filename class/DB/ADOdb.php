@@ -13,8 +13,6 @@
  */
 define('ADODB_OUTP', 'ethna_adodb_logger'); //disable output error
 
-require_once 'adodb/adodb.inc.php';
-
 /**
  *  callback for logging
  *
