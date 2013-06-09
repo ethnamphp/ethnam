@@ -101,6 +101,7 @@ class Ethna_Renderer_Smarty extends Ethna_Renderer
                     $captured = $this->engine->fetch($this->template);
                     return $captured;
                 } else {
+                    header('X-MemoryUsage: ' .  memory_get_usage());
                     $this->engine->display($this->template);
                 }
         } else {
