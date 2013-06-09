@@ -94,7 +94,7 @@ class Ethna_Config
         $config = array();
         $file = $this->_getConfigFile();
         if (file_exists($file)) {
-            include($file);
+            include_once($file);
         }
 
         // デフォルト値設定
