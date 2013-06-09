@@ -583,7 +583,7 @@ class Ethna_ActionForm
                 $retval[$name] = null;
             } else {
                 $retval[$name] = $escape
-                    ? htmlspecialchars($vars[$name], ENT_QUOTES) : $vars[$name];
+                    ? htmlspecialchars($vars[$name], ENT_QUOTES, mb_internal_encoding()) : $vars[$name];
             }
         }
     }
@@ -957,8 +957,8 @@ class Ethna_ActionForm
                 }
                 $hidden_vars .=
                     sprintf("<input type=\"hidden\" name=\"%s\" value=\"%s\" />\n",
-                            htmlspecialchars($form_name, ENT_QUOTES),
-                            htmlspecialchars($v, ENT_QUOTES)
+                            htmlspecialchars($form_name, ENT_QUOTES, mb_internal_encoding()),
+                            htmlspecialchars($v, ENT_QUOTES, mb_internal_encoding())
                     );
             }
         }

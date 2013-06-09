@@ -1156,14 +1156,14 @@ class Ethna_ViewClass
             if ($value === null) {
                 $r .= sprintf(' %s', $key);
             } else {
-                $r .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES));
+                $r .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES, mb_internal_encoding()));
             }
         }
 
         if ($element === null) {
             $r .= ' />';
         } else if ($escape_element) {
-            $r .= sprintf('>%s</%s>', htmlspecialchars($element, ENT_QUOTES), $tag);
+            $r .= sprintf('>%s</%s>', htmlspecialchars($element, ENT_QUOTES, mb_internal_encoding()), $tag);
         } else {
             $r .= sprintf('>%s</%s>', $element, $tag);
         }
@@ -1197,10 +1197,10 @@ class Ethna_ViewClass
             $renderer->setPropByRef('session', $tmp_session);
         }
         $renderer->setProp('script',
-            htmlspecialchars(basename($_SERVER['SCRIPT_NAME']), ENT_QUOTES));
+            htmlspecialchars(basename($_SERVER['SCRIPT_NAME']), ENT_QUOTES, mb_internal_encoding()));
         $renderer->setProp('request_uri',
             isset($_SERVER['REQUEST_URI'])
-            ? htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES)
+            ? htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, mb_internal_encoding())
             : '');
         $renderer->setProp('config', $this->config->get());
 

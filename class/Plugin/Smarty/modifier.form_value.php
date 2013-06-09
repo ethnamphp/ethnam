@@ -28,6 +28,6 @@ function smarty_modifier_form_value($string)
         $r = $r[$elts[$i]];
     }
 
-    return htmlspecialchars($r, ENT_QUOTES);
+    return htmlspecialchars($r, ENT_QUOTES, mb_internal_encoding());
 }
 
