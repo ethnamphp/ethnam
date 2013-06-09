@@ -261,8 +261,6 @@ class Ethna_Controller
         $this->plugin->setLogger($this->logger);
         $this->logger->begin();
 
-        // Ethnaマネージャ設定
-        $this->_activateEthnaManager();
     }
 
     /**
@@ -973,9 +971,6 @@ class Ethna_Controller
     {
         // アクション名の取得
         $action_name = $this->_getActionName($default_action_name, $fallback_action_name);
-
-        // マネージャ実行チェック
-        $this->_ethnaManagerEnabledCheck($action_name);
 
         // アクション定義の取得
         $action_obj = $this->_getAction($action_name);
@@ -2141,94 +2136,6 @@ class Ethna_Controller
 
         return $dsn_list[$n];
     }
-
-    /**
-     *  Ethnaマネージャを設定する
-     *
-     *  不要な場合は空のメソッドとしてオーバーライドしてもよい
-     *
-     *  @access protected
-     */
-    protected function _activateEthnaManager()
-    {
-        if ($this->config->get('debug') == false) {
-            return;
-        }
-
-        require_once ETHNA_BASE . '/class/InfoManager.php';
-
-        // action設定
-        $this->action['__ethna_info__'] = array(
-            'form_name' =>  'Ethna_Form_Info',
-            'form_path' =>  sprintf('%s/class/Action/Info.php', ETHNA_BASE),
-            'class_name' => 'Ethna_Action_Info',
-            'class_path' => sprintf('%s/class/Action/Info.php', ETHNA_BASE),
-        );
-
-        // forward設定
-        $this->forward['__ethna_info__'] = array(
-            'forward_path'  => sprintf('%s/tpl/info.tpl', ETHNA_BASE),
-            'view_name'     => 'Ethna_View_Info',
-            'view_path'     => sprintf('%s/class/View/Info.php', ETHNA_BASE),
-        );
-
-        // see if we have simpletest
-        if (file_exists_ex('simpletest/unit_tester.php', true)) {
-        }
-        //require_once ETHNA_BASE . '/class/UnitTestManager.php';
-        // action設定
-        $this->action['__ethna_unittest__'] = array(
-            'form_name' =>  'Ethna_Form_UnitTest',
-            'form_path' =>  sprintf('%s/class/Action/UnitTest.php', ETHNA_BASE),
-            'class_name' => 'Ethna_Action_UnitTest',
-            'class_path' => sprintf('%s/class/Action/UnitTest.php', ETHNA_BASE),
-        );
-
-        // forward設定
-        $this->forward['__ethna_unittest__'] = array(
-            'forward_path'  => sprintf('%s/tpl/unittest.tpl', ETHNA_BASE),
-            'view_name'     => 'Ethna_View_UnitTest',
-            'view_path'     => sprintf('%s/class/View/UnitTest.php', ETHNA_BASE),
-        );
-    }
-
-    /**
-     *  Ethnaマネージャが実行可能かをチェックする
-     *
-     *  Ethnaマネージャを実行するよう指示されているにも関わらず、
-     *  debug が trueでない場合は実行を停止する。
-     *
-     *  @access private
-     */
-    protected function _ethnaManagerEnabledCheck($action_name)
-    {
-        if ($this->config->get('debug') == false
-            && ($action_name == '__ethna_info__' || $action_name == '__ethna_unittest__'))
-        {
-            $this->ethnaManagerCheckErrorMsg($action_name);
-            exit(0);
-        }
-    }
-
-    /**
-     *  Ethnaマネージャが実行不能な場合のエラーメッセージを
-     *  表示する。運用上の都合でこのメッセージを出力したくない
-     *  場合は、このメソッドをオーバーライドせよ
-     *
-     *  @access protected
-     */
-     protected function ethnaManagerCheckErrorMsg($action_name)
-     {
-         $appid = strtolower($this->getAppId());
-         $run_action = ($action_name == '__ethna_info__')
-                     ? ' show Application Info List '
-                     : ' run Unit Test ';
-         echo "Ethna cannot {$run_action} under your application setting.<br>";
-         echo "HINT: You must set {$appid}/etc/{$appid}-ini.php debug setting 'true'.<br>";
-         echo "<br>";
-         echo "In {$appid}-ini.php, please set as follows :<br><br>";
-         echo "\$config = array ( 'debug' => true, );";
-     }
 
     /**
      *  CLI実行中フラグを取得する
