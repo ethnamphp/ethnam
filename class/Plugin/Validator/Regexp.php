@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Regexp.php
+ *  Ethna_Plugin_Validator_Regexp.php
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Validator_Regexp
 /**
- *  Ê≠£Ë¶èË°®Áèæ„Å´„Çà„Çã„Éê„É™„Éá„Éº„Çø„Éó„É©„Ç∞„Ç§„É≥
+ *  ¿µµ¨…Ω∏Ω§À§Ë§Î•–•Í•«°º•ø•◊•È•∞•§•Û
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @access     public
@@ -19,18 +19,18 @@
  */
 class Ethna_Plugin_Validator_Regexp extends Ethna_Plugin_Validator
 {
-    /** @var    bool    ÈÖçÂàó„ÇíÂèó„ÅëÂèñ„Çã„Åã„Éï„É©„Ç∞ */
-    public $accept_array = false;
+    /** @var    bool    «€ŒÛ§Úºı§±ºË§Î§´•’•È•∞ */
+    var $accept_array = false;
 
     /**
-     *  Ê≠£Ë¶èË°®Áèæ„Å´„Çà„Çã„Éï„Ç©„Éº„É†ÂÄ§„ÅÆ„ÉÅ„Çß„ÉÉ„ÇØ„ÇíË°å„ÅÜ
+     *  ¿µµ¨…Ω∏Ω§À§Ë§Î•’•©°º•‡√Õ§Œ•¡•ß•√•Ø§Úπ‘§¶
      *
      *  @access public
-     *  @param  string  $name       „Éï„Ç©„Éº„É†„ÅÆÂêçÂâç
-     *  @param  mixed   $var        „Éï„Ç©„Éº„É†„ÅÆÂÄ§
-     *  @param  array   $params     „Éó„É©„Ç∞„Ç§„É≥„ÅÆ„Éë„É©„É°„Éº„Çø
+     *  @param  string  $name       •’•©°º•‡§ŒÃæ¡∞
+     *  @param  mixed   $var        •’•©°º•‡§Œ√Õ
+     *  @param  array   $params     •◊•È•∞•§•Û§Œ•—•È•·°º•ø
      */
-    public function validate($name, $var, $params)
+    function validate($name, $var, $params)
     {
         $true = true;
         $type = $this->getFormType($name);
@@ -43,7 +43,7 @@ class Ethna_Plugin_Validator_Regexp extends Ethna_Plugin_Validator
             if (isset($params['error'])) {
                 $msg = $params['error'];
             } else {
-                $msg = _et('Please input {form} properly.');
+                $msg = "{form}§Ú¿µ§∑§Ø∆˛Œœ§∑§∆§Ø§¿§µ§§";
             }
             return Ethna::raiseNotice($msg, E_FORM_REGEXP);
         }
@@ -52,3 +52,4 @@ class Ethna_Plugin_Validator_Regexp extends Ethna_Plugin_Validator
     }
 }
 // }}}
+

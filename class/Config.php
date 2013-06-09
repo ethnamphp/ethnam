@@ -84,17 +84,6 @@ class Ethna_Config
     }
 
     /**
-     *  設定ファイルを更新する
-     *
-     *  @access public
-     *  @return mixed   0:正常終了 Ethna_Error:エラー
-     */
-    function update()
-    {
-        return $this->_setConfig();
-    }
-
-    /**
      *  設定ファイルを読み込む
      *
      *  @access private
@@ -105,14 +94,7 @@ class Ethna_Config
         $config = array();
         $file = $this->_getConfigFile();
         if (file_exists($file)) {
-            $lh = Ethna_Util::lockFile($file, 'r');
-            if (Ethna::isError($lh)) {
-                return $lh;
-            }
-
-            include($file);
-
-            Ethna_Util::unlockFile($lh);
+            include_once($file);
         }
 
         // デフォルト値設定
@@ -133,34 +115,6 @@ class Ethna_Config
         }
 
         $this->config = $config;
-
-        return 0;
-    }
-
-    /**
-     *  設定ファイルに書き込む
-     *
-     *  @access private
-     *  @return mixed   0:正常終了 Ethna_Error:エラー
-     */
-    function _setConfig()
-    {
-        $file = $this->_getConfigFile();
-
-        $lh = Ethna_Util::lockFile($file, 'w');
-        if (Ethna::isError($lh)) {
-            return $lh;
-        }
-
-        fwrite($lh, "<?php\n");
-        fwrite($lh, sprintf("/*\n * %s\n *\n * update: %s\n */\n", basename($file), strftime('%Y/%m/%d %H:%M:%S')));
-        fwrite($lh, "\$config = array(\n");
-        foreach ($this->config as $key => $value) {
-            $this->_setConfigValue($lh, $key, $value, 0);
-        }
-        fwrite($lh, ");\n");
-
-        Ethna_Util::unlockFile($lh);
 
         return 0;
     }

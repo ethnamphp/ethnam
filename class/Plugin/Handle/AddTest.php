@@ -19,10 +19,10 @@
 class Ethna_Plugin_Handle_AddTest extends Ethna_Plugin_Handle
 {
     /**
-     * ã‚³ãƒãƒ³ãƒ‰ã®æ¦‚è¦ã‚’è¿”ã™
+     * ¥³¥Ş¥ó¥É¤Î³µÍ×¤òÊÖ¤¹
      * 
      * @access protected
-     * @return string ã‚³ãƒãƒ³ãƒ‰æ¦‚è¦
+     * @return string ¥³¥Ş¥ó¥É³µÍ×
      */
     function getDescription()
     {
@@ -35,10 +35,10 @@ EOS;
     }
      
      /**
-      * ã‚³ãƒãƒ³ãƒ‰ã®ä½¿ç”¨æ³•ã‚’è¿”ã™
+      * ¥³¥Ş¥ó¥É¤Î»ÈÍÑË¡¤òÊÖ¤¹
       * 
       * @access protected
-      * @return string ã‚³ãƒãƒ³ãƒ‰ã®ä½¿ç”¨æ–¹æ³•
+      * @return string ¥³¥Ş¥ó¥É¤Î»ÈÍÑÊıË¡
       */
     function getUsage()
     {
@@ -49,13 +49,13 @@ EOS;
     }
      
     /**
-     * ã‚³ãƒãƒ³ãƒ‰ã®å®Ÿè£…éƒ¨åˆ†
+     * ¥³¥Ş¥ó¥É¤Î¼ÂÁõÉôÊ¬
      * 
-     * ãƒ†ã‚¹ãƒˆã‚±ãƒ¼ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ç”Ÿæˆã‚’è¡Œã†
+     * ¥Æ¥¹¥È¥±¡¼¥¹¥Õ¥¡¥¤¥ëÀ¸À®¤ò¹Ô¤¦
      * 
      * @access protected
-     * @return mixed å®Ÿè¡Œçµæœ: TRUE: æˆåŠŸ
-     *                         Ethna_Error: ã‚¨ãƒ©ãƒ¼
+     * @return mixed ¼Â¹Ô·ë²Ì: TRUE: À®¸ù
+     *                         Ethna_Error: ¥¨¥é¡¼
      */
     function &perform()
     {
@@ -68,7 +68,7 @@ EOS;
         
         $num = count($arglist);
         if ($num < 1 || $num > 3) {
-            return Ethna::raiseError("Invalid Arguments.", 'usage');
+            return Ethna::raiseError("Invalid Arguments.");
         }
         
         if (isset($optlist['skelfile'])) {
@@ -80,7 +80,7 @@ EOS;
         $baseDir = isset($optlist['basedir']) ? $optlist['basedir'] : getcwd();
         $name = $arglist[0];
         
-        $r = Ethna_Generator::generate(
+        $r =& Ethna_Generator::generate(
             'Test', $baseDir, $skelfile, $name
         );
         if (Ethna::isError($r)) {
@@ -92,3 +92,4 @@ EOS;
     }
 }
 // }}}
+

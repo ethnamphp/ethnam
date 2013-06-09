@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Alertmail.php
+ *  Ethna_Plugin_Logwriter_Alertmail.php
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,8 +11,8 @@
 
 // {{{ Ethna_Plugin_Logwriter_Alertmail
 /**
- *  ãƒ­ã‚°å‡ºåŠ›ã‚¯ãƒ©ã‚¹(ã‚¢ãƒ©ãƒ¼ãƒˆãƒ¡ãƒ¼ãƒ«)
- *  Ethna_Logger ã«ã‚ã‚‹ _alert() ã‚’ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã«ã—ãŸã ã‘ã§ã™ã€‚
+ *  ¥í¥°½ĞÎÏ¥¯¥é¥¹(¥¢¥é¡¼¥È¥á¡¼¥ë)
+ *  Ethna_Logger ¤Ë¤¢¤ë _alert() ¤ò¥×¥é¥°¥¤¥ó¤Ë¤·¤¿¤À¤±¤Ç¤¹¡£
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @access     public
@@ -24,16 +24,16 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
      *  @access private
      */
 
-    /** @private    array   ã‚¢ãƒ©ãƒ¼ãƒˆé€ä¿¡å…ˆãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ */
-    private $mailaddress = array();
+    /** @var    array   ¥¢¥é¡¼¥ÈÁ÷¿®Àè¥á¡¼¥ë¥¢¥É¥ì¥¹ */
+    var $mailaddress = array();
 
     /**#@-*/
 
     /**
-     *  ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹
+     *  ¥í¥°¥ª¥×¥·¥ç¥ó¤òÀßÄê¤¹¤ë
      *
      *  @access public
-     *  @param  int     $option     ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³(LOG_FILE,LOG_FUNCTION...)
+     *  @param  int     $option     ¥í¥°¥ª¥×¥·¥ç¥ó(LOG_FILE,LOG_FUNCTION...)
      */
     function setOption($option)
     {
@@ -47,11 +47,11 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
+     *  ¥í¥°¤ò½ĞÎÏ¤¹¤ë
      *
      *  @access public
-     *  @param  int     $level      ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«(LOG_DEBUG, LOG_NOTICE...)
-     *  @param  string  $message    ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸(+å¼•æ•°)
+     *  @param  int     $level      ¥í¥°¥ì¥Ù¥ë(LOG_DEBUG, LOG_NOTICE...)
+     *  @param  string  $message    ¥í¥°¥á¥Ã¥»¡¼¥¸(+°ú¿ô)
      */
     function log($level, $message)
     {
@@ -86,16 +86,16 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  ãƒ¡ãƒ¼ãƒ«ã‚’é€ä¿¡ã™ã‚‹
+     *  ¥á¡¼¥ë¤òÁ÷¿®¤¹¤ë
      *
      *  @access protected
-     *  @param  string  $message    ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+     *  @param  string  $message    ¥í¥°¥á¥Ã¥»¡¼¥¸
      */
     function _alert($message)
     {
         restore_error_handler();
 
-        $c = Ethna_Controller::getInstance();
+        $c =& Ethna_Controller::getInstance();
         $appid = $c->getAppId();
 
         $header = "Mime-Version: 1.0\n";
@@ -122,3 +122,4 @@ class Ethna_Plugin_Logwriter_Alertmail extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
+

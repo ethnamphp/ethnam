@@ -1,7 +1,7 @@
 <?php
 // {{{ Ethna_Plugin_Validator_Mbegexp
 /**
- *  ãƒžãƒ«ãƒãƒã‚¤ãƒˆå¯¾å¿œæ­£è¦è¡¨ç¾ã«ã‚ˆã‚‹ãƒãƒªãƒ‡ãƒ¼ã‚¿ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
+ *  ¥Þ¥ë¥Á¥Ð¥¤¥ÈÂÐ±þÀµµ¬É½¸½¤Ë¤è¤ë¥Ð¥ê¥Ç¡¼¥¿¥×¥é¥°¥¤¥ó
  *
  *  @author     Yoshinari Takaoka <takaoka@beatcraft.com>
  *  @access     public
@@ -9,18 +9,18 @@
  */
 class Ethna_Plugin_Validator_Mbregexp extends Ethna_Plugin_Validator
 {
-    /** @var    bool    é…åˆ—ã‚’å—ã‘å–ã‚‹ã‹ãƒ•ãƒ©ã‚° */
-    public $accept_array = false;
+    /** @var    bool    ÇÛÎó¤ò¼õ¤±¼è¤ë¤«¥Õ¥é¥° */
+    var $accept_array = false;
 
     /**
-     *  æ­£è¦è¡¨ç¾ã«ã‚ˆã‚‹ãƒ•ã‚©ãƒ¼ãƒ å€¤ã®ãƒã‚§ãƒƒã‚¯ã‚’è¡Œã†(ãƒžãƒ«ãƒãƒã‚¤ãƒˆå¯¾å¿œï¼‰
+     *  Àµµ¬É½¸½¤Ë¤è¤ë¥Õ¥©¡¼¥àÃÍ¤Î¥Á¥§¥Ã¥¯¤ò¹Ô¤¦(¥Þ¥ë¥Á¥Ð¥¤¥ÈÂÐ±þ¡Ë
      *
      *  @access public
-     *  @param  string  $name       ãƒ•ã‚©ãƒ¼ãƒ ã®åå‰
-     *  @param  mixed   $var        ãƒ•ã‚©ãƒ¼ãƒ ã®å€¤
-     *  @param  array   $params     ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
+     *  @param  string  $name       ¥Õ¥©¡¼¥à¤ÎÌ¾Á°
+     *  @param  mixed   $var        ¥Õ¥©¡¼¥à¤ÎÃÍ
+     *  @param  array   $params     ¥×¥é¥°¥¤¥ó¤Î¥Ñ¥é¥á¡¼¥¿
      */
-    public function validate($name, $var, $params)
+    function validate($name, $var, $params)
     {
         $true = true;
         $type = $this->getFormType($name);
@@ -29,18 +29,16 @@ class Ethna_Plugin_Validator_Mbregexp extends Ethna_Plugin_Validator
             return $true;
         }
 
-        $ctl = $this->backend->getController();
-        $cli_enc = $ctl->getClientEncoding();
         $encoding = (isset($params['encoding']))
                   ? $params['encoding']
-                  : $cli_enc;
+                  : 'EUC-JP';
         mb_regex_encoding($encoding);
 
         if (mb_ereg($params['mbregexp'], $var) !== 1) {
             if (isset($params['error'])) {
                 $msg = $params['error'];
             } else {
-                $msg = _et('Please input {form} properly.');
+                $msg = "{form}¤òÀµ¤·¤¯ÆþÎÏ¤·¤Æ¤¯¤À¤µ¤¤";
             }
             return Ethna::raiseNotice($msg, E_FORM_REGEXP);
         }
@@ -49,3 +47,4 @@ class Ethna_Plugin_Validator_Mbregexp extends Ethna_Plugin_Validator
     }
 }
 // }}}
+

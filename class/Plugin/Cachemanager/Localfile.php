@@ -10,7 +10,7 @@
  */
 
 /**
- *  „Ç≠„É£„ÉÉ„Ç∑„É•„Éû„Éç„Éº„Ç∏„É£„ÇØ„É©„Çπ(„É≠„Éº„Ç´„É´„Éï„Ç°„Ç§„É´„Ç≠„É£„ÉÉ„Ç∑„É•Áâà)
+ *  •≠•„•√•∑•Â•ﬁ•Õ°º•∏•„•Ø•È•π(•Ì°º•´•Î•’•°•§•Î•≠•„•√•∑•Â»«)
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -23,33 +23,33 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
     /**#@-*/
 
     /**
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•„Å´Ë®≠ÂÆö„Åï„Çå„ÅüÂÄ§„ÇíÂèñÂæó„Åô„Çã
+     *  •≠•„•√•∑•Â§À¿ﬂƒÍ§µ§Ï§ø√Õ§ÚºË∆¿§π§Î
      *
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•„Å´ÂÄ§„ÅåË®≠ÂÆö„Åï„Çå„Å¶„ÅÑ„ÇãÂ†¥Âêà„ÅØ„Ç≠„É£„ÉÉ„Ç∑„É•ÂÄ§
-     *  „ÅåÊàª„ÇäÂÄ§„Å®„Å™„Çã„ÄÇ„Ç≠„É£„ÉÉ„Ç∑„É•„Å´ÂÄ§„ÅåÁÑ°„ÅÑÂ†¥Âêà„ÇÑlifetime
-     *  „ÇíÈÅé„Åé„Å¶„ÅÑ„ÇãÂ†¥Âêà„ÄÅ„Ç®„É©„Éº„ÅåÁô∫Áîü„Åó„ÅüÂ†¥Âêà„ÅØEthna_Error
-     *  „Ç™„Éñ„Ç∏„Çß„ÇØ„Éà„ÅåÊàª„ÇäÂÄ§„Å®„Å™„Çã„ÄÇ
+     *  •≠•„•√•∑•Â§À√Õ§¨¿ﬂƒÍ§µ§Ï§∆§§§ÎæÏπÁ§œ•≠•„•√•∑•Â√Õ
+     *  §¨Ã·§Í√Õ§»§ §Î°£•≠•„•√•∑•Â§À√Õ§¨Ãµ§§æÏπÁ§‰lifetime
+     *  §Ú≤·§Æ§∆§§§ÎæÏπÁ°¢•®•È°º§¨»Ø¿∏§∑§øæÏπÁ§œEthna_Error
+     *  •™•÷•∏•ß•Ø•»§¨Ã·§Í√Õ§»§ §Î°£
      *
      *  @access public
-     *  @param  string  $key        „Ç≠„É£„ÉÉ„Ç∑„É•„Ç≠„Éº
-     *  @param  int     $lifetime   „Ç≠„É£„ÉÉ„Ç∑„É•ÊúâÂäπÊúüÈñì
-     *  @param  string  $namespace  „Ç≠„É£„ÉÉ„Ç∑„É•„Éç„Éº„É†„Çπ„Éö„Éº„Çπ
-     *  @return array   „Ç≠„É£„ÉÉ„Ç∑„É•ÂÄ§
+     *  @param  string  $key        •≠•„•√•∑•Â•≠°º
+     *  @param  int     $lifetime   •≠•„•√•∑•ÂÕ≠∏˙¥¸¥÷
+     *  @param  string  $namespace  •≠•„•√•∑•Â•Õ°º•‡•π•⁄°º•π
+     *  @return array   •≠•„•√•∑•Â√Õ
      */
-    public function get($key, $lifetime = null, $namespace = null)
+    function get($key, $lifetime = null, $namespace = null)
     {
-        $namespace = $this->getNamespace($namespace);
+        $namespace = is_null($namespace) ? $this->namespace : $namespace;
         $cache_file = $this->_getCacheFile($namespace, $key);
 
-        // „É©„Ç§„Éï„Çø„Ç§„É†„ÉÅ„Çß„ÉÉ„ÇØ
+        // •È•§•’•ø•§•‡•¡•ß•√•Ø
         clearstatcache();
         if (is_readable($cache_file) === false
             || ($st = stat($cache_file)) === false) {
-            return Ethna::raiseError("No such cache (key=%s, file=%s)", E_CACHE_NO_VALUE, $key, $cache_file);
+            return Ethna::raiseError('fopen failed', E_CACHE_NO_VALUE);
         }
         if (is_null($lifetime) == false) {
             if (($st[9]+$lifetime) < time()) {
-                return Ethna::raiseError("Cache expired (key=%s, file=%s)", E_CACHE_EXPIRED, $key, $cache_file);
+                return Ethna::raiseError('fopen failed', E_CACHE_EXPIRED);
             }
         }
 
@@ -57,7 +57,7 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
         if ($fp == false) {
             return Ethna::raiseError('fopen failed', E_CACHE_NO_VALUE);
         }
-        // „É≠„ÉÉ„ÇØ
+        // •Ì•√•Ø
         $timeout = 3;
         while ($timeout > 0) {
             $r = flock($fp, LOCK_EX|LOCK_NB);
@@ -94,16 +94,16 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
     }
 
     /**
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•„ÅÆÊúÄÁµÇÊõ¥Êñ∞Êó•ÊôÇ„ÇíÂèñÂæó„Åô„Çã
+     *  •≠•„•√•∑•Â§Œ∫«Ω™ππø∑∆¸ª˛§ÚºË∆¿§π§Î
      *
      *  @access public
-     *  @param  string  $key        „Ç≠„É£„ÉÉ„Ç∑„É•„Ç≠„Éº
-     *  @param  string  $namespace  „Ç≠„É£„ÉÉ„Ç∑„É•„Éç„Éº„É†„Çπ„Éö„Éº„Çπ
-     *  @return int     ÊúÄÁµÇÊõ¥Êñ∞Êó•ÊôÇ(unixtime)
+     *  @param  string  $key        •≠•„•√•∑•Â•≠°º
+     *  @param  string  $namespace  •≠•„•√•∑•Â•Õ°º•‡•π•⁄°º•π
+     *  @return int     ∫«Ω™ππø∑∆¸ª˛(unixtime)
      */
-    public function getLastModified($key, $namespace = null)
+    function getLastModified($key, $namespace = null)
     {
-        $namespace = $this->getNamespace($namespace);
+        $namespace = is_null($namespace) ? $this->namespace : $namespace;
         $cache_file = $this->_getCacheFile($namespace, $key);
 
         clearstatcache();
@@ -115,19 +115,19 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
     }
 
     /**
-     *  ÂÄ§„Åå„Ç≠„É£„ÉÉ„Ç∑„É•„Åï„Çå„Å¶„ÅÑ„Çã„Åã„Å©„ÅÜ„Åã„ÇíÂèñÂæó„Åô„Çã
+     *  √Õ§¨•≠•„•√•∑•Â§µ§Ï§∆§§§Î§´§…§¶§´§ÚºË∆¿§π§Î
      *
      *  @access public
-     *  @param  string  $key        „Ç≠„É£„ÉÉ„Ç∑„É•„Ç≠„Éº
-     *  @param  int     $lifetime   „Ç≠„É£„ÉÉ„Ç∑„É•ÊúâÂäπÊúüÈñì
-     *  @param  string  $namespace  „Ç≠„É£„ÉÉ„Ç∑„É•„Éç„Éº„É†„Çπ„Éö„Éº„Çπ
+     *  @param  string  $key        •≠•„•√•∑•Â•≠°º
+     *  @param  int     $lifetime   •≠•„•√•∑•ÂÕ≠∏˙¥¸¥÷
+     *  @param  string  $namespace  •≠•„•√•∑•Â•Õ°º•‡•π•⁄°º•π
      */
-    public function isCached($key, $lifetime = null, $namespace = null)
+    function isCached($key, $lifetime = null, $namespace = null)
     {
-        $namespace = $this->getNamespace($namespace);
+        $namespace = is_null($namespace) ? $this->namespace : $namespace;
         $cache_file = $this->_getCacheFile($namespace, $key);
 
-        // „É©„Ç§„Éï„Çø„Ç§„É†„ÉÅ„Çß„ÉÉ„ÇØ
+        // •È•§•’•ø•§•‡•¡•ß•√•Ø
         clearstatcache();
         if (is_readable($cache_file) === false
             || ($st = stat($cache_file)) === false) {
@@ -143,20 +143,20 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
     }
 
     /**
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•„Å´ÂÄ§„ÇíË®≠ÂÆö„Åô„Çã
+     *  •≠•„•√•∑•Â§À√Õ§Ú¿ﬂƒÍ§π§Î
      *
      *  @access public
-     *  @param  string  $key        „Ç≠„É£„ÉÉ„Ç∑„É•„Ç≠„Éº
-     *  @param  mixed   $value      „Ç≠„É£„ÉÉ„Ç∑„É•ÂÄ§
-     *  @param  int     $timestamp  „Ç≠„É£„ÉÉ„Ç∑„É•ÊúÄÁµÇÊõ¥Êñ∞ÊôÇÂàª(unixtime)
-     *  @param  string  $namespace  „Ç≠„É£„ÉÉ„Ç∑„É•„Éç„Éº„É†„Çπ„Éö„Éº„Çπ
+     *  @param  string  $key        •≠•„•√•∑•Â•≠°º
+     *  @param  mixed   $value      •≠•„•√•∑•Â√Õ
+     *  @param  int     $timestamp  •≠•„•√•∑•Â∫«Ω™ππø∑ª˛πÔ(unixtime)
+     *  @param  string  $namespace  •≠•„•√•∑•Â•Õ°º•‡•π•⁄°º•π
      */
-    public function set($key, $value, $timestamp = null, $namespace = null)
+    function set($key, $value, $timestamp = null, $namespace = null)
     {
-        $namespace = $this->getNamespace($namespace);
+        $namespace = is_null($namespace) ? $this->namespace : $namespace;
         $dir = $this->_getCacheDir($namespace, $key);
 
-        // „Ç≠„É£„ÉÉ„Ç∑„É•„Éá„Ç£„É¨„ÇØ„Éà„É™„ÉÅ„Çß„ÉÉ„ÇØ
+        // •≠•„•√•∑•Â•«•£•Ï•Ø•»•Í•¡•ß•√•Ø
         $r = Ethna_Util::mkdir($dir, 0777);
         if ($r == false && is_dir($dir) == false) {
             return Ethna::raiseError('mkdir(%s) failed', E_USER_WARNING, $dir);
@@ -168,7 +168,7 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
             return Ethna::raiseError('fopen failed', E_CACHE_GENERAL);
         }
 
-        // „É≠„ÉÉ„ÇØ
+        // •Ì•√•Ø
         $timeout = 3;
         while ($timeout > 0) {
             $r = flock($fp, LOCK_EX|LOCK_NB);
@@ -199,15 +199,15 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
     }
 
     /**
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•ÂÄ§„ÇíÂâäÈô§„Åô„Çã
+     *  •≠•„•√•∑•Â√Õ§Ú∫ÔΩ¸§π§Î
      *
      *  @access public
-     *  @param  string  $key        „Ç≠„É£„ÉÉ„Ç∑„É•„Ç≠„Éº
-     *  @param  string  $namespace  „Ç≠„É£„ÉÉ„Ç∑„É•„Éç„Éº„É†„Çπ„Éö„Éº„Çπ
+     *  @param  string  $key        •≠•„•√•∑•Â•≠°º
+     *  @param  string  $namespace  •≠•„•√•∑•Â•Õ°º•‡•π•⁄°º•π
      */
-    public function clear($key, $namespace = null)
+    function clear($key, $namespace = null)
     {
-        $namespace = $this->getNamespace($namespace);
+        $namespace = is_null($namespace) ? $this->namespace : $namespace;
         $cache_file = $this->_getCacheFile($namespace, $key);
 
         if (file_exists($cache_file)) {
@@ -216,17 +216,12 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
     }
 
     /**
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•ÂØæË±°„Éá„Ç£„É¨„ÇØ„Éà„É™„ÇíÂèñÂæó„Åô„Çã
+     *  •≠•„•√•∑•Â¬–æ›•«•£•Ï•Ø•»•Í§ÚºË∆¿§π§Î
      *
      *  @access private
      */
-    private function _getCacheDir($namespace, $key)
+    function _getCacheDir($namespace, $key)
     {
-        $safe_mode = ini_get('safe_mode');
-        if ($safe_mode) {
-            return sprintf("%s", $this->backend->getTmpdir());
-        }
-
         $len = strlen($key);
         // intentionally avoid using -2 or -4
         $dir1 = substr($key, $len-4, 2);
@@ -238,10 +233,9 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
             $dir2 = "__dir2";
         }
 
-        //$map = $this->config->get('cachemanager_localfile');
-        $map = $this->config;
+        $map = $this->config->get('cachemanager_localfile');
         $tmp_key = $namespace . "::" . $key;
-        // PHP‰æùÂ≠ò:)
+        // PHP∞Õ¬∏:)
         $dir = "default";
 
         if (is_array($map)) {
@@ -252,31 +246,28 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
                 }
             }
         }
+        
         return sprintf("%s/cache/%s/cache_%s/%s/%s", $this->backend->getTmpdir(), $dir, $this->_escape($namespace), $this->_escape($dir1), $this->_escape($dir2));
     }
 
     /**
-     *  „Ç≠„É£„ÉÉ„Ç∑„É•„Éï„Ç°„Ç§„É´„ÇíÂèñÂæó„Åô„Çã
+     *  •≠•„•√•∑•Â•’•°•§•Î§ÚºË∆¿§π§Î
      *
      *  @access private
      */
-    private function _getCacheFile($namespace, $key)
+    function _getCacheFile($namespace, $key)
     {
-        $safe_mode = ini_get('safe_mode');
-        if ($safe_mode) {
-            return sprintf("%s/cache_%s_%s", $this->_getCacheDir($namespace, $key), $this->_escape($namespace), $this->_escape($key));
-        }
-
         return sprintf("%s/%s", $this->_getCacheDir($namespace, $key), $this->_escape($key));
     }
 
     /**
-     *  „Ç≠„Éº„Çí„Éï„Ç°„Ç§„É´„Ç∑„Çπ„ÉÜ„É†Áî®„Å´„Ç®„Çπ„Ç±„Éº„Éó„Åô„Çã
+     *  •≠°º§Ú•’•°•§•Î•∑•π•∆•‡Õ—§À•®•π•±°º•◊§π§Î
      *
      *  @access private
      */
-    private function _escape($string)
+    function _escape($string)
     {
         return preg_replace('/([^0-9A-Za-z_])/e', "sprintf('%%%02X', ord('\$1'))", $string);
     }
 }
+

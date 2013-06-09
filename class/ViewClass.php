@@ -26,47 +26,51 @@ class Ethna_ViewClass
     /** @protected    object  Ethna_Controller    Controllerオブジェクト */
     protected $ctl;
 
-    /** @protected    object  Ethna_Backend       backendオブジェクト */
-    protected $backend;
+    /** @var    object  Ethna_Backend       backendオブジェクト */
+    var $backend;
 
-    /** @protected    object  Ethna_Config        設定オブジェクト    */
-    protected $config;
+    /** @var    object  Ethna_Config        設定オブジェクト    */
+    var $config;
 
-    /** @protected    object  Ethna_I18N          i18nオブジェクト */
-    protected $i18n;
+    /** @var    object  Ethna_I18N          i18nオブジェクト */
+    var $i18n;
 
-    /** @protected    object  Ethna_Logger    ログオブジェクト */
-    protected $logger;
+    /** @var    object  Ethna_Logger    ログオブジェクト */
+    var $logger;
 
-    /** @protected    object  Ethna_Plugin    プラグインオブジェクト */
-    public $plugin;
+    /** @var    object  Ethna_Plugin    プラグインオブジェクト */
+    var $plugin;
 
-    /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト */
-    protected $action_error;
+    /** @var    object  Ethna_ActionError   アクションエラーオブジェクト */
+    var $action_error;
 
-    /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト(省略形) */
-    protected $ae;
+    /** @var    object  Ethna_ActionError   アクションエラーオブジェクト(省略形) */
+    var $ae;
 
-    /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト */
-    protected $action_form;
+    /** @var    object  Ethna_ActionForm    アクションフォームオブジェクト */
+    var $action_form;
 
-    /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト(省略形) */
-    protected $af;
+    /** @var    object  Ethna_ActionForm    アクションフォームオブジェクト(省略形) */
+    var $af;
 
-    /** @protected    array   アクションフォームオブジェクト(helper) */
-    protected $helper_action_form = array();
+    /** @var    array   アクションフォームオブジェクト(helper) */
+    var $helper_action_form = array();
 
-    /** @protected    array   helperでhtmlのattributeにはしないパラメータの一覧 */
-    protected $helper_parameter_keys = array('default', 'option', 'separator');
+    /** @var    array   helperでhtmlのattributeにはしなパラメータの一覧 */
+    var $helper_parameter_keys = array('default', 'option', 'separator');
 
-    /** @protected    object  Ethna_Session       セッションオブジェクト */
-    protected $session;
+    /** @var    object  Ethna_Session       セッションオブジェクト */
+    var $session;
 
-    /** @protected    string  遷移名 */
-    public $forward_name;
+    /** @var    string  遷移名 */
+    var $forward_name;
 
-    /** @protected    string  遷移先テンプレートファイル名 */
-    protected $forward_path;
+    /** @var    string  遷移先テンプレートファイル名 */
+    var $forward_path;
+
+    /**#@-*/
+
+    /* 以下はEthna2.6よりインポートしてきた。現在定義だけあるが未使用 */
 
     /** @protected    boolean  配列フォームを呼んだカウンタをリセットするか否か */
     protected $reset_counter = false;
@@ -622,6 +626,11 @@ class Ethna_ViewClass
             $input = $this->_getFormInput_Textarea($name, $def, $params);
             break;
 
+        //EthnaがHTML5未対応なので、ここで修正。
+        case FORM_TYPE_EMAIL:
+            $input = $this->_getFormInput_Email($name, $def, $params);
+            break;
+
         case FORM_TYPE_TEXT:
         default:
             $input = $this->_getFormInput_Text($name, $def, $params);
@@ -986,7 +995,7 @@ class Ethna_ViewClass
         } else if (isset($def['default'])) {
             $current_value = $def['default'];
         } else {
-            $current_value = array(0 => 0,);
+            $current_value = array();
         }
         $current_value = array_map('strval', to_array($current_value));
 
@@ -1076,6 +1085,7 @@ class Ethna_ViewClass
         $element = '';
         if (isset($params['value'])) {
             $element = $params['value'];
+            unset($params['value']);
         } else if (isset($params['default'])) {
             $element = $params['default'];
         } else if (isset($def['default'])) {
@@ -1087,6 +1097,8 @@ class Ethna_ViewClass
             } else {
                 $element = '';
             }
+        } else {
+            $params['value'] = $element;
         }
 
         return $this->_getFormInput_Html('textarea', $params, $element);
@@ -1156,14 +1168,14 @@ class Ethna_ViewClass
             if ($value === null) {
                 $r .= sprintf(' %s', $key);
             } else {
-                $r .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES));
+                $r .= sprintf(' %s="%s"', $key, htmlspecialchars($value, ENT_QUOTES, mb_internal_encoding()));
             }
         }
 
         if ($element === null) {
             $r .= ' />';
         } else if ($escape_element) {
-            $r .= sprintf('>%s</%s>', htmlspecialchars($element, ENT_QUOTES), $tag);
+            $r .= sprintf('>%s</%s>', htmlspecialchars($element, ENT_QUOTES, mb_internal_encoding()), $tag);
         } else {
             $r .= sprintf('>%s</%s>', $element, $tag);
         }
@@ -1197,10 +1209,10 @@ class Ethna_ViewClass
             $renderer->setPropByRef('session', $tmp_session);
         }
         $renderer->setProp('script',
-            htmlspecialchars(basename($_SERVER['SCRIPT_NAME']), ENT_QUOTES));
+            htmlspecialchars(basename($_SERVER['SCRIPT_NAME']), ENT_QUOTES, mb_internal_encoding()));
         $renderer->setProp('request_uri',
             isset($_SERVER['REQUEST_URI'])
-            ? htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES)
+            ? htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES, mb_internal_encoding())
             : '');
         $renderer->setProp('config', $this->config->get());
 
@@ -1221,3 +1233,4 @@ class Ethna_ViewClass
     // }}}
 }
 // }}}
+

@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Logwriter.php
+ *  Ethna_Plugin_Logwriter.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,32 +11,32 @@
 
 // {{{ Ethna_Plugin_Logwriter
 /**
- *  ãƒ­ã‚°å‡ºåŠ›åŸºåº•ã‚¯ãƒ©ã‚¹
+ *  ¥í¥°½ÐÎÏ´ðÄì¥¯¥é¥¹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Logwriter
 {
     /**#@+
      *  @access private
      */
 
-    /** @protected    string  ãƒ­ã‚°ã‚¢ã‚¤ãƒ‡ãƒ³ãƒ†ã‚£ãƒ†ã‚£æ–‡å­—åˆ— */
-    protected $ident;
+    /** @var    string  ¥í¥°¥¢¥¤¥Ç¥ó¥Æ¥£¥Æ¥£Ê¸»úÎó */
+    var $ident;
 
-    /** @protected    int     ãƒ­ã‚°ãƒ•ã‚¡ã‚·ãƒªãƒ†ã‚£ */
-    protected $facility;
+    /** @var    int     ¥í¥°¥Õ¥¡¥·¥ê¥Æ¥£ */
+    var $facility;
 
-    /** @protected    int     ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³ */
-    protected $option;
+    /** @var    int     ¥í¥°¥ª¥×¥·¥ç¥ó */
+    var $option;
 
-    /** @protected    bool    ãƒãƒƒã‚¯ãƒˆãƒ¬ãƒ¼ã‚¹ãŒå–å¾—å¯èƒ½ã‹ã©ã†ã‹ */
-    protected $have_backtrace;
+    /** @var    bool    ¥Ð¥Ã¥¯¥È¥ì¡¼¥¹¤¬¼èÆÀ²ÄÇ½¤«¤É¤¦¤« */
+    var $have_backtrace;
 
-    /** @protected    array   ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«åãƒ†ãƒ¼ãƒ–ãƒ« */
-    protected $level_name_table = array(
+    /** @var    array   ¥í¥°¥ì¥Ù¥ëÌ¾¥Æ¡¼¥Ö¥ë */
+    var $level_name_table = array(
         LOG_EMERG   => 'EMERG',
         LOG_ALERT   => 'ALERT',
         LOG_CRIT    => 'CRIT',
@@ -49,12 +49,24 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
 
     /**#@-*/
 
-
     /**
-     *  ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹
+     *  Ethna_Plugin_Logwriter¥¯¥é¥¹¤Î¥³¥ó¥¹¥È¥é¥¯¥¿
      *
      *  @access public
-     *  @param  int     $option     ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³(LOG_FILE,LOG_FUNCTION...)
+     *  @param  string  $log_ident      ¥í¥°¥¢¥¤¥Ç¥ó¥Æ¥£¥Æ¥£Ê¸»úÎó(¥×¥í¥»¥¹Ì¾Åù)
+     *  @param  int     $log_facility   ¥í¥°¥Õ¥¡¥·¥ê¥Æ¥£
+     *  @param  string  $log_file       ¥í¥°½ÐÎÏÀè¥Õ¥¡¥¤¥ëÌ¾(LOG_FILE¥ª¥×¥·¥ç¥ó¤¬»ØÄê¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Î¤ß)
+     *  @param  int     $log_option     ¥í¥°¥ª¥×¥·¥ç¥ó(LOG_FILE,LOG_FUNCTION...)
+     */
+    function Ethna_Plugin_Logwriter()
+    {
+    }
+
+    /**
+     *  ¥í¥°¥ª¥×¥·¥ç¥ó¤òÀßÄê¤¹¤ë
+     *
+     *  @access public
+     *  @param  int     $option     ¥í¥°¥ª¥×¥·¥ç¥ó(LOG_FILE,LOG_FUNCTION...)
      */
     function setOption($option)
     {
@@ -65,7 +77,7 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ­ã‚°å‡ºåŠ›ã‚’é–‹å§‹ã™ã‚‹
+     *  ¥í¥°½ÐÎÏ¤ò³«»Ï¤¹¤ë
      *
      *  @access public
      */
@@ -74,18 +86,18 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
+     *  ¥í¥°¤ò½ÐÎÏ¤¹¤ë
      *
      *  @access public
-     *  @param  int     $level      ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«(LOG_DEBUG, LOG_NOTICE...)
-     *  @param  string  $message    ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸(+å¼•æ•°)
+     *  @param  int     $level      ¥í¥°¥ì¥Ù¥ë(LOG_DEBUG, LOG_NOTICE...)
+     *  @param  string  $message    ¥í¥°¥á¥Ã¥»¡¼¥¸(+°ú¿ô)
      */
     function log($level, $message)
     {
     }
 
     /**
-     *  ãƒ­ã‚°å‡ºåŠ›ã‚’çµ‚äº†ã™ã‚‹
+     *  ¥í¥°½ÐÎÏ¤ò½ªÎ»¤¹¤ë
      *
      *  @access public
      */
@@ -94,10 +106,10 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ­ã‚°ã‚¢ã‚¤ãƒ‡ãƒ³ãƒ†ã‚£ãƒ†ã‚£æ–‡å­—åˆ—ã‚’å–å¾—ã™ã‚‹
+     *  ¥í¥°¥¢¥¤¥Ç¥ó¥Æ¥£¥Æ¥£Ê¸»úÎó¤ò¼èÆÀ¤¹¤ë
      *
      *  @access public
-     *  @return string  ãƒ­ã‚°ã‚¢ã‚¤ãƒ‡ãƒ³ãƒ†ã‚£ãƒ†ã‚£æ–‡å­—åˆ—
+     *  @return string  ¥í¥°¥¢¥¤¥Ç¥ó¥Æ¥£¥Æ¥£Ê¸»úÎó
      */
     function getIdent()
     {
@@ -105,11 +117,11 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«ã‚’è¡¨ç¤ºæ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
+     *  ¥í¥°¥ì¥Ù¥ë¤òÉ½¼¨Ê¸»úÎó¤ËÊÑ´¹¤¹¤ë
      *
      *  @access private
-     *  @param  int     $level  ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«(LOG_DEBUG,LOG_NOTICE...)
-     *  @return string  ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«è¡¨ç¤ºæ–‡å­—åˆ—(LOG_DEBUGâ†’"DEBUG")
+     *  @param  int     $level  ¥í¥°¥ì¥Ù¥ë(LOG_DEBUG,LOG_NOTICE...)
+     *  @return string  ¥í¥°¥ì¥Ù¥ëÉ½¼¨Ê¸»úÎó(LOG_DEBUG¢ª"DEBUG")
      */
     function _getLogLevelName($level)
     {
@@ -120,19 +132,19 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ­ã‚°å‡ºåŠ›ç®‡æ‰€ã®æƒ…å ±(é–¢æ•°å/ãƒ•ã‚¡ã‚¤ãƒ«åç­‰)ã‚’å–å¾—ã™ã‚‹
+     *  ¥í¥°½ÐÎÏ²Õ½ê¤Î¾ðÊó(´Ø¿ôÌ¾/¥Õ¥¡¥¤¥ëÌ¾Åù)¤ò¼èÆÀ¤¹¤ë
      *
      *  @access private
-     *  @return array   ãƒ­ã‚°å‡ºåŠ›ç®‡æ‰€ã®æƒ…å ±
+     *  @return array   ¥í¥°½ÐÎÏ²Õ½ê¤Î¾ðÊó
      */
     function _getBacktrace()
     {
         $skip_method_list = array(
-            array('ethna', 'raise'),
+            array('ethna', 'raise.*'),
             array(null, 'raiseerror'),
             array(null, 'handleerror'),
             array('ethna_logger', null),
-            array('ethna_plugin_logwriter', null),
+            array('ethna_plugin_logwriter*', null),
             array('ethna_error', null),
             array('ethna_apperror', null),
             array('ethna_actionerror', null),
@@ -151,23 +163,16 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
             if (isset($bt[$i]['class']) == false) {
                 $bt[$i]['class'] = null;
             }
-            if (isset($bt[$i]['file']) == false) {
-                $bt[$i]['file'] = null;
-            }
-            if (isset($bt[$i]['line']) == false) {
-                $bt[$i]['line'] = null;
-            }
-
             $skip = false;
 
-            // ãƒ¡ã‚½ãƒƒãƒ‰ã‚¹ã‚­ãƒƒãƒ—å‡¦ç†
+            // ¥á¥½¥Ã¥É¥¹¥­¥Ã¥×½èÍý
             foreach ($skip_method_list as $method) {
                 $class = $function = true;
                 if ($method[0] != null) {
-                    $class = preg_match("/^$method[0]/i", $bt[$i]['class']);
+                    $class = preg_match("/$method[0]/i", $bt[$i]['class']);
                 }
                 if ($method[1] != null) {
-                    $function = preg_match("/^$method[1]/i", $bt[$i]['function']);
+                    $function = preg_match("/$method[1]/i", $bt[$i]['function']);
                 }
                 if ($class && $function) {
                     $skip = true;
@@ -187,15 +192,16 @@ class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
 
         $function = sprintf("%s.%s", isset($bt[$i]['class']) ? $bt[$i]['class'] : 'global', $bt[$i]['function']);
 
-        $file = $bt[$i]['file'];
+        $file = isset($bt[$i]['file']) ? $bt[$i]['file'] : '';
         if (strncmp($file, $basedir, strlen($basedir)) == 0) {
             $file = substr($file, strlen($basedir));
         }
         if (strncmp($file, ETHNA_BASE, strlen(ETHNA_BASE)) == 0) {
             $file = preg_replace('#^/+#', '', substr($file, strlen(ETHNA_BASE)));
         }
-        $line = $bt[$i]['line'];
+        $line = isset($bt[$i]['line']) ? $bt[$i]['line'] : '';
         return array('function' => $function, 'pos' => sprintf('%s:%s', $file, $line));
     }
 }
 // }}}
+

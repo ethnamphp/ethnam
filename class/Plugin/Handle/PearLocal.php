@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  PearLocal.php
+ *  Ethna_Plugin_Handle_PearLocal.php
  *
  *  @author     Yoshinari Takaoka <takaoka@beatcraft.com>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -21,7 +21,7 @@ require_once ETHNA_BASE . '/class/PearWrapper.php';
  *  @access     private
  *  @package    Ethna
  */
-class Ethna_PearConfig_Local extends Ethna_PearWrapper
+class Ethna_PearConfig_Local extends Ethna_PearWrapper 
 {
 
     // {{{ _setLocalConfig 
@@ -31,7 +31,7 @@ class Ethna_PearConfig_Local extends Ethna_PearWrapper
      *  @return true|Ethna_Error
      *  @access private 
      */
-    protected function _setLocalConfig()
+    function &_setLocalConfig()
     {
         $true = true;
 
@@ -63,7 +63,7 @@ class Ethna_PearConfig_Local extends Ethna_PearWrapper
                 ? $default_pearrc
                 : "{$base}/$app_pearrc";
         $this->conf_file = $pearrc;
-        $this->config = PEAR_Config::singleton($pearrc);
+        $this->config =& PEAR_Config::singleton($pearrc);
 
         // read local .pearrc if exists.
         if (is_file($pearrc) && is_readable($pearrc)) {
@@ -89,9 +89,9 @@ class Ethna_PearConfig_Local extends Ethna_PearWrapper
         }
 
         // setup channel
-        $reg = $this->config->getRegistry();
+        $reg =& $this->config->getRegistry();
         if ($reg->channelExists($this->channel) == false) {
-            $ret = $this->doChannelDiscover();
+            $ret =& $this->doChannelDiscover();
             if (Ethna::isError($ret)) {
                 return $ret;
             }
@@ -132,9 +132,9 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
     /**
      * @access private
      */
-    function _parseArgList()
+    function &_parseArgList()
     {
-        $r = $this->_getopt(array('basedir=', 'channel='));
+        $r =& $this->_getopt(array('basedir=', 'channel='));
         if (Ethna::isError($r)) {
             return $r;
         }
@@ -162,12 +162,12 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
      *  @access public
      *  @todo   deal with the package including some plugins.
      */
-    public function perform()
+    function perform()
     {
         $true = true;
 
         //   check arguments.
-        $args = $this->_parseArgList();
+        $args =& $this->_parseArgList();
         if (Ethna::isError($args)) {
             return Ethna::raiseError(
                 $args->getMessage(),
@@ -178,15 +178,15 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
         $basedir = isset($args['basedir']) ? realpath($args['basedir']) : getcwd();
         $channel = isset($args['channel']) ? $args['channel'] : 'dummy';
 
-        $pear_local = new Ethna_PearConfig_Local();
-        $r = $pear_local->init('local', $basedir, $channel);
+        $pear_local =& new Ethna_PearConfig_Local();
+        $r =& $pear_local->init('local', $basedir, $channel);
         if (Ethna::isError($r)) {
             return $r;
         }
 
         //    build command string.
         $pear_cmds = $args['pear_args'];
-        $pear_bin = (ETHNA_OS_WINDOWS)
+        $pear_bin = (OS_WINDOWS)
                   ? getenv('PHP_PEAR_BIN_DIR') . DIRECTORY_SEPARATOR . 'pear.bat'
                   : (PHP_BINDIR . DIRECTORY_SEPARATOR . 'pear');
         $local_conf_file = $pear_local->getConfFile();
@@ -196,7 +196,7 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
             '-c',
             $local_conf_file
         );
-        if (ETHNA_OS_WINDOWS) {
+        if (OS_WINDOWS) {
             foreach($pear_cmds as $key => $value) {
                 $pear_cmds[$key] = (strpos($value, ' ') !== false)
                                  ? ('"' . $value . '"')
@@ -206,7 +206,7 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
         $command_str = implode(' ', $pear_cmds);
 
         //   finally exec pear command.
-        if (ETHNA_OS_WINDOWS) {
+        if (OS_WINDOWS) {
             $tmp_dir_name ="ethna_tmp_dir";
             Ethna_Util::mkdir($tmp_dir_name, 0777);
             $tmpnam = tempnam($tmp_dir_name, "temp") .'.bat';
@@ -228,7 +228,7 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
     /**
      *  @access public
      */
-    public function getDescription()
+    function getDescription()
     {
         return <<<EOS
 install pear package to {base_dir}/lib, {base_dir}/bin ... :
@@ -243,7 +243,7 @@ EOS;
     /**
      *  @access public
      */
-    public function getUsage()
+    function getUsage()
     {
         return <<<EOS
 ethna {$this->id} [-c|--channel=channel] [-b|--basedir=dir] [pear command ...]
@@ -254,3 +254,4 @@ EOS;
     // }}}
 }
 // }}}
+

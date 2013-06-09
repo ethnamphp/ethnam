@@ -45,9 +45,11 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
     case E_USER_DEPRECATED:
     case E_DEPRECATED:
         $php_errno = 'Deprecated'; break;
+/*
     case E_RECOVERABLE_ERROR:
         $php_errno = 'Recoverable error'; break;
         break;
+*/
     default:
         $php_errno = 'Unknown error'; break;
     }
@@ -74,10 +76,11 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
     if ($errno === E_STRICT) {
         return true;
     }
+    /* 
     if ($errno === E_RECOVERABLE_ERROR) {
         return true;
     }
-
+    */
     // printf()
     if (ini_get('display_errors')) {
         $is_debug = true;

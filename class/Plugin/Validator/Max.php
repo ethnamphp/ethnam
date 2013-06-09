@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Max.php
+ *  Ethna_Plugin_Validator_Max.php
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Validator_Max
 /**
- *  æœ€å¤§å€¤ãƒã‚§ãƒƒã‚¯ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
+ *  ºÇÂçÃÍ¥Á¥§¥Ã¥¯¥×¥é¥°¥¤¥ó
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @access     public
@@ -19,18 +19,18 @@
  */
 class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
 {
-    /** @var    bool    é…åˆ—ã‚’å—ã‘å–ã‚‹ã‹ãƒ•ãƒ©ã‚° */
-    public $accept_array = false;
+    /** @var    bool    ÇÛÎó¤ò¼õ¤±¼è¤ë¤«¥Õ¥é¥° */
+    var $accept_array = false;
 
     /**
-     *  æœ€å¤§å€¤ã®ãƒã‚§ãƒƒã‚¯ã‚’è¡Œã†
+     *  ºÇÂçÃÍ¤Î¥Á¥§¥Ã¥¯¤ò¹Ô¤¦
      *
      *  @access public
-     *  @param  string  $name       ãƒ•ã‚©ãƒ¼ãƒ ã®åå‰
-     *  @param  mixed   $var        ãƒ•ã‚©ãƒ¼ãƒ ã®å€¤
-     *  @param  array   $params     ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
+     *  @param  string  $name       ¥Õ¥©¡¼¥à¤ÎÌ¾Á°
+     *  @param  mixed   $var        ¥Õ¥©¡¼¥à¤ÎÃÍ
+     *  @param  array   $params     ¥×¥é¥°¥¤¥ó¤Î¥Ñ¥é¥á¡¼¥¿
      */
-    public function validate($name, $var, $params)
+    function validate($name, $var, $params)
     {
         $true = true;
         $type = $this->getFormType($name);
@@ -44,7 +44,7 @@ class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
                     if (isset($params['error'])) {
                         $msg = $params['error'];
                     } else {
-                        $msg = _et('Please input less than %d(int) to {form}.');
+                        $msg = "{form}¤Ë¤Ï%d°Ê²¼¤Î¿ô»ú(À°¿ô)¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤";
                     }
                     return Ethna::raiseNotice($msg, E_FORM_MAX_INT, array($params['max']));
                 }
@@ -55,7 +55,7 @@ class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
                     if (isset($params['error'])) {
                         $msg = $params['error'];
                     } else {
-                        $msg = _et('Please input less than %f(float) to {form}.');
+                        $msg = "{form}¤Ë¤Ï%f°Ê²¼¤Î¿ô»ú(¾®¿ô)¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤";
                     }
                     return Ethna::raiseNotice($msg, E_FORM_MAX_FLOAT, array($params['max']));
                 }
@@ -68,7 +68,7 @@ class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
                     if (isset($params['error'])) {
                         $msg = $params['error'];
                     } else {
-                        $msg = _et('Please input datetime value before %s to {form}.');
+                        $msg = "{form}¤Ë¤Ï%s°ÊÁ°¤ÎÆüÉÕ¤òÆşÎÏ¤·¤Æ²¼¤µ¤¤";
                     }
                     return Ethna::raiseNotice($msg, E_FORM_MAX_DATETIME, array($params['max']));
                 }
@@ -80,44 +80,22 @@ class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
                     if (isset($params['error'])) {
                         $msg = $params['error'];
                     } else {
-                        $msg = _et('Please specify file whose size is less than %d KB to {form}.');
+                        $msg = "{form}¤Ë¤Ï%dKB°Ê²¼¤Î¥Õ¥¡¥¤¥ë¤ò»ØÄê¤·¤Æ²¼¤µ¤¤";
                     }
                     return Ethna::raiseNotice($msg, E_FORM_MAX_FILE, array($params['max']));
                 }
                 break;
 
             case VAR_TYPE_STRING:
-
-                //
-                //  ãƒãƒ«ãƒãƒã‚¤ãƒˆã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã¨ã€ãã†ã§ãªã„å ´åˆã§
-                //  ç•°ãªã‚‹ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚’å‘¼ã¶ã€‚
-                //
-                //  ã“ã‚Œã¯ Ethna_Controller#client_encoding ã®å€¤ã«ã‚ˆ
-                //  ã£ã¦å‹•ããŒæ±ºã¾ã‚‹
-                //
-
-                $ctl = Ethna_Controller::getInstance();
-                $client_enc = $ctl->getClientEncoding();
-                $plugin = $this->backend->getPlugin();
-
-                //  select Plugin.
-                if (mb_enabled() && strcasecmp('UTF-8', $client_enc) == 0) {
-                    $plugin_name = 'Mbstrmax';
-                    $params['mbstrmax'] = $params['max'];
-                } elseif (strcasecmp('EUC-JP', $client_enc == 0)
-                       || strcasecmp('eucJP-win', $client_enc == 0)) {
-                    //  2.3.x compatibility
-                    $plugin_name = 'Strmaxcompat';
-                    $params['strmaxcompat'] = $params['max'];
-                } else {
-                    $plugin_name = 'Strmax';
-                    $params['strmax'] = $params['max'];
+                if (strlen($var) > $params['max']) {
+                    if (isset($params['error'])) {
+                        $msg = $params['error'];
+                    } else {
+                        $msg = "{form}¤ÏÁ´³Ñ%dÊ¸»ú°Ê²¼(È¾³Ñ%dÊ¸»ú°Ê²¼)¤ÇÆşÎÏ¤·¤Æ²¼¤µ¤¤";
+                    }
+                    return Ethna::raiseNotice($msg, E_FORM_MAX_STRING,
+                            array(intval($params['max']/2), $params['max']));
                 }
-                unset($params['max']);
-
-                $vld = $plugin->getPlugin('Validator', $plugin_name);
-                return $vld->validate($name, $var, $params);
-
                 break;
         }
 

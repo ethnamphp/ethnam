@@ -11,83 +11,104 @@
 
 // {{{ Ethna_Plugin_Csrf
 /**
- *  CSRFå¯¾ç­–åŸºåº•ã‚¯ãƒ©ã‚¹
+ *  CSRFÂĞºö´ğÄì¥¯¥é¥¹
  *
- *  CSRFå¯¾ç­–ã‚’ãƒˆãƒ¼ã‚¯ãƒ³ã‚’ç”¨ã„ã¦å¯¾ç­–ã™ã‚‹ãŸã‚ã®ã‚³ãƒ¼ãƒ‰
+ *  CSRFÂĞºö¤ò¥È¡¼¥¯¥ó¤òÍÑ¤¤¤ÆÂĞºö¤¹¤ë¤¿¤á¤Î¥³¡¼¥É
  *
  *  @author     Keita Arai <cocoiti@comio.info>
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Csrf extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Csrf
 {
     /**#@+
      *  @access private
      */
 
-    /** @var    string  å…±æœ‰ãƒˆãƒ¼ã‚¯ãƒ³å */
-    protected $token_name = 'ethna_csrf';
+    var $controller;
 
+    /** @var    object  Ethna_Controller    controller¥ª¥Ö¥¸¥§¥¯¥È($controller¤Î¾ÊÎ¬·Á) */
+    var $ctl;
+
+    /** @var    object  Ethna_Config        ÀßÄê¥ª¥Ö¥¸¥§¥¯¥È */
+    var $config;
+
+    /** @var    object  Ethna_Logger        ¥í¥°¥ª¥Ö¥¸¥§¥¯¥È */
+    var $logger;
+    
+    /** @var    string  ¶¦Í­¥È¡¼¥¯¥óÌ¾ */
+    var $token_name = 'ethna_csrf';
+    
     /**#@-*/
 
 
     /**
-     *  Csrfã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+     *  Ethna_Plugin_Csrf¤Î¥³¥ó¥¹¥È¥é¥¯¥¿
      *
      *  @access public
-     *  @param  object  Ethna_Controller    &$controller    ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     *  @param  object  Ethna_Controller    &$controller    ¥³¥ó¥È¥í¡¼¥é¥ª¥Ö¥¸¥§¥¯¥È
      */
+    function __construct(&$controller)
+    {
+        // ¥ª¥Ö¥¸¥§¥¯¥È¤ÎÀßÄê
+        $this->controller =& $controller;
+        $this->ctl =& $this->controller;
+
+        $this->config =& $controller->getConfig();
+        $this->logger =& $this->controller->getLogger();
+    }
+    
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³ã‚’Viewã¨ãƒ­ãƒ¼ã‚«ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚»ãƒƒãƒˆã™ã‚‹
+     *  ¥È¡¼¥¯¥ó¤òView¤È¥í¡¼¥«¥ë¥Õ¥¡¥¤¥ë¤Ë¥»¥Ã¥È¤¹¤ë
      *
      *  @access public
-     *  @return string  ãƒˆãƒ¼ã‚¯ãƒ³ã®Key
+     *  @return string  ¥È¡¼¥¯¥ó¤ÎKey
      */
-    public function set()
+    function set()
     {
 
     }
 
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’å–å¾—ã™ã‚‹
+     *  ¥È¡¼¥¯¥óID¤ò¼èÆÀ¤¹¤ë
      *
      *  @access public
-     *  @return string ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’è¿”ã™ã€‚
+     *  @return string ¥È¡¼¥¯¥óID¤òÊÖ¤¹¡£
      */
-    public function get()
+    function get()
     {
 
     }
 
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’å‰Šé™¤ã™ã‚‹
+     *  ¥È¡¼¥¯¥óID¤òºï½ü¤¹¤ë
      *
      *  @access public
-     *  @return string ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’è¿”ã™ã€‚
+     *  @return string ¥È¡¼¥¯¥óID¤òÊÖ¤¹¡£
      */
-    public function remove()
+    function remove()
     {
 
     }
 
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³åã‚’å–å¾—ã™ã‚‹
+     *  ¥È¡¼¥¯¥óÌ¾¤ò¼èÆÀ¤¹¤ë
      *
      *  @access public
-     *  @return string ãƒˆãƒ¼ã‚¯ãƒ³åã‚’è¿”ã™ã€‚
+     *  @return string ¥È¡¼¥¯¥óÌ¾¤òÊÖ¤¹¡£
      */
-    public function getTokenName()
+    function getName()
     {
         return $this->token_name;
     }
 
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’æ¤œè¨¼ã™ã‚‹
+     *  ¥È¡¼¥¯¥óID¤ò¸¡¾Ú¤¹¤ë
      *
      *  @access public
-     *  @return mixed  æ­£å¸¸ã®å ´åˆã¯true, ä¸æ­£ã®å ´åˆã¯false
+     *  @return mixed  Àµ¾ï¤Î¾ì¹ç¤Ïtrue, ÉÔÀµ¤Î¾ì¹ç¤Ïfalse
      */
-    public function isValid()
+    function isValid()
     {
         $token = $this->_get_token();
 
@@ -105,25 +126,25 @@ class Ethna_Plugin_Csrf extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ã‚­ãƒ¼ã‚’ç”Ÿæˆã™ã‚‹
+     *  ¥­¡¼¤òÀ¸À®¤¹¤ë
      *
      *  @access public
      *  @return string  keyname
      */
-    protected function _generateKey()
+    function _generateKey()
     {
         return Ethna_Util::getRandom(32);
     }
 
     /**
-     *  ãƒªã‚¯ã‚¨ã‚¹ãƒˆã‹ã‚‰ãƒˆãƒ¼ã‚¯ãƒ³IDã¨ãƒªã‚¯ã‚¨ã‚¹ãƒˆIDã‚’æŠœãå‡ºã™
+     *  ¥ê¥¯¥¨¥¹¥È¤«¤é¥È¡¼¥¯¥óID¤È¥ê¥¯¥¨¥¹¥ÈID¤òÈ´¤­½Ğ¤¹
      *
      *  @access public
-     *  @return mixed  æ­£å¸¸ã®å ´åˆã¯ãƒˆãƒ¼ã‚¯ãƒ³å, ä¸æ­£ã®å ´åˆã¯false
+     *  @return mixed  Àµ¾ï¤Î¾ì¹ç¤Ï¥È¡¼¥¯¥óÌ¾, ÉÔÀµ¤Î¾ì¹ç¤Ïfalse
      */
-    protected function _get_token()
+    function _get_token()
     {
-        $token_name = $this->getTokenName();
+        $token_name = $this->getName();
         if (strcasecmp($_SERVER['REQUEST_METHOD'], 'post') === 0) {
             return isset($_POST[$token_name]) ? $_POST[$token_name] : null;
         } else {
@@ -132,3 +153,4 @@ class Ethna_Plugin_Csrf extends Ethna_Plugin_Abstract
     }
 }
 // }}}
+

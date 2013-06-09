@@ -4,7 +4,6 @@
 #
 #   simple command line gateway
 #
-#   $Id$
 #
 
 CUR_DIR="$PWD"

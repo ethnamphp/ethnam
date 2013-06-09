@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  EntryPoint.php
+ *  Ethna_Plugin_Generator_EntryPoint.php
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Generator_EntryPoint
 /**
- *  „Çπ„Ç±„É´„Éà„É≥ÁîüÊàê„ÇØ„É©„Çπ
+ *  •π•±•Î•»•Û¿∏¿Æ•Ø•È•π
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @access     public
@@ -20,14 +20,14 @@
 class Ethna_Plugin_Generator_EntryPoint extends Ethna_Plugin_Generator
 {
     /**
-     *  „Ç®„É≥„Éà„É™„Éù„Ç§„É≥„Éà„ÅÆ„Çπ„Ç±„É´„Éà„É≥„ÇíÁîüÊàê„Åô„Çã
+     *  •®•Û•»•Í•›•§•Û•»§Œ•π•±•Î•»•Û§Ú¿∏¿Æ§π§Î
      *
      *  @access public
-     *  @param  string  $skelton    „Çπ„Ç±„É´„Éà„É≥„Éï„Ç°„Ç§„É´Âêç
-     *  @param  int     $gateway    „Ç≤„Éº„Éà„Ç¶„Çß„Ç§
-     *  @return true|Ethna_Error    true:ÊàêÂäü Ethna_Error:Â§±Êïó
+     *  @param  string  $skelton    •π•±•Î•»•Û•’•°•§•ÎÃæ
+     *  @param  int     $gateway    •≤°º•»•¶•ß•§
+     *  @return true|Ethna_Error    true:¿Æ∏˘ Ethna_Error:º∫«‘
      */
-    function generate($action_name, $skelton = null, $gateway = GATEWAY_WWW)
+    function &generate($action_name, $skelton = null, $gateway = GATEWAY_WWW)
     {
         $true = true;
 
@@ -42,7 +42,7 @@ class Ethna_Plugin_Generator_EntryPoint extends Ethna_Plugin_Generator
                               $action_name, $this->ctl->getExt('php'));
             break;
         default:
-            $ret = Ethna::raiseError(
+            $ret =& Ethna::raiseError(
                 'add-entry-point accepts only GATEWAY_WWW or GATEWAY_CLI.');
             return $ret;
         }
@@ -93,3 +93,4 @@ class Ethna_Plugin_Generator_EntryPoint extends Ethna_Plugin_Generator
     }
 }
 // }}}
+

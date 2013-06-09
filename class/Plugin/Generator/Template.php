@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Template.php
+ *  Ethna_Plugin_Generator_Template.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Generator_Template
 /**
- *  スケルトン生成クラス
+ *  ������ȥ��������饹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -20,29 +20,28 @@
 class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
 {
     /**
-     *  テンプレートのスケルトンを生成する
+     *  �ƥ�ץ졼�ȤΥ�����ȥ����������
      *
      *  @access public
-     *  @param  string  $forward_name   テンプレート名
-     *  @param  string  $skelton        スケルトンファイル名
-     *  @param  string  $locale         ロケール名
-     *  @param  string  $encoding       エンコーディング
-     *  @return true|Ethna_Error        true:成功 Ethna_Error:失敗
+     *  @param  string  $forward_name   �ƥ�ץ졼��̾
+     *  @param  string  $skelton        ������ȥ�ե�����̾
+     *  @return true|Ethna_Error        true:���� Ethna_Error:����
      */
-    function generate($forward_name, $skelton = null, $locale, $encoding)
+    function &generate($forward_name, $skelton = null)
     {
-        //  ロケールが指定された場合は、それを優先する 
-        if (!empty($locale)) {
-            $this->ctl->setLocale($locale);
+        if (preg_match('/^owner_([A-Z]+)[a-z]+$/', $forward_name, $matches)) {
+            $entityName = $matches[1];
+        } else {
+            return Ethna::raiseError('invalid forward_name:' . $forward_name);
         }
 
-        //  ロケール名がディレクトリに含まれていない場合は、
-        //  ディレクトリがないためなのでそれを補正 
         $tpl_dir = $this->ctl->getTemplatedir();
+        if ($tpl_dir{strlen($tpl_dir)-1} != '/') {
+            $tpl_dir .= '/';
+        }
         $tpl_path = $this->ctl->getDefaultForwardPath($forward_name);
 
-        // entity
-        $entity = $tpl_dir . '/' . $tpl_path;
+        $entity = $tpl_dir . $tpl_path;
         Ethna_Util::mkdir(dirname($entity), 0755);
 
         // skelton
@@ -54,8 +53,8 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
         $macro = array();
         // add '_' for tpl and no user macro for tpl
         $macro['_project_id'] = $this->ctl->getAppId();
-        $macro['client_enc'] = $encoding;
-
+        $macro['entity_lower'] = strtolower($entityName);
+        $macro['entity_upper'] = strtoupper($entityName);
         // generate
         if (file_exists($entity)) {
             printf("file [%s] already exists -> skip\n", $entity);
@@ -70,3 +69,4 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
     }
 }
 // }}}
+

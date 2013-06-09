@@ -53,6 +53,7 @@ class Ethna_Controller
         'locale'        => 'locale',
         'log'           => 'log',
         'plugins'       => array(),
+        'resources'     => 'resources',
         'template'      => 'template',
         'template_c'    => 'tmp',
         'tmp'           => 'tmp',
@@ -1215,7 +1216,7 @@ class Ethna_Controller
     /**
      *  実行するアクション名を返す
      *
-     *  @access protected
+     *  @access private
      *  @param  mixed   $default_action_name    指定のアクション名
      *  @return string  実行するアクション名
      */
@@ -1344,7 +1345,7 @@ class Ethna_Controller
     {
         $s = null;
         if ($type == "hidden") {
-            $s = sprintf('<input type="hidden" name="action_%s" value="true" />', htmlspecialchars($action, ENT_QUOTES));
+            $s = sprintf('<input type="hidden" name="action_%s" value="true" />', htmlspecialchars($action, ENT_QUOTES, mb_internal_encoding()));
         } else if ($type == "url") {
             $s = sprintf('action_%s=true', urlencode($action));
         }
@@ -1984,7 +1985,7 @@ class Ethna_Controller
             if (file_exists($action_dir . $class_path)) {
                 include_once $action_dir . $class_path;
             } else {
-                $this->logger->log(LOG_DEBUG, 'default action file not found [%s] -> try all files', $class_path);
+                $this->logger->log(LOG_NOTICE, 'file not found:'.$action_dir . $class_path);
                 return;
             }
         }
@@ -2175,7 +2176,7 @@ class Ethna_Controller
         // see if we have simpletest
         if (file_exists_ex('simpletest/unit_tester.php', true)) {
         }
-        require_once ETHNA_BASE . '/class/UnitTestManager.php';
+        //require_once ETHNA_BASE . '/class/UnitTestManager.php';
         // action設定
         $this->action['__ethna_unittest__'] = array(
             'form_name' =>  'Ethna_Form_UnitTest',
@@ -2190,6 +2191,7 @@ class Ethna_Controller
             'view_name'     => 'Ethna_View_UnitTest',
             'view_path'     => sprintf('%s/class/View/UnitTest.php', ETHNA_BASE),
         );
+
     }
 
     /**

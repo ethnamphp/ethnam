@@ -24,7 +24,7 @@
 class Ethna_Plugin_Validator_Strmax extends Ethna_Plugin_Validator
 {
     /** @var    bool    配列を受け取るかフラグ */
-    public $accept_array = false;
+    var $accept_array = false;
 
     /**
      *  最大値のチェックを行う (シングルバイト文字列用)
@@ -35,7 +35,7 @@ class Ethna_Plugin_Validator_Strmax extends Ethna_Plugin_Validator
      *  @param  array   $params     プラグインのパラメータ
      *  @return true: 成功  Ethna_Error: エラー
      */
-    public function validate($name, $var, $params)
+    function validate($name, $var, $params)
     {
         $true = true;
         $type = $this->getFormType($name);

@@ -9,37 +9,63 @@
  *  @version    $Id$
  */
 
-// UPLOAD_ERR_* ãŒæœªå®šç¾©ã®å ´åˆ (PHP 4.3.0 ä»¥å‰)
+// UPLOAD_ERR_* ¤¬Ì¤ÄêµÁ¤Î¾ì¹ç (PHP 4.3.0 °ÊÁ°)
 if (defined('UPLOAD_ERR_OK') == false) {
     define('UPLOAD_ERR_OK', 0);
 }
 
 // {{{ Ethna_Plugin_Validator
 /**
- *  ãƒãƒªãƒ‡ãƒ¼ã‚¿ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®åŸºåº•ã‚¯ãƒ©ã‚¹
+ *  ¥Ğ¥ê¥Ç¡¼¥¿¥×¥é¥°¥¤¥ó¤Î´ğÄì¥¯¥é¥¹
  *  
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Validator extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Validator
 {
     /**#@+
      *  @access private
      */
 
-    /** @var    bool    é…åˆ—ã‚’å—ã‘å–ã‚‹ãƒãƒªãƒ‡ãƒ¼ã‚¿ã‹ã©ã†ã‹ã®ãƒ•ãƒ©ã‚° */
+    /** @var    object  Ethna_Backend   backend¥ª¥Ö¥¸¥§¥¯¥È */
+    var $backend;
+
+    /** @var    object  Ethna_Logger    ¥í¥°¥ª¥Ö¥¸¥§¥¯¥È */
+    var $logger;
+
+    /** @var    object  Ethna_ActionForm    ¥Õ¥©¡¼¥à¥ª¥Ö¥¸¥§¥¯¥È */
+    var $action_form;
+
+    /** @var    object  Ethna_ActionForm    ¥Õ¥©¡¼¥à¥ª¥Ö¥¸¥§¥¯¥È */
+    var $af;
+
+    /** @var    bool    ÇÛÎó¤ò¼õ¤±¼è¤ë¥Ğ¥ê¥Ç¡¼¥¿¤«¤É¤¦¤«¤Î¥Õ¥é¥° */
     public $accept_array = false;
 
     /**#@-*/
 
     /**
-     *  ãƒ•ã‚©ãƒ¼ãƒ å€¤æ¤œè¨¼ã®ãŸã‚ã«ActionFormã‹ã‚‰å‘¼ã³å‡ºã•ã‚Œã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
+     *  ¥³¥ó¥¹¥È¥é¥¯¥¿
      *
      *  @access public
-     *  @param  string  $name       ãƒ•ã‚©ãƒ¼ãƒ ã®åå‰
-     *  @param  mixed   $var        ãƒ•ã‚©ãƒ¼ãƒ ã®å€¤
-     *  @param  array   $params     ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
+     *  @param  object  Ethna_Controller    $controller ¥³¥ó¥È¥í¡¼¥é¥ª¥Ö¥¸¥§¥¯¥È
+     */
+    function Ethna_Plugin_Validator(&$controller)
+    {
+        $this->backend = $controller->getBackend();
+        $this->logger = $controller->getLogger();
+        $this->action_form = $controller->getActionForm();
+        $this->af = $this->action_form;
+    }
+
+    /**
+     *  ¥Õ¥©¡¼¥àÃÍ¸¡¾Ú¤Î¤¿¤á¤ËActionForm¤«¤é¸Æ¤Ó½Ğ¤µ¤ì¤ë¥á¥½¥Ã¥É
+     *
+     *  @access public
+     *  @param  string  $name       ¥Õ¥©¡¼¥à¤ÎÌ¾Á°
+     *  @param  mixed   $var        ¥Õ¥©¡¼¥à¤ÎÃÍ
+     *  @param  array   $params     ¥×¥é¥°¥¤¥ó¤Î¥Ñ¥é¥á¡¼¥¿
      */
     public function validate($name, $var, $params)
     {
@@ -47,10 +73,10 @@ class Ethna_Plugin_Validator extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ•ã‚©ãƒ¼ãƒ å®šç¾©ã‚’å–å¾—ã™ã‚‹
+     *  ¥Õ¥©¡¼¥àÄêµÁ¤ò¼èÆÀ¤¹¤ë
      *
      *  @access public
-     *  @param  string  $name       ãƒ•ã‚©ãƒ¼ãƒ ã®åå‰
+     *  @param  string  $name       ¥Õ¥©¡¼¥à¤ÎÌ¾Á°
      */
     public function getFormDef($name)
     {
@@ -58,10 +84,10 @@ class Ethna_Plugin_Validator extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ•ã‚©ãƒ¼ãƒ ã®typeã‚’å–å¾—ã™ã‚‹(é…åˆ—ã®å ´åˆã¯å€¤ã®ã¿)
+     *  ¥Õ¥©¡¼¥à¤Îtype¤ò¼èÆÀ¤¹¤ë(ÇÛÎó¤Î¾ì¹ç¤ÏÃÍ¤Î¤ß)
      *
      *  @access public
-     *  @param  string  $name       ãƒ•ã‚©ãƒ¼ãƒ ã®åå‰
+     *  @param  string  $name       ¥Õ¥©¡¼¥à¤ÎÌ¾Á°
      */
     public function getFormType($name)
     {
@@ -78,13 +104,13 @@ class Ethna_Plugin_Validator extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ•ã‚©ãƒ¼ãƒ å€¤ãŒç©ºã‹ã©ã†ã‹ã‚’åˆ¤å®š (é…åˆ—ãƒ•ã‚©ãƒ¼ãƒ ã®å ´åˆã¯å„è¦ç´ ã«å¯¾ã—ã¦å‘¼ã³å‡ºã™)
+     *  ¥Õ¥©¡¼¥àÃÍ¤¬¶õ¤«¤É¤¦¤«¤òÈ½Äê (ÇÛÎó¥Õ¥©¡¼¥à¤Î¾ì¹ç¤Ï³ÆÍ×ÁÇ¤ËÂĞ¤·¤Æ¸Æ¤Ó½Ğ¤¹)
      *
      *  @access protected
-     *  @param  mixed   $var       ãƒ•ã‚©ãƒ¼ãƒ ã®å€¤ (é…åˆ—ãƒ•ã‚©ãƒ¼ãƒ ã®å ´åˆã¯å„è¦ç´ )
-     *  @param  int     $type      ãƒ•ã‚©ãƒ¼ãƒ ã®type
+     *  @param  mixed   $var       ¥Õ¥©¡¼¥à¤ÎÃÍ (ÇÛÎó¥Õ¥©¡¼¥à¤Î¾ì¹ç¤Ï³ÆÍ×ÁÇ)
+     *  @param  int     $type      ¥Õ¥©¡¼¥à¤Îtype
      */
-    protected function isEmpty($var, $type)
+    public function isEmpty($var, $type)
     {
         if ($type == VAR_TYPE_FILE) {
             if (isset($var['error']) == false || $var['error'] != UPLOAD_ERR_OK) {
@@ -105,25 +131,25 @@ class Ethna_Plugin_Validator extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  return true
+     *  true ¤ò»²¾È¤ÇÊÖ¤¹
      *
      *  @access protected
      */
-    protected function ok()
+    public function ok()
     {
         $true = true;
         return $true;
     }
 
     /**
-     *  return error
+     *  ¥¨¥é¡¼¤òÊÖ¤¹
      *
      *  @access protected
-     *  @param  string  $msg        ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
-     *  @param  int     $code       ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
-     *  @param  mixed   $info       ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã«sprintfã§æ¸¡ã™ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
+     *  @param  string  $msg        ¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸
+     *  @param  int     $code       ¥¨¥é¡¼¥³¡¼¥É
+     *  @param  mixed   $info       ¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸¤Ësprintf¤ÇÅÏ¤¹¥Ñ¥é¥á¡¼¥¿
      */
-    protected function error($msg, $code, $info = null)
+    public function error($msg, $code, $info = null)
     {
         if ($info != null) {
             if (is_array($info)) {
@@ -137,3 +163,4 @@ class Ethna_Plugin_Validator extends Ethna_Plugin_Abstract
     }
 }
 // }}}
+

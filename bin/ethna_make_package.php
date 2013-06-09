@@ -6,7 +6,6 @@
  *
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna
- *  @version    $Id$
  */
 require_once 'PEAR.php';
 require_once 'Console/Getopt.php';

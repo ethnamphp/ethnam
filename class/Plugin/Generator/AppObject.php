@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  AppObject.php
+ *  Ethna_Plugin_Generator_AppObject.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Generator_AppObject
 /**
- *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ç”Ÿæˆã‚¯ãƒ©ã‚¹
+ *  ¥¹¥±¥ë¥È¥óÀ¸À®¥¯¥é¥¹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -20,11 +20,11 @@
 class Ethna_Plugin_Generator_AppObject extends Ethna_Plugin_Generator
 {
     /**
-     *  ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¹ã‚±ãƒ«ãƒˆãƒ³ã‚’ç”Ÿæˆã™ã‚‹
+     *  ¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¥ª¥Ö¥¸¥§¥¯¥È¤Î¥¹¥±¥ë¥È¥ó¤òÀ¸À®¤¹¤ë
      *
      *  @access public
-     *  @param  string  $table_name     ãƒ†ãƒ¼ãƒ–ãƒ«å
-     *  @return bool    true:æˆåŠŸ false:å¤±æ•—
+     *  @param  string  $table_name     ¥Æ¡¼¥Ö¥ëÌ¾
+     *  @return bool    true:À®¸ù false:¼ºÇÔ
      */
     function generate($table_name)
     {
@@ -53,3 +53,4 @@ class Ethna_Plugin_Generator_AppObject extends Ethna_Plugin_Generator
     }
 }
 // }}}
+

@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  AddAppObject.php
+ *  Ethna_Plugin_Handle_AddAppObject.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -34,7 +34,7 @@ class Ethna_Plugin_Handle_AddAppObject extends Ethna_Plugin_Handle
      */
     function _perform($target)
     {
-        $r = $this->_getopt(array('basedir='));
+        $r =& $this->_getopt(array('basedir='));
         if (Ethna::isError($r)) {
             return $r;
         }
@@ -53,7 +53,7 @@ class Ethna_Plugin_Handle_AddAppObject extends Ethna_Plugin_Handle
             $basedir = getcwd();
         }
 
-        $r = Ethna_Generator::generate($target, $basedir, $table_name);
+        $r =& Ethna_Generator::generate($target, $basedir, $table_name);
         if (Ethna::isError($r)) {
             printf("error occurred while generating skelton. please see also following error message(s)\n\n");
             return $r;
@@ -89,3 +89,4 @@ EOS;
     }
 }
 // }}}
+

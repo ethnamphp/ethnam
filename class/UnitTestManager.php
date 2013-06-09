@@ -9,8 +9,8 @@
  */
 
 require_once 'simpletest/unit_tester.php';
-require_once 'UnitTestCase.php';
-require_once 'UnitTestReporter.php';
+//require_once 'UnitTestCase.php';
+//require_once 'UnitTestReporter.php';
 
 /**
  *  Ethnaユニットテストマネージャクラス

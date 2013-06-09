@@ -1,6 +1,6 @@
 <?php
 /**
- *  AddActionTest.php
+ *  Ethna_Plugin_Handle_AddActionTest.php
  *
  *  @author     halt feits <halt.feits@gmail.com>
  *  @package    Ethna
@@ -8,7 +8,7 @@
  *  @version    $Id$
  */
 
-require_once 'Ethna/class/Plugin/Handle/AddAction.php';
+require_once ETHNA_BASE . '/class/Plugin/Handle/AddAction.php';
 
 // {{{ Ethna_Plugin_Handle_AddActionTest
 /**
@@ -27,7 +27,7 @@ class Ethna_Plugin_Handle_AddActionTest extends Ethna_Plugin_Handle_AddAction
      */
     function perform()
     {
-        $r = $this->_getopt(array('basedir=', 'skelfile='));
+        $r =& $this->_getopt(array('basedir=', 'skelfile='));
         if (Ethna::isError($r)) {
             return $r;
         }
@@ -38,12 +38,12 @@ class Ethna_Plugin_Handle_AddActionTest extends Ethna_Plugin_Handle_AddAction
         if ($action_name == null) {
             return Ethna::raiseError('action name isn\'t set.', 'usage');
         }
-        $r = Ethna_Controller::checkActionName($action_name);
+        $r =& Ethna_Controller::checkActionName($action_name);
         if (Ethna::isError($r)) {
             return $r;
         }
 
-        $ret = $this->_perform('ActionTest', $action_name, $opt_list);
+        $ret =& $this->_perform('ActionTest', $action_name, $opt_list);
         return $ret;
     }
 
@@ -72,3 +72,4 @@ EOS;
     }
 }
 // }}}
+

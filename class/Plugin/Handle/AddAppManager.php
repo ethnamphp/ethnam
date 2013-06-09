@@ -1,6 +1,6 @@
 <?php
 /**
- *  AddAppManager.php
+ *  Ethna_Plugin_Handle_AddAppManager.php
  *
  *  @author     nozzzzz <nozzzzz@gmail.com>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -8,7 +8,7 @@
  *  @version    $Id$
  */
 
-require_once 'Ethna/class/Plugin/Handle/AddAppObject.php';
+require_once ETHNA_BASE . '/class/Plugin/Handle/AddAppObject.php';
 
 // {{{ Ethna_Plugin_Handle_AddAppManager
 /**
@@ -57,3 +57,4 @@ EOS;
     }
 }
 // }}}
+

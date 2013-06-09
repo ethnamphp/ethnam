@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Generator.php
+ *  Ethna_Plugin_Generator.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,19 +11,34 @@
 
 // {{{ Ethna_Plugin_Generator
 /**
- *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ç”Ÿæˆãƒ—ãƒ©ã‚°ã‚¤ãƒ³
+ *  ¥¹¥±¥ë¥È¥óÀ¸À®¥×¥é¥°¥¤¥ó
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Generator extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Generator
 {
+    /** @var    object  Ethna_Controller    ¥¹¥±¥ë¥È¥óÀ¸À®¤Ë»È¤¦¥³¥ó¥È¥í¡¼¥é */
+    var $ctl;
+
     /**
-     *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã®çµ¶å¯¾ãƒ‘ã‚¹ã‚’è§£æ±ºã™ã‚‹
+     *  ¥³¥ó¥¹¥È¥é¥¯¥¿
+     *
+     *  @access public
+     */
+    function Ethna_Plugin_Generator(&$controller, $type, $name)
+    {
+        // Ethna_Generator¤Çplugin¤ò¼èÆÀ¤¹¤ë¤È¤­¤Ë»È¤Ã¤¿¥³¥ó¥È¥í¡¼¥é
+        // ex, add-project¤Ç¤ÏEthna_Controller, app-action¤Ç¤ÏApp_Controller
+        $this->ctl =& $controller;
+    }
+
+    /**
+     *  ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ë¤ÎÀäÂĞ¥Ñ¥¹¤ò²ò·è¤¹¤ë
      *
      *  @access private
-     *  @param  string  $skel   ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«
+     *  @param  string  $skel   ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ë
      */
     function _resolveSkelfile($skel)
     {
@@ -32,14 +47,14 @@ class Ethna_Plugin_Generator extends Ethna_Plugin_Abstract
             return $file;
         }
 
-        // ã‚¢ãƒ—ãƒªã® skel ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+        // ¥¢¥×¥ê¤Î skel ¥Ç¥£¥ì¥¯¥È¥ê
         $base = $this->ctl->getBasedir();
         $file = "$base/skel/$skel";
         if (file_exists($file)) {
             return $file;
         }
 
-        // Ethnaæœ¬ä½“ã® skel ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+        // EthnaËÜÂÎ¤Î skel ¥Ç¥£¥ì¥¯¥È¥ê
         $base = dirname(dirname(dirname(__FILE__)));
         $file = "$base/skel/$skel";
         if (file_exists($file)) {
@@ -50,14 +65,14 @@ class Ethna_Plugin_Generator extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«ã«ãƒã‚¯ãƒ­ã‚’é©ç”¨ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç”Ÿæˆã™ã‚‹
+     *  ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ë¤Ë¥Ş¥¯¥í¤òÅ¬ÍÑ¤·¤Æ¥Õ¥¡¥¤¥ë¤òÀ¸À®¤¹¤ë
      *
      *  @access private
-     *  @param  string  $skel       ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«
-     *  @param  string  $entity     ç”Ÿæˆãƒ•ã‚¡ã‚¤ãƒ«å
-     *  @param  array   $macro      ç½®æ›ãƒã‚¯ãƒ­
-     *  @param  bool    $overwrite  ä¸Šæ›¸ããƒ•ãƒ©ã‚°
-     *  @return bool    true:æ­£å¸¸çµ‚äº† false:ã‚¨ãƒ©ãƒ¼
+     *  @param  string  $skel       ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ë
+     *  @param  string  $entity     À¸À®¥Õ¥¡¥¤¥ëÌ¾
+     *  @param  array   $macro      ÃÖ´¹¥Ş¥¯¥í
+     *  @param  bool    $overwrite  ¾å½ñ¤­¥Õ¥é¥°
+     *  @return bool    true:Àµ¾ï½ªÎ» false:¥¨¥é¡¼
      */
     function _generateFile($skel, $entity, $macro, $overwrite = false)
     {
@@ -114,7 +129,7 @@ class Ethna_Plugin_Generator extends Ethna_Plugin_Abstract
     }
 
     /**
-     *  ãƒ¦ãƒ¼ã‚¶å®šç¾©ã®ãƒã‚¯ãƒ­ã‚’è¨­å®šã™ã‚‹(~/.ethna)
+     *  ¥æ¡¼¥¶ÄêµÁ¤Î¥Ş¥¯¥í¤òÀßÄê¤¹¤ë(~/.ethna)
      *
      *  @access private
      */
@@ -135,3 +150,4 @@ class Ethna_Plugin_Generator extends Ethna_Plugin_Abstract
     }
 }
 // }}}
+

@@ -19,36 +19,36 @@
 class Ethna_Plugin_Generator_Test extends Ethna_Plugin_Generator
 {
     /**
-     * ãƒ•ã‚¡ã‚¤ãƒ«ç”Ÿæˆã‚’è¡Œã†
+     * ¥Õ¥¡¥¤¥ëÀ¸À®¤ò¹Ô¤¦
      * 
      * @access public
-     * @param string $skelfile ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«å
-     * @param string $name     ãƒ†ã‚¹ãƒˆã‚±ãƒ¼ã‚¹å
+     * @param string $skelfile ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ëÌ¾
+     * @param string $name     ¥Æ¥¹¥È¥±¡¼¥¹Ì¾
      * @return mixed TRUE; OK
-     *               Ethna_Error: ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿ
+     *               Ethna_Error: ¥¨¥é¡¼È¯À¸
      */
-    function generate($skelfile, $name)
+    function &generate($skelfile, $name)
     {
-        // Controllerã‚’å–å¾—
-        $ctl = $this->ctl;
+        // Controller¤ò¼èÆÀ
+        $ctl =& $this->ctl;
         
-        // ãƒ†ã‚¹ãƒˆã‚’ç”Ÿæˆã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãŒã‚ã‚‹ã‹ï¼Ÿ
-        // ãªã‘ã‚Œã° app/test ãŒãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã€‚
+        // ¥Æ¥¹¥È¤òÀ¸À®¤¹¤ë¥Ç¥£¥ì¥¯¥È¥ê¤¬¤¢¤ë¤«¡©
+        // ¤Ê¤±¤ì¤Ð app/test ¤¬¥Ç¥Õ¥©¥ë¥È¡£
         $dir = $ctl->getDirectory('test');
         if ($dir === null) {
             $dir = $ctl->getDirectory('app') . "/" . "test";
         }
         
-        // ãƒ•ã‚¡ã‚¤ãƒ«åç”Ÿæˆ
+        // ¥Õ¥¡¥¤¥ëÌ¾À¸À®
         $file = preg_replace('/_(.)/e', "'/' . strtoupper('\$1')", ucfirst($name)) . "Test.php";
         $generatePath = "$dir/$file";
         
-        // ã‚¹ã‚±ãƒ«ãƒˆãƒ³æ±ºå®š
+        // ¥¹¥±¥ë¥È¥ó·èÄê
         $skelton = (!empty($skelfile))
                  ? $skelfile
                  : "skel.test.php";
         
-        // ãƒžã‚¯ãƒ­ç”Ÿæˆ
+        // ¥Þ¥¯¥íÀ¸À®
         $macro = array();
         $macro['project_id'] = ucfirst($ctl->getAppId());
         $macro['file_path'] = $file;
@@ -57,7 +57,7 @@ class Ethna_Plugin_Generator_Test extends Ethna_Plugin_Generator
         $userMacro = $this->_getUserMacro();
         $macro = array_merge($macro, $userMacro);
         
-        // ç”Ÿæˆ
+        // À¸À®
         Ethna_Util::mkdir(dirname($generatePath), 0755);
         if (file_exists($generatePath)) {
             printf("file [%s] already exists -> skip\n", $generatePath);
@@ -72,3 +72,4 @@ class Ethna_Plugin_Generator_Test extends Ethna_Plugin_Generator
     }
 }
 // }}}
+

@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  AppManager.php
+ *  Ethna_Plugin_Generator_AppManager.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Generator_AppManager
 /**
- *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ç”Ÿæˆã‚¯ãƒ©ã‚¹
+ *  ¥¹¥±¥ë¥È¥óÀ¸À®¥¯¥é¥¹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -20,22 +20,23 @@
 class Ethna_Plugin_Generator_AppManager extends Ethna_Plugin_Generator
 {
     /**
-     *  ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãƒãƒãƒ¼ã‚¸ãƒ£ã®ã‚¹ã‚±ãƒ«ãƒˆãƒ³ã‚’ç”Ÿæˆã™ã‚‹
+     *  ¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¥Ş¥Í¡¼¥¸¥ã¤Î¥¹¥±¥ë¥È¥ó¤òÀ¸À®¤¹¤ë
      *
      *  @access public
-     *  @param  string  $manager_name    ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãƒãƒãƒ¼ã‚¸å
-     *  @return bool    true:æˆåŠŸ false:å¤±æ•—
+     *  @param  string  $manager_name    ¥¢¥×¥ê¥±¡¼¥·¥ç¥ó¥Ş¥Í¡¼¥¸Ì¾
+     *  @return bool    true:À®¸ù false:¼ºÇÔ
      */
     function generate($manager_name)
     {
-        $class_name = $this->ctl->getManagerClassName($manager_name);
+        $manager_id = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($manager_name));
+
         $app_dir = $this->ctl->getDirectory('app');
-        $app_path = "${class_name}.php";
+        $app_path = ucfirst($this->ctl->getAppId()) . '_' . $manager_id .'Manager.php';
 
         $macro = array();
         $macro['project_id'] = $this->ctl->getAppId();
         $macro['app_path'] = $app_path;
-        $macro['app_manager'] = $class_name;
+        $macro['app_manager'] = ucfirst($this->ctl->getAppId()) . '_' . $manager_id;
 
         $user_macro = $this->_getUserMacro();
         $macro = array_merge($macro, $user_macro);
@@ -52,3 +53,4 @@ class Ethna_Plugin_Generator_AppManager extends Ethna_Plugin_Generator
     }
 }
 // }}}
+

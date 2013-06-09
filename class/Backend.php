@@ -24,49 +24,49 @@ class Ethna_Backend
      */
 
     /** @protected    object  Ethna_Controller    controllerオブジェクト */
-    protected $controller;
+    var $controller;
 
     /** @protected    object  Ethna_Controller    controllerオブジェクト($controllerの省略形) */
-    protected $ctl;
+    var $ctl;
 
     /** @protected    object  Ethna_ClassFactory  クラスファクトリオブジェクト */
-    protected $class_factory;
+    var $class_factory;
 
     /** @protected    object  Ethna_Config        設定オブジェクト */
-    protected $config;
+    var $config;
 
     /** @protected    object  Ethna_I18N          i18nオブジェクト */
-    protected $i18n;
+    var $i18n;
 
     /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト */
-    protected $action_error;
+    var $action_error;
 
     /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト($action_errorの省略形) */
-    protected $ae;
+    var $ae;
 
     /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト */
-    protected $action_form;
+    var $action_form;
 
     /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト($action_formの省略形) */
-    protected $af;
+    var $af;
 
     /** @protected    object  Ethna_ActionClass   アクションクラスオブジェクト */
-    protected $action_class;
+    var $action_class;
 
     /** @protected    object  Ethna_ActionClass   アクションクラスオブジェクト($action_classの省略形) */
-    protected $ac;
+    var $ac;
 
     /** @protected    object  Ethna_Session       セッションオブジェクト */
-    protected $session;
+    var $session;
 
     /** @protected    object  Ethna_Plugin        プラグインオブジェクト */
-    protected $plugin;
+    var $plugin;
 
     /** @protected    array   Ethna_DBオブジェクトを格納した配列 */
-    protected $db_list;
+    var $db_list;
 
     /** @protected    object  Ethna_Logger        ログオブジェクト */
-    protected $logger;
+    var $logger;
 
     /**#@-*/
 

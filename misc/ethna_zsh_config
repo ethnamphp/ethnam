@@ -11,7 +11,6 @@
 #
 # note:
 #   - we tested this function only with Debian/GNU Linux.
-#   - $Id$
 
 _ethna() {
     local curcontext="$curcontext" state line expl ret=1

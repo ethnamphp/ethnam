@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Session.php
+ *  Ethna_Plugin_Csrf_Session.php
  *
  *  @author     Keita Arai <cocoiti@comio.info>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,9 +11,9 @@
 
 // {{{ Ethna_Plugin_Csrf_Session
 /**
- *  CSRFå¯¾ç­–
+ *  CSRFÂĞºö
  *
- *  CSRFå¯¾ç­–ã‚’ãƒˆãƒ¼ã‚¯ãƒ³ã‚’ç”¨ã„ã¦å¯¾ç­–ã™ã‚‹ãŸã‚ã®ã‚³ãƒ¼ãƒ‰
+ *  CSRFÂĞºö¤ò¥È¡¼¥¯¥ó¤òÍÑ¤¤¤ÆÂĞºö¤¹¤ë¤¿¤á¤Î¥³¡¼¥É
  *
  *  @author     Keita Arai <cocoiti@comio.info>
  *  @access     public
@@ -21,13 +21,37 @@
  */
 class Ethna_Plugin_Csrf_Session extends Ethna_Plugin_Csrf
 {
+    /**#@+
+     *  @access private
+     */
+
+    /** @var    object  Ethna_Session    ¥»¥Ã¥·¥ç¥ó¥ª¥Ö¥¸¥§¥¯¥È */
+    var $session;
+    
+    /**#@-*/
+
+
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³ã‚’Viewã¨ãƒ­ãƒ¼ã‚«ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚»ãƒƒãƒˆã™ã‚‹
+     *  Ethna_Plugin_Csrf¤Î¥³¥ó¥¹¥È¥é¥¯¥¿
      *
      *  @access public
-     *  @return boolean  æˆåŠŸã‹å¤±æ•—ã‹
+     *  @param  object  Ethna_Controller    &$controller    ¥³¥ó¥È¥í¡¼¥é¥ª¥Ö¥¸¥§¥¯¥È
      */
-    public function set()
+    function __construct(&$controller)
+    {
+        parent::__construct($controller);
+
+        // ¥ª¥Ö¥¸¥§¥¯¥È¤ÎÀßÄê
+        $this->session =& $this->controller->getSession();
+    }
+    
+    /**
+     *  ¥È¡¼¥¯¥ó¤òView¤È¥í¡¼¥«¥ë¥Õ¥¡¥¤¥ë¤Ë¥»¥Ã¥È¤¹¤ë
+     *
+     *  @access public
+     *  @return boolean  À®¸ù¤«¼ºÇÔ¤«
+     */
+    function set()
     {
         if (! $this->session->isStart()) {
             $this->session->start();
@@ -41,35 +65,36 @@ class Ethna_Plugin_Csrf_Session extends Ethna_Plugin_Csrf
         $key = $this->_generateKey();
         $this->session->set($this->token_name, $key); 
 
-        return true;
+        return true;       
     }
 
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’å–å¾—ã™ã‚‹
+     *  ¥È¡¼¥¯¥óID¤ò¼èÆÀ¤¹¤ë
      *
      *  @access public
-     *  @return string ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’è¿”ã™ã€‚
+     *  @return string ¥È¡¼¥¯¥óID¤òÊÖ¤¹¡£
      */
-    public function get()
+    function get()
     {
         if (! $this->session->isStart()) {
             $this->session->start();
         }
-
+        
         return $this->session->get($this->token_name);
     }
 
     /**
-     *  ãƒˆãƒ¼ã‚¯ãƒ³IDã‚’å‰Šé™¤ã™ã‚‹
+     *  ¥È¡¼¥¯¥óID¤òºï½ü¤¹¤ë
      *
      *  @access public
      */
-    public function remove()
+    function remove()
     {
         if (! $this->session->isStart()) {
             $this->session->start();
         }
-        $this->session->remove($this->token_name);
+        $this->session->remove($this->token_name);        
     }
 }
 // }}}
+

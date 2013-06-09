@@ -23,6 +23,12 @@ class Ethna_Plugin_Urlhandler extends Ethna_Plugin_Abstract
      *  @access private
      */
 
+    /** @var    object  Ethna_Backend   backendオブジェクト */
+    //var $backend;
+
+    /** @var    object  Ethna_Logger    ログオブジェクト */
+    //var $logger;
+
     /**#@-*/
 
     /**

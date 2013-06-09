@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  ClassFactory.php
+ *  Ethna_ClassFactory.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -27,23 +27,23 @@ class Ethna_ClassFactory
      *  @access private
      */
 
-    /** @protected    object  Ethna_Controller    controllerオブジェクト */
-    protected $controller;
+    /** @var    object  Ethna_Controller    controllerオブジェクト */
+    var $controller;
 
-    /** @protected    object  Ethna_Controller    controllerオブジェクト(省略形) */
-    protected $ctl;
+    /** @var    object  Ethna_Controller    controllerオブジェクト(省略形) */
+    var $ctl;
+    
+    /** @var    array   クラス定義 */
+    var $class = array();
 
-    /** @protected    array   クラス定義 */
-    protected $class = array();
+    /** @var    array   生成済みオブジェクトキャッシュ */
+    var $object = array();
 
-    /** @FIXME @protected    array   生成済みオブジェクトキャッシュ */
-    public $object = array();
+    /** @var    array   生成済みアプリケーションマネージャオブジェクトキャッシュ */
+    var $manager = array();
 
-    /** @protected    array   生成済みアプリケーションマネージャオブジェクトキャッシュ */
-    protected $manager = array();
-
-    /** @protected    array   メソッド一覧キャッシュ */
-    protected $method_list = array();
+    /** @var    array   メソッド一覧キャッシュ */
+    var $method_list = array();
 
     /**#@-*/
 
@@ -52,10 +52,10 @@ class Ethna_ClassFactory
      *  Ethna_ClassFactoryクラスのコンストラクタ
      *
      *  @access public
-     *  @param  object  Ethna_Controller    $controller    controllerオブジェクト
+     *  @param  object  Ethna_Controller    &$controller    controllerオブジェクト
      *  @param  array                       $class          クラス定義
      */
-    public function __construct($controller, $class)
+    public function __construct(&$controller, $class)
     {
         $this->controller = $controller;
         $this->ctl = $controller;
@@ -64,37 +64,26 @@ class Ethna_ClassFactory
 
     /**
      *  typeに対応するアプリケーションマネージャオブジェクトを返す
-     *  注意： typeは大文字小文字を区別しない
-     *         (PHP自体が、クラス名の大文字小文字を区別しないため)
      *
      *  @access public
-     *  @param  string  $type   アプリケーションマネージャー名
+     *  @param  string  $type   クラスキー
      *  @param  bool    $weak   オブジェクトが未生成の場合の強制生成フラグ(default: false)
      *  @return object  Ethna_AppManager    マネージャオブジェクト
+     *
+     *  TODO: 現状の実装では、typeを名前として扱っているのに、
+     *        大文字小文字を区別して違うインスタンスを返しているのを修正する
      */
     function getManager($type, $weak = false)
     {
         $obj = null;
 
-        //  すでにincludeされていなければ、includeを試みる
-        //  ここで返されるクラス名は、AppObjectの命名規約によるもの
-        //
-        //  これは、AppObject のファイル中にAppManagerが含まれる場合が
-        //  あるため必要なルーチンである
-        $obj_class_name = $this->controller->getObjectClassName($type);
-        if (class_exists($obj_class_name) === false) {
-            $this->_include($obj_class_name);
-        }
-
-        //  すでにincludeされていなければ、includeを試みる
-        //  ここで返されるクラス名は、AppManagerの命名規約によるもの
+        // check if manager class exists
         $class_name = $this->controller->getManagerClassName($type);
         if (class_exists($class_name) === false
             && $this->_include($class_name) === false) {
-            return $obj;  //  include 失敗。戻り値はNULL。
+            return $obj;
         }
 
-        //  メソッド情報を集める
         if (isset($this->method_list[$class_name]) == false) {
             $this->method_list[$class_name] = get_class_methods($class_name);
             for ($i = 0; $i < count($this->method_list[$class_name]); $i++) {
@@ -102,25 +91,14 @@ class Ethna_ClassFactory
             }
         }
 
-        //  PHPのクラス名は大文字小文字を区別しないので、
-        //  同じクラス名と見做されるものを指定した場合には
-        //  同じインスタンスが返るようにする
-        $type = strtolower($type);
-
-        //  以下のルールに従って、キャッシュが利用可能かを判定する
-        //  利用可能と判断した場合、キャッシュされていればそれを返す
-        //
-        //  1. メソッドに getInstance があればキャッシュを利用可能と判断する
-        //     この場合、シングルトンかどうかは getInstance 次第
-        //  2. weak が true であれば、キャッシュは利用不能と判断してオブジェクトを再生成
-        //  3. weak が false であれば、キャッシュは利用可能と判断する(デフォルト)
+        // see if this should be singlton or not
         if ($this->_isCacheAvailable($class_name, $this->method_list[$class_name], $weak)) {
             if (isset($this->manager[$type]) && is_object($this->manager[$type])) {
                 return $this->manager[$type];
             }
         }
 
-        //  インスタンス化のヘルパ(getInstance)があればそれを使う
+        // see if we have helper methods
         if (in_array("getinstance", $this->method_list[$class_name])) {
             $obj = call_user_func(array($class_name, 'getInstance'));
         } else {
@@ -128,9 +106,8 @@ class Ethna_ClassFactory
             $obj = new $class_name($backend);
         }
 
-        //  生成したオブジェクトはとりあえずキャッシュする
         if (isset($this->manager[$type]) == false || is_object($this->manager[$type]) == false) {
-            $this->manager[$type] = $obj;
+            $this->manager[$type] =& $obj;
         }
 
         return $obj;
@@ -138,14 +115,14 @@ class Ethna_ClassFactory
 
     /**
      *  クラスキーに対応するオブジェクトを返す/クラスキーが未定義の場合はAppObjectを探す
-     *  クラスキーとは、[Appid]_Controller#class に定められたもの。
      *
      *  @access public
-     *  @param  string  $key    [Appid]_Controller#class に定められたクラスキー
-     *                          このキーは大文字小文字を区別する
-     *                          (配列のキーとして使われているため)
-     *  @param  bool    $ext    オブジェクトが未生成の場合の強制生成フラグ(default: false)
+     *  @param  string  $key    クラスキー
+     *  @param  bool    $weak   オブジェクトが未生成の場合の強制生成フラグ(default: false)
      *  @return object  生成されたオブジェクト(エラーならnull)
+     *
+     *  TODO: 現状の実装では、typeを名前として扱っているのに、
+     *        大文字小文字を区別して違うインスタンスを返しているのを修正する
      */
     function getObject($key, $ext = false)
     {
@@ -164,23 +141,20 @@ class Ethna_ClassFactory
             list($weak) = $ext;
         }
 
-        //  すでにincludeされていなければ、includeを試みる
+        // try to include if not defined
         if (class_exists($class_name) == false) {
             if ($this->_include($class_name) == false) {
-                return $object;  //  include 失敗。返り値はnull
+                return $object;
             }
         }
 
-        //  AppObject をはじめに扱う
-        //  AppObject はキャッシュされないことに注意
+        // handle app object first
         if (isset($this->class[$key]) == false) {
             $backend = $this->controller->getBackend();
             $object = new $class_name($backend, $key_type, $key_value, $prop);
             return $object;
         }
 
-        //  Ethna_Controllerで定義されたクラスキーの場合
-        //  はメソッド情報を集める
         if (isset($this->method_list[$class_name]) == false) {
             $this->method_list[$class_name] = get_class_methods($class_name);
             for ($i = 0; $i < count($this->method_list[$class_name]); $i++) {
@@ -188,20 +162,14 @@ class Ethna_ClassFactory
             }
         }
 
-        //  以下のルールに従って、キャッシュが利用可能かを判定する
-        //  利用可能と判断した場合、キャッシュされていればそれを返す
-        //
-        //  1. メソッドに getInstance があればキャッシュを利用可能と判断する
-        //     この場合、シングルトンかどうかは getInstance 次第
-        //  2. weak が true であれば、キャッシュは利用不能と判断してオブジェクトを再生成
-        //  3. weak が false であれば、キャッシュは利用可能と判断する(デフォルト)
+        // see if this should be singlton or not
         if ($this->_isCacheAvailable($class_name, $this->method_list[$class_name], $weak)) {
             if (isset($this->object[$key]) && is_object($this->object[$key])) {
                 return $this->object[$key];
             }
         }
 
-        //  インスタンス化のヘルパがあればそれを使う
+        // see if we have helper methods
         $method = sprintf('_getObject_%s', ucfirst($key));
         if (method_exists($this, $method)) {
             $object = $this->$method($class_name);
@@ -211,10 +179,8 @@ class Ethna_ClassFactory
             $object = new $class_name();
         }
 
-        //  クラスキーに定められたクラスのインスタンスは
-        //  とりあえずキャッシュする
         if (isset($this->object[$key]) == false || is_object($this->object[$key]) == false) {
-            $this->object[$key] = $object;
+            $this->object[$key] =& $object;
         }
 
         return $object;
@@ -323,7 +289,7 @@ class Ethna_ClassFactory
      */
     function _getObject_Session($class_name)
     {
-        $_ret_object = new $class_name($this->ctl, $this->ctl->getAppId());
+        $_ret_object = new $class_name($this->ctl, $this->ctl->getAppId(), $this->ctl->getDirectory('tmp'));
         return $_ret_object;
     }
 
@@ -377,8 +343,7 @@ class Ethna_ClassFactory
             }
 
             // try ethna master style
-            // Ethna_Foo_Bar -> class/Ethna/Foo/Bar.php
-            $tmp = explode('_', $match[2]);
+            // Ethna_Foo_Bar -> class/Ethna/Foo/Ethna_Foo_Bar.php
             array_unshift($tmp, 'Ethna', 'class');
             $file = sprintf('%s.%s',
                             implode(DIRECTORY_SEPARATOR, $tmp),
@@ -418,3 +383,4 @@ class Ethna_ClassFactory
     }
 }
 // }}}
+

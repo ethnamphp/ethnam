@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  File.php
+ *  Ethna_Plugin_Logwriter_File.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Logwriter_File
 /**
- *  ãƒ­ã‚°å‡ºåŠ›ã‚¯ãƒ©ã‚¹(File)
+ *  ¥í¥°½ĞÎÏ¥¯¥é¥¹(File)
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -23,29 +23,29 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
      *  @access private
      */
 
-    /** @private    int     ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ³ãƒ‰ãƒ« */
-    private $fp;
+    /** @var    int     ¥í¥°¥Õ¥¡¥¤¥ë¥Ï¥ó¥É¥ë */
+    var $fp;
 
-    /** @private    int     ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ãƒ¼ãƒŸãƒƒã‚·ãƒ§ãƒ³ */
-    private $mode = 0666;
+    /** @var    int     ¥í¥°¥Õ¥¡¥¤¥ë¥Ñ¡¼¥ß¥Ã¥·¥ç¥ó */
+    var $mode = 0666;
 
     /**#@-*/
 
     /**
-     *  Fileã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+     *  Ethna_Plugin_Logwriter_File¥¯¥é¥¹¤Î¥³¥ó¥¹¥È¥é¥¯¥¿
      *
      *  @access public
      */
-    public function __construct()
+    function Ethna_Plugin_Logwriter_File()
     {
         $this->fp = null;
     }
 
     /**
-     *  ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã™ã‚‹
+     *  ¥í¥°¥ª¥×¥·¥ç¥ó¤òÀßÄê¤¹¤ë
      *
      *  @access public
-     *  @param  int     $option     ãƒ­ã‚°ã‚ªãƒ—ã‚·ãƒ§ãƒ³(LOG_FILE,LOG_FUNCTION...)
+     *  @param  int     $option     ¥í¥°¥ª¥×¥·¥ç¥ó(LOG_FILE,LOG_FUNCTION...)
      */
     function setOption($option)
     {
@@ -63,7 +63,7 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  ãƒ­ã‚°å‡ºåŠ›ã‚’é–‹å§‹ã™ã‚‹
+     *  ¥í¥°½ĞÎÏ¤ò³«»Ï¤¹¤ë
      *
      *  @access public
      */
@@ -77,11 +77,11 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
+     *  ¥í¥°¤ò½ĞÎÏ¤¹¤ë
      *
      *  @access public
-     *  @param  int     $level      ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«(LOG_DEBUG, LOG_NOTICE...)
-     *  @param  string  $message    ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸(+å¼•æ•°)
+     *  @param  int     $level      ¥í¥°¥ì¥Ù¥ë(LOG_DEBUG, LOG_NOTICE...)
+     *  @param  string  $message    ¥í¥°¥á¥Ã¥»¡¼¥¸(+°ú¿ô)
      */
     function log($level, $message)
     {
@@ -89,10 +89,16 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
             return;
         }
 
-        $prefix = strftime('%Y/%m/%d %H:%M:%S ') . $this->ident;
+        // modified by kashiwagi
+        $microtime = microtime(true);
+        $sec = floor($microtime);
+        $usec = $microtime - $sec;
+        $prefix = sprintf('%s %03d %s ', strftime('%Y/%m/%dT%H:%M:%S', $sec) , floor($usec*1000) , $this->ident);
+
         if (array_key_exists("pid", $this->option)) {
             $prefix .= sprintf('[%d]', getmypid());
         }
+        $prefix .= sprintf('(mem:%s)',  number_format(memory_get_usage()));
         $prefix .= sprintf('(%s): ', $this->_getLogLevelName($level));
         if (array_key_exists("function", $this->option) ||
             array_key_exists("pos", $this->option)) {
@@ -114,7 +120,7 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  ãƒ­ã‚°å‡ºåŠ›ã‚’çµ‚äº†ã™ã‚‹
+     *  ¥í¥°½ĞÎÏ¤ò½ªÎ»¤¹¤ë
      *
      *  @access public
      */
@@ -127,14 +133,14 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã®æ›¸ãå‡ºã—å…ˆã‚’å–å¾—ã™ã‚‹(ãƒ­ã‚°ãƒ•ã‚¡ã‚·ãƒªãƒ†ã‚£ã«
-     *  LOG_FILEãŒæŒ‡å®šã•ã‚Œã¦ã„ã‚‹å ´åˆã®ã¿æœ‰åŠ¹)
+     *  ¥í¥°¥Õ¥¡¥¤¥ë¤Î½ñ¤­½Ğ¤·Àè¤ò¼èÆÀ¤¹¤ë(¥í¥°¥Õ¥¡¥·¥ê¥Æ¥£¤Ë
+     *  LOG_FILE¤¬»ØÄê¤µ¤ì¤Æ¤¤¤ë¾ì¹ç¤Î¤ßÍ­¸ú)
      *
-     *  ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã®æ›¸ãå‡ºã—å…ˆã‚’å¤‰æ›´ã—ãŸã„å ´åˆã¯ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã‚’
-     *  ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™
+     *  ¥í¥°¥Õ¥¡¥¤¥ë¤Î½ñ¤­½Ğ¤·Àè¤òÊÑ¹¹¤·¤¿¤¤¾ì¹ç¤Ï¤³¤Î¥á¥½¥Ã¥É¤ò
+     *  ¥ª¡¼¥Ğ¡¼¥é¥¤¥É¤·¤Ş¤¹
      *
      *  @access protected
-     *  @return string  ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã®æ›¸ãå‡ºã—å…ˆ
+     *  @return string  ¥í¥°¥Õ¥¡¥¤¥ë¤Î½ñ¤­½Ğ¤·Àè
      */
     function _getLogFile()
     {
@@ -153,3 +159,4 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
+

@@ -7,7 +7,6 @@
  *  @author     Kazuhiro Hosoi <hosoi@gree.co.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna
- *  @version    $Id$
  */
 
 /** Ethnaインストールルートディレクトリ */

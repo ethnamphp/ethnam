@@ -11,11 +11,11 @@
 
 // {{{ Ethna_Plugin_Validator_Mbstrmax
 /**
- *  æœ€å¤§å€¤ãƒã‚§ãƒƒã‚¯ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ (ãƒãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—åˆ—ç”¨)
+ *  ºÇÂçÃÍ¥Á¥§¥Ã¥¯¥×¥é¥°¥¤¥ó (¥Ş¥ë¥Á¥Ğ¥¤¥ÈÊ¸»úÎóÍÑ)
  *
  *  NOTE:
- *      - mbstring ã‚’æœ‰åŠ¹ã«ã—ã¦ãŠãå¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
- *      - ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¯ã€å…¨è§’åŠè§’ã‚’åŒºåˆ¥ã—ã¾ã›ã‚“ã€‚
+ *      - mbstring ¤òÍ­¸ú¤Ë¤·¤Æ¤ª¤¯É¬Í×¤¬¤¢¤ê¤Ş¤¹¡£
+ *      - ¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸¤Ï¡¢Á´³ÑÈ¾³Ñ¤ò¶èÊÌ¤·¤Ş¤»¤ó¡£
  * 
  *  @author     Yoshinari Takaoka <takaoka@beatcraft.com>
  *  @access     public
@@ -23,19 +23,19 @@
  */
 class Ethna_Plugin_Validator_Mbstrmax extends Ethna_Plugin_Validator
 {
-    /** @var    bool    é…åˆ—ã‚’å—ã‘å–ã‚‹ã‹ãƒ•ãƒ©ã‚° */
-    public $accept_array = false;
+    /** @var    bool    ÇÛÎó¤ò¼õ¤±¼è¤ë¤«¥Õ¥é¥° */
+    var $accept_array = false;
 
     /**
-     *  æœ€å¤§å€¤ã®ãƒã‚§ãƒƒã‚¯ã‚’è¡Œã†
+     *  ºÇÂçÃÍ¤Î¥Á¥§¥Ã¥¯¤ò¹Ô¤¦
      *
      *  @access public
-     *  @param  string  $name       ãƒ•ã‚©ãƒ¼ãƒ ã®åå‰
-     *  @param  mixed   $var        ãƒ•ã‚©ãƒ¼ãƒ ã®å€¤
-     *  @param  array   $params     ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿
-     *  @return true: æˆåŠŸ  Ethna_Error: ã‚¨ãƒ©ãƒ¼
+     *  @param  string  $name       ¥Õ¥©¡¼¥à¤ÎÌ¾Á°
+     *  @param  mixed   $var        ¥Õ¥©¡¼¥à¤ÎÃÍ
+     *  @param  array   $params     ¥×¥é¥°¥¤¥ó¤Î¥Ñ¥é¥á¡¼¥¿
+     *  @return true: À®¸ù  Ethna_Error: ¥¨¥é¡¼
      */
-    public function validate($name, $var, $params)
+    function validate($name, $var, $params)
     {
         $true = true;
         $type = $this->getFormType($name);
@@ -49,7 +49,9 @@ class Ethna_Plugin_Validator_Mbstrmax extends Ethna_Plugin_Validator
                 if (isset($params['error'])) {
                     $msg = $params['error'];
                 } else {
-                    $msg = _et('Please input less than %d characters to {form}.');
+                    //Ê¸»úÎó¥ê¥Æ¥é¥ë¤òEUC¤Ë¤·¤Æ¤ª¤«¤Ê¤¤¤ÈÊ¸»ú²½¤±¤¹¤ë
+                    $msg = "{form}¤Ï%dÊ¸»ú°Ê²¼¤ÇÆşÎÏ¤·¤Æ²¼¤µ¤¤";
+                    //$msg = _et('Please input less than %d characters to {form}.');
                 }
                 return Ethna::raiseNotice($msg, E_FORM_MAX_STRING,
                         array($max_param));

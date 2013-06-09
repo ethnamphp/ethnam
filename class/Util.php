@@ -238,7 +238,7 @@ class Ethna_Util
      */
     public static function checkMailAddress($mailaddress)
     {
-        if (preg_match('#^([a-z0-9_]|\-|\.|\+|\/|\?)+@(([a-z0-9_]|\-)+\.)+[a-z]{2,6}$#i',
+        if (preg_match('#^([a-z0-9_]|\-|\.|\+|\/)+@(([a-z0-9_]|\-)+\.)+[a-z]{2,6}$#i',
                        $mailaddress)) {
             return true;
         }
@@ -395,7 +395,7 @@ class Ethna_Util
                 $retval[$name] = array();
                 Ethna_Util::_escapeHtml($vars[$name], $retval[$name]);
             } else if (!is_object($vars[$name])) {
-                $retval[$name] = htmlspecialchars($vars[$name], ENT_QUOTES);
+                $retval[$name] = htmlspecialchars($vars[$name], ENT_QUOTES, mb_internal_encoding());
             }
         }
     }
@@ -566,20 +566,12 @@ class Ethna_Util
             $srand = true;
         }
 
-        // open_basedir がオンで、かつ /proc が許可されているか？
-        // open_basedir が空なら許可されていると看做す
-        $devfile = '/proc/net/dev';
-        $open_basedir_conf = ini_get('open_basedir');
-        $devfile_enabled = (empty($open_basedir_conf) 
-                        || (preg_match('#:/proc#', $open_basedir_conf) > 0
-                        ||  preg_match('#^/proc#', $open_basedir_conf) > 0));
-
         $value = "";
         for ($i = 0; $i < 2; $i++) {
             // for Linux
-            if ($devfile_enabled && file_exists($devfile)) {
+            if (file_exists('/proc/net/dev')) {
                 $rx = $tx = 0;
-                $fp = fopen($devfile, 'r');
+                $fp = fopen('/proc/net/dev', 'r');
                 if ($fp != null) {
                     $header = true;
                     while (feof($fp) === false) {
@@ -816,56 +808,6 @@ class Ethna_Util
     }
     // }}}
 
-    // {{{ lockFile
-    /**
-     *  ファイルをロックする
-     *
-     *  @access public
-     *  @param  string  $file       ロックするファイル名
-     *  @param  int     $mode       ロックモード('r', 'rw')
-     *  @param  int     $timeout    ロック待ちタイムアウト(秒−0なら無限)
-     *  @return int     ロックハンドル(falseならエラー)
-     */
-    public static function lockFile($file, $mode, $timeout = 0)
-    {
-        if (file_exists($file) === false) {
-            touch($file);
-        }
-        $lh = fopen($file, $mode);
-        if ($lh == null) {
-            return Ethna::raiseError("File Read Error [%s]", E_APP_READ, $file);
-        }
-
-        $lock_mode = $mode == 'r' ? LOCK_SH : LOCK_EX;
-
-        for ($i = 0; $i < $timeout || $timeout == 0; $i++) {
-            $r = flock($lh, $lock_mode | LOCK_NB);
-            if ($r == true) {
-                break;
-            }
-            sleep(1);
-        }
-        if ($timeout > 0 && $i == $timeout) {
-            // timed out
-            return Ethna::raiseError("File lock get error [%s]", E_APP_LOCK, $file);
-        }
-
-        return $lh;
-    }
-    // }}}
-
-    // {{{ unlockFile
-    /**
-     *  ファイルのロックを解除する
-     *
-     *  @access public
-     *  @param  int     $lh     ロックハンドル
-     */
-    public static function unlockFile($lh)
-    {
-        fclose($lh);
-    }
-    // }}}
 
     // {{{ formatBacktrace
     /**
@@ -953,3 +895,4 @@ class Ethna_Util
     }
 }
 // }}}
+

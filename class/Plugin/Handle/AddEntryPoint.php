@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  AddEntryPoint.php
+ *  Ethna_Plugin_Handle_AddEntryPoint.php
  *
  *  @author     ICHII Takashi <ichii386@schweetheart.jp>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-require_once 'Ethna/class/Plugin/Handle/AddAction.php';
+require_once ETHNA_BASE . '/class/Plugin/Handle/AddAction.php';
 
 // {{{ Ethna_Plugin_Handle_AddEntryPoint
 /**
@@ -28,7 +28,7 @@ class Ethna_Plugin_Handle_AddEntryPoint extends Ethna_Plugin_Handle_AddAction
      */
     function perform()
     {
-        $r = $this->_getopt(array('basedir=', 'skelfile=', 'gateway='));
+        $r =& $this->_getopt(array('basedir=', 'skelfile=', 'gateway='));
         if (Ethna::isError($r)) {
             return $r;
         }
@@ -39,19 +39,19 @@ class Ethna_Plugin_Handle_AddEntryPoint extends Ethna_Plugin_Handle_AddAction
         if ($action_name == null) {
             return Ethna::raiseError('action name isn\'t set.', 'usage');
         }
-        $r = Ethna_Controller::checkActionName($action_name);
+        $r =& Ethna_Controller::checkActionName($action_name);
         if (Ethna::isError($r)) {
             return $r;
         }
 
         // add entry point
-        $ret = $this->_perform('EntryPoint', $action_name, $opt_list);
+        $ret =& $this->_perform('EntryPoint', $action_name, $opt_list);
         if (Ethna::isError($ret) || $ret === false) { 
             return $ret;
         }
 
         // add action (no effects if already exists.)
-        $ret = $this->_perform('Action', $action_name, $opt_list);
+        $ret =& $this->_perform('Action', $action_name, $opt_list);
         if (Ethna::isError($ret) || $ret === false) { 
             return $ret;
         }
@@ -85,3 +85,4 @@ EOS;
     }
 }
 // }}}
+

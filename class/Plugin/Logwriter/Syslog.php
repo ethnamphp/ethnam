@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Syslog.php
+ *  Ethna_Plugin_Logwriter_Syslog.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Logwriter_Syslog
 /**
- *  „É≠„Ç∞Âá∫Âäõ„ÇØ„É©„Çπ(Syslog)
+ *  •Ì•∞Ω–Œœ•Ø•È•π(Syslog)
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -20,13 +20,13 @@
 class Ethna_Plugin_Logwriter_Syslog extends Ethna_Plugin_Logwriter
 {
     /**
-     *  „É≠„Ç∞Âá∫Âäõ„ÇíÈñãÂßã„Åô„Çã
+     *  •Ì•∞Ω–Œœ§Ú≥´ªœ§π§Î
      *
      *  @access public
      */
     function begin()
     {
-        // syslogÁî®„Ç™„Éó„Ç∑„Éß„É≥„ÅÆ„Åø„ÇíÊåáÂÆö
+        // syslogÕ—•™•◊•∑•Á•Û§Œ§ﬂ§ÚªÿƒÍ
         if (array_key_exists("pid", $this->option)) {
             $option = $this->option & (LOG_PID);
         }
@@ -34,11 +34,11 @@ class Ethna_Plugin_Logwriter_Syslog extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  „É≠„Ç∞„ÇíÂá∫Âäõ„Åô„Çã
+     *  •Ì•∞§ÚΩ–Œœ§π§Î
      *
      *  @access public
-     *  @param  int     $level      „É≠„Ç∞„É¨„Éô„É´(LOG_DEBUG, LOG_NOTICE...)
-     *  @param  string  $message    „É≠„Ç∞„É°„ÉÉ„Çª„Éº„Ç∏(+ÂºïÊï∞)
+     *  @param  int     $level      •Ì•∞•Ï•Ÿ•Î(LOG_DEBUG, LOG_NOTICE...)
+     *  @param  string  $message    •Ì•∞•·•√•ª°º•∏(+∞˙øÙ)
      */
     function log($level, $message)
     {
@@ -63,7 +63,7 @@ class Ethna_Plugin_Logwriter_Syslog extends Ethna_Plugin_Logwriter
     }
 
     /**
-     *  „É≠„Ç∞Âá∫Âäõ„ÇíÁµÇ‰∫Ü„Åô„Çã
+     *  •Ì•∞Ω–Œœ§ÚΩ™Œª§π§Î
      *
      *  @access public
      */
@@ -73,3 +73,4 @@ class Ethna_Plugin_Logwriter_Syslog extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
+

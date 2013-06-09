@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  View.php
+ *  Ethna_Plugin_Generator_View.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Generator_View
 /**
- *  ã‚¹ã‚±ãƒ«ãƒˆãƒ³ç”Ÿæˆã‚¯ãƒ©ã‚¹
+ *  ¥¹¥±¥ë¥È¥óÀ¸À®¥¯¥é¥¹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -20,14 +20,14 @@
 class Ethna_Plugin_Generator_View extends Ethna_Plugin_Generator
 {
     /**
-     *  ãƒ“ãƒ¥ãƒ¼ã®ã‚¹ã‚±ãƒ«ãƒˆãƒ³ã‚’ç”Ÿæˆã™ã‚‹
+     *  ¥Ó¥å¡¼¤Î¥¹¥±¥ë¥È¥ó¤òÀ¸À®¤¹¤ë
      *
      *  @access public
-     *  @param  string  $forward_name   ãƒ“ãƒ¥ãƒ¼å
-     *  @param  string  $skelton        ã‚¹ã‚±ãƒ«ãƒˆãƒ³ãƒ•ã‚¡ã‚¤ãƒ«å
-     *  @return true|Ethna_Error        true:æˆåŠŸ Ethna_Error:å¤±æ•—
+     *  @param  string  $forward_name   ¥Ó¥å¡¼Ì¾
+     *  @param  string  $skelton        ¥¹¥±¥ë¥È¥ó¥Õ¥¡¥¤¥ëÌ¾
+     *  @return true|Ethna_Error        true:À®¸ù Ethna_Error:¼ºÇÔ
      */
-    function generate($forward_name, $skelton = null, $gateway = GATEWAY_WWW)
+    function &generate($forward_name, $skelton = null, $gateway = GATEWAY_WWW)
     {
         $view_dir = $this->ctl->getViewdir();
         $view_class = $this->ctl->getDefaultViewClass($forward_name, $gateway);
@@ -68,3 +68,4 @@ class Ethna_Plugin_Generator_View extends Ethna_Plugin_Generator
     }
 }
 // }}}
+

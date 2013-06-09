@@ -63,40 +63,40 @@ class Ethna_Logger extends Ethna_AppManager
     );
 
     /** @protected    object  Ethna_Controller    controllerオブジェクト */
-    protected $controller;
+    var $controller;
 
-    /** @protected    object  Ethna_Controller    controllerオブジェクト($controllerの省略形) */
-    protected $ctl;
+    /** @var    object  Ethna_Controller    controllerオブジェクト($controllerの省略形) */
+    var $ctl;
 
-    /** @protected    array   ログファシリティ */
-    protected $facility = array();
+    /** @var    array   ログファシリティ */
+    var $facility = array();
 
-    /** @protected    array   ログレベル */
-    protected $level = array();
+    /** @var    array   ログレベル */
+    var $level = array();
 
-    /** @protected    array   ログオプション */
-    protected $option = array();
+    /** @var    array   ログオプション */
+    var $option = array();
 
-    /** @protected    array   メッセージフィルタ(出力) */
-    protected $message_filter_do = array();
+    /** @var    array   メッセージフィルタ(出力) */
+    var $message_filter_do = array();
 
-    /** @protected    array   メッセージフィルタ(無視) */
-    protected $message_filter_ignore = array();
+    /** @var    array   メッセージフィルタ(無視) */
+    var $message_filter_ignore = array();
 
-    /** @protected    int     アラートレベル */
-    protected $alert_level;
+    /** @var    int     アラートレベル */
+    var $alert_level;
 
-    /** @protected    string  アラートメールアドレス */
-    protected $alert_mailaddress;
+    /** @var    string  アラートメールアドレス */
+    var $alert_mailaddress;
 
-    /** @protected    array   Ethna_LogWriter ログ出力オブジェクト */
-    protected $writer = array();
+    /** @var    array   Ethna_LogWriter ログ出力オブジェクト */
+    var $writer = array();
 
-    /** @protected    bool    ログ出力開始フラグ */
-    protected $is_begin = false;
+    /** @var    bool    ログ出力開始フラグ */
+    var $is_begin = false;
 
-    /** @protected    array   ログスタック(begin()前にlog()が呼び出された場合のスタック) */
-    protected $log_stack = array();
+    /** @var    array   ログスタック(begin()前にlog()が呼び出された場合のスタック) */
+    var $log_stack = array();
 
     /**#@-*/
     // }}}

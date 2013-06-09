@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  Echo.php
+ *  Ethna_Plugin_Logwriter_Echo.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -11,7 +11,7 @@
 
 // {{{ Ethna_Plugin_Logwriter_Echo
 /**
- *  ãƒ­ã‚°å‡ºåŠ›åŸºåº•ã‚¯ãƒ©ã‚¹
+ *  ¥í¥°½ĞÎÏ´ğÄì¥¯¥é¥¹
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
@@ -26,11 +26,11 @@ class Ethna_Plugin_Logwriter_Echo extends Ethna_Plugin_Logwriter
     /**#@-*/
 
     /**
-     *  ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
+     *  ¥í¥°¤ò½ĞÎÏ¤¹¤ë
      *
      *  @access public
-     *  @param  int     $level      ãƒ­ã‚°ãƒ¬ãƒ™ãƒ«(LOG_DEBUG, LOG_NOTICE...)
-     *  @param  string  $message    ãƒ­ã‚°ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸(+å¼•æ•°)
+     *  @param  int     $level      ¥í¥°¥ì¥Ù¥ë(LOG_DEBUG, LOG_NOTICE...)
+     *  @param  string  $message    ¥í¥°¥á¥Ã¥»¡¼¥¸(+°ú¿ô)
      */
     function log($level, $message)
     {
@@ -65,3 +65,4 @@ class Ethna_Plugin_Logwriter_Echo extends Ethna_Plugin_Logwriter
     }
 }
 // }}}
+
