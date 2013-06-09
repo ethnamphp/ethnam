@@ -4,7 +4,6 @@
 #
 #   ...:(
 #
-#   $Id$
 #
 tmpdir="/tmp/ethna"
 
