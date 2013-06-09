@@ -93,6 +93,7 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
         if (array_key_exists("pid", $this->option)) {
             $prefix .= sprintf('[%d]', getmypid());
         }
+        $prefix .= sprintf('(mem:%s)',  number_format(memory_get_usage()));
         $prefix .= sprintf('(%s): ', $this->_getLogLevelName($level));
         if (array_key_exists("function", $this->option) ||
             array_key_exists("pos", $this->option)) {
