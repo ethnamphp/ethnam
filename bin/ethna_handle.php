@@ -15,7 +15,7 @@ while (ob_get_level()) {
 $base = dirname(dirname(dirname(__FILE__)));
 ini_set('include_path', $base.PATH_SEPARATOR.ini_get('include_path'));
 
-require_once 'Ethna/Ethna.php';
+require_once dirname(dirname(__FILE__)) . '/Ethna.php';
 require_once ETHNA_BASE . '/class/Getopt.php';
 
 // PEAR_Config violates the rule of E_STRICT
