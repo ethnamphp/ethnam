@@ -2175,7 +2175,7 @@ class Ethna_Controller
         // see if we have simpletest
         if (file_exists_ex('simpletest/unit_tester.php', true)) {
         }
-        require_once ETHNA_BASE . '/class/UnitTestManager.php';
+        //require_once ETHNA_BASE . '/class/UnitTestManager.php';
         // action設定
         $this->action['__ethna_unittest__'] = array(
             'form_name' =>  'Ethna_Form_UnitTest',
