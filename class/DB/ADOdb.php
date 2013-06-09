@@ -344,7 +344,7 @@ class Ethna_DB_ADOdb extends Ethna_DB
      */
     public function outp($msg, $newline)
     {
-        $this->logger->log(LOG_DEBUG, strip_tags(str_replace("\n", "", $msg)));
+        $this->logger->log(LOG_INFO, strip_tags(str_replace("\n", "", $msg)));
     }
 }
 
