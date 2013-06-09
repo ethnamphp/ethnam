@@ -8,6 +8,15 @@ Ethnaから派生してできたプロジェクトです。
 * `master` 最新の安定版です。
 * `develop` 開発中のブランチです。
 
+## Contact
+
+ご意見・ご要望はTwitter(@DQNEO)でお願いします。
+
+https://twitter.com/DQNEO
+
+ハッシュタグは #Ethnam です。
+
+
 ## License
 
   The BSD License
