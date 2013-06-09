@@ -1042,6 +1042,10 @@ class Ethna_Controller
             $this->view = new $view_class_name($backend, $forward_name, $this->_getForwardPath($forward_name));
             call_user_func_array(array($this->view, 'preforward'), $preforward_params);
             $this->view->forward();
+
+            unset($this->action_form->app_vars);
+            unset($this->action_form->app_ne_vars);
+            unset($this->action_form->form_vars);
         }
 
         return 0;
