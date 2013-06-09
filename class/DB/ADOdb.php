@@ -293,12 +293,17 @@ class Ethna_DB_ADOdb extends Ethna_DB
     }
     //}}}
 
-    //{{{ replace
+    /**
+     *  INSERTまたはUPDATE
+     *  @param  string $table
+     *  @param  array  $arrFields レコード
+     *  @param  mixed  string $key 主キーの列名 , array $keys 複合キー
+     *  @return 0:失敗, 1:update, 2:insert
+     */
     public function replace($table, $arrFields, $keyCols, $autoQuote = false)
     {
         return $this->db->Replace($table, $arrFields, $keyCols, $autoQuote);
     }
-    //}}}
 
     //{{{ autoExecute
     /**
