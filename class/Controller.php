@@ -53,6 +53,7 @@ class Ethna_Controller
         'locale'        => 'locale',
         'log'           => 'log',
         'plugins'       => array(),
+        'resources'     => 'resources',
         'template'      => 'template',
         'template_c'    => 'tmp',
         'tmp'           => 'tmp',
