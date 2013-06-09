@@ -1984,7 +1984,7 @@ class Ethna_Controller
             if (file_exists($action_dir . $class_path)) {
                 include_once $action_dir . $class_path;
             } else {
-                $this->logger->log(LOG_DEBUG, 'default action file not found [%s] -> try all files', $class_path);
+                $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
                 return;
             }
         }
