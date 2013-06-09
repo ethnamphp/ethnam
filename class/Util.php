@@ -816,56 +816,6 @@ class Ethna_Util
     }
     // }}}
 
-    // {{{ lockFile
-    /**
-     *  ファイルをロックする
-     *
-     *  @access public
-     *  @param  string  $file       ロックするファイル名
-     *  @param  int     $mode       ロックモード('r', 'rw')
-     *  @param  int     $timeout    ロック待ちタイムアウト(秒−0なら無限)
-     *  @return int     ロックハンドル(falseならエラー)
-     */
-    public static function lockFile($file, $mode, $timeout = 0)
-    {
-        if (file_exists($file) === false) {
-            touch($file);
-        }
-        $lh = fopen($file, $mode);
-        if ($lh == null) {
-            return Ethna::raiseError("File Read Error [%s]", E_APP_READ, $file);
-        }
-
-        $lock_mode = $mode == 'r' ? LOCK_SH : LOCK_EX;
-
-        for ($i = 0; $i < $timeout || $timeout == 0; $i++) {
-            $r = flock($lh, $lock_mode | LOCK_NB);
-            if ($r == true) {
-                break;
-            }
-            sleep(1);
-        }
-        if ($timeout > 0 && $i == $timeout) {
-            // timed out
-            return Ethna::raiseError("File lock get error [%s]", E_APP_LOCK, $file);
-        }
-
-        return $lh;
-    }
-    // }}}
-
-    // {{{ unlockFile
-    /**
-     *  ファイルのロックを解除する
-     *
-     *  @access public
-     *  @param  int     $lh     ロックハンドル
-     */
-    public static function unlockFile($lh)
-    {
-        fclose($lh);
-    }
-    // }}}
 
     // {{{ formatBacktrace
     /**
