@@ -8,7 +8,7 @@
  *  @version    $Id$
  */
 
-require_once 'Ethna/class/Plugin/Handle/AddAction.php';
+require_once ETHNA_BASE . '/class/Plugin/Handle/AddAction.php';
 
 // {{{ Ethna_Plugin_Handle_AddActionTest
 /**
