@@ -68,7 +68,7 @@ EOS;
         
         $num = count($arglist);
         if ($num < 1 || $num > 3) {
-            return Ethna::raiseError("Invalid Arguments.", 'usage');
+            return Ethna::raiseError("Invalid Arguments.");
         }
         
         if (isset($optlist['skelfile'])) {
