@@ -38,30 +38,26 @@ define('OBJECT_IMPORT_CONVERT_NULL', 2);
  */
 class Ethna_AppManager
 {
-    /**#@+
-     *  @access private
-     */
+    /**     object  Ethna_Backend       backendオブジェクト */
+    public $backend;
 
-    /** @protected    object  Ethna_Backend       backendオブジェクト */
-    protected $backend;
+    /**     object  Ethna_Config        設定オブジェクト */
+    public $config;
 
-    /** @protected    object  Ethna_Config        設定オブジェクト */
-    protected $config;
+    /**      object  Ethna_DB      DBオブジェクト */
+    public $db;
 
-    /**  @protected    object  Ethna_DB      DBオブジェクト */
-    protected $db;
+    /**     object  Ethna_I18N          i18nオブジェクト */
+    public $i18n;
 
-    /** @protected    object  Ethna_I18N          i18nオブジェクト */
-    protected $i18n;
+    /**     object  Ethna_ActionForm    アクションフォームオブジェクト */
+    public $action_form;
 
-    /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト */
-    protected $action_form;
+    /**     object  Ethna_ActionForm    アクションフォームオブジェクト(省略形) */
+    public $af;
 
-    /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト(省略形) */
-    protected $af;
-
-    /** @protected    object  Ethna_Session       セッションオブジェクト */
-    protected $session;
+    /**     object  Ethna_Session       セッションオブジェクト */
+    public $session;
 
     /**#@-*/
 
