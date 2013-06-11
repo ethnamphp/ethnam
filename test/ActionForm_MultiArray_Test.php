@@ -187,10 +187,7 @@ class Ethna_ActionForm_MultiArray_Test extends Ethna_UnitTestBase
     // {{{  get(duplicate)
     function test_get_duplicate()
     {
-        //  PHP 5.2.6, 4.4.9 では 「宮崎あおい」が優先された
-        //  つまり、$_POST の中身は array('duplicate' => '宮崎あおい')
         $_POST['duplicate'] = '宮崎あおい';
-        $_POST['duplicate']['abc'] = 'PHPの貴公子';
         $this->local_af->setFormVars();
 
         //
@@ -206,9 +203,8 @@ class Ethna_ActionForm_MultiArray_Test extends Ethna_UnitTestBase
     // {{{  get(too deep)
     function test_get_too_deep()
     {
-        //   10階層目, 11階層目に値を設定する
+        //   10階層目に値を設定する
         $_POST['a']['b']['c']['d']['e']['f']['g']['h']['i']['j'] = '10階層';
-        $_POST['a']['b']['c']['d']['e']['f']['g']['h']['i']['j']['k'] = '11階層';
         $this->local_af->setFormVars();
 
         //   深過ぎる階層の配列は、
