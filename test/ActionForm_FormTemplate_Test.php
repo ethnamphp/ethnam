@@ -15,7 +15,7 @@
  */
 class Ethna_FormTemplate_ActionForm extends Ethna_ActionForm
 {
-    var $form_template = array(
+    public $form_template = array(
        'normal' => array(
            'name'      => '通常のフォームテンプレート用定義',
            'required'  => false,

@@ -23,7 +23,7 @@ class {$project_id}_ActionForm extends Ethna_ActionForm
      */
 
     /** @var    array   form definition (default) */
-    protected $form_template = array();
+    public $form_template = array();
 
     /**#@-*/
 

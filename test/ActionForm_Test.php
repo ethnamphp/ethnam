@@ -15,7 +15,7 @@
  */
 class Ethna_Test_ActionForm extends Ethna_ActionForm
 {
-    var $form = array(
+    public $form = array(
         'test' => array(
             'type' => VAR_TYPE_STRING,
             'form_type' => FORM_TYPE_TEXT,
