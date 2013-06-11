@@ -89,7 +89,11 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
             return;
         }
 
-        $prefix = strftime('%Y/%m/%d %H:%M:%S ') . $this->ident;
+        $microtime = microtime(true);
+        $sec = floor($microtime);
+        $msec = floor(($microtime - $sec) * 1000);
+        $prefix = sprintf('%s.%03d %s ', strftime('%Y/%m/%dT%H:%M:%S', $sec) , $msec , $this->ident);
+
         if (array_key_exists("pid", $this->option)) {
             $prefix .= sprintf('[%d]', getmypid());
         }
