@@ -335,7 +335,7 @@ class Ethna_ClassFactory
      *
      *  @access protected
      */
-    function _include($class_name)
+    public function _include($class_name)
     {
         $file = sprintf("%s.%s", $class_name, $this->controller->getExt('php'));
         if (file_exists_ex($file)) {
