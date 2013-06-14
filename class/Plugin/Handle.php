@@ -19,13 +19,26 @@ require_once ETHNA_BASE . '/class/Getopt.php';
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Handle
 {
     /** @protected    handler's id */
     protected $id;
 
     /** @protected    command line arguments */
     protected $arg_list;
+
+    /** @protected    object  Ethna_Controller    Controller Object */
+    public $controller;
+    public $ctl; /* Alias */
+
+    /** @protected    object  Ethna_Backend       Backend Object */
+    public $backend;
+
+    /** @protected    object  Ethna_Config        設定オブジェクト */
+    public $config;
+
+    /** @protected    object  Ethna_Logger        ログオブジェクト */
+    public $logger;
 
     /**
      *  Ethna_Handle constructor (stub for php4)
@@ -34,7 +47,13 @@ class Ethna_Plugin_Handle extends Ethna_Plugin_Abstract
      */
     public function __construct($controller, $type, $name)
     {
-        parent::__construct($controller, $type, $name);
+        $this->controller = $controller;
+        $this->ctl = $this->controller;
+
+        $this->backend = $this->controller->getBackend();
+
+        $this->logger = $controller->getLogger();
+        $this->config = $controller->getConfig();
 
         $id = $name;
         $id = preg_replace('/^([A-Z])/e', "strtolower('\$1')", $id);
