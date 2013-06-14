@@ -42,7 +42,7 @@ class Ethna_Session
     protected $config = array(
         'handler'           => 'files',
         'path'              => 'tmp',
-        'check_remote_addr' => true,
+        'check_remote_addr' => false,
         'cache_limiter'     => 'nocache',
         'cache_expire'      => '180',
         'suffix'            => 'SESSID',
