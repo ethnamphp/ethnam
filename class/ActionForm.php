@@ -40,48 +40,48 @@ class Ethna_ActionForm
     public $form_vars = array();
 
     /** @protected    array   アプリケーション設定値 */
-    protected $app_vars = array();
+    public $app_vars = array();
 
     /** @protected    array   アプリケーション設定値(自動エスケープなし) */
-    protected $app_ne_vars = array();
+    public $app_ne_vars = array();
 
     /** @protected    object  Ethna_Backend       バックエンドオブジェクト */
-    protected $backend;
+    public $backend;
 
     /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト */
-    protected $action_error;
+    public $action_error;
 
     /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト(省略形) */
-    protected $ae;
+    public $ae;
 
     /** @protected    object  Ethna_I18N  i18nオブジェクト */
-    protected $i18n;
+    public $i18n;
 
     /** @protected    object  Ethna_Logger    ログオブジェクト */
-    protected $logger;
+    public $logger;
 
     /** @protected    object  Ethna_Plugin    プラグインオブジェクト */
-    protected $plugin;
+    public $plugin;
 
     /** @protected    array   フォーム定義要素 */
-    protected $def = array('name', 'required', 'max', 'min', 'regexp', 'mbregexp',
+    public $def = array('name', 'required', 'max', 'min', 'regexp', 'mbregexp',
                      'custom', 'filter', 'form_type', 'type');
 
     /** @protected    array   フォーム定義のうち非プラグイン要素とみなすprefix */
-    protected $def_noplugin = array('type', 'form', 'name', 'plugin', 'filter',
+    public $def_noplugin = array('type', 'form', 'name', 'plugin', 'filter',
                               'option', 'default');
 
     /** @protected    bool    追加検証強制フラグ */
-    protected $force_validate_plus = false;
+    public $force_validate_plus = false;
 
     /** @protected    array   アプリケーションオブジェクト(helper) */
-    protected $helper_app_object = array();
+    public $helper_app_object = array();
 
     /** @protected    array   アプリケーションオブジェクト(helper)で利用しないフォーム名 */
-    protected $helper_skip_form = array();
+    public $helper_skip_form = array();
 
     /** @protected    int   フォーム配列で使用可能な深さの上限 */
-    protected $max_form_deps = 10;
+    public $max_form_deps = 10;
 
     /**#@-*/
 
