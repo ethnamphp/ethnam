@@ -222,11 +222,6 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
      */
     private function _getCacheDir($namespace, $key)
     {
-        $safe_mode = ini_get('safe_mode');
-        if ($safe_mode) {
-            return sprintf("%s", $this->backend->getTmpdir());
-        }
-
         $len = strlen($key);
         // intentionally avoid using -2 or -4
         $dir1 = substr($key, $len-4, 2);
@@ -262,11 +257,6 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
      */
     private function _getCacheFile($namespace, $key)
     {
-        $safe_mode = ini_get('safe_mode');
-        if ($safe_mode) {
-            return sprintf("%s/cache_%s_%s", $this->_getCacheDir($namespace, $key), $this->_escape($namespace), $this->_escape($key));
-        }
-
         return sprintf("%s/%s", $this->_getCacheDir($namespace, $key), $this->_escape($key));
     }
 
