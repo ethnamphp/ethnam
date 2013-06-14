@@ -17,8 +17,22 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Generator extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Generator
 {
+    public $ctl;
+
+    /**
+     *  コンストラクタ
+     *
+     *  @access public
+     */
+    function __construct($controller, $type, $name)
+    {
+        // Ethna_Generatorでpluginを取得するときに使ったコントローラ
+        // ex, add-projectではEthna_Controller, app-actionではApp_Controller
+        $this->ctl = $controller;
+    }
+
     /**
      *  スケルトンファイルの絶対パスを解決する
      *
