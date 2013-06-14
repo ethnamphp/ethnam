@@ -344,7 +344,7 @@ class Ethna_Session
      *  @param  string  $dst_ip     現在のアクセス元IPアドレス
      *  @return bool    true:正常終了 false:不正なIPアドレス
      */
-    private function _validateRemoteAddr($src_ip, $dst_ip)
+    protected function _validateRemoteAddr($src_ip, $dst_ip)
     {
         $src = ip2long($src_ip);
         $dst = ip2long($dst_ip);
