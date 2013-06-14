@@ -23,20 +23,20 @@ class Ethna_Session
      *  @access private
      */
 
-    /** @protected    object  Ethna_Logger    loggerオブジェクト */
-    protected $logger;
+    /** @public    object  Ethna_Logger    loggerオブジェクト */
+    public $logger;
 
-    /** @protected    string  セッション名 */
-    protected $session_name;
+    /** @public    string  セッション名 */
+    public $session_name;
 
-    /** @protected    string  セッションデータ保存ディレクトリ */
-    protected $session_save_dir;
+    /** @public    string  セッションデータ保存ディレクトリ */
+    public $session_save_dir;
 
-    /** @protected    bool    セッション開始フラグ */
-    protected $session_start = false;
+    /** @public    bool    セッション開始フラグ */
+    public $session_start = false;
 
-    /** @protected    bool    匿名セッションフラグ */
-    protected $anonymous = false;
+    /** @public    bool    匿名セッションフラグ */
+    public $anonymous = false;
 
     /** @protected    array   Configuration for session */
     protected $config = array(
