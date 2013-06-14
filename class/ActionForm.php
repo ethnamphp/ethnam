@@ -63,7 +63,7 @@ class Ethna_ActionForm
     /** @protected    object  Ethna_Plugin    プラグインオブジェクト */
     protected $plugin;
 
-    /** @var    array   フォーム定義要素 */
+    /** @protected    array   フォーム定義要素 */
     protected $def = array('name', 'required', 'max', 'min', 'regexp', 'mbregexp',
                      'custom', 'filter', 'form_type', 'type');
 
