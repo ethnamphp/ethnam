@@ -26,47 +26,47 @@ class Ethna_ViewClass
     /** @protected    object  Ethna_Controller    Controllerオブジェクト */
     protected $ctl;
 
-    /** @protected    object  Ethna_Backend       backendオブジェクト */
-    protected $backend;
+    /** @public    object  Ethna_Backend       backendオブジェクト */
+    public $backend;
 
-    /** @protected    object  Ethna_Config        設定オブジェクト    */
-    protected $config;
+    /** @public    object  Ethna_Config        設定オブジェクト    */
+    public $config;
 
-    /** @protected    object  Ethna_I18N          i18nオブジェクト */
-    protected $i18n;
+    /** @public    object  Ethna_I18N          i18nオブジェクト */
+    public $i18n;
 
-    /** @protected    object  Ethna_Logger    ログオブジェクト */
-    protected $logger;
+    /** @public    object  Ethna_Logger    ログオブジェクト */
+    public $logger;
 
-    /** @protected    object  Ethna_Plugin    プラグインオブジェクト */
+    /** @public    object  Ethna_Plugin    プラグインオブジェクト */
     public $plugin;
 
-    /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト */
-    protected $action_error;
+    /** @public    object  Ethna_ActionError   アクションエラーオブジェクト */
+    public $action_error;
 
-    /** @protected    object  Ethna_ActionError   アクションエラーオブジェクト(省略形) */
-    protected $ae;
+    /** @public    object  Ethna_ActionError   アクションエラーオブジェクト(省略形) */
+    public $ae;
 
-    /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト */
-    protected $action_form;
+    /** @public    object  Ethna_ActionForm    アクションフォームオブジェクト */
+    public $action_form;
 
-    /** @protected    object  Ethna_ActionForm    アクションフォームオブジェクト(省略形) */
-    protected $af;
+    /** @public    object  Ethna_ActionForm    アクションフォームオブジェクト(省略形) */
+    public $af;
 
-    /** @protected    array   アクションフォームオブジェクト(helper) */
-    protected $helper_action_form = array();
+    /** @public    array   アクションフォームオブジェクト(helper) */
+    public $helper_action_form = array();
 
-    /** @protected    array   helperでhtmlのattributeにはしないパラメータの一覧 */
-    protected $helper_parameter_keys = array('default', 'option', 'separator');
+    /** @public    array   helperでhtmlのattributeにはしないパラメータの一覧 */
+    public $helper_parameter_keys = array('default', 'option', 'separator');
 
-    /** @protected    object  Ethna_Session       セッションオブジェクト */
-    protected $session;
+    /** @public    object  Ethna_Session       セッションオブジェクト */
+    public $session;
 
-    /** @protected    string  遷移名 */
+    /** @public    string  遷移名 */
     public $forward_name;
 
-    /** @protected    string  遷移先テンプレートファイル名 */
-    protected $forward_path;
+    /** @public    string  遷移先テンプレートファイル名 */
+    public $forward_path;
 
     /** @protected    boolean  配列フォームを呼んだカウンタをリセットするか否か */
     protected $reset_counter = false;
