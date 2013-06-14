@@ -17,13 +17,25 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Urlhandler extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Urlhandler
 {
-    /**#@+
-     *  @access private
-     */
 
-    /**#@-*/
+    protected $backend;
+
+    protected $logger;
+
+     /**
+     *  Urlhandlerクラスのコンストラクタ
+     *
+     *  @access public
+     *  @param  object  Ethna_Controller    $controller コントローラオブジェクト
+     */
+    public function __construct($controller)
+    {
+        $this->backend = $controller->getBackend();
+        $this->logger = $controller->getLogger();
+    }
+
 
     /**
      *  アクションをユーザリクエストに変換する
