@@ -30,27 +30,27 @@ abstract class Ethna_Plugin_Abstract
     protected $name = null;
 
     /** @protected    object  Ethna_Controller    Controller Object */
-    protected $controller;
-    protected $ctl; /* Alias */
+    public $controller;
+    public $ctl; /* Alias */
 
     /** @protected    object  Ethna_Backend       Backend Object */
-    protected $backend;
+    public $backend;
 
     /** @protected    object  Ethna_ActionForm    ActionForm Object */
-    protected $action_form;
-    protected $af; /* Alias */
+    public $action_form;
+    public $af; /* Alias */
 
     /** @protected    object  Ethna_Session       Session Object */
     protected $session;
 
     /** @protected    array   plugin configure */
-    protected $config;
+    public $config;
 
     /** @protected    array   plugin configure for default */
     protected $config_default = array();
 
     /** @protected    object  Ethna_Logger        Logger Object */
-    protected $logger;
+    public $logger;
 
     /**
      *  Constructor
