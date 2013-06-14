@@ -55,7 +55,6 @@ class Ethna_Session
      *
      *  @access public
      *  @param  string  $appid      アプリケーションID(セッション名として使用)
-     *  @param  string  $save_dir   セッションデータを保存するディレクトリ
      */
     public function __construct($ctl, $appid)
     {
