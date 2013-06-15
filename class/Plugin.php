@@ -296,8 +296,7 @@ class Ethna_Plugin
         if ($name !== null) {
             $plugin_class_name[] = $name;
             $basename  = "{$name}.{$ext}";
-        }
-        else {
+        } else {
             $basename  = "{$type}.{$ext}";
         }
 
