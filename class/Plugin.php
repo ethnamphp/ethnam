@@ -295,13 +295,13 @@ class Ethna_Plugin
 
         if ($name !== null) {
             $plugin_class_name[] = $name;
+            $basename  = "{$name}.{$ext}";
         }
         else {
-            $name = $type;
+            $basename  = "{$type}.{$ext}";
         }
 
         $class = implode('_', $plugin_class_name);
-        $basename  = "{$name}.{$ext}";
 
         return array($class, $basename);
     }
