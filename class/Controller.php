@@ -249,9 +249,6 @@ class Ethna_Controller
         // プラグインオブジェクトの用意
         $this->plugin = $this->getPlugin();
 
-        // include Ethna_Plugin_Abstract for all plugins
-        $this->plugin->includePlugin('Abstract');
-
         //// assert (experimental)
         //if ($this->config->get('debug') === false) {
         //    ini_set('assert.active', 0);
