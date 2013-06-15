@@ -301,9 +301,9 @@ class Ethna_Plugin
         }
 
         $class = implode('_', $plugin_class_name);
-        $file  = "{$name}.{$ext}";
+        $basename  = "{$name}.{$ext}";
 
-        return array($class, $file);
+        return array($class, $basename);
     }
 
     /**
