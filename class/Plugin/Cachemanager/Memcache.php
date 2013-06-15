@@ -226,7 +226,7 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
      *  @param  int     $timestamp  キャッシュ最終更新時刻(unixtime)
      *  @param  string  $namespace  キャッシュネームスペース
      */
-    public  function set($key, $value, $timestamp = null, $namespace = null)
+    public function set($key, $value, $timestamp = null, $namespace = null)
     {
         $this->_getMemcache($key, $namespace);
         if ($this->memcache == null) {
