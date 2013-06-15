@@ -471,21 +471,6 @@ class Ethna_Plugin
     }
     // }}}
 
-    // {{{ static な include メソッド
-    /**
-     *  Ethna 本体付属のプラグインのソースを include する
-     *  (B.C.) Ethna 2.5.0 perview 5 以降，このメソッドには意味がありません．Ethna_Plugin::import を使ってください
-     *
-     *  @access public
-     *  @param  string  $type   プラグインの種類
-     *  @param  string  $name   プラグインの名前
-     *  @static
-     */
-    public static function includeEthnaPlugin($type, $name)
-    {
-        Ethna_Plugin::import($type, $name);
-    }
-
     /**
      *  プラグインのソースを include する
      *
