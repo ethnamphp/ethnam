@@ -56,7 +56,7 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
      *
      *  @access protected
      */
-    protected function _getMemcache($cache_key, $namespace = null)
+    public function _getMemcache($cache_key, $namespace = null)
     {
         $retry = $this->opt['retry'];
         $timeout = $this->opt['timeout'];
@@ -99,7 +99,7 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
      *  @return array   array(host, port)
      *  @todo   $cache_keyから$indexを決める方法を変更できるようにする
      */
-    protected function _getMemcacheInfo($cache_key, $namespace)
+    public function _getMemcacheInfo($cache_key, $namespace)
     {
         $namespace = $this->getNamespace($namespace);
 
