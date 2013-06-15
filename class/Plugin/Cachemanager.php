@@ -16,7 +16,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Cachemanager extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Cachemanager
 {
     /**#@+  @access private */
 
@@ -26,17 +26,26 @@ class Ethna_Plugin_Cachemanager extends Ethna_Plugin_Abstract
     /** @protected    array  plugin options */
     protected $opt;
 
-    /**#@-*/
+    /** @protected    object  Ethna_Backend       backendオブジェクト */
+    protected $backend;
+
+    /** @protected    object  Ethna_Config        設定オブジェクト    */
+    protected $config;
+
 
     /**
-     *  _load
+     *  コンストラクタ
      *
-     *  @access protected
+     *  @access public
      */
-    protected function _load()
+    public function __construct($controller)
     {
-        // load config
-        $this->_loadConfig();
+        $this->controller = $controller;
+        $this->backend = $this->controller->getBackend();
+        $this->config = $this->controller->getConfig();
+
+	// load config
+	$this->_loadConfig();
 
         if (isset($this->opt['namespace'])) {
             $this->namespace = $this->opt['namespace'];
