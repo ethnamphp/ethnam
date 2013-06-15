@@ -618,6 +618,7 @@ class Ethna_ActionForm
      */
     public function validate()
     {
+        $this->logger->log(LOG_INFO, "validation start.");
         foreach ($this->form as $name => $def) {
             $this->_validateWithPlugin($name);
         }
@@ -627,7 +628,14 @@ class Ethna_ActionForm
             $this->_validatePlus();
         }
 
-        return $this->ae->count();
+        $errorCount = $this->ae->count();
+        if ($errorCount > 0) {
+            $this->logger->log(LOG_INFO, "validation failed. error count [%d]", $errorCount);
+        } else {
+            $this->logger->log(LOG_INFO, "validation success.");
+        }
+
+        return $errorCount;
     }
 
     /**
