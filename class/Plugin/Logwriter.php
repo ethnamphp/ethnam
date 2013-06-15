@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Logwriter extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Logwriter
 {
     /**#@+
      *  @access private
