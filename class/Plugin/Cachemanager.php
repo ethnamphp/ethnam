@@ -20,7 +20,7 @@ class Ethna_Plugin_Cachemanager extends Ethna_Plugin_Abstract
 {
     /**#@+  @access private */
 
-    /** @var    string  現在のネームスペース */
+    /** @protected    string  現在のネームスペース */
     protected $namespace = '';
 
     /**#@-*/
