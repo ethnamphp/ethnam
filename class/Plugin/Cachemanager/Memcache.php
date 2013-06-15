@@ -36,6 +36,8 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
         'port' => '11211',
         'retry' => 3,
         'timeout' => 3,
+        'info' => null,
+        'use_pconnect' => false,
     );
 
     /**#@-*/
