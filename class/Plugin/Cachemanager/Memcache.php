@@ -331,7 +331,7 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
      *
      *  @access private
      */
-    private function _getCacheKey($namespace, $key)
+    protected function _getCacheKey($namespace, $key)
     {
         // 少し乱暴だけど...
         $key = str_replace(":", "_", $key);
