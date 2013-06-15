@@ -493,7 +493,7 @@ class Ethna_Plugin
     // }}}
 
     /**
-     *  プラグインのソースを include する
+     *  Ethna 本体付属のプラグインのソースを include する
      *
      *  @access public
      *  @param  string  $type   プラグインの種類
