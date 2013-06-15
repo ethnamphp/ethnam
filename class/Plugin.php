@@ -313,43 +313,32 @@ class Ethna_Plugin
      *  @param  string  $class  クラス名
      *  @param  string  $dir    ディレクトリ名
      *  @param  string  $file   ファイル名
-     *  @param  bool    $parent 親クラスかどうかのフラグ
      *  @return true|Ethna_Error
      */
-    private function _includePluginSrc($class, $dir, $file, $parent = false)
+    private function _includePluginSrc($class, $dir, $file)
     {
-        $true = true;
         if (class_exists($class)) {
-            return $true;
+            return true;
         }
 
         $file = $dir . '/' . $file;
         if (file_exists_ex($file) === false) {
-            if ($parent === false) {
-                return Ethna::raiseWarning('plugin file is not found: [%s]',
-                                           E_PLUGIN_NOTFOUND, $file);
-            } else {
-                return $true;
-            }
+            return Ethna::raiseWarning('plugin file is not found: [%s]',
+                                       E_PLUGIN_NOTFOUND, $file);
         }
 
         include_once $file;
 
         if (class_exists($class) === false) {
-            if ($parent === false) {
-                return Ethna::raiseWarning('plugin class [%s] is not defined',
-                    E_PLUGIN_NOTFOUND, $class);
-            } else {
-                return $true;
-            }
+            return Ethna::raiseWarning('plugin class [%s] is not defined',
+                                       E_PLUGIN_NOTFOUND, $class);
         }
 
-        if ($parent === false) {
-            if ($this->logger !== null) {
-                $this->logger->log(LOG_DEBUG, 'plugin class [%s] is defined', $class);
-            }
+        // success
+        if ($this->logger !== null) {
+            $this->logger->log(LOG_DEBUG, 'plugin class [%s] is defined', $class);
         }
-        return $true;
+        return true;
     }
 
     /**
