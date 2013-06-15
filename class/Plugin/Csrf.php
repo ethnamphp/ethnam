@@ -19,11 +19,22 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Csrf extends Ethna_Plugin_Abstract
+class Ethna_Plugin_Csrf
 {
     /**#@+
      *  @access private
      */
+
+    protected $controller;
+
+    /** @protected    object  Ethna_Controller    controllerオブジェクト($controllerの省略形) */
+    protected $ctl;
+
+    /** @protected    object  Ethna_Config        設定オブジェクト */
+    protected $config;
+
+    /** @protected    object  Ethna_Logger        ログオブジェクト */
+    protected $logger;
 
     /** @var    string  共有トークン名 */
     protected $token_name = 'ethna_csrf';
@@ -35,8 +46,18 @@ class Ethna_Plugin_Csrf extends Ethna_Plugin_Abstract
      *  Csrfのコンストラクタ
      *
      *  @access public
-     *  @param  object  Ethna_Controller    &$controller    コントローラオブジェクト
+     *  @param  object  Ethna_Controller    $controller    コントローラオブジェクト
      */
+    public function __construct($controller)
+    {
+        // オブジェクトの設定
+        $this->controller = $controller;
+        $this->ctl = $this->controller;
+
+        $this->config = $controller->getConfig();
+        $this->logger = $this->controller->getLogger();
+    }
+
     /**
      *  トークンをViewとローカルファイルにセットする
      *
