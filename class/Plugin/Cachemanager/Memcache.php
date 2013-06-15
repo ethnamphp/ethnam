@@ -41,13 +41,13 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
     /**#@-*/
 
     /**
-     *  _load
+     *  コンストラクタ
      *
-     *  @access protected
+     *  @access public
      */
-    protected function _load()
+    public function __construct($controller)
     {
-        parent::_load();
+        parent::__construct($controller);
         $this->memcache_pool = array();
     }
 
