@@ -24,10 +24,10 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
 {
     /**#@+  @access private */
 
-    /** @var    object  Memcache    Memcacheオブジェクト */
-    private $memcache = null;
+    /** @protected    object  Memcache    Memcacheオブジェクト */
+    protected $memcache = null;
 
-    /** @var bool 圧縮フラグ */
+    /** @protected bool 圧縮フラグ */
     protected $compress = true;
 
     /** @var    array   plugin configure */
