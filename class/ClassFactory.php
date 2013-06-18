@@ -77,6 +77,16 @@ class Ethna_ClassFactory
         $obj = null;
 
         //  すでにincludeされていなければ、includeを試みる
+        //  ここで返されるクラス名は、AppObjectの命名規約によるもの
+        //
+        //  これは、AppObject のファイル中にAppManagerが含まれる場合が
+        //  あるため必要なルーチンである
+        $obj_class_name = $this->controller->getObjectClassName($type);
+        if (class_exists($obj_class_name) === false) {
+            $this->_include($obj_class_name);
+        }
+
+        //  すでにincludeされていなければ、includeを試みる
         //  ここで返されるクラス名は、AppManagerの命名規約によるもの
         $class_name = $this->controller->getManagerClassName($type);
         if (class_exists($class_name) === false
