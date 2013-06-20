@@ -22,7 +22,7 @@ class {$project_id}_Form_Index extends {$project_id}_ActionForm
      *
      *  @var      array   form definition.
      */
-    protected $form = array(
+    public $form = array(
        /*
         *  TODO: Write form definition which this action uses.
         *  @see http://ethna.jp/ethna-document-dev_guide-form.html
