@@ -7,18 +7,6 @@ Ethna(えすな)は、PHPを利用したウェブアプリケーションフレ�
 
 Webサイトは http://ethna.jp/ です。
 
-Requirements
---------------
-
-* Ethna 2.5.x
-
-  * PHP 4系、PHP 5.x
-
-* Ethna 2.6.x
-
-  * PHP 5.2.6 以上
-
-
 インストール
 --------------
 
