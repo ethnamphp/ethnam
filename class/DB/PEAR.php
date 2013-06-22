@@ -38,9 +38,6 @@ class Ethna_DB_PEAR extends Ethna_DB
     /** @protected    object  Ethna_Logger    ログオブジェクト */
     protected $logger;
 
-    /** @protected    object  Ethna_AppSQL    SQLオブジェクト */
-    protected $sql;
-
     /** @protected    string  DBタイプ(mysql, pgsql...) */
     protected $type;
 

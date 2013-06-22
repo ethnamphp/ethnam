@@ -137,7 +137,6 @@ class {$project_id}_Controller extends Ethna_Controller
         'logger'        => 'Ethna_Logger',
         'plugin'        => 'Ethna_Plugin',
         'session'       => 'Ethna_Session',
-        'sql'           => 'Ethna_AppSQL',
         'view'          => '{$project_id}_ViewClass',
         'renderer'      => 'Ethna_Renderer_Smarty',
         'url_handler'   => '{$project_id}_UrlHandler',
