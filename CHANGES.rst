@@ -105,12 +105,9 @@ bug fix
 * checkMailAddress でメールアドレスの@以前に/が含まれる場合にvalidationに引っかかる問題を修正 (#3 thx. DQNEO) https://github.com/ethna/ethna/pull/3
 * setFormDef_PreHelper() 内で $this->af がセットされていない問題の修正 (#4 thx. DQNEO) https://github.com/ethna/ethna/pull/4
 
-beta1 .. beta2
+beta1 .. beta4
 ^^^^^^^^^^^^^^
 * require のパスを修正 (thx. seiya, https://github.com/sotarok/ethna/issues/#issue/1)
-
-beta3 .. beta4
-^^^^^^^^^^^^^^
 * Ethna_DB_PEAR のバグ修正 (thx. polidog, #40)
 * clear-cache コマンドのバグ修正 (thx. ucchee, #41)
 * Ethna_Plugin_CacheManager_Memcache の修正。
