@@ -21,7 +21,7 @@ Ethnaから派生してできたプロジェクトです。
 
 ## Contact
 
-ご意見・ご要望はTwitter(@DQNEO)でお願いします。
+ご意見・ご要望・バグ報告はTwitter(@DQNEO)でお願いします。
 
 https://twitter.com/DQNEO
 
