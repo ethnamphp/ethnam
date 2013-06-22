@@ -15,8 +15,7 @@ PHP 5.2.6以上
 ## インストール
 
 git clone git@github.com:DQNEO/ethnam.git
-bash ethnam/bin/ethna.sh --help
-
+./ethnam/bin/ethna.sh --add-project Foo
 
 
 ## Pull Request
