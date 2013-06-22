@@ -22,9 +22,9 @@ Ethna本体に関する変更点
   * UrlHandler と .htaccess (mod_rewrite) を利用するためのひな形を生成
   * セッションハンドラのなど，セッションに関する設定の変更をするための記述を APPID-ini.php にできるようになりました．
 DB に関する変更点
-  * Creole 削除: メンテナンスされていないため、Creole は以後サポートしません。
   * これまではADOdbのみで使われていたDSNのパースを、公式スペックとしました(PEAR_DBには直接渡されていたため)。ただし、このパーサが使われるかどうかは各DBドライバに依存します。
 
+  * Creole 削除
 UrlHandler に関する変更点
   * path_regexp が定義されている場合、path の定義は必須ではなくなりました (sf#19237)
   * UrlHandler_Simple という軽量 UrlHandler を同梱しました (thx. riaf #17 on GitHub)
