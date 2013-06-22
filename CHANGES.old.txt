@@ -513,8 +513,6 @@ hanks: maru_cc)
 - プラグインパッケージインストール時に '{$application_id}' が置換されないバグを修正
 - add-template が正しく動作していなかったのを修正
 - Ethna_ViewClass::_getFormInput_Select で multiple を考慮していなかったのを修正
-- Ethna_AppObject::_getSQL_SearchId で救済になってないエラーのスキップを削除
--- 有効な key がないときに、どちらにしろ SQL エラーになってた
 - OS_WINDOWSでgetAppController()が無限ループになっていたのを修正
 -- ルートディレクトリ判定に失敗していた
 - Console_Getoptなどのアップグレードに対応
@@ -539,7 +537,6 @@ hanks: maru_cc)
 - Ethna_ViewClass::setPlugin() で $plugin の検証に is_callable を使用 (ethna-users:0507)
 - install-plugin が正しく動いていなかったのを修正 (#9582)
 - ethna.shでPHPのパスが指定されていなかったのを修正(ethna-users:0508)
-- Ethna_AppObjectで'key'の条件にunique_key, multiple_keyが漏れていたのを修正
 - Ethna_ViewClassで<label id="foo">となっていたのを<label for="foo">に修正
 
 ** 2.3.0
@@ -564,12 +561,6 @@ hanks: maru_cc)
 
 - Smarty, PEAR_DBのincludeのタイミングを変更
 -- 必要時に Ethna_ClassFactory::_include() を使うようにした。
-
-- Ethna_AppObjectをpostgres, sqliteに簡易対応
--- 1テーブルの1レコードが1オブジェクトに対応するような単純なモデルのみ対応
--- まだdb typeごとに調整が必要になることがあります。
--- pgsqlでsequenceに対応
--- テーブル名、カラム名の自動quoteに対応
 
 - add-* ハンドル機能追加
 -- add-template: --skelfile オプションで生成元のスケルトンファイルを指定できるようにした
@@ -609,9 +600,6 @@ hanks: maru_cc)
 
 - Ethna_UrlHandlerクラスを追加(ステキurl対応)
 - Smartyプラグイン関数smarty_function_url追加
-- Ethna_AppObjectからのフォーム定義生成サポート追加
--- [2006/08/23] 激しくα
-- Ethna_ClassFactory::getObject()でクラス定義に無いキーが渡された場合はEthna_AppObject()のキーであると仮定してオブジェクト生成
 - アプリケーションスケルトン生成時にアプリケーション固有のActionClass, ActionForm, ViewClassも生成するように変更
 - Ethna_SkeltonGeneratorクラスをEthna_Generatorクラスに名称変更
 - Ethna_SkeltonGeneratorクラスの各メソッドをプラグイン化
@@ -647,7 +635,7 @@ hanks: maru_cc)
  $manager = array(
    'um' => 'User',
  );
-のように記述されていると、Ethna_ActionClass、Ethna_ViewClass、Ethna_AppObject、Ethna_*Managerで
+のように記述されていると、Ethna_ActionClass、Ethna_ViewClass、Ethna_*Managerで
  $this->um
 としてマネージャオブジェクトにアクセスできていたのですが、この機能が廃止されています(不評なら戻します@preview2)
 - Ethna_Plugin_Logwriter_File::begin()でログファイルのパーミッションを設定するように変更
@@ -688,7 +676,6 @@ hanks: maru_cc)
 - CacheManager_Localfileの@statでのWARNINGを回避
 - Ethna_Plugin_Validator_Customでエラーが2重登録されていたのを修正
 - プラグインの親クラスがないときにエラーになっていたのを修正
-- Ethna_DB_PEAR, Ethna_AppObjectのWARNINGを回避([ethna-users:0383])
 - Windowsでホームディレクトリの.ethnaファイルが参照されない問題を修正
 - session_startしていないとrestoreメソッドがうまく動かない問題を修正
 - ethnaコマンドにサポートされていないオプションのみを指定して起動した場合(ethna -hなど)にFatal Errorとなる問題を修正
@@ -720,7 +707,6 @@ hanks: maru_cc)
 - Ethna_ActionForm::validate() で多次元配列が渡されたときのnoticeを回避
 - Ethna_Backend::setActionForm(), Ethna_Backend::setActionClass()メソッドを追加
 - Ethna_FilterのスケルトンにpreActionFilter()/postActionFilter()を追加
-- Ethna_AppObject::_getPropDef()にキャッシュ処理を追加
 - Ethna_CacheManagerクラスを追加(w/ localfile) - from GREE:)
 - Ethna_DB::getDSN()メソッドを追加
 - iniファイルのスケルトンにdsnサンプル追加
@@ -762,7 +748,6 @@ hanks: maru_cc)
 -- SimpleTestのインストールチェックを追加
 - package.xml生成スクリプト改善(ethnaコマンドインストール対応など)
 - Haste_ADOdb, Haste_Creoleマージ(from Haste Project by haltさん)
-- Ethna_AppObjectクラスのテーブル/プロパティ定義自動生成サポート追加(from generate_app_object originally by 井上さん+haltさん)
 - Ethna_Controller::getAppdir()メソッドを追加
 - Ethna_Controller::getDBType()の引数がnullだった場合に定義一覧を返すように変更
 - ethnaコマンドラインハンドラを追加(+ハンドラをpluggableに+add-viewでテンプレート生成サポート)−please cp bin/ethna to /usr/local/bin or somewhere
@@ -783,18 +768,13 @@ hanks: maru_cc)
 
 *** bug fixes
 
-- [[#8435>http://sourceforge.jp/tracker/index.php?func=detail&aid=8435&group_id=1343&atid=5092]](Ethna_AppObject prop_def[]['seq']が未設定)
 - [[#8079>http://sourceforge.jp/tracker/index.php?func=detail&aid=8079&group_id=1343&atid=5092]](FilterでBackendを呼ぶとActionFormの値が空になる)
 - [[#8200>http://sourceforge.jp/tracker/index.php?func=detail&aid=8200&group_id=1343&atid=5092]](PHP5.1.0以降でafのvalidate()で日付チェックが効かない)
 - [[#8179>http://sourceforge.jp/tracker/index.php?func=detail&aid=8179&group_id=1343&atid=5092]](getManagerの戻り値が参照渡しになっていない)
-- [[#8400>http://sourceforge.jp/tracker/index.php?func=detail&aid=8400&group_id=1343&atid=5092]](AppObject prop_def[]['form_name']がNULL)
 - [[#7751>http://sourceforge.jp/tracker/index.php?func=detail&aid=7751&group_id=1343&atid=5092]](SAFE_MODEでmail関数の第５引数があるとWaning)を修正
-- [[#8496>http://sourceforge.jp/tracker/index.php?func=detail&aid=8496&group_id=1343&atid=5092]](Ethna_AppObject.php内のtypo)を修正
 - [[#8387>http://sourceforge.jp/tracker/index.php?func=detail&aid=8387&group_id=1343&atid=5092]](checkMailaddressやcheckURLでNotice)を修正
 - [[#8130>http://sourceforge.jp/tracker/index.php?func=detail&aid=8130&group_id=1343&atid=5092]](Noticeつぶし)を修正
 - typo fixed (aleady -> already)
-- [[#7717>http://sourceforge.jp/tracker/index.php?func=detail&aid=7717&group_id=1343&atid=5092]](Ethna_AppObject::add()でNotice)を修正
-- [[#7664>http://sourceforge.jp/tracker/index.php?func=detail&aid=7664&group_id=1343&atid=5092]](Ethna_AppObjectのバグ)を修正
 - [[#7729>http://sourceforge.jp/tracker/index.php?func=detail&aid=7729&group_id=1343&atid=5092]](ethna_infoがFirefoxだとずれる)を修正
 
 - (within beta) ethna_handle.phpが無用にob_end_clean()する問題を修正
@@ -830,7 +810,6 @@ hanks: maru_cc)
 *** bug fixes
 
 - htmlspecialcharsにENT_QUOTESオプションを追加
-- Ethna_AppSQLクラスのコンストラクタメソッド名を修正
 - [[#7659>http://sourceforge.jp/tracker/index.php?func=detail&aid=7659&group_id=1343&atid=5092]](Ethna_Config.phpでNoticeエラー)を修正
 - Ethna_SOAP_ActionForm.phpのtypoを修正
 - [[#6616>http://sourceforge.jp/tracker/index.php?func=detail&aid=6616&group_id=1343&atid=5092]](セッションにObjectを格納できない)を修正
@@ -850,7 +829,6 @@ hanks: maru_cc)
 - smarty_modifier_wordwrap_i18n()の改行対応
 - ユーザ定義フォーム検証メソッドが呼び出されない(ことがある)問題を修正
 - マルチカラムプライマリキー利用時にオブジェクトの正当性が正しく判別できない問題を修正
-- Ethna_AppObjectのJOIN検索がSQLエラーになる（ことがある）問題を修正
 - セッションを復帰させるタイミングを遅延(無限ループする問題を修正)
 - Ethna_MalSenderからmail()関数にオプションを渡せるように修正
 - Ethna_View_List::_fixNameObjectに対象オブジェクトも渡すように修正
@@ -863,7 +841,6 @@ hanks: maru_cc)
 - Ethna_Controller::getCLI()(CLIで実行中かどうかを返すメソッド)を追加
 - ethna_error_handlerがphp.iniの設定に応じてPHPログも出力するように変更
 - Smartyプラグイン(truncate_i18n)を追加
-- Ethna_AppObject/Ethna_AppManagerにキャッシュ機構を追加(experimental)
 - メールテンプレートエンジンのフックメソッドを追加
 - MIMEエンコード用ユーティリティメソッドを追加
 - include_pathのセパレータのwin32対応
@@ -876,10 +853,6 @@ hanks: maru_cc)
 
 ** [2005/01/14] 0.1.4
 
-*** features
-
-- Ethna_AppObjectでJOINした場合に、(可能なら)プライマリキーでGROUP BYするように変更
-
 *** bug fixes
 
 - __ethna_info__が全く動作しない問題を修正:(
@@ -889,7 +862,6 @@ hanks: maru_cc)
 
 *** features
 
-- Ethna_AppSearchObjectの複合条件対応
 - Ethna_ClassFactoryクラスを追加
 - Ethna_Controllerのbackend, i18n, session, action_errorメンバを廃止
 - Ethna_Controller::getClass()メソッドを廃止

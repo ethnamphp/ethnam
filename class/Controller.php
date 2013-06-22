@@ -89,7 +89,6 @@ class Ethna_Controller
         'plugin'        => 'Ethna_Plugin',
         'renderer'      => 'Ethna_Renderer_Smarty',
         'session'       => 'Ethna_Session',
-        'sql'           => 'Ethna_AppSQL',
         'view'          => 'Ethna_ViewClass',
         'url_handler'   => 'Ethna_UrlHandler',
     );
@@ -685,17 +684,6 @@ class Ethna_Controller
     public function getSession()
     {
         return $this->class_factory->getObject('session');
-    }
-
-    /**
-     *  SQLオブジェクトのアクセサ
-     *
-     *  @access public
-     *  @return object  Ethna_AppSQL    SQLオブジェクト
-     */
-    public function getSQL()
-    {
-        return $this->class_factory->getObject('sql');
     }
 
     /**
