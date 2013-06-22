@@ -77,7 +77,7 @@ Renderer/View に関する変更点
     * ファイル名の命名規則を変更
     * extlibの設置
 
-  * プラグイン関連のethnaコマンドを整理し、インストール、アンインストール関連コマンドは ethna pear-local コマンドに一本化
+  * プラグイン関連のethnaコマンドを整理
 
     * channel-update (削除)
     * info-plugin (削除)
@@ -85,12 +85,6 @@ Renderer/View に関する変更点
     * uninstall-plugin (削除)
     * upgrade-plugin (削除)
     * list-plugin (削除)
-
-  * プラグインパッケージのスケルトンを生成するコマンドとして ethna create-plugin コマンドを追加
-
-    * 複数のtypeのプラグイン同時作成が可能に
-    * Ethnaプロジェクト内でのプラグインの自動生成が可能に
-    * ethna make-plugin-package との連動が可能に
 
   * ethna create-plugin コマンドの出力から ethna make-plugin-package を実行できるようにコマンドを再実装
 
@@ -104,8 +98,6 @@ Renderer/View に関する変更点
 
 bug fix
 ^^^^^^^
-
-* ethna make-plugin-package のデフォルトインストールディレクトリが誤っていたバグを修正
 * Ethna_Plugin::includePlugin メソッドの実装が動作するものではなかったので変更
 * Ethna_Plugin_Cachemanager のクラスのプロパティに指定する $namespace が意味をなしていなかったので修正 (#17753)
 * PROJECT_DIR/lib/Ethna/extlib 以下にファイルを設置するタイプのプラグインを pear-local などでインストールすると、それ以後ethnaコマンドが使えなくなる問題を修正
