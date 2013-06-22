@@ -8,8 +8,6 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Plugin/Handle/AddAppObject.php';
-
 // {{{ Ethna_Plugin_Handle_AddAppManager
 /**
  *  add-app-manager handler
@@ -18,7 +16,7 @@ require_once ETHNA_BASE . '/class/Plugin/Handle/AddAppObject.php';
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_AddAppManager extends Ethna_Plugin_Handle_AddAppObject
+class Ethna_Plugin_Handle_AddAppManager extends Ethna_Plugin_Handle
 {
     /**
      *  add app-manager
