@@ -14,6 +14,10 @@ Ethnaから派生してできたプロジェクトです。
 
 最新の`develop`からbranchを作ってそこで改修を行い、develop ブランチに対して pull request を送ってください。
 
+## UnitTest
+
+現在、Ethnamに対するUnitTestは整備されていません。
+今後PHP Unitであらたにテストを作成するつもりです。
 
 ## Contact
 
