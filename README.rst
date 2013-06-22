@@ -51,23 +51,3 @@ Ethna の情報源
 API ドキュメント:
   http://ethna.jp/doc/
 
-メーリングリスト
-^^^^^^^^^^^^^^^^
-
-ユーザ向けメーリングリスト(ethna-users):
-  http://ml.ethna.jp/mailman/listinfo/users
-
-Git リポジトリ 更新状況(ethna-cvs):
-  http://ml.ethna.jp/mailman/listinfo/cvs
-
-IRC
-^^^^^^^
-
-freenode の `#Ethna` でEthnaの使い方や開発について議論しています。コミッタもいますので、バグなどについて文句を言うのはここが一番伝わりやすいかもしれません。
-
-* サーバ: irc.freenode.com
-* チャネル: #Ethna
-
-IRCって何? という方は、IRC普及委員会 を参照して下さい。:
-  http://irc.nahi.to/
-
