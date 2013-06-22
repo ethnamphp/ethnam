@@ -12,6 +12,13 @@ PHP 5.2.6以上
 * `master` 最新の安定版です。
 * `develop` 開発中のブランチです。
 
+## インストール
+
+git clone git@github.com:DQNEO/ethnam.git
+bash ethnam/bin/ethna.sh --help
+
+
+
 ## Pull Request
 
 バグ修正などの Pull Request など大歓迎です。
