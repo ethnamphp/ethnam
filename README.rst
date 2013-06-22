@@ -111,36 +111,3 @@ simpletest によるテストの実行は次のようにします。 ::
 
     $ php bin/ethna_run_test.php test/Logger_Test.php
 
-Pull Request
-^^^^^^^^^^^^^^^^
-
-バグ修正などの Pull Request など大歓迎です。
-
-* 最新の develop から任意の名前で branch を切り、develop ブランチに対して pull request を送ってください。
-
-    * ブランチを切ってから時間が立ったなどで差分が生じている場合かならず手元で rebase してください
-
-* master ブランチへは直接 merge しません。
-
-
-branch運用ルール
-^^^^^^^^^^^^^^^^
-
-前述の gitFlow の Branching Model に基づいて概ね以下のように運用しています。 (この運用ルールが出来る前のブランチは、必ずしもこの通りのものではありません。ブランチはSVNから移行したものもあります)
-
-master
-  最新のリリースのあるブランチです。
-
-develop
-  開発中のブランチです。すべてのfeatureブランチは、featureブランチでの開発が完了後developにmergeします。
-
-feature/xxxx
-  特定の機能追加、バグ修正のためのブランチです。
-
-release/xxxx
-  特定のリリース候補ブランチ。developブランチからreleaseブランチを切り、テストや修正などを行ったあとここからmasterにmergeします。
-
-version/xxxx
-  特定のバージョンのリリース後ブランチです。リリース後、修正などでバックポートの必要性が生じた場合など、基本的にこのブランチ上をリリース対象とします。
-
-

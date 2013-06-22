@@ -8,6 +8,13 @@ Ethnaから派生してできたプロジェクトです。
 * `master` 最新の安定版です。
 * `develop` 開発中のブランチです。
 
+## Pull Request
+
+バグ修正などの Pull Request など大歓迎です。
+
+最新の`develop`からbranchを作ってそこで改修を行い、develop ブランチに対して pull request を送ってください。
+
+
 ## Contact
 
 ご意見・ご要望はTwitter(@DQNEO)でお願いします。
