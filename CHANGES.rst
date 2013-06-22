@@ -6,9 +6,6 @@
 
 * Ethna 2.5.0 preview5 に含まれていて、Ethna 2.5.0 に含まれなかった変更点について、CHANGES の整理 (多少重複します)
 
-  * 2.6.0 の変更点一覧が、preview5 からの差分となっていたため、preview5 -> (元)preview6 での fix事項等はCHANGESから削除
-
-
 features
 ^^^^^^^^
 
