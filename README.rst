@@ -31,23 +31,3 @@ PEARコマンドでインストールする
   $ sudo pear install -a ethna/ethna
 
 
-その他
-^^^^^^^
-
-詳しくは Wiki を参照してください。
-
-* http://ethna.jp/ethna-document-tutorial-install_guide.html
-
-
-Ethna の情報源
---------------
-
-ドキュメント
-^^^^^^^^^^^^^^^
-
-公式ドキュメント:
-  http://ethna.jp/ethna-document.html
-
-API ドキュメント:
-  http://ethna.jp/doc/
-
