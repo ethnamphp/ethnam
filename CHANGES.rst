@@ -17,16 +17,9 @@ Ethna本体に関する変更点
     * アクセス修飾子、static修飾子の導入
     * コンストラクタメソッド名の変更(クラス名から__construct()へ)
 
-  * 命名規則の変更
-
-    * class/ 以下のクラスついて、命名規則を変更しました (ファイル名がフルクラス名ではなくなりました)
-
-  * skeleton 関係
-
-    * デフォルトで生成されるレイアウトテンプレートの調整
-    * cssの変更
-    * UrlHandler と .htaccess (mod_rewrite) を利用するためのひな形を生成
-
+    * ファイル名を短くしました。(例 class/Ethna_ActionClass.php -> class/ActionClass.php)
+  * skeleton 関係のファイルを変更しました。
+  * UrlHandler と .htaccess (mod_rewrite) を利用するためのひな形を生成
   * セッションハンドラのなど，セッションに関する設定の変更をするための記述を APPID-ini.php にできるようになりました．
   * 本体テスト環境のsimpletest 1.1系への対応
 
