@@ -31,11 +31,11 @@ UrlHandler に関する変更点
 
 Renderer/View に関する変更点
   * Smarty3 追加
-  * Rhaco 削除: rhacoテンプレートレンダラは以後サポートしません(いつのrhacoのバージョンで動くのかもわかりませんでした)
   * Ethna_ActionClass から、Ethna_ViewClass#preforward に引数を渡せるようにした
 
     * return array('forward_name', $params); の形式で渡せば、$params が preforwardの引数として渡される
 
+  * Rhaco 削除
   * 汎用ビュークラスを実装
 
     * ビューへの出力時によく使われる処理を雛形として実装したもの
