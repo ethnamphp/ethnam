@@ -1000,7 +1000,7 @@ class Ethna_Controller
         $this->action_form->setFormVars();
 
         // バックエンド処理実行
-        $forward_name = $backend->perform($action_name);
+        $forward_name = $this->perform($backend, $action_name);
 
         // アクション実行後フィルタ
         for ($i = count($this->filter_chain) - 1; $i >= 0; $i--) {
@@ -1128,7 +1128,7 @@ class Ethna_Controller
 
         $session = $this->getSession();
         $session->restore();
-        $r = $backend->perform($method);
+        $r = $this->perform($backend, $method);
 
         return $r;
     }
@@ -1149,6 +1149,17 @@ class Ethna_Controller
         $server = new SoapServer(null, array('uri' => $this->config->get('url')));
         $server->setClass($gg->getClassName());
         $server->handle();
+    }
+
+    /**
+     *  バックエンド処理を実行する
+     *
+     *  @param  string  $action_name    実行するアクションの名称
+     *  @return mixed   (string):Forward名(nullならforwardしない) Ethna_Error:エラー
+     */
+    protected function perform($backend, $action_name)
+    {
+        return $backend->perform($action_name);
     }
 
     /**
