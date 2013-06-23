@@ -9,21 +9,6 @@
  *  @version    $Id$
  */
 
-//
-//  PEAR OS_WINDOWS constant replacement.
-//
-//  PEAR の OS_WINDOWS 定数は、defined関数で
-//  既に定義されているかをチェックしていない。
-//  よって require_once 'PEAR.php' とすると
-//  E_NOTICEが出ることから、Windows環境判定用
-//  として独自の定数を定義する
-//
-if (substr(PHP_OS, 0, 3) == 'WIN'
- && !defined('ETHNA_OS_WINDOWS')) {
-    define('ETHNA_OS_WINDOWS', true);
-} elseif (!defined('ETHNA_OS_WINDOWS')) {
-    define('ETHNA_OS_WINDOWS', false);
-}
 //  PHP 5.1.0 以降向けの変更
 //  date.timezone が設定されていないと
 //  E_STRICT|WARNING が発生する
