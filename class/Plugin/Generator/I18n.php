@@ -265,10 +265,6 @@ class Ethna_Plugin_Generator_I18n extends Ethna_Plugin_Generator
         //  ActionForm の $form メンバ解析
         $php_ext = $this->ctl->getExt('php');
         $action_dir_regex = $action_dir;
-        if (ETHNA_OS_WINDOWS) {
-            $action_dir_regex = str_replace('\\', '\\\\', $action_dir);
-            $action_dir_regex = str_replace('/', '\\\\', $action_dir_regex);
-        }
         if (preg_match("#$action_dir_regex#", $file_path)
         && !preg_match("#.*Test\.${php_ext}$#", $file_path)) {
             $this->_analyzeActionForm($file_path);
