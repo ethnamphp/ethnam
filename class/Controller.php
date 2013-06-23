@@ -1012,22 +1012,12 @@ class Ethna_Controller
         }
 
         // コントローラで遷移先を決定する(オプション)
-        $forward_name_params = $this->_sortForward($action_name, $forward_name);
-
-        // Viewへの引数があれば取り出す
-        $preforward_params = array();
-        if (is_array($forward_name_params)) {
-            $forward_name = array_shift($forward_name_params);
-            $preforward_params = $forward_name_params;
-        }
-        else {
-            $forward_name = $forward_name_params;
-        }
+        $forward_name = $this->_sortForward($action_name, $forward_name);
 
         if ($forward_name != null) {
             $view_class_name = $this->getViewClassName($forward_name);
             $this->view = new $view_class_name($backend, $forward_name, $this->_getForwardPath($forward_name));
-            call_user_func_array(array($this->view, 'preforward'), $preforward_params);
+            $this->view->preforward();
             $this->view->forward();
 
             unset($this->action_form->app_vars);
