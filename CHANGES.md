@@ -20,3 +20,4 @@
 ## 2.7 からの変更点
 
 * AppObject, AppSQL, AppSearchObjectを廃止しました。(commit e871a1addafae0314bd62dfc8a3e209359ac4a2f)
+* Windowsサポートを廃止しました。(commit 4ec580224232122b29a2a9ccf5824bf8d985f424)
