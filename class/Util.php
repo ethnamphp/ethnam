@@ -87,15 +87,10 @@ function file_exists_ex($path, $use_include_path = true)
  */
 function is_absolute_path($path)
 {
-    if (ETHNA_OS_WINDOWS) {
-        if (preg_match('/^[a-z]:/i', $path) && $path{2} == DIRECTORY_SEPARATOR) {
-            return true;
-        }
-    } else {
-        if ($path{0} == DIRECTORY_SEPARATOR) {
-            return true;
-        }
+    if ($path{0} == DIRECTORY_SEPARATOR) {
+      return true;
     }
+
     return false;
 }
 // }}}
