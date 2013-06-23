@@ -1,6 +1,6 @@
 # 変更点一覧
 
-## Ethna 2.6.0beta4からの変更点
+## Ethna 2.6.0beta4から2.7への変更点
 
 * PHP5.4に対応しました。(主な変更はhtmlspecialcharsの第三引数です。)
 * extlibを廃止しました。
@@ -17,7 +17,7 @@
 * ADODBのログ出力処理をオーバーライドできるようにしました。(`ethna_adodb_logger`というグローバル関数内で処理がべた書きされていたのを改善)
 * `adodb/adodb.inc.php`をEthna側でrequireしなくなりました。(アプリケーション側でrequire_onceする必要があります。)
 
-## 2.7 からの変更点
+## 2.7から2.8への変更点
 
 * AppObject, AppSQL, AppSearchObjectを廃止しました。(commit e871a1addafae0314bd62dfc8a3e209359ac4a2f)
 * Windowsサポートを廃止しました。(commit 4ec580224232122b29a2a9ccf5824bf8d985f424)
