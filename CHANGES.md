@@ -21,3 +21,7 @@
 
 * AppObject, AppSQL, AppSearchObjectを廃止しました。(commit e871a1addafae0314bd62dfc8a3e209359ac4a2f)
 * Windowsサポートを廃止しました。(commit 4ec580224232122b29a2a9ccf5824bf8d985f424)
+
+## 2.8から2.9への変更点
+
+* Backend#performを Controller#performへ引っ越ししました。
