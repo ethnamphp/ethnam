@@ -111,7 +111,6 @@
 ---  http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16326
 -- [Breaking B.C] ルールがユーザにとって直感的ではないとの理由から、フォーム定義の max と フォームヘルパの maxlength の連携機能を削除 (thanks: syachi5150)
 --- https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16325
--- Windowsユーザへの便宜のため、zipアーカイブで成果物を配布するオプションを追加
 - 組み込みの Smarty プラグインの追加
 --- modifier_explode (文字列を，ある文字で分割して配列に変換する）
 - 国際化に関する変更
@@ -213,7 +212,6 @@
 - その他雑多な変更
 -- [Breaking B.C] ルールがユーザにとって直感的ではないとの理由から、フォーム定義の max と フォームヘルパの maxlength の連携機能を削除 (thanks: syachi5150)
 --- https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16325
--- Windowsユーザへの便宜のため、zipアーカイブで成果物を配布するオプションを追加
 
 *** bug fix
 
@@ -303,8 +301,6 @@
 -- [Breaking B.C] Ethna から PEAR_Error まわりの依存を排除。これに伴い、Ethnaクラス が持っていた PEARコアコンポーネンツ の機能は使えなくなっている。
 --- Ethnaクラス に PEAR ライクなエラーチェックメソッドを追加し、それに伴う変更
 --- Ethna_Error で PEAR を呼び出していた部分を修正し、PEARに任せていたメンバ設定等を最実装
---- PEAR.php で定義されていた OS_WINDOWS 定数の代替として、 ETHNA_OS_WINDOWS 定数を定義した
-    これは PEAR が、OS_WINDOWS 定数が再定義されているかをチェックしていないため
 - 国際化メッセージの生成支援機構として、i18n コマンドを実装
 -- gettext, Ethna組み込みのメッセージカタログに対応
 -- ethna i18n [-b|--basedir=dir] [-l|--locale] [-g|--gettext] [extdir1] [extdir2] ...
@@ -513,8 +509,6 @@ hanks: maru_cc)
 - プラグインパッケージインストール時に '{$application_id}' が置換されないバグを修正
 - add-template が正しく動作していなかったのを修正
 - Ethna_ViewClass::_getFormInput_Select で multiple を考慮していなかったのを修正
-- OS_WINDOWSでgetAppController()が無限ループになっていたのを修正
--- ルートディレクトリ判定に失敗していた
 - Console_Getoptなどのアップグレードに対応
 -- php4対応のreference返しがなくなっていたのに伴って発生していたnoticeを回避
 - xmlrpcのパラメータがActionFormに渡っていなかったのを修正(#9845)
@@ -676,7 +670,6 @@ hanks: maru_cc)
 - CacheManager_Localfileの@statでのWARNINGを回避
 - Ethna_Plugin_Validator_Customでエラーが2重登録されていたのを修正
 - プラグインの親クラスがないときにエラーになっていたのを修正
-- Windowsでホームディレクトリの.ethnaファイルが参照されない問題を修正
 - session_startしていないとrestoreメソッドがうまく動かない問題を修正
 - ethnaコマンドにサポートされていないオプションのみを指定して起動した場合(ethna -hなど)にFatal Errorとなる問題を修正
 - Ethna_Backend::getDBのNoticeエラーを修正
@@ -779,7 +772,6 @@ hanks: maru_cc)
 
 - (within beta) ethna_handle.phpが無用にob_end_clean()する問題を修正
 - (within beta) ethna add-viewでプロジェクトディレクトリを指定した場合に正しくファイルが生成されない問題を修正
-- (within beta) Windows版のethnaコマンドがパッケージからインストールした場合実行できない問題を修正
 - (within beta) ActionFormの配列のフォーム値が破壊される問題を修正(by sfioさん)
 
 
@@ -819,7 +811,6 @@ hanks: maru_cc)
 - .museum対応
 - Ethna_Backendクラスのクラスメンバ多重定義を修正
 - BASE定数の影響でコントローラの継承が困難な問題を修正
-- Windows環境で定義されていないLOG_LOCAL定数を評価してしまう問題を修正
 - [[#6423>http://sourceforge.jp/tracker/index.php?func=detail&aid=6423&group_id=1343&atid=5092]](php-4.4.0で大量のエラーの後、Segv(11))を修正(patch by ramsyさん)
 - [[#6074>http://sourceforge.jp/tracker/index.php?func=detail&aid=6074&group_id=1343&atid=5092]](generate_project_skelton.phpの動作異常)を修正
 - safe_mode=onの場合にuid/gid warningが発生する(可能性のある)問題を修正
@@ -843,7 +834,6 @@ hanks: maru_cc)
 - Smartyプラグイン(truncate_i18n)を追加
 - メールテンプレートエンジンのフックメソッドを追加
 - MIMEエンコード用ユーティリティメソッドを追加
-- include_pathのセパレータのwin32対応
 
 *** bug fixes
 
@@ -893,7 +883,6 @@ hanks: maru_cc)
 
 - プロジェクトスケルトン生成時にアプリケーションIDの文字種/予約語をチェックするように修正
 - 'form_name'を指定すると無用に警告が発生する問題を修正
-- 絶対パス判定のプラットフォーム依存を修正(Windows対応改善)
 - VAR_TYPE_INTとVAR_TYPE_FLOATの定義値が重複していた問題を修正
 - SOAP/Mobile(AU)でアクションスクリプトのパスが正しく取得できない問題を修正
 - Ethna_Util::getRandom()でmt_srand()しつつrand()を呼んでいた箇所をmt_rand()を呼び出すように修正

@@ -9,21 +9,6 @@
  *  @version    $Id$
  */
 
-//
-//  PEAR OS_WINDOWS constant replacement.
-//
-//  PEAR の OS_WINDOWS 定数は、defined関数で
-//  既に定義されているかをチェックしていない。
-//  よって require_once 'PEAR.php' とすると
-//  E_NOTICEが出ることから、Windows環境判定用
-//  として独自の定数を定義する
-//
-if (substr(PHP_OS, 0, 3) == 'WIN'
- && !defined('ETHNA_OS_WINDOWS')) {
-    define('ETHNA_OS_WINDOWS', true);
-} elseif (!defined('ETHNA_OS_WINDOWS')) {
-    define('ETHNA_OS_WINDOWS', false);
-}
 //  PHP 5.1.0 以降向けの変更
 //  date.timezone が設定されていないと
 //  E_STRICT|WARNING が発生する
@@ -32,22 +17,10 @@ if (!ini_get('date.timezone')) {
 }
 
 if (!defined('PATH_SEPARATOR')) {
-    if (ETHNA_OS_WINDOWS) {
-        /** include_path separator(Windows) */
-        define('PATH_SEPARATOR', ';');
-    } else {
-        /** include_path separator(Unix) */
-        define('PATH_SEPARATOR', ':');
-    }
+    define('PATH_SEPARATOR', ':');
 }
 if (!defined('DIRECTORY_SEPARATOR')) {
-    if (ETHNA_OS_WINDOWS) {
-        /** directory separator(Windows) */
-        define('DIRECTORY_SEPARATOR', '\\');
-    } else {
-        /** separator(Unix) */
-        define('DIRECTORY_SEPARATOR', '/');
-    }
+    define('DIRECTORY_SEPARATOR', '/');
 }
 
 /** バージョン定義 */
