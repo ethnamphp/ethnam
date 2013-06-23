@@ -332,41 +332,6 @@ class Ethna_Backend
     }
 
     /**
-     *  バックエンド処理を実行する
-     *
-     *  @access public
-     *  @param  string  $action_name    実行するアクションの名称
-     *  @return mixed   (string):Forward名(nullならforwardしない) Ethna_Error:エラー
-     */
-    public function perform($action_name)
-    {
-        $forward_name = null;
-
-        $action_class_name = $this->controller->getActionClassName($action_name);
-        $this->action_class = new $action_class_name($this);
-        $this->ac = $this->action_class;
-
-        // アクションの実行
-        $forward_name = $this->ac->authenticate();
-        if ($forward_name === false) {
-            return null;
-        } else if ($forward_name !== null) {
-            return $forward_name;
-        }
-
-        $forward_name = $this->ac->prepare();
-        if ($forward_name === false) {
-            return null;
-        } else if ($forward_name !== null) {
-            return $forward_name;
-        }
-
-        $forward_name = $this->ac->perform();
-
-        return $forward_name;
-    }
-
-    /**
      *  DBオブジェクトを返す
      *
      *  @access public

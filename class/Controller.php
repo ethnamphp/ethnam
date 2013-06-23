@@ -1159,7 +1159,31 @@ class Ethna_Controller
      */
     protected function perform($backend, $action_name)
     {
-        return $backend->perform($action_name);
+        $forward_name = null;
+
+        $action_class_name = $this->getActionClassName($action_name);
+
+        $ac = new $action_class_name($backend);
+        $backend->setActionClass($ac);
+
+        // アクションの実行
+        $forward_name = $ac->authenticate();
+        if ($forward_name === false) {
+            return null;
+        } else if ($forward_name !== null) {
+            return $forward_name;
+        }
+
+        $forward_name = $ac->prepare();
+        if ($forward_name === false) {
+            return null;
+        } else if ($forward_name !== null) {
+            return $forward_name;
+        }
+
+        $forward_name = $ac->perform();
+
+        return $forward_name;
     }
 
     /**
