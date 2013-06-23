@@ -17,22 +17,10 @@ if (!ini_get('date.timezone')) {
 }
 
 if (!defined('PATH_SEPARATOR')) {
-    if (ETHNA_OS_WINDOWS) {
-        /** include_path separator(Windows) */
-        define('PATH_SEPARATOR', ';');
-    } else {
-        /** include_path separator(Unix) */
-        define('PATH_SEPARATOR', ':');
-    }
+    define('PATH_SEPARATOR', ':');
 }
 if (!defined('DIRECTORY_SEPARATOR')) {
-    if (ETHNA_OS_WINDOWS) {
-        /** directory separator(Windows) */
-        define('DIRECTORY_SEPARATOR', '\\');
-    } else {
-        /** separator(Unix) */
-        define('DIRECTORY_SEPARATOR', '/');
-    }
+    define('DIRECTORY_SEPARATOR', '/');
 }
 
 /** バージョン定義 */
