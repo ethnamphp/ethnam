@@ -186,9 +186,7 @@ class Ethna_Plugin_Handle_PearLocal extends Ethna_Plugin_Handle
 
         //    build command string.
         $pear_cmds = $args['pear_args'];
-        $pear_bin = (ETHNA_OS_WINDOWS)
-                  ? getenv('PHP_PEAR_BIN_DIR') . DIRECTORY_SEPARATOR . 'pear.bat'
-                  : (PHP_BINDIR . DIRECTORY_SEPARATOR . 'pear');
+        $pear_bin = PHP_BINDIR . DIRECTORY_SEPARATOR . 'pear';
         $local_conf_file = $pear_local->getConfFile();
         array_unshift(
             $pear_cmds,
