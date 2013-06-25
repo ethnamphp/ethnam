@@ -225,15 +225,15 @@ class Ethna_Logger extends Ethna_AppManager
     public static function errorLevelToLogLevel($errno)
     {
         switch ($errno) {
-        case E_ERROR:           $code = "E_ERROR"; $level = LOG_ERR; break;
-        case E_WARNING:         $code = "E_WARNING"; $level = LOG_WARNING; break;
-        case E_PARSE:           $code = "E_PARSE"; $level = LOG_CRIT; break;
-        case E_NOTICE:          $code = "E_NOTICE"; $level = LOG_NOTICE; break;
-        case E_USER_ERROR:      $code = "E_USER_ERROR"; $level = LOG_ERR; break;
-        case E_USER_WARNING:    $code = "E_USER_WARNING"; $level = LOG_WARNING; break;
-        case E_USER_NOTICE:     $code = "E_USER_NOTICE"; $level = LOG_NOTICE; break;
-        case E_STRICT:          $code = "E_STRICT"; $level = LOG_NOTICE; return;
-        default:                $code = "E_UNKNOWN"; $level = LOG_DEBUG; break;
+            case E_ERROR:           $code = "E_ERROR";        $level = LOG_ERR;     break;
+            case E_WARNING:         $code = "E_WARNING";      $level = LOG_WARNING; break;
+            case E_PARSE:           $code = "E_PARSE";        $level = LOG_CRIT;    break;
+            case E_NOTICE:          $code = "E_NOTICE";       $level = LOG_NOTICE;  break;
+            case E_USER_ERROR:      $code = "E_USER_ERROR";   $level = LOG_ERR;     break;
+            case E_USER_WARNING:    $code = "E_USER_WARNING"; $level = LOG_WARNING; break;
+            case E_USER_NOTICE:     $code = "E_USER_NOTICE";  $level = LOG_NOTICE;  break;
+            case E_STRICT:          $code = "E_STRICT";       $level = LOG_NOTICE;  return;
+            default:                $code = "E_UNKNOWN";      $level = LOG_DEBUG;   break;
         }
         return array($level, $code);
     }
