@@ -51,8 +51,12 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
     default:
         $php_errno = 'Unknown error'; break;
     }
-    $php_errstr = sprintf('PHP %s: %s in %s on line %d',
-                          $php_errno, $errstr, $errfile, $errline);
+
+    //ここで$level, $nameを使わないのはなぜ？
+    $php_errstr = sprintf('PHP %s:%s, %s: %s in %s on line %d',
+                          $level,$name, $php_errno, $errstr, $errfile, $errline);
+
+    //echo $php_errstr . "<br />";
 
     // error_log()
     if (ini_get('log_errors')) {
