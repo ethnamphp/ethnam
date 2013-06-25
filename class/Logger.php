@@ -220,6 +220,7 @@ class Ethna_Logger extends Ethna_AppManager
      *  @access public
      *  @param  int     $errno  PHPエラーレベル
      *  @return array   ログレベル(LOG_NOTICE,...), エラーレベル表示名("E_NOTICE"...)
+     *  @todo  E_USER_DEPRECATEDなどが補足できておらずE_UNKNOWNになってしまう。
      *  @static
      */
     public static function errorLevelToLogLevel($errno)
