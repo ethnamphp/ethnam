@@ -1,6 +1,6 @@
 # 変更点一覧
 
-## Ethna 2.6.0beta4から2.7への変更点
+## Ethna 2.6.0beta4からEthnam 2.7への変更点
 
 * Ethnaコア
  * PHP5.4に対応しました。(主な変更はhtmlspecialcharsの第三引数です。)
@@ -11,6 +11,7 @@
  * PHP4の名残であった参照の&を除去しました。
  * EthnaManagerを廃止しました。
  * __ethna_info__, __ethna_unittest__を廃止しました。
+ * 設定ファイル(etc/{appid}_ini.php)が存在しないときに自動で作成する機能を廃止しました。
 * プラグインまわり
  * Puginの命名規則を2.5に近い状態に戻しました。プラグインのクラス名で2.5と同じようにAppIDが使えます。(例：Project_Plugin_Cachemanager_Memcache)
  * extlibを廃止しました。
