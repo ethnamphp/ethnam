@@ -8,6 +8,7 @@
  * 主なプロパティ・メソッドでprivate,protected だったものをpublicにしました。これはEthna2.5との後方互換を確保するためです。
  * ActionFormの配列バリデーション, {form ..}, {form_input ..},などの仕様を古い(2.3.5あたり?)状態に戻しました。( see commit cc6d63eae1a615b3868e309ff53fd77414bbd4c7 )
  * bin/ethna.batを廃止しました。今後、Windowsは推奨環境から外れます。
+ * PHP4の名残であった参照の&を除去しました。
 * プラグインまわり
  * Puginの命名規則を2.5に近い状態に戻しました。プラグインのクラス名で2.5と同じようにAppIDが使えます。(例：Project_Plugin_Cachemanager_Memcache)
  * extlibを廃止しました。
