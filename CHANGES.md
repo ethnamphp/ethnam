@@ -10,6 +10,7 @@
  * bin/ethna.batを廃止しました。今後、Windowsは推奨環境から外れます。
  * PHP4の名残であった参照の&を除去しました。
  * EthnaManagerを廃止しました。
+ * __ethna_info__, __ethna_unittest__を廃止しました。
 * プラグインまわり
  * Puginの命名規則を2.5に近い状態に戻しました。プラグインのクラス名で2.5と同じようにAppIDが使えます。(例：Project_Plugin_Cachemanager_Memcache)
  * extlibを廃止しました。
