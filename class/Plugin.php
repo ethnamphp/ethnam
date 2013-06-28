@@ -60,9 +60,6 @@ class Ethna_Plugin
 
         $this->appid_list = array($controller->getAppId(), 'Ethna');
 
-        // load dir_registry
-        $this->_loadPluginDirList();
-
     }
 
     /**
