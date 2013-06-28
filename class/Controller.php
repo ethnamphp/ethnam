@@ -1022,11 +1022,11 @@ class Ethna_Controller
             $this->view = new $view_class_name($backend, $forward_name, $this->_getForwardPath($forward_name));
             $this->view->preforward();
             $this->view->forward();
-
-            unset($this->action_form->app_vars);
-            unset($this->action_form->app_ne_vars);
-            unset($this->action_form->form_vars);
         }
+
+	unset($this->action_form->app_vars);
+	unset($this->action_form->app_ne_vars);
+	unset($this->action_form->form_vars);
 
         return 0;
     }
