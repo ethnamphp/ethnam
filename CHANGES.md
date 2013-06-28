@@ -21,8 +21,10 @@
  * Ethna_ActionError#AddError()した際のログ出力をLOG_NOTICE -> LOG_INFO に変更しました。
  * ADODBのログ出力処理をオーバーライドできるようにしました。(`ethna_adodb_logger`というグローバル関数内で処理がべた書きされていたのを改善)
  * ログファイルに出力する際に、メモリ使用量を出力するようにしました。
-* その他
+* テンプレート関連
  * Smartyがテンプレートを出力する際に、メモリ使用量をHTTPヘッダ(`X-MemoryUsage`)で出力するようにしました。
+ * HTML5の<input type="email">に対応しました。(あくまで当座しのぎ的)
+* その他
  * `adodb/adodb.inc.php`をEthna側でrequireしなくなりました。(アプリケーション側でrequire_onceする必要があります。)
 * テスト関連
  * UnitTestManagerを廃止しました。
