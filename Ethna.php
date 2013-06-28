@@ -80,9 +80,6 @@ define('GATEWAY_WWW', 1);
 /** ゲートウェイ: CLI */
 define('GATEWAY_CLI', 2);
 
-/** ゲートウェイ: XMLRPC */
-define('GATEWAY_XMLRPC', 3);
-
 /** ゲートウェイ: SOAP */
 define('GATEWAY_SOAP', 4);
 
