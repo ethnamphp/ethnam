@@ -92,6 +92,4 @@ Renderer/View に関する変更点
 
   * Debugtoolbar同梱 (extlibのサンプルとして。本体に取り込むほどのクオリティでもないためこちらに追加)
 
-その他の変更
-  * Config に URL が設定されていない場合、アクセスされたURLから自動的に検出されるようになりました。(Ethna_Util::getUrlFromRequestUri())
 

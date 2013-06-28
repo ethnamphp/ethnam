@@ -2,6 +2,10 @@
 
 ## Ethna 2.5から2.6(beta4)への変更点
 
+* その他の変更
+  * Config に URL が設定されていない場合、アクセスされたURLから自動的に検出されるようになりました。(Ethna_Util::getUrlFromRequestUri())
+
+
 ### bug fix
 * Ethna_Plugin::includePlugin メソッドの実装が動作するものではなかったので変更
 * Ethna_Plugin_Cachemanager のクラスのプロパティに指定する $namespace が意味をなしていなかったので修正 (#17753)
