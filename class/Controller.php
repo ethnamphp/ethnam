@@ -1238,12 +1238,6 @@ class Ethna_Controller
         $form_action_name = preg_replace('/[^a-z0-9\-_]+/i', '', $form_action_name);
         $this->logger->log(LOG_DEBUG, 'form_action_name[%s]', $form_action_name);
 
-        // Ethnaマネージャへのフォームからのリクエストは拒否
-        if ($form_action_name == "__ethna_info__" ||
-            $form_action_name == "__ethna_unittest__") {
-            $form_action_name = "";
-        }
-
         // フォームからの指定が無い場合はエントリポイントに指定されたデフォルト値を利用する
         if ($form_action_name == "" && count($default_action_name) > 0) {
             $tmp = is_array($default_action_name) ? $default_action_name[0] : $default_action_name;
@@ -1790,24 +1784,7 @@ class Ethna_Controller
             return $this->renderer;
         }
 
-        // if action is __ethna_info__ or __ethna_unittest__, the renderer must be Smarty2
-        if ($this->action_name == '__ethna_info__'
-            || $this->action_name == '__ethna_unittest__') {
-            require_once ETHNA_BASE . '/class/Renderer/Smarty.php';
-            // force update delimiter setting
-            $renderer_setting = $this->getConfig()->get('renderer');
-            $smarty_setting = (isset($renreder_setting['smarty']) ? $renderer_setting['smarty'] : array());
-            $this->getConfig()->set('renderer', array_merge(
-                $smarty_setting,
-                array('smarty' => array(
-                    'left_delimiter' => '{',
-                    'right_delimiter' => '}',
-                )
-            )));
-            $this->renderer = new Ethna_Renderer_Smarty($this);
-        } else {
-            $this->renderer = $this->class_factory->getObject('renderer');
-        }
+	$this->renderer = $this->class_factory->getObject('renderer');
         $this->_setDefaultTemplateEngine($this->renderer);
         return $this->renderer;
     }
