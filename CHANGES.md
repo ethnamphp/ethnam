@@ -28,7 +28,7 @@
 * バグ修正
  * メールアドレスのバリデーションで、@の左側の?を許可するようにしました。
  * Ethna_ActionFormで、nullを''空文字列に変換してしまうバグを修正しました。[[de1442bd](https://github.com/DQNEO/ethnam/commit/de1442bd55397834a7b6228c3c0ae694849237db)]
-
+ * Controllerの終了直前にaction_formのプロパティをunsetすることで、PHP5.1でのメモリリークを改善しました。c.f. http://qiita.com/DQNEO/items/f2cbe7f15f92f5f4f05d
 ## 2.7から2.8への変更点
 
 * AppObject, AppSQL, AppSearchObjectを廃止しました。[[e871a1a](https://github.com/DQNEO/ethnam/commit/e871a1addafae0314bd62dfc8a3e209359ac4a2f)]
