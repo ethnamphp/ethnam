@@ -13,6 +13,7 @@
  * __ethna_info__, __ethna_unittest__を廃止しました。
  * 設定ファイル(etc/{appid}_ini.php)が存在しないときに自動で作成する機能を廃止しました。
  * 雑多なコンテンツファイルを補完するためのresourcesディレクトリを追加
+ * Ethna本体がinclude_pathに置いてなくても(なるべく)大丈夫なように改善しました。
 * プラグインまわり
  * Puginの命名規則を2.5に近い状態に戻しました。プラグインのクラス名で2.5と同じようにAppIDが使えます。(例：Project_Plugin_Cachemanager_Memcache)
  * extlibを廃止しました。
