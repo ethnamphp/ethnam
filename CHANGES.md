@@ -6,7 +6,7 @@
  * PHP5.4に対応しました。(主な変更はhtmlspecialcharsの第三引数です。)
  * インストール方法が変わりました。(pear installはできなくなりました。)
  * 主なプロパティ・メソッドでprivate,protected だったものをpublicにしました。これはEthna2.5との後方互換を確保するためです。
- * ActionFormの配列バリデーション, {form ..}, {form_input ..},などの仕様を古い(2.3.5あたり?)状態に戻しました。 [[cc6d63eae](https://github.com/DQNEO/ethnam/commit/cc6d63eae1a615b3868e309ff53fd77414bbd4c7)]
+ * ActionFormの配列バリデーション, {form ..}, {form_input ..},などの仕様を古い(2.3.5あたり?)状態に戻しました。 [[cc6d63e](https://github.com/DQNEO/ethnam/commit/cc6d63eae1a615b3868e309ff53fd77414bbd4c7)]
  * bin/ethna.batを廃止しました。今後、Windowsは推奨環境から外れます。
  * PHP4の名残であった参照の&を除去しました。
 * プラグインまわり
@@ -25,8 +25,8 @@
 
 ## 2.7から2.8への変更点
 
-* AppObject, AppSQL, AppSearchObjectを廃止しました。(commit e871a1addafae0314bd62dfc8a3e209359ac4a2f)
-* Windowsサポートを廃止しました。(commit 4ec580224232122b29a2a9ccf5824bf8d985f424)
+* AppObject, AppSQL, AppSearchObjectを廃止しました。[[e871a1a](https://github.com/DQNEO/ethnam/commit/e871a1addafae0314bd62dfc8a3e209359ac4a2f)]
+* Windowsサポートを廃止しました。[[4ec5802](https://github.com/DQNEO/ethnam/commit/4ec580224232122b29a2a9ccf5824bf8d985f424)]
 
 ## 2.8から2.9への変更点
 
