@@ -4,7 +4,7 @@
 
 * Backend#performを Controller#performへ引っ越ししました。
 * ActionClassからViewClassにパラメータを渡す機能を廃止しました。
-* E_DEPRECATED エラーを拾えるうにしました。(E_USER_DEPRECATEDについては未対応)
+* E_DEPRECATED エラーを拾えるようにしました。(E_USER_DEPRECATEDについては未対応)
 * Smarty のi18n modifierで引数を渡してsprintf的に使えるようになりました。(see class/Plugin/Smarty/modifier.i18n.php)
 
 ## 2.7から2.8への変更点
