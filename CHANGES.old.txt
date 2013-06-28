@@ -281,9 +281,6 @@
 -- http://wassr.jp/user/nazo/statuses/SkfJTckkN2
 - Ethna_ActionForm#getHiddenVars メソッドで、フォーム定義が配列で設定された値がスカラーの場合に警告が出ていたのを修正(thanks: maru_cc)
 -- 逆に、フォーム定義がスカラーで値が配列の場合は救いようがないので警告扱い
-- www/info.php を実行したり、www/unittest.php を実行すると、サーバが応答しなくなることがあるバグを修正
--- アクションクラスの書き方によっては、Ethna_InfoManager が 無限ループに陥っていたため
--- http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group_id=1343&atid=5092
 
 ** 2.5.0-preview2
 
@@ -417,9 +414,6 @@
 -- Ethna_ActionForm#getHiddenVars メソッドで、フォーム定義が配列で設定された値がスカラーの場合に警告が出ていたのを修正(t
 hanks: maru_cc)
 --- 逆に、フォーム定義がスカラーで値が配列の場合は救いようがないので警告扱い
--- www/info.php を実行したり、www/unittest.php を実行すると、サーバが応答しなくなることがあるバグを修正
---- アクションクラスの書き方によっては、Ethna_InfoManager が 無限ループに陥っていたため
---- http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group_id=1343&atid=5092
 - 2.5.0 preview2からのバックポート
 -- selected="selected" の修正漏れを修正 (thanks:maru_cc)
 -- Ethna_MailSender にてメールを送信する際、テンプレートが存在しなかった場合にも空メールを送ってしまうバグを修正 (thanks
@@ -469,7 +463,6 @@ hanks: maru_cc)
 -- ethna pear-local コマンドで Ethna を [appid]/lib にインストールしても、[appid]/bin/ethna が使えるようにした。
 - 配列のフォームをvalidateする際、値がnullだとフィルタが適用されないバグを修正
 - Ethna_Plugin_Cachemanager_Memcache に引数がなかったためにプラグイン呼び出しに失敗していたバグを修正(thanks sfio, ethna-users:0818)
-- Ethna_PearWrapper、Ethna_Plugin_Csrf_Session, Ethna_InfoManager 等を微調整(thanks sfio, ethna-users:0825)
 - form_input の default 属性が、入力値で上書きできなかったバグを修正(thanks sotarok, ethna-users:0836)
 - call_user_func の戻り値がオブジェクトだった場合に、E_NOTICEが出る問題を回避(PHP 4.4限定) [ethna-users:0910]
 - ActionForm の validate test の結果が、次のテストに引き継がれてしまうバグを修正(thanks: maru_cc)
@@ -795,7 +788,6 @@ hanks: maru_cc)
 - log_facilityがnullの場合のログ出力クラスをEthna_LogWriter_EchoからEthna_LogWriterに変更(ログ出力なし)
 - log_facilityにクラス名を書いた場合はそのクラスをログ出力クラスとして利用するように変更
 - Ethna_Filter::preFilter()、Ethna_Filter::postFilter()がEthna_Errorオブジェクトを返した場合は実行を中止するように変更
-- Ethna_InfoManagerの設定表示項目を追加
 - Ethna_ActionForm::isForceValidatePlus()、Ethna_ActionForm::setForceValidatePlus()メソッドと、$force_validate_plusメンバを追加($force_validate_plusをtrueに設定すると、通常検証でエラーが発生した場合でも_validatePlus()メソッドが実行される−デフォルト:false)
 - フォーム値定義のcustom属性にカンマ区切りでの複数メソッドサポートを追加
 
@@ -839,13 +831,6 @@ hanks: maru_cc)
 
 - ethna_error_handlerのtypoを修正
 - Ethna_Sessionクラスでログが正しく出力されない問題を修正
-
-
-** [2005/01/14] 0.1.4
-
-*** bug fixes
-
-- __ethna_info__が全く動作しない問題を修正:(
 
 
 ** [2005/01/13] 0.1.3
