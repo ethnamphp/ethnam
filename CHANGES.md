@@ -6,7 +6,7 @@
  * PHP5.4に対応しました。(主な変更はhtmlspecialcharsの第三引数です。)
  * インストール方法が変わりました。(pear installはできなくなりました。)
  * 主なプロパティ・メソッドでprivate,protected だったものをpublicにしました。これはEthna2.5との後方互換を確保するためです。
- * ActionFormの配列バリデーション, {form ..}, {form_input ..},などの仕様を古い(2.3.5あたり?)状態に戻しました。( see commit cc6d63eae1a615b3868e309ff53fd77414bbd4c7 )
+ * ActionFormの配列バリデーション, {form ..}, {form_input ..},などの仕様を古い(2.3.5あたり?)状態に戻しました。 [[cc6d63eae](https://github.com/DQNEO/ethnam/commit/cc6d63eae1a615b3868e309ff53fd77414bbd4c7)]
  * bin/ethna.batを廃止しました。今後、Windowsは推奨環境から外れます。
  * PHP4の名残であった参照の&を除去しました。
 * プラグインまわり
@@ -21,7 +21,7 @@
  * `adodb/adodb.inc.php`をEthna側でrequireしなくなりました。(アプリケーション側でrequire_onceする必要があります。)
 * バグ修正
  * メールアドレスのバリデーションで、@の左側の?を許可するようにしました。
- * Ethna_ActionFormで、nullを''空文字列に変換してしまうバグを修正しました。(commit de1442bd55397834a7b6228c3c0ae694849237db)
+ * Ethna_ActionFormで、nullを''空文字列に変換してしまうバグを修正しました。[[de1442bd](https://github.com/DQNEO/ethnam/commit/de1442bd55397834a7b6228c3c0ae694849237db)]
 
 ## 2.7から2.8への変更点
 
