@@ -87,7 +87,6 @@ class {$project_id}_Controller extends Ethna_Controller
     protected $directory = array(
         'action'        => 'app/action',
         'action_cli'    => 'app/action_cli',
-        'action_xmlrpc' => 'app/action_xmlrpc',
         'app'           => 'app',
         'plugin'        => 'app/plugin',
         'bin'           => 'bin',

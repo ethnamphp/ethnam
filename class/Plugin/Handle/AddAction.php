@@ -126,7 +126,7 @@ class Ethna_Plugin_Handle_AddAction extends Ethna_Plugin_Handle
     {
         return <<<EOS
 add new action to project:
-    {$this->id} [-b|--basedir=dir] [-s|--skelfile=file] [-g|--gateway=www|cli|xmlrpc] [-w|--with-unittest] [-u|--unittestskel=file] [action]
+    {$this->id} [-b|--basedir=dir] [-s|--skelfile=file] [-g|--gateway=www|cli] [-w|--with-unittest] [-u|--unittestskel=file] [action]
 
 EOS;
     }
@@ -137,7 +137,7 @@ EOS;
     function getUsage()
     {
         return <<<EOS
-ethna {$this->id} [-b|--basedir=dir] [-s|--skelfile=file] [-g|--gateway=www|cli|xmlrpc] [-w|--with-unittest] [-u|--unittestskel=file] [action]
+ethna {$this->id} [-b|--basedir=dir] [-s|--skelfile=file] [-g|--gateway=www|cli] [-w|--with-unittest] [-u|--unittestskel=file] [action]
 
 EOS;
     }
