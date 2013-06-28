@@ -95,27 +95,3 @@ Renderer/View に関する変更点
 その他の変更
   * Config に URL が設定されていない場合、アクセスされたURLから自動的に検出されるようになりました。(Ethna_Util::getUrlFromRequestUri())
 
-
-bug fix
-^^^^^^^
-* Ethna_Plugin::includePlugin メソッドの実装が動作するものではなかったので変更
-* Ethna_Plugin_Cachemanager のクラスのプロパティに指定する $namespace が意味をなしていなかったので修正 (#17753)
-* PROJECT_DIR/lib/Ethna/extlib 以下にファイルを設置するタイプのプラグインを pear-local などでインストールすると、それ以後ethnaコマンドが使えなくなる問題を修正
-* 新しいプラグインの命名規則に従っていない古いプラグインを別物として読み込もうとしてクラス名がかぶる問題を修正(#17875) thanks: id:okonomi
-* checkMailAddress でメールアドレスの@以前に/が含まれる場合にvalidationに引っかかる問題を修正 (#3 thx. DQNEO) https://github.com/ethna/ethna/pull/3
-* setFormDef_PreHelper() 内で $this->af がセットされていない問題の修正 (#4 thx. DQNEO) https://github.com/ethna/ethna/pull/4
-
-beta1 .. beta4
-^^^^^^^^^^^^^^
-* require のパスを修正 (thx. seiya, https://github.com/sotarok/ethna/issues/#issue/1)
-* Ethna_DB_PEAR のバグ修正 (thx. polidog, #40)
-* clear-cache コマンドのバグ修正 (thx. ucchee, #41)
-* Ethna_Plugin_CacheManager_Memcache の修正。
-
-  * delete コマンド
-  * 複数サーバのバランシングができていなかった件を修正 (thx. DQNEO #30)
-
-* Ethna_DB_ADOdb のエラーハンドリング, Ethna_DB_* の実装・コメントの修正
-
-  * thx. ryuzo98 #38, DQNEO #48
-
