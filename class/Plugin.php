@@ -43,9 +43,6 @@ class Ethna_Plugin
     /** @protected    array   プラグインのクラス名、ソースファイル名を保存する配列 */
     protected $src_registry = array();
 
-    /** @protected    array   検索対象ディレクトリを，プラグインの優先順に保存する配列 */
-    protected $_dirlist = array();
-
     /**#@-*/
 
     // {{{ コンストラクタ
@@ -228,29 +225,6 @@ class Ethna_Plugin
         unset($this->obj_registry[$type][$name]);
     }
     // }}}
-
-    /**
-     *  プラグインのインスタンスをレジストリから消す
-     *
-     *  @access private
-     *  @param  string  $type   プラグインの種類
-     *  @param  string  $name   プラグインの名前
-     */
-    private function _loadPluginDirList()
-    {
-        $this->_dirlist[] = $this->controller->getDirectory('plugin');
-
-        // include_path から検索
-        $include_path_list = explode(PATH_SEPARATOR, get_include_path());
-
-        // Ethna bandle
-        $class_dir = implode(DIRECTORY_SEPARATOR, array('Ethna', 'class', 'Plugin'));
-        foreach ($include_path_list as $include_path) {
-            if (is_dir($include_path . DIRECTORY_SEPARATOR . $class_dir)) {
-                $this->_dirlist[] = $include_path . DIRECTORY_SEPARATOR . $class_dir;
-            }
-        }
-    }
 
     // {{{ src_registry のアクセサ
     /**
