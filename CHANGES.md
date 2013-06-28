@@ -18,6 +18,7 @@
  * Puginの命名規則を2.5に近い状態に戻しました。プラグインのクラス名で2.5と同じようにAppIDが使えます。(例：Project_Plugin_Cachemanager_Memcache)
  * extlibを廃止しました。
  * Ethna_Plugin_Abstractを廃止しました。これによりプラグインの基底クラスはなくなりました。
+ * CacheManager_LocalFileでsafeモードを無視するようにしました。
 * ログ関連
  * Ethna_ActionError#AddError()した際のログ出力をLOG_NOTICE -> LOG_INFO に変更しました。
  * ADODBのログ出力処理をオーバーライドできるようにしました。(`ethna_adodb_logger`というグローバル関数内で処理がべた書きされていたのを改善)
