@@ -40,7 +40,7 @@
  * Validationのログをもう少し詳細に出すようにしました。
 * テンプレート関連
  * Smartyがテンプレートを出力する際に、メモリ使用量をHTTPヘッダ(`X-MemoryUsage`)で出力するようにしました。
- * HTML5の<input type="email">に対応しました。(あくまで当座しのぎ的)
+ * HTML5の`&lt;input type="email"&gt;`に対応しました。(あくまで当座しのぎ的)
 * セッション関連
  * check_remote_addrをデフォルトで無効にしました。
 * その他
