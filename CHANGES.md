@@ -37,9 +37,9 @@
   * Rhaco 削除
   * 汎用ビュークラスを実装
   * レイアウトテンプレートを実装
-    * HTMLの外側に当たる雛形のテンプレートを描くためのもの。各アクションの出力はこのテンプレートの出力でラップされる
-    * デフォルトは template/{locale_name}/layout.tpl に置かれている。
-    * この機能はデフォルトで有効になっている。無効にしたければ、[appid]_ViewClass.php の $use_layout を false にする(既存プロジェクトをEthna 2.6に移行する場合、こうすれば動作するはず)
+     * HTMLの外側に当たる雛形のテンプレートを描くためのもの。各アクションの出力はこのテンプレートの出力でラップされる
+     * デフォルトは template/{locale_name}/layout.tpl に置かれている。
+     * この機能はデフォルトで有効になっている。無効にしたければ、[appid]_ViewClass.php の $use_layout を false にする(既存プロジェクトをEthna 2.6に移行する場合、こうすれば動作するはず)
   * renderer の設定を config に書けるようになりました (一部、かつ、実装は renderer 依存)
      * Smarty2 の場合 'smarty', Smarty3 の場合 'smarty3' をキーとした配列に、left/right delimiter の設定を記述できます
      * 'path' として、include するファイルの path を指定できるようになりました
