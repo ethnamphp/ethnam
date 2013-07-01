@@ -23,7 +23,7 @@
  * bin/ethna.batを廃止しました。今後、Windowsは推奨環境から外れます。
  * PHP4の名残であった参照の&を除去しました。
  * EthnaManagerを廃止しました。
- * __ethna_info__, __ethna_unittest__を廃止しました。
+ * `__ethna_info__`, `__ethna_unittest__`を廃止しました。
  * 設定ファイル(etc/{appid}_ini.php)が存在しないときに自動で作成する機能を廃止しました。
  * 雑多なコンテンツファイルを補完するためのresourcesディレクトリを追加
  * Ethna本体がinclude_pathに置いてなくても(なるべく)大丈夫なように改善しました。
