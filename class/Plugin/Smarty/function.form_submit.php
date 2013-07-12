@@ -11,6 +11,10 @@ function smarty_function_form_submit($params, &$smarty)
     if ($view === null) {
         return null;
     }
+
+    //ここでi18n変換をかます
+    $params['value'] = _et($params['value']);
+
     return $view->getFormSubmit($params);
 }
 
