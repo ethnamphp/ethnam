@@ -147,6 +147,9 @@ define('FORM_TYPE_HIDDEN', 10);
 /** フォーム型: email */
 define('FORM_TYPE_EMAIL', 101);
 
+/** フォーム型: email */
+define('FORM_TYPE_NUMBER', 102);
+
 /** エラーコード: 一般エラー */
 define('E_GENERAL', 1);
 

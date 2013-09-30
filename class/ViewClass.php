@@ -626,6 +626,10 @@ class Ethna_ViewClass
             $input = $this->_getFormInput_Email($name, $def, $params);
             break;
 
+        case FORM_TYPE_NUMBER:
+            $input = $this->_getFormInput_Number($name, $def, $params);
+            break;
+
         case FORM_TYPE_TEXT:
         default:
             $input = $this->_getFormInput_Text($name, $def, $params);
@@ -1100,11 +1104,10 @@ class Ethna_ViewClass
     /**
      *  フォームタグを取得する(type="email")
      *
-     *  中身は未実装です。
-     *  子クラス側でオーバーライドして使ってください
      */
-    function _getFormInput_Email($name, $def, $params)
+    protected function _getFormInput_Email($name, $def, $params)
     {
+        $params['type'] = 'email';
         return $this->_getFormInput_Text($name, $def, $params);
     }
 
@@ -1116,8 +1119,9 @@ class Ethna_ViewClass
      */
     function _getFormInput_Text($name, $def, $params)
     {
-        // type
-        $params['type'] = 'text';
+        if (! isset($params['type'])) {
+            $params['type'] = 'text';
+        }
 
         // name
         if (isset($def['type'])) {
