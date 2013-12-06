@@ -76,7 +76,7 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
 
     // ignore these errors because so many errors occurs in external libraries (like PEAR)
     if ($errno === E_STRICT) {
-        return true;
+        return false;
     }
     if ($errno === E_RECOVERABLE_ERROR) {
         return true;
