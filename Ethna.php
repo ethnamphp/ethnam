@@ -80,9 +80,6 @@ define('GATEWAY_WWW', 1);
 /** ゲートウェイ: CLI */
 define('GATEWAY_CLI', 2);
 
-/** ゲートウェイ: XMLRPC */
-define('GATEWAY_XMLRPC', 3);
-
 /** ゲートウェイ: SOAP */
 define('GATEWAY_SOAP', 4);
 
@@ -149,6 +146,9 @@ define('FORM_TYPE_HIDDEN', 10);
 /** HTML 5 */
 /** フォーム型: email */
 define('FORM_TYPE_EMAIL', 101);
+
+/** フォーム型: email */
+define('FORM_TYPE_NUMBER', 102);
 
 /** エラーコード: 一般エラー */
 define('E_GENERAL', 1);

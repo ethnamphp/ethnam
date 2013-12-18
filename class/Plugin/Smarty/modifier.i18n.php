@@ -4,21 +4,23 @@
  *
  *  sample:
  *  <code>
- *  {"english"|i18n}
+ *  {"you have %d apples"|i18n:$n}
  *  </code>
  *  <code>
- *  英語
+ *  あなたはリンゴを3つ持っています。
  *  </code>
  *
  *  @param  string  $string i18n処理対象の文字列
+ *  @param  mixed   $val    任意のパラメータ
  *  @return string  ロケールに対応したメッセージ
  */
-function smarty_modifier_i18n($string)
+function smarty_modifier_i18n($string, $arg1 = null)
 {
     $c = Ethna_Controller::getInstance();
 
     $i18n = $c->getI18N();
 
-    return $i18n->get($string);
+    $msg = $i18n->get($string);
+    return sprintf($msg, $arg1);
 }
 

@@ -48,9 +48,6 @@ class Ethna_Plugin_Generator_Action extends Ethna_Plugin_Generator
             case GATEWAY_CLI:
                 $skelton = "skel.action_cli.php";
                 break;
-            case GATEWAY_XMLRPC:
-                $skelton = "skel.action_xmlrpc.php";
-                break;
             default:
                 $err = Ethna::raiseError('unknown gateway.');
                 return $err;

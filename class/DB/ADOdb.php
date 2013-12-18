@@ -286,7 +286,13 @@ class Ethna_DB_ADOdb extends Ethna_DB
     }
 
 
-    //{{{ execute
+    /**
+     *  Execute SQL
+     *
+     *  @param string $query  SQL
+     *  @param mixed  $inputarr  プレースホルダ(スカラまたは配列)
+     *  @return RecordSet or false
+     */
     public function execute($query, $inputarr = false)
     {
         return $this->db->Execute($query, $inputarr);
