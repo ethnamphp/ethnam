@@ -14,10 +14,24 @@ PHP 5.2.6以上
 
 ## インストール
 
+下記はあくまで一例です。
 
-```
+```sh
+cd /tmp/
+# ethnamを取得
 git clone git@github.com:DQNEO/ethnam.git
-./ethnam/bin/ethna.sh --add-project Foo
+
+# プロジェクト作成
+/tmp/ethnam/bin/ethna.sh add-project foo
+ln -s /tmp/ethnam /tmp/foo/lib/Ethna
+
+# Smartyを取得
+wget http://www.smarty.net/files/Smarty-2.6.28.tar.gz
+tar xvfz Smarty-2.6.28.tar.gz
+mv Smarty-2.6.28/libs /tmp/foo/lib/Smarty
+
+# サーバ起動
+php -S 0.0.0.0:8080 -t /tmp/foo/www
 ```
 
 ## Pull Request
