@@ -1643,7 +1643,10 @@ class Ethna_Controller
             return $this->renderer;
         }
 
-	$this->renderer = $this->class_factory->getObject('renderer');
+        $this->renderer = $this->class_factory->getObject('renderer');
+        if ($this->renderer === null) {
+            trigger_error("cannot get renderer", E_USER_ERROR);
+        }
         $this->_setDefaultTemplateEngine($this->renderer);
         return $this->renderer;
     }
