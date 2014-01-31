@@ -21,9 +21,6 @@ class Ethna_Renderer_Smarty3 extends Ethna_Renderer
     /** @private    string compile directory  */
     private $compile_dir;
 
-    /** @protected  string path of smarty3 */
-    protected $engine_path = 'Smarty3/Smarty.class.php';
-
     /**
      *  Constructor for Ethna_Renderer_Smarty3
      *
@@ -32,10 +29,6 @@ class Ethna_Renderer_Smarty3 extends Ethna_Renderer
     public function __construct($controller)
     {
         parent::__construct($controller);
-
-        // get renderer config
-        $smarty_config = $this->config;
-        $this->loadEngine($smarty_config);
 
         $this->engine = new Smarty();
 
@@ -49,6 +42,9 @@ class Ethna_Renderer_Smarty3 extends Ethna_Renderer
         $this->engine->setTemplateDir($template_dir);
         $this->engine->setCompileDir($compile_dir);
         $this->engine->compile_id = md5($this->template_dir);
+
+        // get renderer config
+        $smarty_config = $this->config;
 
         $this->engine->left_delimiter = $smarty_config['left_delimiter'];
         $this->engine->right_delimiter = $smarty_config['right_delimiter'];

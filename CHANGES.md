@@ -1,5 +1,8 @@
 # 変更点一覧
 
+## 2.9から2.10への変更点
+* RendererクラスでSmartyをロードしなくなりました。Appid_ControllerでSmartyをrequireするか、自前でオートロードしてください。
+
 ## 2.8から2.9への変更点
 
 * Backend#performを Controller#performへ引っ越ししました。
