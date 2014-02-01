@@ -142,31 +142,17 @@ class Ethna_ClassFactory
         $object = null;
 
         $ext = to_array($ext);
-        if (isset($this->class[$key]) == false) {
-            // app object
-            $class_name = $this->controller->getObjectClassName($key);
-            $ext = array_pad($ext, 3, null);
-            list($key_type, $key_value, $prop) = $ext;
-        } else {
-            // ethna classes
-            $class_name = $this->class[$key];
-            $ext = array_pad($ext, 1, null);
-            list($weak) = $ext;
-        }
+
+        // ethna classes
+        $class_name = $this->class[$key];
+        $ext = array_pad($ext, 1, null);
+        list($weak) = $ext;
 
         //  すでにincludeされていなければ、includeを試みる
         if (class_exists($class_name) == false) {
             if ($this->_include($class_name) == false) {
                 return $object;  //  include 失敗。返り値はnull
             }
-        }
-
-        //  AppObject をはじめに扱う
-        //  AppObject はキャッシュされないことに注意
-        if (isset($this->class[$key]) == false) {
-            $backend = $this->controller->getBackend();
-            $object = new $class_name($backend, $key_type, $key_value, $prop);
-            return $object;
         }
 
         //  Ethna_Controllerで定義されたクラスキーの場合
