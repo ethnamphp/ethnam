@@ -1,7 +1,7 @@
 <?php
 // vim: foldmethod=marker
 /**
- *  ActionClass.php
+ *  ActionClassCLI.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_CLI_ActionClass
+// {{{ Ethna_ActionClassCLI
 /**
  *  コマンドラインaction実行クラス
  *
@@ -18,7 +18,7 @@
  *  @package    Ethna
  *  @obsolete
  */
-class Ethna_CLI_ActionClass extends Ethna_ActionClass
+class Ethna_ActionClassCLI extends Ethna_ActionClass
 {
     /**
      *  action処理
