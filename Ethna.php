@@ -86,6 +86,102 @@ function _et($message)
 }
 // }}}
 
+// {{{ ethna_error_handler
+/**
+ *  エラーコールバック関数
+ *
+ *  @param  int     $errno      エラーレベル
+ *  @param  string  $errstr     エラーメッセージ
+ *  @param  string  $errfile    エラー発生箇所のファイル名
+ *  @param  string  $errline    エラー発生箇所の行番号
+ */
+function ethna_error_handler($errno, $errstr, $errfile, $errline)
+{
+    if (($errno & error_reporting()) === 0) {
+        return;
+    }
+
+    list($level, $name) = Ethna_Logger::errorLevelToLogLevel($errno);
+    switch ($errno) {
+    case E_ERROR:
+    case E_CORE_ERROR:
+    case E_COMPILE_ERROR:
+    case E_USER_ERROR:
+        $php_errno = 'Fatal error'; break;
+    case E_WARNING:
+    case E_CORE_WARNING:
+    case E_COMPILE_WARNING:
+    case E_USER_WARNING:
+        $php_errno = 'Warning'; break;
+    case E_PARSE:
+        $php_errno = 'Parse error'; break;
+    case E_NOTICE:
+    case E_USER_NOTICE:
+    case E_STRICT:
+        $php_errno = 'Notice'; break;
+    case E_USER_DEPRECATED:
+    case E_DEPRECATED:
+        $php_errno = 'Deprecated'; break;
+    case E_RECOVERABLE_ERROR:
+        $php_errno = 'Recoverable error'; break;
+        break;
+    default:
+        $php_errno = 'Unknown error'; break;
+    }
+
+    //ここで$level, $nameを使わないのはなぜ？
+    $php_errstr = sprintf('PHP %s:%s, %s: %s in %s on line %d',
+                          $level,$name, $php_errno, $errstr, $errfile, $errline);
+
+    //echo $php_errstr . "<br />";
+
+    // error_log()
+    if (ini_get('log_errors')) {
+        $locale = setlocale(LC_TIME, 0);
+        setlocale(LC_TIME, 'C');
+        error_log($php_errstr, 0);
+        setlocale(LC_TIME, $locale);
+    }
+
+    // $logger->log()
+    $c = Ethna_Controller::getInstance();
+    if ($c !== null) {
+        $logger = $c->getLogger();
+        $logger->log($level, sprintf("[PHP] %s: %s in %s on line %d",
+                                     $name, $errstr, $errfile, $errline));
+    }
+
+    // ignore these errors because so many errors occurs in external libraries (like PEAR)
+    if ($errno === E_STRICT) {
+        return false;
+    }
+    if ($errno === E_RECOVERABLE_ERROR) {
+        return true;
+    }
+
+    // printf()
+    if (ini_get('display_errors')) {
+        $is_debug = true;
+        $has_echo = false;
+        if ($c !== null) {
+            $config = $c->getConfig();
+            $is_debug = $config->get('debug');
+            $facility = $logger->getLogFacility();
+            $has_echo = is_array($facility)
+                        ? in_array('echo', $facility) : $facility === 'echo';
+        }
+        if ($is_debug == true && $has_echo === false
+            && $errno !== E_DEPRECATED) {
+            return false;
+        }
+    }
+}
+set_error_handler('ethna_error_handler');
+// }}}
+
+// {{{ ethna_exception_handler
+    //  TODO: Implement ethna_exception_handler function.
+// }}}
 // {{{ to_array
 /**
  *  グローバルユーティリティ関数: スカラー値を要素数1の配列として返す
