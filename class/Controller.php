@@ -840,22 +840,6 @@ class Ethna_Controller
     }
 
     /**
-     *  SOAPアプリケーションのエントリポイント
-     *
-     *  @access public
-     *  @param  string  $class_name     アプリケーションコントローラのクラス名
-     *  @param  mixed   $action_name    指定のアクション名(省略可)
-     *  @param  mixed   $fallback_action_name   アクションが決定できなかった場合に実行されるアクション名(省略可)
-     *  @static
-     */
-    public static function main_SOAP($class_name, $action_name = "", $fallback_action_name = "")
-    {
-        $c = new $class_name(GATEWAY_SOAP);
-        $c->trigger($action_name, $fallback_action_name);
-        $c->end();
-    }
-
-    /**
      *  フレームワークの処理を開始する
      *
      *  @access public
@@ -886,9 +870,6 @@ class Ethna_Controller
             break;
         case GATEWAY_CLI:
             $this->_trigger_CLI($default_action_name);
-            break;
-        case GATEWAY_SOAP:
-            $this->_trigger_SOAP();
             break;
         }
 
@@ -1000,24 +981,6 @@ class Ethna_Controller
     private function _trigger_CLI($default_action_name = "")
     {
         return $this->_trigger_WWW($default_action_name);
-    }
-
-    /**
-     *  SOAPフレームワークの処理を実行する
-     *
-     *  @access private
-     */
-    private function _trigger_SOAP()
-    {
-        // SOAPエントリクラス
-        $gg = new Ethna_SOAP_GatewayGenerator();
-        $script = $gg->generate();
-        eval($script);
-
-        // SOAPリクエスト処理
-        $server = new SoapServer(null, array('uri' => $this->config->get('url')));
-        $server->setClass($gg->getClassName());
-        $server->handle();
     }
 
     /**
