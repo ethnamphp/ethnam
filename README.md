@@ -20,16 +20,18 @@ Ethnaから派生してできたプロジェクトです。
 ```sh
 cd /tmp/
 # ethnamを取得
-git clone git@github.com:DQNEO/ethnam.git
+git clone git://github.com/DQNEO/ethnam.git Ethna
 
 # プロジェクト作成
-/tmp/ethnam/bin/ethna.sh add-project foo
-ln -s /tmp/ethnam /tmp/foo/lib/Ethna
+./Ethna/bin/ethna.sh add-project foo
+cd /tmp/foo/lib
+ln -s /tmp/Ethna Ethna
 
 # Smartyを取得
-wget http://www.smarty.net/files/Smarty-2.6.28.tar.gz
-tar xvfz Smarty-2.6.28.tar.gz
-mv Smarty-2.6.28/libs /tmp/foo/lib/Smarty
+tar xvfz ~/tmp/Ethna/misc/optional_package/Smarty/src/Smarty-2.6.26.tar.gz
+mv Smarty-2.6.26 Smarty
+
+app/Foo_Controller.phpのrequire_once 'Smarty/libs/Smarty.class.php'を有効にする
 
 # サーバ起動
 php -S 0.0.0.0:8080 -t /tmp/foo/www

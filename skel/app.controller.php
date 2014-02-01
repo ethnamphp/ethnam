@@ -17,6 +17,7 @@ set_include_path(implode(PATH_SEPARATOR, array($app, $lib)) . PATH_SEPARATOR . g
 
 
 /** including application library. */
+//require_once 'Smarty/libs/Smarty.class.php';
 require_once 'Ethna/Ethna.php';
 require_once '{$project_id}_Error.php';
 require_once '{$project_id}_ActionClass.php';
