@@ -41,9 +41,6 @@ class Ethna_Renderer
     /** @protected    string  template engine */
     protected $engine;
 
-    /** @protected    string  path of template engine */
-    protected $engine_path = false;
-
     /** @protected    string  template file */
     protected $template;
 
@@ -352,30 +349,6 @@ class Ethna_Renderer
     public function display($template = null)
     {
         return $this->perform($template);
-    }
-    // }}}
-
-    // {{{ loadEngine
-    /**
-     *  Load renderer engine class.
-     *
-     *  @param  array   $config     render config array. (i.e. config.renderer.renderer_name)
-     *  @access public
-     */
-    protected function loadEngine(array $config)
-    {
-        // load template engine
-        $engine_path = isset($config['path'])
-            ? $config['path']
-            : $this->engine_path;
-        if ($engine_path) {
-            if (file_exists_ex($engine_path)) {
-                require_once $engine_path;
-            }
-            else {
-                trigger_error("template engine is not available: path=" . $engine_path, E_USER_ERROR);
-            }
-        }
     }
     // }}}
 
