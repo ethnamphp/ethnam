@@ -36,6 +36,13 @@ define('ETHNA_ERROR_DUMMY', 'dummy');
 define('ETHNA_BASE', dirname(__FILE__));
 
 
+/** 定型フィルタ: 半角入力 */
+define('FILTER_HW', 'numeric_zentohan,alphabet_zentohan,ltrim,rtrim,ntrim');
+
+/** 定型フィルタ: 全角入力 */
+define('FILTER_FW', 'kana_hantozen,ntrim');
+
+
 // {{{ to_array
 /**
  *  グローバルユーティリティ関数: スカラー値を要素数1の配列として返す
