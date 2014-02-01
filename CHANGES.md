@@ -4,6 +4,7 @@
 * RendererクラスでSmartyをロードしなくなりました。Appid_ControllerでSmartyをrequireするか、自前でオートロードしてください。
 * SOAP Gatewayを廃止しました。
 * Ethna_DB_PEARを廃止しました。
+* Ethna_Controllerでpreg_matchがPHP5.5でDEPRECATEDになるのを修正しました。
 
 ## 2.8から2.9への変更点
 
