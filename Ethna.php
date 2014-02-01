@@ -35,36 +35,20 @@ define('ETHNA_ERROR_DUMMY', 'dummy');
 /** Ethnaベースディレクトリ定義 */
 define('ETHNA_BASE', dirname(__FILE__));
 
-require_once ETHNA_BASE . '/class/ActionClass.php';
-require_once ETHNA_BASE . '/class/ActionError.php';
-require_once ETHNA_BASE . '/class/ActionForm.php';
-require_once ETHNA_BASE . '/class/AppManager.php';
-require_once ETHNA_BASE . '/class/Backend.php';
-require_once ETHNA_BASE . '/class/CacheManager.php';
-require_once ETHNA_BASE . '/class/Config.php';
-require_once ETHNA_BASE . '/class/Controller.php';
-require_once ETHNA_BASE . '/class/ClassFactory.php';
-require_once ETHNA_BASE . '/class/DB.php';
-require_once ETHNA_BASE . '/class/Error.php';
-require_once ETHNA_BASE . '/class/Filter.php';
-require_once ETHNA_BASE . '/class/Handle.php';
-require_once ETHNA_BASE . '/class/I18N.php';
-require_once ETHNA_BASE . '/class/Logger.php';
-require_once ETHNA_BASE . '/class/MailSender.php';
-require_once ETHNA_BASE . '/class/Session.php';
-require_once ETHNA_BASE . '/class/Generator.php';
-require_once ETHNA_BASE . '/class/UrlHandler.php';
-require_once ETHNA_BASE . '/class/Util.php';
-require_once ETHNA_BASE . '/class/ViewClass.php';
-require_once ETHNA_BASE . '/class/View/Json.php';
-require_once ETHNA_BASE . '/class/View/Redirect.php';
-require_once ETHNA_BASE . '/class/View/403.php';
-require_once ETHNA_BASE . '/class/View/404.php';
-require_once ETHNA_BASE . '/class/View/500.php';
-require_once ETHNA_BASE . '/class/View/List.php';
-require_once ETHNA_BASE . '/class/Plugin.php';
-require_once ETHNA_BASE . '/class/Renderer.php';
-require_once ETHNA_BASE . '/class/CLI/ActionClass.php';
+
+/**
+ *  Ethna_* クラス群のオートロード
+ *  単純に_区切りをディレクトリ区切りにマッピングする
+ */
+spl_autoload_register(function($className){
+    if (strpos($className, 'Ethna_') === 0) {
+        $separated = explode('_', $className);
+        array_shift($separated);  // remove first element
+        //読み込み失敗しても死ぬ必要はないのでrequireではなくincludeする
+        //see http://qiita.com/Hiraku/items/72251c709503e554c280
+        include_once ETHNA_BASE . '/class/' . join('/', $separated) . '.php';
+    }
+});
 
 /** ゲートウェイ: WWW */
 define('GATEWAY_WWW', 1);
