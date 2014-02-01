@@ -182,6 +182,17 @@ set_error_handler('ethna_error_handler');
 // {{{ ethna_exception_handler
     //  TODO: Implement ethna_exception_handler function.
 // }}}
+
+/**
+ *  拡張ログプロパティ: ファイル出力
+ */
+define('LOG_FILE', 1 << 16);
+
+/**
+ *  拡張ログプロパティ: 標準出力
+ */
+define('LOG_ECHO', 1 << 17);
+
 // {{{ to_array
 /**
  *  グローバルユーティリティ関数: スカラー値を要素数1の配列として返す
