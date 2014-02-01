@@ -76,18 +76,6 @@ class {$project_id}_Controller extends Ethna_Controller
     );
 
     /**
-     *  @var    array   SOAP action definition.
-     */
-    protected $soap_action = array(
-        /*
-         *  TODO: write action definition for SOAP application here.
-         *  Example:
-         *
-         *  'sample'            => array(),
-         */
-    );
-
-    /**
      *  @var    array       application directory.
      */
     protected $directory = array(
