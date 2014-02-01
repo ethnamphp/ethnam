@@ -60,6 +60,32 @@ define('OBJECT_IMPORT_IGNORE_NULL', 1);
 
 /** アプリケーションオブジェクトインポートオプション: NULLプロパティ→空文字列変換 */
 define('OBJECT_IMPORT_CONVERT_NULL', 2);
+
+
+// {{{  mbstring enabled check
+function mb_enabled()
+{
+    return (extension_loaded('mbstring')) ? true : false;
+}
+
+// {{{ I18N shortcut
+/**
+ *  メッセージカタログからロケールに適合するメッセージを取得します。
+ *  Ethna_I18N#get のショートカットです。
+ *
+ *  @access public
+ *  @param  string  $message    メッセージ
+ *  @return string  ロケールに適合するメッセージ
+ *  @see    Ethna_I18N#get
+ */
+function _et($message)
+{
+    $ctl = Ethna_Controller::getInstance();
+    $i18n = $ctl->getI18N();
+    return $i18n->get($message);
+}
+// }}}
+
 // {{{ to_array
 /**
  *  グローバルユーティリティ関数: スカラー値を要素数1の配列として返す
