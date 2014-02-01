@@ -17,7 +17,8 @@ set_include_path(implode(PATH_SEPARATOR, array($app, $lib)) . PATH_SEPARATOR . g
 
 
 /** including application library. */
-require_once 'Ethna/Ethna.php';
+//require_once 'Smarty/libs/Smarty.class.php';
+require_once 'Ethna/bootstrap.php';
 require_once '{$project_id}_Error.php';
 require_once '{$project_id}_ActionClass.php';
 require_once '{$project_id}_ActionForm.php';
@@ -72,18 +73,6 @@ class {$project_id}_Controller extends Ethna_Controller
          *      'class_name' => 'Sample_Action_SomeAction',
          *      'class_path' => 'Some/Action.php',
          *  ),
-         */
-    );
-
-    /**
-     *  @var    array   SOAP action definition.
-     */
-    protected $soap_action = array(
-        /*
-         *  TODO: write action definition for SOAP application here.
-         *  Example:
-         *
-         *  'sample'            => array(),
          */
     );
 

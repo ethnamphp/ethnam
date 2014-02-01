@@ -9,13 +9,6 @@
  *  @version    $Id$
  */
 
-/** 定型フィルタ: 半角入力 */
-define('FILTER_HW', 'numeric_zentohan,alphabet_zentohan,ltrim,rtrim,ntrim');
-
-/** 定型フィルタ: 全角入力 */
-define('FILTER_FW', 'kana_hantozen,ntrim');
-
-
 // {{{ Ethna_ActionForm
 /**
  *  アクションフォームクラス

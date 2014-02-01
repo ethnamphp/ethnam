@@ -1,6 +1,6 @@
 <?php
 /**
- *  Simple.php
+ *  UrlhandlerSimple.php
  *
  *  @author     Keisuke SATO <riaf@me.com>
  *  @package    Ethna
@@ -14,7 +14,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_UrlHandler_Simple
+class Ethna_UrlHandlerSimple
 {
     /** @var    array   アクションマッピング */
     protected $action_map = array(

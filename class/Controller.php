@@ -840,22 +840,6 @@ class Ethna_Controller
     }
 
     /**
-     *  SOAPアプリケーションのエントリポイント
-     *
-     *  @access public
-     *  @param  string  $class_name     アプリケーションコントローラのクラス名
-     *  @param  mixed   $action_name    指定のアクション名(省略可)
-     *  @param  mixed   $fallback_action_name   アクションが決定できなかった場合に実行されるアクション名(省略可)
-     *  @static
-     */
-    public static function main_SOAP($class_name, $action_name = "", $fallback_action_name = "")
-    {
-        $c = new $class_name(GATEWAY_SOAP);
-        $c->trigger($action_name, $fallback_action_name);
-        $c->end();
-    }
-
-    /**
      *  フレームワークの処理を開始する
      *
      *  @access public
@@ -886,9 +870,6 @@ class Ethna_Controller
             break;
         case GATEWAY_CLI:
             $this->_trigger_CLI($default_action_name);
-            break;
-        case GATEWAY_SOAP:
-            $this->_trigger_SOAP();
             break;
         }
 
@@ -1000,24 +981,6 @@ class Ethna_Controller
     private function _trigger_CLI($default_action_name = "")
     {
         return $this->_trigger_WWW($default_action_name);
-    }
-
-    /**
-     *  SOAPフレームワークの処理を実行する
-     *
-     *  @access private
-     */
-    private function _trigger_SOAP()
-    {
-        // SOAPエントリクラス
-        $gg = new Ethna_SOAP_GatewayGenerator();
-        $script = $gg->generate();
-        eval($script);
-
-        // SOAPリクエスト処理
-        $server = new SoapServer(null, array('uri' => $this->config->get('url')));
-        $server->setClass($gg->getClassName());
-        $server->handle();
     }
 
     /**
@@ -1365,7 +1328,7 @@ class Ethna_Controller
     {
         $gateway_prefix = $this->_getGatewayPrefix($gateway);
 
-        $postfix = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($action_name));
+        $postfix = preg_replace_callback('/_(.)/', function(array $matches){return strtoupper($matches[1]);}, ucfirst($action_name));
         $r = sprintf("%s_%sForm_%s", $this->getAppId(), $gateway_prefix ? $gateway_prefix . "_" : "", $postfix);
         $this->logger->log(LOG_DEBUG, "default action class [%s]", $r);
 
@@ -1442,7 +1405,7 @@ class Ethna_Controller
     {
         $gateway_prefix = $this->_getGatewayPrefix($gateway);
 
-        $postfix = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($action_name));
+        $postfix = preg_replace_callback('/_(.)/', function(array $matches){return strtoupper($matches[1]);}, ucfirst($action_name));
         $r = sprintf("%s_%sAction_%s", $this->getAppId(), $gateway_prefix ? $gateway_prefix . "_" : "", $postfix);
         $this->logger->log(LOG_DEBUG, "default action class [%s]", $r);
 
@@ -1484,7 +1447,7 @@ class Ethna_Controller
      */
     public function getDefaultActionPath($action_name)
     {
-        $r = preg_replace('/_(.)/e', "'/' . strtoupper('\$1')", ucfirst($action_name)) . '.' . $this->getExt('php');
+        $r = preg_replace_callback('/_(.)/', function(array $matches){return '/' . strtoupper($matches[1]);}, ucfirst($action_name)) . '.' . $this->getExt('php');
         $this->logger->log(LOG_DEBUG, "default action path [%s]", $r);
 
         return $r;
@@ -1550,7 +1513,7 @@ class Ethna_Controller
     {
         $gateway_prefix = $this->_getGatewayPrefix($gateway);
 
-        $postfix = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($forward_name));
+        $postfix = preg_replace_callback('/_(.)/', function(array $matches){return strtoupper($matches[1]);}, ucfirst($forward_name));
         $r = sprintf("%s_%sView_%s", $this->getAppId(), $gateway_prefix ? $gateway_prefix . "_" : "", $postfix);
         $this->logger->log(LOG_DEBUG, "default view class [%s]", $r);
 
@@ -1568,7 +1531,7 @@ class Ethna_Controller
      */
     public function getDefaultViewPath($forward_name)
     {
-        $r = preg_replace('/_(.)/e', "'/' . strtoupper('\$1')", ucfirst($forward_name)) . '.' . $this->getExt('php');
+        $r = preg_replace_callback('/_(.)/', function(array $matches){return '/' . strtoupper($matches[1]); }, ucfirst($forward_name)) . '.' . $this->getExt('php');
         $this->logger->log(LOG_DEBUG, "default view path [%s]", $r);
 
         return $r;
@@ -1643,7 +1606,10 @@ class Ethna_Controller
             return $this->renderer;
         }
 
-	$this->renderer = $this->class_factory->getObject('renderer');
+        $this->renderer = $this->class_factory->getObject('renderer');
+        if ($this->renderer === null) {
+            trigger_error("cannot get renderer", E_USER_ERROR);
+        }
         $this->_setDefaultTemplateEngine($this->renderer);
         return $this->renderer;
     }
@@ -1770,26 +1736,8 @@ class Ethna_Controller
     {
         //   アプリケーションIDと、渡された名前のはじめを大文字にして、
         //   組み合わせたものが返される
-        $manager_id = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($name));
+        $manager_id = preg_replace_callback('/_(.)/', function(array $matches){return strtoupper($matches[1]);}, ucfirst($name));
         return sprintf('%s_%sManager', $this->getAppId(), ucfirst($manager_id));
-    }
-
-    /**
-     *  アプリケーションオブジェクトクラス名を取得する
-     *
-     *  @access public
-     *  @param  string  $name   アプリケーションオブジェクトキー
-     *  @return string  マネージャクラス名
-     */
-    public function getObjectClassName($name)
-    {
-        //  引数のはじめの一文字目と、アンダーバー直後の
-        //  1文字を必ず大文字にする。アンダーバーは削除される。
-        $name = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($name));
-
-        //  $name に foo_bar を渡し、AppID が Hogeの場合
-        //  [Appid]_FooBar が返される
-        return sprintf('%s_%s', $this->getAppId(), $name);
     }
 
     /**

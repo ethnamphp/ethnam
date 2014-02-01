@@ -246,20 +246,6 @@ class Ethna_Backend
     }
 
     /**
-     *  オブジェクトへのアクセサ(R)
-     *
-     *  @access public
-     *  @return mixed   $keyに対応するオブジェクト(or null)
-     */
-    public function getObject($key)
-    {
-        $arg_list = func_get_args();
-        array_shift($arg_list);
-        $_ret_object = $this->class_factory->getObject($key, $arg_list);
-        return $_ret_object;
-    }
-
-    /**
      *  アプリケーションのベースディレクトリを取得する
      *
      *  @access public

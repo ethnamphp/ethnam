@@ -131,11 +131,6 @@ class Ethna_Renderer_Test extends Ethna_UnitTestBase
         $this->assertEqual($template_name, $r->getTemplate());
     }
 
-    public function test_loadEngine()
-    {
-        // not implemented yet
-    }
-
     public function test_perform()
     {
         $r = $this->renderer;
@@ -205,6 +200,4 @@ class Ethna_Renderer_Mock extends Ethna_Renderer
     {
         return 'mock';
     }
-
-    protected $engine_path = 'Renderer_Test.php';
 }
