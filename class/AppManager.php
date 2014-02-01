@@ -9,25 +9,6 @@
  *  @version    $Id$
  */
 
-/** アプリケーションオブジェクト状態: 使用可能 */
-define('OBJECT_STATE_ACTIVE', 0);
-/** アプリケーションオブジェクト状態: 使用不可 */
-define('OBJECT_STATE_INACTIVE', 100);
-
-
-/** アプリケーションオブジェクトソートフラグ: 昇順 */
-define('OBJECT_SORT_ASC', 0);
-/** アプリケーションオブジェクトソートフラグ: 降順 */
-define('OBJECT_SORT_DESC', 1);
-
-
-/** アプリケーションオブジェクトインポートオプション: NULLプロパティ無変換 */
-define('OBJECT_IMPORT_IGNORE_NULL', 1);
-
-/** アプリケーションオブジェクトインポートオプション: NULLプロパティ→空文字列変換 */
-define('OBJECT_IMPORT_CONVERT_NULL', 2);
-
-
 // {{{ Ethna_AppManager
 /**
  *  アプリケーションマネージャのベースクラス
