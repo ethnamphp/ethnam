@@ -9,9 +9,6 @@
  *  @version    $Id$
  */
 
-/** メールテンプレートタイプ: 直接送信 */
-define('MAILSENDER_TYPE_DIRECT', 0);
-
 
 // {{{ Ethna_MailSender
 /**

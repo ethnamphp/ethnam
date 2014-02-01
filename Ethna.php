@@ -193,6 +193,9 @@ define('LOG_FILE', 1 << 16);
  */
 define('LOG_ECHO', 1 << 17);
 
+/** メールテンプレートタイプ: 直接送信 */
+define('MAILSENDER_TYPE_DIRECT', 0);
+
 // {{{ to_array
 /**
  *  グローバルユーティリティ関数: スカラー値を要素数1の配列として返す
