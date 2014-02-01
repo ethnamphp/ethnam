@@ -1741,24 +1741,6 @@ class Ethna_Controller
     }
 
     /**
-     *  アプリケーションオブジェクトクラス名を取得する
-     *
-     *  @access public
-     *  @param  string  $name   アプリケーションオブジェクトキー
-     *  @return string  マネージャクラス名
-     */
-    public function getObjectClassName($name)
-    {
-        //  引数のはじめの一文字目と、アンダーバー直後の
-        //  1文字を必ず大文字にする。アンダーバーは削除される。
-        $name = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($name));
-
-        //  $name に foo_bar を渡し、AppID が Hogeの場合
-        //  [Appid]_FooBar が返される
-        return sprintf('%s_%s', $this->getAppId(), $name);
-    }
-
-    /**
      *  アクションスクリプトをインクルードする
      *
      *  ただし、インクルードしたファイルにクラスが正しく定義されているかどうかは保証しない
