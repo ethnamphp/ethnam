@@ -1131,6 +1131,9 @@ class Ethna_ActionForm
      *  フォーム値定義を設定する
      *
      *  @access protected
+     *
+     *  ここにバグがあるもよう。でも踏んだことない気がする。  
+     *  https://github.com/ethna/ethna/pull/62
      */
     protected function _setFormDef()
     {
