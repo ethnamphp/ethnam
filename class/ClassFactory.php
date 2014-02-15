@@ -67,22 +67,18 @@ class Ethna_ClassFactory
      *  注意： typeは大文字小文字を区別しない
      *         (PHP自体が、クラス名の大文字小文字を区別しないため)
      *
+     *  マネジャークラスをincludeすることはしないので、
+     *  アプリケーション側でオートロードする必要がある。
+     *
      *  @access public
      *  @param  string  $type   アプリケーションマネージャー名
      *  @return object  Ethna_AppManager    マネージャオブジェクト
      */
     public function getManager($type)
     {
-        $obj = null;
-
         //  すでにincludeされていなければ、includeを試みる
         //  ここで返されるクラス名は、AppManagerの命名規約によるもの
         $class_name = $this->controller->getManagerClassName($type);
-        if (class_exists($class_name) === false
-            && $this->_include($class_name) === false) {
-            return $obj;  //  include 失敗。戻り値はNULL。
-        }
-
 
         //  PHPのクラス名は大文字小文字を区別しないので、
         //  同じクラス名と見做されるものを指定した場合には
