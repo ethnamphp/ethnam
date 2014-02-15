@@ -239,9 +239,9 @@ class Ethna_Backend
      *  @access public
      *  @return object  Ethna_AppManager    マネージャオブジェクト
      */
-    public function getManager($type, $weak = false)
+    public function getManager($type)
     {
-        $_ret_object = $this->class_factory->getManager($type, $weak);
+        $_ret_object = $this->class_factory->getManager($type);
         return $_ret_object;
     }
 
