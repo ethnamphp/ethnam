@@ -1,5 +1,10 @@
 # 変更点一覧
 
+## 2.10から2.11への変更点
+
+* Managerを$weak=trueで呼び出す機能を削除しました。
+* Managerを自動でincludeしなくなりました。自前でオートロードしてください。
+
 ## 2.9から2.10への変更点
 
 * RendererクラスでSmartyをロードしなくなりました。Appid_ControllerでSmartyをrequireするか、自前でオートロードしてください。
