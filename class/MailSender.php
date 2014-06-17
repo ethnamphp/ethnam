@@ -155,10 +155,14 @@ class Ethna_MailSender
                 if (isset($part['filename']) === false) {
                     $part['filename'] = $part['name'];
                 }
-                $part['name'] = preg_replace('/([^\x00-\x7f]+)/e',
-                    "Ethna_Util::encode_MIME('$1')", $part['name']); // XXX: rfc2231
-                $part['filename'] = preg_replace('/([^\x00-\x7f]+)/e',
-                    "Ethna_Util::encode_MIME('$1')", $part['filename']);
+                $part['name'] = preg_replace_callback(
+                    '/([^\x00-\x7f]+)/',
+                    function($matches){ return Ethna_Util::encode_MIME($matches[1]);},
+                    $part['name']); // XXX: rfc2231
+                $part['filename'] = preg_replace_callback(
+                    '/([^\x00-\x7f]+)/',
+                    function($matches){ return Ethna_Util::encode_MIME($matches[1]);},
+                    $part['filename']);
 
                 $body .=
                     "--$boundary\n" .
