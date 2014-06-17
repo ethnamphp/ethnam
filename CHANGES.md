@@ -4,6 +4,7 @@
 
 * Managerを$weak=trueで呼び出す機能を削除しました。
 * Managerを自動でincludeしなくなりました。自前でオートロードしてください。
+* Ethna_MailSenderのpreg_replace eを修正しました。
 
 ## 2.9から2.10への変更点
 
