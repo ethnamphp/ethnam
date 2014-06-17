@@ -80,49 +80,5 @@ class Ethna_AppManager
         return $this->$varname;
     }
 
-    /**
-     *  属性の表示名を返す
-     *
-     *  @access public
-     *  @param  string  $attr_name  属性の名前(変数名)
-     *  @param  mixed   $id         属性ID
-     *  @return string  属性の表示名
-     */
-    function getAttrName($attr_name, $id)
-    {
-        $varname = $attr_name . "_list";
-        if (is_array($this->$varname) == false) {
-            return null;
-        }
-        $list = $this->$varname;
-        if (isset($list[$id]) == false) {
-            return null;
-        }
-        return $list[$id]['name'];
-    }
-
-    /**
-     *  属性の表示名(詳細)を返す
-     *
-     *  @access public
-     *  @param  string  $attr_name  属性の名前(変数名)
-     *  @param  mixed   $id         属性ID
-     *  @return string  属性の詳細表示名
-     */
-    function getAttrLongName($attr_name, $id)
-    {
-        $varname = $attr_name . "_list";
-        if (is_array($this->$varname) == false) {
-            return null;
-        }
-        $list = $this->$varname;
-        if (isset($list[$id]['long_name']) == false) {
-            return null;
-        }
-
-        return $list[$id]['long_name'];
-    }
-
-
 }
 // }}}

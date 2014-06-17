@@ -67,58 +67,33 @@ class Ethna_ClassFactory
      *  注意： typeは大文字小文字を区別しない
      *         (PHP自体が、クラス名の大文字小文字を区別しないため)
      *
+     *  マネジャークラスをincludeすることはしないので、
+     *  アプリケーション側でオートロードする必要がある。
+     *
      *  @access public
      *  @param  string  $type   アプリケーションマネージャー名
-     *  @param  bool    $weak   オブジェクトが未生成の場合の強制生成フラグ(default: false)
      *  @return object  Ethna_AppManager    マネージャオブジェクト
      */
-    function getManager($type, $weak = false)
+    public function getManager($type)
     {
-        $obj = null;
-
         //  すでにincludeされていなければ、includeを試みる
         //  ここで返されるクラス名は、AppManagerの命名規約によるもの
         $class_name = $this->controller->getManagerClassName($type);
-        if (class_exists($class_name) === false
-            && $this->_include($class_name) === false) {
-            return $obj;  //  include 失敗。戻り値はNULL。
-        }
-
-        //  メソッド情報を集める
-        if (isset($this->method_list[$class_name]) == false) {
-            $this->method_list[$class_name] = get_class_methods($class_name);
-            for ($i = 0; $i < count($this->method_list[$class_name]); $i++) {
-                $this->method_list[$class_name][$i] = strtolower($this->method_list[$class_name][$i]);
-            }
-        }
 
         //  PHPのクラス名は大文字小文字を区別しないので、
         //  同じクラス名と見做されるものを指定した場合には
         //  同じインスタンスが返るようにする
         $type = strtolower($type);
 
-        //  以下のルールに従って、キャッシュが利用可能かを判定する
-        //  利用可能と判断した場合、キャッシュされていればそれを返す
-        //
-        //  1. メソッドに getInstance があればキャッシュを利用可能と判断する
-        //     この場合、シングルトンかどうかは getInstance 次第
-        //  2. weak が true であれば、キャッシュは利用不能と判断してオブジェクトを再生成
-        //  3. weak が false であれば、キャッシュは利用可能と判断する(デフォルト)
-        if ($this->_isCacheAvailable($class_name, $this->method_list[$class_name], $weak)) {
-            if (isset($this->manager[$type]) && is_object($this->manager[$type])) {
-                return $this->manager[$type];
-            }
+        //  キャッシュがあればそれを利用
+        if (isset($this->manager[$type]) && is_object($this->manager[$type])) {
+            return $this->manager[$type];
         }
 
-        //  インスタンス化のヘルパ(getInstance)があればそれを使う
-        if (in_array("getinstance", $this->method_list[$class_name])) {
-            $obj = call_user_func(array($class_name, 'getInstance'));
-        } else {
-            $backend = $this->controller->getBackend();
-            $obj = new $class_name($backend);
-        }
+        $backend = $this->controller->getBackend();
+        $obj = new $class_name($backend);
 
-        //  生成したオブジェクトはとりあえずキャッシュする
+        //  生成したオブジェクトはキャッシュする
         if (isset($this->manager[$type]) == false || is_object($this->manager[$type]) == false) {
             $this->manager[$type] = $obj;
         }
