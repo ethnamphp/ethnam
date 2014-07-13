@@ -1,5 +1,5 @@
 {
-  "name":"DQNEO/ethnam",
+  "name":"dqneo/ethnam",
   "require": {
     "php" : ">=5.4.0"
   },
