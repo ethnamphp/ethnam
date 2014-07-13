@@ -15,17 +15,16 @@ Ethnaから派生してできたプロジェクトです。
 
 ## インストール
 
-下記はあくまで一例です。
+composer でインストールできます。
 
 ```sh
 cd /tmp/
+
 # ethnamを取得
-git clone git://github.com/DQNEO/ethnam.git Ethna
+composer install
 
 # プロジェクト作成
-./Ethna/bin/ethna.sh add-project foo
-cd /tmp/foo/lib
-ln -s /tmp/Ethna Ethna
+./vendor/dqneo/ethnam/bin/ethna.sh add-project foo
 
 # Smartyを取得
 tar xvfz ~/tmp/Ethna/misc/optional_package/Smarty/src/Smarty-2.6.26.tar.gz
