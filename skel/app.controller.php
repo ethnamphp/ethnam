@@ -15,15 +15,7 @@ $app = BASE . "/app";
 $lib = BASE . "/lib";
 set_include_path(implode(PATH_SEPARATOR, array($app, $lib)) . PATH_SEPARATOR . get_include_path());
 
-
-/** including application library. */
-//require_once 'Smarty/libs/Smarty.class.php';
-require_once 'Ethna/bootstrap.php';
-require_once '{$project_id}_Error.php';
-require_once '{$project_id}_ActionClass.php';
-require_once '{$project_id}_ActionForm.php';
-require_once '{$project_id}_ViewClass.php';
-require_once '{$project_id}_UrlHandler.php';
+require_once BASE . '/vendor/autoload.php';
 
 /**
  *  {$project_id} application Controller definition.
