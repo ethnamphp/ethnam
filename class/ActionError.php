@@ -48,7 +48,7 @@ class Ethna_ActionError
      *
      *  @access public
      *  @param  string  $name       エラーの発生したフォーム項目名(不要ならnull)
-     *  @param  string  $message    エラーメッセージ
+     *  @param  string  $message    i18n翻訳後のエラーメッセージ
      *  @param  int     $code       エラーコード
      *  @return Ethna_Error エラーオブジェクト
      */
