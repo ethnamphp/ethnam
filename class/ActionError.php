@@ -180,11 +180,10 @@ class Ethna_ActionError
     /**
      *  アプリケーションエラーメッセージを取得する
      *
-     *  @access private
      *  @param  array   エラーエントリ
      *  @return string  エラーメッセージ
      */
-    function _getMessage(&$error)
+    protected function _getMessage(&$error)
     {
         $af = $this->_getActionForm();
         $form_name = $af->getName($error['name']);
