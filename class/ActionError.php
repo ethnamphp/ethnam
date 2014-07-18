@@ -188,7 +188,7 @@ class Ethna_ActionError
     {
         $af = $this->_getActionForm();
         $form_name = $af->getName($error['name']);
-        return str_replace("{form}", $form_name, $error['object']->getMessage());
+        return str_replace("{form}", _et($form_name), $error['object']->getMessage());
     }
 
     /**
