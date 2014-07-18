@@ -144,7 +144,7 @@ class Ethna_ActionError
     {
         foreach ($this->error_list as $error) {
             if (strcasecmp($error['name'], $name) == 0) {
-                return $this->_getMessage($error);
+                return $this->getMessageByEntry($error);
             }
         }
         return null;
@@ -172,7 +172,7 @@ class Ethna_ActionError
         $message_list = array();
 
         foreach ($this->error_list as $error) {
-            $message_list[] = $this->_getMessage($error);
+            $message_list[] = $this->getMessageByEntry($error);
         }
         return $message_list;
     }
@@ -183,7 +183,7 @@ class Ethna_ActionError
      *  @param  array   エラーエントリ
      *  @return string  エラーメッセージ
      */
-    protected function _getMessage(&$error)
+    protected function getMessageByEntry(&$error)
     {
         $af = $this->_getActionForm();
         $form_name = $af->getName($error['name']);
