@@ -29,6 +29,9 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
     /** @protected    int     ログファイルパーミッション */
     protected $mode = 0666;
 
+    /**  string    ログファイル名 */
+    protected $filename = 'app.log';
+
     /**#@-*/
 
     /**
@@ -151,10 +154,18 @@ class Ethna_Plugin_Logwriter_File extends Ethna_Plugin_Logwriter
             $dir = $controller->getDirectory('log');
         }
 
-        return sprintf('%s/%s.log',
-            $dir,
-            strtolower($controller->getAppid())
-        );
+        return sprintf('%s/%s', $dir, $this->getFileName());
     }
+
+    /**
+     * ログファイル名を取得する
+     *
+     * @return string  ログファイル名
+     */
+    protected function getFileName()
+    {
+        return $this->filename;
+    }
+
 }
 // }}}
