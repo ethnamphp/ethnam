@@ -62,7 +62,7 @@ class Ethna_Renderer_Smarty extends Ethna_Renderer
 
         $this->engine->plugins_dir = array_merge(
             $controller->getDirectory('plugins'),
-            array(ETHNA_BASE . '/class/Plugin/Smarty', SMARTY_DIR . 'plugins')
+            array(ETHNA_BASE . '/src/Plugin/Smarty', SMARTY_DIR . 'plugins')
         );
     }
 

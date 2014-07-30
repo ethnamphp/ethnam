@@ -7,7 +7,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Plugin/Smarty/function.select.php';
+require_once ETHNA_BASE . '/src/Plugin/Smarty/function.select.php';
 
 //{{{    Ethna_Plugin_Smarty_function_select_Test
 /**

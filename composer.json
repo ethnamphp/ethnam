@@ -1,0 +1,21 @@
+{
+  "name":"dqneo/ethnam",
+  "description": "web application framework.",
+  "type": "library",
+  "license": "BSD-4-Clause",
+  "keywords": [ "framework", "ethnam" ],
+  "homepage": "https://github.com/ethna/ethna",
+  "authors": [
+        { "name": "DQNEO", "role" : "Administrator"},
+        { "name": "contributors", "homepage": "https://github.com/DQNEO/ethnam/blob/master/AUTHORS" }
+    ],
+  "require": {
+    "php" : ">=5.4.0"
+  },
+  "require-dev" : {
+    "phpunit/phpunit": "3.7.*"
+  },
+  "autoload": {
+    "files": [ "bootstrap.php" ]
+  }
+}

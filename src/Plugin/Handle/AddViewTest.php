@@ -8,7 +8,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Plugin/Handle/AddView.php';
+require_once ETHNA_BASE . '/src/Plugin/Handle/AddView.php';
 
 // {{{ Ethna_Plugin_Handle_AddViewTest
 /**

@@ -48,7 +48,7 @@ class Ethna_ActionError
      *
      *  @access public
      *  @param  string  $name       エラーの発生したフォーム項目名(不要ならnull)
-     *  @param  string  $message    エラーメッセージ
+     *  @param  string  $message    i18n翻訳後のエラーメッセージ
      *  @param  int     $code       エラーコード
      *  @return Ethna_Error エラーオブジェクト
      */
@@ -144,7 +144,7 @@ class Ethna_ActionError
     {
         foreach ($this->error_list as $error) {
             if (strcasecmp($error['name'], $name) == 0) {
-                return $this->_getMessage($error);
+                return $this->getMessageByEntry($error);
             }
         }
         return null;
@@ -172,7 +172,7 @@ class Ethna_ActionError
         $message_list = array();
 
         foreach ($this->error_list as $error) {
-            $message_list[] = $this->_getMessage($error);
+            $message_list[] = $this->getMessageByEntry($error);
         }
         return $message_list;
     }
@@ -180,15 +180,14 @@ class Ethna_ActionError
     /**
      *  アプリケーションエラーメッセージを取得する
      *
-     *  @access private
      *  @param  array   エラーエントリ
      *  @return string  エラーメッセージ
      */
-    function _getMessage(&$error)
+    protected function getMessageByEntry(&$error)
     {
         $af = $this->_getActionForm();
         $form_name = $af->getName($error['name']);
-        return str_replace("{form}", $form_name, $error['object']->getMessage());
+        return str_replace("{form}", _et($form_name), $error['object']->getMessage());
     }
 
     /**

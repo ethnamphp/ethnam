@@ -3,7 +3,7 @@
  *  UrlHandler_Simple_Test.php
  */
 
-require_once ETHNA_BASE . '/class/UrlHandler/Simple.php';
+require_once ETHNA_BASE . '/src/UrlHandler/Simple.php';
 
 /**
  *  Ethna_UrlHandlerクラスのテストケース

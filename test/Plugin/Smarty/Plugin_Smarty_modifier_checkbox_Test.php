@@ -7,7 +7,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Plugin/Smarty/modifier.checkbox.php';
+require_once ETHNA_BASE . '/src/Plugin/Smarty/modifier.checkbox.php';
 
 //{{{    Ethna_Plugin_Smarty_modifier_checkbox_Test
 /**

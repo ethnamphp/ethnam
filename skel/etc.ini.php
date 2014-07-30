@@ -42,7 +42,7 @@ $config = array(
     //    ),
     //    'file'  => array(
     //        'level'         => 'notice',
-    //        'file'          => '/var/log/{$project_prefix}.log',
+    //        'file'          => '/var/log/ethnam.log',
     //        'mode'          => 0666,
     //    ),
     //    'alertmail'  => array(

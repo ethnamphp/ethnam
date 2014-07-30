@@ -6,7 +6,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Plugin/Smarty/modifier.explode.php';
+require_once ETHNA_BASE . '/src/Plugin/Smarty/modifier.explode.php';
 
 //{{{    Ethna_Plugin_Smarty_modifier_explode_Test
 /**

@@ -24,7 +24,7 @@ if (!defined('DIRECTORY_SEPARATOR')) {
 }
 
 /** バージョン定義 */
-define('ETHNA_VERSION', '2.11.0');
+define('ETHNA_VERSION', '2.13.1');
 
 /**
  * ダミーのエラーモード
@@ -33,7 +33,7 @@ define('ETHNA_VERSION', '2.11.0');
 define('ETHNA_ERROR_DUMMY', 'dummy');
 
 /** Ethnaベースディレクトリ定義 */
-define('ETHNA_BASE', dirname(__FILE__));
+define('ETHNA_BASE', __DIR__);
 
 
 /** 定型フィルタ: 半角入力 */
@@ -282,20 +282,6 @@ function is_absolute_path($path)
 }
 // }}}
 
-/**
- *  Ethna_* クラス群のオートロード
- *  単純に_区切りをディレクトリ区切りにマッピングする
- */
-spl_autoload_register(function($className){
-    if (strpos($className, 'Ethna_') === 0) {
-        $separated = explode('_', $className);
-        array_shift($separated);  // remove first element
-        //読み込み失敗しても死ぬ必要はないのでrequireではなくincludeする
-        //see http://qiita.com/Hiraku/items/72251c709503e554c280
-        include_once ETHNA_BASE . '/class/' . join('/', $separated) . '.php';
-    }
-});
-
 /** ゲートウェイ: WWW */
 define('GATEWAY_WWW', 1);
 
@@ -510,4 +496,4 @@ $GLOBALS['_Ethna_error_callback_list'] = array();
 /** Ethnaグローバル変数: エラーメッセージ */
 $GLOBALS['_Ethna_error_message_list'] = array();
 
-require_once __DIR__ . '/class/Ethna.php';
+require_once ETHNA_BASE . '/autoload.php';

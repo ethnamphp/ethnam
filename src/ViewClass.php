@@ -745,6 +745,11 @@ class Ethna_ViewClass
     /**
      *  チェックボックスタグを取得する(type="check")
      *
+     * ActionFormのフォーム定義で下記のように記述すると、i18n変換されます。
+     * 'option' => [
+     *    '1' => '_et(Apple)',
+     *  ],
+     *
      *  @access protected
      */
     protected function _getFormInput_Checkbox($name, $def, $params)
@@ -783,6 +788,13 @@ class Ethna_ViewClass
         $ret = array();
         $i = 1;
         foreach ($options as $key => $value) {
+            if (preg_match('/^_et\((.*)\)$/', $value, $matches)) {
+                $i18nValue = _et($matches[1]);
+            } else {
+                $i18nValue = $value;
+            }
+
+
             $params['value'] = $key;
             $params['id'] = $name . '_' . $i++;
 
@@ -798,7 +810,7 @@ class Ethna_ViewClass
 
             // <label for="id">..</label>
             $ret[] = $this->_getFormInput_Html('label', array('for' => $params['id']),
-                                               $input_tag . $value, false);
+                                               $input_tag . $i18nValue, false);
         }
 
         return implode($separator, $ret);

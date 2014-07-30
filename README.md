@@ -5,27 +5,26 @@ Ethnaから派生してできたプロジェクトです。
 
 ## 動作環境
 
-* PHP 5.3以上が必須。(PHP 5.4以上を推奨)
+* PHP 5.4以上
 * Windowsでは動きません。
 
 ## branch運用ルール
 
 * `master` 最新の安定版です。
-* `develop` 開発中のブランチです。
+* `cheese` 開発中のブランチです。
 
 ## インストール
 
-下記はあくまで一例です。
+composer でインストールできます。
 
 ```sh
 cd /tmp/
+
 # ethnamを取得
-git clone git://github.com/DQNEO/ethnam.git Ethna
+composer install
 
 # プロジェクト作成
-./Ethna/bin/ethna.sh add-project foo
-cd /tmp/foo/lib
-ln -s /tmp/Ethna Ethna
+./vendor/dqneo/ethnam/bin/ethna.sh add-project foo
 
 # Smartyを取得
 tar xvfz ~/tmp/Ethna/misc/optional_package/Smarty/src/Smarty-2.6.26.tar.gz
@@ -41,7 +40,7 @@ php -S 0.0.0.0:8080 -t /tmp/foo/www
 
 バグ修正などの Pull Request など大歓迎です。
 
-最新の`develop`からbranchを作ってそこで改修を行い、develop ブランチに対して pull request を送ってください。
+最新の`cheese`からbranchを作ってそこで改修を行い、`cheese` ブランチに対して pull request を送ってください。
 
 ## UnitTest
 
