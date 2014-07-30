@@ -29,7 +29,7 @@
 * Backend#performを Controller#performへ引っ越ししました。
 * ActionClassからViewClassにパラメータを渡す機能を廃止しました。
 * E_DEPRECATED エラーを拾えるようにしました。(E_USER_DEPRECATEDについては未対応)
-* Smarty のi18n modifierで引数を渡してsprintf的に使えるようになりました。(see class/Plugin/Smarty/modifier.i18n.php)
+* Smarty のi18n modifierで引数を渡してsprintf的に使えるようになりました。(see Plugin/Smarty/modifier.i18n.php)
 * GATEWAY_XMLRPCを廃止。
 * UnitTestMamger, InfoMangerを廃止
 * インストール方法をREADME.mdに書きました。
@@ -88,7 +88,7 @@
      * 不要な参照渡し($obj =& new)をやめました。
      * アクセス修飾子、static修飾子の導入
      * コンストラクタメソッド名の変更(クラス名から__construct()へ)
-     * ファイル名を短くしました。(例 class/Ethna_ActionClass.php -> class/ActionClass.php)
+     * ファイル名を短くしました。(例 Ethna_ActionClass.php -> ActionClass.php)
   * skeleton 関係のファイルを変更しました。
   * UrlHandler と .htaccess (mod_rewrite) を利用するためのひな形を生成
   * セッションハンドラのなど，セッションに関する設定の変更をするための記述を APPID-ini.php にできるようになりました．
