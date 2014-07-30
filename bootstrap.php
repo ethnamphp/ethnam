@@ -510,4 +510,4 @@ $GLOBALS['_Ethna_error_callback_list'] = array();
 /** Ethnaグローバル変数: エラーメッセージ */
 $GLOBALS['_Ethna_error_message_list'] = array();
 
-require_once __DIR__ . '/src/Ethna.php';
+require_once ETHNA_BASE . '/src/Ethna.php';
