@@ -7,7 +7,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Plugin/Smarty/modifier.unique.php';
+require_once ETHNA_BASE . '/src/Plugin/Smarty/modifier.unique.php';
 
 //{{{    Ethna_Plugin_Smarty_modifier_unique_Test
 /**

@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/Getopt.php';
+require_once ETHNA_BASE . '/src/Getopt.php';
 
 // {{{ Ethna_Plugin_Handle
 /**

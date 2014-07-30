@@ -292,7 +292,7 @@ spl_autoload_register(function($className){
         array_shift($separated);  // remove first element
         //読み込み失敗しても死ぬ必要はないのでrequireではなくincludeする
         //see http://qiita.com/Hiraku/items/72251c709503e554c280
-        include_once ETHNA_BASE . '/class/' . join('/', $separated) . '.php';
+        include_once ETHNA_BASE . '/src/' . join('/', $separated) . '.php';
     }
 });
 
@@ -510,4 +510,4 @@ $GLOBALS['_Ethna_error_callback_list'] = array();
 /** Ethnaグローバル変数: エラーメッセージ */
 $GLOBALS['_Ethna_error_message_list'] = array();
 
-require_once __DIR__ . '/class/Ethna.php';
+require_once __DIR__ . '/src/Ethna.php';

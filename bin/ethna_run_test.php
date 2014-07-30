@@ -60,7 +60,7 @@ require_once $test_dir . '/UnitTestBase.php';
 $test = new TestSuite('Ethna All tests');
 
 // テストケースのファイルリストを取得
-require_once 'Ethna/class/Getopt.php';
+require_once 'Ethna/src/Getopt.php';
 $opt = new Ethna_Getopt();
 $args = $opt->readPHPArgv();
 array_shift($args);

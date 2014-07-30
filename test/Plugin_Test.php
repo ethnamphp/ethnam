@@ -60,7 +60,7 @@ class Ethna_Plugin_Test extends Ethna_UnitTestBase
 
         // _searchPluginSrcDir
         // テスト実行時 extlib, app dir には $type, $name のプラグインがないものとして
-        $plugin_dir =  ETHNA_BASE . "/class/Plugin";
+        $plugin_dir =  ETHNA_BASE . "/src/Plugin";
         $dir = realpath($p->_searchPluginSrcDir($type));
         $this->assertEqual($plugin_dir, $dir);
         $dir = realpath($p->_searchPluginSrcDir($type, $name));

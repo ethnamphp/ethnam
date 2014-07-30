@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/class/PearWrapper.php';
+require_once ETHNA_BASE . '/src/PearWrapper.php';
 
 // {{{ Ethna_Plugin_Handle_ClearCache
 /**
