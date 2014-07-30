@@ -282,24 +282,6 @@ function is_absolute_path($path)
 }
 // }}}
 
-/**
- *  Ethna_* クラス群のオートロード
- *  単純に_区切りをディレクトリ区切りにマッピングする
- */
-spl_autoload_register(function($className){
-    if ($className === 'Ethna') {
-        include_once ETHNA_BASE . '/src/Ethna.php';
-    }
-
-    if (strpos($className, 'Ethna_') === 0) {
-        $separated = explode('_', $className);
-        array_shift($separated);  // remove first element
-        //読み込み失敗しても死ぬ必要はないのでrequireではなくincludeする
-        //see http://qiita.com/Hiraku/items/72251c709503e554c280
-        include_once ETHNA_BASE . '/src/' . join('/', $separated) . '.php';
-    }
-});
-
 /** ゲートウェイ: WWW */
 define('GATEWAY_WWW', 1);
 
@@ -514,3 +496,4 @@ $GLOBALS['_Ethna_error_callback_list'] = array();
 /** Ethnaグローバル変数: エラーメッセージ */
 $GLOBALS['_Ethna_error_message_list'] = array();
 
+require_once ETHNA_BASE . '/autoload.php';
