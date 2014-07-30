@@ -59,14 +59,3 @@ https://packagist.org/packages/dqneo/ethnam
 https://twitter.com/DQNEO
 
 ハッシュタグは #Ethnam です。
-
-
-## tagについて
-
-`ETHNA_2_x_x`となっているものは、本家Ethnaのバージョンを指します。
-
-`バージョン番号`となっているものは、本家からforkした後のEthnam独自のバージョンです。
-
-
-betaX
-  betaリリース
