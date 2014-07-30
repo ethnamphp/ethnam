@@ -9,6 +9,9 @@
  *  @version    $Id$
  */
 
+/** バージョン定義 */
+define('ETHNA_VERSION', '2.13.2');
+
 //  PHP 5.1.0 以降向けの変更
 //  date.timezone が設定されていないと
 //  E_STRICT|WARNING が発生する
@@ -22,9 +25,6 @@ if (!defined('PATH_SEPARATOR')) {
 if (!defined('DIRECTORY_SEPARATOR')) {
     define('DIRECTORY_SEPARATOR', '/');
 }
-
-/** バージョン定義 */
-define('ETHNA_VERSION', '2.13.1');
 
 /**
  * ダミーのエラーモード
