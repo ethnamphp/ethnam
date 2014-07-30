@@ -29,8 +29,8 @@ class Ethna_Config
     /** @FIXME @protected    array   設定内容 */
     public $config = null;
 
-    /**#@-*/
-
+    /** @var string */
+    protected $filename = 'config.php';
 
     /**
      *  Ethna_Configクラスのコンストラクタ
@@ -141,12 +141,21 @@ class Ethna_Config
     /**
      *  設定ファイル名を取得する
      *
-     *  @access private
+     *  @deprecated
+     */
+    public function _getConfigFile()
+    {
+        return $this->getConfigFile();
+    }
+
+    /**
+     *  設定ファイル名を取得する
+     *
      *  @return string  設定ファイルへのフルパス名
      */
-    function _getConfigFile()
+    public function getConfigFile()
     {
-        return $this->controller->getDirectory('etc') . '/' . strtolower($this->controller->getAppId()) . '-ini.php';
+        return $this->controller->getDirectory('etc') . '/' . $this->filename;
     }
 }
 // }}}

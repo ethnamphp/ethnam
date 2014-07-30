@@ -29,7 +29,7 @@ class Ethna_Renderer
     /** @protected    object  Ethna_Controller    controllerオブジェクト($controllerの省略形) */
     protected $ctl;
 
-    /** @protected    array   [appid]-ini.phpのレンダラ設定 */
+    /** @protected    array   config.phpのレンダラ設定 */
     protected $config;
 
     /** @protected    array   default configuration for the renderer */
