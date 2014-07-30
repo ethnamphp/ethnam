@@ -33,7 +33,7 @@ define('ETHNA_VERSION', '2.13.0');
 define('ETHNA_ERROR_DUMMY', 'dummy');
 
 /** Ethnaベースディレクトリ定義 */
-define('ETHNA_BASE', dirname(__FILE__));
+define('ETHNA_BASE', __DIR__);
 
 
 /** 定型フィルタ: 半角入力 */
