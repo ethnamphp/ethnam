@@ -148,7 +148,7 @@ class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
             "app.plugin.filter.default.php" => sprintf("$basedir/app/plugin/Filter/ExecutionTime.php", $macro['project_id']),
             "app.view.default.php" => "$basedir/app/view/Index.php",
             "app.url_handler.php" => sprintf("$basedir/app/%s_UrlHandler.php", $macro['project_id']),
-            "etc.ini.php" => sprintf("$basedir/etc/%s-ini.php", $macro['project_prefix']),
+            "etc.config.php" => sprintf("$basedir/etc/config.php"),
             "template.index.tpl" => sprintf("$basedir/template/$locale/index.tpl"),
             "template.layout.tpl" => sprintf("$basedir/template/$locale/layout.tpl"),
             "template.403.tpl" => sprintf("$basedir/template/$locale/error403.tpl"),
