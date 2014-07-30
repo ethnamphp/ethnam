@@ -53,7 +53,7 @@ fi
 
 if test -z "$PHP_CLASSPATH"
 then
-    PHP_CLASSPATH="$ETHNA_HOME/class"
+    PHP_CLASSPATH="$ETHNA_HOME/src"
     export PHP_CLASSPATH
 fi
 

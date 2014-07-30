@@ -38,7 +38,7 @@ if (basename(ETHNA_INSTALL_BASE) != 'Ethna') {
 $test_dir = ETHNA_INSTALL_BASE . '/test';
 
 /** include_pathの設定(このtest runnerがあるディレクトリを追加) */
-//ini_set('include_path', realpath(ETHNA_INSTALL_BASE . '/class') . PATH_SEPARATOR . ini_get('include_path'));
+//ini_set('include_path', realpath(ETHNA_INSTALL_BASE . '/src') . PATH_SEPARATOR . ini_get('include_path'));
 ini_set('include_path', realpath(dirname(ETHNA_INSTALL_BASE)) . PATH_SEPARATOR . ini_get('include_path'));
 
 /** Ethna関連クラスのインクルード */
