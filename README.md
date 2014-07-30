@@ -11,7 +11,7 @@ Ethnaから派生してできたプロジェクトです。
 ## branch運用ルール
 
 * `master` 最新の安定版です。
-* `develop` 開発中のブランチです。
+* `cheese` 開発中のブランチです。
 
 ## インストール
 
@@ -40,7 +40,7 @@ php -S 0.0.0.0:8080 -t /tmp/foo/www
 
 バグ修正などの Pull Request など大歓迎です。
 
-最新の`develop`からbranchを作ってそこで改修を行い、develop ブランチに対して pull request を送ってください。
+最新の`cheese`からbranchを作ってそこで改修を行い、`cheese` ブランチに対して pull request を送ってください。
 
 ## UnitTest
 
