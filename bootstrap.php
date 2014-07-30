@@ -287,6 +287,10 @@ function is_absolute_path($path)
  *  単純に_区切りをディレクトリ区切りにマッピングする
  */
 spl_autoload_register(function($className){
+    if ($className === 'Ethna') {
+        include_once ETHNA_BASE . '/src/Ethna.php';
+    }
+
     if (strpos($className, 'Ethna_') === 0) {
         $separated = explode('_', $className);
         array_shift($separated);  // remove first element
@@ -510,4 +514,3 @@ $GLOBALS['_Ethna_error_callback_list'] = array();
 /** Ethnaグローバル変数: エラーメッセージ */
 $GLOBALS['_Ethna_error_message_list'] = array();
 
-require_once ETHNA_BASE . '/src/Ethna.php';
