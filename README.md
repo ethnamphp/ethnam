@@ -15,7 +15,7 @@ Ethnaから派生してできたプロジェクトです。
 
 ## インストール
 
-composer でインストールできます。
+composerでインストールできます。(Packagist経由でインストールできます)
 
 ```sh
 cd /tmp/
@@ -35,6 +35,11 @@ app/Foo_Controller.phpのrequire_once 'Smarty/libs/Smarty.class.php'を有効に
 # サーバ起動
 php -S 0.0.0.0:8080 -t /tmp/foo/www
 ```
+## Packagist
+
+Packagistにて公開中です。
+
+https://packagist.org/packages/dqneo/ethnam
 
 ## Pull Request
 
