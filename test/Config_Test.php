@@ -15,7 +15,7 @@ class Ethna_Config_Test extends Ethna_UnitTestBase
         // etcディレクトリを上書き
         $this->ctl->setDirectory('etc', dirname(__FILE__));
         $this->config = $this->ctl->getConfig();
-        $this->filename = dirname(__FILE__) . '/ethna-ini.php';
+        $this->filename = dirname(__FILE__) . '/config.php';
     }
 
     function tearDown()
@@ -33,7 +33,7 @@ class Ethna_Config_Test extends Ethna_UnitTestBase
 
     function test_update()
     {
-        // この時点ではまだ ethna-ini.php は存在しない
+        // この時点ではまだファイルは存在しない
         $result = $this->config->get('foo');
         $this->assertEqual($result, null);
 
@@ -42,10 +42,10 @@ class Ethna_Config_Test extends Ethna_UnitTestBase
         $result = $this->config->get('foo');
         $this->assertEqual($result, 'bar');
 
-        // ethna-ini.php が自動生成される
+        // ファイルが自動生成される
         $this->config->update();
 
-        // ethna-ini.php を読み込み直す
+        // ファイルを読み込み直す
         $this->config->_getConfig();
         $result = $this->config->get('foo');
         $this->assertEqual($result, 'bar');

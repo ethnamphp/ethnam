@@ -1,6 +1,6 @@
 <?php
 /*
- * {$project_prefix}-ini.php
+ * config.php
  *
  * update:
  */

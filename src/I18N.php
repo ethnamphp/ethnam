@@ -72,7 +72,7 @@ class Ethna_I18N
         if ($this->use_gettext === true
          && !extension_loaded("gettext")) {
             $this->logger->log(LOG_WARNING,
-                "You specify to use gettext in ${appid}/etc/${appid}-ini.php, "
+                "You specify to use gettext in etc/config.php, "
               . "but gettext extension was not installed !!!"
             );
         }
