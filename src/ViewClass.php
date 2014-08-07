@@ -1067,7 +1067,7 @@ class Ethna_ViewClass
         }
         if (isset($params['value']) === false) {
             if (isset($def['name'])) {
-                $params['value'] = $def['name'];
+                $params['value'] = _et($def['name']);
             }
         }
         if (is_array($params['value'])) {
