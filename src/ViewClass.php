@@ -522,7 +522,7 @@ class Ethna_ViewClass
             return $name;
         }
 
-        return $def['name'];
+        return _et($def['name']);
     }
     // }}}
 
