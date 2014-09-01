@@ -49,8 +49,17 @@ https://packagist.org/packages/dqneo/ethnam
 
 ## UnitTest
 
-現在、Ethnamに対するUnitTestは整備されていません。
-今後PHP Unitであらたにテストを作成するつもりです。
+実行方法
+
+```shell
+$ composer install
+$ ./vendor/bin/phpunit
+```
+
+SimpleTestベースで作られた古いテストコードをPHPUnitベースに移行中です。
+
+* `test`      : 古いテスト
+* `src/Tests` : 新しいテスト
 
 ## Contact
 
@@ -59,14 +68,3 @@ https://packagist.org/packages/dqneo/ethnam
 https://twitter.com/DQNEO
 
 ハッシュタグは #Ethnam です。
-
-
-## tagについて
-
-`ETHNA_2_x_x`となっているものは、本家Ethnaのバージョンを指します。
-
-`バージョン番号`となっているものは、本家からforkした後のEthnam独自のバージョンです。
-
-
-betaX
-  betaリリース
