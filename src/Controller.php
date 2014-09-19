@@ -1746,19 +1746,19 @@ class Ethna_Controller
      *  ただし、インクルードしたファイルにクラスが正しく定義されているかどうかは保証しない
      *
      *  @access private
-     *  @param  array   $action_obj     アクション定義
+     *  @param  array   $actionInfo     アクション定義
      *  @param  string  $action_name    アクション名
      */
-    protected function _includeActionScript($action_obj, $action_name)
+    protected function _includeActionScript($actionInfo, $action_name)
     {
         $class_path = $form_path = null;
 
         $action_dir = $this->getActiondir();
 
         // class_path属性チェック
-        if (isset($action_obj['class_path'])) {
+        if (isset($actionInfo['class_path'])) {
             // フルパス指定サポート
-            $tmp_path = $action_obj['class_path'];
+            $tmp_path = $actionInfo['class_path'];
             if (Ethna_Util::isAbsolute($tmp_path) == false) {
                 $tmp_path = $action_dir . $tmp_path;
             }
@@ -1783,9 +1783,9 @@ class Ethna_Controller
         }
 
         // form_path属性チェック
-        if (isset($action_obj['form_path'])) {
+        if (isset($actionInfo['form_path'])) {
             // フルパス指定サポート
-            $tmp_path = $action_obj['form_path'];
+            $tmp_path = $actionInfo['form_path'];
             if (Ethna_Util::isAbsolute($tmp_path) == false) {
                 $tmp_path = $action_dir . $tmp_path;
             }
