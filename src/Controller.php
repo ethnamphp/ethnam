@@ -1746,10 +1746,10 @@ class Ethna_Controller
      *  ただし、インクルードしたファイルにクラスが正しく定義されているかどうかは保証しない
      *
      *  @access private
-     *  @param  array   $actionInfo     アクション定義
+     *  @param  array   $void
      *  @param  string  $action_name    アクション名
      */
-    protected function _includeActionScript($actionInfo, $action_name)
+    protected function _includeActionScript($void, $action_name)
     {
         $class_path = $form_path = null;
 
