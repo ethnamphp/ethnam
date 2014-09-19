@@ -1755,24 +1755,6 @@ class Ethna_Controller
 
         $action_dir = $this->getActiondir();
 
-        // class_path属性チェック
-        if (isset($actionInfo['class_path'])) {
-            // フルパス指定サポート
-            $tmp_path = $actionInfo['class_path'];
-            if (Ethna_Util::isAbsolute($tmp_path) == false) {
-                $tmp_path = $action_dir . $tmp_path;
-            }
-
-            if (file_exists($tmp_path) == false) {
-                $this->logger->log(LOG_WARNING, 'class_path file not found [%s] -> try default', $tmp_path);
-            } else {
-                include_once $tmp_path;
-                $class_path = $tmp_path;
-            }
-        }
-
-        // デフォルトチェック
-        if (is_null($class_path)) {
             $class_path = $this->getDefaultActionPath($action_name);
             if (file_exists($action_dir . $class_path)) {
                 include_once $action_dir . $class_path;
@@ -1780,29 +1762,7 @@ class Ethna_Controller
                 $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
                 return;
             }
-        }
 
-        // form_path属性チェック
-        if (isset($actionInfo['form_path'])) {
-            // フルパス指定サポート
-            $tmp_path = $actionInfo['form_path'];
-            if (Ethna_Util::isAbsolute($tmp_path) == false) {
-                $tmp_path = $action_dir . $tmp_path;
-            }
-
-            if ($tmp_path == $class_path) {
-                return;
-            }
-            if (file_exists($tmp_path) == false) {
-                $this->logger->log(LOG_WARNING, 'form_path file not found [%s] -> try default', $tmp_path);
-            } else {
-                include_once $tmp_path;
-                $form_path = $tmp_path;
-            }
-        }
-
-        // デフォルトチェック
-        if (is_null($form_path)) {
             $form_path = $this->getDefaultFormPath($action_name);
             if ($form_path == $class_path) {
                 return;
@@ -1812,7 +1772,6 @@ class Ethna_Controller
             } else {
                 $this->logger->log(LOG_DEBUG, 'default form file not found [%s] -> maybe falling back to default form class', $form_path);
             }
-        }
     }
 
     /**
