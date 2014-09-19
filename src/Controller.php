@@ -1755,23 +1755,23 @@ class Ethna_Controller
 
         $action_dir = $this->getActiondir();
 
-            $class_path = $this->getDefaultActionPath($action_name);
-            if (file_exists($action_dir . $class_path)) {
-                include_once $action_dir . $class_path;
-            } else {
-                $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
-                return;
-            }
+        $class_path = $this->getDefaultActionPath($action_name);
+        if (file_exists($action_dir . $class_path)) {
+            include_once $action_dir . $class_path;
+        } else {
+            $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
+            return;
+        }
 
-            $form_path = $this->getDefaultFormPath($action_name);
-            if ($form_path == $class_path) {
-                return;
-            }
-            if (file_exists($action_dir . $form_path)) {
-                include_once $action_dir . $form_path;
-            } else {
-                $this->logger->log(LOG_DEBUG, 'default form file not found [%s] -> maybe falling back to default form class', $form_path);
-            }
+        $form_path = $this->getDefaultFormPath($action_name);
+        if ($form_path == $class_path) {
+            return;
+        }
+        if (file_exists($action_dir . $form_path)) {
+            include_once $action_dir . $form_path;
+        } else {
+            $this->logger->log(LOG_DEBUG, 'default form file not found [%s] -> maybe falling back to default form class', $form_path);
+        }
     }
 
     /**
