@@ -1184,27 +1184,27 @@ class Ethna_Controller
     public function _getAction($action_name)
     {
         $action = array();
-        $ret = array();
+        $action_obj = array();
 
         // アクションスクリプトのインクルード
         $this->_includeActionScript($action_name);
 
-        $ret['class_name'] = $this->getDefaultActionClass($action_name);
-        $ret['form_name'] = $this->getDefaultFormClass($action_name);
+        $action_obj['class_name'] = $this->getDefaultActionClass($action_name);
+        $action_obj['form_name'] = $this->getDefaultFormClass($action_name);
 
         // 必要条件の確認
-        if (class_exists($ret['class_name']) == false) {
-            $this->logger->log(LOG_NOTICE, 'action class is not defined [%s]', $ret['class_name']);
+        if (class_exists($action_obj['class_name']) == false) {
+            $this->logger->log(LOG_NOTICE, 'action class is not defined [%s]', $action_obj['class_name']);
             return null;
         }
-        if (class_exists($ret['form_name']) == false) {
+        if (class_exists($action_obj['form_name']) == false) {
             // フォームクラスは未定義でも良い
             $class_name = $this->class_factory->getObjectName('form');
-            $this->logger->log(LOG_DEBUG, 'form class is not defined [%s] -> falling back to default [%s]', $ret['form_name'], $class_name);
-            $ret['form_name'] = $class_name;
+            $this->logger->log(LOG_DEBUG, 'form class is not defined [%s] -> falling back to default [%s]', $action_obj['form_name'], $class_name);
+            $action_obj['form_name'] = $class_name;
         }
 
-        return $ret;
+        return $action_obj;
     }
 
     /**
