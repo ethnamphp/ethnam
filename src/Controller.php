@@ -122,12 +122,6 @@ class Ethna_Controller
         'redirect' => array( 'view_name' => 'Ethna_View_Redirect',),
     );
 
-    /** @protected    array   action定義 */
-    protected $action = array();
-
-    /** @protected    array   action(CLI)定義 */
-    protected $action_cli = array();
-
     /** @protected    array   アプリケーションマネージャ定義 */
     protected $manager = array();
 
@@ -834,7 +828,6 @@ class Ethna_Controller
     public static function main_CLI($class_name, $action_name, $enable_filter = true)
     {
         $c = new $class_name(GATEWAY_CLI);
-        $c->action_cli[$action_name] = array();
         $c->trigger($action_name, "", $enable_filter);
         $c->end();
     }
@@ -1185,53 +1178,24 @@ class Ethna_Controller
     /**
      *  フォームにより要求されたアクション名に対応する定義を返す
      *
-     *  @access private
      *  @param  string  $action_name    アクション名
      *  @return array   アクション定義
      */
-    public function _getAction($action_name, $gateway = null)
+    public function _getAction($action_name)
     {
         $action = array();
-        $gateway = is_null($gateway) ? $this->getGateway() : $gateway;
-        switch ($gateway) {
-        case GATEWAY_WWW:
-            $action = $this->action;
-            break;
-        case GATEWAY_CLI:
-            $action = $this->action_cli;
-            break;
-        }
-
         $action_obj = array();
-        if (isset($action[$action_name])) {
-            $action_obj = $action[$action_name];
-            if (isset($action_obj['inspect']) && $action_obj['inspect']) {
-                return $action_obj;
-            }
-        } else {
-            $this->logger->log(LOG_DEBUG, "action [%s] is not defined -> try default", $action_name);
-        }
 
         // アクションスクリプトのインクルード
-        $this->_includeActionScript($action_obj, $action_name);
+        $this->_includeActionScript($action_name);
 
-        // 省略値の補正
-        if (isset($action_obj['class_name']) == false) {
-            $action_obj['class_name'] = $this->getDefaultActionClass($action_name);
-        }
-
-        if (isset($action_obj['form_name']) == false) {
-            $action_obj['form_name'] = $this->getDefaultFormClass($action_name);
-        } else if (class_exists($action_obj['form_name']) == false) {
-            // 明示指定されたフォームクラスが定義されていない場合は警告
-            $this->logger->log(LOG_WARNING, 'stated form class is not defined [%s]', $action_obj['form_name']);
-        }
+        $action_obj['class_name'] = $this->getDefaultActionClass($action_name);
+        $action_obj['form_name'] = $this->getDefaultFormClass($action_name);
 
         // 必要条件の確認
         if (class_exists($action_obj['class_name']) == false) {
             $this->logger->log(LOG_NOTICE, 'action class is not defined [%s]', $action_obj['class_name']);
-            $_ret_object = null;
-            return $_ret_object;
+            return null;
         }
         if (class_exists($action_obj['form_name']) == false) {
             // フォームクラスは未定義でも良い
@@ -1240,9 +1204,7 @@ class Ethna_Controller
             $action_obj['form_name'] = $class_name;
         }
 
-        $action_obj['inspect'] = true;
-        $action[$action_name] = $action_obj;
-        return $action[$action_name];
+        return $action_obj;
     }
 
     /**
@@ -1746,72 +1708,30 @@ class Ethna_Controller
      *  ただし、インクルードしたファイルにクラスが正しく定義されているかどうかは保証しない
      *
      *  @access private
-     *  @param  array   $action_obj     アクション定義
      *  @param  string  $action_name    アクション名
      */
-    protected function _includeActionScript($action_obj, $action_name)
+    protected function _includeActionScript($action_name)
     {
         $class_path = $form_path = null;
 
         $action_dir = $this->getActiondir();
 
-        // class_path属性チェック
-        if (isset($action_obj['class_path'])) {
-            // フルパス指定サポート
-            $tmp_path = $action_obj['class_path'];
-            if (Ethna_Util::isAbsolute($tmp_path) == false) {
-                $tmp_path = $action_dir . $tmp_path;
-            }
-
-            if (file_exists($tmp_path) == false) {
-                $this->logger->log(LOG_WARNING, 'class_path file not found [%s] -> try default', $tmp_path);
-            } else {
-                include_once $tmp_path;
-                $class_path = $tmp_path;
-            }
+        $class_path = $this->getDefaultActionPath($action_name);
+        if (file_exists($action_dir . $class_path)) {
+            include_once $action_dir . $class_path;
+        } else {
+            $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
+            return;
         }
 
-        // デフォルトチェック
-        if (is_null($class_path)) {
-            $class_path = $this->getDefaultActionPath($action_name);
-            if (file_exists($action_dir . $class_path)) {
-                include_once $action_dir . $class_path;
-            } else {
-                $this->logger->log(LOG_INFO, 'file not found:'.$action_dir . $class_path);
-                return;
-            }
+        $form_path = $this->getDefaultFormPath($action_name);
+        if ($form_path == $class_path) {
+            return;
         }
-
-        // form_path属性チェック
-        if (isset($action_obj['form_path'])) {
-            // フルパス指定サポート
-            $tmp_path = $action_obj['form_path'];
-            if (Ethna_Util::isAbsolute($tmp_path) == false) {
-                $tmp_path = $action_dir . $tmp_path;
-            }
-
-            if ($tmp_path == $class_path) {
-                return;
-            }
-            if (file_exists($tmp_path) == false) {
-                $this->logger->log(LOG_WARNING, 'form_path file not found [%s] -> try default', $tmp_path);
-            } else {
-                include_once $tmp_path;
-                $form_path = $tmp_path;
-            }
-        }
-
-        // デフォルトチェック
-        if (is_null($form_path)) {
-            $form_path = $this->getDefaultFormPath($action_name);
-            if ($form_path == $class_path) {
-                return;
-            }
-            if (file_exists($action_dir . $form_path)) {
-                include_once $action_dir . $form_path;
-            } else {
-                $this->logger->log(LOG_DEBUG, 'default form file not found [%s] -> maybe falling back to default form class', $form_path);
-            }
+        if (file_exists($action_dir . $form_path)) {
+            include_once $action_dir . $form_path;
+        } else {
+            $this->logger->log(LOG_DEBUG, 'default form file not found [%s] -> maybe falling back to default form class', $form_path);
         }
     }
 
