@@ -122,12 +122,6 @@ class Ethna_Controller
         'redirect' => array( 'view_name' => 'Ethna_View_Redirect',),
     );
 
-    /** @protected    array   action定義 */
-    protected $action = array();
-
-    /** @protected    array   action(CLI)定義 */
-    protected $action_cli = array();
-
     /** @protected    array   アプリケーションマネージャ定義 */
     protected $manager = array();
 
@@ -834,7 +828,6 @@ class Ethna_Controller
     public static function main_CLI($class_name, $action_name, $enable_filter = true)
     {
         $c = new $class_name(GATEWAY_CLI);
-        $c->action_cli[$action_name] = array();
         $c->trigger($action_name, "", $enable_filter);
         $c->end();
     }
@@ -1185,32 +1178,13 @@ class Ethna_Controller
     /**
      *  フォームにより要求されたアクション名に対応する定義を返す
      *
-     *  @access private
      *  @param  string  $action_name    アクション名
      *  @return array   アクション定義
      */
-    public function _getAction($action_name, $gateway = null)
+    public function _getAction($action_name)
     {
         $action = array();
-        $gateway = is_null($gateway) ? $this->getGateway() : $gateway;
-        switch ($gateway) {
-        case GATEWAY_WWW:
-            $action = $this->action;
-            break;
-        case GATEWAY_CLI:
-            $action = $this->action_cli;
-            break;
-        }
-
         $ret = array();
-        if (isset($action[$action_name])) {
-            $ret = $action[$action_name];
-            if (isset($ret['inspect']) && $ret['inspect']) {
-                return $ret;
-            }
-        } else {
-            $this->logger->log(LOG_DEBUG, "action [%s] is not defined -> try default", $action_name);
-        }
 
         // アクションスクリプトのインクルード
         $this->_includeActionScript($action_name);
