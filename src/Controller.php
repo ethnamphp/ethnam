@@ -1189,17 +1189,8 @@ class Ethna_Controller
         // アクションスクリプトのインクルード
         $this->_includeActionScript($action_name);
 
-        // 省略値の補正
-        if (isset($ret['class_name']) == false) {
-            $ret['class_name'] = $this->getDefaultActionClass($action_name);
-        }
-
-        if (isset($ret['form_name']) == false) {
-            $ret['form_name'] = $this->getDefaultFormClass($action_name);
-        } else if (class_exists($ret['form_name']) == false) {
-            // 明示指定されたフォームクラスが定義されていない場合は警告
-            $this->logger->log(LOG_WARNING, 'stated form class is not defined [%s]', $ret['form_name']);
-        }
+        $ret['class_name'] = $this->getDefaultActionClass($action_name);
+        $ret['form_name'] = $this->getDefaultFormClass($action_name);
 
         // 必要条件の確認
         if (class_exists($ret['class_name']) == false) {
@@ -1213,9 +1204,7 @@ class Ethna_Controller
             $ret['form_name'] = $class_name;
         }
 
-        $ret['inspect'] = true;
-        $action[$action_name] = $ret;
-        return $action[$action_name];
+        return $ret;
     }
 
     /**
