@@ -1202,11 +1202,11 @@ class Ethna_Controller
             break;
         }
 
-        $action_obj = array();
+        $ret = array();
         if (isset($action[$action_name])) {
-            $action_obj = $action[$action_name];
-            if (isset($action_obj['inspect']) && $action_obj['inspect']) {
-                return $action_obj;
+            $ret = $action[$action_name];
+            if (isset($ret['inspect']) && $ret['inspect']) {
+                return $ret;
             }
         } else {
             $this->logger->log(LOG_DEBUG, "action [%s] is not defined -> try default", $action_name);
@@ -1216,31 +1216,31 @@ class Ethna_Controller
         $this->_includeActionScript($action_name);
 
         // 省略値の補正
-        if (isset($action_obj['class_name']) == false) {
-            $action_obj['class_name'] = $this->getDefaultActionClass($action_name);
+        if (isset($ret['class_name']) == false) {
+            $ret['class_name'] = $this->getDefaultActionClass($action_name);
         }
 
-        if (isset($action_obj['form_name']) == false) {
-            $action_obj['form_name'] = $this->getDefaultFormClass($action_name);
-        } else if (class_exists($action_obj['form_name']) == false) {
+        if (isset($ret['form_name']) == false) {
+            $ret['form_name'] = $this->getDefaultFormClass($action_name);
+        } else if (class_exists($ret['form_name']) == false) {
             // 明示指定されたフォームクラスが定義されていない場合は警告
-            $this->logger->log(LOG_WARNING, 'stated form class is not defined [%s]', $action_obj['form_name']);
+            $this->logger->log(LOG_WARNING, 'stated form class is not defined [%s]', $ret['form_name']);
         }
 
         // 必要条件の確認
-        if (class_exists($action_obj['class_name']) == false) {
-            $this->logger->log(LOG_NOTICE, 'action class is not defined [%s]', $action_obj['class_name']);
+        if (class_exists($ret['class_name']) == false) {
+            $this->logger->log(LOG_NOTICE, 'action class is not defined [%s]', $ret['class_name']);
             return null;
         }
-        if (class_exists($action_obj['form_name']) == false) {
+        if (class_exists($ret['form_name']) == false) {
             // フォームクラスは未定義でも良い
             $class_name = $this->class_factory->getObjectName('form');
-            $this->logger->log(LOG_DEBUG, 'form class is not defined [%s] -> falling back to default [%s]', $action_obj['form_name'], $class_name);
-            $action_obj['form_name'] = $class_name;
+            $this->logger->log(LOG_DEBUG, 'form class is not defined [%s] -> falling back to default [%s]', $ret['form_name'], $class_name);
+            $ret['form_name'] = $class_name;
         }
 
-        $action_obj['inspect'] = true;
-        $action[$action_name] = $action_obj;
+        $ret['inspect'] = true;
+        $action[$action_name] = $ret;
         return $action[$action_name];
     }
 
