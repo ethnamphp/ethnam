@@ -1230,8 +1230,7 @@ class Ethna_Controller
         // 必要条件の確認
         if (class_exists($action_obj['class_name']) == false) {
             $this->logger->log(LOG_NOTICE, 'action class is not defined [%s]', $action_obj['class_name']);
-            $_ret_object = null;
-            return $_ret_object;
+            return null;
         }
         if (class_exists($action_obj['form_name']) == false) {
             // フォームクラスは未定義でも良い
