@@ -1213,7 +1213,7 @@ class Ethna_Controller
         }
 
         // アクションスクリプトのインクルード
-        $this->_includeActionScript($action_obj, $action_name);
+        $this->_includeActionScript($action_name);
 
         // 省略値の補正
         if (isset($action_obj['class_name']) == false) {
@@ -1746,10 +1746,9 @@ class Ethna_Controller
      *  ただし、インクルードしたファイルにクラスが正しく定義されているかどうかは保証しない
      *
      *  @access private
-     *  @param  array   $void
      *  @param  string  $action_name    アクション名
      */
-    protected function _includeActionScript($void, $action_name)
+    protected function _includeActionScript($action_name)
     {
         $class_path = $form_path = null;
 
