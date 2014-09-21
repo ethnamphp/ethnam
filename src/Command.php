@@ -169,7 +169,7 @@ EOD;
     /**
      *  sort callback method
      */
-    public static function _handler_sort_callback($a, $b)
+    public static function _handler_sort_callback(Ethna_Plugin_Handle $a, Ethna_Plugin_Handle $b)
     {
         return strcmp($a->getId(), $b->getId());
     }
