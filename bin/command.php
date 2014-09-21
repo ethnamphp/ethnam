@@ -8,8 +8,6 @@
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna
  */
-$base = dirname(dirname(dirname(__FILE__)));
-ini_set('include_path', $base.PATH_SEPARATOR.ini_get('include_path'));
 
 require_once __DIR__ . '/../bootstrap.php';
 
