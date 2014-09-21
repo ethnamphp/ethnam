@@ -98,7 +98,7 @@ class Ethna_Plugin
      *
      *  @access public
      *  @param  string  $type   プラグインの種類
-     *  @return array   プラグインオブジェクトの配列
+     *  @return array   プラグインオブジェクトの配列 or Ethna_Error
      */
     public function getPluginList($type)
     {
@@ -112,7 +112,11 @@ class Ethna_Plugin
             if (is_null($value)) {
                 continue;
             }
-            $plugin_list[$name] = $this->getPlugin($type, $name);
+            $plugin = $this->getPlugin($type, $name);
+            if (Ethna::isError($plugin)) {
+                return $plugin;
+            }
+            $plugin_list[$name] = $plugin;
         }
         return $plugin_list;
     }

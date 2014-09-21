@@ -161,6 +161,10 @@ EOD;
     public function getHandlerList()
     {
         $handler_list = $this->plugin->getPluginList('Handle');
+        if (Ethna::isError($handler_list)) {
+            echo $handler_list->getMessage();
+            exit(1);
+        }
         usort($handler_list, array($this, "_handler_sort_callback"));
 
         return $handler_list;
