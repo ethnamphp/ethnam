@@ -6,24 +6,25 @@
 #
 #
 THIS_DIR=$(cd $(dirname $0); pwd)
-ETHNA_HOME=$(dirname $THIS_DIR)
 CUR_DIR="$PWD"
 
 if test -z "$ETHNA_HOME"
 then
     while [ 1 ];
     do
-        if test -f ".ethna"
-        then
-            if test -f "$PWD""/lib/Ethna/Ethna.php"
-            then
-                ETHNA_HOME="$PWD""/lib/Ethna"
+        if [[ -f ".ethna" ]] && [[ -d "$PWD""/vendor/dqneo/ethnam" ]] ; then
+                ETHNA_HOME="$PWD""/vendor/dqneo/ethnam"
                 DOT_ETHNA="$PWD""/.ethna"
                 break
-            fi
         fi
         cd ..
-    done
+ 
+	if [ "$PWD" = "/" ]; then
+	    echo ".ethna file not found"
+	    exit 1
+	fi
+
+   done
 fi
 
 cd $CUR_DIR
