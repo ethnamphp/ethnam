@@ -6,7 +6,8 @@ Ethnaから派生してできたプロジェクトです。
 ## 動作環境
 
 * PHP 5.4以上
-* Windowsでは動きません。
+* OS:Linux/Unix (Windowsでは動きません)
+
 
 ## branch運用ルール
 
