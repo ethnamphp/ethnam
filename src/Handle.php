@@ -19,6 +19,22 @@
  */
 class Ethna_Handle
 {
+    private $version = <<<EOD
+Ethna %s (using PHP %s)
+
+Copyright (c) 2004-%s,
+  Masaki Fujimoto <fujimoto@php.net>
+  halt feits <halt.feits@gmail.com>
+  Takuya Ookubo <sfio@sakura.ai.to>
+  nozzzzz <nozzzzz@gmail.com>
+  cocoitiban <cocoiti@comio.info>
+  Yoshinari Takaoka <takaoka@beatcraft.com>
+  Sotaro Karasawa <sotaro.k@gmail.com>
+
+http://ethna.jp/
+
+EOD;
+
     /**#@+
      *  @access     private
      */
@@ -50,6 +66,74 @@ class Ethna_Handle
         $this->plugin = $this->controller->getPlugin();
     }
     // }}}
+
+    /**
+     * コマンドを実行する
+     */
+    public function run()
+    {
+
+        // fetch arguments
+        $opt = new Ethna_Getopt();
+        $arg_list = $opt->readPHPArgv();
+        if (Ethna::isError($arg_list)) {
+            echo $arg_list->getMessage()."\n";
+            exit(2);
+        }
+        array_shift($arg_list);  // remove "command.php"
+
+        if ($dot_ethna = getenv('DOT_ETHNA')) {
+            $app_controller = self::getAppController(dirname($dot_ethna));
+        }
+
+        $handle = $this;
+
+        //  はじめの引数に - が含まれていればそれを分離する
+        //  含まれていた場合、それは -v|--version でなければならない
+        list($my_arg_list, $arg_list) = $handle->separateArgList($arg_list);
+        $r = $opt->getopt($my_arg_list, "v", array("version"));
+        if (Ethna::isError($r)) {
+            $subCommand = 'help';
+        } else {
+            // ad-hoc:(
+            foreach ($r[0] as $opt) {
+                if ($opt[0] == "v" || $opt[0] == "--version") {
+                    printf($this->version, ETHNA_VERSION, PHP_VERSION, date('Y'));
+                    exit(2);
+                }
+            }
+        }
+
+        if (count($arg_list) == 0) {
+            $subCommand = 'help';
+        } else {
+            $subCommand = array_shift($arg_list);
+        }
+
+        $handler = $handle->getHandler($subCommand);
+        $handler->eh = $handle;
+        if (Ethna::isError($handler)) {
+            printf("no such command: %s\n\n", $subCommand);
+            $subCommand = 'help';
+            $handler = $handle->getHandler($subCommand);
+            $handler->eh = $handle;
+            if (Ethna::isError($handler)) {
+                exit(1);  //  should not happen.
+            }
+        }
+
+        // don't know what will happen:)
+        $handler->setArgList($arg_list);
+        $r = $handler->perform();
+        if (Ethna::isError($r)) {
+            printf("error occured w/ command [%s]\n  -> %s\n\n", $subCommand, $r->getMessage());
+            if ($r->getCode() == 'usage') {
+                $handler->usage();
+            }
+            exit(1);
+        }
+
+    }
 
     // {{{ getHandler
     /**
