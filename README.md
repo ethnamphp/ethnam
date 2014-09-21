@@ -1,4 +1,4 @@
-# Ethnam
+# Ethnam [![Build Status](https://travis-ci.org/DQNEO/ethnam.svg?branch=master)](https://travis-ci.org/DQNEO/ethnam)
 
 Ethnam(えすなえむ)は、PHPのウェブアプリケーションフレームワークです。
 Ethnaから派生してできたプロジェクトです。
@@ -6,7 +6,8 @@ Ethnaから派生してできたプロジェクトです。
 ## 動作環境
 
 * PHP 5.4以上
-* Windowsでは動きません。
+* OS:Linux/Unix (Windowsでは動きません)
+
 
 ## branch運用ルール
 
@@ -49,6 +50,8 @@ https://packagist.org/packages/dqneo/ethnam
 
 ## UnitTest
 
+PHPUnitでテストします。
+
 実行方法
 
 ```shell
@@ -56,10 +59,8 @@ $ composer install
 $ ./vendor/bin/phpunit
 ```
 
-SimpleTestベースで作られた古いテストコードをPHPUnitベースに移行中です。
-
-* `test`      : 古いテスト
 * `src/Tests` : 新しいテスト
+* `src/oldtest`    : 古いテスト(SimpleTestベース)
 
 ## Contact
 
