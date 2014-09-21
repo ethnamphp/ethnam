@@ -421,6 +421,10 @@ class Ethna_Plugin
 
             // 条件にあう $name をリストに追加
             while (($file = readdir($dh)) !== false) {
+                if ($file === 'Base.php') {
+                    //基底クラスは読み込まない
+                    continue;
+                }
                 if (preg_match('#^'.$file_regexp.'$#', $file, $matches)
                     && file_exists("{$dir}/{$file}")) {
                     $name_list[$matches[1]] = true;
