@@ -10,5 +10,5 @@
  */
 require_once __DIR__ . '/../bootstrap.php';
 
-$handle = new Ethna_Handle();
+$handle = new Ethna_Command();
 $handle->run();

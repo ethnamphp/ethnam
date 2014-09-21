@@ -37,7 +37,7 @@ class Ethna_Plugin_Handle_ClearCache extends Ethna_Plugin_Handle
         list($args,) = $r;
 
         $basedir = isset($args['basedir']) ? realpath(end($args['basedir'])) : getcwd();
-        $controller = Ethna_Handle::getAppController($basedir);
+        $controller = Ethna_Command::getAppController($basedir);
         if (Ethna::isError($controller)) {
             return $controller;
         }

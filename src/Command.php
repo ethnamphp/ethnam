@@ -14,7 +14,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Handle
+class Ethna_Command
 {
     private $version = <<<EOD
 Ethna %s (using PHP %s)
@@ -49,7 +49,7 @@ EOD;
 
     // {{{ constructor
     /**
-     *  Ethna_Handle constructor
+     *  Ethna_Command constructor
      *
      *  @access public
      */
@@ -178,7 +178,7 @@ EOD;
     // {{{ getEthnaController
     /**
      *  Ethna_Controllerのインスタンスを取得する
-     *  (Ethna_Handlerの文脈で呼び出されることが前提)
+     *  (Ethna_Commandの文脈で呼び出されることが前提)
      *
      *  @access public
      *  @static

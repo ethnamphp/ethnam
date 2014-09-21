@@ -33,7 +33,7 @@ class Ethna_Plugin_Generator_CreatePlugin extends Ethna_Plugin_Generator
     {
         $plugin_dir = "$basedir/plugin";
         if (!$forpackage) {
-            $chk_ctl = Ethna_Handle::getAppController(getcwd());
+            $chk_ctl = Ethna_Command::getAppController(getcwd());
             if (Ethna::isError($chk_ctl)) {
                 return Ethna::raiseError(
                            "ERROR: You are not in Ethna project. specify [-p|--plugin-package] option, or change directory to the Ethna Project\n"

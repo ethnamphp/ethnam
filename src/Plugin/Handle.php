@@ -41,7 +41,7 @@ class Ethna_Plugin_Handle
     public $logger;
 
     /**
-     *  Ethna_Handle constructor (stub for php4)
+     *  Ethna_Command constructor (stub for php4)
      *
      *  @access public
      */

@@ -100,7 +100,7 @@ class Ethna_Plugin_Handle_AddView extends Ethna_Plugin_Handle_AddAction
         }
 
         // locale
-        $ctl = Ethna_Handle::getAppController(getcwd());
+        $ctl = Ethna_Command::getAppController(getcwd());
         if (isset($opt_list['locale'])) {
             $locale = end($opt_list['locale']);
             if (!preg_match('/^[A-Za-z_]+$/', $locale)) {
