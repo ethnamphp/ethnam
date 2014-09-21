@@ -40,10 +40,4 @@ then
     export PHP_COMMAND
 fi
 
-if test -z "$PHP_CLASSPATH"
-then
-    PHP_CLASSPATH="$ETHNA_HOME/src"
-    export PHP_CLASSPATH
-fi
-
 DOT_ETHNA=$DOT_ETHNA $PHP_COMMAND -d html_errors=off -d error_reporting="E_ALL & ~E_DEPRECATED" -qC $ETHNA_HOME/bin/ethna_handle.php $*
