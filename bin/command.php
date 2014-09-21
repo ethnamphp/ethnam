@@ -33,7 +33,7 @@ if (Ethna::isError($arg_list)) {
     echo $arg_list->getMessage()."\n";
     exit(2);
 }
-array_shift($arg_list);  // remove "ethna_handle.php"
+array_shift($arg_list);  // remove "command.php"
 
 $eh = new Ethna_Handle();
 if ($dot_ethna = getenv('DOT_ETHNA')) {
