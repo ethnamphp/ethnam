@@ -60,7 +60,6 @@ EOD;
     {
         $this->controller = new Ethna_Controller(GATEWAY_CLI);
         Ethna::clearErrorCallback();
-        Ethna::setErrorCallback(array('Ethna_Handle', 'handleError'));
 
         $this->ctl = $this->controller;
         $this->plugin = $this->controller->getPlugin();
@@ -248,7 +247,6 @@ EOD;
         $app_controller[$app_dir] = new $class(GATEWAY_CLI);
         $GLOBALS['_Ethna_controller'] = $global_controller;
         Ethna::clearErrorCallback();
-        Ethna::setErrorCallback(array('Ethna_Handle', 'handleError'));
 
         return $app_controller[$app_dir];
     }
@@ -281,16 +279,6 @@ EOD;
             $array = array();
             return $array;
         }
-    }
-    // }}}
-
-    // {{{ handleError
-    /**
-     *  Ethna コマンドでのエラーハンドリング
-     */
-    public static function handleError($eobj)
-    {
-        // do nothing.
     }
     // }}}
 
