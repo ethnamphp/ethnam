@@ -5,7 +5,6 @@
 #   simple command line gateway
 #
 #
-
 THIS_DIR=$(cd $(dirname $0); pwd)
 ETHNA_HOME=$(dirname $THIS_DIR)
 CUR_DIR="$PWD"
@@ -22,17 +21,6 @@ then
                 DOT_ETHNA="$PWD""/.ethna"
                 break
             fi
-        fi
-        if [ "$PWD" = "/" ];
-        then
-            if test "@PEAR-DIR@/pear" = '@'PEAR-DIR'@'
-            then
-                ETHNA_HOME="/usr/share/php/Ethna"
-            else
-                ETHNA_HOME="@PEAR-DIR@/Ethna"
-            fi
-            DOT_ETHNA=""
-            break
         fi
         cd ..
     done
