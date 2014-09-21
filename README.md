@@ -1,4 +1,4 @@
-# Ethnam
+# Ethnam [![Build Status](https://travis-ci.org/DQNEO/ethnam.svg?branch=master)](https://travis-ci.org/DQNEO/ethnam)
 
 Ethnam(えすなえむ)は、PHPのウェブアプリケーションフレームワークです。
 Ethnaから派生してできたプロジェクトです。
