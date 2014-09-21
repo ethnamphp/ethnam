@@ -5,6 +5,12 @@
 #   simple command line gateway
 #
 #
+
+if [ "$1" = "--debug" ]; then
+    set -x
+    shift
+fi
+
 THIS_DIR=$(cd $(dirname $0); pwd)
 CUR_DIR="$PWD"
 PHP_COMMAND="php"
