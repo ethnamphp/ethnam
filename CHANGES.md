@@ -1,5 +1,11 @@
 # 変更点一覧
 
+## 2.18での変更点
+* [core] ethna.sh周りをシンプル化。ethna_handle.phpをcommand.phpにリネームし、中身をEthna_Commandクラスに移動。
+* [plugin] PEARのパッケージを管理する機能を削除
+* [plugin] クラス名がわかりにくかったので変更('Handle' -> 'Subcommand')
+* [test] Travis-ci を使うようにしました。
+
 ## 2.17での変更点
 * [core]「アクション定義」機能を廃止しました。古い仕組みでほとんど使われていなかったため。( #21 )
 
