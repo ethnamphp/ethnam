@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_ClearCache extends Ethna_Plugin_Handle
+class Ethna_Plugin_Handle_ClearCache extends Ethna_Plugin_Handle_Base
 {
     /**
      *  clear cache files.

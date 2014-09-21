@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle
+// {{{ Ethna_Plugin_Handle_Base
 /**
  *  コマンドラインハンドラプラグインの基底クラス
  *  
@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle
+class Ethna_Plugin_Handle_Base
 {
     /** @protected    handler's id */
     protected $id;
@@ -178,3 +178,6 @@ class Ethna_Plugin_Handle
     }
 }
 // }}}
+
+class_alias('Ethna_Plugin_Handle_Base', 'Ethna_Plugin_Handle');
+
