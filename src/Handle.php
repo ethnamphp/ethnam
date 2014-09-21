@@ -1,7 +1,5 @@
 <?php
-// vim: foldmethod=marker
 /**
- *  Handle.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -9,7 +7,6 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Handle
 /**
  *  Manager class of Ethna (Command Line) Handlers
  *
