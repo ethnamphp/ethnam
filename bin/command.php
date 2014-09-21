@@ -35,7 +35,7 @@ if (Ethna::isError($arg_list)) {
 }
 array_shift($arg_list);  // remove "command.php"
 
-$eh = new Ethna_Handle();
+$handle = new Ethna_Handle();
 if ($dot_ethna = getenv('DOT_ETHNA')) {
     $app_controller = Ethna_Handle::getAppController(dirname($dot_ethna));
 }
@@ -43,7 +43,7 @@ if ($dot_ethna = getenv('DOT_ETHNA')) {
 
 //  はじめの引数に - が含まれていればそれを分離する
 //  含まれていた場合、それは -v|--version でなければならない
-list($my_arg_list, $arg_list) = $eh->separateArgList($arg_list);
+list($my_arg_list, $arg_list) = $handle->separateArgList($arg_list);
 $r = $opt->getopt($my_arg_list, "v", array("version"));
 if (Ethna::isError($r)) {
     $id = 'help';
@@ -63,13 +63,13 @@ if (count($arg_list) == 0) {
     $id = array_shift($arg_list);
 }
 
-$handler = $eh->getHandler($id);
-$handler->eh = $eh;
+$handler = $handle->getHandler($id);
+$handler->eh = $handle;
 if (Ethna::isError($handler)) {
     printf("no such command: %s\n\n", $id);
     $id = 'help';
-    $handler = $eh->getHandler($id);
-    $handler->eh = $eh;
+    $handler = $handle->getHandler($id);
+    $handler->eh = $handle;
     if (Ethna::isError($handler)) {
        exit(1);  //  should not happen.
     }
