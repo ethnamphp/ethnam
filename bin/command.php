@@ -8,6 +8,21 @@
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna
  */
+$version = <<<EOD
+Ethna %s (using PHP %s)
+
+Copyright (c) 2004-%s,
+  Masaki Fujimoto <fujimoto@php.net>
+  halt feits <halt.feits@gmail.com>
+  Takuya Ookubo <sfio@sakura.ai.to>
+  nozzzzz <nozzzzz@gmail.com>
+  cocoitiban <cocoiti@comio.info>
+  Yoshinari Takaoka <takaoka@beatcraft.com>
+  Sotaro Karasawa <sotaro.k@gmail.com>
+
+http://ethna.jp/
+
+EOD;
 
 require_once __DIR__ . '/../bootstrap.php';
 
@@ -36,7 +51,7 @@ if (Ethna::isError($r)) {
     // ad-hoc:(
     foreach ($r[0] as $opt) {
         if ($opt[0] == "v" || $opt[0] == "--version") {
-            _Ethna_HandleGateway_ShowVersion();
+            printf($version, ETHNA_VERSION, PHP_VERSION, date('Y'));
             exit(2);
         }
     }
@@ -92,27 +107,4 @@ function _Ethna_HandleGateway_SeparateArgList($arg_list)
     $arg_list = array_slice($arg_list, $i);
 
     return array($my_arg_list, $arg_list);
-}
-
-/**
- *  show version
- */
-function _Ethna_HandleGateway_ShowVersion()
-{
-    $version = <<<EOD
-Ethna %s (using PHP %s)
-
-Copyright (c) 2004-%s,
-  Masaki Fujimoto <fujimoto@php.net>
-  halt feits <halt.feits@gmail.com>
-  Takuya Ookubo <sfio@sakura.ai.to>
-  nozzzzz <nozzzzz@gmail.com>
-  cocoitiban <cocoiti@comio.info>
-  Yoshinari Takaoka <takaoka@beatcraft.com>
-  Sotaro Karasawa <sotaro.k@gmail.com>
-
-http://ethna.jp/
-
-EOD;
-    printf($version, ETHNA_VERSION, PHP_VERSION, date('Y'));
 }
