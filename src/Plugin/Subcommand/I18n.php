@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle_I18n
+// {{{ Ethna_Plugin_Subcommand_I18n
 /**
  *  i18n handler
  *
@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_I18n extends Ethna_Plugin_Handle
+class Ethna_Plugin_Subcommand_I18n extends Ethna_Plugin_Subcommand_Base
 {
     /**
      *  generate message catalog.

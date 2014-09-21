@@ -36,9 +36,9 @@ class Ethna_Generator
         $app_dir    = array_shift($arg_list);
 
         if ($app_dir === null) {
-            $ctl = Ethna_Handle::getEthnaController();
+            $ctl = Ethna_Command::getEthnaController();
         } else {
-            $ctl = Ethna_Handle::getAppController($app_dir);
+            $ctl = Ethna_Command::getAppController($app_dir);
         }
         if (Ethna::isError($ctl)) {
             return $ctl;
@@ -76,9 +76,9 @@ class Ethna_Generator
         $app_dir    = array_shift($arg_list);
 
         if ($app_dir === null) {
-            $ctl = Ethna_Handle::getEthnaController();
+            $ctl = Ethna_Command::getEthnaController();
         } else {
-            $ctl = Ethna_Handle::getAppController($app_dir);
+            $ctl = Ethna_Command::getAppController($app_dir);
         }
         if (Ethna::isError($ctl)) {
             return $ctl;

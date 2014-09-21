@@ -8,7 +8,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle_AddAppManager
+// {{{ Ethna_Plugin_Subcommand_AddAppManager
 /**
  *  add-app-manager handler
  *
@@ -16,7 +16,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_AddAppManager extends Ethna_Plugin_Handle
+class Ethna_Plugin_Subcommand_AddAppManager extends Ethna_Plugin_Subcommand_Base
 {
     /**
      *  add app-manager

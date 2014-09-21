@@ -1,7 +1,5 @@
 <?php
-// vim: foldmethod=marker
 /**
- *  Handle.php
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
@@ -9,7 +7,6 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Handle
 /**
  *  Manager class of Ethna (Command Line) Handlers
  *
@@ -17,8 +14,24 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Handle
+class Ethna_Command
 {
+    private $version = <<<EOD
+Ethna %s (using PHP %s)
+
+Copyright (c) 2004-%s,
+  Masaki Fujimoto <fujimoto@php.net>
+  halt feits <halt.feits@gmail.com>
+  Takuya Ookubo <sfio@sakura.ai.to>
+  nozzzzz <nozzzzz@gmail.com>
+  cocoitiban <cocoiti@comio.info>
+  Yoshinari Takaoka <takaoka@beatcraft.com>
+  Sotaro Karasawa <sotaro.k@gmail.com>
+
+http://ethna.jp/
+
+EOD;
+
     /**#@+
      *  @access     private
      */
@@ -36,7 +49,7 @@ class Ethna_Handle
 
     // {{{ constructor
     /**
-     *  Ethna_Handle constructor
+     *  Ethna_Command constructor
      *
      *  @access public
      */
@@ -44,12 +57,79 @@ class Ethna_Handle
     {
         $this->controller = new Ethna_Controller(GATEWAY_CLI);
         Ethna::clearErrorCallback();
-        Ethna::setErrorCallback(array('Ethna_Handle', 'handleError'));
 
         $this->ctl = $this->controller;
         $this->plugin = $this->controller->getPlugin();
     }
     // }}}
+
+    /**
+     * コマンドを実行する
+     */
+    public function run()
+    {
+
+        // fetch arguments
+        $opt = new Ethna_Getopt();
+        $arg_list = $opt->readPHPArgv();
+        if (Ethna::isError($arg_list)) {
+            echo $arg_list->getMessage()."\n";
+            exit(2);
+        }
+        array_shift($arg_list);  // remove "command.php"
+
+        if ($dot_ethna = getenv('DOT_ETHNA')) {
+            $app_controller = self::getAppController(dirname($dot_ethna));
+        }
+
+        $handle = $this;
+
+        //  はじめの引数に - が含まれていればそれを分離する
+        //  含まれていた場合、それは -v|--version でなければならない
+        list($my_arg_list, $arg_list) = $handle->separateArgList($arg_list);
+        $r = $opt->getopt($my_arg_list, "v", array("version"));
+        if (Ethna::isError($r)) {
+            $subCommand = 'help';
+        } else {
+            // ad-hoc:(
+            foreach ($r[0] as $opt) {
+                if ($opt[0] == "v" || $opt[0] == "--version") {
+                    printf($this->version, ETHNA_VERSION, PHP_VERSION, date('Y'));
+                    exit(2);
+                }
+            }
+        }
+
+        if (count($arg_list) == 0) {
+            $subCommand = 'help';
+        } else {
+            $subCommand = array_shift($arg_list);
+        }
+
+        $handler = $handle->getHandler($subCommand);
+        $handler->eh = $handle;
+        if (Ethna::isError($handler)) {
+            printf("no such command: %s\n\n", $subCommand);
+            $subCommand = 'help';
+            $handler = $handle->getHandler($subCommand);
+            $handler->eh = $handle;
+            if (Ethna::isError($handler)) {
+                exit(1);  //  should not happen.
+            }
+        }
+
+        // don't know what will happen:)
+        $handler->setArgList($arg_list);
+        $r = $handler->perform();
+        if (Ethna::isError($r)) {
+            printf("error occured w/ command [%s]\n  -> %s\n\n", $subCommand, $r->getMessage());
+            if ($r->getCode() == 'usage') {
+                $handler->usage();
+            }
+            exit(1);
+        }
+
+    }
 
     // {{{ getHandler
     /**
@@ -57,13 +137,13 @@ class Ethna_Handle
      *
      *  @access public
      */
-    public function getHandler($id)
+    public function getHandler($subCommand)
     {
         $name = preg_replace_callback('/\-(.)/', function($matches){
                 return strtoupper($matches[1]);
-                    }, ucfirst($id));
+                    }, ucfirst($subCommand));
 
-        $handler = $this->plugin->getPlugin('Handle', $name);
+        $handler = $this->plugin->getPlugin('Subcommand', $name);
         if (Ethna::isError($handler)) {
             return $handler;
         }
@@ -80,7 +160,11 @@ class Ethna_Handle
      */
     public function getHandlerList()
     {
-        $handler_list = $this->plugin->getPluginList('Handle');
+        $handler_list = $this->plugin->getPluginList('Subcommand');
+        if (Ethna::isError($handler_list)) {
+            echo $handler_list->getMessage();
+            exit(1);
+        }
         usort($handler_list, array($this, "_handler_sort_callback"));
 
         return $handler_list;
@@ -89,7 +173,7 @@ class Ethna_Handle
     /**
      *  sort callback method
      */
-    public static function _handler_sort_callback($a, $b)
+    public static function _handler_sort_callback(Ethna_Plugin_Subcommand_Base $a, Ethna_Plugin_Subcommand_Base $b)
     {
         return strcmp($a->getId(), $b->getId());
     }
@@ -98,7 +182,7 @@ class Ethna_Handle
     // {{{ getEthnaController
     /**
      *  Ethna_Controllerのインスタンスを取得する
-     *  (Ethna_Handlerの文脈で呼び出されることが前提)
+     *  (Ethna_Commandの文脈で呼び出されることが前提)
      *
      *  @access public
      *  @static
@@ -164,7 +248,6 @@ class Ethna_Handle
         $app_controller[$app_dir] = new $class(GATEWAY_CLI);
         $GLOBALS['_Ethna_controller'] = $global_controller;
         Ethna::clearErrorCallback();
-        Ethna::setErrorCallback(array('Ethna_Handle', 'handleError'));
 
         return $app_controller[$app_dir];
     }
@@ -200,14 +283,25 @@ class Ethna_Handle
     }
     // }}}
 
-    // {{{ handleError
-    /**
-     *  Ethna コマンドでのエラーハンドリング
-     */
-    public static function handleError($eobj)
+    public function separateArgList($arg_list)
     {
-        // do nothing.
+        $my_arg_list = array();
+
+        //  はじめの引数に - が含まれていたら、
+        //  それを $my_arg_list に入れる
+        //  これは --version 判定のため
+        for ($i = 0; $i < count($arg_list); $i++) {
+            if ($arg_list[$i]{0} == '-') {
+                // assume this should be an option for myself
+                $my_arg_list[] = $arg_list[$i];
+            } else {
+                break;
+            }
+        }
+        $arg_list = array_slice($arg_list, $i);
+
+        return array($my_arg_list, $arg_list);
+
     }
-    // }}}
 }
 // }}}

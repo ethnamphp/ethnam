@@ -9,9 +9,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/src/Plugin/Handle/AddAction.php';
-
-// {{{ Ethna_Plugin_Handle_AddEntryPoint
+// {{{ Ethna_Plugin_Subcommand_AddEntryPoint
 /**
  *  add-action handler
  *
@@ -19,7 +17,7 @@ require_once ETHNA_BASE . '/src/Plugin/Handle/AddAction.php';
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_AddEntryPoint extends Ethna_Plugin_Handle_AddAction
+class Ethna_Plugin_Subcommand_AddEntryPoint extends Ethna_Plugin_Subcommand_AddAction
 {
     /**
      *  add action entry point
