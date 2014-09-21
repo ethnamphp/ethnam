@@ -15,24 +15,24 @@ THIS_DIR=$(cd $(dirname $0); pwd)
 CUR_DIR="$PWD"
 PHP_COMMAND="php"
 
-if test -z "$ETHNA_HOME"
-then
+ETHNA_HOME=$(dirname $THIS_DIR)
+
+cd $ETHNA_HOME
+
     while [ 1 ];
     do
         if [[ -f ".ethna" ]] && [[ -d "$PWD""/vendor/dqneo/ethnam" ]] ; then
-                ETHNA_HOME="$PWD""/vendor/dqneo/ethnam"
                 DOT_ETHNA="$PWD""/.ethna"
                 break
         fi
         cd ..
- 
+
 	if [ "$PWD" = "/" ]; then
 	    echo ".ethna file not found"
 	    exit 1
 	fi
 
    done
-fi
 
 cd $CUR_DIR
 
