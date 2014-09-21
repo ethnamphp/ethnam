@@ -50,6 +50,8 @@ https://packagist.org/packages/dqneo/ethnam
 
 ## UnitTest
 
+PHPUnitでテストします。
+
 実行方法
 
 ```shell
@@ -57,10 +59,8 @@ $ composer install
 $ ./vendor/bin/phpunit
 ```
 
-SimpleTestベースで作られた古いテストコードをPHPUnitベースに移行中です。
-
-* `test`      : 古いテスト
 * `src/Tests` : 新しいテスト
+* `src/oldtest`    : 古いテスト(SimpleTestベース)
 
 ## Contact
 
