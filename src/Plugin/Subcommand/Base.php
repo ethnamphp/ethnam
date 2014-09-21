@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_Base
+abstract class Ethna_Plugin_Handle_Base
 {
     /** @protected    handler's id */
     protected $id;
