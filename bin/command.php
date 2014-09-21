@@ -11,7 +11,7 @@
 $base = dirname(dirname(dirname(__FILE__)));
 ini_set('include_path', $base.PATH_SEPARATOR.ini_get('include_path'));
 
-require_once dirname(dirname(__FILE__)) . '/bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 require_once ETHNA_BASE . '/src/Getopt.php';
 
 // PEAR_Config violates the rule of E_STRICT
