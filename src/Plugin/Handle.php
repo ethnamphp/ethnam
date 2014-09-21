@@ -9,8 +9,6 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/src/Getopt.php';
-
 // {{{ Ethna_Plugin_Handle
 /**
  *  コマンドラインハンドラプラグインの基底クラス
