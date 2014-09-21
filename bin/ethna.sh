@@ -19,7 +19,7 @@ ETHNA_HOME=$(dirname $THIS_DIR)
 
 cd $ETHNA_HOME
 
-while [ 1 ];
+while true;
 do
     if [[ -f ".ethna" ]] && [[ -d "$PWD""/vendor/dqneo/ethnam" ]] ; then
         DOT_ETHNA="$PWD""/.ethna"
