@@ -17,18 +17,8 @@
 class Ethna_Command
 {
     private $version = <<<EOD
-Ethna %s (using PHP %s)
-
-Copyright (c) 2004-%s,
-  Masaki Fujimoto <fujimoto@php.net>
-  halt feits <halt.feits@gmail.com>
-  Takuya Ookubo <sfio@sakura.ai.to>
-  nozzzzz <nozzzzz@gmail.com>
-  cocoitiban <cocoiti@comio.info>
-  Yoshinari Takaoka <takaoka@beatcraft.com>
-  Sotaro Karasawa <sotaro.k@gmail.com>
-
-http://ethna.jp/
+Ethnam %s (using PHP %s)
+Copyright (c) 2004-%s, @DQNEO and Ethna commiters
 
 EOD;
 
