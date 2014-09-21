@@ -140,11 +140,11 @@ EOD;
      *
      *  @access public
      */
-    public function getHandler($id)
+    public function getHandler($subCommand)
     {
         $name = preg_replace_callback('/\-(.)/', function($matches){
                 return strtoupper($matches[1]);
-                    }, ucfirst($id));
+                    }, ucfirst($subCommand));
 
         $handler = $this->plugin->getPlugin('Handle', $name);
         if (Ethna::isError($handler)) {
