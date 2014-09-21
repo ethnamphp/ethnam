@@ -56,8 +56,12 @@ class Ethna_Plugin_Handle
         $this->config = $controller->getConfig();
 
         $id = $name;
-        $id = preg_replace('/^([A-Z])/e', "strtolower('\$1')", $id);
-        $id = preg_replace('/([A-Z])/e', "'-' . strtolower('\$1')", $id);
+        $id = preg_replace_callback('/^([A-Z])/', function($matches){
+                return strtolower($matches[1]);
+            }, $id);
+        $id = preg_replace_callback('/([A-Z])/', function($matches){
+                return '-' . strtolower($matches[1]);
+                    }, $id);
         $this->id = $id;
     }
 
