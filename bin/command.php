@@ -46,7 +46,7 @@ if ($dot_ethna = getenv('DOT_ETHNA')) {
 list($my_arg_list, $arg_list) = $handle->separateArgList($arg_list);
 $r = $opt->getopt($my_arg_list, "v", array("version"));
 if (Ethna::isError($r)) {
-    $id = 'help';
+    $subCommand = 'help';
 } else {
     // ad-hoc:(
     foreach ($r[0] as $opt) {
@@ -58,17 +58,17 @@ if (Ethna::isError($r)) {
 }
 
 if (count($arg_list) == 0) {
-    $id = 'help';
+    $subCommand = 'help';
 } else {
-    $id = array_shift($arg_list);
+    $subCommand = array_shift($arg_list);
 }
 
-$handler = $handle->getHandler($id);
+$handler = $handle->getHandler($subCommand);
 $handler->eh = $handle;
 if (Ethna::isError($handler)) {
-    printf("no such command: %s\n\n", $id);
-    $id = 'help';
-    $handler = $handle->getHandler($id);
+    printf("no such command: %s\n\n", $subCommand);
+    $subCommand = 'help';
+    $handler = $handle->getHandler($subCommand);
     $handler->eh = $handle;
     if (Ethna::isError($handler)) {
        exit(1);  //  should not happen.
@@ -79,7 +79,7 @@ if (Ethna::isError($handler)) {
 $handler->setArgList($arg_list);
 $r = $handler->perform();
 if (Ethna::isError($r)) {
-    printf("error occured w/ command [%s]\n  -> %s\n\n", $id, $r->getMessage());
+    printf("error occured w/ command [%s]\n  -> %s\n\n", $subCommand, $r->getMessage());
     if ($r->getCode() == 'usage') {
         $handler->usage();
     }
