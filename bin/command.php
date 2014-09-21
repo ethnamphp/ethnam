@@ -8,10 +8,6 @@
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna
  */
-while (ob_get_level()) {
-    ob_end_clean();
-}
-
 $base = dirname(dirname(dirname(__FILE__)));
 ini_set('include_path', $base.PATH_SEPARATOR.ini_get('include_path'));
 
