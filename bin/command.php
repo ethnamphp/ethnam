@@ -43,7 +43,7 @@ if ($dot_ethna = getenv('DOT_ETHNA')) {
 
 //  はじめの引数に - が含まれていればそれを分離する
 //  含まれていた場合、それは -v|--version でなければならない
-list($my_arg_list, $arg_list) = _Ethna_HandleGateway_SeparateArgList($arg_list);
+list($my_arg_list, $arg_list) = $eh->separateArgList($arg_list);
 $r = $opt->getopt($my_arg_list, "v", array("version"));
 if (Ethna::isError($r)) {
     $id = 'help';
@@ -84,27 +84,4 @@ if (Ethna::isError($r)) {
         $handler->usage();
     }
     exit(1);
-}
-
-/**
- *  fetch options for myself
- */
-function _Ethna_HandleGateway_SeparateArgList($arg_list)
-{
-    $my_arg_list = array();
-
-    //  はじめの引数に - が含まれていたら、
-    //  それを $my_arg_list に入れる
-    //  これは --version 判定のため
-    for ($i = 0; $i < count($arg_list); $i++) {
-        if ($arg_list[$i]{0} == '-') {
-            // assume this should be an option for myself
-            $my_arg_list[] = $arg_list[$i];
-        } else {
-            break;
-        }
-    }
-    $arg_list = array_slice($arg_list, $i);
-
-    return array($my_arg_list, $arg_list);
 }

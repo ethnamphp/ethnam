@@ -209,5 +209,26 @@ class Ethna_Handle
         // do nothing.
     }
     // }}}
+
+    public function separateArgList($arg_list)
+    {
+        $my_arg_list = array();
+
+        //  はじめの引数に - が含まれていたら、
+        //  それを $my_arg_list に入れる
+        //  これは --version 判定のため
+        for ($i = 0; $i < count($arg_list); $i++) {
+            if ($arg_list[$i]{0} == '-') {
+                // assume this should be an option for myself
+                $my_arg_list[] = $arg_list[$i];
+            } else {
+                break;
+            }
+        }
+        $arg_list = array_slice($arg_list, $i);
+
+        return array($my_arg_list, $arg_list);
+
+    }
 }
 // }}}
