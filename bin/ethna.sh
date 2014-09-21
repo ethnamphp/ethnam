@@ -12,10 +12,10 @@ if [ "$1" = "--debug" ]; then
 fi
 
 THIS_DIR=$(cd $(dirname $0); pwd)
+ETHNA_HOME=$(dirname $THIS_DIR)
 CUR_DIR="$PWD"
 PHP_COMMAND="php"
 
-ETHNA_HOME=$(dirname $THIS_DIR)
 
 cd $ETHNA_HOME
 
