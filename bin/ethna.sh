@@ -19,20 +19,20 @@ ETHNA_HOME=$(dirname $THIS_DIR)
 
 cd $ETHNA_HOME
 
-    while [ 1 ];
-    do
-        if [[ -f ".ethna" ]] && [[ -d "$PWD""/vendor/dqneo/ethnam" ]] ; then
-                DOT_ETHNA="$PWD""/.ethna"
-                break
-        fi
-        cd ..
+while [ 1 ];
+do
+    if [[ -f ".ethna" ]] && [[ -d "$PWD""/vendor/dqneo/ethnam" ]] ; then
+        DOT_ETHNA="$PWD""/.ethna"
+        break
+    fi
+    cd ..
 
-	if [ "$PWD" = "/" ]; then
-	    echo ".ethna file not found"
-	    exit 1
-	fi
+    if [ "$PWD" = "/" ]; then
+	echo ".ethna file not found"
+	exit 1
+    fi
 
-   done
+done
 
 cd $CUR_DIR
 
