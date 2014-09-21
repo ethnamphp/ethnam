@@ -7,6 +7,7 @@
 #
 THIS_DIR=$(cd $(dirname $0); pwd)
 CUR_DIR="$PWD"
+PHP_COMMAND="php"
 
 if test -z "$ETHNA_HOME"
 then
@@ -28,16 +29,5 @@ then
 fi
 
 cd $CUR_DIR
-
-if test -z "$PHP_COMMAND"
-then
-    if test "@PHP-BIN@" = '@'PHP-BIN'@'
-    then
-        PHP_COMMAND="php"
-    else
-        PHP_COMMAND="@PHP-BINARY@"
-    fi
-    export PHP_COMMAND
-fi
 
 DOT_ETHNA=$DOT_ETHNA $PHP_COMMAND -d html_errors=off -d error_reporting="E_ALL & ~E_DEPRECATED" -qC $ETHNA_HOME/bin/ethna_handle.php $*
