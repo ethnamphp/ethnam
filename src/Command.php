@@ -143,7 +143,7 @@ EOD;
                 return strtoupper($matches[1]);
                     }, ucfirst($subCommand));
 
-        $handler = $this->plugin->getPlugin('Handle', $name);
+        $handler = $this->plugin->getPlugin('Subcommand', $name);
         if (Ethna::isError($handler)) {
             return $handler;
         }
@@ -160,7 +160,7 @@ EOD;
      */
     public function getHandlerList()
     {
-        $handler_list = $this->plugin->getPluginList('Handle');
+        $handler_list = $this->plugin->getPluginList('Subcommand');
         if (Ethna::isError($handler_list)) {
             echo $handler_list->getMessage();
             exit(1);
@@ -173,7 +173,7 @@ EOD;
     /**
      *  sort callback method
      */
-    public static function _handler_sort_callback(Ethna_Plugin_Handle $a, Ethna_Plugin_Handle $b)
+    public static function _handler_sort_callback(Ethna_Plugin_Subcommand_Base $a, Ethna_Plugin_Subcommand_Base $b)
     {
         return strcmp($a->getId(), $b->getId());
     }

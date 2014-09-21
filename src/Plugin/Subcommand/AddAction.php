@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle_AddAction
+// {{{ Ethna_Plugin_Subcommand_AddAction
 /**
  *  add-action handler
  *
@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_AddAction extends Ethna_Plugin_Handle_Base
+class Ethna_Plugin_Subcommand_AddAction extends Ethna_Plugin_Subcommand_Base
 {
     /**
      *  add action

@@ -483,7 +483,7 @@ class Ethna_Plugin
      */
     private function _includeParentPluginSrc($class, $dir, $file)
     {
-        if (class_exists($class)) {
+        if (class_exists($class, false)) {
             return true;
         }
 

@@ -8,9 +8,7 @@
  *  @package    Ethna
  */
 
-require_once ETHNA_BASE . '/src/Plugin/Handle/AddView.php';
-
-// {{{ Ethna_Plugin_Handle_AddTemplate
+// {{{ Ethna_Plugin_Subcommand_AddTemplate
 /**
  *  add-template handler
  *
@@ -18,7 +16,7 @@ require_once ETHNA_BASE . '/src/Plugin/Handle/AddView.php';
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_AddTemplate extends Ethna_Plugin_Handle_AddView
+class Ethna_Plugin_Subcommand_AddTemplate extends Ethna_Plugin_Subcommand_AddView
 {
     /**
      *  add template 

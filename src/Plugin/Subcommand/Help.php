@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle_Help
+// {{{ Ethna_Plugin_Subcommand_Help
 /**
  *  add-action handler
  *
@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_Help extends Ethna_Plugin_Handle_Base
+class Ethna_Plugin_Subcommand_Help extends Ethna_Plugin_Subcommand_Base
 {
     /**
      *  show help

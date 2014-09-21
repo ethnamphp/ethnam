@@ -9,7 +9,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle_ClearCache
+// {{{ Ethna_Plugin_Subcommand_ClearCache
 /**
  *  clear-cache handler
  *
@@ -17,7 +17,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_ClearCache extends Ethna_Plugin_Handle_Base
+class Ethna_Plugin_Subcommand_ClearCache extends Ethna_Plugin_Subcommand_Base
 {
     /**
      *  clear cache files.
