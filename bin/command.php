@@ -13,9 +13,6 @@ ini_set('include_path', $base.PATH_SEPARATOR.ini_get('include_path'));
 
 require_once __DIR__ . '/../bootstrap.php';
 
-// PEAR_Config violates the rule of E_STRICT
-error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
-
 // fetch arguments
 $opt = new Ethna_Getopt();
 $arg_list = $opt->readPHPArgv();
