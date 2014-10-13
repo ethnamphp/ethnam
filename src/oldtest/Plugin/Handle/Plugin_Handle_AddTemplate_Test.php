@@ -9,13 +9,13 @@
 
 require_once ETHNA_BASE . '/test/MockProject.php';
 
-//{{{  Ethna_Plugin_Handle_AddTemplate_Test
+//{{{  Ethna_Plugin_Subcommand_AddTemplate_Test
 /**
- *  Test Case For Ethna_Plugin_Handle_AddTemplate_Test
+ *  Test Case For Ethna_Plugin_Subcommand_AddTemplate_Test
  *
  *  @access public
  */
-class Ethna_Plugin_Handle_AddTemplate_Test extends Ethna_UnitTestBase 
+class Ethna_Plugin_Subcommand_AddTemplate_Test extends Ethna_UnitTestBase 
 {
     var $proj;
 

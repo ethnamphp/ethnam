@@ -9,9 +9,7 @@
  *  @version    $Id$
  */
 
-require_once ETHNA_BASE . '/src/Getopt.php';
-
-// {{{ Ethna_Plugin_Handle
+// {{{ Ethna_Plugin_Subcommand_Base
 /**
  *  コマンドラインハンドラプラグインの基底クラス
  *  
@@ -19,7 +17,7 @@ require_once ETHNA_BASE . '/src/Getopt.php';
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle
+abstract class Ethna_Plugin_Subcommand_Base
 {
     /** @protected    handler's id */
     protected $id;
@@ -41,7 +39,7 @@ class Ethna_Plugin_Handle
     public $logger;
 
     /**
-     *  Ethna_Handle constructor (stub for php4)
+     *  Ethna_Command constructor (stub for php4)
      *
      *  @access public
      */
@@ -56,8 +54,12 @@ class Ethna_Plugin_Handle
         $this->config = $controller->getConfig();
 
         $id = $name;
-        $id = preg_replace('/^([A-Z])/e', "strtolower('\$1')", $id);
-        $id = preg_replace('/([A-Z])/e', "'-' . strtolower('\$1')", $id);
+        $id = preg_replace_callback('/^([A-Z])/', function($matches){
+                return strtolower($matches[1]);
+            }, $id);
+        $id = preg_replace_callback('/([A-Z])/', function($matches){
+                return '-' . strtolower($matches[1]);
+                    }, $id);
         $this->id = $id;
     }
 

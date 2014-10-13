@@ -98,7 +98,7 @@ class Ethna_Plugin
      *
      *  @access public
      *  @param  string  $type   プラグインの種類
-     *  @return array   プラグインオブジェクトの配列
+     *  @return array   プラグインオブジェクトの配列 or Ethna_Error
      */
     public function getPluginList($type)
     {
@@ -112,7 +112,11 @@ class Ethna_Plugin
             if (is_null($value)) {
                 continue;
             }
-            $plugin_list[$name] = $this->getPlugin($type, $name);
+            $plugin = $this->getPlugin($type, $name);
+            if (Ethna::isError($plugin)) {
+                return $plugin;
+            }
+            $plugin_list[$name] = $plugin;
         }
         return $plugin_list;
     }
@@ -417,6 +421,10 @@ class Ethna_Plugin
 
             // 条件にあう $name をリストに追加
             while (($file = readdir($dh)) !== false) {
+                if ($file === 'Base.php') {
+                    //基底クラスは読み込まない
+                    continue;
+                }
                 if (preg_match('#^'.$file_regexp.'$#', $file, $matches)
                     && file_exists("{$dir}/{$file}")) {
                     $name_list[$matches[1]] = true;
@@ -475,7 +483,7 @@ class Ethna_Plugin
      */
     private function _includeParentPluginSrc($class, $dir, $file)
     {
-        if (class_exists($class)) {
+        if (class_exists($class, false)) {
             return true;
         }
 

@@ -109,7 +109,7 @@ class Ethna_MockProject
             $options = array_merge($base_opt, $options);
         }
 
-        $eh = new Ethna_Handle();
+        $eh = new Ethna_Command();
         $handler = $eh->getHandler($id);
         if (Ethna::isError($handler)) {
             return $r;
@@ -175,7 +175,7 @@ class Ethna_MockProject
         if (($r = $this->create_ifnot_exists()) !== true) {
             return $r;
         }
-        $ctl = Ethna_Handle::getAppController($this->proj_basedir);
+        $ctl = Ethna_Command::getAppController($this->proj_basedir);
 
         //   キャッシュが返されるため、$GLOBALSが設定されない場合がある
         $GLOBALS['_Ethna_controller'] = $ctl;

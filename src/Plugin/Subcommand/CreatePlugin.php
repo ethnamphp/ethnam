@@ -12,7 +12,7 @@
  *  @version    $Id$
  */
 
-// {{{ Ethna_Plugin_Handle_CreatePlugin
+// {{{ Ethna_Plugin_Subcommand_CreatePlugin
 /**
  *  create Ethna Plugin Skelton handler.
  *
@@ -20,7 +20,7 @@
  *  @access     public
  *  @package    Ethna
  */
-class Ethna_Plugin_Handle_CreatePlugin extends Ethna_Plugin_Handle
+class Ethna_Plugin_Subcommand_CreatePlugin extends Ethna_Plugin_Subcommand_Base
 {
     // {{{ perform()
     /**
