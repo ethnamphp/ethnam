@@ -134,8 +134,8 @@ class Ethna_MailSender
             $boundary = Ethna_Util::getRandom(); 
             $body = "This is a multi-part message in MIME format.\n\n" .
                 "--$boundary\n" .
-                "Content-Type: text/plain; charset=iso-2022-jp\n" .
-                "Content-Transfer-Encoding: 7bit\n\n" .
+                "Content-Type: text/plain; charset=utf-8\n" .
+                "Content-Transfer-Encoding: 8bit\n\n" .
                 "$body\n";
             foreach ($attach as $part) {
                 if (isset($part['content']) === false
@@ -186,9 +186,12 @@ class Ethna_MailSender
         if (isset($header['content-type']) === false) {
             $header['content-type'] = array(
                 'Content-Type',
-                $attach === null ? 'text/plain; charset=iso-2022-jp'
+                $attach === null ? 'text/plain; charset=utf-8'
                                  : "multipart/mixed; \n\tboundary=\"$boundary\"",
             );
+        }
+        if (isset($header['content-transfer-encoding']) === false) {
+                $header['Content-Transfer-Encoding'] = ['Content-Transfer-Encoding','8bit'];
         }
 
         $header_line = "";
@@ -261,8 +264,6 @@ class Ethna_MailSender
 	        function($matches){ return Ethna_Util::encode_MIME($matches[1]); },
 		$value);
         }
-
-        $body = mb_convert_encoding($body, "ISO-2022-JP");
 
         return array($header, $body);
     }
