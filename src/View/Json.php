@@ -35,7 +35,7 @@ class Ethna_View_Json extends Ethna_ViewClass
     public function preforward($encode_param = array(), $header = false)
     {
         $client_enc = $this->ctl->getClientEncoding();
-        if (mb_enabled() && strcasecmp('UTF-8', $client_enc) != 0) {
+        if (strcasecmp('UTF-8', $client_enc) != 0) {
             mb_convert_variables('UTF-8', $client_enc, $encode_param);
         }
         $encoded_param = json_encode($encode_param);
