@@ -1,6 +1,9 @@
 # 変更点一覧
 
 ## 2.19での変更点
+* [core] mbstringモジュールを必須要件としました。
+* [core] system_encoding変数は使われていなかったので廃止しました。
+* [core] その他、language/encodingまわりの無駄なメソッドを削除しました。
 * [mail] (B.C.) MailSenderがcharset=utf8でメール送信するようになりました。内部エンコーディングがUTF-8になっているのを前提としています。
 
 ## 2.18での変更点
