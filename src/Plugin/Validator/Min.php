@@ -101,7 +101,7 @@ class Ethna_Plugin_Validator_Min extends Ethna_Plugin_Validator
                 $plugin = $this->backend->getPlugin();
 
                 //  select Plugin.
-                if (mb_enabled() && strcasecmp('UTF-8', $client_enc) == 0) {
+                if (strcasecmp('UTF-8', $client_enc) == 0) {
                     $plugin_name = 'Mbstrmin';
                     $params['mbstrmin'] = $params['min'];
                 } elseif (strcasecmp('EUC-JP', $client_enc == 0)

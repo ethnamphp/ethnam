@@ -61,13 +61,6 @@ define('OBJECT_IMPORT_IGNORE_NULL', 1);
 /** アプリケーションオブジェクトインポートオプション: NULLプロパティ→空文字列変換 */
 define('OBJECT_IMPORT_CONVERT_NULL', 2);
 
-
-// {{{  mbstring enabled check
-function mb_enabled()
-{
-    return (extension_loaded('mbstring')) ? true : false;
-}
-
 // {{{ I18N shortcut
 /**
  *  メッセージカタログからロケールに適合するメッセージを取得します。

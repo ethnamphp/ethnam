@@ -101,7 +101,7 @@ class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
                 $plugin = $this->backend->getPlugin();
 
                 //  select Plugin.
-                if (mb_enabled() && strcasecmp('UTF-8', $client_enc) == 0) {
+                if (strcasecmp('UTF-8', $client_enc) == 0) {
                     $plugin_name = 'Mbstrmax';
                     $params['mbstrmax'] = $params['max'];
                 } elseif (strcasecmp('EUC-JP', $client_enc == 0)
