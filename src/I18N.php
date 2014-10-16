@@ -37,9 +37,6 @@ class Ethna_I18N
     /** @protected    string  アプリケーションID */
     protected $appid;
 
-    /** @protected    string  システム側エンコーディング */
-    protected $systemencoding;
-
     /** @protected    string  クライアント側エンコーディング */
     protected $clientencoding;
 
@@ -102,14 +99,12 @@ class Ethna_I18N
      *  @access public
      *  @param  string  $locale         ロケール名(e.x ja_JP, en_US 等)
      *                                  (ll_cc の形式。ll = 言語コード cc = 国コード)
-     *  @param  string  $systemencoding システムエンコーディング名
-     *  @param  string  $clientencoding クライアントエンコーディング名
-     *                                  (=テンプレートのエンコーディングと考えてよい)
+     *  @param  string  $clientencoding 内部エンコーディング名
      *  @see    http://www.gnu.org/software/gettext/manual/html_node/Locale-Names.html 
      */
-    public function setLanguage($locale, $systemencoding = null, $clientencoding = null)
+    public function setLanguage($locale, $clientencoding = null)
     {
-        setlocale(LC_ALL, $locale . ($systemencoding !== null ? "." . $systemencoding : ""));
+        setlocale(LC_ALL, $locale . ($clientencoding !== null ? "." . $clientencoding : ""));
 
         if ($this->use_gettext) {
             bind_textdomain_codeset($locale, $clientencoding);
@@ -118,7 +113,6 @@ class Ethna_I18N
         }
 
         $this->locale = $locale;
-        $this->systemencoding = $systemencoding;
         $this->clientencoding = $clientencoding;
 
         //  強制的にメッセージカタログ再生成
