@@ -99,9 +99,6 @@ class Ethna_Controller
     /** @protected    string      使用ロケール設定 */
     protected $locale;
 
-    /** @protected    string      システム側エンコーディング */
-    protected $system_encoding;
-
     /** @protected    string      クライアント側エンコーディング */
     /**                     ブラウザからのエンコーディングを指す  */
     protected $client_encoding;
@@ -220,7 +217,7 @@ class Ethna_Controller
         // エンコーディング（=ブラウザからのエンコーディング)
         //
         // @see Ethna_Controller#_getDefaultLanguage
-        list($this->locale, $this->system_encoding, $this->client_encoding) = $this->_getDefaultLanguage();
+        list($this->locale, $this->client_encoding) = $this->_getDefaultLanguage();
 
         mb_internal_encoding($this->client_encoding);
         mb_regex_encoding($this->client_encoding);
@@ -727,7 +724,7 @@ class Ethna_Controller
      */
     public function getLanguage()
     {
-        return array($this->locale, $this->system_encoding, $this->client_encoding);
+        return array($this->locale, $this->client_encoding, $this->client_encoding);
     }
 
     /**
@@ -753,7 +750,7 @@ class Ethna_Controller
     {
         $this->locale = $locale;
         $i18n = $this->getI18N();
-        $i18n->setLanguage($this->locale, $this->system_encoding, $this->client_encoding);
+        $i18n->setLanguage($this->locale, $this->client_encoding, $this->client_encoding);
     }
 
     /**
@@ -777,7 +774,7 @@ class Ethna_Controller
     {
         $this->client_encoding = $client_encoding;
         $i18n = $this->getI18N();
-        $i18n->setLanguage($this->locale, $this->system_encoding, $this->client_encoding);
+        $i18n->setLanguage($this->locale, $this->client_encoding, $this->client_encoding);
     }
 
     /**
@@ -922,7 +919,7 @@ class Ethna_Controller
         $session->restore();
 
         // 言語切り替えフックを呼ぶ
-        $this->_setLanguage($this->locale, $this->system_encoding, $this->client_encoding);
+        $this->_setLanguage($this->locale, $this->client_encoding, $this->client_encoding);
 
         // アクションフォーム初期化
         // フォーム定義、フォーム値設定
@@ -1617,7 +1614,6 @@ class Ethna_Controller
     protected function _setLanguage($locale, $system_encoding = null, $client_encoding = null)
     {
         $this->locale = $locale;
-        $this->system_encoding = $system_encoding;
         $this->client_encoding = $client_encoding;
 
         //   $this->locale, $this->client_encoding を書き換えた場合は
@@ -1645,7 +1641,7 @@ class Ethna_Controller
      */
     protected function _getDefaultLanguage()
     {
-        return array('ja_JP', 'UTF-8', 'UTF-8');
+        return array('ja_JP', 'UTF-8');
     }
 
     /**
