@@ -96,11 +96,13 @@ class Ethna_Controller
     protected $filter = array(
     );
 
-    /** @protected    string      使用ロケール設定 */
+    /**
+     * @protected    string ロケール名(e.x ja_JP, en_US 等),
+     *                  (ロケール名は ll_cc の形式。ll = 言語コード cc = 国コード)
+     */
     protected $locale;
 
-    /** @protected    string      クライアント側エンコーディング */
-    /**                     ブラウザからのエンコーディングを指す  */
+    /** @protected    string 内部エンコーディング */
     protected $client_encoding;
 
     /** FIXME: UnitTestCase から動的に変更されるため、public */
@@ -213,11 +215,8 @@ class Ethna_Controller
         $this->forward = $this->forward + $this->forward_default;
 
         // 初期設定
-        // フレームワークとしての内部エンコーディングはクライアント
-        // エンコーディング（=ブラウザからのエンコーディング)
-        //
-        // @see Ethna_Controller#_getDefaultLanguage
-        list($this->locale, $this->client_encoding) = $this->_getDefaultLanguage();
+        $this->locale = 'ja_JP';
+        $this->client_encoding =  'UTF-8';
 
         mb_internal_encoding($this->client_encoding);
         mb_regex_encoding($this->client_encoding);
@@ -919,7 +918,15 @@ class Ethna_Controller
         $session->restore();
 
         // 言語切り替えフックを呼ぶ
-        $this->_setLanguage($this->locale, $this->client_encoding, $this->client_encoding);
+        /**
+         *  @param  string  $locale             ロケール名(ja_JP, en_US等)
+         *                                      (ll_cc の形式。ll = 言語コード cc = 国コード)
+         */
+        //   $this->locale, $this->client_encoding を書き換えた場合は
+        //   必ず Ethna_I18N クラスの setLanguageメソッドも呼ぶこと!
+        //   さもないとカタログその他が再ロードされない！
+        $i18n = $this->getI18N();
+        $i18n->setLanguage($this->locale, $this->client_encoding, $this->client_encoding);
 
         // アクションフォーム初期化
         // フォーム定義、フォーム値設定
@@ -1596,52 +1603,6 @@ class Ethna_Controller
      */
     protected function _setDefaultTemplateEngine($renderer)
     {
-    }
-
-    /**
-     *  使用言語、ロケールを設定する
-     *  条件によって使用言語、ロケールを切り替えたい場合は、
-     *  このメソッドをオーバーライドする。
-     *
-     *  @access protected
-     *  @param  string  $locale             ロケール名(ja_JP, en_US等)
-     *                                      (ll_cc の形式。ll = 言語コード cc = 国コード)
-     *  @param  string  $system_encoding    システムエンコーディング名
-     *  @param  string  $client_encoding    クライアントエンコーディング(テンプレートのエンコーディングと考えれば良い)
-     *  @see    http://www.gnu.org/software/gettext/manual/html_node/Locale-Names.html
-     *  @see    Ethna_Controller#_getDefaultLanguage
-     */
-    protected function _setLanguage($locale, $system_encoding = null, $client_encoding = null)
-    {
-        $this->locale = $locale;
-        $this->client_encoding = $client_encoding;
-
-        //   $this->locale, $this->client_encoding を書き換えた場合は
-        //   必ず Ethna_I18N クラスの setLanguageメソッドも呼ぶこと!
-        //   さもないとカタログその他が再ロードされない！
-        $i18n = $this->getI18N();
-        $i18n->setLanguage($locale, $system_encoding, $client_encoding);
-    }
-
-    /**
-     *  デフォルト状態での使用言語を取得する
-     *  外部に出力されるEthnaのエラーメッセージ等のエンコーディングを
-     *  切り替えたい場合は、このメソッドをオーバーライドする。
-     *
-     *  @access protected
-     *  @return array   ロケール名(e.x ja_JP, en_US 等),
-     *                  システムエンコーディング名,
-     *                  クライアントエンコーディング名
-     *                  (= テンプレートのエンコーディングと考えてよい) の配列
-     *                  (ロケール名は ll_cc の形式。ll = 言語コード cc = 国コード)
-     *
-     *  WARNING!! : クライアントエンコーディング名が、フレームワークの内部エンコーデ
-     *              ィングとして設定されます。つまり、クライアントエンコーディングで
-     *              ブラウザからの入力は入ってくるものと想定しています！
-     */
-    protected function _getDefaultLanguage()
-    {
-        return array('ja_JP', 'UTF-8');
     }
 
     /**
