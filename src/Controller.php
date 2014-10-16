@@ -716,14 +716,13 @@ class Ethna_Controller
      *
      *  @access public
      *  @return array   ロケール名(e.x ja_JP, en_US 等),
-     *                  システムエンコーディング名,
      *                  クライアントエンコーディング名 の配列
      *                  (ロケール名は、ll_cc の形式。ll = 言語コード cc = 国コード)
      *  @see http://www.gnu.org/software/gettext/manual/html_node/Locale-Names.html
      */
     public function getLanguage()
     {
-        return array($this->locale, $this->client_encoding, $this->client_encoding);
+        return array($this->locale, $this->client_encoding);
     }
 
     /**
