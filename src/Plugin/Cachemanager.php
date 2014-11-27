@@ -32,17 +32,25 @@ class Ethna_Plugin_Cachemanager
     /** @protected    object  Ethna_Config        設定オブジェクト    */
     protected $config;
 
+    /** @protected    string  プラグインの種別(Cachemanager) */
+    protected $type;
+
+    /** @protected    string  プラグインの名前(Memcache) */
+    protected $name;
+
 
     /**
      *  コンストラクタ
      *
      *  @access public
      */
-    public function __construct($controller)
+    public function __construct($controller, $type = null, $name = null)
     {
         $this->controller = $controller;
         $this->backend = $this->controller->getBackend();
         $this->config = $this->controller->getConfig();
+        $this->type = $type;
+        $this->name = $name;
 
 	// load config
 	$this->_loadConfig();
