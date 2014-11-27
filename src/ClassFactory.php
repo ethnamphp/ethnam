@@ -79,6 +79,10 @@ class Ethna_ClassFactory
         //  すでにincludeされていなければ、includeを試みる
         //  ここで返されるクラス名は、AppManagerの命名規約によるもの
         $class_name = $this->controller->getManagerClassName($type);
+        if (class_exists($class_name) === false
+            && $this->_include($class_name) === false) {
+            return null;  //  include 失敗。戻り値はNULL。
+        }
 
         //  PHPのクラス名は大文字小文字を区別しないので、
         //  同じクラス名と見做されるものを指定した場合には
