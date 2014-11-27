@@ -95,8 +95,8 @@ $config['plugin'] = array(
 
     // memcache
     // sample-1: single (or default) memcache
-    'cachemanager' => array(
-        //'memcache' => array(
+    'Cachemanager' => array(
+        //'Memcache' => array(
         //     'host' => 'localhost',
         //     'port' => 11211,
         //     'use_pconnect' => false,
