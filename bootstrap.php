@@ -10,7 +10,7 @@
  */
 
 /** バージョン定義 */
-define('ETHNA_VERSION', '2.15.0');
+define('ETHNA_VERSION', '2.19.0');
 
 //  PHP 5.1.0 以降向けの変更
 //  date.timezone が設定されていないと
@@ -60,13 +60,6 @@ define('OBJECT_IMPORT_IGNORE_NULL', 1);
 
 /** アプリケーションオブジェクトインポートオプション: NULLプロパティ→空文字列変換 */
 define('OBJECT_IMPORT_CONVERT_NULL', 2);
-
-
-// {{{  mbstring enabled check
-function mb_enabled()
-{
-    return (extension_loaded('mbstring')) ? true : false;
-}
 
 // {{{ I18N shortcut
 /**

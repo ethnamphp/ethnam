@@ -327,8 +327,9 @@ class Ethna_Util
         {
             $tmp = mb_strimwidth($string, $pos, $split, "");
             $pos += mb_strlen($tmp);
-            $_string .= (($_string)? ' ' : '') . mb_encode_mimeheader($tmp, 'ISO-2022-JP');
+            $_string .= (($_string)? ' ' : '') . mb_encode_mimeheader($tmp, 'UTF-8');
         }
+
         return $_string;
     }
     // }}}

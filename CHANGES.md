@@ -1,5 +1,11 @@
 # 変更点一覧
 
+## 2.19での変更点
+* [core] mbstringモジュールを必須要件としました。
+* [core] system_encoding変数は使われていなかったので廃止しました。
+* [core] その他、language/encodingまわりの無駄なメソッドを削除しました。
+* [mail] (B.C.) MailSenderがcharset=utf8でメール送信するようになりました。内部エンコーディングがUTF-8になっているのを前提としています。
+
 ## 2.18での変更点
 * [core] ethna.sh周りをシンプル化。ethna_handle.phpをcommand.phpにリネームし、中身をEthna_Commandクラスに移動。
 * [plugin] PEARのパッケージを管理する機能を削除
