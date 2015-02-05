@@ -1,4 +1,8 @@
 # 変更点一覧
+## 2.20での変更点
+* [core] 文字コードをutf8のみサポートするようにしました。
+* [plugin] EUC_JP用の文字列長バリデーション(strmaxcpmat, strmincompat)は廃止しました。
+
 
 ## 2.19での変更点
 * [core] mbstringモジュールを必須要件としました。
