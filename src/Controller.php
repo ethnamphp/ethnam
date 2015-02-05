@@ -219,7 +219,6 @@ class Ethna_Controller
         $this->client_encoding =  'UTF-8';
 
         mb_internal_encoding($this->client_encoding);
-        mb_regex_encoding($this->client_encoding);
 
         $this->config = $this->getConfig();
         $this->dsn = $this->_prepareDSN();
