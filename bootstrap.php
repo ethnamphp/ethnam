@@ -158,6 +158,7 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
         if ($c !== null) {
             $config = $c->getConfig();
             $is_debug = $config->get('debug');
+            $logger = $c->getLogger();
             $facility = $logger->getLogFacility();
             $has_echo = is_array($facility)
                         ? in_array('echo', $facility) : $facility === 'echo';
