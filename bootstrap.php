@@ -117,7 +117,6 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
         $php_errno = 'Deprecated'; break;
     case E_RECOVERABLE_ERROR:
         $php_errno = 'Recoverable error'; break;
-        break;
     default:
         $php_errno = 'Unknown error'; break;
     }
