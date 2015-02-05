@@ -102,8 +102,7 @@ class Ethna_Controller
      */
     protected $locale;
 
-    /** @protected    string 内部エンコーディング */
-    protected $client_encoding;
+    protected $client_encoding = 'UTF-8';
 
     /** FIXME: UnitTestCase から動的に変更されるため、public */
     /** @protected    string  現在実行中のアクション名 */
@@ -161,6 +160,8 @@ class Ethna_Controller
      */
     public function __construct($gateway = GATEWAY_WWW)
     {
+        mb_internal_encoding($this->client_encoding);
+
         $GLOBALS['_Ethna_controller'] = $this;
         if ($this->base === "") {
             // EthnaコマンドなどでBASEが定義されていない場合がある
@@ -216,10 +217,6 @@ class Ethna_Controller
 
         // 初期設定
         $this->locale = 'ja_JP';
-        $this->client_encoding =  'UTF-8';
-
-        mb_internal_encoding($this->client_encoding);
-        mb_regex_encoding($this->client_encoding);
 
         $this->config = $this->getConfig();
         $this->dsn = $this->_prepareDSN();
@@ -748,7 +745,7 @@ class Ethna_Controller
     {
         $this->locale = $locale;
         $i18n = $this->getI18N();
-        $i18n->setLanguage($this->locale, $this->client_encoding);
+        $i18n->setLanguage($this->locale);
     }
 
     /**
@@ -760,19 +757,6 @@ class Ethna_Controller
     public function getClientEncoding()
     {
         return $this->client_encoding;
-    }
-
-    /**
-     *  クライアントエンコーディング名へのアクセサ(W)
-     *
-     *  @access public
-     *  @param  string  $client_encoding クライアントエンコーディング名
-     */
-    public function setClientEncoding($client_encoding)
-    {
-        $this->client_encoding = $client_encoding;
-        $i18n = $this->getI18N();
-        $i18n->setLanguage($this->locale, $this->client_encoding);
     }
 
     /**
@@ -917,11 +901,11 @@ class Ethna_Controller
         $session->restore();
 
         // 言語切り替えフックを呼ぶ
-        //   $this->locale, $this->client_encoding を書き換えた場合は
+        //   $this->localeを書き換えた場合は
         //   必ず Ethna_I18N クラスの setLanguageメソッドも呼ぶこと!
         //   さもないとカタログその他が再ロードされない！
         $i18n = $this->getI18N();
-        $i18n->setLanguage($this->locale, $this->client_encoding);
+        $i18n->setLanguage($this->locale);
 
         // アクションフォーム初期化
         // フォーム定義、フォーム値設定

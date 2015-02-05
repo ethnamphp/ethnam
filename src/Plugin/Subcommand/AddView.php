@@ -112,25 +112,8 @@ class Ethna_Plugin_Subcommand_AddView extends Ethna_Plugin_Subcommand_AddAction
             }
         }
 
-        // encoding
-        if (isset($opt_list['encoding'])) {
-            $encoding = end($opt_list['encoding']);
-            if (function_exists('mb_list_encodings')) {
-                $supported_enc = mb_list_encodings();
-                if (!in_array($encoding, $supported_enc)) {
-                    return Ethna::raiseError("Unknown Encoding : $encoding", 'usage');
-                }
-            }
-        } else {
-            if (Ethna::isError($ctl)) {
-                $encoding = 'UTF-8';
-            } else {
-                $encoding = $ctl->getClientEncoding();
-            }
-        }
-
         $r = Ethna_Generator::generate('Template', $basedir,
-                                        $target_name, $skelfile, $locale, $encoding);
+                                        $target_name, $skelfile, $locale);
         if (Ethna::isError($r)) {
             printf("error occurred while generating skelton. please see also following error message(s)\n\n");
             return $r;

@@ -87,35 +87,11 @@ class Ethna_Plugin_Validator_Max extends Ethna_Plugin_Validator
                 break;
 
             case VAR_TYPE_STRING:
-
-                //
-                //  マルチバイトエンコーディングと、そうでない場合で
-                //  異なるプラグインを呼ぶ。
-                //
-                //  これは Ethna_Controller#client_encoding の値によ
-                //  って動きが決まる
-                //
-
-                $ctl = Ethna_Controller::getInstance();
-                $client_enc = $ctl->getClientEncoding();
-                $plugin = $this->backend->getPlugin();
-
-                //  select Plugin.
-                if (strcasecmp('UTF-8', $client_enc) == 0) {
-                    $plugin_name = 'Mbstrmax';
-                    $params['mbstrmax'] = $params['max'];
-                } elseif (strcasecmp('EUC-JP', $client_enc == 0)
-                       || strcasecmp('eucJP-win', $client_enc == 0)) {
-                    //  2.3.x compatibility
-                    $plugin_name = 'Strmaxcompat';
-                    $params['strmaxcompat'] = $params['max'];
-                } else {
-                    $plugin_name = 'Strmax';
-                    $params['strmax'] = $params['max'];
-                }
+                $params['mbstrmax'] = $params['max'];
                 unset($params['max']);
 
-                $vld = $plugin->getPlugin('Validator', $plugin_name);
+                $plugin = $this->backend->getPlugin();
+                $vld = $plugin->getPlugin('Validator', 'Mbstrmax');
                 return $vld->validate($name, $var, $params);
 
                 break;
