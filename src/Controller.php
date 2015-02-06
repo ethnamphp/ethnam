@@ -102,7 +102,7 @@ class Ethna_Controller
      */
     protected $locale;
 
-    protected $client_encoding = 'UTF-8';
+    protected $encoding = 'UTF-8';
 
     /** FIXME: UnitTestCase から動的に変更されるため、public */
     /** @protected    string  現在実行中のアクション名 */
@@ -160,8 +160,8 @@ class Ethna_Controller
      */
     public function __construct($gateway = GATEWAY_WWW)
     {
-        mb_internal_encoding($this->client_encoding);
-        mb_regex_encoding($this->client_encoding);
+        mb_internal_encoding($this->encoding);
+        mb_regex_encoding($this->encoding);
         $GLOBALS['_Ethna_controller'] = $this;
         if ($this->base === "") {
             // EthnaコマンドなどでBASEが定義されていない場合がある
@@ -719,7 +719,7 @@ class Ethna_Controller
      */
     public function getLanguage()
     {
-        return array($this->locale, $this->client_encoding);
+        return array($this->locale, $this->encoding);
     }
 
     /**
@@ -752,11 +752,11 @@ class Ethna_Controller
      *  クライアントエンコーディング名へのアクセサ(R)
      *
      *  @access public
-     *  @return string  $client_encoding クライアントエンコーディング名
+     *  @return string  $encoding クライアントエンコーディング名
      */
     public function getClientEncoding()
     {
-        return $this->client_encoding;
+        return $this->encoding;
     }
 
     /**
