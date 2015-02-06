@@ -167,7 +167,7 @@ class Ethna_ViewClass
         $this->_setDefault($renderer);
 
         if ($this->has_default_header) {
-            $this->default_header['Content-Type'] = 'text/html; charset=' . $this->ctl->getClientEncoding();
+            $this->default_header['Content-Type'] = 'text/html; charset=' . $this->ctl->getEncoding();
             $this->header($this->default_header);
         }
 

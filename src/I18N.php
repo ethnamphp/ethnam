@@ -61,7 +61,7 @@ class Ethna_I18N
         $this->appid = $appid;
 
         $this->ctl = Ethna_Controller::getInstance();
-        $this->encoding = $this->ctl->getClientEncoding();
+        $this->encoding = $this->ctl->getEncoding();
         $config = $this->ctl->getConfig();
         $this->logger = $this->ctl->getLogger();
         $this->use_gettext = $config->get('use_gettext') ? true : false;
