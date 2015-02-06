@@ -10,7 +10,7 @@
  */
 
 /** バージョン定義 */
-define('ETHNA_VERSION', '2.20.2');
+define('ETHNA_VERSION', '2.21.0');
 
 //  PHP 5.1.0 以降向けの変更
 //  date.timezone が設定されていないと
