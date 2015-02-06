@@ -76,10 +76,12 @@ class Ethna_ClassFactory
      */
     public function getManager($type)
     {
-        //  すでにincludeされていなければ、includeを試みる
         //  ここで返されるクラス名は、AppManagerの命名規約によるもの
         $class_name = $this->controller->getManagerClassName($type);
-        if (class_exists($class_name) === false
+
+        //  すでにincludeされていなければ、includeを試みる
+        //  オートロード機構があればそれが優先される
+        if (class_exists($class_name, true) === false
             && $this->_include($class_name) === false) {
             return null;  //  include 失敗。戻り値はNULL。
         }
