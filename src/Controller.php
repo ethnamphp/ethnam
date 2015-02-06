@@ -161,7 +161,7 @@ class Ethna_Controller
     public function __construct($gateway = GATEWAY_WWW)
     {
         mb_internal_encoding($this->client_encoding);
-
+        mb_regex_encoding($this->client_encoding);
         $GLOBALS['_Ethna_controller'] = $this;
         if ($this->base === "") {
             // EthnaコマンドなどでBASEが定義されていない場合がある
