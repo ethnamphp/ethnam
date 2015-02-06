@@ -749,12 +749,12 @@ class Ethna_Controller
     }
 
     /**
-     *  クライアントエンコーディング名へのアクセサ(R)
+     *  エンコーディング名へのアクセサ(R)
      *
      *  @access public
      *  @return string  $encoding クライアントエンコーディング名
      */
-    public function getClientEncoding()
+    public function getEncoding()
     {
         return $this->encoding;
     }
