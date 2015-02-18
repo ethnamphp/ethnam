@@ -87,34 +87,11 @@ class Ethna_Plugin_Validator_Min extends Ethna_Plugin_Validator
                 break;
 
             case VAR_TYPE_STRING:
-
-                //
-                //  マルチバイトエンコーディングと、そうでない場合で
-                //  異なるプラグインを呼ぶ。
-                //
-                //  これは Ethna_Controller#client_encoding の値によ
-                //  って動きが決まる
-                //
-
-                $ctl = Ethna_Controller::getInstance();
-                $client_enc = $ctl->getClientEncoding();
-                $plugin = $this->backend->getPlugin();
-
-                //  select Plugin.
-                if (strcasecmp('UTF-8', $client_enc) == 0) {
-                    $plugin_name = 'Mbstrmin';
-                    $params['mbstrmin'] = $params['min'];
-                } elseif (strcasecmp('EUC-JP', $client_enc == 0)
-                       || strcasecmp('eucJP-win', $client_enc == 0)) {
-                    $plugin_name = 'Strmincompat';
-                    $params['strmincompat'] = $params['min'];
-                } else { 
-                    $plugin_name = 'Strmin';
-                    $params['strmin'] = $params['min'];
-                }
+                $params['mbstrmin'] = $params['min'];
                 unset($params['min']);
 
-                $vld = $plugin->getPlugin('Validator', $plugin_name);
+                $plugin = $this->backend->getPlugin();
+                $vld = $plugin->getPlugin('Validator', 'Mbstrmin');
                 return $vld->validate($name, $var, $params);
 
                 break;

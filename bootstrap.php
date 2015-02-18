@@ -10,7 +10,7 @@
  */
 
 /** バージョン定義 */
-define('ETHNA_VERSION', '2.19.0');
+define('ETHNA_VERSION', '2.21.0');
 
 //  PHP 5.1.0 以降向けの変更
 //  date.timezone が設定されていないと
@@ -117,7 +117,6 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
         $php_errno = 'Deprecated'; break;
     case E_RECOVERABLE_ERROR:
         $php_errno = 'Recoverable error'; break;
-        break;
     default:
         $php_errno = 'Unknown error'; break;
     }
@@ -159,6 +158,7 @@ function ethna_error_handler($errno, $errstr, $errfile, $errline)
         if ($c !== null) {
             $config = $c->getConfig();
             $is_debug = $config->get('debug');
+            $logger = $c->getLogger();
             $facility = $logger->getLogFacility();
             $has_echo = is_array($facility)
                         ? in_array('echo', $facility) : $facility === 'echo';

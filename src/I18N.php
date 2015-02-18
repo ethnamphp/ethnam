@@ -37,8 +37,8 @@ class Ethna_I18N
     /** @protected    string  アプリケーションID */
     protected $appid;
 
-    /** @protected    string  クライアント側エンコーディング */
-    protected $clientencoding;
+    /** @protected    string  エンコーディング */
+    protected $encoding;
 
     /** @protected    mixed   Ethna独自のメッセージカタログ */
     protected $messages;
@@ -61,6 +61,7 @@ class Ethna_I18N
         $this->appid = $appid;
 
         $this->ctl = Ethna_Controller::getInstance();
+        $this->encoding = $this->ctl->getEncoding();
         $config = $this->ctl->getConfig();
         $this->logger = $this->ctl->getLogger();
         $this->use_gettext = $config->get('use_gettext') ? true : false;
@@ -99,21 +100,19 @@ class Ethna_I18N
      *  @access public
      *  @param  string  $locale         ロケール名(e.x ja_JP, en_US 等)
      *                                  (ll_cc の形式。ll = 言語コード cc = 国コード)
-     *  @param  string  $clientencoding 内部エンコーディング名
      *  @see    http://www.gnu.org/software/gettext/manual/html_node/Locale-Names.html 
      */
-    public function setLanguage($locale, $clientencoding = null)
+    public function setLanguage($locale)
     {
-        setlocale(LC_ALL, $locale . ($clientencoding !== null ? "." . $clientencoding : ""));
+        setlocale(LC_ALL, $locale . "." . $this->encoding);
 
         if ($this->use_gettext) {
-            bind_textdomain_codeset($locale, $clientencoding);
+            bind_textdomain_codeset($locale, $this->encoding);
             bindtextdomain($locale, $this->locale_dir);
             textdomain($locale);
         }
 
         $this->locale = $locale;
-        $this->clientencoding = $clientencoding;
 
         //  強制的にメッセージカタログ再生成
         if (!$this->use_gettext) {
@@ -156,19 +155,7 @@ class Ethna_I18N
             //  返される。
             //
             if (isset($this->messages[$msg]) && !empty($this->messages[$msg])) {
-
                 $ret_message = $this->messages[$msg];
-
-                //
-                //  convert message in case $client_encoding
-                //  setting IS NOT UTF-8.
-                //
-                //  @see Ethna_Controller#_getDefaultLanguage
-                // 
-                if (strcasecmp($this->clientencoding, 'UTF-8') !== 0) {
-                    return mb_convert_encoding($ret_message, $this->clientencoding, 'UTF-8');
-                }
-
                 return $ret_message;
             }
 

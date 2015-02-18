@@ -30,10 +30,9 @@ class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
      *                              も追加してコピーする 
      *  @param  string  $locale     ロケール名
      *                              (ロケール名は、ll_cc の形式。ll = 言語コード cc = 国コード)
-     *  @param  string  $encoding   プロジェクトで使用するエンコーディング 
      *  @return bool    true:成功   Ethna_Error:失敗
      */
-    function generate($id, $basedir, $skeldir, $locale, $encoding)
+    function generate($id, $basedir, $skeldir, $locale)
     {
         $dir_list = array(
             array("app", 0755),
@@ -111,7 +110,6 @@ class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
         $macro['project_prefix'] = $id;
         $macro['basedir'] = realpath($basedir);
         $macro['locale'] = $locale;
-        $macro['client_enc'] = $encoding;
 
         $macro['action_class'] = '{$action_class}';
         $macro['action_form'] = '{$action_form}';
@@ -185,9 +183,6 @@ class Ethna_Plugin_Generator_Project extends Ethna_Plugin_Generator
             return $real_r;
         }
 
-        //  skelファイルにはエンコーディングマクロは適用しない
-        //  skel.template.tpl は、add-[view|template]時に適用させるため。
-        unset($default_macro['client_enc']);
         $skel_r = $this->_generate($skelfile_maps, $default_macro, $skeldir);
         if (Ethna::isError($skel_r)) {
             return $skel_r;

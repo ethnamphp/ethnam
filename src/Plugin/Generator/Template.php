@@ -26,10 +26,9 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
      *  @param  string  $forward_name   テンプレート名
      *  @param  string  $skelton        スケルトンファイル名
      *  @param  string  $locale         ロケール名
-     *  @param  string  $encoding       エンコーディング
      *  @return true|Ethna_Error        true:成功 Ethna_Error:失敗
      */
-    function generate($forward_name, $skelton = null, $locale, $encoding)
+    function generate($forward_name, $skelton = null, $locale)
     {
         //  ロケールが指定された場合は、それを優先する 
         if (!empty($locale)) {
@@ -54,7 +53,6 @@ class Ethna_Plugin_Generator_Template extends Ethna_Plugin_Generator
         $macro = array();
         // add '_' for tpl and no user macro for tpl
         $macro['_project_id'] = $this->ctl->getAppId();
-        $macro['client_enc'] = $encoding;
 
         // generate
         if (file_exists($entity)) {
