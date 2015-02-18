@@ -159,23 +159,6 @@ class Ethna_Plugin
     }
 
     /**
-     *  get plugin obejct and set to property
-     *
-     *  @access public
-     *  @param  string  $plugin_alias_name  property name to set
-     *  @param  array   $plugin             array(type, name)
-     */
-    public function setPlugin($plugin_alias_name, $plugin)
-    {
-        if (isset($this->{$plugin_alias_name})) {
-            return Ethna::raiseWarning('preload plugin alias name is conflicted [alias=%s], It doesn\'t loaded.',
-                E_PLUGIN_GENERAL, $plugin_alias_name);
-        }
-
-        $this->{$plugin_alias_name} = $this->getPlugin($plugin[0], $plugin[1]);
-    }
-
-    /**
      *  プラグインをincludeしてnewし，レジストリに登録
      *
      *  @access private
