@@ -57,7 +57,6 @@ $config = array(
     'session' => array(
         'handler'   => 'files',
         'path'      => 'tmp',
-        'check_remote_addr'      => true,
         //'cache_limiter' => 'private_no_expire',
         //'cache_expire'  => '180',
     ),
