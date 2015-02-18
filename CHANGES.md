@@ -29,42 +29,42 @@
 ## 2.17での変更点
 * [core]「アクション定義」機能を廃止しました。古い仕組みでほとんど使われていなかったため。( #21 )
 
-## 2.15から2.16への変更点
+## 2.16への変更点
 * [core] ActionFormで、$form_templateと$formをマージするロジックを変更しました。( #20 )
 
-## 2.14から2.15への変更点
+## 2.15への変更点
 * [i18n] バリデーションエラーメッセージで、form_nameにi18n変換が適用されるようになりました。
 * [i18n] form_submitのvalueでi18n変換が適用されるようになりました。
 
-## 2.13から2.14への変更点
+## 2.14への変更点
 * [config] 設定ファイル名を`{$appid}-ini.php`から`config.php`に変更しました。
 
-## 2.12から2.13への変更点
+## 2.13への変更点
 * [log] ログファイル名のデフォルトを`{$appid}.log`から`app.log`に変更しました。
 * [core] クラスファイルの置き場所のディレクトリを`class`から`src`に変更しました。(PSR4に準拠させるための準備)
 * [core] Packagistに公開しました！
 
-## 2.11から2.12への変更点
+## 2.12への変更点
 * [core] composerでインストールできるようになりました。
 * [core] PHP5.3のサポートを廃止しました。
 * [i18n] Form定義の'name'がバリデーションエラーの際にi18n適用されるようになりました。
 * [i18n] Form定義の'option'でi18n変換が適用されるようになりました。
 
 
-## 2.10から2.11への変更点
+## 2.11への変更点
 
 * Managerを$weak=trueで呼び出す機能を削除しました。
 * Managerを自動でincludeしなくなりました。自前でオートロードしてください。
 * Ethna_MailSenderのpreg_replace eを修正しました。
 
-## 2.9から2.10への変更点
+## 2.10への変更点
 
 * RendererクラスでSmartyをロードしなくなりました。Appid_ControllerでSmartyをrequireするか、自前でオートロードしてください。
 * SOAP Gatewayを廃止しました。
 * Ethna_DB_PEARを廃止しました。
 * Ethna_Controllerでpreg_matchがPHP5.5でDEPRECATEDになるのを修正しました。
 
-## 2.8から2.9への変更点
+## 2.9への変更点
 
 * Backend#performを Controller#performへ引っ越ししました。
 * ActionClassからViewClassにパラメータを渡す機能を廃止しました。
@@ -74,7 +74,7 @@
 * UnitTestMamger, InfoMangerを廃止
 * インストール方法をREADME.mdに書きました。
 
-## 2.7から2.8への変更点
+## 2.8への変更点
 
 * AppObject, AppSQL, AppSearchObjectを廃止しました。[[e871a1a](https://github.com/DQNEO/ethnam/commit/e871a1addafae0314bd62dfc8a3e209359ac4a2f)]
 * Windowsサポートを廃止しました。[[4ec5802](https://github.com/DQNEO/ethnam/commit/4ec580224232122b29a2a9ccf5824bf8d985f424)]
