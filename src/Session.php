@@ -89,10 +89,6 @@ class Ethna_Session
         } else {
             $http_vars = $_GET;
         }
-        if (array_key_exists($this->session_name, $http_vars)
-            && $http_vars[$this->session_name] != null) {
-            $_COOKIE[$this->session_name] = $http_vars[$this->session_name];
-        }
     }
 
 
@@ -103,25 +99,24 @@ class Ethna_Session
      */
     public function restore()
     {
-        if (!empty($_COOKIE[$this->session_name])
-            || (ini_get("session.use_trans_sid") == 1
-            && !empty($_REQUEST[$this->session_name]))
-        ) {
-            session_start();
-            $this->session_start = true;
+        if (empty($_COOKIE[$this->session_name])) {
+            return;
+        }
 
-            // check remote address changed
-            if ($this->config['check_remote_addr']) {
-                if ($this->isValid() == false) {
-                    setcookie($this->session_name, "", 0, "/");
-                    $this->session_start = false;
-                }
-            }
+        session_start();
+        $this->session_start = true;
 
-            // check anonymous
-            if ($this->get('__anonymous__')) {
-                $this->anonymous = true;
+        // check remote address changed
+        if ($this->config['check_remote_addr']) {
+            if ($this->isValid() == false) {
+                setcookie($this->session_name, "", 0, "/");
+                $this->session_start = false;
             }
+        }
+
+        // check anonymous
+        if ($this->get('__anonymous__')) {
+            $this->anonymous = true;
         }
     }
 
