@@ -2,7 +2,7 @@
 ## 2.22での変更点
 * [session] $_GET,$_POSTからセッションIDを受け取らないようにしました。
 * [session] check_remote_addr機能を廃止しました。
-
+* [core] ActionClassのpreloadPlugin機能を廃止しました。
 
 ## 2.21での変更点
 * [core]Ethna_Controller::getClientEncoding -> Ethna_Controller::getEncoding にリネームしました。
