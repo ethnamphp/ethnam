@@ -89,10 +89,6 @@ class Ethna_Session
         } else {
             $http_vars = $_GET;
         }
-        if (array_key_exists($this->session_name, $http_vars)
-            && $http_vars[$this->session_name] != null) {
-            $_COOKIE[$this->session_name] = $http_vars[$this->session_name];
-        }
     }
 
 
