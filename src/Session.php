@@ -99,10 +99,7 @@ class Ethna_Session
      */
     public function restore()
     {
-        if (!empty($_COOKIE[$this->session_name])
-            || (ini_get("session.use_trans_sid") == 1
-            && !empty($_REQUEST[$this->session_name]))
-        ) {
+        if (!empty($_COOKIE[$this->session_name])) {
             session_start();
             $this->session_start = true;
 
