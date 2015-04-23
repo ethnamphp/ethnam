@@ -51,6 +51,6 @@ request を送ってください。
 
 ## Contact
 
-ご意見・ご要望・バグ報告は  Twtterで [@DQNEO](https://twitter.com/DQNEO) までお願いします。
+ご意見・ご要望・バグ報告は  Twitterで [@DQNEO](https://twitter.com/DQNEO) までお願いします。
 
 ハッシュタグは [#Ethnam](https://twitter.com/hashtag/ethnam?src=hash) です。
