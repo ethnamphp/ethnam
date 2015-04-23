@@ -65,8 +65,6 @@ $ ./vendor/bin/phpunit
 
 ## Contact
 
-ご意見・ご要望・バグ報告はTwitter(@DQNEO)でお願いします。
+ご意見・ご要望・バグ報告は  Twtterで [@DQNEO](https://twitter.com/DQNEO) までお願いします。
 
-https://twitter.com/DQNEO
-
-ハッシュタグは #Ethnam です。
+ハッシュタグは [#Ethnam](https://twitter.com/hashtag/ethnam?src=hash) です。
