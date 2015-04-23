@@ -46,7 +46,7 @@ https://packagist.org/packages/dqneo/ethnam
 
 バグ修正などの Pull Request など大歓迎です。
 
-最新の`cheese`からbranchを作ってそこで改修を行い、`cheese` ブランチに対して pull request を送ってください。
+request を送ってください。
 
 ## UnitTest
 
