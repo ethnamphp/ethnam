@@ -14,32 +14,7 @@ Ethnaから派生してできたプロジェクトです。
 * `master` 開発中の先端ブランチです。必ずしも安定しているとは限りませんのでご注意ください。
 * 安定版を入手したい場合はtagを見てください。
 
-
-## インストール
-
-composerでインストールできます。
-
-```sh
-cd /tmp/
-
-# ethnamを取得
-composer install
-
-# プロジェクト作成
-./vendor/dqneo/ethnam/bin/ethna.sh add-project foo
-
-# Smartyを取得
-tar xvfz ~/tmp/Ethna/misc/optional_package/Smarty/src/Smarty-2.6.26.tar.gz
-mv Smarty-2.6.26 Smarty
-
-app/Foo_Controller.phpのrequire_once 'Smarty/libs/Smarty.class.php'を有効にする
-
-# サーバ起動
-php -S 0.0.0.0:8080 -t /tmp/foo/www
-```
 ## Packagist
-
-Packagistにて公開中です。
 
 https://packagist.org/packages/dqneo/ethnam
 
