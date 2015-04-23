@@ -49,20 +49,6 @@ https://packagist.org/packages/dqneo/ethnam
 
 request を送ってください。
 
-## UnitTest
-
-PHPUnitでテストします。
-
-実行方法
-
-```shell
-$ composer install
-$ ./vendor/bin/phpunit
-```
-
-* `src/Tests` : 新しいテスト
-* `src/oldtest`    : 古いテスト(SimpleTestベース)
-
 ## Contact
 
 ご意見・ご要望・バグ報告は  Twtterで [@DQNEO](https://twitter.com/DQNEO) までお願いします。
