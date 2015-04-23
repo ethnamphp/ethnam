@@ -940,9 +940,9 @@ class Ethna_Controller
             $this->view->forward();
         }
 
-	unset($this->action_form->app_vars);
-	unset($this->action_form->app_ne_vars);
-	unset($this->action_form->form_vars);
+        unset($this->action_form->app_vars);
+        unset($this->action_form->app_ne_vars);
+        unset($this->action_form->form_vars);
 
         return 0;
     }

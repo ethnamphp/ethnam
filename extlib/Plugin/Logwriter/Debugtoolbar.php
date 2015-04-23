@@ -8,16 +8,15 @@
 
 class Ethna_Plugin_Logwriter_Debugtoolbar extends Ethna_Plugin_Logwriter
 {
-    var $log_array = array();
+    private $log_array = [];
 
     /**
      *  ログを出力する
      *
-     *  @access public
      *  @param  int     $level      ログレベル(LOG_DEBUG, LOG_NOTICE...)
      *  @param  string  $message    ログメッセージ(+引数)
      */
-    function log($level, $message)
+    public function log($level, $message)
     {
         $c = Ethna_Controller::getInstance();
 
@@ -78,7 +77,7 @@ class Ethna_Plugin_Logwriter_Debugtoolbar extends Ethna_Plugin_Logwriter
         return $log_content;
     }
 
-    function end()
+    public function end()
     {
         $ctl = Ethna_Controller::getInstance();
         if ((!is_null($view = $ctl->getView()) && !$view->has_default_header)

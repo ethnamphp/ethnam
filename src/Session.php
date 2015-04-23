@@ -42,7 +42,6 @@ class Ethna_Session
     protected $config = array(
         'handler'           => 'files',
         'path'              => 'tmp',
-        'check_remote_addr' => false,
         'cache_limiter'     => 'nocache',
         'cache_expire'      => '180',
         'suffix'            => 'SESSID',
@@ -89,10 +88,6 @@ class Ethna_Session
         } else {
             $http_vars = $_GET;
         }
-        if (array_key_exists($this->session_name, $http_vars)
-            && $http_vars[$this->session_name] != null) {
-            $_COOKIE[$this->session_name] = $http_vars[$this->session_name];
-        }
     }
 
 
@@ -103,25 +98,16 @@ class Ethna_Session
      */
     public function restore()
     {
-        if (!empty($_COOKIE[$this->session_name])
-            || (ini_get("session.use_trans_sid") == 1
-            && !empty($_REQUEST[$this->session_name]))
-        ) {
-            session_start();
-            $this->session_start = true;
+        if (empty($_COOKIE[$this->session_name])) {
+            return;
+        }
 
-            // check remote address changed
-            if ($this->config['check_remote_addr']) {
-                if ($this->isValid() == false) {
-                    setcookie($this->session_name, "", 0, "/");
-                    $this->session_start = false;
-                }
-            }
+        session_start();
+        $this->session_start = true;
 
-            // check anonymous
-            if ($this->get('__anonymous__')) {
-                $this->anonymous = true;
-            }
+        // check anonymous
+        if ($this->get('__anonymous__')) {
+            $this->anonymous = true;
         }
     }
 
@@ -134,35 +120,6 @@ class Ethna_Session
     public function getId()
     {
         return session_id();
-    }
-
-    /**
-     *  セッションの正当性チェック
-     *
-     *  @access public
-     *  @return bool    true:正当なセッション false:不当なセッション
-     */
-    public function isValid()
-    {
-        if (!$this->session_start) {
-            if (!empty($_COOKIE[$this->session_name]) || session_id() != null) {
-                setcookie($this->session_name, "", 0, "/");
-            }
-            return false;
-        }
-
-        // check remote address
-        if (!isset($_SESSION['REMOTE_ADDR'])
-            || $this->_validateRemoteAddr($_SESSION['REMOTE_ADDR'],
-                                          $_SERVER['REMOTE_ADDR']) == false) {
-            // we do not allow this
-            setcookie($this->session_name, "", 0, "/");
-            session_destroy();
-            $this->session_start = false;
-            return false;
-        }
-
-        return true;
     }
 
     /**
@@ -334,27 +291,5 @@ class Ethna_Session
         return $this->anonymous;
     }
 
-    /**
-     *  セッションに保存されたIPアドレスとアクセス元のIPアドレスが
-     *  同一ネットワーク範囲かどうかを判別する(16bit mask)
-     *
-     *  @access private
-     *  @param  string  $src_ip     セッション開始時のアクセス元IPアドレス
-     *  @param  string  $dst_ip     現在のアクセス元IPアドレス
-     *  @return bool    true:正常終了 false:不正なIPアドレス
-     */
-    protected function _validateRemoteAddr($src_ip, $dst_ip)
-    {
-        $src = ip2long($src_ip);
-        $dst = ip2long($dst_ip);
-
-        if (($src & 0xffff0000) == ($dst & 0xffff0000)) {
-            return true;
-        } else {
-            $this->logger->log(LOG_NOTICE, "session IP validation failed [%s] - [%s]",
-                               $src_ip, $dst_ip);
-            return false;
-        }
-    }
 }
 // }}}
