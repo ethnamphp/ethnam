@@ -10,6 +10,5 @@
 *   entrypoint
 *   upgrade
 *   article
-*   docdoc
 *   unittest
 *   release
