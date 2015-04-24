@@ -6,8 +6,11 @@
 *   tutorial
 *   reference
 *   api
-*   cookbook
+*   config
+*   logging
+*   entrypoint
 *   upgrade
 *   article
 *   docdoc
-*   dev
+*   unittest
+*   release
