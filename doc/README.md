@@ -3,6 +3,7 @@
 # 目次的なもの
 
 *   install
+*   tutorial
 *   tldr
 *   ActionClass
 *   ActionForm
