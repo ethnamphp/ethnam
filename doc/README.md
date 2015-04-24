@@ -5,7 +5,6 @@
 *   install
 *   tutorial
 *   reference
-*   api
 *   config
 *   logging
 *   entrypoint
