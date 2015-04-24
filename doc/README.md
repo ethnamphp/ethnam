@@ -3,12 +3,19 @@
 # 目次的なもの
 
 *   install
-*   tutorial
-*   reference
+*   tldr
+*   ActionClass
+*   ActionForm
+*   ViewClass
+*   ActionError
+*   EthnaError
+*   template
+*   i18n
 *   config
 *   logging
 *   entrypoint
+*   ethna command
 *   upgrade
-*   article
+*   plugin
 *   unittest
 *   release
