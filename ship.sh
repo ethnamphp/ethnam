@@ -17,11 +17,12 @@ if [[ $# -eq 0 ]] || [[ $1 = "--help" ]] ; then
 fi
 
 ver=$1
+set -x
 
 echo shipping version $ver ...
 
 version_file=bootstrap.php
-perl -pi -e "s/\'\d*\.\d*\.\d*\'/'$ver'/" $version_file
+perl -pi -e "s#v\d*\.\d*\.\d*#v$ver#" $version_file
 
 git add $version_file
 git commit -m "bump version to $ver"
