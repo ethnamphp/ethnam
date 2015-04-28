@@ -16,7 +16,7 @@
     "phpunit/phpunit": "3.7.*"
   },
   "bin" : {
-    "bin/ethna.sh",
+    "bin/ethna.sh"
   },
   "autoload": {
     "files": [ "bootstrap.php" ]
