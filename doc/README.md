@@ -3,8 +3,8 @@
 # 目次的なもの
 
 *   [概要](01-intro.md)
-*   install
-*   tutorial
+*   [インストール](02-install.md)
+*   [チュートリアル](tutorial.md)
 *   tldr
 *   ActionClass
 *   ActionForm
@@ -13,9 +13,9 @@
 *   EthnaError
 *   template
 *   i18n
-*   config
-*   logging
-*   entrypoint
+*   [設定ファイル](config.md)
+*   [ロギング](logging.md)
+*   [エントリポイント](entrypoint.md)
 *   ethna command
 *   upgrade
 *   plugin
