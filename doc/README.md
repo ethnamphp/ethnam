@@ -21,3 +21,4 @@
 *   plugin
 *   unittest
 *   release
+*   [Ethna本家との関係](99-relationship-with-ethna.md)
