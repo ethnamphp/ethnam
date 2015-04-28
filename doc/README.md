@@ -12,7 +12,7 @@
 *   ActionError
 *   EthnaError
 *   [template](template.md)
-*   [国際化(i18n])](i18n.md)
+*   [国際化(i18n)](i18n.md)
 *   [設定ファイル](config.md)
 *   [ロギング](logging.md)
 *   [エントリポイント](entrypoint.md)
