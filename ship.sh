@@ -27,7 +27,6 @@ perl -pi -e "s#v\d*\.\d*\.\d*#v$ver#" $version_file
 git add $version_file
 git commit -m "bump version to $ver"
 git tag v${ver}
-
-echo ''
-echo 'next, run "git push" and "git push --tags"'
+git push
+git push --tags
 
