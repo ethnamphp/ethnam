@@ -15,6 +15,11 @@ $app = BASE . "/app";
 $lib = BASE . "/lib";
 set_include_path(implode(PATH_SEPARATOR, array($app, $lib)) . PATH_SEPARATOR . get_include_path());
 
+require_once '{$project_id}_Error.php';
+require_once '{$project_id}_ActionClass.php';
+require_once '{$project_id}_ActionForm.php';
+require_once '{$project_id}_ViewClass.php';
+require_once '{$project_id}_UrlHandler.php';
 require_once BASE . '/vendor/autoload.php';
 
 /**
@@ -172,4 +177,3 @@ class {$project_id}_Controller extends Ethna_Controller
     {
     }
 }
-
