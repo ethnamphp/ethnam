@@ -25,12 +25,14 @@ Controllerがどんなリクエスト(例えば「ログインする」とか「
 
 クライアントはアプリケーションのエントリポイントとなるスクリプト(index.php)にアクセスします
 index.phpは以下のようなスクリプトで、Controllerを生成、実行します
-```
+
+```php
 <?php
 include_once('/path/to/project/app/sample_controller.php');
 Sample_Controller::main('Sample_Controller', 'index');
 ?>
 ```
+
 ControllerはAction Formというオブジェクトを生成します。このオブジェクトにはクライアントから送信されたフォーム値等のコンテナです
 Controllerはクライアントから送信されたフォーム値に基づいて実行するアクションを決定し、対応するAction Classを生成、実行します。なお、デフォルトでは"action_"で始まるフォーム値がある場合に、それ以降の文字列がアクション名となります。つまり
 index.php?action_login=true
