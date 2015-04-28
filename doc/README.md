@@ -26,3 +26,6 @@
 *   [リリースルール](90-release.md)
 *   [UnitTest](98-unittest.md)
 
+# Ethnaドキュメント
+* http://ethna.jp/doc/index.html
+* http://ethna.jp/old/
