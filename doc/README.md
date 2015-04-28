@@ -20,8 +20,9 @@
 *   upgrade
 *   plugin
 *   unittest
-** Ethnam開発者向け
- *   [Ethna本家との関係](99-relationship-with-ethna.md)
- *   [リリースルール](90-release.md)
- *   [UnitTest](98-unittest.md)
- 
+
+# Ethnam開発者向け
+*   [Ethna本家との関係](99-relationship-with-ethna.md)
+*   [リリースルール](90-release.md)
+*   [UnitTest](98-unittest.md)
+
