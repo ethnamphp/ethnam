@@ -68,9 +68,7 @@ EOD;
         }
         array_shift($arg_list);  // remove "command.php"
 
-        if ($dot_ethna = getenv('DOT_ETHNA')) {
-            $app_controller = self::getAppController(dirname($dot_ethna));
-        }
+        $app_controller = self::getAppController(dirname(".")); // TODO
 
         $handle = $this;
 
@@ -215,7 +213,7 @@ EOD;
         if ($ini_file === null) {
             return Ethna::raiseError('no .ethna file found');
         }
-        
+
         $macro = parse_ini_file($ini_file);
         if (isset($macro['controller_file']) == false
             || isset($macro['controller_class']) == false) {
