@@ -1,4 +1,6 @@
-# INSTALLATION
+# インストール
+
+Ethhamのインストール方法について説明します。
 
 composerを使ってインストールします。
 
@@ -15,6 +17,8 @@ composerを使ってインストールします。
 ```sh
 composer install
 ```
+
+上記の代わりに、`composer require dqneo/ethnam:2.22`とすることでも同じことができます。
 
 ```sh
 cd /tmp/
