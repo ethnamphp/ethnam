@@ -14,13 +14,13 @@ Ethnaから派生してできたプロジェクトです。
 * `master` 開発中の先端ブランチです。必ずしも安定しているとは限りませんのでご注意ください。
 * 安定版を入手したい場合はtagを見てください。
 
-## Packagist
-
-https://packagist.org/packages/dqneo/ethnam
-
 ## Document
 
 詳しい[ドキュメントはこちら](/doc)
+
+## Packagist
+
+https://packagist.org/packages/dqneo/ethnam
 
 ## Contact
 
