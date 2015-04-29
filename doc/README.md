@@ -4,9 +4,9 @@
 
 *   [概要](01-intro.md)
 *   チュートリアル
- *   [インストール](02-install.md)
- *   tldr
+ *  [インストール](02-install.md)
  *  [ディレクトリ解説](03-directories.md)
+ *  [アクション、ビュー、テンプレートを追加する](03-add-action-view-template.md)
 *   [ActionClass](ActionClass.md)
 *   [ActionForm](AcionForm.md)
 *   [ViewClass](ViewClass.md)
