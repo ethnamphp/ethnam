@@ -24,26 +24,30 @@ Ethnaは当初JavaのStrutsの構造を模倣して作られました。その�
 ## もう少し詳しい内部動作
 
 クライアントはアプリケーションのエントリポイントとなるスクリプト(index.php)にアクセスします
-index.phpは以下のようなスクリプトで、Controllerを生成、実行します
+index.phpは以下のようなスクリプトで、Controllerを呼び出します。
 
 ```php
 <?php
-include_once('/path/to/project/app/sample_controller.php');
+require_once dirname(__FILE__) . '/../app/Sample_Controller.php';
 Sample_Controller::main('Sample_Controller', 'index');
-?>
 ```
 
-ControllerはAction Formというオブジェクトを生成します。このオブジェクトにはクライアントから送信されたフォーム値等のコンテナです
-Controllerはクライアントから送信されたフォーム値に基づいて実行するアクションを決定し、対応するAction Classを生成、実行します。なお、デフォルトでは"action_"で始まるフォーム値がある場合に、それ以降の文字列がアクション名となります。つまり
-index.php?action_login=true
-なら
-login
-というアクションになります
+ControllerはAction Formというオブジェクトを生成します。このオブジェクトにはクライアントから送信されたフォーム値等のコンテナです。
+
+Controllerはクライアントから送信されたフォーム値に基づいて実行するアクションを決定し、対応するAction Classを生成、実行します。なお、デフォルトでは"action_"で始まるフォーム値がある場合に、それ以降の文字列がアクション名となります。
+
+つまり`index.php?action_login=true` なら `login` というアクションになります
+
 Action ClassはAction Formを利用して、クライアントから送信されたフォーム値や、ビューに表示する変数値を設定します
+
 Action Classは処理が終了すると、遷移先の名前をコントローラに返します
+
 ControllerはAction Classからの戻り値(遷移先)に応じてビューオブジェクトを生成します
+
 ビューオブジェクトは、Action Formからテンプレートファイルで利用する変数値を取得します
+
 ビューオブジェクトがHTMLを表示します
+
 以上で、何となくはイメージを掴めていただけたと思います。
 
 
