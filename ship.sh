@@ -14,7 +14,9 @@ version_file=bootstrap.php
 if [[ $# -eq 0 ]] || [[ $1 = "--help" ]] ; then
     echo "Usage: $prog <version_number>"
     echo ""
-    echo "Example:  $prog x.y.z"
+    echo "Example: $prog x.y.z"
+    echo -n "Current Version: "
+    grep ETHNA_VERSION $version_file
     exit 1
 fi
 
