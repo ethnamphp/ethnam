@@ -2,7 +2,16 @@
 
 Ethhamのインストール方法について説明します。
 
-composerを使ってインストールします。あらかじめcomposerをインストールしておいてください。
+composerを使ってインストールすることができます。
+
+## composerをインストール
+
+composerをまだインストールしてない場合はインストールしておいてください。
+
+https://getcomposer.org/doc/00-intro.md#globally
+
+## プロジェクト用ディレクトリを作成
+
 
 ```sh
 cd /tmp/
@@ -11,7 +20,7 @@ mkdir sample
 cd sample
 ```
 
-composer.jsonを作成
+## composer.jsonを作成
 
 ```json
 {
@@ -22,20 +31,20 @@ composer.jsonを作成
 }
 ```
 
-パッケージをインストール
+## パッケージをインストール
+
 ```
 composer install
 ```
 
-# プロジェクトのスケルトンを作成
+## プロジェクトのスケルトンを作成
 vendor/bin/ethna.sh add-project -b . Sample
 
-# サーバ起動
+## 簡易サーバを起動
 
 ```
 php -t www -S 0:8080
 ```
 
 ブラウザで`http://localhost:8080/` にアクセスして Hello Wolrdの画面が表示されたらOKです。
-
 
