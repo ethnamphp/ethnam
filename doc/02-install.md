@@ -14,7 +14,6 @@ composer require dqneo/ethnam
 # プロジェクトのスケルトンを作成
 vendor/bin/ethna.sh add-project -b . Sample
 
-# ここから下は未検証
 # Smartyを取得
 tar xvfz vendor/dqneo/ethnam/misc/optional_package/Smarty/src/Smarty-2.6.26.tar.gz
 mv Smarty-2.6.26 lib/Smarty
