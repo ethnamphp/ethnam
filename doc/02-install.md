@@ -39,7 +39,7 @@ composer install
 
 ## プロジェクトのスケルトンを作成
 ```
-vendor/bin/ethna.sh add-project -b . Sample
+vendor/bin/ethna add-project -b . Sample
 ```
 
 ## 簡易サーバを起動

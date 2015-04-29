@@ -1,9 +1,6 @@
 #!/bin/sh
 #
-#   ethna.sh
-#
-#   simple command line gateway
-#
+#   ethna command
 #
 
 if [ "$1" = "--debug" ]; then
