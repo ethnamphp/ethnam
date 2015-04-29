@@ -38,6 +38,10 @@ composer install
 ```
 
 ## プロジェクトのスケルトンを作成
+
+プロジェクト名を`Sample`とすると、下記のようにします。
+
+
 ```
 vendor/bin/ethna add-project -b . Sample
 ```
