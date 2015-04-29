@@ -15,7 +15,7 @@ composer require dqneo/ethnam
 vendor/bin/ethna.sh add-project -b . Sample
 
 # Smartyを取得
-tar xfz vendor/dqneo/ethnam/misc/optional_package/Smarty/src/Smarty-2.6.26.tar.gz
+tar xfz vendor/dqneo/ethnam/misc/Smarty-2.6.26.tar.gz
 mv Smarty-2.6.26 lib/Smarty
 
 app/Sample_Controller.phpの冒頭でrequire_onceが連ねてあるところに、下記を追記する
