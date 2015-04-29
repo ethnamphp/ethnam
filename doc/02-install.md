@@ -4,6 +4,9 @@ Ethhamのインストール方法について説明します。
 
 composerを使ってインストールすることができます。
 
+プロジェクト名を仮に`Sample`として、Ethnamをインストールして
+プロジェクトを作成するところまでを説明します。
+
 ## composerをインストール
 
 composerをまだインストールしてない場合はインストールしておいてください。
@@ -38,9 +41,6 @@ composer install
 ```
 
 ## プロジェクトのスケルトンを作成
-
-プロジェクト名を`Sample`とすると、下記のようにします。
-
 
 ```
 vendor/bin/ethna add-project -b . Sample
