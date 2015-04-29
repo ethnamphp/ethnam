@@ -2,7 +2,7 @@
 
 http://ethna.jp/old/ethna-document-tutorial-overview.html
 
-Ethnaは当初Strutsの構造を模倣して作られました。そのため、基本的な動作はStrutsに似ています。(また,2004年ごろに流行ったPHPフレームワークの一つであるMojaviにも似ています。)
+Ethnaは当初JavaのStrutsの構造を模倣して作られました。そのため、基本的な動作はStrutsに似ています。(また,2004年ごろに流行ったPHPフレームワークの一つであるMojaviにも似ています。)
 
 
 ## 大雑把な動作イメージ
