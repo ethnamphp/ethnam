@@ -26,7 +26,7 @@ cd sample
 {
   "require": {
     "dqneo/ethnam": "2.23.7",
-    "smarty/smarty": "2.6.26"
+    "smarty/smarty": "2.6.*"
   }
 }
 ```
