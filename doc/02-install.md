@@ -31,3 +31,6 @@ require_once BASE . '/lib/Smarty/libs/Smarty.class.php';
 php -t www -S 0:8080
 ```
 
+ブラウザで`http://localhost:8080/` にアクセスして Hello Wolrdの画面が表示されたらOKです。
+
+
