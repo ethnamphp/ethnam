@@ -3,9 +3,10 @@
 # 目次的
 
 *   [概要](01-intro.md)
-*   [インストール](02-install.md)
-*   [チュートリアル](tutorial.md)
-*   tldr
+*   チュートリアル
+ *   [インストール](02-install.md)
+ *   tldr
+ *  [ディレクトリ解説](03-directories.md)
 *   [ActionClass](ActionClass.md)
 *   [ActionForm](AcionForm.md)
 *   [ViewClass](ViewClass.md)
