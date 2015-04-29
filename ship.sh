@@ -12,7 +12,7 @@ prog=$(basename $0)
 if [[ $# -eq 0 ]] || [[ $1 = "--help" ]] ; then
     echo "Usage: $prog <version_number>"
     echo ""
-    echo "Example:  $prog <version_number>"
+    echo "Example:  $prog x.y.z"
     exit 1
 fi
 
