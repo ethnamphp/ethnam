@@ -9,21 +9,26 @@ cd /tmp/
 # プロジェクト用ディレクトリを作成
 mkdir sample
 cd sample
-# ethnamをインストール
-composer require dqneo/ethnam
-# プロジェクトのスケルトンを作成
-vendor/bin/ethna.sh add-project -b . Sample
-
-# Smartyを取得
-tar xfz vendor/dqneo/ethnam/misc/Smarty-2.6.26.tar.gz
-mv Smarty-2.6.26 lib/Smarty
-
-app/Sample_Controller.phpの冒頭でrequire_onceが連ねてあるところに、下記を追記する
-
-```php
-require_once BASE . '/lib/Smarty/libs/Smarty.class.php';
 ```
 
+composer.jsonを作成
+
+```json
+{
+  "require": {
+    "dqneo/ethnam": "2.23.7",
+    "smarty/smarty": "2.6.26"
+  }
+}
+```
+
+パッケージをインストール
+```
+composer install
+```
+
+# プロジェクトのスケルトンを作成
+vendor/bin/ethna.sh add-project -b . Sample
 
 # サーバ起動
 
