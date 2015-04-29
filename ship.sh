@@ -9,6 +9,8 @@
 set -e
 
 prog=$(basename $0)
+version_file=bootstrap.php
+
 if [[ $# -eq 0 ]] || [[ $1 = "--help" ]] ; then
     echo "Usage: $prog <version_number>"
     echo ""
@@ -21,7 +23,6 @@ set -x
 
 echo shipping version $ver ...
 
-version_file=bootstrap.php
 perl -pi -e "s#v\d*\.\d*\.\d*#v$ver#" $version_file
 
 git add $version_file
