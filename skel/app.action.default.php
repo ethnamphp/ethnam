@@ -4,7 +4,6 @@
  *
  *  @author    {$author}
  *  @package   {$project_id}
- *  @version   $Id$
  */
 
 /**

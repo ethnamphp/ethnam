@@ -6,7 +6,6 @@
  *  @author     your name <yourname@example.com>
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna_Plugin
- *  @version    $Id$
  */
 
 // {{{ Ethna_Plugin_Validator_{$plugin_name}

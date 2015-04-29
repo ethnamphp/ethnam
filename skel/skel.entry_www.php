@@ -4,7 +4,6 @@
  *
  *  @author     {$author}
  *  @package    {$project_id}
- *  @version    $Id$
  */
 require_once '{$dir_app}/{$project_id}_Controller.php';
 

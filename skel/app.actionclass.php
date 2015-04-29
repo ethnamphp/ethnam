@@ -5,7 +5,6 @@
  *
  *  @author     {$author}
  *  @package    {$project_id}
- *  @version    $Id$
  */
 
 // {{{ {$project_id}_ActionClass

@@ -4,7 +4,6 @@
  *
  *  @author     {$author}
  *  @package    {$project_id}
- *  @version    $Id$
  */
 chdir(dirname(__FILE__));
 require_once '{$dir_app}/{$project_id}_Controller.php';
