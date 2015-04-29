@@ -1,4 +1,11 @@
 # 変更点一覧
+## 2.23での変更点
+* [core]`ethna`コマンドを修正。add-projectが動くようになりました。
+* [view] Smarty3のサポートを廃止
+* [core] Smarty2.6を同梱するのをやめて、composer経由でインストールする方式に変更
+* [core] miscディレクトリを削除
+* [document] インストール・プロジェクト作成方法をちゃんと動く形で明記しました。
+
 ## 2.22での変更点
 * [session] $_GET,$_POSTからセッションIDを受け取らないようにしました。
 * [session] check_remote_addr機能を廃止しました。
