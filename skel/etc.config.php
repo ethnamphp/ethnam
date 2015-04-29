@@ -74,11 +74,6 @@ $config = array(
     //        'left_delimiter' => '{{',
     //        'right_delimiter' => '}}',
     //    ),
-    //    // if smarty3:
-    //    'smarty3' => array(
-    //        'left_delimiter' => '{{',
-    //        'right_delimiter' => '}}',
-    //    ),
     //),
 
     // csrf
