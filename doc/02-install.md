@@ -26,6 +26,8 @@ require_once BASE . '/lib/Smarty/libs/Smarty.class.php';
 
 
 # サーバ起動
-php -S 0:8080 -t www
+
+```
+php -t www -S 0:8080
 ```
 
