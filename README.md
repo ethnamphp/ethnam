@@ -18,6 +18,10 @@ Ethnaから派生してできたプロジェクトです。
 
 https://packagist.org/packages/dqneo/ethnam
 
+## Document
+
+詳しい[ドキュメントはこちら](/doc)
+
 ## Contact
 
 ご意見・ご要望・バグ報告は  Twitterで [@DQNEO](https://twitter.com/DQNEO) までお願いします。
