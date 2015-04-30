@@ -142,11 +142,17 @@ $ vendor/bin/ethna add-view -t login
 
 
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-<head></head>
+<head>
+  <meta charset="utf8">
+  <title>Please Login</title>
+</head>
 <body>
-Login View<br />
+Please Login<br />
+<form>
+  <input type="text" name="mailaddress">
+</form>
 current time: {$app.now}
 </body>
 </html>
@@ -171,4 +177,3 @@ http://example.com/?action_login=true
 
 
 もう少し複雑なアクションについては、次節アプリケーション構築手順(3)をご覧下さい。
-
