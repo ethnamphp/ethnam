@@ -40,13 +40,8 @@ Create, Read, Update, Delete の略です。
 * アクション名の先頭を大文字にします
 * '_'を'/'に置き換え(= ディレクトリで区切り)続く文字を大文字にします
 
-ですので`app/action/Hello.php`となります。
+従ってファイル名は`app/action/Hello.php`となります。
 
-すると、
-
-* URLは`/?action_hello=true`
-* アクションクラスファイルは
-* アクションクラス名は`Sample_Action_Hello`
 
 ###  アクションクラスファイルの中身を書く
 
