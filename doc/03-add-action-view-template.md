@@ -149,10 +149,7 @@ $ vendor/bin/ethna add-view -t hello
   <title>Please Hello</title>
 </head>
 <body>
-Please Hello<br />
-<form>
-  <input type="text" name="mailaddress">
-</form>
+Hello Ethnam<br />
 current time: {$app.now}
 </body>
 </html>
