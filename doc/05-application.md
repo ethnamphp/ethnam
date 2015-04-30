@@ -29,7 +29,17 @@ http://ethna.jp/old/ethna-document-tutorial-practice3.html
 
 といった点をご説明したいと思います。
 
-(10) ログイン画面の変更
+## ログイン画面の作成
+
+前回の記事のやり方でログイン画面を作ります。
+
+```
+vendor/bin/ethna add-action login
+vendor/bin/ethna add-view -t login
+```
+
+## ログイン画面の変更
+
 まず、前節(8)で作成したテンプレートファイル(template/ja/login.tpl)をもうちょっとログイン画面っぽいものに作り変えておきます。具体的には以下のようにしてみます。
 
 template/ja/login.tpl:
