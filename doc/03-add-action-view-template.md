@@ -14,31 +14,31 @@ http://ethna.jp/old/ethna-document-tutorial-practice2.html
 
 ツイッターで例えると、「ツイートをする」「ツイートを削除する」「タイムラインを表示する」などがそれぞれ１アクションです。
 
-## 例：「ログイン画面の表示」というアクションを追加してみる
+## 例：「Hello画面の表示」というアクションを追加してみる
 
 画面を作るには、まずアクション名を決める必要があります。
-ここではアクション名を`login`としましょう。
+ここではアクション名を`hello`としましょう。
 
-そうすると、URLは`/?action_login=true`となります。
+そうすると、URLは`/?action_hello=true`となります。
 
 次に、アクションクラスファイル名は、app/actionに以下のような命名規則で作成します('_'をディレクトリで区切り、ファイル名は大文字で開始します)。
 
 * アクション名の先頭を大文字にします
 * '_'を'/'に置き換え(= ディレクトリで区切り)続く文字を大文字にします
 
-ですので`app/action/Login.php`となります。
+ですので`app/action/Hello.php`となります。
 
 すると、
 
-* URLは`/?action_login=true`
+* URLは`/?action_hello=true`
 * アクションクラスファイルは
-* アクションクラス名は`Sample_Action_Login`
+* アクションクラス名は`Sample_Action_Hello`
 
 ###  アクションクラスファイルの中身を書く
 
-さて、ではクラスファイル`app/action/Login.php`を作成してみましょう。
+さて、ではクラスファイル`app/action/Hello.php`を作成してみましょう。
 
-クラス名は`Sample_Action_Login`です。
+クラス名は`Sample_Action_Hello`です。
 
 
 * Ethna_ActionClassを継承したクラスを定義します
@@ -47,18 +47,18 @@ http://ethna.jp/old/ethna-document-tutorial-practice2.html
 
 ```php
 <?php
-class Sample_Action_Login extends Ethna_ActionClass
+class Sample_Action_Hello extends Ethna_ActionClass
 {
     public function perform()
     {
-        return 'login';
+        return 'hello';
     }
 }
 ```
 
-このクラスでは、サーバ側では何も処理を行わずに'login'という遷移名を返しています。つまり
+このクラスでは、サーバ側では何も処理を行わずに'hello'という遷移名を返しています。つまり
 
-「なにもしないで'login'という画面名を表示する」
+「なにもしないで'hello'という画面名を表示する」
 
 という処理になります。
 
@@ -66,7 +66,7 @@ class Sample_Action_Login extends Ethna_ActionClass
 
 例:
 
-$ vendor/bin/ethna add-action login
+$ vendor/bin/ethna add-action hello
 
 ```text
 see also: アクションスクリプトのスケルトンを生成する
@@ -91,21 +91,21 @@ Ethnaのビューは、以下のように動作します。
 * ビューオブジェクトはSmartyオブジェクトを生成し、必要な変数をSmartyオブジェクトに設定します
 * テンプレートを出力します
 
-次に、アクションクラスが返す遷移先(この場合'login'という遷移先)を定義します。
+次に、アクションクラスが返す遷移先(この場合'hello'という遷移先)を定義します。
 
-'login'という遷移名に対応するビュークラス`Sample_View_Login`を作成します。
+'hello'という遷移名に対応するビュークラス`Sample_View_Hello`を作成します。
 ビュークラスファイルは、アクションクラスと同様にapp/viewに以下のような命名規則で作成します
 
 * '_'をディレクトリで区切り
 * ファイル名は大文字で開始し
 
-login => app/view/Login.php
+hello => app/view/Hello.php
 
-app/view/Login.phpというファイルを以下のように作成します。
+app/view/Hello.phpというファイルを以下のように作成します。
 
 ```php
 <?php
-class Sample_View_Login extends Ethna_ViewClass
+class Sample_View_Hello extends Ethna_ViewClass
 {
     public function preforward()
     {
@@ -121,7 +121,7 @@ preforward()メソッドはテンプレート表示前に呼び出され、テ�
 例:
 
 ```
-$ vendor/bin/ethna add-view login
+$ vendor/bin/ethna add-view hello
 ```
 
 この時に-tオプションをつける事によって、同時にテンプレートのスケルトンファイルが生成されます。
@@ -129,7 +129,7 @@ $ vendor/bin/ethna add-view login
 例:
 
 ```
-$ vendor/bin/ethna add-view -t login
+$ vendor/bin/ethna add-view -t hello
 ```
 
 また、ビュークラスが不要な場合(単純にテンプレートを表示したい場合等)は、ビュークラスの記述を省略することも可能です。
@@ -138,7 +138,7 @@ $ vendor/bin/ethna add-view -t login
 
 次に、テンプレートファイルを作成します。
 
-テンプレートディレクトリは`template/ja_JP`ディレクトリなので、`template/ja_JP/login.tpl`を作成します。
+テンプレートディレクトリは`template/ja_JP`ディレクトリなので、`template/ja_JP/hello.tpl`を作成します。
 
 
 ```html
@@ -146,10 +146,10 @@ $ vendor/bin/ethna add-view -t login
 <html>
 <head>
   <meta charset="utf8">
-  <title>Please Login</title>
+  <title>Please Hello</title>
 </head>
 <body>
-Please Login<br />
+Please Hello<br />
 <form>
   <input type="text" name="mailaddress">
 </form>
@@ -161,7 +161,7 @@ current time: {$app.now}
 実際には、毎回アクションスクリプトを1から記述するのは煩雑なので、ethnaコマンドのadd-template オプションを利用して、スケルトンファイルを生成することも出来ます。
 
 ```
-$ vendor/bin/ethna add-template login
+$ vendor/bin/ethna add-template hello
 ```
 
 上記のとおり、テンプレートに{$app.foo}と記述すると、アクションクラス、あるいはビュークラスで
@@ -171,9 +171,9 @@ $this->af->setApp('foo', 'bar');
 
 以上でアクション、ビュー、テンプレートの追加は完了ですので、実際にアクセスして動作を確認します。
 
-http://example.com/?action_login=true
+http://example.com/?action_hello=true
 
-ログイン画面が表示されれば成功です。
+Hello画面が表示されれば成功です。
 
 
 もう少し複雑なアクションについては、次節アプリケーション構築手順(3)をご覧下さい。
