@@ -80,86 +80,64 @@ see also: アクションスクリプトの配置ディレクトリを変更す�
 see also: アクション定義省略時の命名規則を変更する
 ```
 
-## ビュー定義の追加(省略可)
+## ビュークラスファイルの追加(省略可)
 
 次に、アクションクラスが返す遷移先(この場合'login'という遷移先)を定義します。
 
 ```
-具体的には、Controllerに遷移先定義を追加します。app/Sample_Controller.phpを以下のように編集してください。
 
-/**
-*  @var    array   forward定義
-*/
-var $forward = array(
-/*
-*  TODO: ここにforward先を記述してください
-*
-*  記述例：
-*
-*  'index'         => array(
-*      'view_name' => 'Sample_View_Index',
-*  ),
-*/
-+    'login' => array(
-+        'view_name' => 'Sample_View_Login',
-+        'forward_path' => 'login.tpl'
-),
-);
-これで、'login'という遷移先にSample_View_Loginというビュークラスと、login.tplというテンプレートファイルが関連付けられます。
+なお、Ethnaのビューは、以下のように動作します。
 
-なお、Ethnaのビューは、以下のように構成されています。
-
-ethna-fig5.png
 Action Classは、実行中に取得したダイナミックな表示データをAction Formオブジェクトに格納します(Action Formオブジェクトはコンテナとして振舞います)
 アクションクラスは、コントローラに遷移先を返します
 コントローラは、アクションクラスから返された遷移先に基づいて、ビューオブジェクトを生成します
 ビューオブジェクトは、ダイナミックな表示データをアクションフォームから取得します
 ビューオブジェクトはSmartyオブジェクトを生成し、必要な変数をSmartyオブジェクトに設定します
 テンプレートを出力します
-なお、実際にビュー1つ作るたびにこのような定義を記述するのは煩雑なので、アクション定義と同様にビュー定義も省略することが可能です。
 
-see also: 遷移先定義を省略する
+'login'という遷移名に対応するビュークラス`Sample_View_Login`を作成します。
+ビュークラスファイルは、アクションクラスと同様にapp/viewに以下のような命名規則で作成します
 
-さらに、アクションクラス等と同様に、省略時のビュークラスやテンプレートファイル名の命名規則を変更することも可能です。
+* '_'をディレクトリで区切り
+* ファイル名は大文字で開始し
 
-see also: ビューの命名規則を変更する
+login => app/view/Login.php
 
-see also: テンプレートの命名規則を変更する
+app/view/Login.phpというファイルを以下のように作成します。
 
-(7) ビュークラスの記述
-ここでは、(6)で定義したビュークラスSample_View_Loginを作成します。ビュークラスを定義したファイル(ビュースクリプト、とでも呼んでおきます)は、アクションクラスと同様にapp/viewに以下のような命名規則で作成します('_'をディレクトリで区切り、ファイル名は大文字で開始します)。
-
-スクリプトファイル
-app/view/Login.php
-app/view/User/List/Add.php
-ですので、ここでは'login'という遷移名に対応するファイルを作成するのuser_list_addlogin遷移名user_list_addloginアクション名
-
-ですので、ここでは'login'という遷移名に対応するファイルを作成するので、app/view/Login.phpというファイルを以下のように作成します。
-
+```php
 <?php
 class Sample_View_Login extends Ethna_ViewClass
 {
-function preforward()
-{
-$this->af->setApp('now', strftime('%Y/%m/%d'));
+    public function preforward()
+    {
+        $this->af->setApp('now', strftime('%Y/%m/%d'));
+    }
 }
-}
-?>
+```
+
 preforward()メソッドはテンプレート表示前に呼び出され、テンプレートに関連した各種データ(セレクトボックスの表示項目等)を設定することが可能です。ここでは、コンテナに'now'という名前で現在時刻を格納しています。
 
 実際には、毎回ビュースクリプトを1から記述するのは煩雑なので、ethnaコマンドのadd-viewオプションを利用して、スケルトンファイルを生成することも出来ます。
 
 例:
 
-$ ethna add-view login
+```
+$ vendor/bin/ethna add-view login
+```
+
 この時に-tオプションをつける事によって、同時にテンプレートのスケルトンファイルが生成されます。
 
 例:
 
+```
 $ ethna add-view -t login
+```
+
 また、ビュークラスが不要な場合(単純にテンプレートを表示したい場合等)は、ビュークラスの記述を省略することも可能です。
 
-(8) テンプレートの記述
+## テンプレートファイルの作成
+
 次に、テンプレートファイルを作成します。テンプレートディレクトリはtemplate/jaディレクトリで、(6)で'login.tpl'をテンプレートファイルに指定しているので、template/ja/login.tplを作成します。
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
