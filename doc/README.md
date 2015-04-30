@@ -6,7 +6,8 @@
 *   チュートリアル
  *  [インストール](02-install.md)
  *  [ディレクトリ解説](03-directories.md)
- *  [アクション、ビュー、テンプレートを追加する](03-add-action-view-template.md)
+ *  [アクション、ビュー、テンプレートを追加する](04-add-action-view-template.md)
+ *  [実用的なアプリケーション開発](05-application.md)
 *   [ActionClass](ActionClass.md)
 *   [ActionForm](AcionForm.md)
 *   [ViewClass](ViewClass.md)
