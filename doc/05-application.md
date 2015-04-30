@@ -87,8 +87,7 @@ http://localhost/?action_login=true
 にアクセスしてログイン画面が表示されることを確認してください。
 
 
-ethna-fig7.jpg
-(11) ログインアクションの追加
+## ログインアクションの追加
 フォームがsubmitされた際に実行されるアクション「login_do」を前節(5)の場合と同様に追加します。
 
 $ ethna add-action login_do
