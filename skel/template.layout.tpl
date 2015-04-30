@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="{$config.url}css/ethna.css" type="text/css" />
+<link rel="stylesheet" href="/css/ethna.css" type="text/css" />
 <title>{$project_id}</title>
 </head>
 <body>
