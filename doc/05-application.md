@@ -72,16 +72,12 @@ template/ja/login.tpl
 ```
 
 
-通常のHTMLファイル(あるいはSmartyのテンプレートファイル)ですが、2点ほどEthna独自の点がありますのでここでご説明します。
+通常のHTMLファイル(=Smartyのテンプレートファイル)ですが、1点Ethnam独自の点があります。
 
-{$script}はテンプレート表示前にEthnaフレームワークが設定する変数で、現在実行中のPHPスクリプトを表します(Ethna_ViewClass::_getTemplateEngine()をご参照下さい)
-もちろん、/index.phpで全てを処理する場合は、action="/"と記述しても全く問題ありません
-hiddenタグの"action_login_do"は、このフォームをsubmitした際に、「login_do」というアクションを実行することを表します
+hiddenタグの"action_login_do"は、このフォームをsubmitした際に、「login_do」というアクションを実行することを意味します。
 「login_do」というはStrutsの慣習をそのまま使っているだけなので、「login」と重ならなければ「login_exec」でも「login_submit」でも何でも構いません
-Smartyテンプレートの詳細については
 
-Smarty : Template Engine (和訳)
-などを見てください。
+Smartyの使い方については[Smartyのドキュメント]()を見てください。
 
 以上で準備は完了です。
 
