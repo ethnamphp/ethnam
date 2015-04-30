@@ -1,4 +1,4 @@
-# アプリケーションの構築
+# アプリケーションの構築(Hello画面)
 
 http://ethna.jp/old/ethna-document-tutorial-practice2.html
 
