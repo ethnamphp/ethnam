@@ -28,7 +28,7 @@ cd sample
 ```json
 {
   "require": {
-    "dqneo/ethnam": "2.23.7",
+    "dqneo/ethnam": "2.23.11",
     "smarty/smarty": "2.6.*"
   }
 }
