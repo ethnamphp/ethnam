@@ -129,17 +129,19 @@ $ vendor/bin/ethna add-view login
 例:
 
 ```
-$ ethna add-view -t login
+$ vendor/bin/ethna add-view -t login
 ```
 
 また、ビュークラスが不要な場合(単純にテンプレートを表示したい場合等)は、ビュークラスの記述を省略することも可能です。
 
 ## テンプレートファイルの作成
 
-次に、テンプレートファイルを作成します。テンプレートディレクトリはtemplate/jaディレクトリで、(6)で'login.tpl'をテンプレートファイルに指定しているので、template/ja/login.tplを作成します。
+次に、テンプレートファイルを作成します。
 
-```
+テンプレートディレクトリは`template/ja_JP`ディレクトリなので、`template/ja_JP/login.tpl`を作成します。
 
+
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head></head>
@@ -148,25 +150,27 @@ Login View<br />
 current time: {$app.now}
 </body>
 </html>
+```
+
 実際には、毎回アクションスクリプトを1から記述するのは煩雑なので、ethnaコマンドのadd-template オプションを利用して、スケルトンファイルを生成することも出来ます。
 
-$ ethna add-template login
+```
+$ vendor/bin/ethna add-template login
+```
+
 上記のとおり、テンプレートに{$app.foo}と記述すると、アクションクラス、あるいはビュークラスで
 
 $this->af->setApp('foo', 'bar');
 として設定した値にアクセスすることが出来ます。
 
-なお、テンプレートディレクトリを変更することも可能です。
-
-see also: テンプレートディレクトリを変更する
-
 (9) 確認
 以上でアクションの追加は完了ですので、実際にアクセスして動作を確認します。
 
-http://some.host/~foo/?action_login=true
-(4)〜(8)で定義した通りに、以下のような画面が表示されれば成功です。
+http://example.com/?action_login=true
+
+ログイン画面が表示されれば成功です。
+
 ```
 
-ethna-fig6.jpg
 もう少し複雑なアクションについては、次節アプリケーション構築手順(3)をご覧下さい。
 
