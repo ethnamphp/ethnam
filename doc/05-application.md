@@ -40,10 +40,12 @@ vendor/bin/ethna add-view -t login
 
 ## ログイン画面の変更
 
-まず、前節(8)で作成したテンプレートファイル(template/ja/login.tpl)をもうちょっとログイン画面っぽいものに作り変えておきます。具体的には以下のようにしてみます。
+作成したテンプレートファイル(template/ja/login.tpl)をもうちょっとログイン画面っぽいものに作り変えましょう。
+
+具体的には以下のようにしてみます。
 
 template/ja/login.tpl:
-
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head></head>
@@ -66,6 +68,9 @@ template/ja/login.tpl:
 </form>
 </body>
 </html>
+```
+
+
 通常のHTMLファイル(あるいはSmartyのテンプレートファイル)ですが、2点ほどEthna独自の点がありますのでここでご説明します。
 
 {$script}はテンプレート表示前にEthnaフレームワークが設定する変数で、現在実行中のPHPスクリプトを表します(Ethna_ViewClass::_getTemplateEngine()をご参照下さい)
@@ -79,8 +84,10 @@ Smarty : Template Engine (和訳)
 
 以上で準備は完了です。
 
-http://some.host/~foo/?action_login=true
+http://localhost/?action_login=true
+
 にアクセスしてログイン画面が表示されることを確認してください。
+
 
 ethna-fig7.jpg
 (11) ログインアクションの追加
