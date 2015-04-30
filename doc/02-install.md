@@ -52,5 +52,5 @@ vendor/bin/ethna add-project -b . Sample
 php -t www -S 0:8080
 ```
 
-ブラウザで`http://localhost:8080/` にアクセスして Hello Wolrdの画面が表示されたらOKです。
+ブラウザで`http://localhost:8080/` にアクセスして "Welcome to Ethnam!"の画面が表示されたらOKです。
 
