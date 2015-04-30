@@ -67,7 +67,6 @@ EOD;
             exit(2);
         }
         array_shift($arg_list);  // remove "command.php"
-        $app_controller = self::getAppController(getcwd());
 
         $handle = $this;
 

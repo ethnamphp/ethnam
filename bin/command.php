@@ -8,7 +8,11 @@
  *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
  *  @package    Ethna
  */
-require_once __DIR__ . '/../bootstrap.php';
+$binDir = __DIR__;
+$ethnamDir = $binDir . '/..';
+$vendorDir = $ethnamDir . '/../..';
+
+require_once  $vendorDir . '/autoload.php';
 
 $handle = new Ethna_Command();
 $handle->run();
