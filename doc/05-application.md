@@ -47,27 +47,27 @@ vendor/bin/ethna add-view -t login
 template/ja/login.tpl
 
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-<head></head>
-<body>
-<form action="{$script}" method="post">
-<input type="hidden" name="action_login_do" value="dummy">
-<table border="0">
-<tr>
-<td>メールアドレス</td>
-<td><input type="text" name="mailaddress" value=""></td>
-</tr>
-<tr>
-<td>パスワード</td>
-<td><input type="password" name="password" value=""></td>
-</tr>
-</table>
-<p>
-<input type="submit" name="action_login_do" value="ログイン">
-</p>
-</form>
-</body>
+  <head></head>
+  <body>
+    <form action="." method="post">
+      <input type="hidden" name="action_login_do" value="dummy">
+      <table border="0">
+        <tr>
+          <td>メールアドレス</td>
+          <td><input type="text" name="mailaddress" value=""></td>
+        </tr>
+        <tr>
+          <td>パスワード</td>
+          <td><input type="password" name="password" value=""></td>
+        </tr>
+      </table>
+      <p>
+      <input type="submit" name="action_login_do" value="ログイン">
+      </p>
+    </form>
+  </body>
 </html>
 ```
 
