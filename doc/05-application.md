@@ -121,16 +121,16 @@ public function perform()
 
 認証を行うためには、フォームから送信された値を取得する必要があります。そのためには、アクションクラスと1対1で生成されるアクションフォームというオブジェクトを利用します。アクションフォームのクラス定義は、`ethna add-action`を実行すると、アクションクラスと同時に生成されていますので、まずは何も考えず、`app/action/Login/Do.php`に以下のようなコードを追加してみてください。
 
-`app/action/Login/Do.php`
+app/action/Login/Do.php
 
 ```diff
-public $form = array(
+    public $form = array(
 +     'mailaddress' => array(
 +         'type'          => VAR_TYPE_STRING,
 +     ),
 ...
-public function perform()
-{
+    public function perform()
+    {
 +     echo $this->af->get('mailaddress');
 ```
 
