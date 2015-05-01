@@ -1,14 +1,8 @@
 <?php
 /**
- *  ethna_handle.php
+ *  Ethna Command
  *
- *  Ethna Handle Gateway
- *
- *  @author     Masaki Fujimoto <fujimoto@php.net>
- *  @license    http://www.opensource.org/licenses/bsd-license.php The BSD License
- *  @package    Ethna
  */
-
  // suppose this file is located at 'project/vendor/dqneo/ethnam/bin/command.php'
 $binDir = __DIR__;
 $ethnamDir = $binDir . '/..';
