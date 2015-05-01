@@ -90,18 +90,23 @@ http://localhost/?action_login=true
 ## ログインアクションの追加
 フォームがsubmitされた際に実行されるアクション「login_do」を前節(5)の場合と同様に追加します。
 
-$ ethna add-action login_do
-generating action script for [login_do]...
-action script(s) successfully created [/tmp/sample/app/action/Login/Do.php]
-この状態ではやはり'login_do'という遷移名を返すだけのアクションになっています。実際には'login_do'という遷移名は不要なので、以下のように変更しておきます。
+```
+$ vendor/bin/ethna add-action login_do
+```
+
+生成されたファイルの中を見ると、'login_do'という遷移名を返すだけのアクションになっています。
+今回のケースでは'login_do'というビューは不要なので、以下のように変更しておきます。
 
 app/action/Login/Do.php:
 
-66     function perform()
-67     {
-68   -     return 'login_do';
-68   +     return 'index';
-69     }
+```php
+public function perform()
+{
+-     return 'login_do';
++     return 'index';
+}
+```
+
 以上の状態で、ログインボタンを押すと
 
 コントローラがlogin_doアクションを実行します
