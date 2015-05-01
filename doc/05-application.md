@@ -223,7 +223,7 @@ see also: [フォーム値のバリデーションを行う]
 
 と記述すればOKです。ですのでここではlogin.tplを以下のように変更します。
 
-template/ja/login.tpl:
+template/ja_JP/login.tpl:
 
 ```diff
     <tr>
@@ -246,7 +246,7 @@ template/ja/login.tpl:
 
 まず全てのエラーメッセージを表示させてみます。エラーメッセージは配列として{$errors}というSmarty変数に割り当てられていますので:
 
-template/ja/login.tpl:
+template/ja_JP/login.tpl:
 
 ```diff
  <body>
@@ -263,7 +263,7 @@ template/ja/login.tpl:
 
 また、特定のフォーム名に対応するエラーメッセージを表示させるには、Ethnaフレームワークの提供するSmarty関数"message"を利用します。
 
-template/ja/login.tpl:
+template/ja_JP/login.tpl:
 
 ```html
     <tr>
