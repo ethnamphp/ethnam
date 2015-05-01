@@ -28,8 +28,8 @@ cd sample
 ```json
 {
   "require": {
-    "dqneo/ethnam": "2.23.*",
-    "smarty/smarty": "2.6.*"
+    "dqneo/ethnam": "dev-master",
+    "smarty/smarty": "2.6.28"
   }
 }
 ```
