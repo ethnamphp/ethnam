@@ -124,14 +124,14 @@ public function perform()
 app/action/Login/Do.php:
 
 ```diff
-     public $form = array(
-   +     'mailaddress' => array(
-   +         'type'          => VAR_TYPE_STRING,
-   +     ),
+public $form = array(
++     'mailaddress' => array(
++         'type'          => VAR_TYPE_STRING,
++     ),
 ...
-     function perform()
-     {
-   +     echo $this->af->get('mailaddress');
+public function perform()
+{
++     echo $this->af->get('mailaddress');
 ```
 
 以上の状態で、フォームの「メールアドレス」に適当な文字を入力してsubmitすると、その値が表示されるかと思います。
