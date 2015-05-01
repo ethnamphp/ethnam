@@ -232,7 +232,7 @@ see also: 自動検証のエラーメッセージをカスタマイズする
 基本的にはほぼ全ての処理はアプリケーションの核となるクラス(app/manager/, app/model/以下に置かれるクラス)に記述し、アクションクラスはそれらを単純に呼び出すのみ、というイメージです。例えば
 
 ```php
-public perform()
+public function perform()
 {
     // メールアドレスをキーにしてユーザオブジェクトを生成
     $user = new User($this->backend, $this->af->get('mailaddress'));
