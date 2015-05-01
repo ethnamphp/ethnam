@@ -23,12 +23,25 @@ public function perform()
 }
 ```
 
-というようになります。
+のようにするか、またはMangerを使って
 
-このような設計にする主な目的は
+```php
+public function perform()
+{
+    $um = $this->backend->getManager('user');
+
+    // 認証処理
+    $result = $um->auth($this->af->get('mailaddress'), $this->af->get('password'));
+    // 以降結果によってビューを変更、等...
+}
+```
+
+というようにするのがよいでしょう。
+
+なぜこのようにするのかというと、
 
 * 各アクション/ビュークラス間でのコードの重複を防ぐ
 * ビジネスロジックの再利用性を高める
 * 単体テストを書きやすくする
 
-です。
+などが目的です。
