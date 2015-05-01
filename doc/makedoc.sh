@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -e
 
-if type gsed ; then
+if type gsed >/dev/null ; then
     sed=gsed
 else
     sed=sed
@@ -9,6 +9,5 @@ fi
 
 for file in *.md
 do
-    echo "file==$file"
-    head -n 1 $file | grep "README" || $sed -i -e "1i hoge" $file
+    head -n 1 $file | grep "README" >/dev/null || $sed -i -e "1i [UP](README.md)" $file
 done
