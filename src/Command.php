@@ -113,7 +113,7 @@ EOD;
      *
      *  @access public
      */
-    private function getSubcommandPlugin($subCommand)
+    public function getSubcommandPlugin($subCommand)
     {
         $name = preg_replace_callback('/\-(.)/', function($matches){
                 return strtoupper($matches[1]);
