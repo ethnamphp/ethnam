@@ -90,25 +90,25 @@ EOD;
             $subCommand = array_shift($arg_list);
         }
 
-        $handler = $this->getHandler($subCommand);
-        $handler->eh = $this;
-        if (Ethna::isError($handler)) {
+        $subCommandPlugin = $this->getSubcommandPlugin($subCommand);
+        $subCommandPlugin->eh = $this;
+        if (Ethna::isError($subCommandPlugin)) {
             printf("no such command: %s\n\n", $subCommand);
             $subCommand = 'help';
-            $handler = $this->getHandler($subCommand);
-            $handler->eh = $this;
-            if (Ethna::isError($handler)) {
+            $subCommandPlugin = $this->getSubcommandPlugin($subCommand);
+            $subCommandPlugin->eh = $this;
+            if (Ethna::isError($subCommandPlugin)) {
                 exit(1);  //  should not happen.
             }
         }
 
         // don't know what will happen:)
-        $handler->setArgList($arg_list);
-        $r = $handler->perform();
+        $subCommandPlugin->setArgList($arg_list);
+        $r = $subCommandPlugin->perform();
         if (Ethna::isError($r)) {
             printf("error occured w/ command [%s]\n  -> %s\n\n", $subCommand, $r->getMessage());
             if ($r->getCode() == 'usage') {
-                $handler->usage();
+                $subCommandPlugin->usage();
             }
             exit(1);
         }
@@ -121,7 +121,7 @@ EOD;
      *
      *  @access public
      */
-    public function getHandler($subCommand)
+    public function getSubcommandPlugin($subCommand)
     {
         $name = preg_replace_callback('/\-(.)/', function($matches){
                 return strtoupper($matches[1]);
