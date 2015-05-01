@@ -224,7 +224,7 @@ ethna-fig9.png
 perform()
 {
     // メールアドレスをキーにしてユーザオブジェクトを生成
-    $user =& new Sample_User($this->backend, $this->af->get('mailaddress'));
+    $user = new Sample_User($this->backend, $this->af->get('mailaddress'));
     // 認証処理
     $result = $user->auth($this->af->get('password');
     // 以降結果によってビューを変更、等...
