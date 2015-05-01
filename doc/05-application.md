@@ -44,7 +44,7 @@ vendor/bin/ethna add-view -t login
 
 具体的には以下のようにしてみます。
 
-template/ja/login.tpl
+template/ja_JP/login.tpl
 
 ```html
 <!DOCTYPE html>
