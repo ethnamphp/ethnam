@@ -40,7 +40,7 @@ vendor/bin/ethna add-view -t login
 
 ## ログイン画面の変更
 
-作成したテンプレートファイル(template/ja/login.tpl)をもうちょっとログイン画面っぽいものに作り変えましょう。
+作成したテンプレートファイル(`template/ja_JP/login.tpl`)をもうちょっとログイン画面っぽいものに作り変えましょう。
 
 具体的には以下のようにしてみます。
 
