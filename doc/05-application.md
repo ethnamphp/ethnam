@@ -49,7 +49,10 @@ template/ja/login.tpl
 ```html
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta charset="utf-8">
+    <title>ログイン画面</title>
+  </head>
   <body>
     <form action="." method="post">
       <input type="hidden" name="action_login_do" value="dummy">
