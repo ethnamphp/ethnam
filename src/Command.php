@@ -22,10 +22,6 @@ Copyright (c) 2004-%s, @DQNEO and Ethna commiters
 
 EOD;
 
-    /**#@+
-     *  @access     private
-     */
-
     /** @protected    object  Ethna_Controller    controllerオブジェクト */
     protected $controller;
 
