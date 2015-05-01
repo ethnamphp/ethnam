@@ -37,8 +37,6 @@ class {$action_form} extends {$project_id}_ActionForm
         *      'min'         => null,            // Minimum value
         *      'max'         => null,            // Maximum value
         *      'regexp'      => null,            // String by Regexp
-        *      'mbregexp'    => null,            // Multibype string by Regexp
-        *      'mbregexp_encoding' => 'UTF-8',   // Matching encoding when using mbregexp
         *
         *      //  Filter
         *      'filter'      => 'sample',        // Optional Input filter to convert input
@@ -103,4 +101,3 @@ class {$action_class} extends {$project_id}_ActionClass
         return '{$action_name}';
     }
 }
-

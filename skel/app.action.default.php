@@ -39,8 +39,6 @@ class {$project_id}_Form_Index extends {$project_id}_ActionForm
         *      'min'         => null,            // Minimum value
         *      'max'         => null,            // Maximum value
         *      'regexp'      => null,            // String by Regexp
-        *      'mbregexp'    => null,            // Multibype string by Regexp
-        *      'mbregexp_encoding' => 'UTF-8',   // Matching encoding when using mbregexp
         *
         *      //  Filter
         *      'filter'      => 'sample',        // Optional Input filter to convert input
@@ -104,4 +102,3 @@ class {$project_id}_Action_Index extends {$project_id}_ActionClass
         return 'index';
     }
 }
-
