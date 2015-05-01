@@ -68,11 +68,9 @@ EOD;
         }
         array_shift($arg_list);  // remove "command.php"
 
-        $handle = $this;
-
         //  はじめの引数に - が含まれていればそれを分離する
         //  含まれていた場合、それは -v|--version でなければならない
-        list($my_arg_list, $arg_list) = $handle->separateArgList($arg_list);
+        list($my_arg_list, $arg_list) = $this->separateArgList($arg_list);
         $r = $opt->getopt($my_arg_list, "v", array("version"));
         if (Ethna::isError($r)) {
             $subCommand = 'help';
@@ -92,13 +90,13 @@ EOD;
             $subCommand = array_shift($arg_list);
         }
 
-        $handler = $handle->getHandler($subCommand);
-        $handler->eh = $handle;
+        $handler = $this->getHandler($subCommand);
+        $handler->eh = $this;
         if (Ethna::isError($handler)) {
             printf("no such command: %s\n\n", $subCommand);
             $subCommand = 'help';
-            $handler = $handle->getHandler($subCommand);
-            $handler->eh = $handle;
+            $handler = $this->getHandler($subCommand);
+            $handler->eh = $this;
             if (Ethna::isError($handler)) {
                 exit(1);  //  should not happen.
             }
