@@ -8,7 +8,7 @@
  */
 
 /**
- *  Manager class of Ethna (Command Line) Handlers
+ *  Ethna Command
  *
  *  @author     Masaki Fujimoto <fujimoto@php.net>
  *  @access     public
