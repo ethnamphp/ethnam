@@ -125,13 +125,13 @@ app/action/Login/Do.php
 
 ```diff
     public $form = array(
-+     'mailaddress' => array(
-+         'type'          => VAR_TYPE_STRING,
-+     ),
++       'mailaddress' => array(
++           'type'          => VAR_TYPE_STRING,
++       ),
 ...
     public function perform()
     {
-+     echo $this->af->get('mailaddress');
++       echo $this->af->get('mailaddress');
 ```
 
 以上の状態で、フォームの「メールアドレス」に適当な文字を入力してsubmitすると、その値が表示されるかと思います。
