@@ -55,7 +55,6 @@ template/ja/login.tpl
   </head>
   <body>
     <form action="." method="post">
-      <input type="hidden" name="action_login_do" value="dummy">
       <table border="0">
         <tr>
           <td>メールアドレス</td>
@@ -77,8 +76,8 @@ template/ja/login.tpl
 
 通常のHTMLファイル(=Smartyのテンプレートファイル)ですが、1点Ethnam独自の点があります。
 
-hiddenタグの"action_login_do"は、このフォームをsubmitした際に、「login_do」というアクションを実行することを意味します。
-「login_do」というはStrutsの慣習をそのまま使っているだけなので、「login」と重ならなければ「login_exec」でも「login_submit」でも何でも構いません
+submitボタンの"name=action_login_do"は、このフォームをsubmitした際に、「login_do」というアクションを実行することを意味します。
+「login_do」というはStrutsの慣習をそのまま使っているだけなので、「login」と重ならなければ「login_exec」でも「login_submit」でも何でも構いません。
 
 Smartyの使い方については[Smartyのドキュメント](http://www.smarty.net/docsv2/ja/index.tpl)を見てください。
 なお、EthnamがサポートしているのはSmarty v2のみです。v3はサポートしていません。
