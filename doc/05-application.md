@@ -79,8 +79,6 @@ template/ja/login.tpl
 submitボタンの"name=action_login_do"は、このフォームをsubmitした際に、「login_do」というアクションを実行することを意味します。
 「login_do」というはStrutsの慣習をそのまま使っているだけなので、「login」と重ならなければ「login_exec」でも「login_submit」でも何でも構いません。
 
-Smartyの使い方については[Smartyのドキュメント](http://www.smarty.net/docsv2/ja/index.tpl)を見てください。
-なお、EthnamがサポートしているのはSmarty v2のみです。v3はサポートしていません。
 
 以上で準備は完了です。
 

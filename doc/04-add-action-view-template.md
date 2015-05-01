@@ -190,3 +190,6 @@ $this->af->setApp('foo', 'bar');
 
 として値を設定すると、テンプレート側で`{$app.foo}`として値を取得することができます。
 
+Smartyの使い方については[Smartyのドキュメント](http://www.smarty.net/docsv2/ja/index.tpl)を見てください。
+(なお、EthnamがサポートしているのはSmarty v2のみです。v3はサポートしていません。)
+
