@@ -99,7 +99,7 @@ $ vendor/bin/ethna add-action login_do
 
 app/action/Login/Do.php:
 
-```php
+```diff
 public function perform()
 {
 -     return 'login_do';
