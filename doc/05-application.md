@@ -231,7 +231,8 @@ template/ja_JP/login.tpl:
  -   <td><input type="text" name="mailaddress" value=""></td>
  +   <td><input type="text" name="mailaddress" value="{$form.mailaddress}"></td>
     </tr>
-    ```
+```
+
 この状態で、メールアドレスのみを入力してsubmitすると、(パスワードが入力されていないのでエラーにはなりますが)メールアドレスのフォーム値が失われずに表示されていると思います。
 
 なお、{$form.*}で表示される値は常にエスケープされていますので、サニタイズ等は考慮する必要はありません。*2
