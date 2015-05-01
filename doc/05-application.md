@@ -151,36 +151,44 @@ app/action/Login/Do.php
 アクションスクリプトのスケルトンを生成すると、アクションフォームに以下のようなコメントも生成されているかと思います。
 
 ```php
-27         /*
-28         'sample' => array(
-29             'name'          => 'サンプル',      // 表示名
-30             'required'      => true,            // 必須オプション(true/false)
-31             'min'           => null,            // 最小値
-32             'max'           => null,            // 最大値
-33             'regexp'        => null,            // 文字種指定(正規表現)
-34             'custom'        => null,            // メソッドによるチェック
-35             'filter'        => null,            // 入力値変換フィルタオプション
-36             'form_type'     => FORM_TYPE_TEXT   // フォーム型
-37             'type'          => VAR_TYPE_INT,    // 入力値型
-38         ),
-39         */
+         /*
+         'sample' => array(
+             'name'          => 'サンプル',      // 表示名
+             'required'      => true,            // 必須オプション(true/false)
+             'min'           => null,            // 最小値
+             'max'           => null,            // 最大値
+             'regexp'        => null,            // 文字種指定(正規表現)
+             'custom'        => null,            // メソッドによるチェック
+             'filter'        => null,            // 入力値変換フィルタオプション
+             'form_type'     => FORM_TYPE_TEXT   // フォーム型
+             'type'          => VAR_TYPE_INT,    // 入力値型
+         ),
+         */
 ```
 
 上記のように、各フォーム値には'name'〜'type'まで計9つの属性を設定することが出来ます(必須なのは'type'のみです)。Ethnaでは、ここで設定されら属性を利用したフォーム値の自動検証機能を提供しています。
 
-ここで先ほどのフォーム => 'パスワード',
+ここで先ほどのフォーム値'mailaddress'を利用して実際に試してみます。まず、先ほどの'mailaddress'の属性を下記のように変更します。
 
-```php
-31  +          'required'      => true,
-32  +          'type'          => VAR_TYPE_STRING,
-33  +      ),
+```diff
+       'mailaddress' => array(
++          'name'          => 'メールアドレス',
++          'required'      => true,
+           'type'          => VAR_TYPE_STRING,
+       ),
++      'password' => array(
++          'name'          => 'パスワード',
++          'required'      => true,
++          'type'          => VAR_TYPE_STRING,
++      ),
 ```
 
 これは、フォーム値'mailaddress'の表示名が「メールアドレス」であり、また入力が必須であることを示しています。ついでにpasswordも必須としてしまいます。
 
+
 次に、アクションクラスで自動入力処理を行います。具体的には、アクションクラスのprepare()メソッドに以下のような処理を追加します。
 
-```php
+```diff
    public function prepare()
    {
 +      if ($this->af->validate() > 0) {
