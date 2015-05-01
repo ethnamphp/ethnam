@@ -83,16 +83,16 @@ EOD;
         }
 
         $subCommandPlugin = $this->getSubcommandPlugin($subCommand);
-        $subCommandPlugin->eh = $this;
         if (Ethna::isError($subCommandPlugin)) {
             printf("no such command: %s\n\n", $subCommand);
             $subCommand = 'help';
             $subCommandPlugin = $this->getSubcommandPlugin($subCommand);
-            $subCommandPlugin->eh = $this;
             if (Ethna::isError($subCommandPlugin)) {
                 exit(1);  //  should not happen.
             }
         }
+
+        $subCommandPlugin->eh = $this;
 
         // don't know what will happen:)
         $subCommandPlugin->setArgList($arg_list);
