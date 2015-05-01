@@ -180,11 +180,11 @@ public function perform()
 次に、アクションクラスで自動入力処理を行います。具体的には、アクションクラスのprepare()メソッドに以下のような処理を追加します。
 
 ```php
-65     function prepare()
-66     {
-67  +      if ($this->af->validate() > 0) {
-68  +          return 'login';
-69  +      }
+   public function prepare()
+   {
++      if ($this->af->validate() > 0) {
++          return 'login';
++      }
 ```
 
 アクションフォームのvalidate()メソッドは、定義に従ってフォーム値を自動検証し、検出したエラーの数を戻り値として返します(発生したエラーの扱い等については後述します)。
@@ -221,7 +221,7 @@ ethna-fig9.png
 基本的にはほぼ全ての処理はアプリケーションの核となるクラス(app/manager/, app/model/以下に置かれるクラス)に記述し、アクションクラスはそれらを単純に呼び出すのみ、というイメージです。例えば
 
 ```php
-perform()
+public perform()
 {
     // メールアドレスをキーにしてユーザオブジェクトを生成
     $user = new Sample_User($this->backend, $this->af->get('mailaddress'));
