@@ -127,12 +127,7 @@ EOD;
                 return strtoupper($matches[1]);
                     }, ucfirst($subCommand));
 
-        $handler = $this->plugin->getPlugin('Subcommand', $name);
-        if (Ethna::isError($handler)) {
-            return $handler;
-        }
-
-        return $handler;
+        return $this->plugin->getPlugin('Subcommand', $name);
     }
     // }}}
 
