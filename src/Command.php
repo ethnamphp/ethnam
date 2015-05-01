@@ -29,9 +29,6 @@ EOD;
     /** @protected    object  Ethna_Controller    controllerオブジェクト */
     protected $controller;
 
-    /** @protected    object  Ethna_Controller    controllerオブジェクト($controllerの省略形) */
-    protected $ctl;
-
     /** @protected    object  Ethna_Pluguin       pluginオブジェクト */
     protected $plugin;
 
@@ -48,7 +45,6 @@ EOD;
         $this->controller = new Ethna_Controller(GATEWAY_CLI);
         Ethna::clearErrorCallback();
 
-        $this->ctl = $this->controller;
         $this->plugin = $this->controller->getPlugin();
     }
     // }}}
