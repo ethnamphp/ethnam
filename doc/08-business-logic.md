@@ -10,6 +10,8 @@
 
 例えば
 
+app/action/Login/Do.php
+
 ```php
 public function perform()
 {
