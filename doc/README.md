@@ -9,6 +9,8 @@
  *  [アクション、ビュー、テンプレートを追加する](04-add-action-view-template.md)
  *  [実用的なアプリケーション開発 1 ログイン画面](05-login-form.md)
  *  [実用的なアプリケーション開発 2 ログイン処理](06-login-do.md)
+ *  [実用的なアプリケーション開発 3 バリデーションエラー](07-login-validation-error.md)
+ *  [実用的なアプリケーション開発 4 ビジネスロジック](08-business-logic.md)
 *   [ActionClass](ActionClass.md)
 *   [ActionForm](AcionForm.md)
 *   [ViewClass](ViewClass.md)
@@ -25,9 +27,9 @@
 *   unittest
 
 # Ethnam開発者向け
-*   [Ethna本家との関係](99-relationship-with-ethna.md)
 *   [リリースルール](90-release.md)
 *   [UnitTest](98-unittest.md)
+*   [Ethna本家との関係](99-relationship-with-ethna.md)
 
 # Ethnaドキュメント
 * http://ethna.jp/doc/index.html
