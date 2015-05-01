@@ -7,16 +7,16 @@ http://ethna.jp/old/ethna-document-tutorial-practice3.html
 
 ## Ethnamでアプリケーションを開発するとは
 
-* アクションクラスを作って
+* アクションクラスファイルを作って
 * アクションフォームを定義して
-* アクションクラスからモデルクラスを呼び出して
+* アクションクラスからビジネスロジックを呼び出して
 * 出力(画面表示や画面遷移)を行う
 
 ことになります。
 
 アクションクラスは、`app/action/` 以下に作ります。
-モデルクラスは、`app/model/` 以下に作ります。
-出力は、ビュークラスとSmartyによって行うか、`symfony/httpfoundations`の`Response`クラスを使って行います。
+ビジネスロジックは、マネジャークラス`app/manager`やモデルクラス`app/model/` として実装します。
+出力は、ビュークラスとSmartyによって行うか、または`symfony/http-foundations`の`Response`クラスを使って行います。
 
 
 ## ログイン機能を作ってみる
