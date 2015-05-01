@@ -13,5 +13,5 @@ do
         break;
     fi
 
-    head -n 1 $file | grep "README" >/dev/null || $sed -i -e "1i [UP](README.md)" $file
+    head -n 1 $file | grep "README" >/dev/null || $sed -i -e "1i [[目次](README.md)]" $file
 done
