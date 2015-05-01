@@ -1,7 +1,5 @@
 # Ethnamドキュメント目次
 
-# 目次的
-
 *   [概要](01-intro.md)
 *   チュートリアル
  *  [インストール](02-install.md)
@@ -26,11 +24,11 @@
 *   plugin
 *   unittest
 
-# Ethnam開発者向け
+## Ethnam開発者向け
 *   [リリースルール](90-release.md)
 *   [UnitTest](98-unittest.md)
 *   [Ethna本家との関係](99-relationship-with-ethna.md)
 
-# Ethnaドキュメント
+## (参考)Ethnaドキュメント
 * http://ethna.jp/doc/index.html
 * http://ethna.jp/old/
