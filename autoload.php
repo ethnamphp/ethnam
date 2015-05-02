@@ -4,16 +4,18 @@
  *  Ethna_* クラス群のオートロード
  */
 spl_autoload_register(function($className){
-    //Ethnaクラス
-    if ($className === 'Ethna') {
-        include_once __DIR__ . '/src/Ethna.php';
-    }
 
+    //'ethnam-generator'パッケージに所属するクラス群
     if (strpos($className, 'Ethna_Plugin_Subcommand') === 0 ||
         strpos($className, 'Ethna_Plugin_Generator') === 0
     ) {
         //skip
         return;
+    }
+
+    //Ethnaクラス
+    if ($className === 'Ethna') {
+        include_once __DIR__ . '/src/Ethna.php';
     }
 
     //Ethna_*クラス
