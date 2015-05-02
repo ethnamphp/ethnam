@@ -9,6 +9,13 @@ spl_autoload_register(function($className){
         include_once __DIR__ . '/src/Ethna.php';
     }
 
+    if (strpos($className, 'Ethna_Command') === 0 ||
+        strpos($className, 'Ethna_Plugin_Subcommand') === 0
+    ) {
+        //skip
+        return;
+    }
+
     //Ethna_*クラス
     //単純に_区切りをディレクトリ区切りにマッピングする
     if (strpos($className, 'Ethna_') === 0) {
