@@ -6,8 +6,8 @@
 spl_autoload_register(function($className){
 
     //'ethnam-generator'パッケージに所属するクラス群
-    if (strpos($className, 'Ethna_Plugin_Subcommand') === 0 ||
-        strpos($className, 'Ethna_Plugin_Generator') === 0
+    if (strpos($className, 'Ethna_Plugin_Subcommand_') === 0 ||
+        strpos($className, 'Ethna_Plugin_Generator_') === 0
     ) {
         //skip
         return;
