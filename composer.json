@@ -15,9 +15,6 @@
   "require-dev" : {
     "phpunit/phpunit": "3.7.*"
   },
-  "bin" : [
-    "bin/ethna"
-  ],
   "autoload": {
     "files": [ "bootstrap.php" ]
   }
