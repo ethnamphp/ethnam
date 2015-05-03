@@ -1,4 +1,10 @@
 # 変更点一覧
+## 3.0での変更点
+* [core] `ethna`コマンド一式(Ethna_Comman, Subcommandプラグイン, Generatorプラグイン, 全skelファイル)をethnam-generatorパッケージに分離。`ethnam-generate`コマンドに名称変更。
+* [core] Ethna_ControllerのcheckAppId, checkActionName, checkViewNameをethnam-generatorに移管。
+
+
+
 ## 2.23での変更点
 * [core]`ethna`コマンドを修正。add-projectが動くようになりました。
 * [view] Smarty3のサポートを廃止
