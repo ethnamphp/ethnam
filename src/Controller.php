@@ -281,34 +281,6 @@ class Ethna_Controller
     }
 
     /**
-     *  アプリケーションIDをチェックする
-     *
-     *  @access public
-     *  @param  string  $id     アプリケーションID
-     *  @return mixed   true:OK Ethna_Error:NG
-     *  @static
-     */
-    public static function checkAppId($id)
-    {
-        $true = true;
-        if (strcasecmp($id, 'ethna') === 0
-            || strcasecmp($id, 'app') === 0) {
-            return Ethna::raiseError("Application Id [$id] is reserved\n");
-        }
-
-        //    アプリケーションIDはクラス名のprefixともなるため、
-        //    数字で始まっていてはいけない
-        //    @see http://www.php.net/manual/en/language.variables.php
-        if (preg_match('/^[a-zA-Z][a-zA-Z0-9]*$/', $id) === 0) {
-            $msg = (preg_match('/^[0-9]$/', $id[0]))
-                 ? "Application ID must NOT start with Number.\n"
-                 : "Only Numeric(0-9) and Alphabetical(A-Z) is allowed for Application Id\n";
-            return Ethna::raiseError($msg);
-        }
-        return $true;
-    }
-
-    /**
      *  DSNを返す
      *
      *  @access public
