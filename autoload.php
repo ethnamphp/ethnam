@@ -4,7 +4,6 @@
  *  Ethna_* クラス群のオートロード
  */
 spl_autoload_register(function($className){
-
     //Ethnaクラス
     if ($className === 'Ethna') {
         include_once __DIR__ . '/src/Ethna.php';
