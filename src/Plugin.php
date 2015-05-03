@@ -138,6 +138,9 @@ class Ethna_Plugin
 
             // プラグインの親クラスを(存在すれば)読み込み
             list($class, $dir, $file) = $this->getPluginNaming($type, null, 'Ethna');
+
+            //ここで$dirがエラーになることはないので、
+            //下記ifは必ず実行される
             if (!Ethna::isError($dir)) {
                 $this->_includeParentPluginSrc($class, $dir, $file);
             }
