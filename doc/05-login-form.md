@@ -56,7 +56,7 @@ submitボタンの"name=action_login_do"は、このフォームをsubmitした�
 
 以上で準備は完了です。
 
-http://localhost/?action_login=true
+http://localhost:8000/?action_login=true
 
 にアクセスしてログイン画面が表示されることを確認してください。
 
