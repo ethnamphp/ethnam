@@ -16,7 +16,7 @@ Ethnaから派生してできたプロジェクトです。
 
 ## Documentation
 
-[/doc](/doc)
+[/doc/README.md](/doc/README.md)
 
 ## Packagist
 
