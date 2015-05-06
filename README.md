@@ -8,12 +8,6 @@ Ethnaから派生してできたプロジェクトです。
 * PHP 5.4以上
 * OS:Linux/Unix (Windowsでは動きません)
 
-
-## branch運用ルール
-
-* `master` 開発中の先端ブランチです。必ずしも安定しているとは限りませんのでご注意ください。
-* 安定版を入手したい場合はtagを見てください。
-
 ## Installtion
 
 composerを使えば下記コマンドひとつでインストールとサンプルプロジェクト作成までやってくれます。
@@ -30,6 +24,11 @@ php -t www -S localhost:8000
 ## Documentation
 
 [/doc/README.md](/doc/README.md)
+
+## Branch/Tag運用ルール
+
+* `master` 開発中の先端ブランチです。(必ずしも安定しているとは限りませんのでご注意ください)
+* `master` の任意のコミットに対してバージョン番号のタグを打つことをもってリリース作業とします。
 
 ## Packagist
 
