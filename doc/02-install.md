@@ -50,7 +50,7 @@ composer install
 ## プロジェクトのスケルトンを作成
 
 ```
-vendor/bin/ethna add-project -b . Sample
+vendor/bin/ethnam-generator add-project -b . Sample
 ```
 
 ## 簡易サーバを起動
