@@ -10,6 +10,7 @@
  *  [実用的なアプリケーション開発 3 バリデーションエラー](07-login-validation-error.md)
  *  [実用的なアプリケーション開発 4 ビジネスロジック(設計)](08-business-logic.md)
  *  [実用的なアプリケーション開発 5 ビジネスロジック(実装)](09-business-logic-actual.md)
+ *  [Ethnamの内部動作の概要](10-internals.md)
 *   [ActionClass](ActionClass.md)
 *   [ActionForm](AcionForm.md)
 *   [ViewClass](ViewClass.md)
