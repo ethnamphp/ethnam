@@ -4,7 +4,7 @@
 *   チュートリアル
  *  [インストール](02-install.md)
  *  [ディレクトリ解説](03-directories.md)
- *  [アクション、ビュー、テンプレートを追加する](04-add-action-view-template.md)
+ *  [Hello画面を作成する(アクション、ビュー、テンプレートを追加する)](04-add-action-view-template.md)
  *  [実用的なアプリケーション開発 1 ログイン画面](05-login-form.md)
  *  [実用的なアプリケーション開発 2 ログイン処理](06-login-do.md)
  *  [実用的なアプリケーション開発 3 バリデーションエラー](07-login-validation-error.md)
