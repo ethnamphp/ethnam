@@ -17,8 +17,8 @@
 前回の記事のやり方でログイン画面を作ります。
 
 ```
-vendor/bin/ethna add-action login
-vendor/bin/ethna add-view -t login
+vendor/bin/ethnam-generator add-action login
+vendor/bin/ethnam-generator add-view -t login
 ```
 
 ## ログイン画面の変更
