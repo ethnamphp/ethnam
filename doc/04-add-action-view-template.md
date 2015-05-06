@@ -53,7 +53,7 @@ Create, Read, Update, Delete の略です。
 
 * Ethna_ActionClassを継承したクラスを定義します
 * Ethna_ActionClassのperform()メソッドをオーバーライドして、行いたい処理を記述します
-* perform()メソッドの戻り値として遷移名(後述)を返します
+* perform()メソッドの戻り値として遷移名(画面を表す名前)を返します
 
 ```php
 <?php
@@ -76,19 +76,6 @@ class Sample_Action_Hello extends Ethna_ActionClass
 
 ```
 $ vendor/bin/ethnam-generator add-action hello
-```
-
-
-```text
-see also: アクションスクリプトのスケルトンを生成する
-
-なお、アクションスクリプトを配置するディレクトリは適宜変更することが可能です。
-
-see also: アクションスクリプトの配置ディレクトリを変更する
-
-また、前述したアクションクラスやアクションスクリプトのファイル命名規則等も変更することが可能です。
-
-see also: アクション定義省略時の命名規則を変更する
 ```
 
 ## ビュークラスファイルの追加(省略可)
@@ -118,13 +105,13 @@ class Sample_View_Hello extends Ethna_ViewClass
 }
 ```
 
-preforward()メソッドはテンプレート表示前に呼び出され、テンプレートに関連した各種データ(セレクトボックスの表示項目等)を渡すことが可能です。ここでは、コンテナに'now'という名前で現在時刻を渡しています。
+preforward()メソッドはテンプレートのレンダリング前に呼び出され、テンプレートに任意のパラメータを渡すことが可能です。ここでは'now'という名前で現在時刻を渡しています。
 
-ビュースクラスファイルを毎回1から記述するのは面倒なので、ethnaコマンドのadd-viewオプションを利用して、スケルトンファイルを生成することも出来ます。
+ビュースクラスファイルを毎回1から記述するのは面倒なので、ethnam-generatorコマンドのadd-viewオプションを利用して、スケルトンファイルを生成することも出来ます。
 
 
 ```
-$ vendor/bin/ethna add-view hello
+$ vendor/bin/ethnam-generator add-view hello
 ```
 
 この時に-tオプションをつける事によって、同時にテンプレートのスケルトンファイルが生成されます。
@@ -132,26 +119,16 @@ $ vendor/bin/ethna add-view hello
 例:
 
 ```
-$ vendor/bin/ethna add-view -t hello
+$ vendor/bin/ethnam-generator add-view -t hello
 ```
 
 また、ビュークラスが不要な場合(単純にテンプレートを表示したい場合等)は、ビュークラスの記述を省略することも可能です。
-
-Ethnaのビューは、以下のように動作します。
-
-* Action Classは、実行中に取得したダイナミックな表示データをAction Formオブジェクトに格納します(Action Formオブジェクトはコンテナとして振舞います)
-* アクションクラスは、コントローラに遷移先を返します
-* コントローラは、アクションクラスから返された遷移先に基づいて、ビューオブジェクトを生成します
-* ビューオブジェクトは、ダイナミックな表示データをアクションフォームから取得します
-* ビューオブジェクトはSmartyオブジェクトを生成し、必要な変数をSmartyオブジェクトに設定します
-* テンプレートを出力します
-
 
 ## テンプレートファイルの作成
 
 次に、テンプレートファイルを作成します。
 
-テンプレートディレクトリは`template/ja_JP`ディレクトリなので、`template/ja_JP/hello.tpl`を作成します。
+テンプレートディレクトリは `template/ja_JP` なので、`template/ja_JP/hello.tpl`を作成します。
 
 
 ```html
@@ -168,7 +145,7 @@ current time: {$app.now}
 </html>
 ```
 
-実際には、毎回アクションスクリプトを1から記述するのは煩雑なので、ethnaコマンドのadd-template オプションを利用して、スケルトンファイルを生成することも出来ます。
+実際には、毎回テンプレートを1から記述するのは面倒なので、ethnam-generatorコマンドのadd-template オプションを利用して、スケルトンファイルを生成することも出来ます。
 
 ```
 $ vendor/bin/ethna add-template hello
@@ -176,7 +153,7 @@ $ vendor/bin/ethna add-template hello
 
 以上でアクション、ビュー、テンプレートの追加は完了ですので、実際にアクセスして動作を確認します。
 
-http://localhost/?action_hello=true
+http://localhost:8000/?action_hello=true
 
 Hello画面が表示されれば成功です。
 
@@ -192,5 +169,18 @@ $this->af->setApp('foo', 'bar');
 として値を設定すると、テンプレート側で`{$app.foo}`として値を取得することができます。
 
 Smartyの使い方については[Smartyのドキュメント](http://www.smarty.net/docsv2/ja/index.tpl)を見てください。
-(なお、EthnamがサポートしているのはSmarty v2のみです。v3はサポートしていません。)
+(なお、Ethnamがサポートしているのは今のところSmarty 2のみです。v3はサポートしていません。)
+
+
+## (参考)アクションとビューの内部的な動作
+
+Ethnamのコントローラ、アクション、ビューは、以下のように動作します。
+
+* Action Classは、実行中に取得したダイナミックな表示データをAction Formオブジェクトに格納します
+* アクションクラスは、コントローラに遷移名を返します
+* コントローラは、アクションクラスから返された遷移名に基づいて、ビューオブジェクトを生成します
+* ビューオブジェクトは、ダイナミックな表示データをアクションフォームから取得します
+* ビューオブジェクトはSmartyオブジェクトを生成し、必要な変数をSmartyオブジェクトに設定します
+* テンプレートを出力します
+
 
