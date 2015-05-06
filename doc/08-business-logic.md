@@ -24,7 +24,7 @@ public function perform()
 }
 ```
 
-のようにするか、またはMangerを使って
+のようにするか、またはManagerを使って
 
 ```php
 public function perform()
