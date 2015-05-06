@@ -15,11 +15,11 @@
 template/ja_JP/login.tpl:
 
 ```diff
-    <tr>
-     <td>メールアドレス</td>
- -   <td><input type="text" name="mailaddress" value=""></td>
- +   <td><input type="text" name="mailaddress" value="{$form.mailaddress}"></td>
-    </tr>
+   <tr>
+    <td>メールアドレス</td>
+-   <td><input type="text" name="mailaddress" value=""></td>
++   <td><input type="text" name="mailaddress" value="{$form.mailaddress}"></td>
+   </tr>
 ```
 
 この状態で、メールアドレスのみを入力してsubmitすると、(パスワードが入力されていないのでエラーにはなりますが)メールアドレスのフォーム値が失われずに表示されていると思います。
