@@ -47,7 +47,7 @@ app/action/Login/Do.php
 
     public function perform()
     {
-+       echo $this->af->get('mailaddress');
++       die($this->af->get('mailaddress'));
 ```
 
 以上の状態で、フォームの「メールアドレス」に適当な文字を入力してsubmitすると、その値が表示されるかと思います。
