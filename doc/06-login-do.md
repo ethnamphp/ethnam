@@ -6,7 +6,7 @@
 フォームがsubmitされた際に実行されるアクション「login_do」を前節(5)の場合と同様に追加します。
 
 ```
-$ vendor/bin/ethnam-generator add-action login_do
+vendor/bin/ethnam-generator add-action login_do
 ```
 
 生成されたファイルの中を見ると、'login_do'という遷移名を返すだけのアクションになっています。
