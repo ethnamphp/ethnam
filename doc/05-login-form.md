@@ -30,30 +30,21 @@ vendor/bin/ethnam-generator add-view -t login
 template/ja_JP/login.tpl
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ログイン画面</title>
-  </head>
-  <body>
-    <form action="." method="post">
-      <table border="0">
-        <tr>
-          <td>メールアドレス</td>
-          <td><input type="text" name="mailaddress" value=""></td>
-        </tr>
-        <tr>
-          <td>パスワード</td>
-          <td><input type="password" name="password" value=""></td>
-        </tr>
-      </table>
-      <p>
-      <input type="submit" name="action_login_do" value="ログイン">
-      </p>
-    </form>
-  </body>
-</html>
+<form action="." method="post">
+  <table border="0">
+    <tr>
+      <td>メールアドレス</td>
+      <td><input type="text" name="mailaddress" value=""></td>
+    </tr>
+    <tr>
+      <td>パスワード</td>
+      <td><input type="password" name="password" value=""></td>
+    </tr>
+  </table>
+  <p>
+  <input type="submit" name="action_login_do" value="ログイン">
+  </p>
+</form>
 ```
 
 
