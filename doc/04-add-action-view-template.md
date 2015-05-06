@@ -1,7 +1,5 @@
 [[目次](README.md)]
-# アプリケーションの構築(Hello画面の作成)
-
-http://ethna.jp/old/ethna-document-tutorial-practice2.html
+# Hello画面を作成する(アクション、ビュー、テンプレートを追加する)
 
 実際のアプリケーション構築は、「アクション、(ビュー、)  テンプレート」を追加していく作業の繰り返しとなります。
 
