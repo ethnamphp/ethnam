@@ -40,6 +40,7 @@ template/ja_JP/login.tpl:
 template/ja_JP/login.tpl:
 
 ```diff
+<form action="." method="post">
 +{if count($errors)}
 +  <ul>
 +  {foreach from=$errors item=error}
@@ -66,7 +67,7 @@ template/ja_JP/login.tpl:
      </tr>
 ```
 
-Ethnaフレームワークにおけるエラー処理ポリシーについては以下をご覧下さい。
+Ethnamフレームワークにおけるエラー処理ポリシーについては以下をご覧下さい。
 
 see also: エラー処理ポリシー
 
