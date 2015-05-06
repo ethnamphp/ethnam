@@ -40,13 +40,12 @@ template/ja_JP/login.tpl:
 template/ja_JP/login.tpl:
 
 ```diff
- <body>
-+ {if count($errors)}
++{if count($errors)}
 +  <ul>
 +  {foreach from=$errors item=error}
 +   <li>{$error}</li>
 +  {/foreach}
-+ </ul>
++  </ul>
 +{/if}
 ```
 
