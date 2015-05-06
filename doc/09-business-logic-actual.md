@@ -40,7 +40,7 @@ app/Sample_Error.php:
 app/Sample_Controller.php:
 
 ```diff
-include_once BASE . '/Sample_Error.php';
+  include_once BASE . '/Sample_Error.php';
 + include_once BASE . '/Sample_UserManager.php';
 ```
 
