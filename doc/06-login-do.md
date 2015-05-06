@@ -87,16 +87,16 @@ app/action/Login/Do.php
 ここで先ほどのフォーム値'mailaddress'を利用して実際に試してみます。まず、先ほどの'mailaddress'の属性を下記のように変更します。
 
 ```diff
-       'mailaddress' => array(
+       'mailaddress' => [
 +          'name'          => 'メールアドレス',
 +          'required'      => true,
            'type'          => VAR_TYPE_STRING,
-       ),
-+      'password' => array(
+       [,
++      'password' => [
 +          'name'          => 'パスワード',
 +          'required'      => true,
 +          'type'          => VAR_TYPE_STRING,
-+      ),
++      ],
 ```
 
 これは、フォーム値'mailaddress'の表示名が「メールアドレス」であり、また入力が必須であることを示しています。ついでにpasswordも必須としてしまいます。
