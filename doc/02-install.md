@@ -14,11 +14,16 @@ composerをまだインストールしてない場合はインストールして
 
 https://getcomposer.org/doc/00-intro.md#globally
 
+## 軽く試してみたい場合は
+[README](/README.md) に書いてるとおりにやればOKです。
+
+ただ、`composer create-project`を使う方法は一見簡単ですが、内部で何が行われているかが隠されてしまうので学習上あまり好ましくありません。
+本格的にEthhamを使う場合はこれから説明するやり方で手動で環境構築することをおすすめします。
+
+
 ## プロジェクト用ディレクトリを作成
 
-
 ```sh
-cd /tmp/
 # プロジェクト用ディレクトリを作成
 mkdir sample
 cd sample
@@ -30,7 +35,8 @@ cd sample
 {
   "require": {
     "dqneo/ethnam": "dev-master",
-    "smarty/smarty": "2.6.28"
+    "ethnam/generator": "dev-master",
+    "smarty/smarty": "2.6.*"
   }
 }
 ```
@@ -50,7 +56,7 @@ vendor/bin/ethna add-project -b . Sample
 ## 簡易サーバを起動
 
 ```
-php -t www -S 0:8080
+php -t www -S localhost:8080
 ```
 
 ブラウザで`http://localhost:8080/` にアクセスして "Welcome to Ethnam!"の画面が表示されたらOKです。
