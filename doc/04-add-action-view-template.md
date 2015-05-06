@@ -1,5 +1,5 @@
 [[目次](README.md)]
-# アプリケーションの構築(Hello画面)
+# アプリケーションの構築(Hello画面の作成)
 
 http://ethna.jp/old/ethna-document-tutorial-practice2.html
 
