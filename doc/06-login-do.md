@@ -40,10 +40,11 @@ app/action/Login/Do.php
 
 ```diff
     public $form = array(
-+       'mailaddress' => array(
++       'mailaddress' => [
 +           'type'          => VAR_TYPE_STRING,
-+       ),
-...
++       ],
+
+
     public function perform()
     {
 +       echo $this->af->get('mailaddress');
