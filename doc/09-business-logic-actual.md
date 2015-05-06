@@ -20,6 +20,7 @@ class Sample_UserManager
             return Ethna::raiseNotice('メールアドレスまたはパスワードが正しくありません', E_SAMPLE_AUTH);
         }
 
+        //成功時にはnullを返す
         return null;
     }
 }
