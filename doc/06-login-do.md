@@ -3,7 +3,7 @@
 
 ## ログインアクションの追加
 
-フォームがsubmitされた際に実行されるアクション「login_do」を前節(5)の場合と同様に追加します。
+フォームがsubmitされた際に実行されるアクション「login_do」を追加します。
 
 ```
 vendor/bin/ethnam-generator add-action login_do
