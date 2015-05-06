@@ -19,7 +19,8 @@ class Sample_UserManager
         if ($mailaddress != $password) {
             return Ethna::raiseNotice('メールアドレスまたはパスワードが正しくありません', E_SAMPLE_AUTH);
         }
-        return 0;
+
+        return null;
     }
 }
 ```
