@@ -14,6 +14,18 @@ Ethnaから派生してできたプロジェクトです。
 * `master` 開発中の先端ブランチです。必ずしも安定しているとは限りませんのでご注意ください。
 * 安定版を入手したい場合はtagを見てください。
 
+## Installtion
+下記のようにすればインストールとサンプルプロジェクト作成を一気にやってくれます。
+
+```
+composer create-project ethnam/project myproject
+```
+
+PHP内蔵サーバで動作確認します。
+```
+php -t www -S localhost:8000
+```
+
 ## Documentation
 
 [/doc/README.md](/doc/README.md)
