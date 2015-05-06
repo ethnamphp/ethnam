@@ -14,9 +14,9 @@ Ethnaから派生してできたプロジェクトです。
 * `master` 開発中の先端ブランチです。必ずしも安定しているとは限りませんのでご注意ください。
 * 安定版を入手したい場合はtagを見てください。
 
-## Document
+## Documentation
 
-詳しい[ドキュメントはこちら](/doc)
+[Ethnam Documentation](/doc)
 
 ## Packagist
 
