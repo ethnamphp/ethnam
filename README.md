@@ -16,7 +16,7 @@ Ethnaから派生してできたプロジェクトです。
 
 ## Documentation
 
-[Ethnam Documentation](/doc)
+[/doc](/doc)
 
 ## Packagist
 
