@@ -21,7 +21,7 @@ Ethnaから派生してできたプロジェクトです。
 composer create-project ethnam/project myproject
 ```
 
-PHP内蔵サーバで動作確認します。
+プロジェクト作成したらPHP内蔵サーバで動作確認できます。
 ```
 php -t www -S localhost:8000
 ```
