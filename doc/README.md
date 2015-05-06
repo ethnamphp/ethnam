@@ -8,7 +8,7 @@
  *  [実用的なアプリケーション開発 1 ログイン画面](05-login-form.md)
  *  [実用的なアプリケーション開発 2 ログイン処理](06-login-do.md)
  *  [実用的なアプリケーション開発 3 バリデーションエラー](07-login-validation-error.md)
- *  [実用的なアプリケーション開発 4 ビジネスロジック(実装)(08-business-logic.md)
+ *  [実用的なアプリケーション開発 4 ビジネスロジック(設計)(08-business-logic.md)
 *   [ActionClass](ActionClass.md)
 *   [ActionForm](AcionForm.md)
 *   [ViewClass](ViewClass.md)
