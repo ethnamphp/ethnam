@@ -69,15 +69,15 @@ app/action/Login/Do.php
 ```php
          /*
          'sample' => array(
-             'name'          => 'サンプル',      // 表示名
-             'required'      => true,            // 必須オプション(true/false)
-             'min'           => null,            // 最小値
-             'max'           => null,            // 最大値
-             'regexp'        => null,            // 文字種指定(正規表現)
-             'custom'        => null,            // メソッドによるチェック
-             'filter'        => null,            // 入力値変換フィルタオプション
-             'form_type'     => FORM_TYPE_TEXT   // フォーム型
-             'type'          => VAR_TYPE_INT,    // 入力値型
+             'name'          => 'Sample',
+             'required'      => true,
+             'min'           => null,
+             'max'           => null,
+             'regexp'        => null,
+             'custom'        => null,
+             'filter'        => null,
+             'form_type'     => FORM_TYPE_TEXT,
+             'type'          => VAR_TYPE_INT,
          ),
          */
 ```
