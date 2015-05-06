@@ -52,8 +52,8 @@ Create, Read, Update, Delete の略です。
 
 
 * Ethna_ActionClassを継承したクラスを定義します
-* Ethna_ActionClassのperform()メソッドをオーバーライドして、サーバ側で行いたい処理を記述します
-* perform()メソッドの戻り値として画面名(後述)を返します
+* Ethna_ActionClassのperform()メソッドをオーバーライドして、行いたい処理を記述します
+* perform()メソッドの戻り値として遷移名(後述)を返します
 
 ```php
 <?php
@@ -72,10 +72,10 @@ class Sample_Action_Hello extends Ethna_ActionClass
 
 という処理になります。
 
-アクションクラスファイルを毎回1から手で書くのは面倒なので、ethnaコマンドのadd-actionオプションを利用して、ひながたを生成することも出来ます。
+アクションクラスファイルを毎回1から手で書くのは面倒なので、ethnam-generatorコマンドのadd-actionオプションを利用して、ひながたを生成することも出来ます。
 
 ```
-$ vendor/bin/ethna add-action hello
+$ vendor/bin/ethnam-generator add-action hello
 ```
 
 
