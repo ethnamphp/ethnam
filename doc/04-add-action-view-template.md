@@ -137,7 +137,7 @@ current time: {$app.now}
 実際には、毎回テンプレートを1から記述するのは面倒なので、ethnam-generatorコマンドのadd-template オプションを利用して、スケルトンファイルを生成することも出来ます。
 
 ```
-$ vendor/bin/ethna add-template hello
+$ vendor/bin/ethnam-generator add-template hello
 ```
 
 以上でアクション、ビュー、テンプレートの追加は完了ですので、実際にアクセスして動作を確認します。
