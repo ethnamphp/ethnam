@@ -130,17 +130,8 @@ $ vendor/bin/ethnam-generator add-view -t hello
 
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf8">
-  <title>Please Hello</title>
-</head>
-<body>
 Hello Ethnam<br />
 current time: {$app.now}
-</body>
-</html>
 ```
 
 実際には、毎回テンプレートを1から記述するのは面倒なので、ethnam-generatorコマンドのadd-template オプションを利用して、スケルトンファイルを生成することも出来ます。
