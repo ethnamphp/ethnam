@@ -91,7 +91,7 @@ app/action/Login/Do.php
 +          'name'          => 'メールアドレス',
 +          'required'      => true,
            'type'          => VAR_TYPE_STRING,
-       [,
+       ],
 +      'password' => [
 +          'name'          => 'パスワード',
 +          'required'      => true,
