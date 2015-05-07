@@ -1,7 +1,7 @@
 [[目次](README.md)]
 # 実用的なアプリケーション開発 5 ビジネスロジック(実装)
 
-全ページで考えた設計を元に、ロジック部分を実装していきます。
+前ページで考えた設計を元に、ロジック部分を実装していきます。
 ロジック部分を記述したクラスを別に作成し、それをアクションクラスから呼び出します)。
 
 まず、マネジャークラスを作成します。ここでは簡単に以下のようなスクリプトを作成してみます。
@@ -40,8 +40,8 @@ app/Sample_Error.php:
 app/Sample_Controller.php:
 
 ```diff
-  include_once BASE . '/Sample_Error.php';
-+ include_once BASE . '/Sample_UserManager.php';
+  include_once 'Sample_Error.php';
++ include_once 'Sample_UserManager.php';
 ```
 
 最後に、アクションクラスのperform()メソッドを記述します。ここでは、ユーザマネージャで認証処理を行うだけです。
@@ -52,8 +52,7 @@ app/actoin/Login/Do.php
     public function perform()
     {
         $um =  new Sample_UserManager();
-        $result = $um->auth($this->af->get('mailaddress'), $this->af->ge
-'passwor'));
+        $result = $um->auth($this->af->get('mailaddress'), $this->af->get('password'));
         if (Ethna::isError($result)) {
             $this->ae->addObject(null, $result);
             return 'login';
