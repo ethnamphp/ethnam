@@ -41,7 +41,7 @@ app/Sample_Controller.php:
 
 ```diff
   include_once BASE . '/Sample_Error.php';
-+ include_once BASE . '/Sample_UserManager.php';
++ include_once BASE . '/app/Sample_UserManager.php';
 ```
 
 最後に、アクションクラスのperform()メソッドを記述します。ここでは、ユーザマネージャで認証処理を行うだけです。
