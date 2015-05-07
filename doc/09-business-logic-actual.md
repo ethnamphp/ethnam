@@ -52,8 +52,7 @@ app/actoin/Login/Do.php
     public function perform()
     {
         $um =  new Sample_UserManager();
-        $result = $um->auth($this->af->get('mailaddress'), $this->af->ge
-'passwor'));
+        $result = $um->auth($this->af->get('mailaddress'), $this->af->get('password'));
         if (Ethna::isError($result)) {
             $this->ae->addObject(null, $result);
             return 'login';
