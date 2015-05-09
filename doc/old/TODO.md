@@ -21,18 +21,18 @@
 | 書いた人 | sotarok | 2010-02-22 | 3.0.x 作成 |
 | 書いた人 | mumumu | 2008-11-13 | 新規作成 |
 
-### 2.6.x〜 [](TODO.html#dae01731 "dae01731")
+### 2.6.x〜
 
 - 基本方針
   - 2.5.x + preview 5 + α を PHP 5.3.x で動かせるようにした版
 
-#### 概要 [](TODO.html#tcc312f0 "tcc312f0")
+#### 概要
 
 - PHP 5.3 対応
 - プラグイン機構の修正
 - View機能の拡充
 
-#### 変更点詳細 [](TODO.html#v5bb3ab3 "v5bb3ab3")
+#### 変更点詳細
 
 - Core
   - [Breaking B.C.] PHP 5.3 Compatible
@@ -53,9 +53,9 @@
 - Debugging
   - extlib の Debugtoolbar の同梱
 
-### 2.5.x〜 [](TODO.html#ab963ae6 "ab963ae6")
+### 2.5.x〜
 
-#### 2.5.0 preview3: NOW WORKING [](TODO.html#v1991c32 "v1991c32")
+#### 2.5.0 preview3: NOW WORKING
 
 - DBまわり
   - 既存ドライバを Ethna\_DBインターフェイスにあわせる
@@ -130,7 +130,7 @@
     - DBまわり
     - セッション
 
-#### 2.5.0 preview2: DONE 2008/10/11 release. [](TODO.html#sdaf2dd1 "sdaf2dd1")
+#### 2.5.0 preview2: DONE 2008/10/11 release.
 
 - Programming
   - "ethna i18n" コマンドの実装 -> DONE
@@ -162,7 +162,7 @@
   - beta 版は [http://pear.ethna.jp/get/Ethna-x.x.x-YYYYMMDDMM.tgz](http://pear.ethna.jp/get/Ethna-x.x.x-YYYYMMDDMM.tgz) にしか置か>ない
   - pear config-set preferred\_state [beta|alpha] とかにしている人がアップグレードでハマるため。
 
-#### 2.5.0 preview1: DONE 2008/07/16 release [](TODO.html#od670302 "od670302")
+#### 2.5.0 preview1: DONE 2008/07/16 release
 
 - UTF-8化
   - エンコーディング依存の関数または動作洗い出し -> OK
@@ -175,9 +175,9 @@
 - バグ(?) 修正
   - Ethna\_ClassFactory#get[Manager|Object] -> OK
 
-### 2.3.x〜: DONE [](TODO.html#y4640d3b "y4640d3b")
+### 2.3.x〜: DONE
 
-#### 2.3.0-preview1: DONE 2006/07/09 release [](TODO.html#qba96067 "qba96067")
+#### 2.3.0-preview1: DONE 2006/07/09 release
 
 - Ethna\_Plugin追加
 - Ethna\_Renderer追加
@@ -187,7 +187,7 @@
 
 - Ethna\_LogWriterのプラグイン対応
 
-#### 2.3.0-preview2: DONE 2006/07/16 release [](TODO.html#ib2ef94a "ib2ef94a")
+#### 2.3.0-preview2: DONE 2006/07/16 release
 
 - (Ethna自体の)UnitTestサポート
 
@@ -196,7 +196,7 @@
 - Ethna\_ClassFactoryの汎用化
 - Ethna\_AppManagerの汎用化(やっぱりやめました→近い将来プラグインのネットワークインストール対応→アプリケーションマネージャ、アプリケーションオブジェクトのネットワークインストール対応、という形で進めていきます)
 
-#### 2.3.0-preview3: DONE 2006/07/23 release [](TODO.html#b1e7dab8 "b1e7dab8")
+#### 2.3.0-preview3: DONE 2006/07/23 release
 
 - Ethna\_ActionForm改善-- フォームレンダリングサポート
 
@@ -204,7 +204,7 @@
 
 - プラグインリポジトリ構築/ネットワークインストール対応
 
-### 2.5.0 以降 (重要！) [](TODO.html#u26460b0 "u26460b0")
+### 2.5.0 以降 (重要！)
 
 - プラグイン機構の改善
   - グローバルなプラグインディレクトリを設ける

@@ -16,9 +16,9 @@
 
 | 書いた人 | mumumu | 2009-01-29 | 新規作成 |
 
-### サンプルコード [](ethna-document-dev_guide-view-form_helper-samples.html#sample "sample")
+### サンプルコード
 
-#### GET メソッドで submit できないの？ [](ethna-document-dev_guide-view-form_helper-samples.html#e79e41fe "e79e41fe")
+#### GET メソッドで submit できないの？
 
 {form}{/form} ブロックタグは、デフォルトでPOST メソッドを指定しますが、もちろん それ以外の方法も指定できます。
 
@@ -34,7 +34,7 @@
       (... 省略)
     </form>
 
-#### ファイルをアップロードする処理をフォームヘルパで [](ethna-document-dev_guide-view-form_helper-samples.html#b7f425f4 "b7f425f4")
+#### ファイルをアップロードする処理をフォームヘルパで
 
 ファイルをアップロードする際には、<form enctype="multipart/form-data"> と指定する必要があります。こんなtypoしやすい文字列をいちいち書いてられないので、フォームヘルパを使いましょう。
 
@@ -61,7 +61,7 @@
       <input type="file" name="sample" value="" />
     </form>
 
-#### 複数選択が必要な SELECT ボックス [](ethna-document-dev_guide-view-form_helper-samples.html#i661b532 "i661b532")
+#### 複数選択が必要な SELECT ボックス
 
 いわゆる multiple な SELECT ボックスを作りたい場合は、以下のようにします。一度に複数選択できるようにするので、フォーム定義の type 属性に 配列型を指定し、テンプレートでも multiple 属性を指定しているのがミソです。
 
@@ -85,7 +85,7 @@
       <option value="2">2番目</option>
     </select>
 
-#### テキストボックスのサイズを指定して、非表示にする [](ethna-document-dev_guide-view-form_helper-samples.html#w7015017 "w7015017")
+#### テキストボックスのサイズを指定して、非表示にする
 
 フォームヘルパのタグによって予約されている属性以外を埋め込めることから、HTMLのサイズやスタイルも指定できます。テキストボックスの場合、以下のようにします。
 
@@ -107,19 +107,19 @@
 
     <input size="50" style="display:none" type="text" name="sample" value="" />
 
-#### いちいちタグに value="hoge" とか書きたくないよ！ [](ethna-document-dev_guide-view-form_helper-samples.html#v362698b "v362698b")
+#### いちいちタグに value="hoge" とか書きたくないよ！
 
 ... 執筆中
 
-#### 編集画面に初期値を指定する [](ethna-document-dev_guide-view-form_helper-samples.html#v10af805 "v10af805")
+#### 編集画面に初期値を指定する
 
 ... 執筆中
 
-#### 日付の選択フォームを簡単に [](ethna-document-dev_guide-view-form_helper-samples.html#pb9afac4 "pb9afac4")
+#### 日付の選択フォームを簡単に
 
 ... 執筆中
 
-#### 入力ウィザードを作る [](ethna-document-dev_guide-view-form_helper-samples.html#od6deeaa "od6deeaa")
+#### 入力ウィザードを作る
 
 ... 執筆中
 

@@ -3,7 +3,7 @@
 - 更新履歴
   - rendererに対応させた内容に変更 (2006/11/20, いちい)
 
-## 遷移時のデフォルトマクロを指定する。 [](ethna-document-dev_guide-forward-defaultmacro.html#web1c344 "web1c344")
+## 遷移時のデフォルトマクロを指定する。
 
 アプリケーションにあるビューの基底クラス(app/{APPID}\_ViewClass.php)の\_setDefaultメソッドを利用することで、 Smartyにあらかじめ値をassignするなどの共通処理をすることができます。
 

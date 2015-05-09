@@ -39,9 +39,9 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 | mumumu | 2008-07-30 | 最新の状態を反映 |
 | DQNEO | 2010-05-23 | アクション名指定の際の大文字小文字の違いを解説 |
 
-### プロジェクトの作成 [](ethna-document-dev_guide-ethna_command.html#mc36ad4e "mc36ad4e")
+### プロジェクトの作成
 
-#### add-project コマンド [](ethna-document-dev_guide-ethna_command.html#d32de849 "d32de849")
+#### add-project コマンド
 
     (使い方)
     $ ethna add-project [-b|--basedir=dir] [-s|--skeldir]
@@ -77,9 +77,9 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - 大文字小文字は区別されません。
   - 自動生成されるファイルの都合上、先頭に数値を指定してはいけません。
 
-### アクション, ビューの追加など [](ethna-document-dev_guide-ethna_command.html#sf73f4c9 "sf73f4c9")
+### アクション, ビューの追加など
 
-#### add-action コマンド [](ethna-document-dev_guide-ethna_command.html#if0ed86e "if0ed86e")
+#### add-action コマンド
 
     (使い方)
     $ ethna add-action [-b|--basedir=dir] [-s|--skelfile=file] 
@@ -125,7 +125,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - 生成されるクラス名は同じです。
   - performのreturn値は異なります。( 'Foo\_Bar' と 'FooBar' )
 
-#### add-view コマンド [](ethna-document-dev_guide-ethna_command.html#db9ba91d "db9ba91d")
+#### add-view コマンド
 
     (使い方)
     $ ethna add-view [-b|--basedir=dir] [-s|--skelfile=file]
@@ -178,7 +178,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - 生成されるファイル名は異なります。( 'Foo/Bar.php' と 'FooBar.php' )
   - 生成されるクラス名は同じです。
 
-#### add-template コマンド [](ethna-document-dev_guide-ethna_command.html#j8da82ec "j8da82ec")
+#### add-template コマンド
 
     (使い方)
     $ ethna add-template [-b|--basedir=dir] [-s|--skelfile=file]
@@ -211,7 +211,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - 生成されるファイル名は異なります。( 'Foo\_Bar' と 'foo\_bar' )
   - アクションクラスのprepare/performが返す文字列と完全一致している必要があります。
 
-#### add-entry-point コマンド [](ethna-document-dev_guide-ethna_command.html#z12d56c0 "z12d56c0")
+#### add-entry-point コマンド
 
     (使い方)
     $ ethna add-entry-point [-b|--basedir=dir] [-s|--skelfile=file]
@@ -238,9 +238,9 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 追加したいエントリポイントで起動するアクション名を指定します。
   - 例えばgatewayにwww を指定した状態で "admin" を指定すると、エントリポイントとしてadmin.phpが作られ、続けてadminアクションが追加されます。
 
-### アプリケーションオブジェクト、マネージャの追加 [](ethna-document-dev_guide-ethna_command.html#g5817598 "g5817598")
+### アプリケーションオブジェクト、マネージャの追加
 
-#### add-app-manager コマンド [](ethna-document-dev_guide-ethna_command.html#b9587b84 "b9587b84")
+#### add-app-manager コマンド
 
     (使い方)
     $ ethna add-app-manager [-b|--basedir=dir] [app-manager name]
@@ -256,7 +256,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 
   - アプリケーションマネージャ−名。最低これだけは指定して下さい。
 
-#### add-app-object コマンド [](ethna-document-dev_guide-ethna_command.html#vfc12644 "vfc12644")
+#### add-app-object コマンド
 
     (使い方)
     $ ethna add-app-object [-b|--basedir=dir] [table name]
@@ -272,9 +272,9 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - データベースのテーブル名を指定することで、スキーマ定義などを自動的に取得することができます
   - 必ずしもテーブル名である必要はありません。
 
-### 国際化(i18n) [](ethna-document-dev_guide-ethna_command.html#vd9b3c8f "vd9b3c8f")
+### 国際化(i18n)
 
-#### i18n コマンド [](ethna-document-dev_guide-ethna_command.html#x5983a2e "x5983a2e")
+#### i18n コマンド
 
     この機能を使うには、Ethna 2.5.0 preview2 以降が必要です
 
@@ -312,13 +312,13 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - デフォルトでは プロジェクト内の app ディレクトリ内と、templateディレクトリしか調べられませんが、任意のディレクトリをコマンドの最後に追加できます。
   - ここで指定したディレクトリ内のファイルは、PHPスクリプトの \_et 関数の呼び出ししか解釈されません
 
-### テストケースの追加 [](ethna-document-dev_guide-ethna_command.html#b74a7844 "b74a7844")
+### テストケースの追加
 
-#### テストケース追加に当たっての注意 [](ethna-document-dev_guide-ethna_command.html#eabd1343 "eabd1343")
+#### テストケース追加に当たっての注意
 
 Ethna 2.3.5 以降では、作成したテストはデフォルトで失敗するようになっています。要するに「作った以上、テストを書いて下さいネ」ということです。
 
-#### add-action-test コマンド [](ethna-document-dev_guide-ethna_command.html#bfd9c83f "bfd9c83f")
+#### add-action-test コマンド
 
     (使い方)
     $ ethna add-action-test [-b|--basedir=dir] [-s|--skelfile=file] [action]
@@ -338,7 +338,7 @@ Ethna 2.3.5 以降では、作成したテストはデフォルトで失敗す�
 - [action]
   - 作成するテストのアクション名を指定します。最低これだけは指定して下さい。
 
-#### add-view-test コマンド [](ethna-document-dev_guide-ethna_command.html#wf6361bb "wf6361bb")
+#### add-view-test コマンド
 
     (使い方)
     $ ethna add-view-test [-b|--basedir=dir] [-s|--skelfile=file] [view]
@@ -358,7 +358,7 @@ Ethna 2.3.5 以降では、作成したテストはデフォルトで失敗す�
 - [view]
   - 作成するテストのビュー名を指定します。最低これだけは指定して下さい。
 
-#### add-test コマンド [](ethna-document-dev_guide-ethna_command.html#jef6edfc "jef6edfc")
+#### add-test コマンド
 
     (使い方)
     $ ethna add-test [-b|--basedir=dir] [-s|--skelfile=file] [name]
@@ -377,9 +377,9 @@ Ethna 2.3.5 以降では、作成したテストはデフォルトで失敗す�
 - [name]
   - 作成するテスト名を指定します。最低これだけは指定して下さい。
 
-### PEAR パッケージ管理 [](ethna-document-dev_guide-ethna_command.html#b32e4f9a "b32e4f9a")
+### PEAR パッケージ管理
 
-#### pear-local コマンド [](ethna-document-dev_guide-ethna_command.html#p0e29fbe "p0e29fbe")
+#### pear-local コマンド
 
     (使い方)
     $ ethna pear-local [-c|--channel=channel] [-b|--basedir=dir] [pear command ...]
@@ -399,13 +399,13 @@ pearコマンド と全く同じ操作で、プロジェクト内でPEARパッ�
   - pearコマンド と同様のオプションやパッケージ名を指定します
   - [Ethnaプロジェクト内で PEAR パッケージを管理する](ethna-document-dev_guide-pearlocal.html "ethna-document-dev\_guide-pearlocal (858d)") も参照して下さい。
 
-### プラグイン関連 [](ethna-document-dev_guide-ethna_command.html#a5b6aa6b "a5b6aa6b")
+### プラグイン関連
 
 おもにプラグインのパッケージを扱うハンドラです。
 
     警告！：--channel=channelの指定はまだ不完全です!!
 
-#### list-plugin コマンド [](ethna-document-dev_guide-ethna_command.html#ce163f85 "ce163f85")
+#### list-plugin コマンド
 
     (使用例)
     $ ethna list-plugin [-c|--channel=channel] [-b|--basedir=dir] 　　　 
@@ -426,7 +426,7 @@ local/master の違いは [プラグインの説明](ethna-document-dev_guide-pl
 - [-v|--verbose]
   - バージョン情報などが表示されます。かなり横に長いです。
 
-#### install-plugin, upgrade-plugin コマンド [](ethna-document-dev_guide-ethna_command.html#b1531846 "b1531846")
+#### install-plugin, upgrade-plugin コマンド
 
     (使い方)
     $ ethna install-plugin [-c|--channel=channel] [-b|--basedir=dir]
@@ -453,7 +453,7 @@ local/master の違いは [プラグインの説明](ethna-document-dev_guide-pl
 - [-s|--state]
   - パッケージの状態(stable, alpha, beta)を指定できます。
 
-#### uninstall-plugin コマンド [](ethna-document-dev_guide-ethna_command.html#gb320c18 "gb320c18")
+#### uninstall-plugin コマンド
 
     (使い方)
     $ ethna uninstall-plugin [-c|--channel=channel] [-b|--basedir=dir]
@@ -463,21 +463,21 @@ local/master の違いは [プラグインの説明](ethna-document-dev_guide-pl
 
 インストールしたファイルをローカルで編集していても問答無用で消しますので注意してください。
 
-#### info-plugin コマンド [](ethna-document-dev_guide-ethna_command.html#k2f32fc9 "k2f32fc9")
+#### info-plugin コマンド
 
     $ ethna info-plugin [-c|--channel=channel] [-b|--basedir=dir]
                         [-l|--local] [-m|--master] [type name]
 
 パッケージでインストールされたプラグインのパッケージ情報を表示します。 pear info [パッケージ名] と同様です。
 
-#### channel-update コマンド [](ethna-document-dev_guide-ethna_command.html#y9141b9a "y9141b9a")
+#### channel-update コマンド
 
     $ ethna channel-update [-c|--channel=channel] [-b|--basedir=dir]
                            [-l|--local] [-m|--master]
 
 Ethnaのパッケージをダウンロードするpear channelの情報をアップデートします。 pear channel-update pear.ethna.jp とほぼ同様です。
 
-#### make-plugin-package コマンド [](ethna-document-dev_guide-ethna_command.html#q2220b86 "q2220b86")
+#### make-plugin-package コマンド
 
     (使い方)
     $ ethna make-plugin-package [-i|--inifile=file] [-s|--skelfile=file]
@@ -492,9 +492,9 @@ Ethnaのパッケージをダウンロードするpear channelの情報をアッ
 - [-w|--workdir]
   - 作業ディレクトリを指定します。省略時はカレントディレクトリです。
 
-### その他 [](ethna-document-dev_guide-ethna_command.html#ua07194f "ua07194f")
+### その他
 
-#### clear-cache コマンド [](ethna-document-dev_guide-ethna_command.html#bf398ab9 "bf398ab9")
+#### clear-cache コマンド
 
     (使い方)
     $ ethna clear-cache [-b|--basedir=dir] [-a|--any-tmp-files]
@@ -511,11 +511,11 @@ Ethnaのパッケージをダウンロードするpear channelの情報をアッ
 - [-a|--any-tmp-files]
   - アプリケーションの tmp/ 以下のファイルをすべて削除します。
 
-## ethna コマンドを拡張する [](ethna-document-dev_guide-ethna_command.html#c18670c0 "c18670c0")
+## ethna コマンドを拡張する
 
 ethna で指定できる各コマンドは Ethna\_Plugin\_Handle\_\* プラグインで作られています。プラグインはアプリケーション固有のものもありますが、現在のところ ethna コマンド用 のプラグインはEthna本体のものしか使えません。
 
-### Ethna\_Handle について [](ethna-document-dev_guide-ethna_command.html#qd450599 "qd450599")
+### Ethna\_Handle について
 
 Ethna\_Handleはコントローラから独立したクラスです。ethnaコマンドが実行されてまずインスタンスが作られます。Ethna\_Handleのコンストラクタ内でようやくEthna\_Controllerのインスタンスが作られます。
 

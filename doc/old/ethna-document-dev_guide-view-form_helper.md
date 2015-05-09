@@ -25,7 +25,7 @@
 | 書いた人 | ------ | ---------- | 新規作成 |
 | 書いた人 | mumumu | 2009-01-22 | 最新版に追随する形で全面的に修正 |
 
-### はじめに [](ethna-document-dev_guide-view-form_helper.html#i04f9055 "i04f9055")
+### はじめに
 
 このページの説明では、以下のようにプロジェクトとアクションクラス、テンプレートを作成し、フォーム定義を行ったとします。
 
@@ -48,9 +48,9 @@
         );
     }
 
-### フォームヘルパの基本と機能 [](ethna-document-dev_guide-view-form_helper.html#nb408803 "nb408803")
+### フォームヘルパの基本と機能
 
-#### (入力)フォームタグの自動生成 [](ethna-document-dev_guide-view-form_helper.html#j4685151 "j4685151")
+#### (入力)フォームタグの自動生成
 
 テンプレートに以下のように書くことで、自動的に上記のアクションフォームの定義を読み取って、外側の <form></form> タグ及び、入力テキストフォームとSubmitボタンを自動生成することができます。
 
@@ -76,7 +76,7 @@ hidden タグも生成されていますが、それはこの後で説明しま�
 
     'form_type' => FORM_TYPE_TEXT,
 
-#### フォーム値の補完 [](ethna-document-dev_guide-view-form_helper.html#y8a452a9 "y8a452a9")
+#### フォーム値の補完
 
 ethna\_action と現在のアクションが同じ場合、フォームヘルパは自動的に Submit した値を入力フォームに補完してくれます。具体的には、Submitしたあとに同じ画面に戻 ってくるときが典型例です。
 
@@ -89,13 +89,13 @@ ethna\_action と現在のアクションが同じ場合、フォームヘルパ
       (... 以下略)
     </form>
 
-### 基本的な書き方 [](ethna-document-dev_guide-view-form_helper.html#tfc9f5d8 "tfc9f5d8")
+### 基本的な書き方
 
 既に述べたように、フォームヘルパの基本的な使い方は、外側に {form} {/form} ブロッ クタグを外側に配置し、その内側で {form\_input} タグや {form\_submit} タグを使 うのが基本になります。
 
 但し、フォーム定義によって、出力されるタグが異なってきます。ここでは、それについて具体例を交えて説明します。
 
-#### 選択肢がないフォーム [](ethna-document-dev_guide-view-form_helper.html#cd6696e6 "cd6696e6")
+#### 選択肢がないフォーム
 
 選択肢がないフォームとは、以下を指します。
 
@@ -130,7 +130,7 @@ ethna\_action と現在のアクションが同じ場合、フォームヘルパ
 
 他の form\_type の場合も、対応したタグがそれぞれ出力されます。
 
-#### 選択肢があるフォーム [](ethna-document-dev_guide-view-form_helper.html#p19c658d "p19c658d")
+#### 選択肢があるフォーム
 
 HTML で指定できるフォーム要素の中には、選択肢を作ることができるものがあります。 この場合、微妙に扱いが異なります。選択肢が指定できるフォームには以下があります。
 
@@ -181,7 +181,7 @@ option には、input タグの value 値をキーにして、表示するラベ
       <input type="checkbox" name="sample" value="2" id="sample2_2" />2番目
     </label>
 
-### フォーム定義が配列の場合 [](ethna-document-dev_guide-view-form_helper.html#s3fa4fe5 "s3fa4fe5")
+### フォーム定義が配列の場合
 
 選択肢が必要なフォーム以外、たとえばテキスト入力フォームのフォーム定義が配列で指定されている場合、 たとえば以下のように定義したとします。
 
@@ -205,7 +205,7 @@ option には、input タグの value 値をキーにして、表示するラベ
      <input type="text" name="sample[]" value="" />
      <input type="text" name="sample[]" value="" />
 
-### 生成されるHTML に style 等のパラメータを指定したい場合 [](ethna-document-dev_guide-view-form_helper.html#u4bb117e "u4bb117e")
+### 生成されるHTML に style 等のパラメータを指定したい場合
 
 これまで説明してきた、「自動生成されるHTML」に、css の style 属性や、フォームの size 属性等の HTMLな属性を付け加えたいという要求は自然なことです。フォームヘルパでは、 [フォームヘルパ タグリファレンス](ethna-document-dev_guide-view-form_helper-ref.html "ethna-document-dev\_guide-view-form\_helper-ref (999d)") にあるパラメータ以外のパラメータを渡すと、HTML の属性としてそのまま埋め込まれるようになっています。
 
@@ -221,11 +221,11 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 「使用例」にも、この性質を利用したサンプルがあります。
 
-#### パラメータを指定する場合の注意事項 [](ethna-document-dev_guide-view-form_helper.html#e3d7bd12 "e3d7bd12")
+#### パラメータを指定する場合の注意事項
 
 フォームヘルパでは、HTMLタグを出力するときにまとめてエスケープ処理が入ります。パラメータとして指定する値はエスケープしないように気をつけてください。
 
-### フォーム値の補完の詳細 [](ethna-document-dev_guide-view-form_helper.html#z91e2db6 "z91e2db6")
+### フォーム値の補完の詳細
 
 入力フォームを自動生成するために使う {form\_input} は、設定する値(<input type="..." value="hoge" /> の hoge の部分) の属性として default と value 属性が用意されています。
 
@@ -265,11 +265,11 @@ option には、input タグの value 値をキーにして、表示するラベ
         {form_input name='sample1'} {* default 属性に b という値が補完される *}
     {/form}
 
-### 複数 {form}{/form} を指定する場合の注意事項 [](ethna-document-dev_guide-view-form_helper.html#y273cd97 "y273cd97")
+### 複数 {form}{/form} を指定する場合の注意事項
 
     以下の記述は、Ethna 2.5.0 preview3 以降に当てはまります。
 
-#### name 属性を必ず指定する [](ethna-document-dev_guide-view-form_helper.html#f23a56ee "f23a56ee")
+#### name 属性を必ず指定する
 
 1テンプレートに {form}{/form} ブロックタグを指定する場合は、少し注意が必要です。それは {form} タグに必ず name 属性を「重複しない」名前を指定することです。これは、エラー等で同じ画面に戻ってきた場合に、submit したフォーム値を補完フォームを区別するためです。
 
@@ -285,19 +285,19 @@ option には、input タグの value 値をキーにして、表示するラベ
       <input type="hidden" name="ethna_fid" value="hoge2" />
     </form>
 
-#### default 属性を指定する [](ethna-document-dev_guide-view-form_helper.html#f23a56ee "f23a56ee")
+#### default 属性を指定する
 
 複数のフォームを並べていくと、{form\_input} タグの value や default 属性の指定が非常に大変になります。その場合こそ、{form}{/form} タグの default 属性の使用を検討すべきです。
 
-### サンプルコード [](ethna-document-dev_guide-view-form_helper.html#i57e7b30 "i57e7b30")
+### サンプルコード
 
 [フォームヘルパ サンプル集](ethna-document-dev_guide-view-form_helper-samples.html "ethna-document-dev\_guide-view-form\_helper-samples (999d)") のページを参照してください。
 
-### フォームヘルパで使用できるすべてのタグ [](ethna-document-dev_guide-view-form_helper.html#ud59cee5 "ud59cee5")
+### フォームヘルパで使用できるすべてのタグ
 
 [フォームヘルパ タグリファレンス](ethna-document-dev_guide-view-form_helper-ref.html "ethna-document-dev\_guide-view-form\_helper-ref (999d)") のページを参照してください。
 
-### TODO [](ethna-document-dev_guide-view-form_helper.html#n9218634 "n9218634")
+### TODO
 
 実装の大部分はEthna\_Renderer\_SmartyではなくEthna\_ViewClassが持っているため、本当はSmartyに限らずさまざまなレンダラで利用可能なはずです。しかし、現時点ではSmartyしかレンダラが用意されていません。素のPHPや、flexy等、他のテンプレートエンジンもサポートすべきだと考えています。
 

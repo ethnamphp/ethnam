@@ -17,7 +17,7 @@
 
 | 書いた人 | mumumu | 2009-01-22 | 新規作成 |
 
-### 基本的なやり方 [](ethna-document-dev_guide-form-multiarray.html#w1b7c9bc "w1b7c9bc")
+### 基本的なやり方
 
 フォーム定義を以下のように [] 付きのキーで分類して定義するだけです。例を以下に示します。
 
@@ -113,7 +113,7 @@
       }
     }
 
-### 配列型を指定した場合 [](ethna-document-dev_guide-form-multiarray.html#lc14f037 "lc14f037")
+### 配列型を指定した場合
 
 [ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.html "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
 
@@ -170,7 +170,7 @@
      // string(6) "むう"
      $var4 = $this->af->get('Artist[name][1]'); // 二つ目のフォームの値
 
-### ファイルを指定した場合 [](ethna-document-dev_guide-form-multiarray.html#dc7e647c "dc7e647c")
+### ファイルを指定した場合
 
 [ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.html "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
 
@@ -225,7 +225,7 @@
       ),
     )
 
-### テンプレート上での値の参照の仕方はどうなるの？ [](ethna-document-dev_guide-form-multiarray.html#r0639827 "r0639827")
+### テンプレート上での値の参照の仕方はどうなるの？
 
 これまで見てきた通り、アクションで多次元配列として定義したフォーム値は、連想配列としてSubmitされてきます。
 
@@ -243,7 +243,7 @@
 
 としてテンプレート上で参照できます。$form.Artist[name] ではないので注意して下さい。これは Smarty での連想配列の参照の仕方と同じです。
 
-### フォーム値の自動検証やフォームヘルパはどうなるの？ [](ethna-document-dev_guide-form-multiarray.html#me8191df "me8191df")
+### フォーム値の自動検証やフォームヘルパはどうなるの？
 
 多次元配列の機能はフォーム値の自動検証、及びフォームヘルパに影響しません。
 
@@ -256,11 +256,11 @@
 フォーム値の自動検証については、 [フォーム定義のページ](ethna-document-dev_guide-form.html "ethna-document-dev\_guide-form (1006d)")を参照してください。  
 フォームヘルパについては、 [フォームヘルパ](ethna-document-dev_guide-form-multiarray.html "ethna-document-dev\_guide-form-multiarray (737d)") を参照してください。
 
-### 多次元配列を指定する場合の制限事項 [](ethna-document-dev_guide-form-multiarray.html#l153ad5d "l153ad5d")
+### 多次元配列を指定する場合の制限事項
 
 多次元配列を指定できるということは、重複したキーや、深すぎる階層など、PHPの実装上都合の悪い指定もまた、指定できてしまうということを意味しています。ここでは、Ethna の多次元配列の実装上「できないこと」を説明します。
 
-#### 指定できる配列の階層の深さはデフォルト10階層まで [](ethna-document-dev_guide-form-multiarray.html#z25ea3d8 "z25ea3d8")
+#### 指定できる配列の階層の深さはデフォルト10階層まで
 
 Ethna では、以下のような深い階層も指定できます。但し、その階層の深さはデフォルト10階層までです。
 
@@ -281,7 +281,7 @@ Ethna では、多次元配列の処理に再帰処理を使用しています�
         'form_type' => FORM_TYPE_TEXT,
     ),
 
-#### 矛盾したフォーム指定をした場合 [](ethna-document-dev_guide-form-multiarray.html#ce69c0d9 "ce69c0d9")
+#### 矛盾したフォーム指定をした場合
 
 同じ項目名で、多次元配列とそうでない項目を指定したり等の矛盾した定義はできません。
 

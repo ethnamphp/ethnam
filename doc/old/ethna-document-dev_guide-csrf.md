@@ -11,9 +11,9 @@
 | cocoiti | 2006-011-01 | 初版 |
 | halt | 2006-011-01 | 具体的な例を提示 |
 
-## クロスサイトリクエストフォージェリの対策コードについて [](ethna-document-dev_guide-csrf.html#x5f69ec6 "x5f69ec6")
+## クロスサイトリクエストフォージェリの対策コードについて
 
-### 概要 [](ethna-document-dev_guide-csrf.html#r7e3918e "r7e3918e")
+### 概要
 
 EthnaはPOSTとGETを区別しないため、クロスサイトリクエストフォージェリ（以下CSRF）については一般的なリンクによる攻撃でもCSRFが成立します。
 
@@ -62,11 +62,11 @@ DeleteAction
 
 一般的には、それぞれ、なんらかの対策コードを追加していたと思いますが、Ethnaで次のようなヘルパを作成しました。
 
-### 準備 [](ethna-document-dev_guide-csrf.html#b1963202 "b1963202")
+### 準備
 
 etc/APPID.ini.phpに、Ethna\_Plugin\_Csrfのどの実装を利用するかを指定します。 デフォルトでは、Sessionが呼び出されます。(現状では、Sessionしか用意されていません）
 
-### (1) POSTの正当性を保証するためのIDを生成する [](ethna-document-dev_guide-csrf.html#z0be07ec "z0be07ec")
+### (1) POSTの正当性を保証するためのIDを生成する
 
 まず、入力画面もしくは、APPID\_ActionClassのデフォルトの動作のどちらかで、IDを生成します。 難しく聞こえますが、要するにロジックのどこかで
 
@@ -87,11 +87,11 @@ etc/APPID.ini.phpに、Ethna\_Plugin\_Csrfのどの実装を利用するかを�
 
 生成されるIDの実装などは特にプログラマが意識することはありません。
 
-#### (余談) [](ethna-document-dev_guide-csrf.html#e5bcfeb6 "e5bcfeb6")
+#### (余談)
 
 また、一度実行されれば（実装によりますが、たとえばSessionの場合は）その、Sessionが削除されるまでは同一のIDが保証されます。 Ethna\_Util::setCsrfID();を二回実行しても動作に影響はありません。 また、Sessionの実装の場合は、これを実行するとSessionが開始されることも注意してください。
 
-### (2)テンプレートで{csrfid}でHidden値を生成する [](ethna-document-dev_guide-csrf.html#g1abfbaa "g1abfbaa")
+### (2)テンプレートで{csrfid}でHidden値を生成する
 
 Inputアクションから呼び出されるテンプレートInput.tplのFormの入力画面に{csrfid}を追加します。
 
@@ -103,7 +103,7 @@ Inputアクションから呼び出されるテンプレートInput.tplのForm�
     {form_input name="submit"}
     {/form}
 
-### (3) Ehna\_Util::isCsrfSafe()で、正当性を確認する。 [](ethna-document-dev_guide-csrf.html#cc4beb5e "cc4beb5e")
+### (3) Ehna\_Util::isCsrfSafe()で、正当性を確認する。
 
 formのデータ送信先であるinput\_doアクションで、Postの正当性を確認します。
 
@@ -125,7 +125,7 @@ formのデータ送信先であるinput\_doアクションで、Postの正当性
 
 これでCSRFの対策コードの完了です。エラー処理などは、サイトのポリシーによって適切に行ってください。
 
-#### (余談） [](ethna-document-dev_guide-csrf.html#pa2784b8 "pa2784b8")
+#### (余談）
 
 上記コードをどのタイミングで行うのかということですが、基本的に
 

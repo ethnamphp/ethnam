@@ -1,7 +1,7 @@
 # 開発マニュアル
 実際の開発に必要なドキュメントがまとめてあります。ドキュメントがない部分については順次追加予定です（ユーザの方々によるドキュメントもお待ちしています:）。
 
-### 基本編 [](ethna-document-dev_guide.html#b6964420 "b6964420")
+### 基本編
 
 - [アクション定義](ethna-document-dev_guide-action.html "ethna-document-dev\_guide-action (1058d)")
 
@@ -11,13 +11,13 @@
 
 - [エラー処理](ethna-document-dev_guide-error.html "ethna-document-dev\_guide-error (1240d)")
 
-### 応用編 [](ethna-document-dev_guide.html#r2abfb5a "r2abfb5a")
+### 応用編
 
 - [セッションを利用する](ethna-document-dev_guide-app-session.html "ethna-document-dev\_guide-app-session (737d)")
 
 - [データベースアクセス](ethna-document-dev_guide-db.html "ethna-document-dev\_guide-db (1240d)")
 
-### 実践編 [](ethna-document-dev_guide.html#if8219fa "if8219fa")
+### 実践編
 
 - [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html "ethna-document-dev\_guide-app-setlanguage (737d)")  
 言語設定に関する説明です。
@@ -69,7 +69,7 @@ ethna コマンドの pear-local コマンドで、プロジェクト毎に独�
 - [ethnaコマンドリファレンス](ethna-document-dev_guide-ethna_command.html "ethna-document-dev\_guide-ethna\_command (520d)")  
 プロジェクトに対して様々な操作を行う ethnaコマンドの操作一覧です。
 
-### 発展編 [](ethna-document-dev_guide.html#ie30054e "ie30054e")
+### 発展編
 
 - [アプリケーションオブジェクト](ethna-document-dev_guide-appobj-overview.html "ethna-document-dev\_guide-appobj-overview (273d)")
   - 機能は弱いながら、ORマッピングのようなものを提供します。
@@ -87,7 +87,7 @@ ethna コマンドの pear-local コマンドで、プロジェクト毎に独�
 - [プロジェクトの国際化](ethna-document-dev_guide-i18n.html "ethna-document-dev\_guide-i18n (737d)")  
 Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介します。
 
-### 拡張編 [](ethna-document-dev_guide.html#paea4153 "paea4153")
+### 拡張編
 
 - Ethnaのプラグイン機構一般
   - [Ethna\_Pluginに関する説明(2.3.x, 2.5.0)](ethna-document-dev_guide-plugin.html "ethna-document-dev\_guide-plugin (737d)")
@@ -98,7 +98,7 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
   - [Smartyプラグイン](ethna-document-dev-guide-make-smartyplugin.html "ethna-document-dev-guide-make-smartyplugin (737d)")
     - [Ethnaの組込みSmartyプラグイン一覧](ethna-document-dev_guide-view-smarty-plugin.html "ethna-document-dev\_guide-view-smarty-plugin (737d)")  
 
-### 補足編 [](ethna-document-dev_guide.html#p5423fcb "p5423fcb")
+### 補足編
 
 - 古いプロジェクトを新しいEthnaに対応させる  
 古いバージョンのEthnaで作ったプロジェクトを新しいバージョンに対応させるガイドです。
@@ -118,13 +118,13 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 
 - [クロスサイトリクエストフォージェリの対策コードについて](ethna-document-dev_guide-csrf.html "ethna-document-dev\_guide-csrf (1240d)")
 
-## 開発FAQ [](ethna-document-dev_guide.html#kca6d8b4 "kca6d8b4")
+## 開発FAQ
 
 開発に関するFAQはこちらをご覧ください。
 
 **[開発FAQ](ethna-document-faq-dev_guide_faq.html "ethna-document-faq-dev\_guide\_faq (155d)")**
 
-## その他 [](ethna-document-dev_guide.html#la427e0f "la427e0f")
+## その他
 
 - [リリース手順](ethna-document-misc-release.html "ethna-document-misc-release (855d)")
 

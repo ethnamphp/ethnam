@@ -12,7 +12,7 @@
   - Ethna\_UnitTestCase特有のメソッド 
 - テスト結果表示 
 
-## ユニットテストを行う [](ethna-document-dev_guide-misc-unittest.html#i6490c0a "i6490c0a")
+## ユニットテストを行う
 
 * * *
 
@@ -22,28 +22,28 @@
 
 * * *
 
-## 概要 [](ethna-document-dev_guide-misc-unittest.html#s989701c "s989701c")
+## 概要
 
 [SimpleTest](http://simpletest.org) を使った Ethna でのユニットテストの方法です。  
 Simpletest は、様々なユニットテストの実行、レポートの出力形式に対応したPHP向けのテスティングフレームワークです。
 
-## テスト実行環境の作成 [](ethna-document-dev_guide-misc-unittest.html#rb29fb5e "rb29fb5e")
+## テスト実行環境の作成
 
-### SimpleTestのインストール [](ethna-document-dev_guide-misc-unittest.html#r84dd296 "r84dd296")
+### SimpleTestのインストール
 
 まずはSimpletestをインストールする必要があります。インストールには以下の二つの方法があります。
 
-#### PEARコマンドを使ってインストールする [](ethna-document-dev_guide-misc-unittest.html#hceeb868 "hceeb868")
+#### PEARコマンドを使ってインストールする
 
     # pear channel-discover pear.ethna.jp
     # pear update-channels
     # pear install ethna/simpletest
 
-#### 直接ダウンロードしてインストールする [](ethna-document-dev_guide-misc-unittest.html#o93ba3c2 "o93ba3c2")
+#### 直接ダウンロードしてインストールする
 
 - [http://sourceforge.net/projects/simpletest](http://sourceforge.net/projects/simpletest)
 
-### debugフラグの設定(必須！） [](ethna-document-dev_guide-misc-unittest.html#ha8e8dc0 "ha8e8dc0")
+### debugフラグの設定(必須！）
 
 設定ファイル（etc/{app\_id}-ini.php)のdebugフラグをtrueに設定します。
 
@@ -65,9 +65,9 @@ Simpletest は、様々なユニットテストの実行、レポートの出力
     
     $config = array ( 'debug' => true, );
 
-## テストケースの作成 [](ethna-document-dev_guide-misc-unittest.html#w3416fa4 "w3416fa4")
+## テストケースの作成
 
-### テストケースのスケルトンを生成する。 [](ethna-document-dev_guide-misc-unittest.html#f3b097ad "f3b097ad")
+### テストケースのスケルトンを生成する。
 
 ethnaコマンドを実行し、テストケースのスケルトンを生成します。 生成されたクラスにテストを記述していきます。
 
@@ -99,7 +99,7 @@ AppObjectやAppManager、その他のテスト用途に使います。
   - （クラス名は {appid}\_[テストケース名]\_TestCase)
   - {appid}\_UnitTestManagerへのテストケースの追加をする必要はありません。
 
-### テストケースの記述 [](ethna-document-dev_guide-misc-unittest.html#j4277083 "j4277083")
+### テストケースの記述
 
 上記で生成されたテストケースのクラス中に、「test」から始まるメソッドとテストを追加していきます。ethnaコマンドで生成されるクラスは [UnitTestCase](http://simpletest.org/api/SimpleTest/UnitTester/UnitTestCase.html) を継承した Ethna\_UnitTestCase を継承していますので、 [UnitTestCase](http://simpletest.org/api/SimpleTest/UnitTester/UnitTestCase.html)のメソッドを $this 経由で呼び出すことが出来ます。
 
@@ -115,7 +115,7 @@ simpletest でのテストケースの書き方の詳細は、以下を参照し
 - [http://simpletest.org/en/first\_test\_tutorial.html](http://simpletest.org/en/first_test_tutorial.html)
 - [http://simpletest.org/api/](http://simpletest.org/api/)
 
-### Ethna 2.3.5以前の、アクション・ビュー以外のテストケースの書き方 [](ethna-document-dev_guide-misc-unittest.html#pfd70e14 "pfd70e14")
+### Ethna 2.3.5以前の、アクション・ビュー以外のテストケースの書き方
 
 2.3.5 以前で、AppObjectやAppManagerのテストケースを作成する場合は、以下のようにします。
 
@@ -136,7 +136,7 @@ simpletest でのテストケースの書き方の詳細は、以下を参照し
             '{appid}_UserManager' => 'app/{appid}_UserManagerTest.php',
         );
 
-### Ethna\_UnitTestCase特有のメソッド [](ethna-document-dev_guide-misc-unittest.html#ec11f48a "ec11f48a")
+### Ethna\_UnitTestCase特有のメソッド
 
 テストケースの中で、アクションフォームやアクション、ビューのインスタンスを独自に必要とすることがあります。以下のメソッドはそうした用途に使います。
 
@@ -148,7 +148,7 @@ simpletest でのテストケースの書き方の詳細は、以下を参照し
 
 - createViewClass() ビューの作成
 
-## テスト結果表示 [](ethna-document-dev_guide-misc-unittest.html#u0d31ccd "u0d31ccd")
+## テスト結果表示
 
 www/unittest.phpをブラウザで表示。ローカルファイルを直接表示してもだめですよ。
 

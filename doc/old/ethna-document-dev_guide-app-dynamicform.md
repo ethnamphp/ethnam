@@ -32,7 +32,7 @@ Ethna でのアクションフォームの定義は、以下のように固定�
 | 書いた人 | mumumu | 2009-06-03 | フォームヘルパが絡んだ場合の記述を追加 |
 | 書いた人 | DQNEO | 2010-11-11 | ActionFormのform定義を直接変更する方法を追加 |
 
-### フォーム定義を動的にしなければならない理由 [](ethna-document-dev_guide-app-dynamicform.html#g69ae8c7 "g69ae8c7")
+### フォーム定義を動的にしなければならない理由
 
 動的にフォーム定義を Ajax 等で動的にブラウザ側のインターフェイスを変更するようになった今にあっては、submitされた値、または データベースやセッションの値に応じて、フォーム定義を変更したいとの要求は自然に出てくるでしょう。
 
@@ -48,13 +48,13 @@ Ethna でのアクションフォームの定義は、以下のように固定�
                 ...
               </select>
 
-### Ethna 2.5.0 以降でのやり方 [](ethna-document-dev_guide-app-dynamicform.html#t9f82a56 "t9f82a56")
+### Ethna 2.5.0 以降でのやり方
 
 Ethna 2.5.0 以降では、フォーム定義を動的に変更するための場所を統一するためのAPIが整備されました。フォーム定義はアクションフォームに関することなので、Ethna\_ActionForm クラスのメソッドで統一するのがスマートです。
 
 よって、以下のようなAPI が定義されています。
 
-#### フォーム定義変更専用のヘルパメソッド [](ethna-document-dev_guide-app-dynamicform.html#j5cff07b "j5cff07b")
+#### フォーム定義変更専用のヘルパメソッド
 
 Ethna 2.5.0 以降では、Ethna\_ActionForm#setFormDef\_PreHelper を使います。このメソッドを呼び出す前に、Ethna\_Session, Ethna\_Backend などがすべて初期化されるため、データベースやセッションの値に基づいてフォーム定義を設定することが可能です。
 
@@ -94,7 +94,7 @@ Ethna 2.5.0 以降では、Ethna\_ActionForm#setFormDef\_PreHelper を使いま�
         // 自動で設定される。
     }
 
-#### フォームヘルパが絡んだ場合 [](ethna-document-dev_guide-app-dynamicform.html#xa9c35f1 "xa9c35f1")
+#### フォームヘルパが絡んだ場合
 
 フォームヘルパについては、 [フォームヘルパ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)") の説明も参照してください。
 
@@ -127,15 +127,15 @@ Ethna 2.5.0 以降では、Ethna\_ActionForm#setFormDef\_PreHelper を使いま�
         $this->setFormDef_PreHelper();
     }
 
-### Ethna 2.3.5 以前のやり方 [](ethna-document-dev_guide-app-dynamicform.html#pe0e10dd "pe0e10dd")
+### Ethna 2.3.5 以前のやり方
 
-#### どこに書くか？ [](ethna-document-dev_guide-app-dynamicform.html#n1b84d66 "n1b84d66")
+#### どこに書くか？
 
 動的な定義も含めてActionFormの中で完結させたいところですが、ActionForm 内にはロジックが書けないため、データベースのインスタンスを拾うなどしてフォーム定義を動的に変更することができません。
 
 Ethna\_ActionClass#prepare もしくは Ethna\_ActionClass#perform に処理を記述すればよいですが、フォーム値の自動検証を Ethna\_ActionClass#prepare で行うのが一般的であることを考えると、前処理を行う prepareに処理を書いたほうがスマートです。
 
-#### フォーム定義の設定 [](ethna-document-dev_guide-app-dynamicform.html#l09cc691 "l09cc691")
+#### フォーム定義の設定
 
 まず、フォーム名とその定義がどのようなものになるかを決めます。以下の例では、フォーム定義 $def に "$name の答え" という動的な値を定義しています。
 
@@ -157,7 +157,7 @@ Ethna\_ActionClass#prepare もしくは Ethna\_ActionClass#perform に処理を�
     // フォーム定義をセットする
         $this->af->setDef($name, $def);
 
-#### submitされた値を設定しなおす [](ethna-document-dev_guide-app-dynamicform.html#b73f36af "b73f36af")
+#### submitされた値を設定しなおす
 
 Ethna\_ActionForm#setDef を呼び出しただけでは、アクションフォーム内のフォーム定義が変更されただけで、submit された値がアクションフォームに設定されたわけではありません。
 
@@ -174,7 +174,7 @@ Ethna\_ActionForm#setDef を呼び出しただけでは、アクションフォ�
             return 'index';
         }
 
-#### 全体のサンプルコード [](ethna-document-dev_guide-app-dynamicform.html#t061dd74 "t061dd74")
+#### 全体のサンプルコード
 
 上記の説明で使ったサンプルコードの全容をまとめると、以下のようになります (左側は行番号です)
 
@@ -203,7 +203,7 @@ Ethna\_ActionForm#setDef を呼び出しただけでは、アクションフォ�
     23: }
     24:}
 
-#### (参考)ActionFormのform定義を直接変更する方法 [](ethna-document-dev_guide-app-dynamicform.html#s5c75bc7 "s5c75bc7")
+#### (参考)ActionFormのform定義を直接変更する方法
 
 別のやり方として、prepare内で、$this->af->formを直接変更するやり方もあります。
 

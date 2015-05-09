@@ -1,6 +1,6 @@
 # エラーコードの定義
 
-## エラーコードの定義 [](ethna-document-dev_guide-error-definecode.html#c5815ad9 "c5815ad9")
+## エラーコードの定義
 
 エラーコードは，app/{アプリケーションID}\_Error.phpに定義します．
 

@@ -2,7 +2,7 @@
   - Ethna\_Error 
   - ActionError 
 
-## エラー処理ポリシー [](ethna-document-dev_guide-error-policy.html#m27b8582 "m27b8582")
+## エラー処理ポリシー
 
 アプリケーションの実行中に生じるエラーは、次の２つにわけられます。
 
@@ -15,7 +15,7 @@ Ethnaフレームワークでは、これらのエラーは全てEthna\_Error（
 
 [![Ethna_Error1.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-error-policy&src=Ethna_Error1.png "Ethna\_Error1.png")](plugin=attach&refer=ethna-document-dev_guide-error-policy&openfile=Ethna_Error1.png.html "Ethna\_Error1.png")
 
-### Ethna\_Error [](ethna-document-dev_guide-error-policy.html#dfe142c9 "dfe142c9")
+### Ethna\_Error
 
 Ethna\_Errorには、エラーコードとエラーメッセージが格納されています。 Ethna\_Errorはシステムとしてエラーハンドリングを行うので，実際のアプリケーションでは，Ethna\_Errorをアクションクラスで処理し，ユーザに必要な情報のみを提示します．
 
@@ -52,7 +52,7 @@ EthnaクラスのisError()メソッドで、エラーの有無を確認できま
 
 **[アプリケーションエラーコードの定義](ethna-document-dev_guide-error-definecode.html "ethna-document-dev\_guide-error-definecode (1240d)")**
 
-### ActionError [](ethna-document-dev_guide-error-policy.html#ded53322 "ded53322")
+### ActionError
 
 [![Ethna_ActionError.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-error-policy&src=Ethna_ActionError.png "Ethna\_ActionError.png")](plugin=attach&refer=ethna-document-dev_guide-error-policy&openfile=Ethna_ActionError.png.html "Ethna\_ActionError.png")
 

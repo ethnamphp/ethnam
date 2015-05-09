@@ -12,21 +12,21 @@
 
 | 書いた人 | mumumu | 2009-06-21 | 新規作成 |
 
-### Smartyプラグインの種別 [](ethna-document-dev-guide-make-smartyplugin.html#td2adc00 "td2adc00")
+### Smartyプラグインの種別
 
 Smarty のプラグインには様々な種類がありますが、原理的にEthnaでは全ての種類のSmartyプラグインを使うことができます。
 
 主に使われるのはブロックプラグイン、関数プラグイン、修正子プラグインの3種類でしょう。
 
-### Ethna 2.5.0 以降のやり方 [](ethna-document-dev-guide-make-smartyplugin.html#vd16f435 "vd16f435")
+### Ethna 2.5.0 以降のやり方
 
-#### プラグインの作成 [](ethna-document-dev-guide-make-smartyplugin.html#e3340a25 "e3340a25")
+#### プラグインの作成
 
 すべての種類の Smartyプラグインが Ethna で利用可能です。
 
 Smartyプラグインの作成方法については、 [Smarty のマニュアル](http://www.smarty.net/manual/ja/plugins.php) をご覧下さい。
 
-#### プラグインの登録と使い方 [](ethna-document-dev-guide-make-smartyplugin.html#i41b8e45 "i41b8e45")
+#### プラグインの登録と使い方
 
 app/Plugin/Smarty 以下に作成したプラグインを置いておけば、自動で Smartyプラグインの探索パスを通してあるため、ここに置いたプラグインは自動でEthnaが探してくれるようになっています。
 
@@ -36,9 +36,9 @@ app/Plugin/Smarty 以下に作成したプラグインを置いておけば、�
     {hoge}
     {hoge}{/hoge}
 
-### Ethna 2.3.x 以前のやり方 [](ethna-document-dev-guide-make-smartyplugin.html#s8d7cfd4 "s8d7cfd4")
+### Ethna 2.3.x 以前のやり方
 
-#### クラスのメソッドをSmartyFunctionとして登録する方法 [](ethna-document-dev-guide-make-smartyplugin.html#u3120897 "u3120897")
+#### クラスのメソッドをSmartyFunctionとして登録する方法
 
 以下のように配列で指定することでクラスのメソッドをsmarty\_functionとして登録することが可能です。
 
@@ -63,7 +63,7 @@ app/Plugin/Smarty 以下に作成したプラグインを置いておけば、�
 
 とした配列を列挙する。\*1
 
-#### smartyの流儀でfunction, modifierなどを登録する [](ethna-document-dev-guide-make-smartyplugin.html#g54e5005 "g54e5005")
+#### smartyの流儀でfunction, modifierなどを登録する
 
 smartyは特定のディレクトリにsmartyの流儀でファイルを作れば自動的にmodifierなどを見付けてくれます。上の方法は、smartyの流儀によらずにアプリで用意したクラス関数をsmarty functionに登録するための方法です。
 

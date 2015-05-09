@@ -26,7 +26,7 @@ Ethna では、実行時に様々なログを出力することができます�
 | 書いた人 | ------ | ---------- | 新規作成 |
 | 書いた人 | mumumu | 2009-05-24 | 最新版に追随する形で全面的に修正 |
 
-### ログ出力の設定方法 [](ethna-document-dev_guide-log.html#qfc3e2d8 "qfc3e2d8")
+### ログ出力の設定方法
 
 アプリケーションの etc/[アプリケーションID]-ini.php の $config グローバル変数に 'log' というキーで設定を記述します。その中にログ出力方式をキーとして設定を記述していきます。
 
@@ -51,7 +51,7 @@ Ethna では、実行時に様々なログを出力することができます�
          'log_filter_ignore' => 'Undefined index.*%%.*tpl', // 無視するパターン
      );
 
-### ログレベルについて [](ethna-document-dev_guide-log.html#md5faa05 "md5faa05")
+### ログレベルについて
 
 ログレベルは、出力する情報の重要度をあらわすものです。Ethnaでは、 「LOG\_」 というプレフィックスがついたPHPの定数が定義されています。
 
@@ -71,11 +71,11 @@ Ethna では、設定されたログレベルより高いレベルのログを�
 
 ログレベルの決定方針は明確ではありませんが、LOG\_NOTICE までは、アプリケーションとして正常な動作でも発生することがあります(フォーム値の検証でエラーが発生した場合など)。また、LOG\_DEBUGレベルでは、Ethna内部で実行される情報がかなり詳細に出力されます(ethnaコマンドなど)。
 
-### ログの出力方式と出力オプション [](ethna-document-dev_guide-log.html#l0627d02 "l0627d02")
+### ログの出力方式と出力オプション
 
 Ethna\_LoggerはLogwriterプラグインを使ってログの出力をします。Logwriterプラグインには以下の5通りが用意されています。それぞれのオプションについてはログの設定方法の項を参照してください。
 
-#### echo [](ethna-document-dev_guide-log.html#c33327bf "c33327bf")
+#### echo
 
 アプリケーションの実行画面(ブラウザ等)にそのまま表示します。具体的には、ログ出力が指示された段階でPHPの echo関数 を実行します。設定は以下のようにします。
 
@@ -91,7 +91,7 @@ Ethna\_LoggerはLogwriterプラグインを使ってログの出力をします�
             'option' => 'pid,function,pos',
         ),
 
-#### file [](ethna-document-dev_guide-log.html#mdd742a1 "mdd742a1")
+#### file
 
 アプリケーションのログディレクトリにログファイル (標準ではlog/appid.log)を作って出力します。設定は以下のようにします。
 
@@ -118,7 +118,7 @@ Ethna\_LoggerはLogwriterプラグインを使ってログの出力をします�
             'mode' => '666',
         ),
 
-#### syslog [](ethna-document-dev_guide-log.html#pc3e1321 "pc3e1321")
+#### syslog
 
 syslogを使ってログを出力します。出力先は syslog の設定、及びプラットフォームによって異なります。設定は以下のようにしますが、使い方は echo のものと同様です。
 
@@ -134,7 +134,7 @@ syslogを使ってログを出力します。出力先は syslog の設定、及
             'option' => 'pid,function,pos',
         ),
 
-#### Alertmail [](ethna-document-dev_guide-log.html#ia88f74f "ia88f74f")
+#### Alertmail
 
 ログの内容を指定されたアドレスにメールで送信します。1回のログにつき1通のメールが送信され、backtraceが付加されます。緊急事態が発生したときなどに使います。設定は以下のようにします。
 
@@ -153,11 +153,11 @@ syslogを使ってログを出力します。出力先は syslog の設定、及
             'mailaddress' => 'alert@ml.example.jp, bhoge@ml.example.com',
         ),
 
-#### default [](ethna-document-dev_guide-log.html#u381aa61 "u381aa61")
+#### default
 
 何もしません。設定では 'default' を というキーを使いますが、これを使用することはないでしょう。
 
-### ログ出力のフィルタ [](ethna-document-dev_guide-log.html#d41b4d84 "d41b4d84")
+### ログ出力のフィルタ
 
 各ログの出力方式の設定には、'filter\_do', 'filter\_ignore' というキーでそれぞれ「マッチするログを出力する」, 「出力しない」、を設定できます。たとえば echoの設定を例にとると、以下のようになります。
 
@@ -178,11 +178,11 @@ syslogを使ってログを出力します。出力先は syslog の設定、及
             'filter_ignore' => 'Undefined index.*%%.*tpl',
         ),
 
-### プログラムでログ出力を制御する方法 [](ethna-document-dev_guide-log.html#a3c9d31a "a3c9d31a")
+### プログラムでログ出力を制御する方法
 
 Ethna では基本的にEthna\_Loggerクラスを使ってアプリケーションのログを管理していますが、出力されるタイミングは以下の3つがあります。
 
-#### Ethna\_Logger へ直接指示する [](ethna-document-dev_guide-log.html#r50d9af4 "r50d9af4")
+#### Ethna\_Logger へ直接指示する
 
 Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の形で取得できます。
 
@@ -198,19 +198,19 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
     // NOTICE レベルのメッセージを出力
     $logger->log(LOG_NOTICE, "メッセージ");
 
-#### Ethna::raiseError() が実行されたとき [](ethna-document-dev_guide-log.html#b27aaf40 "b27aaf40")
+#### Ethna::raiseError() が実行されたとき
 
     $errobj =& Ethna::raiseError("エラーだよ[%s]", E_USER_ERROR, $err_submsg);
 
-#### trigger\_error() や fatal errorなどが発生したとき [](ethna-document-dev_guide-log.html#xbdd6d3c "xbdd6d3c")
+#### trigger\_error() や fatal errorなどが発生したとき
 
     trigger_error("大変だ！エラーだよ！");
 
-### ログ出力設定のサンプル [](ethna-document-dev_guide-log.html#g2688ca5 "g2688ca5")
+### ログ出力設定のサンプル
 
 ここでは、ログ出力設定の典型的な例についていくつか紹介します。
 
-#### ログをファイルに出力する [](ethna-document-dev_guide-log.html#x87bc522 "x87bc522")
+#### ログをファイルに出力する
 
 ログをファイルに出力するには、「file」という名前をキーにして設定を記述します。以下は、/tmp/hoge.log にパーミッション666で、noticeレベル以上のログを出力します。
 
@@ -227,7 +227,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
             ),
         ),
 
-#### ログレベルに応じてアラートメールを送信させる [](ethna-document-dev_guide-log.html#ed4210ad "ed4210ad")
+#### ログレベルに応じてアラートメールを送信させる
 
 以下のようにして、メールの送信先のメールアドレスを記述します。  
 カンマで区切って複数のメールアドレスが指定できます。
@@ -241,7 +241,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
                 'mailaddress' => 'alert@ml.example.jp',
             ),
 
-#### アプリ開発中の詳細なログ [](ethna-document-dev_guide-log.html#y88cf8fa "y88cf8fa")
+#### アプリ開発中の詳細なログ
 
 方針: typoを発見するためにLOG\_NOTICEレベル(E\_NOTICEを出力するレベル)まで画面に表示し、fileにはデータベースに問い合わせた全てのSQL文を出力する。
 
@@ -264,7 +264,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
              ),
           ),
 
-#### 公開する本番環境のログ [](ethna-document-dev_guide-log.html#j2977732 "j2977732")
+#### 公開する本番環境のログ
 
 方針: とにかく画面にはなにも表示しない。回避可能だが意図した動作になっていないなどのLOG\_WARNINGレベルはファイルに出力。データベースに接続できないなどの緊急時に発生するLOG\_ERRレベルのログはメールでアラート用メーリングリストに送信する。
 

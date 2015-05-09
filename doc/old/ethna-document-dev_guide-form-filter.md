@@ -2,11 +2,11 @@
   - サンプル 
   - フィルタの利用方法 
 
-## フォーム値の自動検証を行う(フィルタ編) [](ethna-document-dev_guide-form-filter.html#mc7f24c8 "mc7f24c8")
+## フォーム値の自動検証を行う(フィルタ編)
 
 フォーム値の自動検証フレームワークには、値の検証だけではなく変換処理も組み込まれています。この機能を利用することで、フォーム値に含まれる半角カナを自動的に全角に変換したり、受け取りたくない文字列を削除することが出来ます。
 
-### サンプル [](ethna-document-dev_guide-form-filter.html#ncfc34c3 "ncfc34c3")
+### サンプル
 
 機能としてはとっても分かりやすいものなので、まずは例を挙げてみます。アクションフォームクラスの$formメンバに、'filter'属性を追加します(その他の属性については [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.html "ethna-document-dev\_guide-form-validate (737d)")を御覧下さい)。
 
@@ -73,7 +73,7 @@
     
     string(6) "STRING"
 
-### フィルタの利用方法 [](ethna-document-dev_guide-form-filter.html#p2b7fbd1 "p2b7fbd1")
+### フィルタの利用方法
 
 以上の通り、フィルタの利用方法は簡単で:
 

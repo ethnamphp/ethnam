@@ -19,7 +19,7 @@
 
 なお、このページは [アプリケーション構築手順(1)](ethna-document-tutorial-practice1.html "ethna-document-tutorial-practice1 (23d)")〜 [アプリケーション構築手順(2)](ethna-document-tutorial-practice2.html "ethna-document-tutorial-practice2 (888d)")の続きとなっていますので、一応ご注意下さい。
 
-### (10) ログイン画面の変更 [](ethna-document-tutorial-practice3.html#s3dcd04e "s3dcd04e")
+### (10) ログイン画面の変更
 
 まず、前節(8)で作成したテンプレートファイル(template/ja/login.tpl)をもうちょっとログイン画面っぽいものに作り変えておきます。具体的には以下のようにしてみます。
 
@@ -69,7 +69,7 @@ Smartyテンプレートの詳細については
 
  ![ethna-fig7.jpg](http://ethna.jp/image/ethna-fig7.jpg "ethna-fig7.jpg")
 
-### (11) ログインアクションの追加 [](ethna-document-tutorial-practice3.html#tbd93730 "tbd93730")
+### (11) ログインアクションの追加
 
 フォームがsubmitされた際に実行されるアクション「login\_do」を前節(5)の場合と同様に追加します。
 
@@ -97,7 +97,7 @@ app/action/Login/Do.php:
 
 実際にはトップページに遷移する前に、(あたりまえですが)フォーム値のチェックや認証処理を行い、エラーが発生した場合はエラーメッセージを表示させる必要があります。
 
-### (12) フォーム値の取得 [](ethna-document-tutorial-practice3.html#r4602518 "r4602518")
+### (12) フォーム値の取得
 
 認証を行うためには、フォームから送信された値を取得する必要があります。フォームから送信された値にアクセスするには、アクションクラスと1対1で生成されるアクションフォームというオブジェクトを利用します。アクションフォームのクラス定義は、ethna add-action を実行すると、アクションクラスと同時に生成されていますので、まずは何も考えず、app/action/Login/Do.phpに以下のようなコードを追加してみてください。
 
@@ -127,7 +127,7 @@ app/action/Login/Do.php:
 
 と書くことも出来ます。
 
-### (13) フォーム値の検証 [](ethna-document-tutorial-practice3.html#ma018c2e "ma018c2e")
+### (13) フォーム値の検証
 
 たかがフォーム値にアクセスするのに何故こんな面倒な手順が必要なのか、にはいくつか理由がありますが(ほとんどはセキュリティ上の理由)、この方法の最大のメリットはフォーム値の自動検証です。
 
@@ -186,7 +186,7 @@ app/action/Login/Do.php:
 
 _see also:_ [フォーム値の自動検証を行う](ethna-document-dev_guide-form-validate.html "ethna-document-dev\_guide-form-validate (737d)")
 
-### (14) エラー処理(フォーム値の表示) [](ethna-document-tutorial-practice3.html#b237aaa1 "b237aaa1")
+### (14) エラー処理(フォーム値の表示)
 
 (自動にせよ手動にせよ)フォーム値の検証を行ってエラーが発生したら、それに伴って幾つかの処理を行う必要があります。
 
@@ -210,7 +210,7 @@ template/ja/login.tpl:
 
 なお、{$form.\*}で表示される値は_常に_エスケープされていますので、サニタイズ等は考慮する必要はありません。\*2
 
-### (15) エラー処理(エラーメッセージの表示) [](ethna-document-tutorial-practice3.html#dfdf474a "dfdf474a")
+### (15) エラー処理(エラーメッセージの表示)
 
 次に最低限の処理その2である、エラーメッセージの表示を行います。発生したエラーは、やはりEthnaフレームワークによって自動的にテンプレート変数として割り当てられ、
 
@@ -257,7 +257,7 @@ _see also:_ [エラー処理ポリシー](ethna-document-dev_guide-error-policy.
 
 _see also:_ [自動検証のエラーメッセージをカスタマイズする](ethna-document-dev_guide-form-message.html "ethna-document-dev\_guide-form-message (619d)")
 
-### (16) ロジックの記述(概念) [](ethna-document-tutorial-practice3.html#x9a32944 "x9a32944")
+### (16) ロジックの記述(概念)
 
 フォーム値の検証が完了したら、いよいよロジック部分(実際のアプリケーションとしての動作)を記述します。
 
@@ -291,7 +291,7 @@ _see also:_ [自動検証のエラーメッセージをカスタマイズする]
 - 他のアクションクラスと重複する処理を記述しない  
 重複する処理がある場合は、そのアクションクラスを継承するか、アプリケーションのマネージャ的処理に移行する
 
-### (17) ロジックの記述(実際) [](ethna-document-tutorial-practice3.html#q7acefe5 "q7acefe5")
+### (17) ロジックの記述(実際)
 
 (16)の概念を元に、アクションクラスにロジック部分の処理を記述していきます(正確には、ロジック部分を記述したクラスを別に作成し、それをアクションクラスから呼び出します)。
 

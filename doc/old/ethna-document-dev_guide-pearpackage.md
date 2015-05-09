@@ -1,6 +1,6 @@
 # Ethna用 PEARパッケージの作成と配布
 
-## Ethna用 PEARパッケージの作成と配布 [](ethna-document-dev_guide-pearpackage.html#e4f71cd6 "e4f71cd6")
+## Ethna用 PEARパッケージの作成と配布
 
 - Ethna用 PEARパッケージの作成と配布 
   - Ethna 2.5.0 以降のやり方 
@@ -17,27 +17,27 @@
 | 書いた人 | いちい | ---------- | 新規作成 |
 | 書いた人 | mumumu | 2009-06-21 | 最新版に合わせて修正 |
 
-### Ethna 2.5.0 以降のやり方 [](ethna-document-dev_guide-pearpackage.html#l4e0ce78 "l4e0ce78")
+### Ethna 2.5.0 以降のやり方
 
 ... 執筆中
 
-#### パッケージの作成方法 [](ethna-document-dev_guide-pearpackage.html#j9d8ca60 "j9d8ca60")
+#### パッケージの作成方法
 
 ... 執筆中
 
-#### パッケージの配布 [](ethna-document-dev_guide-pearpackage.html#g5201ecb "g5201ecb")
+#### パッケージの配布
 
 ... 執筆中
 
-#### インストール [](ethna-document-dev_guide-pearpackage.html#f1d55e95 "f1d55e95")
+#### インストール
 
 上記で説明したやり方で作成した PEAR パッケージは、pear-local コマンドでインストールすることができます。
 
     ethna pear-local install [Ethna_Plugin_Package_URL]
 
-### Ethna 2.3.7 以前のやり方 [](ethna-document-dev_guide-pearpackage.html#n2e7fa30 "n2e7fa30")
+### Ethna 2.3.7 以前のやり方
 
-#### パッケージを作る [](ethna-document-dev_guide-pearpackage.html#nb16f924 "nb16f924")
+#### パッケージを作る
 
 現状プラグインしかパッケージがないです。
 
@@ -57,7 +57,7 @@ ethnaのリリースファイルにプラグインのパッケージャが含ま
 
 プラグインのサンプルが設定ファイルはてきとうに編集すれば分かると思います。スケルトンは、プラグインファイル中のクラス名のprefix(masterとlocalでインストール時に変わる部分)を {$application\_id} としていることに注意してください。
 
-#### PEAR パッケージについての簡単な説明 [](ethna-document-dev_guide-pearpackage.html#qf3df12b "qf3df12b")
+#### PEAR パッケージについての簡単な説明
 
 pear.ethna.jp という pear のチャンネルがあって，そこで公開されているプラグインなどのパッケージがインストールできるようになりました。
 
@@ -67,7 +67,7 @@ pear.ethna.jp という pear のチャンネルがあって，そこで公開さ
 
 とやると，プラグイン Ethna\_Plugin\_Hoge\_Fuga をネットワークからダウンロードしてEthna本体のディレクトリにインストールしてくれます。
 
-#### master と local [](ethna-document-dev_guide-pearpackage.html#ya0e8a97 "ya0e8a97")
+#### master と local
 
 - master
   - Ethna本体と同じところにパッケージをインストールします
@@ -82,13 +82,13 @@ pear.ethna.jp という pear のチャンネルがあって，そこで公開さ
 
 でいろいろ表示されます。
 
-#### localについての注意 [](ethna-document-dev_guide-pearpackage.html#h80740a1 "h80740a1")
+#### localについての注意
 
 - プラグインの場合，いったん skel にインストールした上で， skelton generator を経由してプラグインを入れます。
   - ややこしいですが，ディレクトリ配置が変えられるとか，クラス名の prefix がインストール時に決まるとかの都合でこうなっちゃいました。
 - プラグイン以外にも， action pack みたいなのを skel にインストールして add-hoge みたくやれるようにしたいです。
 
-#### いろいろ [](ethna-document-dev_guide-pearpackage.html#na69dccd "na69dccd")
+#### いろいろ
 
 - (CLIの) php.ini で memory\_limit = 8M だと足りないかもしれません。
   - 16M とか 24M くらいにすれば OK なはず

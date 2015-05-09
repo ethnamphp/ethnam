@@ -13,7 +13,7 @@
     - 特定のフォームに対するエラーメッセージ 
   - 補足 
 
-## フォーム値の自動検証を行う(基本編) [](ethna-document-dev_guide-form-validate.html#z3a90a1a "z3a90a1a")
+## フォーム値の自動検証を行う(基本編)
 
 クライアントから送信されたフォーム値の検証は、ウェブアプリケーションにおいて重要な、そして面倒な処理の1つです。Ethnaではこの処理を出来る限り手間をかけずに行えるような自動検証機能を提供しています。
 
@@ -29,7 +29,7 @@ validate()メソッドは戻り値として発生したエラーの数を返す�
 
 具体的な手順については以下を御覧下さい。
 
-### (1) 属性を設定する [](ethna-document-dev_guide-form-validate.html#u8511fc4 "u8511fc4")
+### (1) 属性を設定する
 
 自動検証を行うには、まず属性としてフォーム値の型を指定します。
 
@@ -50,7 +50,7 @@ validate()メソッドは戻り値として発生したエラーの数を返す�
 
 上記に加えて、任意のメソッドによるチェックも可能です(メールアドレス、URL、アプリケーション固有ID等)。詳細は [フォーム値の自動検証を行う(カスタムチェック編)](ethna-document-dev_guide-form-customvalidate.html "ethna-document-dev\_guide-form-customvalidate (1120d)")を御覧下さい。
 
-#### type属性 [](ethna-document-dev_guide-form-validate.html#oc46874f "oc46874f")
+#### type属性
 
 type属性に設定可能な値は以下の通りとなりますので、受け取りたい値に応じて設定します。型として特に制限を設けない場合にはVAR\_TYPE\_STRINGを設定します。
 
@@ -61,7 +61,7 @@ type属性に設定可能な値は以下の通りとなりますので、受け�
 | VAR\_TYPE\_BOOLEAN | 真偽値(1 or 0) |
 | VAR\_TYPE\_FILE | ファイル |
 
-#### 制限属性 [](ethna-document-dev_guide-form-validate.html#p64c2b4d "p64c2b4d")
+#### 制限属性
 
 required/min/max/regexpの各属性はtype属性に設定された値によって意味合いが変化します。詳細は以下の通りです。
 
@@ -73,19 +73,19 @@ required/min/max/regexpの各属性はtype属性に設定された値によっ�
 | VAR\_TYPE\_BOOLEAN | 必須チェック | - | - | - |
 | VAR\_TYPE\_FILE | 必須チェック | ファイルの最小サイズ(KB) | ファイルの最大サイズ(KB) | - |
 
-#### VAR\_TYPE\_DATETIME に関する注意事項 [](ethna-document-dev_guide-form-validate.html#l4567ccd "l4567ccd")
+#### VAR\_TYPE\_DATETIME に関する注意事項
 
 type 属性に VAR\_TYPE\_DATETIME を指定する場合は、PHP の [strtotime関数](http://jp.php.net/strtotime) が動作する英文形式の入力があることを期待することに注意して下さい。そのため、日本語等のマルチバイト文字が含まれた日付等では max, min 属性は動作しません\*4。また、負のUnixタイムスタンプに対応しているかどうか、そしてサポートするタイムスタンプの範囲もプラットフォーム依存です。
 
 よって、こうした制限事項にひっかかるような日付の入力値の検証を行いたい場合は、VAR\_TYPE\_DATETIME は使わないで下さい。その場合は、年・月・日 などのフィールドをそれぞれフォーム定義で指定するなどして、カスタムバリデータを書いたほうが無難です。
 
-#### VAR\_TYPE\_STRING の max, min属性に関する注意事項 [](ethna-document-dev_guide-form-validate.html#laa76e75 "laa76e75")
+#### VAR\_TYPE\_STRING の max, min属性に関する注意事項
 
 Ethna 2.5.0 以降では、VAR\_TYPE\_STRING のフォーム定義に対して maxとmin の属性を設定するとデフォルトで最大（最小）文字数のチェックが行われるようになりました。これに対して 2.3.x より前のバージョンでは、最大（最小）バイト数でチェックを行います。
 
 2.5.0 以降でバイト数によるチェックを行いたい場合は、 [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html "ethna-document-dev\_guide-form-validate-vartypestring (581d)") を参照して下さい。
 
-#### 制限属性(配列使用時) [](ethna-document-dev_guide-form-validate.html#b184714a "b184714a")
+#### 制限属性(配列使用時)
 
 type属性に **配列が指定されている場合** は、以下のルールに従って自動検証が行われます。
 
@@ -120,7 +120,7 @@ required 属性を true にすると、配列の場合はデフォルトで **Su
 
 - required 属性以外の要素は、入力された各要素に対して、指定された属性を満たすかどうかのチェックが行われます。
 
-#### 補足属性 [](ethna-document-dev_guide-form-validate.html#k28ea116 "k28ea116")
+#### 補足属性
 
 name属性にはフォームの表示名(フォーム名が'mailaddress'なら'メールアドレス'のようになる)を、form\_type属性にはフォームの種別を設定します。form\_typeに設定可能な値は以下の通りです。この属性は、フォームヘルパで特に重要です。
 
@@ -136,7 +136,7 @@ name属性にはフォームの表示名(フォーム名が'mailaddress'なら'�
 | FORM\_TYPE\_FILE | ファイル |
 | FORM\_TYPE\_HIDDEN | 隠れコントロール |
 
-#### 属性設定例 [](ethna-document-dev_guide-form-validate.html#n9f7986e "n9f7986e")
+#### 属性設定例
 
 以下に、幾つかの設定例を挙げますので、ご参考にして下さい。
 
@@ -178,7 +178,7 @@ question[]というチェックボックス(表示名「質問」):
         ),
     );
 
-### (2) validate()メソッドを実行する [](ethna-document-dev_guide-form-validate.html#q3252e93 "q3252e93")
+### (2) validate()メソッドを実行する
 
 上記のようにフォーム値を定義したら、あとはvalidate()メソッドを実行するだけです。validate()メソッドは、各アクションのprepare()メソッドで実行します。具体的には以下のようになります。
 
@@ -201,13 +201,13 @@ question[]というチェックボックス(表示名「質問」):
 
 要するに、アクションフォーム(アクションクラスのメンバ変数$action\_formあるいは$afとして予め設定されています)のvalidate()メソッドを実行して、1以上の値が返されたら再度入力画面へ遷移すればよいだけです。
 
-### (3) エラーメッセージを表示する [](ethna-document-dev_guide-form-validate.html#n3bdf1a4 "n3bdf1a4")
+### (3) エラーメッセージを表示する
 
 入力画面でエラーが発生したら、当然ですがエラーメッセージを表示させなければなりません。ここではその方法をご説明します。とはいっても、全てのエラーメッセージはSmartyの変数としてアサインされているので、単純にそれの値にアクセスすればよいだけです。
 
 なお、ここで表示するエラーメッセージは勿論カスタマイズすることが出来ます。詳細は [エラーメッセージをカスタマイズする](ethna-document-dev_guide-form-message.html "ethna-document-dev\_guide-form-message (619d)")を御覧下さい。
 
-#### エラーメッセージ一覧 [](ethna-document-dev_guide-form-validate.html#s5490770 "s5490770")
+#### エラーメッセージ一覧
 
 何は無くとも全てのエラーメッセージを表示させる場合は、$errors変数を利用します。以下はその典型的な例となります。
 
@@ -219,7 +219,7 @@ question[]というチェックボックス(表示名「質問」):
      </ul>
     {/if}
 
-#### 特定のフォームに対するエラーメッセージ [](ethna-document-dev_guide-form-validate.html#d6b7dac9 "d6b7dac9")
+#### 特定のフォームに対するエラーメッセージ
 
 特定のフォームに対応するエラーメッセージを表示させるにはEthna組み込みのSmarty関数{message}を利用します。
 
@@ -234,7 +234,7 @@ question[]というチェックボックス(表示名「質問」):
     エラー
     {/if}
 
-### 補足 [](ethna-document-dev_guide-form-validate.html#rc31d153 "rc31d153")
+### 補足
 
 - 最近はフォーム属性をちまちま書くのすら面倒になってきました。もうちょっと楽できないものか考え中です
 - アプリケーションでSmartyプラグインを追加することで以下のようにもうちょっと楽できます

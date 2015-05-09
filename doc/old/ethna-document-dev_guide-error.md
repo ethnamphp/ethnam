@@ -14,7 +14,7 @@
 
 書いた人: いちい
 
-### 概要 [](ethna-document-dev_guide-error.html#p3a024e3 "p3a024e3")
+### 概要
 
 Ethnaはフレームワークとしてエラーハンドリングの機能を用意しています。
 
@@ -32,7 +32,7 @@ Ethnaで登場するエラーを、大きく次の2つに分類することに�
 
 これを開発段階と運用段階と分類したのは、前者のエラーは処理を制御しにくいために運用段階で発生させるべきでないからです。もちろんset\_error\_handler()をアプリケーションで設定することも可能ですが、おすすめはしません。
 
-### ethna\_error\_handler()の処理内容 [](ethna-document-dev_guide-error.html#v73e3d6b "v73e3d6b")
+### ethna\_error\_handler()の処理内容
 
 error\_reporting()の値を考慮しつつ、発生したエラーをアプリケーションのログに出力します。ログについては [ログ](ethna-document-dev_guide-log.html "ethna-document-dev\_guide-log (874d)")のページを参照してください。
 
@@ -40,7 +40,7 @@ error\_reporting()の値を考慮しつつ、発生したエラーをアプリ�
 
 この挙動は、ethna\_error\_handler()が呼び出されるエラーを開発段階の時点で捕捉するためです。たとえば宣言していない変数にアクセスするなどのエラーは、開発段階で修正するようにしてください。
 
-### Ethna::raiseError() [](ethna-document-dev_guide-error.html#mb1f5a40 "mb1f5a40")
+### Ethna::raiseError()
 
 Ethna クラスは PEAR クラスを継承しています。 Ethna::raiseError(), Ethna::raiseWarning(), Ethna::raiseNotice() は適切なエラーレベルとエラークラスとして Ethna\_Error を指定して PEAR::raiseError() を呼び出します。
 
@@ -48,7 +48,7 @@ PEAR::raiseError() 内で Ethna\_Error クラスのインスタンスが作ら�
 
 複雑な仕組みですが、raiseError()を呼び出したときのみ handleError() が実行され、その後の文脈でもエラーを Ethna\_Error のオブジェクトとして取り回すことができます。例えば、呼び出した関数が Ethna\_Error を返してきた場合、そのエラーをそのまま呼出元に丸投げすれば、エラーが二重に出力されることなくエラーの発生を伝達できます。
 
-### Ethna\_ActionErrorクラス [](ethna-document-dev_guide-error.html#ifac3c40 "ifac3c40")
+### Ethna\_ActionErrorクラス
 
 運用段階のエラーについては、意図しないエラーの発生(ex, データベースへの接続に失敗したなど)を示すエラーと、アプリケーションの正常動作の中で表現したいエラー(ex, ユーザの入力文字数がオーバーしたなど)との2通りがあるとおもいます。
 
@@ -56,7 +56,7 @@ Ethnaでは、アクション実行中に発生したエラーをビューの遷
 
 現在のところフォーム(ActionForm)に強く依存した実装になっているので、今後より便利なものとしてゆく予定です。
 
-### 具体例 [](ethna-document-dev_guide-error.html#j461fdeb "j461fdeb")
+### 具体例
 
 アクションクラス:
 

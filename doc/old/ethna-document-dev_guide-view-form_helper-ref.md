@@ -15,7 +15,7 @@
 
 | 書いた人 | mumumu | 2009-01-23 | 新規作成 |
 
-### {form}{/form} ブロックタグ [](ethna-document-dev_guide-view-form_helper-ref.html#rbb7b355 "rbb7b355")
+### {form}{/form} ブロックタグ
 
 {form}ブロックタグの一番の役割は、ブロックの中身を <form>...</form> タグで囲み、アクションフォームの定義を読み取ることです。
 
@@ -48,9 +48,9 @@
 
 と出力されます。
 
-### {form\_input} [](ethna-document-dev_guide-view-form_helper-ref.html#i3d40688 "i3d40688")
+### {form\_input}
 
-#### パラメータの渡し方 [](ethna-document-dev_guide-view-form_helper-ref.html#q5b0f000 "q5b0f000")
+#### パラメータの渡し方
 
 {form\_input}タグは以下の二つでパラメータを受けとることができます。
 
@@ -64,7 +64,7 @@
 - 表示の問題でしかないもの、htmlのタグ生成に直接渡されるパラメータはテンプレート
   - style指定などはヘルパーは理解せずそのままhtmlのタグにパラメータとして渡されます。
 
-#### もう少し細かく [](ethna-document-dev_guide-view-form_helper-ref.html#y3e3abac "y3e3abac")
+#### もう少し細かく
 
 正確には、タグを生成するときに
 
@@ -77,7 +77,7 @@
 - {form\_input}を囲む{form}ブロックでの指定
 - {form}での指定
 
-#### 一般的なフォーム [](ethna-document-dev_guide-view-form_helper-ref.html#l9325637 "l9325637")
+#### 一般的なフォーム
 
 ほとんどの場合、フォームの種類(FORM\_TYPE)に従い対応するhtmlタグを出力するだけです。
 
@@ -86,7 +86,7 @@
 - valueはその値が編集されることを期待しない場合に指定します。hiddenやbuttonなどです。
 - defaultは、編集されるフォームに初期値を与える場合に指定します。valueが指定されている場合はdefaultよりも優先されます。
 
-#### 配列で指定されたフォーム [](ethna-document-dev_guide-view-form_helper-ref.html#ha685255 "ha685255")
+#### 配列で指定されたフォーム
 
 選択肢が必要なフォーム以外で、たとえばふつうのテキスト入力フォームが配列で指定されている場合
 
@@ -106,7 +106,7 @@
 
 と3つ{form\_input}を並べると<input>タグが3つ生成されます。defaultが配列で指定されている場合、上から順にdefaultの値を埋めていきます。
 
-#### 選択肢が必要なフォーム [](ethna-document-dev_guide-view-form_helper-ref.html#g96861c2 "g96861c2")
+#### 選択肢が必要なフォーム
 
 選択肢が必要なフォームはFORM\_TYPE\_SELECT, FORM\_TYPE\_CHECKBOX, FORM\_TYPE\_RADIOの3つがあります。
 
@@ -132,7 +132,7 @@
 
     {form_input emptyoption="選択してね"}
 
-### {form\_name} [](ethna-document-dev_guide-view-form_helper-ref.html#n9fa50cd "n9fa50cd")
+### {form\_name}
 
 フォーム定義の 'name' 属性の値をそのまま出力します。
 
@@ -152,13 +152,13 @@
 
     3つ入力してね
 
-### {form\_submit} [](ethna-document-dev_guide-view-form_helper-ref.html#k0e2bffb "k0e2bffb")
+### {form\_submit}
 
 submitボタンだけを作りたい場合、(テンプレートにそのままhtmlタグを書いてもいいですが)送信先のActionFormにボタンの定義をするのは面倒なので、{form\_submit}を使って定義によらずに送信ボタンを出力することができます。
 
     {form_submit value="送信するよ!"}
 
-### 注意事項 [](ethna-document-dev_guide-view-form_helper-ref.html#b1c6abef "b1c6abef")
+### 注意事項
 
 [{form}ブロックタグ](ethna-document-dev_guide-view-form_helper-ref.html#rbb7b355 "ethna-document-dev\_guide-view-form\_helper-ref (999d)")の項にも書きましたが、タグを出力するときにまと めてエスケープ処理が入るので、パラメータとして指定する値はエスケープしないように気をつけてください。
 

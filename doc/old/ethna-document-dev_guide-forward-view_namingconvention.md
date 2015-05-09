@@ -1,6 +1,6 @@
 # ビュー定義省略時の命名規則を変更する
 
-## ビュー定義省略時の命名規則を変更する [](ethna-document-dev_guide-forward-view_namingconvention.html#td2b03ef "td2b03ef")
+## ビュー定義省略時の命名規則を変更する
 
 遷移先定義が省略された場合\*1、以下の4つのファイル名またはクラス名が暗黙のうちに決定されます。
 

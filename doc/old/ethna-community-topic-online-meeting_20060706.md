@@ -5,14 +5,14 @@
 <dt>ところ</dt>
 <dd>irc: Wide系 %Ethna</dd>
 </dl>
-### テーマ [](ethna-community-topic-online-meeting_20060706.html#g52c8463 "g52c8463")
+### テーマ
 
 - チュートリアルのリファクタ  
 Ethnaチュートリアルのリファクタをみんなで。
 - その他
 - 次回テーマ
 
-### 適当にメモとか [](ethna-community-topic-online-meeting_20060706.html#vfa06201 "vfa06201")
+### 適当にメモとか
 
 内容は適当に曲げてるかもしれません。 あくまで書いた人のおもいつき、、、正確なやりとりは添付されているIRCのログを参照してください。
 
@@ -26,7 +26,7 @@ Ethnaチュートリアルのリファクタをみんなで。
   - ようするにsmarty\_functionの使い方とかも！
 - Ethnaコマンドのリファレンスがない！
 
-### 適当に感想とかまとめとか [](ethna-community-topic-online-meeting_20060706.html#sce615c0 "sce615c0")
+### 適当に感想とかまとめとか
 
 - チュートリアルはイケてないとおもったけど十分実用になるレベルだった。次回はTips&Tricksを。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-topic-online-meeting_20060706.html) 2006-07-06 (木) 22:59:11
 - いろいろTIPSあるので、その辺をコミットしておきたいです -- makinux [?](cmd=edit&page=makinux&refer=ethna-community-topic-online-meeting_20060706.html) 2006-07-06 (木) 23:00:49

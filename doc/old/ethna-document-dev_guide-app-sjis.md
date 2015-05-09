@@ -5,7 +5,7 @@
 
 * * *
 
-### 概要 [](ethna-document-dev_guide-app-sjis.html#h7e429fc "h7e429fc")
+### 概要
 
 Ethnaは、内部コードがutf-8でできています。(変換かければ、どうにでもなりますが)。  
 基本的に問題はないのですが、携帯サイトなどを作る時に、やむえず、出力をShift\_JISにしたくなるときがあります。
@@ -18,11 +18,11 @@ Ethnaは、内部コードがutf-8でできています。(変換かければ、
 - 入力コードはShift\_JIS(自動判別のフィルタを書く方法は別途記述）
 - 出力コードはShift\_JIS(sjis-win)
 
-### 内部コードはutf-8で書く [](ethna-document-dev_guide-app-sjis.html#r1470ae9 "r1470ae9")
+### 内部コードはutf-8で書く
 
 各種テンプレート（HTML、メール）も含め通常通り、utf-8で記述します。
 
-### 入力のShift\_JISを内部コードに変換 [](ethna-document-dev_guide-app-sjis.html#m4997005 "m4997005")
+### 入力のShift\_JISを内部コードに変換
 
 まずは、Ethnaのフィルタで入力コードを変換してしまいます。
 
@@ -54,7 +54,7 @@ Ethnaは、内部コードがutf-8でできています。(変換かければ、
 
 こんな感じで、sjis-win => euc-winに変換します。
 
-### 出力コードを変換する [](ethna-document-dev_guide-app-sjis.html#eac25063 "eac25063")
+### 出力コードを変換する
 
 Smartyフィルタで、出力コードをShift\_JISにしてしまいます。
 
@@ -66,11 +66,11 @@ Smartyフィルタで、出力コードをShift\_JISにしてしまいます。
 
 - これの代わりにprefilter()でmb\_http\_output("SJIS");mb\_internal\_encoding("utf-8");をするのはありでしょうか？ (n071316)
 
-### コントローラに追加する [](ethna-document-dev_guide-app-sjis.html#s176e6e2 "s176e6e2")
+### コントローラに追加する
 
 変換コードを書いたら、それをappやlibに保存して、プロジェクトのコントローラの先頭部分でrequireしましょう。
 
-### MailSenderのSmartyでフィルタが有効になっている問題 [](ethna-document-dev_guide-app-sjis.html#v17b7aef "v17b7aef")
+### MailSenderのSmartyでフィルタが有効になっている問題
 
 通常なら、上記までで十分なのですが、Ethna 0.2.0までの全てのバージョンは、Ethna\_MailSenderにおいて、Smartyを使用しています。
 

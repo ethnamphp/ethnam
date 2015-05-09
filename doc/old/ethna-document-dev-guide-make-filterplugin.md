@@ -10,17 +10,17 @@
 
 | 書いた人 | mumumu | 2009-06-21 | 新規作成 |
 
-### フィルタプラグインの実体 [](ethna-document-dev-guide-make-filterplugin.html#g1de890c "g1de890c")
+### フィルタプラグインの実体
 
 フィルタプラグインはEthnaのフィルタ機能を実行するものですので、中身は実際のフィルタと変わりません。但し、プラグインですので、クラス名とファイルの置き場所は、Ethnaのプラグインの規則に従う必要があります。
 
-### フィルタプラグインを作成する [](ethna-document-dev-guide-make-filterplugin.html#wadb9212 "wadb9212")
+### フィルタプラグインを作成する
 
-#### Ethna 2.5.0 以前 [](ethna-document-dev-guide-make-filterplugin.html#u3fd4d37 "u3fd4d37")
+#### Ethna 2.5.0 以前
 
 Ethna 2.5.0 より以前のバージョンでは自動生成機能はありませんので、app/Plugin/Filter/ExecutionTime.php をコピーして手動で作成して下さい。
 
-### 処理を記述する [](ethna-document-dev-guide-make-filterplugin.html#j26c7114 "j26c7114")
+### 処理を記述する
 
 以下のように、４つのメソッドが定義されていますので、任意の処理を記述してください。
 
@@ -64,7 +64,7 @@ Ethna 2.5.0 より以前のバージョンでは自動生成機能はありま�
     // }}}
     ?>
 
-### フィルタプラグインを登録する [](ethna-document-dev-guide-make-filterplugin.html#k42fcd36 "k42fcd36")
+### フィルタプラグインを登録する
 
 フィルタプラグインを実際に使うには、作成して実装するだけでなく、コントローラーにフィルタチェインの一部として登録する必要があります。
 

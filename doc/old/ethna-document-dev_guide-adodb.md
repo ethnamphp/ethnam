@@ -8,9 +8,9 @@
 | 書いた人 | 日付 | 備考 |
 | mumumu | 2007-02-14 | 初版 |
 
-## ADODBをEthnaで使う [](ethna-document-dev_guide-adodb.html#i1533ed6 "i1533ed6")
+## ADODBをEthnaで使う
 
-### はじめに [](ethna-document-dev_guide-adodb.html#v013d672 "v013d672")
+### はじめに
 
 [ADODB](http://adodb.sourceforge.net/) は、デフォルトで Ethna で利用できる [PEAR::DB](http://pear.php.net/manual/ja/package.database.db.php) に比してスピードが速いと言われており\*1、使いやすいAPI が実装されている PHP 4/5 に対応したデータベースアクセスライブラリです。ここでは、そのADODBをEthnaで使う方法を説明します。
 
@@ -22,7 +22,7 @@
 以下では、プロジェクトの アプリケーションID が「sample」、アプリケーション配置ディレクトリを /tmp として説明を行います。  
 あなたのプロジェクトに合わせて適宜読み替えるようにして下さい。
 
-### ADODB を Ethna のプロジェクトにインストール [](ethna-document-dev_guide-adodb.html#t895b6b2 "t895b6b2")
+### ADODB を Ethna のプロジェクトにインストール
 
 まずは ADODB を sourceforge.net から [ダウンロード](http://adodb.sourceforge.net/#download)します。  
 PHP 4/5 対応版\*2 の出来るだけ最新のものを取得すると良いでしょう。
@@ -38,7 +38,7 @@ PHP 4/5 対応版\*2 の出来るだけ最新のものを取得すると良い�
 
 これで ADODB を Ethna のプロジェクトにインストールできました。\*3
 
-### コントローラークラスの書き換え [](ethna-document-dev_guide-adodb.html#xf26b575 "xf26b575")
+### コントローラークラスの書き換え
 
 インストール作業が終わったら、app/Sample\_Controller.php の以下の部分を書き換えます。
 
@@ -56,7 +56,7 @@ PHP 4/5 対応版\*2 の出来るだけ最新のものを取得すると良い�
     - 'db' => 'Ethna_DB_PEAR',
     + 'db' => 'Ethna_DB_ADOdb',
 
-### dsn の設定 [](ethna-document-dev_guide-adodb.html#bfafb34d "bfafb34d")
+### dsn の設定
 
 Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設定しておいて下さい。
 
@@ -67,7 +67,7 @@ Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設
 
 これで Ethna で ADODB を使う準備は整いました。
 
-### 実際に使ってみる [](ethna-document-dev_guide-adodb.html#wd33d5ea "wd33d5ea")
+### 実際に使ってみる
 
 あとは、通常のデータベースアクセスと使い方は同じです。但し、ADODB を使用しているので、アクセスのAPI は Ethna\_DB\_ADOdb クラスのそれに従います。\*4 [クラスリファレンス](doc/Ethna/Ethna_DB_ADOdb.html)を参考にして、利用してみて下さい。
 

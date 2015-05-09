@@ -30,7 +30,7 @@
   - authenticateメソッドで権限管理 
   - エントリポイントの変更 
 
-### プロジェクトを作る [](ethna-document-demo-ittsample.html#sa188223 "sa188223")
+### プロジェクトを作る
 
 適当なところに作ります。
 
@@ -38,7 +38,7 @@
 
 最初、適当なところに作ってしまっても移動させる際には、あとでエントリポイント(index.php)をの2行目のincludeのパスをちゃんと設定すれば問題ありません。
 
-### ライブラリを整える [](ethna-document-demo-ittsample.html#e8304b4e "e8304b4e")
+### ライブラリを整える
 
 Ethnaアプリがが必要とするライブラリを整えます。include\_pathに置けばいいのですが、私はEthnaアプリのlibに入れています。つまり今回の場合だと、sample1/libになります。入れるのは
 
@@ -48,7 +48,7 @@ Ethnaアプリがが必要とするライブラリを整えます。include\_pat
 
 です。
 
-### DB設計をして、DB設定をして、AppObjectを作成してマネージャに登録 [](ethna-document-demo-ittsample.html#g4821d12 "g4821d12")
+### DB設計をして、DB設定をして、AppObjectを作成してマネージャに登録
 
 AppObject生成スクリプトがあるので、DBテーブルを先に作っておきます。使ったSQLはschema/に入れておきます。今回は、ethna\_sampleというDBにsample1\_newsというテーブルを作りました。
 
@@ -81,7 +81,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 としておきます。
 
-### アクションの追加 [](ethna-document-demo-ittsample.html#i42bdd2d "i42bdd2d")
+### アクションの追加
 
 私はデータを入れたいので管理画面から作ります。で、ActionClassを作ります。sample1/bin/にディレクトリ移動して
 
@@ -89,11 +89,11 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 とすると、sample1/app/action/Admin/News.phpが出来ています。
 
-#### アクションフォームの追加 [](ethna-document-demo-ittsample.html#z459d3a4 "z459d3a4")
+#### アクションフォームの追加
 
 このファイルのアクションフォームクラスのSample1\_Form\_AdminNewsに、表画面で作りたいフォーム要素のプロパティを登録します。詳しくは、ダウンロードサンプルをご覧下さい。
 
-### テンプレートの作成 [](ethna-document-demo-ittsample.html#zd8fe531 "zd8fe531")
+### テンプレートの作成
 
 ここまで追加したら、デフォルトでは、sample1/tempates/ja/admin/news.tplが必要になります。ここに、先ほどActionFormに追加したフォーム要素を具体的にデザイン配置していきます。 この時、一つ一つ
 
@@ -119,7 +119,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 テキストフォームではあまり効果がありませんが、一番強力なのはセレクトタブの選択タブを自動作成する時に便利です。ActionClassのコンストラクタでセレクトタブのオプションを動的に定義したりするときには必須です。
 
-### とりあえず、チェック [](ethna-document-demo-ittsample.html#zb854a9f "zb854a9f")
+### とりあえず、チェック
 
 ココまできたら、とりあえずチェックします。sample1/www/index.phpをコピーして、自分の好きなDocumentRootのところにもって行ってください。ダウンロードサンプルではpublic\_html/sample1/index.phpとしました。それがSample1\_Controller.phpを適切にincludeできるようにパスを調整する必要があります。ダウンロードサンプルの場合は、
 
@@ -136,7 +136,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 とします。
 
-### 次のアクションに繋げる [](ethna-document-demo-ittsample.html#ca194f70 "ca194f70")
+### 次のアクションに繋げる
 
 テンプレートに
 
@@ -151,7 +151,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 として、ActionClass/ActionFormのスクリプトを追加します。
 
-### Doのアクションは前のアクションを引き継ぐ [](ethna-document-demo-ittsample.html#h8e0f956 "h8e0f956")
+### Doのアクションは前のアクションを引き継ぐ
 
 Doのアクションを定義する際には、前のアクションがあっての事なので、前のアクションを継承するように作った方が何かと便利なことが多いです。 コード的にはActionFormを
 
@@ -172,7 +172,7 @@ Doのアクションを定義する際には、前のアクションがあって
 
 としてやることで、ActionFormの定義を二度書きせずに済みます。
 
-### Doのアクションの具体的処理 [](ethna-document-demo-ittsample.html#qe87437f "qe87437f")
+### Doのアクションの具体的処理
 
 [Ethnaのチュートリアルにもあるように](ethna-tutorial-startup-practice3.html)、prepareメソッドでフォーム値のチェックを行い、performで実働処理をします。
 
@@ -181,7 +181,7 @@ performでの処理は、AppObjectを使うことで極めて簡単に処理で�
 - データのプライマリIDがあればUPDATE処理、無ければADD処理
 - importFormを継承してそのオブジェクトに適した形にする かなと思います。後者は、Sample1\_Sample1Newsクラスを見てみてください。Formから投稿された時点では「公開日」「掲載終了日」は文字列ですからunixtimestampに直してからimportFormしてやる必要があります。
 
-### exportFormを使う [](ethna-document-demo-ittsample.html#obb26ec0 "obb26ec0")
+### exportFormを使う
 
 逆に、投稿した記事を編集したい場合は、
 
@@ -198,7 +198,7 @@ Sample1\_Sample1AdminNews::prepare()で、AppObjectを取得して行います�
 
 だけです。スゴくお手軽ですね。 ただし、この時「公開日」「掲載終了日」はunixtimestampから文字列に直してからexportFormしてやる必要があります。
 
-### 表で一覧を出す [](ethna-document-demo-ittsample.html#aed9f51f "aed9f51f")
+### 表で一覧を出す
 
 これでデータが投稿できるようになったので、表面で一覧を出します。
 
@@ -213,15 +213,15 @@ Sample1\_Sample1AdminNews::prepare()で、AppObjectを取得して行います�
 
 とだけ書いて、テンプレート側に値を渡してやるだけになります。\*3
 
-### Managerの仕事 [](ethna-document-demo-ittsample.html#xc1660db "xc1660db")
+### Managerの仕事
 
 ActionClassは「状態の遷移を決めるだけ」ということにしたいので、面倒な処理はManagerクラスに任せます。実は、Manager\*4に任せると、データキャッシュを行っているので、ActionClassで状態の遷移を決めるために取得した値は、ViewClassでテンプレートに渡したい値だった場合にはDBに再問い合わせをせずに済みます。ただし、もちろん「同じQUERYになる場合」です。
 
-### authenticateメソッドで権限管理 [](ethna-document-demo-ittsample.html#wa067f45 "wa067f45")
+### authenticateメソッドで権限管理
 
 普通、管理者でないと投稿や投稿記事の編集はできません。EthnaではActionClassのauthenticateメソッドを使うことで楽に権限管理ができます。今回は、権限管理として簡単にBasic認証を使ったと仮定します。./adminディレクトリには、Basic認証がかかってるとします。
 
-### エントリポイントの変更 [](ethna-document-demo-ittsample.html#e5251175 "e5251175")
+### エントリポイントの変更
 
 ./admin/index.phpにエントリポイントを変更します。もともと2行だけのエントリポイントなので特に苦労することはありませんが、
 

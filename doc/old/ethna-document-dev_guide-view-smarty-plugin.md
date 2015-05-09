@@ -26,15 +26,15 @@
 
 書いた人: いちい
 
-### 概要 [](ethna-document-dev_guide-view-smarty-plugin.html#z37591c7 "z37591c7")
+### 概要
 
 EthnaでSmartyを使う場合に利用できる、組込みの便利なプラグイン(modfier, function, block)についての説明です。
 
 基本的に Ethna\_ViewClass で提供されているヘルパ関数や、 php の組込み関数、 Ethna\_Util の関数などを呼び出すラッパーになっています。
 
-### modifier [](ethna-document-dev_guide-view-smarty-plugin.html#w1d1dc3e "w1d1dc3e")
+### modifier
 
-#### {...|number\_format} [](ethna-document-dev_guide-view-smarty-plugin.html#sd39a0ad "sd39a0ad")
+#### {...|number\_format}
 
 number\_format()関数のラッパーです。
 
@@ -46,7 +46,7 @@ number\_format()関数のラッパーです。
 
     12,345
 
-#### {...|strftime} [](ethna-document-dev_guide-view-smarty-plugin.html#s6e2099e "s6e2099e")
+#### {...|strftime}
 
 strftime()関数のラッパーです。
 
@@ -58,19 +58,19 @@ strftime()関数のラッパーです。
 
     2004年01月01日
 
-#### {...|count} [](ethna-document-dev_guide-view-smarty-plugin.html#a87881df "a87881df")
+#### {...|count}
 
 (配列にたいする) count() 関数のラッパーです。
 
     {$array|count}
 
-#### {...|join} [](ethna-document-dev_guide-view-smarty-plugin.html#xea72868 "xea72868")
+#### {...|join}
 
 配列を連結して文字列にする join() 関数のラッパーです。
 
     {$str_array|join:","}
 
-#### {...|filter} [](ethna-document-dev_guide-view-smarty-plugin.html#z9e2a437 "z9e2a437")
+#### {...|filter}
 
 連想配列のリストから、指定されたキーの値だけを取り出して配列を再構成します。
 
@@ -90,7 +90,7 @@ strftime()関数のラッパーです。
 
     1,2,3
 
-#### {...|explode} [](ethna-document-dev_guide-view-smarty-plugin.html#w56ea453 "w56ea453")
+#### {...|explode}
 
 文字列に対する explode() 関数のラッパーです。 第一引数の文字列を第二引数の文字列により分割し、配列にします。
 
@@ -106,13 +106,13 @@ strftime()関数のラッパーです。
 
     array(1, 2, 3)
 
-#### {...|unique} [](ethna-document-dev_guide-view-smarty-plugin.html#y34bb5d9 "y34bb5d9")
+#### {...|unique}
 
 配列に対する unique() 関数のラッパーです。第2引数にキーをあたえることで、 filter を同時に行うことができます。
 
     {$array|unique:"foo"}
 
-#### {...|wordwrap\_i18n} [](ethna-document-dev_guide-view-smarty-plugin.html#c39ad432 "c39ad432")
+#### {...|wordwrap\_i18n}
 
 **utf-8のみ対応** 指定された文字数で文字列をワードラップします。
 
@@ -134,7 +134,7 @@ strftime()関数のラッパーです。
   - 改行文字
   - 半角スペースでのインデント数
 
-#### {...|truncate\_i18n} [](ethna-document-dev_guide-view-smarty-plugin.html#n15883e8 "n15883e8")
+#### {...|truncate\_i18n}
 
 文字列を指定された文字数で切り詰めます。 mb\_strimwidth() を用いています。
 
@@ -150,7 +150,7 @@ strftime()関数のラッパーです。
   - 切り詰める文字数
   - 切り詰めた後に付加する文字列
 
-#### {...|i18n} [](ethna-document-dev_guide-view-smarty-plugin.html#hb086473 "hb086473")
+#### {...|i18n}
 
 i18nメッセージを取得します。 Ethna\_I18N クラスを利用します。
 
@@ -162,13 +162,13 @@ i18nメッセージを取得します。 Ethna\_I18N クラスを利用します
 
     英語
 
-#### {...|checkbox}, {...|select}, {...|form\_value} [](ethna-document-dev_guide-view-smarty-plugin.html#w5e2d67e "w5e2d67e")
+#### {...|checkbox}, {...|select}, {...|form\_value}
 
 詳しくはAPIドキュメントをご覧ください。多くの場合、もっと簡単な代替手段があります。
 
-### function [](ethna-document-dev_guide-view-smarty-plugin.html#jb6c34d2 "jb6c34d2")
+### function
 
-#### {message} [](ethna-document-dev_guide-view-smarty-plugin.html#ef634ae8 "ef634ae8")
+#### {message}
 
 指定されたフォームにエラーがある場合にメッセージを出力します。エラーがないときはなにも出力されません。
 
@@ -183,7 +183,7 @@ i18nメッセージを取得します。 Ethna\_I18N クラスを利用します
 - 引数
   - アクションフォームで定義したフォーム名を指定します。
 
-#### {url} [](ethna-document-dev_guide-view-smarty-plugin.html#l7b00d3d "l7b00d3d")
+#### {url}
 
 Ethna\_UrlHandler を使って、アクション名とパラメータからURLを生成します。UrlHandlerについての説明については [Ethna\_UrlHandler](ethna-document-dev_guide-urlhandler.html "ethna-document-dev\_guide-urlhandler (926d)")を参照してください。
 
@@ -203,7 +203,7 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
   - anchor: '#anchor' 形式のアンカーを付加します。
   - 上にあげた以外のパラメータ: GETパラメータとしてURLに付加されます。
 
-#### {form\_name} [](ethna-document-dev_guide-view-smarty-plugin.html#s97b2520 "s97b2520")
+#### {form\_name}
 
 アクションフォームで定義された、フォームの表示名を取得します。Ethna\_ViewClassのgetFormName()を用いています。
 
@@ -225,7 +225,7 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
   - name: フォーム名(連想配列$formのキー)を指定します。(必須)
   - action: フォーム定義を取得するアクションを指定します。省略時の動作については [フォームヘルパ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 
-#### {form\_submit} [](ethna-document-dev_guide-view-smarty-plugin.html#c1428cb7 "c1428cb7")
+#### {form\_submit}
 
 フォームのsubmitボタンを生成します。Ethna\_ViewClassのgetFormSubmit()を用いています。詳しくは [Ethna\_ViewClass](ethna-document-dev_guide-view.html "ethna-document-dev\_guide-view (1240d)")を参照してください。
 
@@ -240,13 +240,13 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
 - 引数
   - すべて getFormSubmit() にそのまま渡されます。
 
-#### {form\_input} [](ethna-document-dev_guide-view-smarty-plugin.html#ub5cb6ab "ub5cb6ab")
+#### {form\_input}
 
 Ethna\_ViewClassのgetFormInput() (および \_getFormInput\_\*()) を使い、アクションフォームのフォーム定義から、自動的にそのフォームを送信するためのHTMLタグを生成します。
 
 詳細は [フォームヘルパ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 
-#### {csrfid} [](ethna-document-dev_guide-view-smarty-plugin.html#tf9b83f9 "tf9b83f9")
+#### {csrfid}
 
 CSRF対策のためのIDをhiddenタグもしくはGETのリクエストパラメータとして出力します。
 
@@ -260,13 +260,13 @@ CSRF対策のためのIDをhiddenタグもしくはGETのリクエストパラ�
     <input type="hidden" name="csrfid" value="a0f24f75e...e48864d3e">
     <a href="index.php?action_do_something=true&csrfid=a0f24f75e...e48864d3e">
 
-#### {is\_error}, {uniqid}, {select}, {checkbox\_list} [](ethna-document-dev_guide-view-smarty-plugin.html#b81022e5 "b81022e5")
+#### {is\_error}, {uniqid}, {select}, {checkbox\_list}
 
 詳しくはAPIドキュメントをご覧ください。多くの場合、もっと簡単な代替手段があります。
 
-### block [](ethna-document-dev_guide-view-smarty-plugin.html#g3dec9f6 "g3dec9f6")
+### block
 
-#### {form}...{/form} [](ethna-document-dev_guide-view-smarty-plugin.html#wd0aba94 "wd0aba94")
+#### {form}...{/form}
 
 詳細は [フォームヘルパ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 

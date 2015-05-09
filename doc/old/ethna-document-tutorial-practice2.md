@@ -21,7 +21,7 @@
 
  ![ethna-fig4.png](http://ethna.jp/image/ethna-fig4.png "ethna-fig4.png")
 
-### (4) アクション定義の追加(省略可) [](ethna-document-tutorial-practice2.html#d167a6af "d167a6af")
+### (4) アクション定義の追加(省略可)
 
 Controllerにアクション定義を追加します。具体的には、app/Sample\_Controller.phpを以下のように編集します。
 
@@ -46,7 +46,7 @@ Controllerにアクション定義を追加します。具体的には、app/Sam
 
 _see also:_ [アクション定義を省略する](ethna-document-dev_guide-action-omit.html "ethna-document-dev\_guide-action-omit (1240d)")
 
-### (5) アクションクラスの記述 [](ethna-document-tutorial-practice2.html#je4912be "je4912be")
+### (5) アクションクラスの記述
 
 (4)で定義したアクションに対応するクラスを作成します(このクラスを「アクションクラス」と呼んでいます)。アクションに対応するクラスは以下のように記述します。
 
@@ -99,7 +99,7 @@ _see also:_ [アクションスクリプトの配置ディレクトリを変更�
 
 _see also:_ [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.html "ethna-document-dev\_guide-action-namingconvention (1240d)")
 
-### (6) ビュー定義の追加(省略可) [](ethna-document-tutorial-practice2.html#qae768c0 "qae768c0")
+### (6) ビュー定義の追加(省略可)
 
 次に、アクションクラスが返す遷移先(この場合'login'という遷移先)を定義します。
 
@@ -147,7 +147,7 @@ _see also:_ [ビューの命名規則を変更する](ethna-document-dev_guide-f
 
 _see also:_ [テンプレートの命名規則を変更する](ethna-document-dev_guide-forward-template_namingconvention.html "ethna-document-dev\_guide-forward-template\_namingconvention (1240d)")
 
-### (7) ビュークラスの記述 [](ethna-document-tutorial-practice2.html#a54d13a1 "a54d13a1")
+### (7) ビュークラスの記述
 
 ここでは、(6)で定義したビュークラスSample\_View\_Loginを作成します。ビュークラスを定義したファイル(ビュースクリプト、とでも呼んでおきます)は、アクションクラスと同様にapp/viewに以下のような命名規則で作成します('\_'をディレクトリで区切り、ファイル名は大文字で開始します)。
 
@@ -183,7 +183,7 @@ preforward()メソッドはテンプレート表示前に呼び出され、テ�
 
 また、ビュークラスが不要な場合(単純にテンプレートを表示したい場合等)は、ビュークラスの記述を省略することも可能です。
 
-### (8) テンプレートの記述 [](ethna-document-tutorial-practice2.html#r41bbb2b "r41bbb2b")
+### (8) テンプレートの記述
 
 次に、テンプレートファイルを作成します。テンプレートディレクトリはtemplate/jaディレクトリで、(6)で'login.tpl'をテンプレートファイルに指定しているので、template/ja/login.tplを作成します。
 
@@ -210,7 +210,7 @@ preforward()メソッドはテンプレート表示前に呼び出され、テ�
 
 _see also:_ [テンプレートディレクトリを変更する](ethna-document-dev_guide-forward-template_dir.html "ethna-document-dev\_guide-forward-template\_dir (432d)")
 
-### (9) 確認 [](ethna-document-tutorial-practice2.html#q78ef858 "q78ef858")
+### (9) 確認
 
 以上でアクションの追加は完了ですので、実際にアクセスして動作を確認します。
 

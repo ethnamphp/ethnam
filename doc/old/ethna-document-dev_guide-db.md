@@ -5,11 +5,11 @@
   - リードオンリーのDBを複数台設定したい場合 
   - AppManager内でのDBオブジェクトの使用方法 
 
-## データベースアクセス [](ethna-document-dev_guide-db.html#l9112123 "l9112123")
+## データベースアクセス
 
 この部分、Randolph@IRCが、fujimotoさんに頂いたメールを元にして書いてます。
 
-### 一番簡単なやり方(PEAR::DBを使う) [](ethna-document-dev_guide-db.html#x4d22c42 "x4d22c42")
+### 一番簡単なやり方(PEAR::DBを使う)
 
 1. etc/[appid]-ini.phpにdsn定義を行う。
 
@@ -38,7 +38,7 @@ Ethnaの デフォルトの DB接続クラス( [Ethna\_DB\_PEAR](doc/Ethna/Ethna
 
 こんな感じでQueryを実行して、データ取得。
 
-### PEAR::DB 以外のDBアクセスライブラリを使う [](ethna-document-dev_guide-db.html#ef9e8b38 "ef9e8b38")
+### PEAR::DB 以外のDBアクセスライブラリを使う
 
 Ethna では、デフォルトの PEAR::DB の他に、 [ADODB](http://adodb.sourceforge.net/) 及び [Creole](http://creole.phpdb.org/trac/) の クラスが同梱されています。
 
@@ -48,7 +48,7 @@ ADODB についての詳細は、下記をご覧下さい。
 
 _see also:_ [ADODB を Ethna で使う](ethna-document-dev_guide-adodb.html "ethna-document-dev\_guide-adodb (1240d)")
 
-### 複数のDBオブジェクトを扱う場合 [](ethna-document-dev_guide-db.html#zc5316fe "zc5316fe")
+### 複数のDBオブジェクトを扱う場合
 
 1. iniファイルに「dsn\_（接続名）」でエントリを追加
 
@@ -80,7 +80,7 @@ _see also:_ [ADODB を Ethna で使う](ethna-document-dev_guide-adodb.html "eth
     // SELECT専用のDB接続
     $db_r =& $this->backend->getDB('r'); // 引数が「r」になっている。
 
-### リードオンリーのDBを複数台設定したい場合 [](ethna-document-dev_guide-db.html#a6241772 "a6241772")
+### リードオンリーのDBを複数台設定したい場合
 
     'dsn_r' => array(
                    'mysql://user:pass@unix+localhost/dbname1',
@@ -93,7 +93,7 @@ _see also:_ [ADODB を Ethna で使う](ethna-document-dev_guide-adodb.html "eth
 
 ランダムで、dbname1とdbname2を割り振ってくれます。
 
-### AppManager内でのDBオブジェクトの使用方法 [](ethna-document-dev_guide-db.html#a6241772 "a6241772")
+### AppManager内でのDBオブジェクトの使用方法
 
 Ethna\_AppManagerのコンストラクタにより、既にDBオブジェクトは 取得されていますので、下記の様に操作する事が可能です。
 

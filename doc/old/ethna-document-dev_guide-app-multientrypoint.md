@@ -1,7 +1,7 @@
 # 複数のエントリポイントを作成する
   - [参考] Ethna\_Controller::main()メソッド 
 
-## 複数のエントリポイントを作成する [](ethna-document-dev_guide-app-multientrypoint.html#ff3257c1 "ff3257c1")
+## 複数のエントリポイントを作成する
 
 [アプリケーション構築手順(1)](ethna-document-tutorial-practice1.html "ethna-document-tutorial-practice1 (23d)")での例では、エントリポイントは常に1つでしたが、実際のアプリケーションでは様々な事情で、複数のエントリポイントを利用したい場合も出てくるかと思います。
 
@@ -37,7 +37,7 @@
 
 _see also:_ [エントリポイント毎に実行可能なアクションを制限する](ethna-document-dev_guide-app-limitentrypoint.html "ethna-document-dev\_guide-app-limitentrypoint (706d)")
 
-### [参考] Ethna\_Controller::main()メソッド [](ethna-document-dev_guide-app-multientrypoint.html#z5610e12 "z5610e12")
+### [参考] Ethna\_Controller::main()メソッド
 
 なお、Ethna\_Controller::main($class\_name, $action\_name = "", $fallback\_action\_name = "")メソッドは最低1つ、最大で3つの引数をとります。
 

@@ -3,9 +3,9 @@
   - (2) 登録処理の Action で二重POSTをチェックする 
   - (捕捉) 動作原理 
 
-## 二重POSTを防止する [](ethna-document-dev_guide-app-duplicatepost.html#g92d6077 "g92d6077")
+## 二重POSTを防止する
 
-### (1) 登録画面の前のページ(確認画面等)にユニークIDを仕込む [](ethna-document-dev_guide-app-duplicatepost.html#cbf75c27 "cbf75c27")
+### (1) 登録画面の前のページ(確認画面等)にユニークIDを仕込む
 
 ethnaには二重POSTのチェック用のユニークIDを出力するSmartyプラグイン {uniqid} が用意されています。 以下のように確認画面(ない場合は登録画面) のテンプレートにユニークIDを仕込みます。
 
@@ -26,7 +26,7 @@ GET の場合
 
     <a href="?action_user_regist_do=1&...&{uniqid type=get}">登録</a>
 
-### (2) 登録処理の Action で二重POSTをチェックする [](ethna-document-dev_guide-app-duplicatepost.html#m5409740 "m5409740")
+### (2) 登録処理の Action で二重POSTをチェックする
 
 Ethna\_Util::isDuplicatePost() の返り値が true の場合二重POSTです。 それ以降の処理をスキップして return します。
 
@@ -43,7 +43,7 @@ Ethna\_Util::isDuplicatePost() の返り値が true の場合二重POSTです。
                return 'regist_done';
     	}
 
-### (捕捉) 動作原理 [](ethna-document-dev_guide-app-duplicatepost.html#a97dbd70 "a97dbd70")
+### (捕捉) 動作原理
 
 Ethna\_Util::isDuplicatePost() が呼ばれると、project\_root/tmp/ から  
 uniqid\_{REMOTE\_ADDR}\_{uniqid} というファイルを探します。  

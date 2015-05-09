@@ -15,7 +15,7 @@
 
 書いた人: いちい
 
-### 概要 [](ethna-document-dev_guide-urlhandler.html#s78a6388 "s78a6388")
+### 概要
 
 Request-URIからパラメータを取得したいときは、Ethna\_UrlHandlerクラスを使うと便利です。
 
@@ -39,13 +39,13 @@ UrlHandlerとエントリポイント、mod\_rewriteとの関係などについ�
 
 **[URLHandlerの設定例](ethna-document-dev_guide-urlhandler-example.html "ethna-document-dev\_guide-urlhandler-example (926d)")**
 
-### 使用例 [](ethna-document-dev_guide-urlhandler.html#g61ffe3b "g61ffe3b")
+### 使用例
 
 新規にプロジェクトを作ると、app/Appid\_UrlHandler.phpファイルが作られ、アプリケーションのUrlHandlerクラスが用意されます。この中の$action\_mapを設定することでUrlHandlerが利用できます。デフォルトではなにもしません。
 
 以下では、 [http://localhost/sample/index.php/echo/hello](http://localhost/sample/index.php/echo/hello) のアクセスで、エントリポイント index.php にパラメータ echo='hello' を指定するための例を説明します。
 
-#### $action\_map の設定 [](ethna-document-dev_guide-urlhandler.html#s835c9d5 "s835c9d5")
+#### $action\_map の設定
 
 - app/Appid\_UrlHandler.php
 
@@ -70,7 +70,7 @@ UrlHandlerとエントリポイント、mod\_rewriteとの関係などについ�
 - 'path\_ext'
   - PATH\_INFOに埋め込まれるパラメータと、Ethnaでのフォーム名との対応を記述します。正規表現の後方参照と、arrayの要素の順序が対応します。
 
-#### \_getPath\_Index() 関数の定義 [](ethna-document-dev_guide-urlhandler.html#kd2b87cb "kd2b87cb")
+#### \_getPath\_Index() 関数の定義
 
 アクションとパラメータからPATH\_INFOを含むURLを生成するときに使われます。現在のところ、Ethna組込みのSmarty関数{url}を利用するときのみ必要な作業です。
 
@@ -83,7 +83,7 @@ UrlHandlerとエントリポイント、mod\_rewriteとの関係などについ�
         return array("/index.php/", array());
     }
 
-#### URL\_HANDLER 変数の設定 [](ethna-document-dev_guide-urlhandler.html#w8d56d61 "w8d56d61")
+#### URL\_HANDLER 変数の設定
 
 $action\_map の中で 'index' の設定を使うことを指示するために、エントリポイントで $\_SERVER['URL\_HANDLER'] の値を 'index' に設定します。
 
@@ -108,7 +108,7 @@ $action\_map の中で 'index' の設定を使うことを指示するために�
 
 $\_SERVER や SetEnv を経由するのは複雑なようですが、 $action\_map のエントリが膨大になった場合に、リクエストのたびに膨大な量の照合が発生することを避ける意図があります。
 
-#### $config['url'] の設定 [](ethna-document-dev_guide-urlhandler.html#a73bed72 "a73bed72")
+#### $config['url'] の設定
 
 さらに、アプリケーションの(ベースとなる)URLを設定します。これは、htmlの相対パス指定がPATH\_INFOによって混乱するのを避けるためです。
 
@@ -119,7 +119,7 @@ $\_SERVER や SetEnv を経由するのは複雑なようですが、 $action\_m
         'url' => '/sample/',
         ...
 
-#### echo\_msg アクションを追加 [](ethna-document-dev_guide-urlhandler.html#o192bb64 "o192bb64")
+#### echo\_msg アクションを追加
 
 - echo\_msg アクションを追加
 
@@ -157,9 +157,9 @@ $\_SERVER や SetEnv を経由するのは複雑なようですが、 $action\_m
 
 これで [http://localhost/sample/index.php/echo/hello](http://localhost/sample/index.php/echo/hello) にアクセスし、"message = hello" と表示されれば成功です。
 
-### 細かい使いかた [](ethna-document-dev_guide-urlhandler.html#y55211fb "y55211fb")
+### 細かい使いかた
 
-#### PATH\_INFOから複数のパラメータを取得する [](ethna-document-dev_guide-urlhandler.html#ofa9d0dd "ofa9d0dd")
+#### PATH\_INFOから複数のパラメータを取得する
 
 例:
 
@@ -182,7 +182,7 @@ $\_SERVER や SetEnv を経由するのは複雑なようですが、 $action\_m
 
 1の正規表現にマッチしたときは'msg'にパラメータを、2にマッチしたときは'format'と'param'にパラメータを入れる、という使いかたができます。
 
-#### path\_extのパラメータ [](ethna-document-dev_guide-urlhandler.html#d3e99360 "d3e99360")
+#### path\_extのパラメータ
 
 'path\_ext' => array('msg' => array()) の array() の中には、次のパラメータが指定できます。
 
@@ -197,11 +197,11 @@ $\_SERVER や SetEnv を経由するのは複雑なようですが、 $action\_m
 
 なお、PATH\_INFO生成はrawurlencode()を用いたエンコードを施します。フィルタなどの処理は上に書いた順に行われ、rawurlencode()はurl\_prefix/suffixを付加する直前に実行されます。
 
-#### PATH\_INFOの正規化 [](ethna-document-dev_guide-urlhandler.html#e11e215b "e11e215b")
+#### PATH\_INFOの正規化
 
 'path\_regexp' で指定した正規表現とマッチングされるPATH\_INFOは、スラッシュ ('/') の重複と先頭、末尾のスラッシュを取り除いた状態に正規化されています。
 
-#### \_getPath\_\*() の返り値 [](ethna-document-dev_guide-urlhandler.html#t9c03c10 "t9c03c10")
+#### \_getPath\_\*() の返り値
 
 先ほどの例では、 array('/index.php/', array()) という2つの要素を含む配列を返していました。この意味について説明します。(この内容はPATH\_INFOを生成するときの話です。)
 

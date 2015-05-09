@@ -1,9 +1,9 @@
 # ".ethna"ファイルについて
-### 2種類の".ethna"ファイル [](ethna-document-dev_resourcefile.html#zb2f6891 "zb2f6891")
+### 2種類の".ethna"ファイル
 
 ethnaコマンドは、".ethna"ファイルを読み込むことによりその設定の変更を行うことができます。 .ethnaファイルには二種類ありそれぞれ2つの意味があります。
 
-#### ユーザのホームディレクトリに置かれる".ethna"ファイル [](ethna-document-dev_resourcefile.html#t087bbee "t087bbee")
+#### ユーザのホームディレクトリに置かれる".ethna"ファイル
 
 これは、いわゆる.bash\_rcなどと同じような意味合いのファイルで、ethnaコマンドの挙動を変更する項目があります。
 
@@ -18,7 +18,7 @@ ethnaコマンドは、".ethna"ファイルを読み込むことによりその�
 <dt>author</dt>
 <dd>作成者を設定します。この設定は、自動生成されるコード上のコメント作成者情報を上書きします。</dd>
 </dl>
-#### プロジェクトのディレクトリに置かれる".ethna"ファイル [](ethna-document-dev_resourcefile.html#b3ca1c56 "b3ca1c56")
+#### プロジェクトのディレクトリに置かれる".ethna"ファイル
 
 これは、ethnaコマンドがプロジェクト固有のファイル((ActionとかView ))を作る時に参照するファイルです。基本的に弄る必要はありません。
 

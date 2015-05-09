@@ -22,7 +22,7 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 | 書いた人 | mumumu | 2008-06-25 | 新規作成 |
 
-### タグの説明 [](ethna-document-dev_guide-misc-migrate_project230to250.html#y6e019f5 "y6e019f5")
+### タグの説明
 
 2.3.x から 2.5.x に移行する際の考慮点として、
 
@@ -31,9 +31,9 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 の2つのレベルがあります。[必須]は、以前のバージョンとの互換性がない変更であり、移行する人が必ずチェックする必要があります。[注意] は、互換性がない変更ではあるものの、一応影響がないと思われるもの、または注意すべき項目を並べました。一応チェックしてみてください。
 
-### 必ずチェックし、対応すべき点 [](ethna-document-dev_guide-misc-migrate_project230to250.html#b2dcb122 "b2dcb122")
+### 必ずチェックし、対応すべき点
 
-#### [必須] [Appid]\_Controller#getDefaultLanguage メソッドのオーバライド [](ethna-document-dev_guide-misc-migrate_project230to250.html#f5e86308 "f5e86308")
+#### [必須] [Appid]\_Controller#getDefaultLanguage メソッドのオーバライド
 
 2.5.x では、Ethna のソースコードそのものからエンコーディング依存のエラーメッセージを追い出し、プロジェクトで使用するエンコーディングをユーザが自由に指定できるように変更されました。 これは Ethna が世に出てから脈々と息付いてきた「utf-8固定」の常識を破る一番大きな変更です。
 
@@ -66,7 +66,7 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 上記3つの要素のそれぞれの意味や、影響する範囲の詳細については、 [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html "ethna-document-dev\_guide-app-setlanguage (737d)") のページを御覧下さい。
 
-#### [必須] ロケール指定に伴うディレクトリ名の変更 [](ethna-document-dev_guide-misc-migrate_project230to250.html#s1ec04c7 "s1ec04c7")
+#### [必須] ロケール指定に伴うディレクトリ名の変更
 
 2.5.x では、国際化対応も見据えた形で、テンプレートやメッセージファイルを格納するディレクトリをロケール単位で指定するように変更されました。よって、2.3.x より前に作られたプロジェクトを 2.5.x に移行させたい方で、国際化を考慮したいプロジェクトでは、以下のディレクトリ名を変更する必要があります。
 
@@ -79,7 +79,7 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 但し、上記 1. で [appid]\_Controller#\_getDefaultLanguage で返す配列の第1要素を 「ja」とオーバーライドした人は、この変更は必要ありません。
 
-#### [必須] Ethna が出力するデフォルトメッセージファイルのコピー [](ethna-document-dev_guide-misc-migrate_project230to250.html#sa36b66d "sa36b66d")
+#### [必須] Ethna が出力するデフォルトメッセージファイルのコピー
 
 2.5.x では、エンコーディングにプロジェクトが依存しないようにするため、Ethnaが吐き出す（エラー等の)メッセージを外部ファイルに追い出すように変更されています。ethna add-project コマンドで生成される以下のファイルに格納されています。
 
@@ -116,7 +116,7 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 このファイルの "翻訳された文字列" の部分を変更することで、Ethnaが吐き出すメッセージをカスタマイズすることができるようになっています。
 
-#### [必須] Smarty のデリミタの変更方法 [](ethna-document-dev_guide-misc-migrate_project230to250.html#w53078fc "w53078fc")
+#### [必須] Smarty のデリミタの変更方法
 
 Smarty のデフォルトのデリミタ 「{」は JavaScript との兼ね合いで問題があることが多いので、変更している方も多いと思います。Ethna 2.5.0 以降では、この設定方法を[APPID]-ini.php に固定するやり方に流儀が変更されました。以下のように設定します
 
@@ -133,7 +133,7 @@ Smarty のデフォルトのデリミタ 「{」は JavaScript との兼ね合�
 
 これ以外の方法で設定している場合でも、[APPID]-ViewClass#\_setDefault メソッドに設定している場合は上記の変更の影響を受けませんが、それ以外の場合は必ずチェックするようにしてください。
 
-#### [必須] Ethnaクラス は PEAR に依存しない [](ethna-document-dev_guide-misc-migrate_project230to250.html#oc346a8d "oc346a8d")
+#### [必須] Ethnaクラス は PEAR に依存しない
 
 2.3.x までは、Ethna.php に定義されていた Ethna クラスは PEAR.php にある [PEARクラス](http://pear.php.net/manual/ja/core.pear.php) を継承することで、エラー処理を全て PEAR に依存していました。
 
@@ -156,7 +156,7 @@ Smarty のデフォルトのデリミタ 「{」は JavaScript との兼ね合�
        す。代替の定数として ETHNA_OS_WINDOWS 定数を定義しているので、使用し
        ていた場合はそちらを利用するようにして下さい
 
-#### [必須] gettext を使うときは明示的に設定ファイルに記す [](ethna-document-dev_guide-misc-migrate_project230to250.html#e1afff0f "e1afff0f")
+#### [必須] gettext を使うときは明示的に設定ファイルに記す
 
 2.5.x では、gettext を利用した国際化を行う際には、[appid]/etc/[appid]-ini.php での設定が明示的に必須となりました。そのため、2.3.x 以前で gettext を使用していた方は、以下のように指定して下さい
 
@@ -167,7 +167,7 @@ Smarty のデフォルトのデリミタ 「{」は JavaScript との兼ね合�
         'use_gettext' => true,
     );
 
-#### [必須] 国名指定の定数の再定義 [](ethna-document-dev_guide-misc-migrate_project230to250.html#b1da0607 "b1da0607")
+#### [必須] 国名指定の定数の再定義
 
 Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定するための LANG\_JA, LANG\_EN の定数が Ethna.php から削除されました。これらは、Ethna\_I18N.php でのみ使用されており、ロケール指定の観 点から不要なためです。
 
@@ -179,7 +179,7 @@ Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定�
 
 よって、これらの定数を万が一使用していた古いプロジェクトでは、[appid]\_Controller.php の先頭 で再定義する必要があります。
 
-#### [必須] Ethna\_Plugin\_CacheManager\_Memcache の接続設定 [](ethna-document-dev_guide-misc-migrate_project230to250.html#v07c9131 "v07c9131")
+#### [必須] Ethna\_Plugin\_CacheManager\_Memcache の接続設定
 
 2.3.x までは、Ethna\_Plugin\_CacheManager\_Memcache の接続設定は、持続的接続がデフォルトでON になっていました。持続的でない通常接続を使用する場合は、以下のように [appid]/etc/[appid]-ini.php で設定する必要がありました。
 
@@ -191,24 +191,24 @@ Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定�
 
 よって、既存の memcache\_use\_connect の設定は意味をなさなくなっています。 持続的接続は、memcached サーバへの接続コストを低減する必要がある場合に使用します。
 
-#### [必須] 互換性確保のためのAPIを削除 [](ethna-document-dev_guide-misc-migrate_project230to250.html#q8acedb9 "q8acedb9")
+#### [必須] 互換性確保のためのAPIを削除
 
 互換性を保つために残されていた以下のAPIが削除されています。代替として示す関数を利用するようにして下さい
 
     1. Ethna_ViewClass の _getTemplateEngineメソッドが削除されています。
        代替として、Ethna_ViewClass の _getRenderer メソッドを利用するようにして下さい。
 
-### 移行の際に注意すべき点 [](ethna-document-dev_guide-misc-migrate_project230to250.html#d8c2ed08 "d8c2ed08")
+### 移行の際に注意すべき点
 
-#### [注意] Ethna\_ActionForm のバリデータ [](ethna-document-dev_guide-misc-migrate_project230to250.html#g6e921af "g6e921af")
+#### [注意] Ethna\_ActionForm のバリデータ
 
 2.5.x では、フォームの入力値検証にプラグインのみを使用し、プラグインを使用しないコードは全 て削除されました。2.3.x からの移行の観点からは、明示的な影響はないようにコードは書かれている はずですが、自動生成されるアクションスクリプトの $use\_validator\_plugin = true; の指定は最早 不要です。
 
-#### [注意] [Appid]\_Controllerで定義したinclude\_path の順番 [](ethna-document-dev_guide-misc-migrate_project230to250.html#w81d9301 "w81d9301")
+#### [注意] [Appid]\_Controllerで定義したinclude\_path の順番
 
 2.5.x では、include\_path の順番が [appid]/app,lib を最も優先するように変更されました。これは自由に外部スクリプトをインストールできないレンタルサーバを考慮した変更であり、新しいプロジェクトのみに適用されます。
 
-#### [注意] ethna コマンドで自動生成されるスケルトン [](ethna-document-dev_guide-misc-migrate_project230to250.html#o030cf55 "o030cf55")
+#### [注意] ethna コマンドで自動生成されるスケルトン
 
 2.5.x では、自動生成されたスケルトンがエンコーディングに依存しないようにするため、ソースコメントがすべてASCIIで記述されています。つまり英語コメントになっているということです。
 

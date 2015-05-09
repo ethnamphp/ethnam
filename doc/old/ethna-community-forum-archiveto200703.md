@@ -1,5 +1,5 @@
 # ethna-community-forum-archiveto200703- Ethna - PHPウェブアプリケーションフレームワーク</title>
-### Ethna\_DBのqueryが動かない。 [](ethna-community-forum-archiveto200703.html#y826e2b9 "y826e2b9")
+### Ethna\_DBのqueryが動かない。
 > （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-03-14 (水) 20:40:03)  
 >   
 > 以下のように、ソースを書いたのですが、queryのところで何も表示されません。  
@@ -24,7 +24,7 @@
  [http://ethna.jp/ethna-document-dev\_guide-db.html#zc5316fe](ethna-document-dev_guide-db.html#zc5316fe) -- psuke [?](cmd=edit&page=psuke&refer=ethna-community-forum-archiveto200703.html) 2007-03-15 (木) 13:48:29
 - 参考にしました。でも、Ethna以外の方法では、難しいのですね？（というか、ルール違反か？） -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-03-16 (金) 14:03:57
 
-### シフトJISに変換して出力する方法。 [](ethna-community-forum-archiveto200703.html#mdb5cd91 "mdb5cd91")
+### シフトJISに変換して出力する方法。
 > （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-03-08 (木) 22:50:51)  
 >   
 > 運用環境が、OS：euc-jp html出力が、SJISで困っています。  
@@ -63,7 +63,7 @@
 
 - ありがとございあした。 -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-03-14 (水) 20:38:27
 
-### DBでセッションを行うには [](ethna-community-forum-archiveto200703.html#xc24cc6d "xc24cc6d")
+### DBでセッションを行うには
 > jitto [?](cmd=edit&page=jitto&refer=ethna-community-forum-archiveto200703.html) (2007-02-13 (火) 12:33:33)  
 >   
 > [http://www.itt-web.net/modules/bwiki/index.php?Ethna%A4%C7Session%A4%F2DB%A4%CB%BB%FD%A4%C3%A4%C6%A4%DF%A4%EB](http://www.itt-web.net/modules/bwiki/index.php?Ethna%A4%C7Session%A4%F2DB%A4%CB%BB%FD%A4%C3%A4%C6%A4%DF%A4%EB)  
@@ -71,7 +71,7 @@
 > それは未だに変わってませんか？
 - Sessionクラスの \_read,\_writeあたりをオーバーライドして Controller でそのクラスを指定すれば動きます。\_read,\_writeメソッド内でAppObjectも使えました。 -- iyoda [?](cmd=edit&page=iyoda&refer=ethna-community-forum-archiveto200703.html) 2007-02-15 (木) 15:58:00
 
-### トラックバックの受信について [](ethna-community-forum-archiveto200703.html#q347c720 "q347c720")
+### トラックバックの受信について
 > sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) (2007-02-11 (日) 19:43:51)  
 >   
 > Ethnaを用いてトラックバックを受信したいと思っているのですが、  
@@ -83,7 +83,7 @@
 - ありがとうございます。さっそくやってみます。それにしてもスパムがうざいですね^^ -- sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) 2007-02-12 (月) 18:37:03
 - Trackback.phpのActionFormクラスで、setFormVarsの冒頭を if(isset($\_SERVER['REQUEST\_METHOD']) == false) {return;} else {$http\_vars =& array\_merge($\_POST, $\_GET);} としてみたのですが、うまくいきません。どこが間違っているのでしょうか。-- sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) 2007-02-12 (月) 18:54:00
 
-### PDOが、使えないと聞きましたが？ [](ethna-community-forum-archiveto200703.html#p63987bf "p63987bf")
+### PDOが、使えないと聞きましたが？
 > （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-01-24 (水) 19:38:20)  
 >   
 > ある人が、Ethnaを使って開発テストをしたのですが、PDOが使えないと言っていました。  
@@ -93,7 +93,7 @@
 - はい、これは知ってます。でも、公式にEthnaがサポートしているようではないようで・・・。どうなのでしょう？ -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-01-30 (火) 16:58:35
 - 普通に使えていますが？ その「ある人」がPDOを使えないだけでは。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2007-02-12 (月) 15:54:57
 
-### validete()の初期化について [](ethna-community-forum-archiveto200703.html#y3499429 "y3499429")
+### validete()の初期化について
 > ちむちむ [?](cmd=edit&page=%A4%C1%A4%E0%A4%C1%A4%E0&refer=ethna-community-forum-archiveto200703.html) (2007-01-22 (月) 12:24:56)  
 >   
 > 現在、Ethna 2.3.0 を使用してSimpleTestを行っています  
@@ -148,7 +148,7 @@
 - validate()の性格から言えば、一度しかやらないのが本来の使い方だと思います。が、どうしてもやりたければ、$this->af->ae->clear(); でクリアできるみたいです。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-30 (火) 10:43:26
 - >fmさん　ありがとうございます。非常に助かりました。 -- ちむちむ [?](cmd=edit&page=%A4%C1%A4%E0%A4%C1%A4%E0&refer=ethna-community-forum-archiveto200703.html) 2007-01-30 (火) 11:20:01
 
-### 配列フォームのエラー取得について [](ethna-community-forum-archiveto200703.html#s5378f64 "s5378f64")
+### 配列フォームのエラー取得について
 > kent [?](cmd=edit&page=kent&refer=ethna-community-forum-archiveto200703.html) (2007-01-18 (木) 18:25:35)  
 >   
 > 2度目の質問となります。  
@@ -169,7 +169,7 @@ input type="text" name="hoge[]">
 - うーんと、いまのethnaは配列で個々の要素のエラーをうまく扱えません。この問題はずいぶん前から意識はしてたんですが$,1s&。優先度高めで対応したいと思います。(B -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-21 (日) 22:44:09
 - なるほど、そうでしたか。宜しくお願いいたします。 -- kent [?](cmd=edit&page=kent&refer=ethna-community-forum-archiveto200703.html) 2007-01-25 (木) 19:20:30
 
-### 自前のスケルトンを複数使いたい [](ethna-community-forum-archiveto200703.html#yfdf9b94 "yfdf9b94")
+### 自前のスケルトンを複数使いたい
 > まえやま [?](cmd=edit&page=%A4%DE%A4%A8%A4%E4%A4%DE&refer=ethna-community-forum-archiveto200703.html) (2007-01-16 (火) 01:47:42)  
 >   
 > skel.action.php とは別に、「あるタイプのアクション」を作りたいときに使えるスケルトンを追加したいのですが、何かやり方はありますか？  
@@ -183,7 +183,7 @@ input type="text" name="hoge[]">
 - riafさんのおっしゃるとおり、"ethna add-action -s skel.action\_dashboard.php foo" みたいにやれます。Ethna本体かアプリのskelディレクトリに置けば勝手に探します。けど、"ethna add-action-dashboard" が自動で使えるようになるのもなかなかいい感じですね。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-18 (木) 04:48:12
 - ありがとうございます。＞maicalさん：はい、そうしようと思ってるのですが毎回継承を書き直すのが面倒なので、はじめから特定のアクションを継承したものが生成されればうれしいな、と。＞riafさん、いちいさん：ありがとうございますー。やってみます。 -- まえやま [?](cmd=edit&page=%A4%DE%A4%A8%A4%E4%A4%DE&refer=ethna-community-forum-archiveto200703.html) 2007-01-24 (水) 17:28:03
 
-### リスト表示しました [](ethna-community-forum-archiveto200703.html#ga9f29ca "ga9f29ca")
+### リスト表示しました
 > maical [?](cmd=edit&page=maical&refer=ethna-community-forum-archiveto200703.html) (2007-01-15 (月) 14:05:27)  
 >   
 > 記事が多くなって見づらいと思ったので  
@@ -191,7 +191,7 @@ input type="text" name="hoge[]">
 > 余計に見づらいよ！ってことなら戻します。。
 - ページングして欲しいような気もします。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-15 (月) 15:12:44
 
-### メールが送れない [](ethna-community-forum-archiveto200703.html#ed90ac16 "ed90ac16")
+### メールが送れない
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2007-01-13 (土) 15:09:29)  
 >   
 > なんか私ばかりですみません。  
@@ -208,7 +208,7 @@ input type="text" name="hoge[]">
 - こけてる箇所を特定しました。Ethna\_MailSender::\_parse()内のpreg\_replaceでEthna\_Util::encode\_MIMEしてる部分です。この直前までは echo で文字が出ますが、この行の直後から出なくなります。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-13 (土) 19:05:41
 - 解消しました。PHPがutf、コードがeucのために起こる不具合だったようです。お騒がせしました$,1s&。(B -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-16 (火) 13:03:34
 
-### 日付の妥当性チェック [](ethna-community-forum-archiveto200703.html#feb860a8 "feb860a8")
+### 日付の妥当性チェック
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2007-01-07 (日) 18:41:57)  
 >   
 > VAR\_TYPE\_DATETIME型のフォームに 2007-02-31 のような  
@@ -221,7 +221,7 @@ input type="text" name="hoge[]">
 - 組み込みの日付チェックは「strtotime()に任せる」ポリシーになってます。バリデータプラグインを作ればokですが、予定としては、もうすこしいろんなチェックができるプラグインを標準添付するかもです。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-08 (月) 19:31:48
 - ですか。プラグイン書いた方がよさそうですね。ありがとうございました。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-11 (木) 10:45:18
 
-### 多次元配列の定義 [](ethna-community-forum-archiveto200703.html#fc9ecf93 "fc9ecf93")
+### 多次元配列の定義
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2007-01-05 (金) 10:29:17)  
 >   
 > ActionFormの $form['foo']['type'] に多次元の配列を定義したいんですが、  
@@ -230,7 +230,7 @@ input type="text" name="hoge[]">
 - 専用のvalidatorプラグインを作れば対応できますが、テンプレートのフォームヘルパ({form\_input}とか)まで考えると、あまりおすすめしません。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-05 (金) 14:48:53
 - やっぱり1次までですか$,1s&再起的に定義できるようにするとしても、フォームヘルパでどう処理して良いか解りませんよね。ありがとうございました。(B -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-05 (金) 15:32:28
 
-### Ethna-2.3.0の挙動について [](ethna-community-forum-archiveto200703.html#o076991b "o076991b")
+### Ethna-2.3.0の挙動について
 > takuya.o [?](cmd=edit&page=takuya.o&refer=ethna-community-forum-archiveto200703.html) (2007-01-04 (木) 12:17:04)  
 >   
 > あけましておめでとうございます。  
@@ -254,7 +254,7 @@ input type="text" name="hoge[]">
 のように指定してください。(アナウンス不足でした、すいませんです...) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-04 (木) 23:36:04
 - 「Ethna-2.3.0のインストールに失敗する」に関連して、解決することができました。Ethnaでなにか作ってみたり挑戦します。今後とも宜しくお願い致します。 -- takuya.o [?](cmd=edit&page=takuya.o&refer=ethna-community-forum-archiveto200703.html) 2007-01-10 (水) 21:29:42
 
-### Ethna-2.3.0のインストールに失敗する [](ethna-community-forum-archiveto200703.html#o1907cc6 "o1907cc6")
+### Ethna-2.3.0のインストールに失敗する
 > ethnanasi [?](cmd=edit&page=ethnanasi&refer=ethna-community-forum-archiveto200703.html) (2006-12-31 (日) 17:01:22)  
 >   
 > Mac OS X 10.4付属のphp環境でpearを利用してethnaをインストールしようとしたのですが、出来ませんでした。よろしければ、ご教授の程お願いします。
@@ -276,7 +276,7 @@ input type="text" name="hoge[]">
 - 全く追っていないのですが、windows環境で「Fatal error: Cannot redeclare class pear in C:\PHP\PEAR\PEAR.php on line 86」が出ていて、bin\ethna\_handle.phpの30行目の変更を元に戻すと動きます。30c30< ini\_set('include\_path', "$base" . PATH\_SEPARATOR . ini\_get('include\_path'));---> ini\_set('include\_path', ini\_get('include\_path') . PATH\_SEPARATOR . "$base");　ご参考まで。。 -- itsuki [?](cmd=edit&page=itsuki&refer=ethna-community-forum-archiveto200703.html) 2007-01-10 (水) 18:18:02
 - itsukiさん、ありがとうございます！おかげで解決しました。やはり、消してしまった前のアーカイブ(2.3.0)とソースを比較する方が早かったのかもしれませんね..たくさんレスを伸ばしてしまい、すみません... -- takuya.o [?](cmd=edit&page=takuya.o&refer=ethna-community-forum-archiveto200703.html) 2007-01-10 (水) 21:28:05
 
-### SQLインジェクションの防止について [](ethna-community-forum-archiveto200703.html#k841698b "k841698b")
+### SQLインジェクションの防止について
 > とび [?](cmd=edit&page=%A4%C8%A4%D3&refer=ethna-community-forum-archiveto200703.html) (2006-12-27 (水) 14:43:12)  
 >   
 > Ethna\_DB\_PEARではquoteSmart()が利用できないようですが、  
@@ -284,7 +284,7 @@ input type="text" name="hoge[]">
 > ご教授いただけると助かります。
 - $db->db->quoteSmartみたいな感じ呼べるけど、、、という話でしょうか？ 個人的にはprepareを使う事をオススメします -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-12-27 (水) 18:49:17
 
-### テンプレートで使用する共通変数の格納場所について [](ethna-community-forum-archiveto200703.html#w3d8ba35 "w3d8ba35")
+### テンプレートで使用する共通変数の格納場所について
 > kent [?](cmd=edit&page=kent&refer=ethna-community-forum-archiveto200703.html) (2006-12-09 (土) 16:30:01)  
 >   
 > テンプレートに共通で使う変数（サイト名とかURLとか）は皆さんどこにセットしてるでしょうか。  
@@ -296,7 +296,7 @@ input type="text" name="hoge[]">
 - おお、やはりこういった関数がちゃんと用意されているのですね。ありがとうございます。これでやってみます。 -- kent [?](cmd=edit&page=kent&refer=ethna-community-forum-archiveto200703.html) 2006-12-09 (土) 18:17:39
 - fmさんのおっしゃるようにViewのsetDefaultが正しいです。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-12-11 (月) 13:30:43
 
-### 空文字列の取り込みについて [](ethna-community-forum-archiveto200703.html#zadbd499 "zadbd499")
+### 空文字列の取り込みについて
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-12-08 (金) 12:17:15)  
 >   
 > 立て続けにすみません。  
@@ -309,7 +309,7 @@ input type="text" name="hoge[]">
 - 空文字列を0に変換しているのは、たぶんmysqlとかだと思います。ということで仕様ということになってしまうんですが、ちょっと扱いにくい感じはするので、いい方法があったら改善したいと思います。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-04 (木) 23:42:25
 - 空文字列を0にしてるのは確かにMySQLですね。今はimportForm()内で、フォーム値がstrlen() == 0ならnullという風に改造して使ってます。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2007-01-05 (金) 10:32:02
 
-### フォームヘルパをつかってマネージャからデータを渡したときの処理について [](ethna-community-forum-archiveto200703.html#e8975d32 "e8975d32")
+### フォームヘルパをつかってマネージャからデータを渡したときの処理について
 > やまざき [?](cmd=edit&page=%A4%E4%A4%DE%A4%B6%A4%AD&refer=ethna-community-forum-archiveto200703.html) (2006-12-06 (水) 21:29:22)  
 >   
 > フォームヘルパにてアプリケーションマネージャのプロパティの配列からデータを取得して<select>にしようとしてますが、配列のkeyは取り出せるのですが、valueがうまく取り出せません。  
@@ -357,7 +357,7 @@ option value="1">a</option>
 > なにぶん日が浅いもので右も左もわからずに質問いたしますが、識者の方々、どうぞよろしくお願いします。
 - app managerに書く$xxx\_list に、 array('実際の値' => array('name' => '表示名', 'long\_name' => '長い説明'), ... ) のように書く、というルールになってます。ってどこにも説明書いてないですね...。Ethna\_AppManagerのgetAttrName()とかがそのへんのヒントになってました。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-05 (金) 00:41:22
 
-### getAttrList() [](ethna-community-forum-archiveto200703.html#x04a6b6a "x04a6b6a")
+### getAttrList()
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-12-04 (月) 19:46:43)  
 >   
 > フォームヘルパにてDBから都道府県を自動取得して<select>にしようとしてますが、  
@@ -370,7 +370,7 @@ option value="1">a</option>
 - 完全スルーなんでしょうか$,1s&淋しいs&。上のやまざきさんの質問からすると、コンストラクタを書き換えて、自分で(BDBから取得するコードを書くしかなさそうですね。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-12-13 (水) 11:56:52
 - うーんと、これは対応しようと思ってるけどまだやってない、という状況だったような気がします。遅くなってしまってすいません...。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-05 (金) 00:43:15
 
-### custom [](ethna-community-forum-archiveto200703.html#f94b9ab4 "f94b9ab4")
+### custom
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-12-03 (日) 17:04:40)  
 >   
 > AcformForm->validate()で custom が実行されないです。  
@@ -382,7 +382,7 @@ option value="1">a</option>
 - ごめんなさい、変な投稿してしまいました・・・無視してください。 -- やないっち [?](cmd=edit&page=%A4%E4%A4%CA%A4%A4%A4%C3%A4%C1&refer=ethna-community-forum-archiveto200703.html) 2006-12-03 (日) 17:28:24
 - （無視して）すんません自分の勘違いでした。ActionFormにメソッドを追加したらあっさり動作しました。一生懸命ActionClassに定義してました。すみません。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-12-03 (日) 17:49:21
 
-### Ethna\_MailSender拡張 [](ethna-community-forum-archiveto200703.html#ca1a8ea0 "ca1a8ea0")
+### Ethna\_MailSender拡張
 > やないっち [?](cmd=edit&page=%A4%E4%A4%CA%A4%A4%A4%C3%A4%C1&refer=ethna-community-forum-archiveto200703.html) (2006-12-03 (日) 16:43:49)  
 >   
 > お世話になってます。  
@@ -415,7 +415,7 @@ line:122行目〜
 - つけやきば対応なので、ちと不安・・・でも、とりあえず添付は分割できたぁ。 -- やないっち [?](cmd=edit&page=%A4%E4%A4%CA%A4%A4%A4%C3%A4%C1&refer=ethna-community-forum-archiveto200703.html) 2006-12-03 (日) 16:45:06
 - 簡単ですが複数の添付に対応するようにしました。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-18 (木) 03:39:09
 
-### フォームヘルパ [](ethna-community-forum-archiveto200703.html#x032d284 "x032d284")
+### フォームヘルパ
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-12-01 (金) 19:08:11)  
 >   
 > フォームヘルパなる文書を見つけましたよ（ふっふっふ）。  
@@ -426,7 +426,7 @@ line:122行目〜
 - 遅くなっちゃいましたがドキュメント追加していちおう開発マニュアルからリンクを張っておきました。このへんの構成はすこしづつ修正していきます。あと、labelのほうはまったく気づいてませんでした、修正しました! -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-12-04 (月) 14:15:40
 - ありがとうございました。テンプレートをいじらずともActionClassだけで設定できそうなのがいいです。でも使い分けのポリシーをしっかりしないと混乱しそう$,1s&。(B -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-12-04 (月) 15:49:43
 
-### 質問 [](ethna-community-forum-archiveto200703.html#a4ac0124 "a4ac0124")
+### 質問
 > toku [?](cmd=edit&page=toku&refer=ethna-community-forum-archiveto200703.html) (2006-12-01 (金) 00:58:00)  
 >   
 > はじめまして。  
@@ -447,7 +447,7 @@ line:122行目〜
 - ご報告ありがとうございます! $managerはpreview2からpreview3の変更で廃止されたので、skelについても2.3.0のリリースで追従した形です。$backend->getManager()を使うようにしてください(infomanagerのほうの話ならば、まだ追従できていません)。unique\_keyについては完全にバグでした。今月中に2.3.1は出すつもりですので、申し訳ありませんがそれまでお待ちください。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-12-01 (金) 05:46:19
 - 早速の回答ありがとうございます。managerプロパティは廃止だったんですね。自分は逆に2.3系から追加されたものだとばかり思っていました・・・。セットしてgetManagerで取得、というように勘違いしてました。修正版おまちしています。 -- toku [?](cmd=edit&page=toku&refer=ethna-community-forum-archiveto200703.html) 2006-12-01 (金) 09:58:20
 
-### 認証のスマートな方法 [](ethna-community-forum-archiveto200703.html#y40c3682 "y40c3682")
+### 認証のスマートな方法
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-11-30 (木) 09:48:54)  
 >   
 > 昨日、はじめてActionClassの中にauthenticate()というメソッドを見つけました（笑）。  
@@ -462,7 +462,7 @@ line:122行目〜
     - 実行中のアクション名なら [http://ethna.jp/doc/Ethna/Ethna\_Controller.html#getCurrentActionName](doc/Ethna/Ethna_Controller.html#getCurrentActionName) でとれますね。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-11-30 (木) 18:53:27
     - あーそのまんまですね$,1s&すみませんありがとうございました。(B -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-11-30 (木) 19:57:29
 
-### af->get(),getArray() [](ethna-community-forum-archiveto200703.html#l71c0118 "l71c0118")
+### af->get(),getArray()
 > シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) (2006-11-27 (月) 18:21:06)  
 >   
 > 配列Formの値を取得する方法です。
@@ -486,7 +486,7 @@ line:122行目〜
 - エラーメッセージがなにも出てないなら、"gdDescription"というフォームが正しく定義されていないのかもしれません。( [ethna-document-dev\_guide-form-type#dfb5b67e](ethna-document-dev_guide-form-type.html#dfb5b67e "ethna-document-dev\_guide-form-type (1006d)")とかを参考にしてください) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-28 (火) 00:15:54
 - これで解決出来ました。有難うございます。 -- シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) 2006-11-28 (火) 07:40:21
 
-### デリミタ変えたい [](ethna-community-forum-archiveto200703.html#ab382394 "ab382394")
+### デリミタ変えたい
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-11-23 (木) 10:43:59)  
 >   
 > テンプレートに直接CSSやJavaScriptを書きたいんですが、  
@@ -499,7 +499,7 @@ line:122行目〜
 - [http://ethna.jp/ethna-document-dev\_guide-renderer.html](ethna-document-dev_guide-renderer.html) を書き直したので参照してください。(ドキュメント不備ですいません) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-24 (金) 16:29:57
 - 具体例までありがとうございました。ドキュメントがこれからなのもあって、古い方でやろうかなーと思ってましたが、でもすぐ新しいのが出るのにそれも悔しいなと思い直して挑戦することにしました（笑）。ほぼリアルタイムで追従しますのでよろしくお願いします。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-11-24 (金) 18:05:04
 
-### Ethna\_Backend.php で発生するNoticeメッセージ [](ethna-community-forum-archiveto200703.html#g6c9c6b6 "g6c9c6b6")
+### Ethna\_Backend.php で発生するNoticeメッセージ
 > ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) (2006-11-15 (水) 16:56:40)  
 >   
 > MacOSX 10.4.8 の php 4.4.1 で Ethna-2.1.2 を使用してWebアプリを作成していますが、  
@@ -539,7 +539,7 @@ line:122行目〜
 - これでだいじょうぶです(CVSでは修正済みです)。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-16 (木) 18:18:48
 - ありがとうございます。CVSでは、修正されているのを確認しました。次の正式版に期待してます。 -- ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) 2006-11-18 (土) 00:57:52
 
-### DBのCRUD機能 [](ethna-community-forum-archiveto200703.html#c08e8905 "c08e8905")
+### DBのCRUD機能
 > シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) (2006-11-13 (月) 11:07:24)  
 >   
 > 有難うございます。  
@@ -552,7 +552,7 @@ line:122行目〜
 > 宜しくお願いいたします。
 - Ethna流のアプリの作り方として正しいか、という意味では、(かなり場面によりますが)action classとview classの使いわけとして、そのようなやりかたはおかしくないと思います。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-16 (木) 18:26:54
 
-### Action Class [](ethna-community-forum-archiveto200703.html#s1762eb1 "s1762eb1")
+### Action Class
 > シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) (2006-11-10 (金) 19:57:21)  
 >   
 > 以下のようにPerform() methodのActionとParameterを渡すことは可能でしょうか。return 'description\_add=true?productId='.$productId;  
@@ -584,7 +584,7 @@ line:122行目〜
 - returnのところに書くのは遷移先のview名(多くの場合smartyの\*\*\*.tplの部分)の意味なので、このような書き方はできないです。別のアクションを実行したい、ということでしょうか? header('Location: /index.php?productId='.$productId); とかのイメージでしょうか。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-12 (日) 23:43:01
 - 有難うございます -- 2006-11-14 (火) 13:09:33
 
-### Ethna\_MailSender メールを送信する最短のサンプル について [](ethna-community-forum-archiveto200703.html#o62dbe5d "o62dbe5d")
+### Ethna\_MailSender メールを送信する最短のサンプル について
 > ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) (2006-11-09 (木) 13:21:36)  
 >   
 > Ethna-2.1.2 の Ethna\_MailSender ですが、  
@@ -607,7 +607,7 @@ line:122行目〜
 - 了解しました。直値をコードの中にばらまかないのがいいのと同様、抽象的なテンプレート名と、物理的なファイル名と分けたほうがいいと思います。というわけで、Ethna\_MailSender は継承させて使うことにします。個人的には、継承を使いすぎると、規模がでかくなってくるとだんだん見通しが悪くなってくるという気がしてます。継承ではなく、論理テンプレート名と物理ファイル名のマッピングを外部から与えられるようにした方が使いまわしのしやすいクラスになるかも。 -- ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) 2006-11-09 (木) 19:36:35
 - $,1vq対応しました。(B -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2007-01-18 (木) 03:42:12
 
-### フォーム値をReset [](ethna-community-forum-archiveto200703.html#p821c2aa "p821c2aa")
+### フォーム値をReset
 > シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) (2006-11-09 (木) 11:02:21)  
 >   
 > 登録済みで「登録完了しました」メッセージを表示した後、フォーム値をResetしたいんですが、現在以下のように「$this->af->form\_vars=array();」を使用してます。これが正しいやり方でしょうか？  
@@ -622,7 +622,7 @@ line:122行目〜
 > 宜しくお願いいたします
 - CVSでは$this->af->clearFormVars()というのが用意されました(array()を代入しているだけですが)。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-10 (金) 09:51:48
 
-### 誤字。 [](ethna-community-forum-archiveto200703.html#m23faaa8 "m23faaa8")
+### 誤字。
 > m [?](cmd=edit&page=m&refer=ethna-community-forum-archiveto200703.html) (2006-11-08 (水) 17:52:58)  
 >   
 > 全然重要ではありませんが、Ethna\_Error.php 69 行目のところが
@@ -633,7 +633,7 @@ line:122行目〜
 > 綴りは unknown ですね。
 - すみませんでした！CVS版のほうに修正かけたので次回のリリース時にはなおってます。報告ありがとうございます。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-11-09 (木) 10:07:21
 
-### Ethna\_MailSender の$smarty->display() について [](ethna-community-forum-archiveto200703.html#dae37308 "dae37308")
+### Ethna\_MailSender の$smarty->display() について
 > ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) (2006-11-08 (水) 17:31:59)  
 >   
 > Ethna-2.1.2 の Ethna\_MailSender::send()の
@@ -650,7 +650,7 @@ line:122行目〜
 > でよさそうに思いますが、何か理由があるのでしょうか?
 - fetchで問題ないです。たぶんfetchをしらないときにかいたのだと。直したとおもったらCVS版にも残ってますね、、 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-11-08 (水) 17:46:52
 
-### Ethnaのバージョンアップについて [](ethna-community-forum-archiveto200703.html#bb28dcd7 "bb28dcd7")
+### Ethnaのバージョンアップについて
 > confu [?](cmd=edit&page=confu&refer=ethna-community-forum-archiveto200703.html) (2006-11-03 (金) 19:43:08)  
 >   
 > こんにちは。  
@@ -672,7 +672,7 @@ line:122行目〜
 - たしかにその通りだと思います。2.1.2と今の最新のCVS版ではあまりにも差ができてしまっています。ちょっと自分なりに考えてみます。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-11-05 (日) 16:54:56
 - [http://ethna.jp/index.php?ethna-tmp-release2.3](ethna-tmp-release2.3.html) のページを作りました。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-10 (金) 10:34:15
 
-### setApp('name',arrayOfObject) [](ethna-community-forum-archiveto200703.html#xf5da90a "xf5da90a")
+### setApp('name',arrayOfObject)
 > シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) (2006-10-24 (火) 15:57:25)  
 >   
 > $this->af->setApp('name',$arrayOfObject);  
@@ -688,7 +688,7 @@ line:122行目〜
 - $smarty->securityみたい(笑)なんか関係ないみたいです。デフォでオフらしいです。すみません；； -- Konet [?](cmd=edit&page=Konet&refer=ethna-community-forum-archiveto200703.html) 2006-11-06 (月) 23:41:48
 - register objもあるといいのかもしれませんね。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-10 (金) 10:35:34
 
-### エスケープ処理について [](ethna-community-forum-archiveto200703.html#le87e61c "le87e61c")
+### エスケープ処理について
 > sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) (2006-10-20 (金) 01:32:53)  
 >   
 > たびたびお世話になっています。  
@@ -709,13 +709,13 @@ line:122行目〜
 - どの値もsetしただけではエスケープされない。PHP中で、ActionFormのget/getApp/getAppNE/getAppNEArrayはエスケープされず、getArray/getAppArrayはエスケープされる。Sessionのgetもエスケープされない。Smarty中で、form/app/errors/sessionはエスケープ有り、app\_ne/script/request\_uriはエスケープ無し。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-10-23 (月) 10:29:55
 - どのバージョンからなのかは把握していませんが、最新のCVSの場合、scriptやrequest\_uriはエスケープ有りになっています。ViewClassの870行目あたりです。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-11-07 (火) 02:06:22
 
-### サーバメンテナンスします [](ethna-community-forum-archiveto200703.html#s91b2ad2 "s91b2ad2")
+### サーバメンテナンスします
 > ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) (2006-10-19 (木) 12:58:43)  
 >   
 > すいません、急なお知らせになってしまいますが本日夕方から数時間、サーバメンテナンスのためちょっとこのサイトとまっちゃいます。ご容赦ください。  
 >   
 > ＃あと簡単なフィルタいれてみました
-### INSERT後の一意制約違反を検知したい [](ethna-community-forum-archiveto200703.html#gc782038 "gc782038")
+### INSERT後の一意制約違反を検知したい
 > Clumsy [?](cmd=edit&page=Clumsy&refer=ethna-community-forum-archiveto200703.html) (2006-10-19 (木) 11:34:54)  
 >   
 > PHP4.1.3+Ethna2.1.2+PostgreSQL7環境で開発をしています。  
@@ -723,7 +723,7 @@ line:122行目〜
 > $db =& $this->backend->getDB() でDBを取得後、query()メソッドでINSERT文を流します。  
 > 一意制約違反が発生した場合にEthna::isError($r)やDB::isError($r)でエラーが発生したか検知出来ないのですが、皆さんどうされてますか？  
 > 一意制約違反が発生した場合にはユーザに再入力を促したいのですが$,1s&s&。(B
-### sessionやsetAppを一括で指定 [](ethna-community-forum-archiveto200703.html#a699b60b "a699b60b")
+### sessionやsetAppを一括で指定
 > sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) (2006-10-15 (日) 00:06:29)  
 >   
 > 皆様こんばんは  
@@ -741,7 +741,7 @@ line:122行目〜
 - $this->sesssion->set('form', $this->af->getArray(false));とか、$this->af->setAppArray(...)とか。 -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-10-15 (日) 00:25:13
 - ありがとうございます。なるほど、こんなメソッドがあったのですね。 -- sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) 2006-10-15 (日) 01:30:25
 
-### フォームの入力値チェック [](ethna-community-forum-archiveto200703.html#hf264671 "hf264671")
+### フォームの入力値チェック
 > Clumsy [?](cmd=edit&page=Clumsy&refer=ethna-community-forum-archiveto200703.html) (2006-10-13 (金) 20:46:52)  
 >   
 > PHP4.1.3とEthna2.1.2を使用しています。  
@@ -776,7 +776,7 @@ line:122行目〜
 - お恥ずかしい。月曜に職場で試してみます ＞ shigetaさま -- Clumsy [?](cmd=edit&page=Clumsy&refer=ethna-community-forum-archiveto200703.html) 2006-10-13 (金) 23:39:21
 - 報告遅くなりました。勿論VAR\_TYPE\_DATETIMEでいけましたm(\_\_)m -- Clumsy [?](cmd=edit&page=Clumsy&refer=ethna-community-forum-archiveto200703.html) 2006-10-19 (木) 11:29:28
 
-### テンプレートの切り替えとCSV [](ethna-community-forum-archiveto200703.html#fb95b3a1 "fb95b3a1")
+### テンプレートの切り替えとCSV
 > いつき [?](cmd=edit&page=%A4%A4%A4%C4%A4%AD&refer=ethna-community-forum-archiveto200703.html) (2006-10-13 (金) 14:02:38)  
 >   
 > はじめまして、Ethnaを利用させていただいております。  
@@ -794,7 +794,7 @@ line:122行目〜
 - 2つ目ですが。Viewのforward()を継承するのが美しいと思います。 -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-10-13 (金) 18:46:27
 - ご返答ありがとうございます。さっそく試してみたいと思います。 -- いつき [?](cmd=edit&page=%A4%A4%A4%C4%A4%AD&refer=ethna-community-forum-archiveto200703.html) 2006-10-14 (土) 15:14:29
 
-### ドキュメント破損？ [](ethna-community-forum-archiveto200703.html#o3882f67 "o3882f67")
+### ドキュメント破損？
 > Clumsy [?](cmd=edit&page=Clumsy&refer=ethna-community-forum-archiveto200703.html) (2006-10-12 (木) 21:31:33)  
 >   
 > Ethna > ドキュメント > 開発マニュアル > エラー処理 > エラーレベルに応じて共通の画面を表示させる  
@@ -807,7 +807,7 @@ line:122行目〜
 > 是非続きを読みたいのですが$,1s&s&。(B
 - 自分もちょうど同じ気持ちです。 -- ひであ [?](cmd=edit&page=%A4%D2%A4%C7%A4%A2&refer=ethna-community-forum-archiveto200703.html) 2007-04-01 (日) 21:23:40
 
-### ライセンスについて [](ethna-community-forum-archiveto200703.html#d3dea314 "d3dea314")
+### ライセンスについて
 > yone [?](cmd=edit&page=yone&refer=ethna-community-forum-archiveto200703.html) (2006-10-11 (水) 17:39:26)  
 >   
 > ライセンスについて2点質問があります。  
@@ -822,7 +822,7 @@ line:122行目〜
 
 - BSDライセンスの宣伝条項問題はGNUの [BSD ライセンスが抱える問題](http://www.gnu.org/philosophy/bsd.ja.html)が詳しいです． -- Anonymous Coward 2007-06-07 (木) 22:34:02
 
-### telnet出来ないサーバに [](ethna-community-forum-archiveto200703.html#ked33be5 "ked33be5")
+### telnet出来ないサーバに
 > fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) (2006-10-02 (月) 18:19:08)  
 >   
 > レンタルサーバの仕様によりtelnetできないんですが、  
@@ -833,7 +833,7 @@ line:122行目〜
 - まぁ使用するのはプログラマなんですから、それぐらい自分で何とかしろという話ではあるんですが$,1s&期待してます(B(^^ -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-10-04 (水) 09:29:56
 - 開発用のサーバを用意して(VMWareでもいいかも)開発中はそこでethnaコマンドを走らせ、最後にレンタルサーバには完成品をアップ、というのはどうでしょう。レンタルサーバでethnaが実行できたとしても、結局は開発機で開発＆テストしてから本番サーバにアップ、という形になるでしょうし・・。 -- gogo [?](cmd=edit&page=gogo&refer=ethna-community-forum-archiveto200703.html) 2006-10-05 (木) 10:01:37
 
-### フォーム値の取得について [](ethna-community-forum-archiveto200703.html#n93562a2 "n93562a2")
+### フォーム値の取得について
 > 竹本 [?](cmd=edit&page=%C3%DD%CB%DC&refer=ethna-community-forum-archiveto200703.html) (2006-09-30 (土) 14:27:17)  
 >   
 > ドキュメントの「フォーム値にアクセスする」によると  
@@ -848,7 +848,7 @@ line:122行目〜
 - ドキュメントがちょっとわかりにくいようなので直してみました。「区別しません」というのは、ActionFormに格納されたあとのフォーム値がどのREQUEST\_METHODで渡されたものかを区別しない、ということだと思います。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-10-01 (日) 00:17:54
 - 遅くなりまして、すみません。納得いきました。ドキュメントも変更していただいて、ありがとうございます。 -- 竹本 [?](cmd=edit&page=%C3%DD%CB%DC&refer=ethna-community-forum-archiveto200703.html) 2006-10-03 (火) 21:59:40
 
-### Ethna\_Plugin\_Logwriter\_Echo.php [](ethna-community-forum-archiveto200703.html#v180eaea "v180eaea")
+### Ethna\_Plugin\_Logwriter\_Echo.php
 > castor [?](cmd=edit&page=castor&refer=ethna-community-forum-archiveto200703.html) (2006-09-27 (水) 22:27:38)  
 >   
 > はじめまして。  
@@ -859,7 +859,7 @@ line:122行目〜
 - すみません、私の勘違いでしたようで失礼いたしました。log\_facilityがechoの場合、このタイミングで出力されてしまうと他の場面でheader()を呼び出す以前に出力が開始されてしまうのですが、何か解決策はないものでしょうか。output\_bufferingを有効にする以外に、ログ出力のタイミングを変えられれば良いのですが$,1s&。(B -- castor [?](cmd=edit&page=castor&refer=ethna-community-forum-archiveto200703.html) 2006-09-28 (木) 21:15:51
 - 現状はechoじゃなくてfileをつかうしかなさそうです。header()を使うときのいいやりかたはあまりはっきりしてないような気がしています。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-10-01 (日) 01:54:32
 
-### EthnaのDBはPEARを継承しているのでしょうか？ [](ethna-community-forum-archiveto200703.html#j1da83f6 "j1da83f6")
+### EthnaのDBはPEARを継承しているのでしょうか？
 > sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) (2006-09-26 (火) 23:56:50)  
 >   
 > はじめまして PHP5.1でEthna2.1.2を利用中です。PHP自身が初級者ということもあって、Ethnaと楽しく悪戦苦闘しています。  
@@ -870,7 +870,7 @@ line:122行目〜
 - その通りです。現在のバージョンのethnaは継承しているわけではありません。Ethna\_DB\_PEARからPEAR::DBのメソッドを呼び出すには$ethna\_db\_pear->db->autoExecute();のような感じでEthna\_DB\_PEARが持っているPEAR\_DBのオブジェクトを呼ぶことで使うことができます。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-09-28 (木) 18:35:17
 - ありがとうございます。そうか、$xxx->db->method(); と直接アクセスしてしまえばいいんですね。 -- sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) 2006-09-28 (木) 23:06:49
 
-### ログ出力のend()のコールタイミング [](ethna-community-forum-archiveto200703.html#r30f1027 "r30f1027")
+### ログ出力のend()のコールタイミング
 > ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) (2006-09-22 (金) 18:25:35)  
 >   
 > はじめまして PHP4.4.1 で Ethna 2.1.2 を使用しはじめています。  
@@ -879,7 +879,7 @@ line:122行目〜
 - んー。fcloseしてないだけなので、多分大丈夫だと思います。・・・が、fcloseしてないのはきもいよねっていうのもありますねたしかに。 -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-09-23 (土) 22:49:37
 - まあ、PHPがおそらく終了処理をキッチリやってくれているだろうから?大丈夫だとは思うんですけど...、というところです;-)。あと、ログ出力の後、fflush()してなさそうなので、(PECLなモジュールに不具合があったりして)途中でWebサーバーがクラッシュしたりすると、最後付近のログが記録されていなくって、原因究明に手間取るというのも考えられなくもないです。出力毎にfflush()するというのも、パフォーマンスが悪くなるので、オプション(or 初期化の引数等)で変えられるといいかもしれません。考えすぎかな...。 -- ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) 2006-09-25 (月) 00:34:37
 
-### アクション名の決定方法のページ更新しました [](ethna-community-forum-archiveto200703.html#gbf468f7 "gbf468f7")
+### アクション名の決定方法のページ更新しました
 > Dora-kou [?](cmd=edit&page=Dora-kou&refer=ethna-community-forum-archiveto200703.html) (2006-09-13 (水) 16:33:58)  
 >   
 > はじめましてです。本格的なMVC系のフレームワークは初挑戦です。  
@@ -891,7 +891,7 @@ line:122行目〜
 > どうぞよろしくお願いします。
 - おおぉぉーありがとうございます。すげーたすかります -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-09-17 (日) 12:26:00
 
-### スケルトン生成はaddオプションに統一？ [](ethna-community-forum-archiveto200703.html#v52a8dad "v52a8dad")
+### スケルトン生成はaddオプションに統一？
 > 佑 [?](cmd=edit&page=%CD%A4&refer=ethna-community-forum-archiveto200703.html) (2006-09-12 (火) 14:08:52)  
 >   
 > はじめまして。ここ数日使わせていただいています。  
@@ -905,7 +905,7 @@ line:122行目〜
 - ありがとうございます。私が書いた部分について修正を確認しました。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-09-15 (金) 13:14:36
 - ちなみにCVS版だと1654行目ですね。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-09-15 (金) 13:24:48
 
-### Ethna\_Controller の getTemplateEngine メソッド [](ethna-community-forum-archiveto200703.html#kcd61498 "kcd61498")
+### Ethna\_Controller の getTemplateEngine メソッド
 > みず [?](cmd=edit&page=%A4%DF%A4%BA&refer=ethna-community-forum-archiveto200703.html) (2006-08-31 (木) 12:56:06)  
 >   
 > Ethna\_Controller の getTemplateEngine メソッドですが、  
@@ -915,7 +915,7 @@ line:122行目〜
 - 本当ですね。コピペしたまま変更し忘れた感じでしょうか。テスト書いたらコミットします。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-09-15 (金) 13:22:23
 - こちらの修正していただけると助かります。CVS版こまめに入れ替えてるのですが、毎回書き直してまして$,1s&(B -- 2006-11-10 (金) 19:46:34
 
-### デモページでFatal errorが [](ethna-community-forum-archiveto200703.html#u73e4b97 "u73e4b97")
+### デモページでFatal errorが
 > (2006-08-30 (水) 01:48:03)  
 >   
 > [http://ethna.jp/sample/?action\_signup=true](sample/?action_signup=true)  
@@ -924,7 +924,7 @@ line:122行目〜
 - はじめまして。サンプルページが無くなっているようですね。気がつきましたので念の為。 -- mr [?](cmd=edit&page=mr&refer=ethna-community-forum-archiveto200703.html) 2007-01-16 (火) 17:32:47
 - あいかわらず、アクセスできないようですね。修正いただければ。 -- ひだか [?](cmd=edit&page=%A4%D2%A4%C0%A4%AB&refer=ethna-community-forum-archiveto200703.html) 2007-01-24 (水) 18:26:17
 
-### Ethna 2.3.0 Preview2 正規表現によるバリデータプラグインのregexp [](ethna-community-forum-archiveto200703.html#v046ebfd "v046ebfd")
+### Ethna 2.3.0 Preview2 正規表現によるバリデータプラグインのregexp
 > NICOLE [?](cmd=edit&page=NICOLE&refer=ethna-community-forum-archiveto200703.html) (2006-08-24 (木) 16:10:36)  
 >   
 > こんにちは。  
@@ -941,7 +941,7 @@ line:122行目〜
 - ありがとうございますー！CVS版ではなおっておりますので、近い将来リリースされるであろうpreview 3をお待ちくださいm(\_ \_)m -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-08-24 (木) 18:41:42
 - どうもお手数かけます。Preview3を楽しみにまっています。 -- NICOLE [?](cmd=edit&page=NICOLE&refer=ethna-community-forum-archiveto200703.html) 2006-08-25 (金) 21:04:34
 
-### Ethna用エディタ [](ethna-community-forum-archiveto200703.html#jeccdfba "jeccdfba")
+### Ethna用エディタ
 > azm [?](cmd=edit&page=azm&refer=ethna-community-forum-archiveto200703.html) (2006-08-22 (火) 23:59:44)  
 >   
 > こんばんは、個人的な宣伝で恐縮なのですが、  
@@ -957,7 +957,7 @@ line:122行目〜
 - リリースお疲れ様です。時間見つけて試しますねー -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-08-23 (水) 20:07:48
 - サポートページとフォーラムを作ってみました。 今後はこちらのほうをチェックお願いしますー [http://techno.s59.xrea.com/ethnaplorer/](http://techno.s59.xrea.com/ethnaplorer/) -- azm [?](cmd=edit&page=azm&refer=ethna-community-forum-archiveto200703.html) 2006-09-02 (土) 02:30:57
 
-### smartyの呼び出し [](ethna-community-forum-archiveto200703.html#nd2b7618 "nd2b7618")
+### smartyの呼び出し
 > kokoroman [?](cmd=edit&page=kokoroman&refer=ethna-community-forum-archiveto200703.html) (2006-08-22 (火) 17:34:53)  
 >   
 > まだインストール途上ですが、気づいたことがあるので報告します。  
@@ -989,12 +989,12 @@ line:122行目〜
 - よろしくお願いします。昨日1日チュートリアルで、基本の使い方なんとか習得しました。。 -- kokoroman [?](cmd=edit&page=kokoroman&refer=ethna-community-forum-archiveto200703.html) 2006-08-24 (木) 00:33:36
 - Debian GNU/Linuxの安定版だとsmarty/libs/Smarty.class.phpになりました。 -- 通りすがりのものですが [?](cmd=edit&page=%C4%CC%A4%EA%A4%B9%A4%AC%A4%EA%A4%CE%A4%E2%A4%CE%A4%C7%A4%B9%A4%AC&refer=ethna-community-forum-archiveto200703.html) 2006-08-31 (木) 13:35:15
 
-### Xzavier [](ethna-community-forum-archiveto200703.html#k65abcf9 "k65abcf9")
+### Xzavier
 > Jayson [?](cmd=edit&page=Jayson&refer=ethna-community-forum-archiveto200703.html) (2006-08-22 (火) 05:35:22)
 - たまたま見たら遭遇したのでスパムを消しときました。スパム対策必要なんでしょうけどフィルタリング考えるのが面倒ってのがあるでしょうね。「http://」付きの投稿だけでも弾けば大分ちがうかな -- sora [?](cmd=edit&page=sora&refer=ethna-community-forum-archiveto200703.html) 2006-08-22 (火) 09:55:47
 - と思ったけど、直接編集でやればBBSモジュール介さず意味無し・・対策考えるのはやはり時間要りますね -- sora [?](cmd=edit&page=sora&refer=ethna-community-forum-archiveto200703.html) 2006-08-22 (火) 10:00:02
 
-### スパム [](ethna-community-forum-archiveto200703.html#x7e81899 "x7e81899")
+### スパム
 > sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) (2006-08-18 (金) 10:35:50)  
 >   
 > このフォーラムに対するスパムが鬱陶しいので、  
@@ -1002,7 +1002,7 @@ line:122行目〜
 > を参考にして対策してみてはいかがでしょうか。
 - ですねー、一応一度きたIPはbanしてるのですが、captchaなりキーワードフィルタなり、入れてみます -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-08-23 (水) 09:54:16
 
-### Ethna\_Controller.php の 1697 行目 [](ethna-community-forum-archiveto200703.html#r3bdc5c5 "r3bdc5c5")
+### Ethna\_Controller.php の 1697 行目
 > m [?](cmd=edit&page=m&refer=ethna-community-forum-archiveto200703.html) (2006-08-04 (金) 11:17:10)  
 >   
 > Ethna\_Controller.php の 1697 行目は
@@ -1023,14 +1023,14 @@ line:122行目〜
 > しまって include してもらえません。
 - ありがとうございます！修正しましたー。 -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-08-23 (水) 09:53:02
 
-### action-test [](ethna-community-forum-archiveto200703.html#f6d10e0a "f6d10e0a")
+### action-test
 > sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) (2006-08-01 (火) 11:03:04)  
 >   
 > ethna action-testでテストのスケルトンを作ると、  
 > action-cliにファイルができるのは正しいのでしょうか。
 - ありがとうございますー。多分cvs版では直ってると思います（一応確認しました） -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-08-23 (水) 09:50:06
 
-### Ethna 2.3.0 Preview2のEthna\_Backend [](ethna-community-forum-archiveto200703.html#kfef1be7 "kfef1be7")
+### Ethna 2.3.0 Preview2のEthna\_Backend
 > dele [?](cmd=edit&page=dele&refer=ethna-community-forum-archiveto200703.html) (2006-07-28 (金) 14:48:32)  
 >   
 > PHP4だとgetManagerとgetObjectでインスタンスのコピーが返ります。  
@@ -1050,7 +1050,7 @@ line:122行目〜
 > 自分の勘違いでしたらすみません。
 - 遅くなって申し訳ありません、ご指摘のとおりでございますm(\_ \_)m 修正させていただきました@cvs -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-08-23 (水) 09:49:30
 
-### アプリケーション独自のプラグイン [](ethna-community-forum-archiveto200703.html#ieaf0b33 "ieaf0b33")
+### アプリケーション独自のプラグイン
 > ama [?](cmd=edit&page=ama&refer=ethna-community-forum-archiveto200703.html) (2006-07-26 (水) 23:34:12)  
 >   
 > 自前でアプリケーションプラグインを作成しようとしています。  
@@ -1071,7 +1071,7 @@ line:122行目〜
 - はやいっ！ありがとうございます！改善しました。 -- ama(shigeta) [?](cmd=edit&page=ama%28shigeta%29&refer=ethna-community-forum-archiveto200703.html) 2006-07-27 (木) 13:19:33
 - 親クラスがないとinfo.php(Ethna\_InfoManaer)の一覧にでないのはとりあえず許してください... -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-07-27 (木) 15:19:28
 
-### ログ出力の基本 [](ethna-community-forum-archiveto200703.html#m54cdb9b "m54cdb9b")
+### ログ出力の基本
 > asari [?](cmd=edit&page=asari&refer=ethna-community-forum-archiveto200703.html) (2006-07-26 (水) 12:43:38)  
 >   
 > Ethna 2.3.0 (CVS版) を使ってみています。  
@@ -1087,7 +1087,7 @@ line:122行目〜
 > begin()とかend()も本当は自分で呼ばなければいけないのか、とか。など。
 - 私もActionForm クラスでの実際の呼び出し方法が見つかりませんでした。これ、ドキュメントに書いて欲しいですね。 -- ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) 2006-09-22 (金) 16:34:59
 
-### action-xmlrpc [](ethna-community-forum-archiveto200703.html#ob545db2 "ob545db2")
+### action-xmlrpc
 > sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) (2006-07-26 (水) 10:24:58)  
 >   
 > Ethna 2.3.0 Preview2で、
@@ -1109,7 +1109,7 @@ line:122行目〜
 - Ethna\_Errorの$messageに日本語を入れて返却すると、「Invalid return payload: enable debugging to examine incoming payload」が帰ってきちゃいますが、日本語禁止でしょうか。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-08-18 (金) 14:49:55
   - $,1vq(B\_Ethna\_XmlrpcGatewayを'faultString' => mb\_convert\_encoding($r->getMessage(), "UTF-8"),として解決しました。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-08-18 (金) 18:35:20
 
-### 無題 [](ethna-community-forum-archiveto200703.html#z6d9d5d5 "z6d9d5d5")
+### 無題
 > エイク [?](cmd=edit&page=%A5%A8%A5%A4%A5%AF&refer=ethna-community-forum-archiveto200703.html) (2006-07-25 (火) 00:48:43)  
 >   
 > はじめまして。  
@@ -1149,7 +1149,7 @@ line:122行目〜
 - autoCommitについては実施していました、ソース抜き出すときに消してしまったみたいです、すみません。ネストは特に考えていなかったんですが、それでもEthna\_DB\_PEARをそのまま使わないほうがいいみたいですね。 -- エイク [?](cmd=edit&page=%A5%A8%A5%A4%A5%AF&refer=ethna-community-forum-archiveto200703.html) 2006-07-25 (火) 13:36:01
 - MySQLでも同様の問題がありました。次の書き方で正常に動いたので逃げています(汗;　　　　 $db =& $this->backend->getDB(); $db->db->autocommit(false);　　 $db->begin(); -- key [?](cmd=edit&page=key&refer=ethna-community-forum-archiveto200703.html) 2006-11-22 (水) 22:31:10
 
-### Ethna 2.3.0 Preview版のEthna\_Logger [](ethna-community-forum-archiveto200703.html#c47beb74 "c47beb74")
+### Ethna 2.3.0 Preview版のEthna\_Logger
 > みかぽん [?](cmd=edit&page=%A4%DF%A4%AB%A4%DD%A4%F3&refer=ethna-community-forum-archiveto200703.html) (2006-07-22 (土) 00:51:47)  
 >   
 > はじめまして。  
@@ -1174,7 +1174,7 @@ line:122行目〜
 - あ、PHP 4だとイマイチな動きをしちゃうかもでした。CVSでなおしましたー。 -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-07-23 (日) 20:08:43
 - はい、そっちも修正していました（CVSで直っていたのを確認してました）＞いちいさん -- みかぽん [?](cmd=edit&page=%A4%DF%A4%AB%A4%DD%A4%F3&refer=ethna-community-forum-archiveto200703.html) 2006-07-23 (日) 20:30:44
 
-### Ethna 2.3.0 Preview2 [](ethna-community-forum-archiveto200703.html#i3c90094 "i3c90094")
+### Ethna 2.3.0 Preview2
 > sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) (2006-07-21 (金) 18:07:19)  
 >   
 > app.controller.phpの\_setDefaultTemplateEngine()の引数が相変わらず$smartyなので、勘違いしてしまいそうです。
@@ -1182,7 +1182,7 @@ line:122行目〜
 - Ethna\_MailSender::getTemplateEngine()がEthna\_Renderer返すのでエラーになる。(preview1の時書いた問題ですね) -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-07-21 (金) 18:42:42
 - はげしくありがとうございます！修正しましたー -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-07-22 (土) 17:08:48
 
-### configのlog\_levelの動作 [](ethna-community-forum-archiveto200703.html#efd170f3 "efd170f3")
+### configのlog\_levelの動作
 > akiyama [?](cmd=edit&page=akiyama&refer=ethna-community-forum-archiveto200703.html) (2006-07-13 (木) 16:43:05)  
 >   
 > etc/プロジェクト名-ini.phpで
@@ -1193,7 +1193,7 @@ line:122行目〜
 > 以上の設定でdebugモードと同じようにログを出力するのですが、これは正しい動作でしょうか？
 - debugモードとログは関係ないですよ。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-07-14 (金) 22:49:03
 
-### Ethna 2.3.0 Preview1 [](ethna-community-forum-archiveto200703.html#cc2d5327 "cc2d5327")
+### Ethna 2.3.0 Preview1
 > sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) (2006-07-12 (水) 18:03:52)  
 >   
 > WarningやNoticeがいっぱい出ました。
@@ -1229,7 +1229,7 @@ line:122行目〜
   - CVS最新版では元通りで動くようになってました。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-07-20 (木) 11:45:48
   - $,1vq嘘。(Bstableのethnaを見ちゃってました。PR2のCHANGELOG見たらB.Cってことで。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2006-07-21 (金) 17:57:41
 
-### solarisでのEthna\_Logger.php [](ethna-community-forum-archiveto200703.html#v2f00240 "v2f00240")
+### solarisでのEthna\_Logger.php
 > nemo [?](cmd=edit&page=nemo&refer=ethna-community-forum-archiveto200703.html) (2006-07-04 (火) 17:28:08)  
 >   
 > はじめまして。  
@@ -1247,7 +1247,7 @@ line:122行目〜
 > 以上、宜しくお願いします。
 - おぉ、ありがとうございますー。多分ほとんど使われて無いでしょうし、2.3.xからautpriv消しちゃおうかと思います -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-07-10 (月) 16:38:43
 
-### ふたつ以上のバージョンのEthnaを同時に使う [](ethna-community-forum-archiveto200703.html#eb5bbf73 "eb5bbf73")
+### ふたつ以上のバージョンのEthnaを同時に使う
 > asari [?](cmd=edit&page=asari&refer=ethna-community-forum-archiveto200703.html) (2006-07-01 (土) 00:20:42)  
 >   
 > はじめまして。  
@@ -1272,12 +1272,12 @@ line:122行目〜
 - CLI版のPHPは.htaccessの値を拾わないので、設定が有効にならないので。ethna.shで、$PHP\_COMMANDを見るようにしているようなので。環境変数で、PHP\_COMMANDに、「php -c (専用の設定をしたPHP.iniファイル名）」を指定してはいかがでしょうか -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-07-03 (月) 13:44:00
 - ああ、ありがとうございます。 -- asari [?](cmd=edit&page=asari&refer=ethna-community-forum-archiveto200703.html) 2006-07-26 (水) 12:43:58
 
-### Ethna\_DB\_PEAR.sqlquery()の使い方 [](ethna-community-forum-archiveto200703.html#o54f99d3 "o54f99d3")
+### Ethna\_DB\_PEAR.sqlquery()の使い方
 > ふじなか [?](cmd=edit&page=%A4%D5%A4%B8%A4%CA%A4%AB&refer=ethna-community-forum-archiveto200703.html) (2006-06-16 (金) 12:11:28)  
 >   
 > Ethna-2.1.2で実装されているEthna\_DB\_PEAR.sqlquery()って  
 > どんな使い方が想定されているのでしょう？
-### ".ethna"ファイルについて [](ethna-community-forum-archiveto200703.html#o2ba1249 "o2ba1249")
+### ".ethna"ファイルについて
 > (2006-06-15 (木) 12:04:55)  
 >   
 > [http://ethna.jp/index.php?ethna-document-dev\_resourcefile](ethna-document-dev_resourcefile.html)  
@@ -1285,7 +1285,7 @@ line:122行目〜
 > 環境変数にHOMEを「%HOMEDRIVE%%HOMEPATH%」を追加したらうまくいきました。
 - CVS上ですが、USERPROFILEを見るように修正が入っています。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-06-19 (月) 18:58:11
 
-### Cache関連のエラーコード [](ethna-community-forum-archiveto200703.html#ec31993a "ec31993a")
+### Cache関連のエラーコード
 > BoBpp [?](cmd=edit&page=BoBpp&refer=ethna-community-forum-archiveto200703.html) (2006-06-13 (火) 09:10:12)  
 >   
 > Cache関連のエラーコードが、 Ethna.php に E\_CACHE\_INVALID\_TYPE => 256 〜 E\_CACHE\_GENERAL => 259 と設定されていますが、  
@@ -1303,12 +1303,12 @@ line:122行目〜
 - おぉ！はげしくすみませんm(\_ \_)m はげしくなおします！ -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-06-13 (火) 10:56:30
 - すばやい修正ありがとうございます〜。 -- BoBpp [?](cmd=edit&page=BoBpp&refer=ethna-community-forum-archiveto200703.html) 2006-06-14 (水) 10:05:13
 
-### 記事出ましたね [](ethna-community-forum-archiveto200703.html#g7718e77 "g7718e77")
+### 記事出ましたね
 > ましゅりく [?](cmd=edit&page=%A4%DE%A4%B7%A4%E5%A4%EA%A4%AF&refer=ethna-community-forum-archiveto200703.html) (2006-06-13 (火) 01:30:59)  
 >   
 > 【PHPウォッチ】第27回 国産有力フレームワークEthnaの新版2.1.2リリース：ITpro  
 > [http://itpro.nikkeibp.co.jp/article/COLUMN/20060612/240709/](http://itpro.nikkeibp.co.jp/article/COLUMN/20060612/240709/)
-### インサート文について [](ethna-community-forum-archiveto200703.html#b3bb670b "b3bb670b")
+### インサート文について
 > えすなかすき [?](cmd=edit&page=%A4%A8%A4%B9%A4%CA%A4%AB%A4%B9%A4%AD&refer=ethna-community-forum-archiveto200703.html) (2006-06-07 (水) 03:49:16)  
 >   
 > Ethna\_AppObjectの以下の記述ってありなんすか？

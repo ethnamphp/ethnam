@@ -12,19 +12,19 @@
   - Q.　アクションフォームクラスは省略できるの？ 
 - Comment 
 
-## 開発FAQ [](ethna-document-faq-dev_guide_faq.html#ef9f7667 "ef9f7667")
+## 開発FAQ
 
 Ethnaを使い始めてとりあえずでてくる悩みとその解決方法について列挙
 
-### Q. Ethnaって使えるの? [](ethna-document-faq-dev_guide_faq.html#ia61dad9 "ia61dad9")
+### Q. Ethnaって使えるの?
 
 [導入事例](ethna-about-cases.html "ethna-about-cases (194d)")をごらんください。 「理想の追及」よりも「実際のアプリケーション開発」に重点をおいたフレームワークだと思ってます。
 
-### Q. Ethna は何故 Ethna\_ViewClass っていう層を設けているの？ Cakeとかのフレームワークにはこんなのないよ！ [](ethna-document-faq-dev_guide_faq.html#sbdcfd5b "sbdcfd5b")
+### Q. Ethna は何故 Ethna\_ViewClass っていう層を設けているの？ Cakeとかのフレームワークにはこんなのないよ！
 
 Ethna は View（テンプレート）に書かれるコンテキストに依存した(if分岐等の)処理や、定型的(JSON, リダイレクト、定型ヘッダ等) な出力処理を View に書くのが流儀です。
 
-### Q.テンプレートエンジンはSmartyしか使えないの? [](ethna-document-faq-dev_guide_faq.html#l678b69c "l678b69c")
+### Q.テンプレートエンジンはSmartyしか使えないの?
 
 現状は、デフォルトの状態ではSmartyしか使えません。 Ethna\_Rendererを継承したクラスを作成すればSmarty以外でも可能です。
 
@@ -34,13 +34,13 @@ PHPを使った例 [http://eringi.com/weblog/archives/2007/02/ethna\_renderer.ht
 
 **[Ethna\_Rendererの使い方](ethna-document-dev_guide-renderer.html)**
 
-### Q.?action\_login=trueでアクションを選ぶのが嫌 [](ethna-document-faq-dev_guide_faq.html#veb40f55 "veb40f55")
+### Q.?action\_login=trueでアクションを選ぶのが嫌
 
 アクションを呼び出す方法は自由にカスタマイズできます。
 
 **[アクション名の決定方法を変更する](ethna-document-dev_guide-action-formname.html "ethna-document-dev\_guide-action-formname (1026d)")**
 
-### Q.デバッグはどうするの？ [](ethna-document-faq-dev_guide_faq.html#re97f1d9 "re97f1d9")
+### Q.デバッグはどうするの？
 
 ethnaが作ったプロジェクトの中のetcディレクトリに設定項目ファイルがあります。(ProjectName-ini.phpみたいな)
 
@@ -71,7 +71,7 @@ ethnaが作ったプロジェクトの中のetcディレクトリに設定項目
 
 **[ログ](ethna-document-dev_guide-log.html "ethna-document-dev\_guide-log (874d)")**
 
-### Q.複数のフォーム値をまたぐチェックはどうやってやるの？ [](ethna-document-faq-dev_guide_faq.html#jee57430 "jee57430")
+### Q.複数のフォーム値をまたぐチェックはどうやってやるの？
 
 例：ラジオボタンAをチェックすると、テキストボックスBの入力が必須になる場合など
 
@@ -91,7 +91,7 @@ ethnaが作ったプロジェクトの中のetcディレクトリに設定項目
 
 validate前に動的にフォーム定義の内容を変更する技がある。\*1
 
-### Q.locationさせるメソッドはないの？ [](ethna-document-faq-dev_guide_faq.html#q18ef69b "q18ef69b")
+### Q.locationさせるメソッドはないの？
 
 今のところ、locationをさせるメソッドはありません。 Ethna\_ActionClass::performあたりで
 
@@ -100,7 +100,7 @@ validate前に動的にフォーム定義の内容を変更する技がある。
 
 とでもしましょう。 そのうち、どこかにメソッドとして実装されかなぁ・・？\*3
 
-### Q. DocumentRoot配下にEthnaとEthnaアプリケーションを置きたいけど・・・ [](ethna-document-faq-dev_guide_faq.html#c36d2e53 "c36d2e53")
+### Q. DocumentRoot配下にEthnaとEthnaアプリケーションを置きたいけど・・・
 
 一部の(lolipopとか)サーバではDocumentRoot配下にしかファイルを置けません。その場合、project-IDが分かってしまうと、logやテンプレートソースが見えてしまいます。 .htaccessが使える場合は、
 
@@ -108,25 +108,25 @@ validate前に動的にフォーム定義の内容を変更する技がある。
 
 と書いてEthnaとEthnaアプリケーションの一番上においておくと良いと思います。
 
-### Q.　ビュークラスは省略できるの？ [](ethna-document-faq-dev_guide_faq.html#hbb81d02 "hbb81d02")
+### Q.　ビュークラスは省略できるの？
 
 できます。 ビュークラスの処理内容が空の場合は、ファイルそのものを作らないことができます。
 
 ビュークラスファイルを作らなかった場合は、{App}\_ViewClassが代わりに呼ばれます。
 
-### Q.　アクションクラスは省略できるの？ [](ethna-document-faq-dev_guide_faq.html#yce6cfc4 "yce6cfc4")
+### Q.　アクションクラスは省略できるの？
 
 場合によってはできます。
 
 [Action\_A]が[View\_AまたはView\_B]に遷移するケースで、[View\_B]が必ず[Action\_A]からのみ呼ばれるのなら、[Action\_B]は必要ありません。
 
-### Q.　アクションフォームクラスは省略できるの？ [](ethna-document-faq-dev_guide_faq.html#s590e3c3 "s590e3c3")
+### Q.　アクションフォームクラスは省略できるの？
 
 できます。
 
 フォーム値を何も受け取らない画面では、フォームクラス作成しなくてもＯＫです。(その場合は{App}\_ActionFormが代わりに呼ばれます)
 
-## Comment [](ethna-document-faq-dev_guide_faq.html#l988ae48 "l988ae48")
+## Comment
 
 - Locationとか、Viewからのアクションの指定はEthna\_Utilやsmarty\_functionでできるといいですね。 -- halt [?](cmd=edit&page=halt&refer=ethna-document-faq-dev_guide_faq.html) 2005-12-20 (火) 14:43:23
 - [http://comimi.net/ethna/Aero\_Util.phps](http://comimi.net/ethna/Aero_Util.phps)　こんな感じでどーでしょ。本体につっこむなら、もっとイケテルな方法ありそうですが。 -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-document-faq-dev_guide_faq.html) 2005-12-20 (火) 21:26:17

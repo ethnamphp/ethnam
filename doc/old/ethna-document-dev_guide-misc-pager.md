@@ -6,7 +6,7 @@
   - 
 - comment 
 
-## ページャを作成する [](ethna-document-dev_guide-misc-pager.html#m58c4a01 "m58c4a01")
+## ページャを作成する
 
 * * *
 
@@ -14,13 +14,13 @@
 
 * * *
 
-## 概要 [](ethna-document-dev_guide-misc-pager.html#s85902d6 "s85902d6")
+## 概要
 
 検索結果やリストの一覧などのページにGoogle風のページリンクを作成します。
 
 Ethna\_Util::getDirectLinkList()を使用してページャを作成します。 Ethna\_Util::getDirectLinkList(全データ数, 表示オフセット, 1ページあたりに表示する件数)となっています。以下の例ではstartが指定されるオフセットになっています。
 
-### Pagerを作成する例 [](ethna-document-dev_guide-misc-pager.html#hdd4d65f "hdd4d65f")
+### Pagerを作成する例
 
     function perform()
     {
@@ -58,7 +58,7 @@ Ethna\_Util::getDirectLinkList()を使用してページャを作成します。
         $this->af->setApp('pager', $pager);
     }
 
-### ページャを表示するテンプレートの例 [](ethna-document-dev_guide-misc-pager.html#fc30f3cd "fc30f3cd")
+### ページャを表示するテンプレートの例
 
 テンプレート側では
 
@@ -82,13 +82,13 @@ Ethna\_Util::getDirectLinkList()を使用してページャを作成します。
     &gt;&gt;&nbsp;最後
     {/if}
 
-### できあがり [](ethna-document-dev_guide-misc-pager.html#z3d98a6b "z3d98a6b")
+### できあがり
 
-### [](ethna-document-dev_guide-misc-pager.html#n31eb237 "n31eb237")
+###
 
 [![pager.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-misc-pager&src=pager.png "pager.png")](plugin=attach&refer=ethna-document-dev_guide-misc-pager&openfile=pager.png.html "pager.png")
 
-## comment [](ethna-document-dev_guide-misc-pager.html#r48d4b51 "r48d4b51")
+## comment
 
 - 最後の一行って「最後&nbsp;&gt;&gt;」ではなくて、「&gt;&gt;&nbsp;最後」では？ -- yanai
   - 修正しておきました。 -- halt

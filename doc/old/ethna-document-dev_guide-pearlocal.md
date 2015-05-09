@@ -18,7 +18,7 @@
 
     注意！ ： この機能を利用するためには、Ethna 2.3.2 以降が必要です。
 
-### 何が出来るの？ [](ethna-document-dev_guide-pearlocal.html#m3912c93 "m3912c93")
+### 何が出来るの？
 
 ethna コマンドの pear-local コマンドによって、PEARパッケージをプロジェクト毎に楽に管理できます。  
 具体的には、以下のコマンドで [APP\_DIR]/lib ディレクトリ以下に PEAR パッケージを直接インストールし、管理します。
@@ -31,7 +31,7 @@ ethna コマンドの pear-local コマンドによって、PEARパッケージ�
     -c PEARチャンネル名
     -b プロジェクトのベースディレクトリ
 
-### PEAR コマンド使えばいいじゃん。何が嬉しいの？ [](ethna-document-dev_guide-pearlocal.html#lf627ca4 "lf627ca4")
+### PEAR コマンド使えばいいじゃん。何が嬉しいの？
 
 [APP\_DIR]/lib ディレクトリは Ethna によって常に include\_path が通っているため、 コマンドを実行後に即座に Ethnaプロジェクト内で PEAR パッケージを利用することができます。
 
@@ -41,7 +41,7 @@ ethna コマンドの pear-local コマンドによって、PEARパッケージ�
 
 必要な PEAR パッケージをこの方式で全てインストールしてしまえば、deployする際に 細かいパッケージのインストールを気にしなくても良くなるでしょう。
 
-### 早速使ってみる [](ethna-document-dev_guide-pearlocal.html#f2d5284b "f2d5284b")
+### 早速使ってみる
 
 まずは sample プロジェクトを作ってみましょう。いつもの通り、ethna コマンドを使います。
 
@@ -65,7 +65,7 @@ ethna コマンドの pear-local コマンドによって、PEARパッケージ�
 
 [APP\_DIR]/lib 以下に PEAR パッケージがインストールされているのがわかると思います。PEARパッケージであれば何でもインストールできますので、勿論Ethnaですら特定のプロジェクトにインストールし、独自のプロジェクトで動作させることができます。\*1
 
-### PEAR コマンドと同じインターフェイス [](ethna-document-dev_guide-pearlocal.html#j6b6e5ad "j6b6e5ad")
+### PEAR コマンドと同じインターフェイス
 
 既に述べたように、この機能で実行できることは、pearコマンドと全く同等です。よって、以下のようなことも勿論可能です。
 
@@ -100,13 +100,13 @@ ethna コマンドの pear-local コマンドによって、PEARパッケージ�
     =========================================
     (no packages installed)
 
-### どんな仕組みで動いているの？ [](ethna-document-dev_guide-pearlocal.html#c672ae2e "c672ae2e")
+### どんな仕組みで動いているの？
 
 既におわかりの方もおられると思いますが、この機能は pear コマンドを単純にラップして、Ethna プロジェクト毎に固有の設定ファイルを適用させているだけのものです。よって、config-show や、upgrade 等、pear コマンドで実行できる機能は何でも実行させることが出来ます。しかし、影響が及ぶのは、特定の Ethna プロジェクトだけです。
 
 これによって、プロジェクト毎に PEAR パッケージを独立して扱うことが出来るようになります。
 
-### 設定ファイルを変更する [](ethna-document-dev_guide-pearlocal.html#n2be4449 "n2be4449")
+### 設定ファイルを変更する
 
 Ethna プロジェクト毎に固有の PEAR 設定は、デフォルトで[APP\_DIR]/lib/pear.conf に格納されます。しかし、このファイルの位置を変更したいという方もおられるかもしれません。
 

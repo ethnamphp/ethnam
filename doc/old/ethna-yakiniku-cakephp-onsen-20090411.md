@@ -20,86 +20,86 @@
 
 | 書いた人 | mumumu | 2009-04-11 | 新規作成 |
 
-### Ethna\_ActionForm#validate + フィルタの実行タイミング [](ethna-yakiniku-cakephp-onsen-20090411.html#j636dd2a "j636dd2a")
+### Ethna\_ActionForm#validate + フィルタの実行タイミング
 
 - 現在はActionFormのvalidateメソッド実行時に、filter定義を実行してから、validateを実行している。
   - このフィルタ実行のタイミングはもっとユーザが制御できてもいいのではないか
   - validateせずにfilter定義のみを実行したいというニーズもあるはず
   - フィルタ処理をメソッドとして独立させればよいのではないか
 
-### JavaScript の連携 [](ethna-yakiniku-cakephp-onsen-20090411.html#hd331d23 "hd331d23")
+### JavaScript の連携
 
 - JavaScriptの連携がもっとあってもいいはず
   - js ファイルが定義されていたら勝手にincludeしてくれるとか
 
-### フォームヘルパについて [](ethna-yakiniku-cakephp-onsen-20090411.html#m5e4e31c "m5e4e31c")
+### フォームヘルパについて
 
 - {form} で生成されるタグにid属性つけてもよくね？
   - それは配列を使うフォームでおかしくなる場合がある（CHECKBOX, RADIO等）のでやらない
 - booleanなcheckboxをuncheckedでpostしてもpostされない(?)ので、default値を設定するとそれで上書きされてしまう
 
-### ドキュメント [](ethna-yakiniku-cakephp-onsen-20090411.html#kd6667c4 "kd6667c4")
+### ドキュメント
 
 - entrypoint, configのurl, mod\_rewriteとかの設定のサンプル
 - 環境差異の設定サンプル
 
-### プラグイン読み込み順序の変更 [](ethna-yakiniku-cakephp-onsen-20090411.html#r40239ae "r40239ae")
+### プラグイン読み込み順序の変更
 
 これは，やる． extlibディレクトリの配置とか．(sotarok)
 
 - [https://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=15930](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15930)
 
-### tarball 配布パッケージ化 [](ethna-yakiniku-cakephp-onsen-20090411.html#qd14e4a0 "qd14e4a0")
+### tarball 配布パッケージ化
 
 (sotarok) これも，やる
 
 - [https://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=15931](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15931)
 
-### 複数定義にまたがる ActionForm 定義の記述法 [](ethna-yakiniku-cakephp-onsen-20090411.html#g7c80511 "g7c80511")
+### 複数定義にまたがる ActionForm 定義の記述法
 
 - required\_if とか(sotarok)
 - DBが絡むものは手をつけない．とりあえずaf内でできることだけ
 
-### skel ファイルの命名規則 [](ethna-yakiniku-cakephp-onsen-20090411.html#j95bdcb3 "j95bdcb3")
+### skel ファイルの命名規則
 
 決定したい．
 
 - skel/action.foo.php
 - skel/view.foo.php とかとか
 
-### 拡張子を判断した View の挙動変更 [](ethna-yakiniku-cakephp-onsen-20090411.html#ub051872 "ub051872")
+### 拡張子を判断した View の挙動変更
 
 たとえば， [http://example.com/hoge/fuga](http://example.com/hoge/fuga) などでは，デフォルトのヘッダとデフォルトのテンプレート (たとえば， fuga.tpl) で， [http://example.com/hoge/fuga.js](http://example.com/hoge/fuga.js) でアクセスすると， js用のヘッダ，fuga.js.tpl を探す，など．
 
 URLハンドラーがかかってくるのでURLハンドラーの変更のがあってからかな？と． 案くらいはまとめたい
 
-### ViewHelper の汎用化 [](ethna-yakiniku-cakephp-onsen-20090411.html#scdcca2b "scdcca2b")
+### ViewHelper の汎用化
 
 ViewHelperが現状は Smartyプラグインとして実装されているため、他の Rendererに変更しづらい ViewHelperの機能は、ViewHelperとして個別のプラグインに分割する Smartyのプラグインとしての register 方法は要検討 ＞Smartyを継承して プラグインサーチの方法を拡張する？
 
-### 各自の作業内容 [](ethna-yakiniku-cakephp-onsen-20090411.html#o495e13e "o495e13e")
+### 各自の作業内容
 
-#### mumumu [](ethna-yakiniku-cakephp-onsen-20090411.html#v194d4b2 "v194d4b2")
+#### mumumu
 
 - Ethna Viewまわりの改善(4/11中に済ませる,required)
 - 動的フォームAPIの追加(フォームヘルパ用, required)
 - チケット潰し(required)
 - ORMの改善（optional)
 
-#### sotarok [](ethna-yakiniku-cakephp-onsen-20090411.html#zef61a13 "zef61a13")
+#### sotarok
 
 - プラグイン読み込み順序の変更
 - tarball 配布パッケージ化
 - 複数定義にまたがる ActionForm 定義の記述法
 - book.ethna.jp は仕様きめて作り出す
 
-#### ichii386 [](ethna-yakiniku-cakephp-onsen-20090411.html#e19afa31 "e19afa31")
+#### ichii386
 
 - 現状にcatch up
 - ドキュメント整備(catch upしつつ)
 - <select>のoptgroup対応
 
-#### maru\_cc [](ethna-yakiniku-cakephp-onsen-20090411.html#a5708eb8 "a5708eb8")
+#### maru\_cc
 
 - 新規プロジェクト時のエントリポイントのフルパスを相対パスに
   - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16089](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16089)

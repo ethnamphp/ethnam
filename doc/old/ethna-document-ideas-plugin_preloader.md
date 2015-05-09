@@ -10,9 +10,9 @@
 
 書いた人：sotarok
 
-## プラグインの先読み機能 [](ethna-document-ideas-plugin_preloader.html#j2e06530 "j2e06530")
+## プラグインの先読み機能
 
-### 概要 [](ethna-document-ideas-plugin_preloader.html#u1aa371e "u1aa371e")
+### 概要
 
 Ethna のプラグインは，これまで getPlugin を2回呼ばないとインスタンスがとれないだとか \*1，決して使いやすいものではありませんでした．
 
@@ -20,7 +20,7 @@ Ethna のプラグインは，これまで getPlugin を2回呼ばないとイ�
 
 しかし，2.5.0 以降では，他人の作成したプラグインを取り込みやすい仕組み，自分の作ったプラグインを配布しやすい仕組みが導入される予定です．それに伴い，利用のしやすさ，も重要な要素になってきます．
 
-### 新しいプラグインの読み込ませ方・使い方 [](ethna-document-ideas-plugin_preloader.html#g375bf3e "g375bf3e")
+### 新しいプラグインの読み込ませ方・使い方
 
 ActionClass に $plugins というプロパティを作成し，配列で読み込みたいプラグインを記述すると，その名前でプラグインのオブジェクトをあらかじめ取得しておいてくれるようになります．
 
@@ -56,7 +56,7 @@ Example: app/action/Index.php
 
 このように，あらかじめ $plugins プロパティ変数に配列で定義することで，そのプラグインのインスタンスを $this->plugin に読み込んでおいてくれるようになります．
 
-### 別名の付け方 [](ethna-document-ideas-plugin_preloader.html#bf54d92e "bf54d92e")
+### 別名の付け方
 
 これで，キャッシュプラグインなどが幾分使いやすくなりました．とはいえ，Cachemanager\_Localfile と毎回打つのもなかなか骨が折れます\*2
 
@@ -90,11 +90,11 @@ Example: app/action/Index.php
         }
     }
 
-### 読み込まれるタイミング [](ethna-document-ideas-plugin_preloader.html#uec99e81 "uec99e81")
+### 読み込まれるタイミング
 
 - ActionClass のコンストラクタで読み込まれます．従って，prepare でも preform でも使えます．
 
-### その他 [](ethna-document-ideas-plugin_preloader.html#w771d457 "w771d457")
+### その他
 
 - 別名づけと，プラグインファイル名でアクセスする方法は混同して利用できます．\*3
 
@@ -121,16 +121,16 @@ Example: app/action/Index.php
         }
     }
 
-### その他2（ViewClassで使いたい場合） [](ethna-document-ideas-plugin_preloader.html#zf4273b6 "zf4273b6")
+### その他2（ViewClassで使いたい場合）
 
 - こうして読み込ませた Plugin は，Plugin オブジェクトに読み込まれるので，このActionClassからforwardしたViewClassでも当然利用できます．
 - 逆にいうと，ViewClass で使いたいプラグインは，そのViewClassにフローのながれるActionClassにpluginの記述をしておくといいでしょう．
 
-### その他3 （PHP 5ベースになると） [](ethna-document-ideas-plugin_preloader.html#p4cf7ebd "p4cf7ebd")
+### その他3 （PHP 5ベースになると）
 
 - PHP 5 ベースのコードになると，別名をつけない場合は，$plugins の記述すら必要なくなる予定です
 
-### コード [](ethna-document-ideas-plugin_preloader.html#f5e51893 "f5e51893")
+### コード
 
 この変更は git の plugin\_preloader ブランチで適用されています．
 

@@ -4,13 +4,13 @@
 <dt>ところ</dt>
 <dd>irc: Wide系 %Ethna</dd>
 </dl>
-### テーマ [](ethna-community-topic-online-meeting_20060720.html#l229647e "l229647e")
+### テーマ
 
 - Ethnaテスト  
 - その他
 - 次回テーマ
 
-### 適当にメモとか [](ethna-community-topic-online-meeting_20060720.html#n2a519d9 "n2a519d9")
+### 適当にメモとか
 
 内容は適当に曲げてるかもしれません。 あくまで書いた人のおもいつき、、、正確なやりとりは添付されているIRCのログを参照してください。
 
@@ -23,7 +23,7 @@ Ethna/testディレクトリにいくつかのテストコードがあるので�
 - リポリトジ。がんばれいちいさん
 - JSON\_Viewどうするよ
 
-### 適当に感想とかまとめとか [](ethna-community-topic-online-meeting_20060720.html#j461d322 "j461d322")
+### 適当に感想とかまとめとか
   
 <form action="http://ethna.jp/index.php" method="post"> 
 <div><input type="hidden" name="encode_hint" value="ぷ"></div>

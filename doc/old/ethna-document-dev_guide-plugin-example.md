@@ -11,7 +11,7 @@
 
 このドキュメントでは、新しい種類のプラグインを導入するための全体的な流れの説明をします。具体例として、絵文字を扱うライブラリをプラグインとして用意することを考えます。(重要な注意: この内容はあくまで **プラグイン導入のための概要的な例** で、細かい実装や絵文字の話はかなりてきとうです!)
 
-### おおまかな仕様を決める [](ethna-document-dev_guide-plugin-example.html#x50a7064 "x50a7064")
+### おおまかな仕様を決める
 
 携帯電話とPCから見られるサイトで絵文字を導入したくなったとします。
 
@@ -27,7 +27,7 @@
 - クラス名のprefixを 'Ethna\_' ではなく 'Sample\_' のようにアプリ名にする
 - ファイルを置く場所を $ETHNA\_HOME/class/Plugin 以下ではなく、 app/plugin 以下に置く(親クラス含む) のようにしてください。
 
-### 親クラスを作る [](ethna-document-dev_guide-plugin-example.html#kfbf80b1 "kfbf80b1")
+### 親クラスを作る
 
 プラグインの親クラスを作ります。$nameに共通したメソッドをここで定義しておきます。
 
@@ -65,7 +65,7 @@
   - strlen()
     - 絵文字タグを含むテキストを、絵文字を1文字とみなして文字数をカウントします。これは$nameに依存しないので、ここに実装を書いてしまいます。
 
-### プラグインを作る [](ethna-document-dev_guide-plugin-example.html#v1fd2c26 "v1fd2c26")
+### プラグインを作る
 
 $name = 'pc' ならば次のような感じになります。親クラスのabstractなメソッドの実装をします。
 
@@ -87,7 +87,7 @@ $name = 'pc' ならば次のような感じになります。親クラスのabst
        }
     }
 
-### action formに入力フィルタを追加する [](ethna-document-dev_guide-plugin-example.html#od8da328 "od8da328")
+### action formに入力フィルタを追加する
 
 action formではフィルタとしてこのプラグインを使いたいので、アプリケーションのaction formの基底クラス app/Sample\_ActionForm.php に次の内容を追加してフィルタ 'emoji\_encode' を用意します。($this->ctl->getCareer()でキャリアが区別できるものとします)
 
@@ -97,7 +97,7 @@ action formではフィルタとしてこのプラグインを使いたいので
         return $emoji->encode($value);
     }
 
-### view classに出力フィルタを追加する [](ethna-document-dev_guide-plugin-example.html#c7e6fd81 "c7e6fd81")
+### view classに出力フィルタを追加する
 
 まるまる出力フィルタにしてしまってもいいですが、必要なところだけ絵文字のdecodeをするほうが効率がいいので、smartyのmodifierとして登録することにします。
 
@@ -111,7 +111,7 @@ action formではフィルタとしてこのプラグインを使いたいので
         $smarty->register_modifier('emoji', array(&$emoji, 'decode'));
     }
 
-### 絵文字用の文字数カウント [](ethna-document-dev_guide-plugin-example.html#zbb51b90 "zbb51b90")
+### 絵文字用の文字数カウント
 
 action formのバリデータで、max, minは絵文字の場合に意味が違ってしまうので、絵文字用のバリデータプラグインを用意しておきます。(これは Emoji プラグインではなく Validator プラグインであることに注意してください。詳しくは [バリデータプラグインを作る](ethna-document-dev_guide-form-validate_with_plugin.html#eebb5029 "ethna-document-dev\_guide-form-validate\_with\_plugin (513d)")を参照)
 
@@ -140,7 +140,7 @@ action formのバリデータで、max, minは絵文字の場合に意味が違�
         }
     }
 
-### アクション定義の例 [](ethna-document-dev_guide-plugin-example.html#u54f76c0 "u54f76c0")
+### アクション定義の例
 
 実際のアクションでは以下のように設定します。
 
@@ -166,7 +166,7 @@ action formのバリデータで、max, minは絵文字の場合に意味が違�
 
     入力テキスト: {$app.text|emoji}
 
-### まとめ [](ethna-document-dev_guide-plugin-example.html#k772d889 "k772d889")
+### まとめ
 
 プラグイン自体は非常に役割は小さいので、新たに自分でプラグインを作ろうとすると、プラグインの中身よりもプラグインを使う側のほうに手間取るかもしれません。この例はストーリーの割りに中身が少ないので、もうすこし盛りこんで欲しい内容などありましたら下のコメント欄にご記入ください。
 

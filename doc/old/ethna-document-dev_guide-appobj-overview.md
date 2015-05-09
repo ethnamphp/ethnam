@@ -5,7 +5,7 @@
   - (3) 使い方 
   - (4) トランザクションをかける場合の注意 
 
-## アプリケーションオブジェクトについて [](ethna-document-dev_guide-appobj-overview.html#ybe71f82 "ybe71f82")
+## アプリケーションオブジェクトについて
 
 [http://ml.ethna.jp/pipermail/users/2005-March/000006.html](http://ml.ethna.jp/pipermail/users/2005-March/000006.html) より。
 
@@ -13,11 +13,11 @@
   - トランザクションをかける場合の注意点を記載(2006/11/22, key)
   - Ethna-2.3.0に対応した内容に修正 (2006/11/20, いちい)
 
-### (1) DB設定 [](ethna-document-dev_guide-appobj-overview.html#ja11592b "ja11592b")
+### (1) DB設定
 
 [http://ethna.jp/ethna-document-dev\_guide-db.html](ethna-document-dev_guide-db.html)みたいな感じでDSNを設定します
 
-### (2) AppObject [](ethna-document-dev_guide-appobj-overview.html#df755ca4 "df755ca4")
+### (2) AppObject
 
 ethnaコマンドを使って簡単に作れます。あらかじめ'user'というテーブルをデータ ベースに作っておけば、
 
@@ -25,7 +25,7 @@ ethnaコマンドを使って簡単に作れます。あらかじめ'user'とい
 
 とすると、app/Sample\_User.phpが作られ、いっしょにapp managerも作られます。中身はほとんどありませんが、(2-1)でやるのとほぼ同様です。
 
-### (2-1) AppObject を自力で書く [](ethna-document-dev_guide-appobj-overview.html#df755ca4 "df755ca4")
+### (2-1) AppObject を自力で書く
 
 こんな感じで、Ethna\_AppObjectを継承したクラスを書きます。
 
@@ -91,7 +91,7 @@ $prop\_defメンバには、フィールド定義を記述します。
 
 とか延々と書くのも頭悪いよね、ということで...。
 
-### (3) 使い方 [](ethna-document-dev_guide-appobj-overview.html#medde72c "medde72c")
+### (3) 使い方
 
 話が前後しましたが、簡単な使い方は以下のようになります。オブジェクトは直接newしてしまっても構いませんが、Ethna\_BackendクラスのgetObject()メソッドを利用すれば、オブジェクトのソースファイルを自動的にincludeしてくれます。
 
@@ -156,7 +156,7 @@ $prop\_defメンバには、フィールド定義を記述します。
 
 というのもあります。これは、全てのプロパティのgetName()の結果を配列に して返します。
 
-### (4) トランザクションをかける場合の注意 [](ethna-document-dev_guide-appobj-overview.html#qd868894 "qd868894")
+### (4) トランザクションをかける場合の注意
 
 AppObjectとEthna\_PEAR\_DBを同時に利用してトランザクションをかける場合、問題があるようなので逃げ方をここに記します。
 

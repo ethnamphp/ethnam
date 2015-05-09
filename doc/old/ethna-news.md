@@ -56,23 +56,23 @@
   - 2004/12/10 バージョン0.1.1リリース 
   - 2004/12/09 バージョン0.1.0リリース 
 
-## ニュース [](ethna-news.html#e5ff9bd3 "e5ff9bd3")
+## ニュース
 
 変更点の詳細は、 [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")をご覧ください。
 
-### 2011/09/29 Githubに移行しました。 [](ethna-news.html#h7acbdfb "h7acbdfb")
+### 2011/09/29 Githubに移行しました。
 
 ソースコードのホスティングをsourceforgeからgithubに移行しました
 
 [https://github.com/ethna/ethna](https://github.com/ethna/ethna)
 
-### 2011/01/04 Ethna 2.6.0 beta2 リリース [](ethna-news.html#xd551db6 "xd551db6")
+### 2011/01/04 Ethna 2.6.0 beta2 リリース
 
 beta1 に引き続き、開発版のリリースです。 beta1 のバグフィックスと、Smarty 3 用のRendererの追加をしました。また、2.5.0 preview5 と 2.6.0 beta の CHANGES を整理し、まとめ直しましたので、既存のプロジェクトを移行する際にはご参照ください。
 
 - 変更点一覧 [http://ethna.jp/index.php?ethna-document-changes#f019cfd1](ethna-document-changes.html#f019cfd1)
 
-### 2010/12/27 Ethna 2.6.0 beta1 リリース [](ethna-news.html#n9c6a2e9 "n9c6a2e9")
+### 2010/12/27 Ethna 2.6.0 beta1 リリース
 
 Ethna 2.5.0 から PHP 5.3 でエラーとなる機能を修正し、2.5.0 preview 5以降に変更を予定されていた機能を盛り込んだ 2.6.0 の開発バージョンをリリースします。(このため、PHP 4 に対しては後方互換性を失います)
 
@@ -82,7 +82,7 @@ PHP 5.3 に関しては、3.0 を開発するという予定でしたが、ゼ�
 
 - [http://ethna.jp/index.php?ethna-document-changes#c2bb8363](ethna-document-changes.html#c2bb8363)
 
-### 2009/10/18 Ethna 2.5.0 リリース [](ethna-news.html#p79e67af "p79e67af")
+### 2009/10/18 Ethna 2.5.0 リリース
 
 Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 preview4 から変更を加え、それ以後で発見されたバグの修正や、小規模な機能追加を行い、安定版としました。
 
@@ -109,7 +109,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 [http://ethna.jp/ethna-document-dev\_guide-misc-migrate\_project230to250.html](ethna-document-dev_guide-misc-migrate_project230to250.html)
 
-### 2009/06/22 Ethna 2.5.0 preview5 リリース [](ethna-news.html#xb3f8aed "xb3f8aed")
+### 2009/06/22 Ethna 2.5.0 preview5 リリース
 
 開発版 Ethna 2.5.0 preview5 をリリースしました。このリリースでは、ビューに関する改善を加え、汎用ビュー、さらにレイアウトビューの機能を追加しました。また、プラグイン周りの、今後のインストール方法を踏まえ、命名規則が変更になっています。
 
@@ -119,7 +119,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.xとの互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
-### 2009/06/16 Ethna 2.5.0 preview4, 2.3.7 リリース [](ethna-news.html#ta965441 "ta965441")
+### 2009/06/16 Ethna 2.5.0 preview4, 2.3.7 リリース
 
 開発版 Ethna 2.5.0 preview4 と 安定版 2.3.7 をリリースしました。これらのリリースには、以前のバージョンで見つかった Ethna\_ActionForm#getHiddenVars のクロスサイトスクリプティングの脆弱性を修正したものが含まれています。
 
@@ -130,7 +130,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 セキュリティに関わるリリースであるため、すべてのユーザーにアップデートを推奨します。
 
-### 2009/05/18 pear.ethna.jp の Smarty 2.6.23, 2.6.24 を削除 [](ethna-news.html#uc3af8e4 "uc3af8e4")
+### 2009/05/18 pear.ethna.jp の Smarty 2.6.23, 2.6.24 を削除
 
 **[2009年5月24日 20:25 更新]**
 
@@ -147,7 +147,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
     $ pear uninstall ethna/Smarty
     $ pear install ethna/Smarty
 
-### 2009/04/11 Ethna オフラインミーティング @Cake開発合宿 開催 [](ethna-news.html#kcce6ac8 "kcce6ac8")
+### 2009/04/11 Ethna オフラインミーティング @Cake開発合宿 開催
 
 箱根で行われた CakePHP 開発合宿にて、Ethnaのコミッタが集う機会がありました。
 
@@ -155,7 +155,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 [http://ethna.jp/ethna-yakiniku-cakephp-onsen-20090411.html](ethna-yakiniku-cakephp-onsen-20090411.html)
 
-### 2009/02/23 Ethna チケットシステムへの移行 [](ethna-news.html#q291372e "q291372e")
+### 2009/02/23 Ethna チケットシステムへの移行
 
 2009/02/23 に Ethna のバグトラッキングシステムが sourceforge.jp 組み込みのチケットシステムに移行しました。バグの報告と機能追加リクエストが行えるようになっていますので、どうぞ御利用下さい。
 
@@ -163,7 +163,7 @@ URLは以下の通りです。
 
 [http://sourceforge.jp/projects/ethna/ticket/](http://sourceforge.jp/projects/ethna/ticket/)
 
-### 2009/02/06 Ethna 2.3.6 リリース [](ethna-news.html#o0a65514 "o0a65514")
+### 2009/02/06 Ethna 2.3.6 リリース
 
 Ethna 2.3.6 をリリースしました。
 
@@ -179,7 +179,7 @@ Ethna 2.3.6 をリリースしました。
 
 [http://ethna.jp/ethna-document-changes.html#w8dda865](ethna-document-changes.html#w8dda865)
 
-### 2009/01/29 Ethna 2.5.0 preview3 リリース [](ethna-news.html#o0a65514 "o0a65514")
+### 2009/01/29 Ethna 2.5.0 preview3 リリース
 
 Ethna 2.5.0 preview 3 をリリースしました。このリリースでは、フォーム定義 を多次元配列に対応させ、動的にフォーム定義を行う際のAPIを改善しました。 それに加えて、フォームヘルパ、フォームテンプレートの改善等、フォーム定 義への変更が多く行われています。
 
@@ -200,7 +200,7 @@ Ethna 2.5.0 preview 3 をリリースしました。このリリースでは、�
 - [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html)
 - [プロジェクトの国際化](ethna-document-dev_guide-i18n.html)
 
-### 2009/01/25 Ethna 焼肉会議開催 [](ethna-news.html#l5d612c0 "l5d612c0")
+### 2009/01/25 Ethna 焼肉会議開催
 
 Ethna について焼肉をつついて話す会が行われました。Ethna のことばかり話す飲み会はとても濃く、有意義なものでした。
 
@@ -208,7 +208,7 @@ Ethna について焼肉をつついて話す会が行われました。Ethna �
 
 [http://ethna.jp/ethna-yakiniku-meeting-20090125.html](ethna-yakiniku-meeting-20090125.html)
 
-### 2008/10/11 Ethna 2.5.0 preview2 リリース [](ethna-news.html#s38a7f0f "s38a7f0f")
+### 2008/10/11 Ethna 2.5.0 preview2 リリース
 
 Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PEAR依存を排除するための基礎的な変更及び、プロジェクトのi18n化を楽にするためのコマンド実装が盛り込まれています。また、2.5.0 preview1 以降で発見された複数のバグが修正され、APIの微調整が行われています。
 
@@ -226,7 +226,7 @@ Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PE
 - [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html)
 - [プロジェクトの国際化](ethna-document-dev_guide-i18n.html)
 
-### 2008/07/05 Ethna 2.5.0 preview1 リリース [](ethna-news.html#l39f81c8 "l39f81c8")
+### 2008/07/05 Ethna 2.5.0 preview1 リリース
 
 Ethna 2.5.0 preview 1をリリースしました。このリリースでは、ユーザからの要望が特に高かったUTF-8への移行及びエンコーディング依存への解消、および国際化(i18n)の基礎となる変更が盛り込まれ、かつ 2.3.5 以降の複数のバグが修正されています。
 
@@ -255,9 +255,9 @@ Ethna 2.5.0 preview 1をリリースしました。このリリースでは、�
   
 - [ダウンロード](pear/Ethna-2.5.2008070519.tgz)
 
-### 2008/06/02 ethna.jp のコンテンツに 不正な iframe タグが埋め込まれた件 , sourceforge.jp への移行について [](ethna-news.html#u03a0183 "u03a0183")
+### 2008/06/02 ethna.jp のコンテンツに 不正な iframe タグが埋め込まれた件 , sourceforge.jp への移行について
 
-#### 不正な iframe タグが埋め込まれた件について [](ethna-news.html#q6a79399 "q6a79399")
+#### 不正な iframe タグが埋め込まれた件について
 
 2008/06/02 の午前中に、 [ethna.jp のコンテンツに不正なiframeタグが埋め込まれているのではないかとメーリングリストに報告](http://ml.ethna.jp/pipermail/users/2008-June/000968.html)がありました。これは [複数の脆弱性を突くマルウェアへと誘導するものでした](http://namidame.2ch.net/test/read.cgi/news/1212288872/918-919)。
 
@@ -275,7 +275,7 @@ Ethna 2.5.0 preview 1をリリースしました。このリリースでは、�
 
 この調査時に、ethna.jp のサーバを停止させて頂きました。停止期間中にアクセスされた方には、御迷惑をお掛けした事をお詫びいたします。2008/06/02 21:30 JST +0900 現在、sourceforge.jp にサーバを移行させた上で、復旧済みとなっております。
 
-#### sourceforge.jp への移行について [](ethna-news.html#wd75da47 "wd75da47")
+#### sourceforge.jp への移行について
 
 ethna.jp のコンテンツに不正なiframeタグが埋め込まれた件の調査と平行して、コンテンツに改竄がないことを確認した上で、ethna.jpのサーバをsourceforge.jp に移行させて頂きました。
 
@@ -288,7 +288,7 @@ ethna.jp はもともとEthnaの作者である藤本さんの個人用サーバ
 
 PEAR経由のダウンロード、wikiサービスの利用、MLの利用等の動作に変更はないはずですが、仮におかしな動作を発見した場合は、 [メーリングリスト、IRC、フォーラム、sourceforge.jp](ethna-community.html "ethna-community (619d)") のいずれかに御報告をお願い致します。
 
-### 2008/05/08 Ethna 2.3.5 リリース [](ethna-news.html#jcfa60db "jcfa60db")
+### 2008/05/08 Ethna 2.3.5 リリース
 
 メンテナンスリリースとして 2.3.5 をリリースします。本バージョンでは、主に テストまわりの改善とプラグイン追加が行われ、Ethnaと本質的に依存関係にある Smarty, Simpletest を ethna.jp からPEARパッケージとして配布するよう にしました。また、2.3.2以降で報告されたバグも修正されています。
 
@@ -308,19 +308,19 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 - [ダウンロード](pear/Ethna-2.3.5.tgz)
 
-### 2007/07/16 Ethna 2.3.2 リリース [](ethna-news.html#g6b03948 "g6b03948")
+### 2007/07/16 Ethna 2.3.2 リリース
 
 お待たせしました。半年ぶりに新バージョン 2.3.2 をリリースします。本バージョンでは、2.3.1 以降報告されていた複数のバグが修正されている他、Ethna\_MailSenderの改善、プラグインの追加、改善等が行われています。
 
 - [ダウンロード](pear/Ethna-2.3.2.tgz)
 
-### 2007/01/05 Ethna 2.3.1 リリース [](ethna-news.html#v6731a0f "v6731a0f")
+### 2007/01/05 Ethna 2.3.1 リリース
 
 あけましておめでとうございます。2.3.0はMac/Windowsでpear経由のインストールができないという深刻なバグがあったため、それを修正した2.3.1をリリースします。その他先月報告されたバグなどがいくつか修正されています。
 
 - [ダウンロード](pear/Ethna-2.3.1.tgz)
 
-### 2006/11/29 Ethna 2.3.0 リリース!! [](ethna-news.html#l9bebbe8 "l9bebbe8")
+### 2006/11/29 Ethna 2.3.0 リリース!!
 
 [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")から遅れに遅れ、師走はもう目前となりましたが、とうとう Ethna-2.3.0 がリリースされました。ご要望、バグ報告などぜひともお待ちしております!!
 
@@ -328,7 +328,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 2.3.0-preview3 から機能的な変更点はありません。2.1.2 からの変更、移行方法については、古いプロジェクトのアップデート [?](cmd=edit&page=ethna-document-dev_guide-misc-migrate_project&refer=ethna-news.html)を参照してください。
 
-### 2006/11/21 Ethna 2.3.0 Preview3リリース [](ethna-news.html#l9bebbe8 "l9bebbe8")
+### 2006/11/21 Ethna 2.3.0 Preview3リリース
 
 [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")からは相当に遅れてしまいましたが、Ethna 2.3.0 Preview3をリリースしました。ご要望、バグ報告等お待ちしております。
 
@@ -344,7 +344,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 バグフィックス、ドキュメント整備などを経て、月末くらいには2.3.0がリリースされる予定です。
 
-### 2006/07/20 Ethna 2.3.0 Preview2リリース [](ethna-news.html#m62a6720 "m62a6720")
+### 2006/07/20 Ethna 2.3.0 Preview2リリース
 
 [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")からは遅れること4日、Ethna 2.3.0 Preview2をリリースしました。ご要望、バグ報告等お待ちしております。
 
@@ -387,7 +387,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 - ハードタブ -> ソフトタブ
 - test runnerの追加
 
-### 2006/07/10 Ethna 2.3.0 Preview1リリース [](ethna-news.html#l038b2af "l038b2af")
+### 2006/07/10 Ethna 2.3.0 Preview1リリース
 
 [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")からは1日遅れてしまいましたが、Ethna 2.3.0 Preview1をリリースしました(思わずPreview2の予定だったEthna\_Loggerまで手を出してしまいました)。ご要望、バグ報告等お待ちしております。
 
@@ -408,7 +408,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
   - カンマ区切りでの複数ファシリティサポート
   - \_getLogWriter()クラスをオーバーライドしている方に影響があります(2.3.0以降はPlugin/Logwriter以下にLogwriterクラスを置いて、ファシリティでその名前を指定すれば任意のLogwriterを追加可能です)
 
-### 2006/06/07 Ethna 2.1.2リリース [](ethna-news.html#d8d9cccd "d8d9cccd")
+### 2006/06/07 Ethna 2.1.2リリース
 
 ほんとにたびたびすみません、全く致命的ではないのですが1つだけどうしても直したいバグを見つけてしまったので2.1.2としてリリースをさせて頂きました。よろしければこちらをご利用ください。
 
@@ -418,7 +418,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 - [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
 - [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(今後のToDo)
 
-### 2006/06/07 Ethna 2.1.1リリース [](ethna-news.html#d8d9cccd "d8d9cccd")
+### 2006/06/07 Ethna 2.1.1リリース
 
 いきなりですが、Windows版ethna.batのパスを修正して、2.1.1としてリリースしました。（特にWindowsユーザの方は）こちらのバージョンをご利用ください。
 
@@ -426,7 +426,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 - [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
 - [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(今後のToDo)
 
-### 2006/06/06 Ethna 2.1.0リリース [](ethna-news.html#kb4103a2 "kb4103a2")
+### 2006/06/06 Ethna 2.1.0リリース
 
 初のメジャーバージョンアップとなる [Ethna 2.1.0](ethna-download.html "ethna-download (25d)")をリリースしました。
 
@@ -450,7 +450,7 @@ Ethna 0.xをご利用の皆様からのフィードバック、 [GREE](http://gr
 
 ということで、新しいEthnaが皆様のお役に立てれば幸いです。
 
-### 2006/04/20 Ethna 2.1.0-preview1リリース [](ethna-news.html#y8173d0b "y8173d0b")
+### 2006/04/20 Ethna 2.1.0-preview1リリース
 
 [http://beta.ethna.jp/](http://beta.ethna.jp/)を開設して、2.0.xとして開発されている現時点のバージョンを2.1.0-preview1としてリリースしました。
 
@@ -458,19 +458,19 @@ Ethna 0.xをご利用の皆様からのフィードバック、 [GREE](http://gr
 - [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
 - [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(正式リリースまでのToDo)
 
-### 2006/01/29 Ethna 0.2.0リリース [](ethna-news.html#hfad539c "hfad539c")
+### 2006/01/29 Ethna 0.2.0リリース
 
 最新版のEthna 0.2.0のリリースを肉の日に開始しました。
 
 PHP 4.4.xなどの仕様変更にともなう、Noticeエラーの修正などバグ修正の他、いくつかの幸せになれる機能追加があります。
 
-### 2006/01/03 ロゴ載せてみました（thx！＞ [moriyoshi](http://gree.jp/moriyoshi/)） [](ethna-news.html#vbf47dfd "vbf47dfd")
+### 2006/01/03 ロゴ載せてみました（thx！＞ [moriyoshi](http://gree.jp/moriyoshi/)）
 
 [moriyoshi](http://gree.jp/moriyoshi/)に（なぜか）ロゴを作っていただいたので早速載せてみました。ありがとー！
 
 なお、もりよしとお友達になるともっといいものもあります（なぞ
 
-### 2005/12/28 Developers Summit 2006 (デブサミ2006) 講演のお知らせ [](ethna-news.html#c49fbf77 "c49fbf77")
+### 2005/12/28 Developers Summit 2006 (デブサミ2006) 講演のお知らせ
 
 とある縁で [デブサミ2006](http://www.seshop.com/event/dev/2006/)で講演させていただくことになりました。よろしければ [ご参加](http://www.seshop.com/event/dev/2006/touroku/index.html)ください。
 
@@ -480,7 +480,7 @@ PHP 4.4.xなどの仕様変更にともなう、Noticeエラーの修正など�
 
 あー資料つくらなきゃ...。
 
-### 2005/07/30 PHPカンファレンス2005のおしらせ [](ethna-news.html#ma21d59f "ma21d59f")
+### 2005/07/30 PHPカンファレンス2005のおしらせ
 
 まず何よりも、MLやリクエストページに反応できなくてものすごく申し訳なく感じています。予想を超えてあれこれ関わり出してしまってちょっと忙しい日々が続いています...。
 
@@ -490,7 +490,7 @@ PHP 4.4.xなどの仕様変更にともなう、Noticeエラーの修正など�
 
 っていうか0.2.0はいつ出るんでしょう...（8月中には）。
 
-### 2005/06/06 [メーリングリストのご案内](http://ml.ethna.jp/mailman/listinfo/mojavi-users) [](ethna-news.html#jee1099c "jee1099c")
+### 2005/06/06 [メーリングリストのご案内](http://ml.ethna.jp/mailman/listinfo/mojavi-users)
 
 PHP-UsersメーリングリストでもちらほらMojaviに関する投稿を見かけるようになってきましたので、試しにMojavi Usersメーリングリストを開設してみました。
 
@@ -498,7 +498,7 @@ PHP-UsersメーリングリストでもちらほらMojaviに関する投稿を�
 
 → [MLに参加](http://ml.ethna.jp/mailman/listinfo/mojavi-users)
 
-### 2005/06/06 再開のおしらせ [](ethna-news.html#j003da48 "j003da48")
+### 2005/06/06 再開のおしらせ
 
 いろいろ立てこんでしまってすっかりEthnaの開発が遅れていましたが、ちょっと落ち着いてきたのでそろそろ再開できそうです。というわけで、6月中に0.2.0が出せるかなーと思っています。0.2.0では
 
@@ -514,13 +514,13 @@ PHP-UsersメーリングリストでもちらほらMojaviに関する投稿を�
 
 といった変更や修正が予定されています。その他リクエストがありましたらお知らせください。
 
-### 2005/03/26 オープンソースカンファレンス2005(OSC2005)終了のお礼 [](ethna-news.html#n76ec28a "n76ec28a")
+### 2005/03/26 オープンソースカンファレンス2005(OSC2005)終了のお礼
 
 おかげさまで、OSC2005のEthnaトラックを無事終えることが出来ました。本当にありがとうございました＞お越しいただいた皆様
 
 また、いろいろとがんばっていきますっ。
 
-### 2005/03/08 オープンソースカンファレンス2005(OSC2005) [](ethna-news.html#q2357c90 "q2357c90")
+### 2005/03/08 オープンソースカンファレンス2005(OSC2005)
 
 03/26に開催されるオープンソースカンファレンス2005のHands-OnトラックでEthna(というか多分フレームワーク全般)についてお話しすることになりました（なってしまいました）。興味のある方もない方もぜひぜひお越し下さい。
 
@@ -531,7 +531,7 @@ PHP-UsersメーリングリストでもちらほらMojaviに関する投稿を�
 - [トラック詳細](http://www.ospn.jp/osc2005/modules/eguide/event.php?eid=37)
 - [会場案内](http://www.ospn.jp/osc2005/modules/xfsection/article.php?articleid=1)
 
-### 2005/03/06 サンプル(サインアップ)追加 [](ethna-news.html#w6b622d9 "w6b622d9")
+### 2005/03/06 サンプル(サインアップ)追加
 
 開発マニュアルを書くよりも楽かな？と思ってサンプルを(とりあえず)1つ作ってみました。動作確認とソースコードのダウンロード、クラスドキュメントのブラウズが出来ますので是非ご参考にして下さい。
 
@@ -539,11 +539,11 @@ PHP-UsersメーリングリストでもちらほらMojaviに関する投稿を�
 - [ソースコード](download/Ethna-Sample.tar.gz)
 - [クラスドキュメント](doc-sample/)
 
-### 2005/03/02-3 ちょこっとお詫び [](ethna-news.html#f2f9d9a0 "f2f9d9a0")
+### 2005/03/02-3 ちょこっとお詫び
 
 さっそく(2005/03/02 20:00くらいまでに)MLに登録してくださった皆様、mailmanのプロセスが寝ていたためconfirmメールの配送が止まってました。すみませんでしたm(\_ \_)m (てへ）
 
-### 2005/03/02-2 [メーリングリストのご案内](http://ml.ethna.jp/mailman/listinfo/users) [](ethna-news.html#wb07fab2 "wb07fab2")
+### 2005/03/02-2 [メーリングリストのご案内](http://ml.ethna.jp/mailman/listinfo/users)
 
 Ethna Usersメーリングリストを開設してみました。開発マニュアルやサンプルがなかなか追いつかないので、その代替という意味もあります:)
 
@@ -555,7 +555,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 → [MLに参加](http://ml.ethna.jp/mailman/listinfo/users)
 
-### 2005/03/02-1 バージョン0.1.5リリース [](ethna-news.html#b4c2a686 "b4c2a686")
+### 2005/03/02-1 バージョン0.1.5リリース
 
 [バージョン0.1.5](http://sourceforge.jp/projects/ethna/files/)をリリースしました。主な変更点は以下の通りです。
 
@@ -570,14 +570,14 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
 - [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
-### 2005/02/01 開発マニュアル(フォーム値検証)追加 [](ethna-news.html#y56442dd "y56442dd")
+### 2005/02/01 開発マニュアル(フォーム値検証)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [フォーム値の自動検証を行う(フィルタ編)](ethna-document-dev_guide-form-filter.html "ethna-document-dev\_guide-form-filter (619d)")
 - [フォーム値の自動検証を行う(カスタムチェック編)](ethna-document-dev_guide-form-customvalidate.html "ethna-document-dev\_guide-form-customvalidate (1120d)")
 
-### 2005/01/14 バージョン0.1.4リリース [](ethna-news.html#a4386e82 "a4386e82")
+### 2005/01/14 バージョン0.1.4リリース
 
 [バージョン0.1.4](http://sourceforge.jp/projects/ethna/files/)をリリースしました。0.1.3でEthna\_InfoManagerが動作しない問題が解決されていますm(\_ \_)m
 
@@ -586,7 +586,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
 - [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
-### 2005/01/13 バージョン0.1.3 [](ethna-news.html#hcf38dba "hcf38dba")
+### 2005/01/13 バージョン0.1.3
 
 [バージョン0.1.3](http://sourceforge.jp/projects/ethna/files/)をリリースしました。主な変更点は以下の通りです。
 
@@ -619,25 +619,25 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
 - [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
-### 2005/01/05 新年のご挨拶 [](ethna-news.html#ueb151f0 "ueb151f0")
+### 2005/01/05 新年のご挨拶
 
 あけましておめでとうございます。
 
 現在、Ethnaを使ったプロジェクトを3つほど走らせていて、バグ修正や不便なところ等を洗い出しています。ので、ちょっとこちらの更新が遅くなるかも知れませんが2週間ほどはご容赦ください。
 
-### 2004/12/27 開発マニュアル(フォーム値検証)を追加 [](ethna-news.html#pd3e6ecf "pd3e6ecf")
+### 2004/12/27 開発マニュアル(フォーム値検証)を追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.html "ethna-document-dev\_guide-form-validate (737d)")
 
-### 2004/12/23-2 開発マニュアル(Ethna\_Info)追加 [](ethna-news.html#dfdca5ea "dfdca5ea")
+### 2004/12/23-2 開発マニュアル(Ethna\_Info)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [設定情報や定義済みアクション等を一覧する](ethna-document-dev_guide-misc-info.html "ethna-document-dev\_guide-misc-info (1240d)")
 
-### 2004/12/23-1 バージョン0.1.2リリース [](ethna-news.html#wd546a15 "wd546a15")
+### 2004/12/23-1 バージョン0.1.2リリース
 
 [バージョン0.1.2](http://sourceforge.jp/projects/ethna/files/)をリリースしました。このバージョンで失われた後方互換性はありません。主な変更点は以下の通りです。
 
@@ -649,31 +649,31 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
 - [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
-### 2004/12/21 開発マニュアル(フォーム値アクセス(配列/ファイル)) [](ethna-news.html#cb5ebf56 "cb5ebf56")
+### 2004/12/21 開発マニュアル(フォーム値アクセス(配列/ファイル))
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.html "ethna-document-dev\_guide-form-type (1006d)")
 
-### 2004/12/18 開発マニュアル(フォーム値アクセス)追加 [](ethna-news.html#d11b1536 "d11b1536")
+### 2004/12/18 開発マニュアル(フォーム値アクセス)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [フォーム値にアクセスする](ethna-document-dev_guide-form-overview.html "ethna-document-dev\_guide-form-overview (1240d)")
 
-### 2004/12/17 開発マニュアル(スクリプト統合)追加 [](ethna-news.html#x3aa6f53 "x3aa6f53")
+### 2004/12/17 開発マニュアル(スクリプト統合)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [スクリプトを1ファイルに統合する](ethna-document-dev_guide-misc-unify.html "ethna-document-dev\_guide-misc-unify (1240d)")
 
-### 2004/12/16 開発マニュアル(フィルタチェイン)追加 [](ethna-news.html#e076f44d "e076f44d")
+### 2004/12/16 開発マニュアル(フィルタチェイン)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [フィルタチェインを使用する](ethna-document-dev_guide-app-filterchain.html "ethna-document-dev\_guide-app-filterchain (1240d)")
 
-### 2004/12/14 開発マニュアル(スケルトン生成等)追加 [](ethna-news.html#p7e0f4db "p7e0f4db")
+### 2004/12/14 開発マニュアル(スケルトン生成等)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
@@ -684,21 +684,21 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 - [アクション名のリクエスト方法を変更する](ethna-document-dev_guide-action-formname.html "ethna-document-dev\_guide-action-formname (1026d)")
 - [アクションスクリプトの配置ディレクトリを変更する](ethna-document-dev_guide-action-dir.html "ethna-document-dev\_guide-action-dir (1240d)")
 
-### 2004/12/13 開発マニュアル(命名規則変更)追加 [](ethna-news.html#i8e44267 "i8e44267")
+### 2004/12/13 開発マニュアル(命名規則変更)追加
 
 [開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
 
 - [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.html "ethna-document-dev\_guide-action-namingconvention (1240d)")
 
-### 2004/12/12 N/A [](ethna-news.html#gb12c9c5 "gb12c9c5")
+### 2004/12/12 N/A
 
 日々ちまちまと開発マニュアルを書いています...。
 
-### 2004/12/10 バージョン0.1.1リリース [](ethna-news.html#o75f04c2 "o75f04c2")
+### 2004/12/10 バージョン0.1.1リリース
 
 いきなりお茶目なバグがあったので、バージョン0.1.1をリリースしました。ダウンロードは [こちら](http://sourceforge.jp/projects/ethna/files/)です。
 
-### 2004/12/09 バージョン0.1.0リリース [](ethna-news.html#pbb5da0b "pbb5da0b")
+### 2004/12/09 バージョン0.1.0リリース
 
 バージョン0.1.0をリリースしました。ダウンロードは [こちら](http://sourceforge.jp/projects/ethna/files/)です。
 

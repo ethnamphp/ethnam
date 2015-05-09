@@ -8,7 +8,7 @@
   - シングルバイト文字列の検証 
 - Ethna 2.3.5 より前でのmax, min属性の検証 
 
-## VAR\_TYPE\_STRING の max, min 属性に関する詳細 [](ethna-document-dev_guide-form-validate-vartypestring.html#yea703ed "yea703ed")
+## VAR\_TYPE\_STRING の max, min 属性に関する詳細
 
 form 定義の type を 以下のように VAR\_TYPE\_STRING と設定した場合、Ethna のバージョンによって、max と min 属性の解釈に違いがあります。2.5.0 以降と、2.3.x以前のバージョンでこの違いが表れます。
 
@@ -21,9 +21,9 @@ form 定義の type を 以下のように VAR\_TYPE\_STRING と設定した場�
 
 以下、その違いについて詳細を説明します。
 
-## Ethna 2.5.0 以降での max, min の検証 [](ethna-document-dev_guide-form-validate-vartypestring.html#b1714d90 "b1714d90")
+## Ethna 2.5.0 以降での max, min の検証
 
-### 文字数単位(全角半角区別なし)の検証 [](ethna-document-dev_guide-form-validate-vartypestring.html#i96dbb09 "i96dbb09")
+### 文字数単位(全角半角区別なし)の検証
 
 Ethna 2.5.0 以降では、maxとmin 属性のチェックがデフォルトで「文字数」を基本として行われ、全角と半角を区別しなくなりました。required, (mb)regexp 属性についての扱いは従来と同様です。
 
@@ -52,7 +52,7 @@ Ethna 2.5.0 以降では、maxとmin 属性のチェックがデフォルトで�
     {form}は6文字以下で入力して下さい
     {form}は2文字以上で入力して下さい
 
-#### mbstrmax, mbstrmin 属性を使う [](ethna-document-dev_guide-form-validate-vartypestring.html#za9eb899 "za9eb899")
+#### mbstrmax, mbstrmin 属性を使う
 
 上記の「全角半角を区別しない、文字数ベースの検証」は、以下のように mbstrmax, mbstrmin 属性を設定したときの動きと同じです。これらの属性を使うと、後で述べるクライアントエンコーディングに関わらず、全角半角の区別がない文字数ベースの検証が行われます。
 
@@ -66,9 +66,9 @@ Ethna 2.5.0 以降では、maxとmin 属性のチェックがデフォルトで�
        ),
     );
 
-### バイト数単位(全角半角区別あり)の検証 [](ethna-document-dev_guide-form-validate-vartypestring.html#h4401591 "h4401591")
+### バイト数単位(全角半角区別あり)の検証
 
-#### クライアントエンコーディングを utf-8(eucJP-Win) に変更する [](ethna-document-dev_guide-form-validate-vartypestring.html#v51832a6 "v51832a6")
+#### クライアントエンコーディングを utf-8(eucJP-Win) に変更する
 
 ※ クライアントエンコーディングとは、プロジェクトの内部エンコーディングと、テンプレートのエンコーディングのふたつを指します。詳しくは [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html "ethna-document-dev\_guide-app-setlanguage (737d)") のページを参照して下さい。
 
@@ -118,7 +118,7 @@ Ethna 2.5.0 preview1 以降で、古いプロジェクトを維持するため�
     {form}には全角1文字以上(半角2文字以上)で入力して下さい
     {form}には全角3文字以下(半角6文字以下)で入力して下さい
 
-#### strmaxcompat, strmincompat 属性を使う [](ethna-document-dev_guide-form-validate-vartypestring.html#j6390c67 "j6390c67")
+#### strmaxcompat, strmincompat 属性を使う
 
 新しいプロジェクトで、クライアントエンコーディングを utf-8 に設定しない場合でも、バイト数単位で、全角半角区別ありの検証を行いたいかもしれません。その場合は、strmaxcompat, strmincompat 属性を以下のようにして使用します。
 
@@ -132,7 +132,7 @@ Ethna 2.5.0 preview1 以降で、古いプロジェクトを維持するため�
        ),
     );
 
-### シングルバイト文字列の検証 [](ethna-document-dev_guide-form-validate-vartypestring.html#g034b9d6 "g034b9d6")
+### シングルバイト文字列の検証
 
 ASCII しか入ってこないことがわかっている場合で、全角半角を区別「しない」検証を行いたい場合に備えて、strmax, strmin 属性が追加されました。以下のようにして使用します。
 
@@ -154,7 +154,7 @@ ASCII しか入ってこないことがわかっている場合で、全角半�
     この属性は、mbstring が入っていない場合の、min, max のデフォルトの
     動きになります。
 
-## Ethna 2.3.5 より前でのmax, min属性の検証 [](ethna-document-dev_guide-form-validate-vartypestring.html#o87f6308 "o87f6308")
+## Ethna 2.3.5 より前でのmax, min属性の検証
 
 Ethna 2.3.5 以前では、一貫して「バイト数単位で、全角半角を区別する」検証がmax, min 属性では行われます。
 

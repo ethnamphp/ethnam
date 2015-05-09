@@ -23,7 +23,7 @@
 | 書いた人 | いちい | 新規 |
 | 編集した人 | sotarok | 2.5.0p4以降に関して |
 
-## Ethna\_Pluginのつかいかた(簡易) [](ethna-document-dev_guide-plugin.html#t6802db7 "t6802db7")
+## Ethna\_Pluginのつかいかた(簡易)
 
 プラグインは$type(種類)と$name(名前)で区別されます。プラグインのマネージャ(Ethna\_Pluginクラス)は，命名規則にしたがってファイルを探索し，インクルードとインスタンス作成を代行します。
 
@@ -37,7 +37,7 @@
 
 の5種類の$typeのプラグインが使えるようになっています。
 
-### プラグインオブジェクトの取得，実行 [](ethna-document-dev_guide-plugin.html#j3c3ba62 "j3c3ba62")
+### プラグインオブジェクトの取得，実行
 
 Ethna\_Pluginがプラグインを管理しています。$type(=Hoge)と$name(=Fuga)を指定して，
 
@@ -49,7 +49,7 @@ Ethna\_Pluginがプラグインを管理しています。$type(=Hoge)と$name(=
 
 アプリケーションごとのプラグインの一覧は [InfoManager](ethna-document-dev_guide-misc-info.html "ethna-document-dev\_guide-misc-info (1240d)")で見ることができます。
 
-### プラグインを用いた例 [](ethna-document-dev_guide-plugin.html#fbd43c78 "fbd43c78")
+### プラグインを用いた例
 
 プラグインを用いた例として，アクションフォームでプラグインを使ってフォーム値の検証を行う方法を簡単に説明します。
 
@@ -92,11 +92,11 @@ Regexpバリデータプラグインは，パラメータとしてフォーム�
 
 また、新規にプラグインを導入するときの具体例については、 [プラグイン導入の例](ethna-document-dev_guide-plugin-example.html "ethna-document-dev\_guide-plugin-example (817d)")を参照してください。
 
-## Ethna\_Pluginのつかいかた(詳細) [](ethna-document-dev_guide-plugin.html#y889e9ad "y889e9ad")
+## Ethna\_Pluginのつかいかた(詳細)
 
 Ethna-2.3.0からEthna\_Pluginクラスが追加されました。Smartyのプラグインのように，Ethnaでもプラグイン方式の機能追加ができるようになります。
 
-### 概要 [](ethna-document-dev_guide-plugin.html#h396963e "h396963e")
+### 概要
 
 現状，プラグイン自体は「ある命名規則に従ったファイル名とクラス名をもったオブジェクト」でしかありません。Ethna\_Plugin\_Validatorのように，そのプラグインの種類に応じた親クラスを用意して，その継承クラスとして定義されることを期待しています。そして，Ethna\_ActionFormのように，そのプラグインを呼び出す側もプラグインを使うことを意識しておかなければなりません。
 
@@ -104,7 +104,7 @@ Ethna-2.3.0からEthna\_Pluginクラスが追加されました。Smartyのプ�
 
 プラグインは，Ethna本体に付属する形のものと，アプリケーション固有のものとがあります。たとえばすべてのアプリケーションに共通するプラグインをEthna本体のディレクトリに配置したり，特定のアプリケーションでのみ必要なプラグインを作ったりすることができます。また，Ethna本体のプラグインを，命名規則に従うことでアプリケーションのプラグインによって上書きすることができます。
 
-### Ethna\_Plugin [](ethna-document-dev_guide-plugin.html#x1abd3f5 "x1abd3f5")
+### Ethna\_Plugin
 
 Ethna\_PluginクラスはEthnaにおけるプラグインの管理機構を提供します。
 
@@ -129,11 +129,11 @@ Ethna\_Plugin自体のインスタンスはEthna\_Controller::getPlugin()から�
     $hoge_plugin =& $plugin->getPlugin('Hoge', 'Fuga');
     $hoge_plugin->doSomething();
 
-### 命名規則 [](ethna-document-dev_guide-plugin.html#u6ec7c88 "u6ec7c88")
+### 命名規則
 
 $type, $nameは大文字／小文字を区別しています。新たにプラグインを作る場合は、 **Ucfirst** のように，先頭を英大文字，以降を英小文字にすることを強くお勧めします。
 
-#### Ethna本体に付属するプラグイン [](ethna-document-dev_guide-plugin.html#na6dc7e3 "na6dc7e3")
+#### Ethna本体に付属するプラグイン
 
 - ディレクトリ
 
@@ -153,7 +153,7 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
   - ex. class Ethna\_Plugin\_Validator\_Regexp
 
-#### アプリケーション固有のプラグイン [](ethna-document-dev_guide-plugin.html#q34b0664 "q34b0664")
+#### アプリケーション固有のプラグイン
 
 アプリケーション名をSampleとします。
 
@@ -175,7 +175,7 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
   - ex. class Sample\_Plugin\_Filter\_ExecutionTime
 
-#### $type ごとの親クラス [](ethna-document-dev_guide-plugin.html#k291692c "k291692c")
+#### $type ごとの親クラス
 
 その $type の各 $name で共通したプロパティやインタフェースを定義します。
 
@@ -197,7 +197,7 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
 - ex. class Ethna\_Plugin\_Validator
 
-### 自動でincludeされるファイルについて [](ethna-document-dev_guide-plugin.html#f25562db "f25562db")
+### 自動でincludeされるファイルについて
 
 上で述べたように，同じ$type(種類)と$name(名前)をもつプラグインは，Ethna本体に付属するものとアプリケーション固有のものがあり，アプリケーション固有のものが優先されます。
 
@@ -205,7 +205,7 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
 Ethna\_Plugin::getPlugin()は，指定された$typeと$nameから自動でソースファイルを探索しincludeしますが，インスタンスを作るべきクラスのソースファイルしかincludeしないことに注意してください。すなわち，アプリケーション固有のプラグインが存在する場合に，おなじ$typeと$nameを持つEthna本体付属のプラグインファイルは無視されます。
 
-### Ethna\_Plugin::includePlugin() [](ethna-document-dev_guide-plugin.html#j5664bd1 "j5664bd1")
+### Ethna\_Plugin::includePlugin()
 
 Ethna\_Pluginには，内部で管理しているレジストリとは別に，命名規則にしたがってincludeのみを行うstaticメソッド
 
@@ -235,9 +235,9 @@ Ethna\_Plugin\_Validator\_Regexp を継承して Sample\_Plugin\_Validator\_Rege
 
 この例では，配列の個別要素に対して実行される正規表現バリデータを，配列をそのまま受け取るように変更した意味不明なバリデータになっているかもしれません(適当に書いただけなのでいつか直します)。
 
-### アプリケーション固有のプラグインについて [](ethna-document-dev_guide-plugin.html#e2023a8a "e2023a8a")
+### アプリケーション固有のプラグインについて
 
-#### 特定のprefixをもつプラグインを使う [](ethna-document-dev_guide-plugin.html#f6e3f133 "f6e3f133")
+#### 特定のprefixをもつプラグインを使う
 
 sample という名前のアプリケーションに固有なプラグインは、基本的には Sample\_Plugin\_Hoge\_Fuga という命名規則をに従うことになります。
 
@@ -260,9 +260,9 @@ Sample\_Controller.phpの以下の設定を変更すれば、sampleに加えて�
 
 ちなみに 'Ethna' は Ethna 本体に付属するプラグインのprefixとして予約されています。これを削ると、Ethna本体のプラグインはこのアプリケーションでは使わない、ということになります(どうなるか分からないので残しておいてください)。
 
-### より細かい注意事項 [](ethna-document-dev_guide-plugin.html#ofa431a2 "ofa431a2")
+### より細かい注意事項
 
-#### $typeと$nameについて [](ethna-document-dev_guide-plugin.html#ode269a7 "ode269a7")
+#### $typeと$nameについて
 
 Ethna\_Plugin::getPlugin($type, $name) は与えられた $type と $name を上の命名規則にそのまま代入します。ディレクトリ名やファイル名にそのまま使われるので、 **信用できない文字列を$type, $nameにそのまま代入しない** よう気を付けてください。
 
@@ -270,7 +270,7 @@ Ethna\_Plugin::getPlugin($type, $name) は与えられた $type と $name を上
 
 $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字、以降は小文字のアルファベット文字列) のような名前にすることを強くお薦めします。
 
-#### 親クラスについて [](ethna-document-dev_guide-plugin.html#jd2471b0 "jd2471b0")
+#### 親クラスについて
 
 親クラスは必ずしも必要ではありません。
 
@@ -278,13 +278,13 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
 
 このような場合は、単純に親クラスのことを忘れて、命名規則にしたがったクラスとファイルをアプリケーション側に用意してプラグインを使うことができます。
 
-## 3.0.0 以降で取り込まれる予定の変更について [](ethna-document-dev_guide-plugin.html#p1474b8b "p1474b8b")
+## 3.0.0 以降で取り込まれる予定の変更について
 
 取り込まれてから実際に詳細な使い方・プラグインの作り方は記述する予定ですが，ひとまず主な変更予定について記述します．
 
 なお，この変更により **プラグイン機能は 3.0.0 preview1 以降では後方互換性がなくなります** ．
 
-### プラグインprefixの廃止 [](ethna-document-dev_guide-plugin.html#f38855b0 "f38855b0")
+### プラグインprefixの廃止
 
 これまでは，'Ethna', 'APPID' などのprefixを，APPID\_Controllerに
 
@@ -303,7 +303,7 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
 
 したがって，2.5.0 以前のような，「Ethna prefix のプラグインクラスを継承してAPPID prefixのプラグインを実装」のような使い方ができなくなります．（ref . 自動でincludeされるファイルについて）．
 
-### プラグイン検索ディレクトリの変更 [](ethna-document-dev_guide-plugin.html#mca8ae70 "mca8ae70")
+### プラグイン検索ディレクトリの変更
 
 プラグイン検索ディレクトリは，以下の順序で行われます．
 
@@ -337,7 +337,7 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
 4. /usr/share/pear/Ethna/class/Plugin/Hoge/Fuga.php
 5. /usr/share/pear/Ethna/extlib/Plugin/Hoge/Fuga.php
 
-### ファイル名の命名規則 [](ethna-document-dev_guide-plugin.html#cfd12354 "cfd12354")
+### ファイル名の命名規則
 
 上記の変更で，特定のprefixというルールが存在しないので，ファイル名の命名規則が変更になりました．これまで冗長だったファイル名が簡潔になります（PEAR形式になります）
 

@@ -1,6 +1,6 @@
 # アクション名の決定方法を変更する
 
-## アクション名の決定方法を変更する [](ethna-document-dev_guide-action-formname.html#eaffceac "eaffceac")
+## アクション名の決定方法を変更する
 
 デフォルトでは、アクション名はフォーム値を利用して以下のように決定されます。
 

@@ -72,16 +72,16 @@
     - bug fixes 
   - [2004/12/09] 0.1.0 
 
-## 変更点一覧 [](ethna-document-changes.html#v03b4ac0 "v03b4ac0")
+## 変更点一覧
 
-### 2.6.0 beta (beta1 .. beta2) [](ethna-document-changes.html#f019cfd1 "f019cfd1")
+### 2.6.0 beta (beta1 .. beta2)
 
 - Ethna 2.5.0 preview5 に含まれていて、Ethna 2.5.0 に含まれなかった変更点について、CHANGES の整理 (多少重複します)
   - 2.6.0 の変更点一覧が、preview5 からの差分となっていたため、preview5 -> (元)preview6 での fix事項等はCHANGESから削除
 
-#### features [](ethna-document-changes.html#d8a77ff3 "d8a77ff3")
+#### features
 
-#### \* Ethna本体に関する変更点 [](ethna-document-changes.html#fb790004 "fb790004")
+#### \* Ethna本体に関する変更点
 
 - [Breaking B.C] PHP 5.3 対応のための変更 (B.C. PHP 4 非対応となります)
   - 非推奨シンタックスの除去 (Remove DEPRECATED syntax)
@@ -96,7 +96,7 @@
   - UrlHandler と .htaccess (mod\_rewrite) を利用するためのひな形を生成
 - セッションハンドラのなど，セッションに関する設定の変更をするための記述を APPID-ini.php にできるようになりました．
 
-#### \* Renderer/View に関する変更点 [](ethna-document-changes.html#l3a7643f "l3a7643f")
+#### \* Renderer/View に関する変更点
 
 - Smarty3 追加
 - Rhaco 削除: rhacoテンプレートレンダラは以後サポートしません(いつのrhacoのバージョンで動くのかもわかりませんでした)
@@ -116,7 +116,7 @@
   - この機能はデフォルトで有効になっている。無効にしたければ、[appid]\_ViewClass.php の $use\_layout を false にする(既存プロジェクトをEthna 2.6に移行する場合、こうすれば動作するはず)
 - PROJECT\_DIR/lib/Ethna/extlib/Plugin/Smarty をデフォルトでSmartyプラグインディレクトリに指定するように，skel に追加
 
-#### \* プラグイン機構に関する変更点 [](ethna-document-changes.html#l5f6ca35 "l5f6ca35")
+#### \* プラグイン機構に関する変更点
 
 - Ethna\_Plugin::import という，プラグインソースをincludeするための，staticメソッドを追加．
 - すべてのPluginの基底となる抽象クラス，Ethna\_Plugin\_Abstractを追加
@@ -144,7 +144,7 @@
 - ethna create-plugin コマンドの出力から ethna make-plugin-package を実行できるようにコマンドを再実装
   - これにより、複数のプラグインを含んだパッケージの作成が可能に
 
-#### bug fix [](ethna-document-changes.html#b7aca9be "b7aca9be")
+#### bug fix
 
 - ethna make-plugin-package のデフォルトインストールディレクトリが誤っていたバグを修正
 - Ethna\_Plugin::includePlugin メソッドの実装が動作するものではなかったので変更
@@ -152,13 +152,13 @@
 - PROJECT\_DIR/lib/Ethna/extlib 以下にファイルを設置するタイプのプラグインを pear-local などでインストールすると、それ以後ethnaコマンドが使えなくなる問題を修正
 - 新しいプラグインの命名規則に従っていない古いプラグインを別物として読み込もうとしてクラス名がかぶる問題を修正(#17875) thanks: id:okonomi
 
-#### \* beta1 .. beta2 [](ethna-document-changes.html#e3c0275e "e3c0275e")
+#### \* beta1 .. beta2
 
 - require のパスを修正 (thx. seiya, [https://github.com/sotarok/ethna/issues/#issue/1)](https://github.com/sotarok/ethna/issues/#issue/1))
 
-### 2.5.0 [](ethna-document-changes.html#b00186c9 "b00186c9")
+### 2.5.0
 
-#### features [](ethna-document-changes.html#m1aecc8b "m1aecc8b")
+#### features
 
 - フォーム定義に関する変更
   - フォーム定義を動的に変更するためのAPIをさらに追加
@@ -188,7 +188,7 @@
   - $mail = new Ethna\_MailSender(); $mail->setOption(array('mail\_func\_workaround')); でも設定可能
 - Smarty の設定（現在はデリミタのみ）を [appid]-ini.php に書くことが出来るようにした
 
-#### bug fix [](ethna-document-changes.html#b5599012 "b5599012")
+#### bug fix
 
 - Ethna\_Controller#getTemplatedir を無視してテンプレートディレクトリを決定していたバグを修正(thanks: hiko)
   - getTemplatedirメソッドをオーバライドしても強制的にロケールが付加されていた
@@ -219,9 +219,9 @@
   - [http://ml.ethna.jp/pipermail/users/2008-February/000899.html](http://ml.ethna.jp/pipermail/users/2008-February/000899.html)
 - Ethna\_ActionForm::setDef に渡す値によっては、空キーにフォーム定義が入ってしまうバグを修正。(thanks:tohokuaki #18856)
 
-### 2.5.0-preview5 [](ethna-document-changes.html#x29fc02d "x29fc02d")
+### 2.5.0-preview5
 
-#### features [](ethna-document-changes.html#z01f3383 "z01f3383")
+#### features
 
 - フォーム定義に関する変更
   - フォーム定義を動的に変更するためのAPIをさらに追加
@@ -279,7 +279,7 @@
     - [https://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16325](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16325)
   - Windowsユーザへの便宜のため、zipアーカイブで成果物を配布するオプションを追加
 
-#### bug fix [](ethna-document-changes.html#r607929c "r607929c")
+#### bug fix
 
 - Ethna\_Controller#getTemplatedir を無視してテンプレートディレクトリを決定していたバグを修正(thanks: hiko)
   - getTemplatedirメソッドをオーバライドしても強制的にロケールが付加されていた
@@ -301,16 +301,16 @@
   - [http://ml.ethna.jp/pipermail/users/2008-February/000899.html](http://ml.ethna.jp/pipermail/users/2008-February/000899.html)
 - ethna add-test コマンドのヘルプが機能していなかったバグを修正
 
-### 2.5.0-preview4 [](ethna-document-changes.html#d9b94c09 "d9b94c09")
+### 2.5.0-preview4
 
-#### bug fix [](ethna-document-changes.html#o92b594b "o92b594b")
+#### bug fix
 
 - フォーム定義が配列で、Ethna\_ActionForm#getHiddenVars の値を Ethna\_ActionForm#setAppNE した場合、クロスサイトスクリプティング 脆弱性が存在するバグを修正 (thanks: shuitic)
   - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=17332](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=17332)
 
-### 2.5.0-preview3 [](ethna-document-changes.html#y2250027 "y2250027")
+### 2.5.0-preview3
 
-#### features [](ethna-document-changes.html#u51a14cc "u51a14cc")
+#### features
 
 - アクションフォームに関する変更
   - フォーム定義を多次元配列に対応させました (thanks: id:syachi5150)
@@ -334,7 +334,7 @@
   - アプリケーションの最終処理を行うメソッドとして、Ethna\_Controller#end を追加
   - フィルタを一貫してプラグインから取得するように変更
 
-#### bug fix [](ethna-document-changes.html#n92f13e4 "n92f13e4")
+#### bug fix
 
 - safe-mode が ON の際に、Ethna\_View\_Test がエラーを吐く現象を回避 (thanks:longkey1 [ethna-users:1059])
 - "ethna add-view" コマンドにて、locale 及び client encoding のデフォルト設定が誤っていたバグを修正
@@ -350,9 +350,9 @@
   - アクションクラスの書き方によっては、Ethna\_InfoManager が 無限ループに陥っていたため
   - [http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group\_id=1343&atid=5092](http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group_id=1343&atid=5092)
 
-### 2.5.0-preview2 [](ethna-document-changes.html#d0c37223 "d0c37223")
+### 2.5.0-preview2
 
-#### features [](ethna-document-changes.html#v7014ff2 "v7014ff2")
+#### features
 
 - PEAR依存を排除するための変更。依存を排除する理由は以下の通り。
   1. PEAR が PEAR2 に移行するに伴い、APIが不安定になること
@@ -382,7 +382,7 @@
 - 2.5.0 preview1 で追加した Ethna\_ViewClass#\_setLanguage メソッドを削除
   - アクション実行後のロケール変更はあまり意味がないため ![:(](image/face/sad.png)
 
-#### bug fix [](ethna-document-changes.html#e1d76bcb "e1d76bcb")
+#### bug fix
 
 - テストディレクトリの変更のタイミングによっては、Ethna\_UnitTestMangerがWARNINGを出す問題を回避 (thanks: maru\_cc)
 - selected="selected" の修正漏れを修正 (thanks:maru\_cc)
@@ -395,9 +395,9 @@
   - checked が付くのはスカラーで、0 と空文字列、null, false 以外の場合とする
 - Ethna\_ActionError#\_getActionForm で、E\_NOTICE が出る問題を回避
 
-### 2.5.0-preview1 [](ethna-document-changes.html#f9c85729 "f9c85729")
+### 2.5.0-preview1
 
-#### features [](ethna-document-changes.html#r6a33c8a "r6a33c8a")
+#### features
 
 - ソースコード全体をUTF-8化
   - 但し、日本語のソースコードコメントはそのまま
@@ -435,7 +435,7 @@
 - [Breaking B.C] Ethna\_ActionForm のバリデータは、プラグインのものしか使用しなくなりました。
   - Ethna\_ActionForm, [Appid]ActionForm の use\_validator\_plugin 変数を削除
 
-#### bug fixes [](ethna-document-changes.html#x32355b8 "x32355b8")
+#### bug fixes
 
 - tpl/info.tpl のタグミスを修正
 - smarty\_modifier\_plugin が配列の場合に、プラグインとして登録されないバグを修正
@@ -451,20 +451,20 @@
 - Ethna\_Plugin\_LogWriter クラスにて、バックトレース走査時の軽微なバグを修正(ethna-users:1024, thanks:sfio)
 - Ethna\_Config.php にて、設定ファイルのロックが機能していなかったバグを修正
 
-### 2.3.7 [](ethna-document-changes.html#ca10ecac "ca10ecac")
+### 2.3.7
 
-#### bug fix [](ethna-document-changes.html#qb2a22c6 "qb2a22c6")
+#### bug fix
 
 - フォーム定義が配列で、Ethna\_ActionForm#getHiddenVars の値を Ethna\_ActionForm#setAppNE した場合、クロスサイトスクリプティング 脆弱性が存在するバグを修正 (thanks: shuitic)
   - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=17332](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=17332)
 
-### 2.3.6 [](ethna-document-changes.html#w8dda865 "w8dda865")
+### 2.3.6
 
-#### features [](ethna-document-changes.html#f44940f9 "f44940f9")
+#### features
 
 - レンタルサーバを考慮して、[appid]\_Controllerの include\_path を、[appid]/lib を優先するように変更
 
-#### bug fixes [](ethna-document-changes.html#mf615558 "mf615558")
+#### bug fixes
 
 - 2.5.0 preview3からのバックポート
 
@@ -503,9 +503,9 @@
 - アクションフォームクラスのスケルトンの一部で、$use\_validator\_plugin = false となっていたのをデフォルトのtrueに修正
   - これはプロジェクト作成時の app/action/Index.php にのみ影響する。ユーザはこれを通常は再利用しないと考えられるので、通 常は影響ない
 
-### 2.3.5 [](ethna-document-changes.html#n605ffb5 "n605ffb5")
+### 2.3.5
 
-#### features [](ethna-document-changes.html#sf8db2f7 "sf8db2f7")
+#### features
 
 - PEAR チャンネルサーバに ethna/simpletest, ethna/Smarty を追加
   - インストール後のsimpletest, Smartyのパスで悩む罠を軽減することが目的
@@ -527,7 +527,7 @@
   - ただし、add-view コマンドで -t を指定した場合は、これらのオプションは無視される。
   - ethna add-[action|view] add-view [-w|--with-unittest] [-u|--unittestskel=file] [action|view]
 
-#### bug fixes [](ethna-document-changes.html#x7a33d3a "x7a33d3a")
+#### bug fixes
 
 - ethna pear-local コマンドで Ethna を [appid]/lib/ にインストールすると、[appid]\_Controller.php のinclude\_path の設定によっては ethnaコマンドが動かなくなるのを回避 (thanks: sotarok)
   - ethna pear-local コマンドで Ethna を [appid]/lib にインストールしても、[appid]/bin/ethna が使えるようにした。
@@ -538,9 +538,9 @@
 - call\_user\_func の戻り値がオブジェクトだった場合に、E\_NOTICEが出る問題を回避(PHP 4.4限定) [ethna-users:0910]
 - ActionForm の validate test の結果が、次のテストに引き継がれてしまうバグを修正(thanks: maru\_cc)
 
-### 2.3.2 [](ethna-document-changes.html#z20dc470 "z20dc470")
+### 2.3.2
 
-#### features [](ethna-document-changes.html#faeefb6c "faeefb6c")
+#### features
 
 - [breaking B.C.] Ethna\_UrlHandler (URLハンドラ) をプラグイン化
   - Ethna\_Plugin\_Urlhandler\_Default を追加
@@ -568,7 +568,7 @@
   - [http://ethna.jp/ethna-document-dev\_guide-pearlocal.html](ethna-document-dev_guide-pearlocal.html)
 - View のユニットテストができなくなっていたバグを修正(thx: sfio, ethna-users:0651)
 
-#### bug fixes [](ethna-document-changes.html#v1862c6a "v1862c6a")
+#### bug fixes
 
 - raiseError()類の引数が間違っていたのを修正 (thx: sfio)
 - プラグインパッケージインストール時に '{$application\_id}' が置換されないバグを修正
@@ -586,14 +586,14 @@
 - MailSenderのBare LFをCRLFに置換(#9898, ethna-users:0588)
 - Smarty の $script 変数の値が、PATH\_INFOの値が含まれると潜在的に誤動作するバグを修正(thx: cockok, ethna-users:0687)
 
-### 2.3.1 [](ethna-document-changes.html#v441c2bd "v441c2bd")
+### 2.3.1
 
-#### features [](ethna-document-changes.html#fc9fb6d9 "fc9fb6d9")
+#### features
 
 - ethnaコマンドで@PHP-BIN@が置換されずに残っている場合(CVS版を使っているときなど)に対応
 - デフォルトテンプレートにバージョン番号をこっそり追加
 
-#### bug fixes [](ethna-document-changes.html#ce09d4b1 "ce09d4b1")
+#### bug fixes
 
 - Mac/Windowsでpear経由でのインストールに失敗していた問題を解消
   - すべてのroleをphpにして、ethna.{sh,bat}のみscriptを指定
@@ -604,13 +604,13 @@
 - Ethna\_ViewClassで<label id="foo">となっていたのを<label for="foo">に修正
 - AppObject::searchPropとAppObject::searchIdの動作がおかしかったので修正
 
-### 2.3.0 [](ethna-document-changes.html#y59f79c2 "y59f79c2")
+### 2.3.0
 
 2.3.0-dev (preview3) と機能的に大きな変更はありません。
 
-### 2.3.0-dev (preview3) [](ethna-document-changes.html#td6ece9d "td6ece9d")
+### 2.3.0-dev (preview3)
 
-#### features [](ethna-document-changes.html#d0a66a59 "d0a66a59")
+#### features
 
 - ethnaコマンドのハンドラ再編
   - 全般的にgetopt化
@@ -693,7 +693,7 @@
 - エラーハンドリング方針を多少変更
   - @演算子を使ったエラー抑制を廃止
 
-#### bug fixes [](ethna-document-changes.html#f7229bed "f7229bed")
+#### bug fixes
 
 - [#9009](http://sourceforge.jp/tracker/index.php?func=detail&aid=9009&group_id=1343&atid=5092)(%s等があるSQLをEchoLoggerでDebugするとWarning)
 - アクション定義のform\_pathが正しく動作していなかった問題を修正
@@ -702,9 +702,9 @@
 - Ethna\_Plugin\_Validator\_Customでエラーが2重登録されていたのを修正
 - プラグインの親クラスがないときにエラーになっていたのを修正
 
-### 2.3.0-dev (preview2まで) [](ethna-document-changes.html#ab6db952 "ab6db952")
+### 2.3.0-dev (preview2まで)
 
-#### features [](ethna-document-changes.html#gdfb14bc "gdfb14bc")
+#### features
 
 - [breaking B.C.] Ethna\_ClassFactoryのリファクタリング
   - Ethna\_Backend::getObject()メソッドを追加しました
@@ -768,7 +768,7 @@
 - Ethna\_Sessionにregenerate\_idメソッドの追加
 - Ethna\_Plugin\_Csrf(CSRF対策コード)追加
 
-#### bug fixes [](ethna-document-changes.html#rca73e53 "rca73e53")
+#### bug fixes
 
 - Ethna\_DB\_PEAR, Ethna\_AppObjectのWARNINGを回避([ethna-users:0383])
 - Windowsでホームディレクトリの.ethnaファイルが参照されない問題を修正
@@ -779,21 +779,21 @@
 - ethna add-action-testしたときにファイルがapp/action\_cliに生成されてしまう問題を修正
 - Ethna\_SkeltonGeneratorクラスのtypoを修正(proejct -> project)
 
-### [2006/06/07] 2.1.2 [](ethna-document-changes.html#g8fcb364 "g8fcb364")
+### [2006/06/07] 2.1.2
 
-#### bug fixes [](ethna-document-changes.html#kbc428f8 "kbc428f8")
+#### bug fixes
 
 - Ethna\_Controller::getActionRequest()メソッドのデフォルト状態の振舞いを修正
 
-### [2006/06/07] 2.1.1 [](ethna-document-changes.html#oc69ebd0 "oc69ebd0")
+### [2006/06/07] 2.1.1
 
-#### bug fixes [](ethna-document-changes.html#i7461adf "i7461adf")
+#### bug fixes
 
 - ethna.batのパスを修正
 
-### [2006/06/06] 2.1.0 [](ethna-document-changes.html#dbbb91ac "dbbb91ac")
+### [2006/06/06] 2.1.0
 
-#### features [](ethna-document-changes.html#gab2078d "gab2078d")
+#### features
 
 - ethnaコマンドのETHNA\_HOMEをインストール時に決定するように改善
 - Ethna\_ActionForm::validate() で多次元配列が渡されたときのnoticeを回避
@@ -862,7 +862,7 @@
 - generate\_app\_objectを追加
 - クラスのメソッドもSmartyFunctionとして登録できるように修正
 
-#### bug fixes [](ethna-document-changes.html#x4119af0 "x4119af0")
+#### bug fixes
 
 - [#8435](http://sourceforge.jp/tracker/index.php?func=detail&aid=8435&group_id=1343&atid=5092)(Ethna\_AppObject prop\_def[]['seq']が未設定)
 - [#8079](http://sourceforge.jp/tracker/index.php?func=detail&aid=8079&group_id=1343&atid=5092)(FilterでBackendを呼ぶとActionFormの値が空になる)
@@ -883,9 +883,9 @@
 - (within beta) Windows版のethnaコマンドがパッケージからインストールした場合実行できない問題を修正
 - (within beta) ActionFormの配列のフォーム値が破壊される問題を修正(by sfioさん)
 
-### [2006/01/29] 0.2.0 [](ethna-document-changes.html#k8791d15 "k8791d15")
+### [2006/01/29] 0.2.0
 
-#### features [](ethna-document-changes.html#h9cea2ed "h9cea2ed")
+#### features
 
 - 文字列のmin/maxエラーのデフォルトエラーメッセージを修正
 - フォーム値定義にカスタムエラーメッセージを定義できるように変更
@@ -907,7 +907,7 @@
 - Ethna\_ActionForm::isForceValidatePlus()、Ethna\_ActionForm::setForceValidatePlus()メソッドと、$force\_validate\_plusメンバを追加($force\_validate\_plusをtrueに設定すると、通常検証でエラーが発生した場合でも\_validatePlus()メソッドが実行される−デフォルト:false)
 - フォーム値定義のcustom属性にカンマ区切りでの複数メソッドサポートを追加
 
-#### bug fixes [](ethna-document-changes.html#sa74560e "sa74560e")
+#### bug fixes
 
 - htmlspecialcharsにENT\_QUOTESオプションを追加
 - Ethna\_AppSQLクラスのコンストラクタメソッド名を修正
@@ -935,9 +935,9 @@
 - Ethna\_MalSenderからmail()関数にオプションを渡せるように修正
 - Ethna\_View\_List::\_fixNameObjectに対象オブジェクトも渡すように修正
 
-### [2005/03/02] 0.1.5 [](ethna-document-changes.html#rel-0-1-5 "rel-0-1-5")
+### [2005/03/02] 0.1.5
 
-#### features [](ethna-document-changes.html#scfb0108 "scfb0108")
+#### features
 
 - Ethna\_Controller::getCLI()(CLIで実行中かどうかを返すメソッド)を追加
 - ethna\_error\_handlerがphp.iniの設定に応じてPHPログも出力するように変更
@@ -947,24 +947,24 @@
 - MIMEエンコード用ユーティリティメソッドを追加
 - include\_pathのセパレータのwin32対応
 
-#### bug fixes [](ethna-document-changes.html#z0759cf5 "z0759cf5")
+#### bug fixes
 
 - ethna\_error\_handlerのtypoを修正
 - Ethna\_Sessionクラスでログが正しく出力されない問題を修正
 
-### [2005/01/14] 0.1.4 [](ethna-document-changes.html#rel-0-1-4 "rel-0-1-4")
+### [2005/01/14] 0.1.4
 
-#### features [](ethna-document-changes.html#je3ba4db "je3ba4db")
+#### features
 
 - Ethna\_AppObjectでJOINした場合に、(可能なら)プライマリキーでGROUP BYするように変更
 
-#### bug fixes [](ethna-document-changes.html#f2e0771a "f2e0771a")
+#### bug fixes
 
 - \_\_ethna\_info\_\_が全く動作しない問題を修正:(
 
-### [2004/01/13] 0.1.3 [](ethna-document-changes.html#rel-0-1-3 "rel-0-1-3")
+### [2004/01/13] 0.1.3
 
-#### アップデート時の注意点 [](ethna-document-changes.html#xb217e10 "xb217e10")
+#### アップデート時の注意点
 
 バージョン0.1.2以前のバージョンから0.1.3へアップデートする場合は以下の2点にご注意ください。
 
@@ -993,7 +993,7 @@ Ethna\_ClassFactoryの導入により、コントローラの$classメンバに�
     + 'view' => 'Ethna_ViewClass',
      );
 
-#### features [](ethna-document-changes.html#ec80b849 "ec80b849")
+#### features
 
 - Ethna\_AppSearchObjectの複合条件対応
 - Ethna\_ClassFactoryクラスを追加
@@ -1007,22 +1007,22 @@ Ethna\_ClassFactoryの導入により、コントローラの$classメンバに�
 - Ethna\_ActionForm::\_handleErrorをpublicメソッドに変更(Ethna\_ActionForm::handleErrorに名称変更)
 - Ethna\_ActionForm::getDefメソッドに引数を追加(省略可)
 
-#### bug fixes [](ethna-document-changes.html#qeb63a6e "qeb63a6e")
+#### bug fixes
 
 - フォーム定義に配列を指定していた場合のカスタムチェックメソッドの呼び出しが正しく行われない問題を修正
 - フォーム定義に配列を指定していた場合の必須チェックが正しく行われない問題を修正
 - \_\_ethna\_info\_\_がサブディレクトリに定義されたアクションを正しく取得できない問題を修正
 - VAR\_TYPE\_FILEの場合はregexp属性が無効になるように修正
 
-### [2004/12/23] 0.1.2 [](ethna-document-changes.html#rel-0-1-2 "rel-0-1-2")
+### [2004/12/23] 0.1.2
 
-#### features [](ethna-document-changes.html#n8933f4c "n8933f4c")
+#### features
 
 - \_\_ethna\_info\_\_アクションを追加
 - class\_path, form\_path, view\_path属性のフルパス指定サポートを追加
 - スクリプトを1ファイルにまとめるツール(bin/unify\_script.php)を追加
 
-#### bug fixes [](ethna-document-changes.html#v3acc77d "v3acc77d")
+#### bug fixes
 
 - プロジェクトスケルトン生成時にアプリケーションIDの文字種/予約語をチェックするように修正
 - 'form\_name'を指定すると無用に警告が発生する問題を修正
@@ -1042,15 +1042,15 @@ Ethna\_ClassFactoryの導入により、コントローラの$classメンバに�
     ));
     ?>
 
-### [2004/12/10] 0.1.1 [](ethna-document-changes.html#rel-0-1-1 "rel-0-1-1")
+### [2004/12/10] 0.1.1
 
-#### bug fixes [](ethna-document-changes.html#vbdfa3ac "vbdfa3ac")
+#### bug fixes
 
 - ビューオブジェクトのpreforward()が呼ばれないことがある問題を修正
 - アクション/ビューのスケルトン生成時にファイルを上書きしないように修正
 - ビューのスケルトンでクラス名が正しく置換されない問題を修正
 
-### [2004/12/09] 0.1.0 [](ethna-document-changes.html#rel-0-1-0 "rel-0-1-0")
+### [2004/12/09] 0.1.0
 
 - 初期リリース
 

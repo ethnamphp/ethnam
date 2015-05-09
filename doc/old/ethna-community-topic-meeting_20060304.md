@@ -5,15 +5,15 @@
 <dt>ところ</dt>
 <dd>GREEオフィス ミーティングルーム</dd>
 </dl>
-### 1. Ethnaの方向性について [](ethna-community-topic-meeting_20060304.html#y4a11573 "y4a11573")
+### 1. Ethnaの方向性について
 
 - Ethnaらしさを維持する
   - 柔軟であり続ける(フレームワーク特有の「これをやるには便利だけど、制約があって〜出来ない」を徹底排除)
 - symfony/railsに負けない:) (中身も外見も)
 
-### 2. Ethna ToDoリスト [](ethna-community-topic-meeting_20060304.html#z397e59c "z397e59c")
+### 2. Ethna ToDoリスト
 
-#### 新コンセプト [](ethna-community-topic-meeting_20060304.html#if18a50e "if18a50e")
+#### 新コンセプト
 
 リポジトリはほしいね！
 
@@ -35,7 +35,7 @@
 
 - 独自?/PEARのフレームワークに乗っかる?
 
-#### 新機能 [](ethna-community-topic-meeting_20060304.html#ua0686f6 "ua0686f6")
+#### 新機能
 
 1. ゲートウェイサポート(XMLRPC/SOAPサポート)
 2. AJAXサポート
@@ -53,7 +53,7 @@
     - ビューを使えよ、という
   - Ethna\_ViewComponent(?)→要る
 
-#### バグフィックスなど細かいところ [](ethna-community-topic-meeting_20060304.html#x014d6db "x014d6db")
+#### バグフィックスなど細かいところ
 
 1. Ethna\_ActionForm(全角対応、配列でファイルアップロードした場合のバグ修正、required=false時の振る舞い)
 
@@ -74,7 +74,7 @@ Haste/Aeroマージ
 3. テスティング
 4. Util系
 
-#### その他 [](ethna-community-topic-meeting_20060304.html#ja242618 "ja242618")
+#### その他
 
 1. 脱smarty
 2. PHP 5対応？
@@ -89,11 +89,11 @@ Haste/Aeroマージ
 1. nightly build
 2. デフォルトのテンプレートデザイン
 
-#### 3. サイトリニューアル〜 [](ethna-community-topic-meeting_20060304.html#x3340482 "x3340482")
+#### 3. サイトリニューアル〜
 
 来週くらいにー
 
-#### 4. 今後のコミュニケーションとか、あわよくば分担とか [](ethna-community-topic-meeting_20060304.html#ae69b940 "ae69b940")
+#### 4. 今後のコミュニケーションとか、あわよくば分担とか
 
 - %Ethnaへようこそ
   - ログをML？web?

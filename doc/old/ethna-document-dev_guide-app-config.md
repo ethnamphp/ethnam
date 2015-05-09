@@ -19,7 +19,7 @@ Ethna では、PHPファイルやテンプレートファイルを ethnaコマ�
 | 書いた人 | ---- | ---------- | 新規作成 |
 | 書いた人 | mumumu | 2009-06-15 | 最新版に追随する形で全面的に修正 |
 
-### 設定ファイルの置き場所 [](ethna-document-dev_guide-app-config.html#ieb592dd "ieb592dd")
+### 設定ファイルの置き場所
 
 以下のようにアプリケーションIDを「sample」としてプロジェクトを作成すると、sample/etc/sample-ini,php に設定ファイルが作成されます。
 
@@ -30,9 +30,9 @@ Ethna では、PHPファイルやテンプレートファイルを ethnaコマ�
 
 つまり、etc/[アプリケーションID]-ini.php が設定ファイルの置き場所ということになります。
 
-### 設定値を制御する [](ethna-document-dev_guide-app-config.html#c216dd88 "c216dd88")
+### 設定値を制御する
 
-#### 設定値を記述する [](ethna-document-dev_guide-app-config.html#i385ce02 "i385ce02")
+#### 設定値を記述する
 
 Ethnaの設定ファイルは素のPHPを使って記述します。上で説明した etc/[アプリケーションID]-ini.php に、$config というグローバル変数を書き、そこに配列の形で定義を行います。
 
@@ -43,7 +43,7 @@ Ethnaの設定ファイルは素のPHPを使って記述します。上で説明
 
 ここに設定した値は、変更すると次のリクエストからすぐに反映されます。この変数に一ヶ所に纏めることで、環境が変わった場合の対応も容易になります。
 
-#### 設定値を取得する [](ethna-document-dev_guide-app-config.html#k99f5ba3 "k99f5ba3")
+#### 設定値を取得する
 
 Ethnaには設定値の制御を行うクラスとして Ethna\_Config があります。このクラスを利用すれば、上記で設定したファイルの設定値が容易に取得できます。
 
@@ -67,11 +67,11 @@ Ethnaには設定値の制御を行うクラスとして Ethna\_Config があり
         }
     }
 
-### 個別の設定値の詳細 [](ethna-document-dev_guide-app-config.html#b0bb0cb7 "b0bb0cb7")
+### 個別の設定値の詳細
 
 ここでは、Ethna で設定できる設定値のすべてを詳細に示します。
 
-#### デバッグ設定 [](ethna-document-dev_guide-app-config.html#w57b0977 "w57b0977")
+#### デバッグ設定
 
     $config = array(
         'debug' => false, // デフォルトはfalse
@@ -86,7 +86,7 @@ Ethnaには設定値の制御を行うクラスとして Ethna\_Config があり
 
 **本番環境でこの値を絶対trueに設定しないで下さい！ 上記の機能はユーザーに見せるものではないからです！**
 
-#### データベース接続設定 [](ethna-document-dev_guide-app-config.html#s9203e88 "s9203e88")
+#### データベース接続設定
 
     $config = array(
        // sample-1: single db
@@ -114,11 +114,11 @@ Ethnaには設定値の制御を行うクラスとして Ethna\_Config があり
 
 [データベースアクセス](ethna-document-dev_guide-db.html)のページも参照してください。
 
-#### ログ出力の設定 [](ethna-document-dev_guide-app-config.html#ob9f7383 "ob9f7383")
+#### ログ出力の設定
 
 ログ出力の設定の詳細については、 [Ethnaでログ出力を制御する](ethna-document-dev_guide-log.html "ethna-document-dev\_guide-log (874d)") のページを参照してください。
 
-#### memcached [](ethna-document-dev_guide-app-config.html#p7a8ed92 "p7a8ed92")
+#### memcached
 
 memcached も、データベース接続設定と同様に多様な設定が可能です。memcached がひとつの場合の設定を以下に示します。
 
@@ -149,7 +149,7 @@ memcached も、データベース接続設定と同様に多様な設定が可�
         ),
      );
 
-#### 国際化設定 [](ethna-document-dev_guide-app-config.html#uf9b931e "uf9b931e")
+#### 国際化設定
 
     この機能を利用するには、Ethna 2.5.0 preview2 以降が必要です。
 
@@ -161,7 +161,7 @@ Ethnaプロジェクトを国際化する手段として、iniファイルを利
 
 gettext を利用する場合に、この値を true にします。
 
-#### CSRF対策 [](ethna-document-dev_guide-app-config.html#wda34d3a "wda34d3a")
+#### CSRF対策
 
     $config = array(
         'csrf' => 'Session',
@@ -171,7 +171,7 @@ CSRF とは、ログイン済みのユーザーに細工したURLを踏ませる
 
 デフォルト値は、上記のように 'Session' となっており、正当な値をセッションに格納するようになっています。現状はこの値を変更できません。
 
-### 設定値をiniファイルで管理する [](ethna-document-dev_guide-app-config.html#ub3319d5 "ub3319d5")
+### 設定値をiniファイルで管理する
 
 etc/[appid]-ini.phpの中では変数の定義だけでなくロジックの記述もできるので
 
@@ -188,7 +188,7 @@ etc/[app-id]-ini.php内で
 
 としておけば設定値をiniファイルに記述することができます。\*1
 
-### 設定値をyamlで管理する [](ethna-document-dev_guide-app-config.html#m5c1461e "m5c1461e")
+### 設定値をyamlで管理する
 
 iniファイルとほとんど同じ手法でできます。 bogoYAMLのスタイルでよければharukiさんが作ったbogoYAMLを利用して YAMLで記述したデータを配列として取得するだけです。詳しくは、以下を参照して下さい。
 

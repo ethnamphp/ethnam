@@ -17,17 +17,17 @@
 | いちい | 新規作成 | - |
 | DQNEO | プラグインの作り方を補足 | 2010-05-30 |
 
-## フォーム値の自動検証を行う(プラグイン編) [](ethna-document-dev_guide-form-validate_with_plugin.html#dbe63c2f "dbe63c2f")
+## フォーム値の自動検証を行う(プラグイン編)
 
 Ethna\_Plugin\_Validatorを使ったフォーム値の検証について説明します。主に，プラグインが導入される以前の方式に慣れている方のための説明です。
 
-### 概要 [](ethna-document-dev_guide-form-validate_with_plugin.html#fed21c0f "fed21c0f")
+### 概要
 
 Ethna\_ActionForm::validate()に，プラグインを使ったフォーム値の検証処理が追加されました。
 
 できるかぎり後方互換性を維持しつつ，プラグインを使ってフォーム値の検証処理が簡単に拡張できるようになりました。これまでcustomメソッドを使っていた処理も，プラグイン化することで取り扱いが簡単になるでしょう。
 
-### 具体例 [](ethna-document-dev_guide-form-validate_with_plugin.html#c330251d "c330251d")
+### 具体例
 
 Fileプラグインは，アップロードされたファイルの検証に特化した，新たに追加されたプラグインです。
 
@@ -65,7 +65,7 @@ Fileプラグインは，アップロードされたファイルの検証に特�
 
 の順にフォーム値が検証されます。
 
-### プラグインを使うかどうかのフラグ [](ethna-document-dev_guide-form-validate_with_plugin.html#fd113da8 "fd113da8")
+### プラグインを使うかどうかのフラグ
 
 各アクションフォームごと，もしくはアクションフォームの各フォーム定義ごとにプラグインを使用するかどうかを選択することができます。新規にプロジェクトを作った場合は，デフォルトでプラグインを使ったフォーム値の検証を行うようになります。
 
@@ -86,7 +86,7 @@ Fileプラグインは，アップロードされたファイルの検証に特�
 
 プラグインを使うように指定した場合，プラグイン化以前のフォーム値検証処理は **実行されない** ことに注意してください。(後方互換性の項も参照してください。)
 
-### フォーム定義の解釈 [](ethna-document-dev_guide-form-validate_with_plugin.html#s214f15e "s214f15e")
+### フォーム定義の解釈
 
 プラグインを使わない場合，アクションフォームのフォーム定義はEthna\_ActionFormの組み込み検証メソッドへの指示でした。プラグインを使う場合は，どのプラグインにどんなパラメータを与えて呼び出すかの指示になります。あらかじめ，組み込み検証メソッドで指定できたすべての要素に相当するプラグインが用意されています。
 
@@ -110,7 +110,7 @@ Fileプラグインは，アップロードされたファイルの検証に特�
 
 なお，実際に呼び出されるValidatorプラグインは，各要素の先頭の1文字目だけを大文字にした名前($name)のプラグインになります。Validatorプラグインの名前($name)には '\_' を含むことはできません。
 
-### フォーム定義のパラメータについて [](ethna-document-dev_guide-form-validate_with_plugin.html#g28b16fc "g28b16fc")
+### フォーム定義のパラメータについて
 
 プラグインに渡されるパラメータは，後方互換性を考慮して，すこし複雑な解釈をしています。詳細はEthna\_ActionForm::\_getPluginDef()を参照してください。
 
@@ -136,15 +136,15 @@ Fileプラグインは，アップロードされたファイルの検証に特�
                         'error' => 'エラー',
                        ),
 
-### 後方互換性について [](ethna-document-dev_guide-form-validate_with_plugin.html#x6efaddf "x6efaddf")
+### 後方互換性について
 
 あらかじめ用意されたプラグインと，パラメータを 'plugin\_param' の形式で指定できることから，プラグインを使わない場合とまったく同様の記法によってプラグインを使ったフォーム定義をすることができます。
 
 ただしフォーム値の検証順序については，プラグインを使う場合には「書いた順に」実行されるため，まったく同じ動作とはなりませんので注意してください。特にEthna\_ActionError::getMessage()は，いちばん最初に発生したエラーを返す仕様となっていたため，エラーが発生した場合のメッセージが変わることがあります。
 
-### 各バリデータプラグインの詳細 [](ethna-document-dev_guide-form-validate_with_plugin.html#s1acd3cf "s1acd3cf")
+### 各バリデータプラグインの詳細
 
-#### Required [](ethna-document-dev_guide-form-validate_with_plugin.html#ibd203a0 "ibd203a0")
+#### Required
 
 Requiredプラグインは，(なんでもいいので)値が入力されているかをチェックします。フォームを配列として定義した場合は，配列全体を見渡してチェックすることができます。
 
@@ -169,15 +169,15 @@ Requiredプラグインは，(なんでもいいので)値が入力されてい�
 
   - 配列フォームの場合に，指定された数だけ入力されているかをチェックします。
 
-#### Max, Min, Regexp [](ethna-document-dev_guide-form-validate_with_plugin.html#gaaa9f2b "gaaa9f2b")
+#### Max, Min, Regexp
 
 それぞれ，最大値，最小値，正規表現マッチのチェックをします。
 
-#### Custom [](ethna-document-dev_guide-form-validate_with_plugin.html#t14e4c97 "t14e4c97")
+#### Custom
 
 後方互換性のために用意されました。アクションフォームの指定されたメソッドを呼び出すだけです。
 
-#### File [](ethna-document-dev_guide-form-validate_with_plugin.html#v2072cc9 "v2072cc9")
+#### File
 
 アップロードされたファイルのチェックに特化し，PHP4.2.0以降に追加された，アップロードファイルのエラーコードに対応したエラーメッセージを得ることができます。
 
@@ -209,7 +209,7 @@ Requiredプラグインは，(なんでもいいので)値が入力されてい�
 
   - 完全一致または正規表現でファイル名のチェックをします。(あまり使い道はないかもしれません。)
 
-### バリデータプラグインを作る [](ethna-document-dev_guide-form-validate_with_plugin.html#eebb5029 "eebb5029")
+### バリデータプラグインを作る
 
 アプリケーション固有のプラグインを作る場合の例を以下に示します。Ethna本体に付属させる形で作りたい場合も基本的に同様で，命名規則の部分がだけが異なります。便利なプラグインができたら、 [プラグインパッケージ](ethna-document-dev_guide-pearpackage.html "ethna-document-dev\_guide-pearpackage (856d)")をつくって公開しましょう。
 

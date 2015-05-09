@@ -15,9 +15,9 @@
 | ichii386 | 2007-01-18 | Ethna\_MailSender.php,vの1.9にあわせて修正 |
 | mumumu | 2009-10-18 | 「メール送信がうまくいかない場合」のセクションを追加 |
 
-## Ethnaを使ってメールを送信する [](ethna-document-dev_guide-app-mail.html#r38fafcc "r38fafcc")
+## Ethnaを使ってメールを送信する
 
-### テンプレートファイルの作成 [](ethna-document-dev_guide-app-mail.html#ze673136 "ze673136")
+### テンプレートファイルの作成
 
 project\_dirの/template/jaにmailフォルダを作成、そこにテンプレートを配置します。
 
@@ -31,7 +31,7 @@ welcome.tpl
     ようこそ{$username}さん。
     うんたらかんたらほげほげ。
 
-### MailSenderの実行 [](ethna-document-dev_guide-app-mail.html#c89e6311 "c89e6311")
+### MailSenderの実行
 
 テンプレートを書いたら送信したい時に
 
@@ -42,9 +42,9 @@ welcome.tpl
 
 とすれば送信できます。
 
-## Ethna\_MailSenderを拡張する [](ethna-document-dev_guide-app-mail.html#y3f60a66 "y3f60a66")
+## Ethna\_MailSenderを拡張する
 
-### (1) Ethna\_MailSenderをextendsしたクラスの作成 [](ethna-document-dev_guide-app-mail.html#x3148712 "x3148712")
+### (1) Ethna\_MailSenderをextendsしたクラスの作成
 
 PATH\_TO\_PROJECT\_ROOT/lib/Sample\_MailSender.php   
 テンプレートの指定は、$defメンバに定義します。（0は使われてるので1から）
@@ -73,7 +73,7 @@ app/Sample\_Controller.php で include します。
 
     + include_once('Sample_MailSender.php');
 
-### (2) メールテンプレートの設置 [](ethna-document-dev_guide-app-mail.html#b0fda188 "b0fda188")
+### (2) メールテンプレートの設置
 
 テンプレートのディレクトリはデフォルトでは PATH\_TO\_PROJECT\_ROOT/template/ja/mail になります。このディレクトリに user\_resign と user\_register というファイルを設置します。
 
@@ -89,7 +89,7 @@ app/Sample\_Controller.php で include します。
     
     -- example.com
 
-### (3) 送信処理 [](ethna-document-dev_guide-app-mail.html#ze947824 "ze947824")
+### (3) 送信処理
 
 ActionClassとかで
 
@@ -100,7 +100,7 @@ ActionClassとかで
 
 とすれば、Smarty変数usernameに$resign\_userがアサインされてメールが [send\_to\_mail@example.com](mailto:send_to_mail@example.com) 宛に送信されます。
 
-## 添付ファイル [](ethna-document-dev_guide-app-mail.html#y42d177e "y42d177e")
+## 添付ファイル
 
 send()の4つめの引数に添付ファイル(multipart)を指定することができます。
 
@@ -146,9 +146,9 @@ send()の4つめの引数に添付ファイル(multipart)を指定すること�
         )
     );
 
-## メール送信のトラブルシューティング [](ethna-document-dev_guide-app-mail.html#f53e71f8 "f53e71f8")
+## メール送信のトラブルシューティング
 
-### 文字化けの対応 [](ethna-document-dev_guide-app-mail.html#s975d12d "s975d12d")
+### 文字化けの対応
 
 Ethna\_MailSender は php の [mail()](http://jp.php.net/manual/ja/function.mail.php)関数を使っています。ほかのライブラリに依存しないメリットがあるものの、 Ethna のデフォルトである euc-jp 以外で運用すると文字化けしやすいかもしれません。
 
@@ -166,7 +166,7 @@ Ethna\_MailSender は php の [mail()](http://jp.php.net/manual/ja/function.mail
 
 のようなかんじでうまいこと指定してあげてください。
 
-### 送信できない、メール本体が空になる場合(2.5.0以降) [](ethna-document-dev_guide-app-mail.html#df569d17 "df569d17")
+### 送信できない、メール本体が空になる場合(2.5.0以降)
 
 Ethna ではメール送信の処理に、内部で [mail() 関数](http://www.php.net/manual/ja/function.mail.php)を使っています。ですので、使用するMTA(特にqmail等) によっては、メールに対する改行コードの扱いによって以下のような挙動をすることがあります。
 
