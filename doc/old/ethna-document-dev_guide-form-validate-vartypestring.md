@@ -1,8 +1,3 @@
-<head>
- <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8">
- <meta http-equiv="content-style-type" content="text/css">
- <meta http-equiv="Content-Script-Type" content="text/javascript">
-
 <title>
 VAR_TYPE_STRING の max, min 属性に関する詳細 - Ethna - PHPウェブアプリケーションフレームワーク</title>
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
