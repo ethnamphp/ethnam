@@ -17,7 +17,7 @@
 
 といった点をご説明したいと思います。
 
-なお、このページは [アプリケーション構築手順(1)](ethna-document-tutorial-practice1.html "ethna-document-tutorial-practice1 (23d)")〜 [アプリケーション構築手順(2)](ethna-document-tutorial-practice2.html "ethna-document-tutorial-practice2 (888d)")の続きとなっていますので、一応ご注意下さい。
+なお、このページは [アプリケーション構築手順(1)](ethna-document-tutorial-practice1.html "ethna-document-tutorial-practice1 (23d)")〜 [アプリケーション構築手順(2)](ethna-document-tutorial-practice2.md "ethna-document-tutorial-practice2 (888d)")の続きとなっていますので、一応ご注意下さい。
 
 ### (10) ログイン画面の変更
 
@@ -184,7 +184,7 @@ app/action/Login/Do.php:
 
 なお、フォーム値の自動検証詳細については以下をご覧下さい。
 
-_see also:_ [フォーム値の自動検証を行う](ethna-document-dev_guide-form-validate.html "ethna-document-dev\_guide-form-validate (737d)")
+_see also:_ [フォーム値の自動検証を行う](ethna-document-dev_guide-form-validate.md "ethna-document-dev\_guide-form-validate (737d)")
 
 ### (14) エラー処理(フォーム値の表示)
 
@@ -251,11 +251,11 @@ template/ja/login.tpl:
 
 Ethnaフレームワークにおけるエラー処理ポリシーについては以下をご覧下さい。
 
-_see also:_ [エラー処理ポリシー](ethna-document-dev_guide-error-policy.html "ethna-document-dev\_guide-error-policy (1240d)")
+_see also:_ [エラー処理ポリシー](ethna-document-dev_guide-error-policy.md "ethna-document-dev\_guide-error-policy (1240d)")
 
 また、自動検証で設定されるエラーメッセージは(もちろん)任意にカスタマイズすることが出来ます。
 
-_see also:_ [自動検証のエラーメッセージをカスタマイズする](ethna-document-dev_guide-form-message.html "ethna-document-dev\_guide-form-message (619d)")
+_see also:_ [自動検証のエラーメッセージをカスタマイズする](ethna-document-dev_guide-form-message.md "ethna-document-dev\_guide-form-message (619d)")
 
 ### (16) ロジックの記述(概念)
 
@@ -351,7 +351,7 @@ app/actoin/Login/Do.php
 
 エラー処理詳細につきましては下記をご覧下さい。
 
-_ses also:_ [エラー処理ポリシー](ethna-document-dev_guide-error-policy.html "ethna-document-dev\_guide-error-policy (1240d)")
+_ses also:_ [エラー処理ポリシー](ethna-document-dev_guide-error-policy.md "ethna-document-dev\_guide-error-policy (1240d)")
 
 以上が、結構長くなってしまいましたが基本的なアプリケーションの構築手順となります。なんとなくご理解いただけると嬉しいです。
 

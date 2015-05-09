@@ -86,7 +86,7 @@ Ethna\_Util::getDirectLinkList()を使用してページャを作成します。
 
 ###
 
-[![pager.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-misc-pager&src=pager.png "pager.png")](plugin=attach&refer=ethna-document-dev_guide-misc-pager&openfile=pager.png.html "pager.png")
+[![pager.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-misc-pager&src=pager.png "pager.png")](plugin=attach&refer=ethna-document-dev_guide-misc-pager&openfile=pager.png.md "pager.png")
 
 ## comment
 

@@ -3,7 +3,7 @@
 
 ## アクションスクリプトのスケルトンを生成する
 
-[アクション定義を省略する](ethna-document-dev_guide-action-omit.html "ethna-document-dev\_guide-action-omit (1240d)")にて記述したとおり、一定のルールでアクションスクリプトのファイル名やアクションクラス名が決まるのでしたら、アクションを追加するたびに毎回スクリプトを1から記述するのは面倒です\*1。
+[アクション定義を省略する](ethna-document-dev_guide-action-omit.md "ethna-document-dev\_guide-action-omit (1240d)")にて記述したとおり、一定のルールでアクションスクリプトのファイル名やアクションクラス名が決まるのでしたら、アクションを追加するたびに毎回スクリプトを1から記述するのは面倒です\*1。
 
 そんなときには、ethnaコマンドのadd-actionオプションを利用して、スケルトンファイルを生成すると楽です。
 

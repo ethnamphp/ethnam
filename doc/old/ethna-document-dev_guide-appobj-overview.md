@@ -15,7 +15,7 @@
 
 ### (1) DB設定
 
-[http://ethna.jp/ethna-document-dev\_guide-db.html](ethna-document-dev_guide-db.html)みたいな感じでDSNを設定します
+[http://ethna.jp/ethna-document-dev\_guide-db.html](ethna-document-dev_guide-db.md)みたいな感じでDSNを設定します
 
 ### (2) AppObject
 

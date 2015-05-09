@@ -115,7 +115,7 @@
 
 ### 配列型を指定した場合
 
-[ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.html "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
+[ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.md "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
 
 上記のページが理解できていれば、配列の階層が増えるだけで、あとは通常のEthnaと変わりありません。
 
@@ -172,7 +172,7 @@
 
 ### ファイルを指定した場合
 
-[ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.html "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
+[ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.md "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
 
 上記のページが理解できていれば、他の型を使用した場合と特に変化ありません。つまり、階層構造を指定すれば、それに従った階層構造で値が取得できるようになります。
 
@@ -247,14 +247,14 @@
 
 多次元配列の機能はフォーム値の自動検証、及びフォームヘルパに影響しません。
 
-グループ化してフォームを定義した場合でも、 [矛盾したフォーム定義をしない限り](ethna-document-dev_guide-form-multiarray.html#ce69c0d9)自動検証の機能がそれぞれの項目について有効になります。
+グループ化してフォームを定義した場合でも、 [矛盾したフォーム定義をしない限り](ethna-document-dev_guide-form-multiarray.md#ce69c0d9)自動検証の機能がそれぞれの項目について有効になります。
 
 フォームヘルパの場合でも、以下のように普通に定義できます。
 
     {form_input name="User[phone][name]"}
 
-フォーム値の自動検証については、 [フォーム定義のページ](ethna-document-dev_guide-form.html "ethna-document-dev\_guide-form (1006d)")を参照してください。  
-フォームヘルパについては、 [フォームヘルパ](ethna-document-dev_guide-form-multiarray.html "ethna-document-dev\_guide-form-multiarray (737d)") を参照してください。
+フォーム値の自動検証については、 [フォーム定義のページ](ethna-document-dev_guide-form.md "ethna-document-dev\_guide-form (1006d)")を参照してください。  
+フォームヘルパについては、 [フォームヘルパ](ethna-document-dev_guide-form-multiarray.md "ethna-document-dev\_guide-form-multiarray (737d)") を参照してください。
 
 ### 多次元配列を指定する場合の制限事項
 

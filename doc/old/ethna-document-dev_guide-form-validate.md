@@ -48,7 +48,7 @@ validate()メソッドは戻り値として発生したエラーの数を返す�
 1. name(エラーメッセージ表示時等のための、表示用フォーム名)
 2. form\_type(エラーメッセージ表示等のためのフォーム種別\*3)
 
-上記に加えて、任意のメソッドによるチェックも可能です(メールアドレス、URL、アプリケーション固有ID等)。詳細は [フォーム値の自動検証を行う(カスタムチェック編)](ethna-document-dev_guide-form-customvalidate.html "ethna-document-dev\_guide-form-customvalidate (1120d)")を御覧下さい。
+上記に加えて、任意のメソッドによるチェックも可能です(メールアドレス、URL、アプリケーション固有ID等)。詳細は [フォーム値の自動検証を行う(カスタムチェック編)](ethna-document-dev_guide-form-customvalidate.md "ethna-document-dev\_guide-form-customvalidate (1120d)")を御覧下さい。
 
 #### type属性
 
@@ -83,7 +83,7 @@ type 属性に VAR\_TYPE\_DATETIME を指定する場合は、PHP の [strtotime
 
 Ethna 2.5.0 以降では、VAR\_TYPE\_STRING のフォーム定義に対して maxとmin の属性を設定するとデフォルトで最大（最小）文字数のチェックが行われるようになりました。これに対して 2.3.x より前のバージョンでは、最大（最小）バイト数でチェックを行います。
 
-2.5.0 以降でバイト数によるチェックを行いたい場合は、 [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html "ethna-document-dev\_guide-form-validate-vartypestring (581d)") を参照して下さい。
+2.5.0 以降でバイト数によるチェックを行いたい場合は、 [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.md "ethna-document-dev\_guide-form-validate-vartypestring (581d)") を参照して下さい。
 
 #### 制限属性(配列使用時)
 
@@ -124,7 +124,7 @@ required 属性を true にすると、配列の場合はデフォルトで **Su
 
 name属性にはフォームの表示名(フォーム名が'mailaddress'なら'メールアドレス'のようになる)を、form\_type属性にはフォームの種別を設定します。form\_typeに設定可能な値は以下の通りです。この属性は、フォームヘルパで特に重要です。
 
-[フォームヘルパのページ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)") も参照してください。
+[フォームヘルパのページ](ethna-document-dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)") も参照してください。
 
 | FORM\_TYPE\_TEXT | テキストボックス |
 | FORM\_TYPE\_PASSWORD | パスワード |
@@ -205,7 +205,7 @@ question[]というチェックボックス(表示名「質問」):
 
 入力画面でエラーが発生したら、当然ですがエラーメッセージを表示させなければなりません。ここではその方法をご説明します。とはいっても、全てのエラーメッセージはSmartyの変数としてアサインされているので、単純にそれの値にアクセスすればよいだけです。
 
-なお、ここで表示するエラーメッセージは勿論カスタマイズすることが出来ます。詳細は [エラーメッセージをカスタマイズする](ethna-document-dev_guide-form-message.html "ethna-document-dev\_guide-form-message (619d)")を御覧下さい。
+なお、ここで表示するエラーメッセージは勿論カスタマイズすることが出来ます。詳細は [エラーメッセージをカスタマイズする](ethna-document-dev_guide-form-message.md "ethna-document-dev\_guide-form-message (619d)")を御覧下さい。
 
 #### エラーメッセージ一覧
 
@@ -243,8 +243,8 @@ question[]というチェックボックス(表示名「質問」):
 
 
 * * *
-\*1エラー処理の詳細については [エラー処理ポリシー](ethna-document-dev_guide-error-policy.html "ethna-document-dev\_guide-error-policy (1240d)")等を参照してください  
-\*2 [アプリケーション構築手順(3)](ethna-document-tutorial-practice3.html#content_1_4 "ethna-document-tutorial-practice3 (1240d)")も参照してください  
+\*1エラー処理の詳細については [エラー処理ポリシー](ethna-document-dev_guide-error-policy.md "ethna-document-dev\_guide-error-policy (1240d)")等を参照してください  
+\*2 [アプリケーション構築手順(3)](ethna-document-tutorial-practice3.md#content_1_4 "ethna-document-tutorial-practice3 (1240d)")も参照してください  
 \*3例えば、入力値が必須で合った場合のエラーメッセージはテキストボックスなら「入力してください」、セレクトボックスなら「選択してください」というように振り分ける  
 \*4この件は、代替案がPHP 5.2.6の時点では見つかっていないことから、「仕様」としてプロジェクトとしてはWONTFIX(修正しない) 方針です。代替案の提案がある方は、 [IRCやメーリングリスト](ethna-community.html) でお願いします。  
 \*5UTF-8 な文字列であれば、mbregexp を使わずに、/^ほげ$/u としてもマルチバイト対応の正規表現チェックが利用できます。  

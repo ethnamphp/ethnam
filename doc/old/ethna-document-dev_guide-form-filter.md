@@ -8,7 +8,7 @@
 
 ### サンプル
 
-機能としてはとっても分かりやすいものなので、まずは例を挙げてみます。アクションフォームクラスの$formメンバに、'filter'属性を追加します(その他の属性については [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.html "ethna-document-dev\_guide-form-validate (737d)")を御覧下さい)。
+機能としてはとっても分かりやすいものなので、まずは例を挙げてみます。アクションフォームクラスの$formメンバに、'filter'属性を追加します(その他の属性については [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.md "ethna-document-dev\_guide-form-validate (737d)")を御覧下さい)。
 
     /**
       * @access private

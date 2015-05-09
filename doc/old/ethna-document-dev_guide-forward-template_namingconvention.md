@@ -53,5 +53,5 @@ Ethna\_Controllerでは、パス名は
 
 
 * * *
-\*1 [遷移先定義を省略する](ethna-document-dev_guide-forward-omit.html "ethna-document-dev\_guide-forward-omit (1240d)")を参照  
+\*1 [遷移先定義を省略する](ethna-document-dev_guide-forward-omit.md "ethna-document-dev\_guide-forward-omit (1240d)")を参照  
 

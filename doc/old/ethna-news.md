@@ -58,7 +58,7 @@
 
 ## ニュース
 
-変更点の詳細は、 [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")をご覧ください。
+変更点の詳細は、 [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")をご覧ください。
 
 ### 2011/09/29 Githubに移行しました。
 
@@ -70,7 +70,7 @@
 
 beta1 に引き続き、開発版のリリースです。 beta1 のバグフィックスと、Smarty 3 用のRendererの追加をしました。また、2.5.0 preview5 と 2.6.0 beta の CHANGES を整理し、まとめ直しましたので、既存のプロジェクトを移行する際にはご参照ください。
 
-- 変更点一覧 [http://ethna.jp/index.php?ethna-document-changes#f019cfd1](ethna-document-changes.html#f019cfd1)
+- 変更点一覧 [http://ethna.jp/index.php?ethna-document-changes#f019cfd1](ethna-document-changes.md#f019cfd1)
 
 ### 2010/12/27 Ethna 2.6.0 beta1 リリース
 
@@ -80,7 +80,7 @@ PHP 5.3 に関しては、3.0 を開発するという予定でしたが、ゼ�
 
 詳細は CHANGES をご覧ください。
 
-- [http://ethna.jp/index.php?ethna-document-changes#c2bb8363](ethna-document-changes.html#c2bb8363)
+- [http://ethna.jp/index.php?ethna-document-changes#c2bb8363](ethna-document-changes.md#c2bb8363)
 
 ### 2009/10/18 Ethna 2.5.0 リリース
 
@@ -89,25 +89,25 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 2.5.0 では、2.3系と比較して、utf-8 ではなく UTF-8 をデフォルトとしたこと、国際化、多次元配列等の新機能をメインとして、多くの変更が加えられています。新機能については、以下のURLを参照してください。
 
 「言語とエンコーディングの設定」  
- [http://ethna.jp/ethna-document-dev\_guide-app-setlanguage.html](ethna-document-dev_guide-app-setlanguage.html)  
+ [http://ethna.jp/ethna-document-dev\_guide-app-setlanguage.html](ethna-document-dev_guide-app-setlanguage.md)  
 「プロジェクトの国際化」  
- [http://ethna.jp/ethna-document-dev\_guide-i18n.html](ethna-document-dev_guide-i18n.html)  
+ [http://ethna.jp/ethna-document-dev\_guide-i18n.html](ethna-document-dev_guide-i18n.md)  
 「多次元配列」  
- [http://ethna.jp/ethna-document-dev\_guide-form-multiarray.html](ethna-document-dev_guide-form-multiarray.html)  
+ [http://ethna.jp/ethna-document-dev\_guide-form-multiarray.html](ethna-document-dev_guide-form-multiarray.md)  
 「フォームテンプレートへの変更」  
- [http://ethna.jp/ethna-document-dev\_guide-form\_template.html](ethna-document-dev_guide-form_template.html)  
+ [http://ethna.jp/ethna-document-dev\_guide-form\_template.html](ethna-document-dev_guide-form_template.md)  
 「動的フォームAPI」  
- [http://ethna.jp/ethna-document-dev\_guide-app-dynamicform.html](ethna-document-dev_guide-app-dynamicform.html)  
+ [http://ethna.jp/ethna-document-dev\_guide-app-dynamicform.html](ethna-document-dev_guide-app-dynamicform.md)  
 「VAR\_TYPE\_STRING の max, min 属性に関する詳細」  
- [http://ethna.jp/ethna-document-dev\_guide-form-validate-vartypestring.html](ethna-document-dev_guide-form-validate-vartypestring.html)
+ [http://ethna.jp/ethna-document-dev\_guide-form-validate-vartypestring.html](ethna-document-dev_guide-form-validate-vartypestring.md)
 
 詳細な変更点は 以下のURLを参照してください
 
-[http://ethna.jp/ethna-document-changes.html#b00186c9](ethna-document-changes.html#b00186c9)
+[http://ethna.jp/ethna-document-changes.html#b00186c9](ethna-document-changes.md#b00186c9)
 
 このリリースに伴い、2.5.0 が新たに安定版としてメンテナンスされます。よって、2.3.7 以前のバージョンのサポートは打ち切られます。新たに Ethna でプロジェクトを作成される方は、このバージョンを使用してください。また、2.3.x から移行を行いたい方は、以下のドキュメントを参照してください。
 
-[http://ethna.jp/ethna-document-dev\_guide-misc-migrate\_project230to250.html](ethna-document-dev_guide-misc-migrate_project230to250.html)
+[http://ethna.jp/ethna-document-dev\_guide-misc-migrate\_project230to250.html](ethna-document-dev_guide-misc-migrate_project230to250.md)
 
 ### 2009/06/22 Ethna 2.5.0 preview5 リリース
 
@@ -115,7 +115,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 詳細な変更点は 以下のURLを参照してください
 
-[http://ethna.jp/ethna-document-changes.html#x29fc02d](ethna-document-changes.html#x29fc02d)
+[http://ethna.jp/ethna-document-changes.html#x29fc02d](ethna-document-changes.md#x29fc02d)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.xとの互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
@@ -177,7 +177,7 @@ Ethna 2.3.6 をリリースしました。
 
 詳細な変更点については、以下のページを御覧下さい。
 
-[http://ethna.jp/ethna-document-changes.html#w8dda865](ethna-document-changes.html#w8dda865)
+[http://ethna.jp/ethna-document-changes.html#w8dda865](ethna-document-changes.md#w8dda865)
 
 ### 2009/01/29 Ethna 2.5.0 preview3 リリース
 
@@ -186,19 +186,19 @@ Ethna 2.5.0 preview 3 をリリースしました。このリリースでは、�
 また、Smarty のプラグインを分割し、ユーザがより独自のプラグインを作りやす くしました。勿論、2.5.0 preview2 以降で発見された複数のバグも修正されてい ます。
 
 詳細な変更点は 以下のURLを参照してください  
- [http://ethna.jp/ethna-document-changes.html#y2250027](ethna-document-changes.html#y2250027)
+ [http://ethna.jp/ethna-document-changes.html#y2250027](ethna-document-changes.md#y2250027)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。 よって 2.3.5との互換性は \*ありません\*。そして、バージョンナンバーにもある通 り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不 安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを 頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
 テストをして頂ける方は、「必ず」以下のドキュメントを参照頂き、フィードバック をして頂くようお願い致します。
 
-- [2.3.x から 2.5.0への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.html)
-- [多次元配列](ethna-document-dev_guide-form-multiarray.html)
-- [フォームテンプレートへの変更](ethna-document-dev_guide-form_template.html)
-- [動的フォームAPI](ethna-document-dev_guide-app-dynamicform.html)
-- [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html)
-- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html)
-- [プロジェクトの国際化](ethna-document-dev_guide-i18n.html)
+- [2.3.x から 2.5.0への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.md)
+- [多次元配列](ethna-document-dev_guide-form-multiarray.md)
+- [フォームテンプレートへの変更](ethna-document-dev_guide-form_template.md)
+- [動的フォームAPI](ethna-document-dev_guide-app-dynamicform.md)
+- [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.md)
+- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.md)
+- [プロジェクトの国際化](ethna-document-dev_guide-i18n.md)
 
 ### 2009/01/25 Ethna 焼肉会議開催
 
@@ -215,31 +215,31 @@ Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PE
 今回はユーザから見ると目立った変更は国際化の実装くらいしかないように見えますが、PEAR 依存を外すための布石として、Ethnaクラスが PEAR クラスを継承していたのを外しているため、その関連で割と変更が加わっています。ethna コマンドの Console\_Getopt も独自実装に置き換わっているため、ethna コマンドにもバグが残っている可能性があります。よって、目立つ変更点が少ないからといって侮らず、テストに御協力頂ければ幸いです。
 
 詳細な変更点は以下のドキュメントをご覧下さい。  
- [http://ethna.jp/ethna-document-changes.html#d0c37223](ethna-document-changes.html#d0c37223)
+ [http://ethna.jp/ethna-document-changes.html#d0c37223](ethna-document-changes.md#d0c37223)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.5 との互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
 テストをして頂ける方は、「必ず」以下のドキュメントを参照頂き、フィードバックをして頂くようお願い致します。
 
-- [2.3.x から 2.5.0への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.html)
-- [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html)
-- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html)
-- [プロジェクトの国際化](ethna-document-dev_guide-i18n.html)
+- [2.3.x から 2.5.0への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.md)
+- [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.md)
+- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.md)
+- [プロジェクトの国際化](ethna-document-dev_guide-i18n.md)
 
 ### 2008/07/05 Ethna 2.5.0 preview1 リリース
 
 Ethna 2.5.0 preview 1をリリースしました。このリリースでは、ユーザからの要望が特に高かったUTF-8への移行及びエンコーディング依存への解消、および国際化(i18n)の基礎となる変更が盛り込まれ、かつ 2.3.5 以降の複数のバグが修正されています。
 
 詳細な変更点は以下のドキュメントをご覧下さい。  
- [http://ethna.jp/ethna-document-changes.html#f9c85729](ethna-document-changes.html#f9c85729)
+ [http://ethna.jp/ethna-document-changes.html#f9c85729](ethna-document-changes.md#f9c85729)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.5との互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
 テストをして頂ける方は、「必ず」以下のドキュメントを参照頂き、フィードバックをして頂くようお願い致します。
 
-- [2.3.x から 2.5.0への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.html)
-- [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html)
-- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.html)
+- [2.3.x から 2.5.0への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.md)
+- [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.md)
+- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](ethna-document-dev_guide-form-validate-vartypestring.md)
 
 主な変更点は以下の通りです。
 
@@ -322,19 +322,19 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 ### 2006/11/29 Ethna 2.3.0 リリース!!
 
-[ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")から遅れに遅れ、師走はもう目前となりましたが、とうとう Ethna-2.3.0 がリリースされました。ご要望、バグ報告などぜひともお待ちしております!!
+[ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")から遅れに遅れ、師走はもう目前となりましたが、とうとう Ethna-2.3.0 がリリースされました。ご要望、バグ報告などぜひともお待ちしております!!
 
 - [ダウンロード](pear/Ethna-2.3.0.tgz)
 
-2.3.0-preview3 から機能的な変更点はありません。2.1.2 からの変更、移行方法については、古いプロジェクトのアップデート [?](cmd=edit&page=ethna-document-dev_guide-misc-migrate_project&refer=ethna-news.html)を参照してください。
+2.3.0-preview3 から機能的な変更点はありません。2.1.2 からの変更、移行方法については、古いプロジェクトのアップデート [?](cmd=edit&page=ethna-document-dev_guide-misc-migrate_project&refer=ethna-news.md)を参照してください。
 
 ### 2006/11/21 Ethna 2.3.0 Preview3リリース
 
-[ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")からは相当に遅れてしまいましたが、Ethna 2.3.0 Preview3をリリースしました。ご要望、バグ報告等お待ちしております。
+[ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")からは相当に遅れてしまいましたが、Ethna 2.3.0 Preview3をリリースしました。ご要望、バグ報告等お待ちしております。
 
 - [ダウンロード](pear/Ethna-2.3.0-preview3.tgz)
 
-主な変更点は下記の通りです。ずいぶん時間が経ってしまい、かなりの変更点があるので、詳細は [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")をご覧いただくようお願いします。
+主な変更点は下記の通りです。ずいぶん時間が経ってしまい、かなりの変更点があるので、詳細は [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")をご覧いただくようお願いします。
 
 - Preview2で発見されたたくさんのバグフィックス(みなさまありがとうございます)
 - ethnaコマンドの再編, getopt化, スケルトンファイル指定オプション追加
@@ -346,7 +346,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 ### 2006/07/20 Ethna 2.3.0 Preview2リリース
 
-[ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")からは遅れること4日、Ethna 2.3.0 Preview2をリリースしました。ご要望、バグ報告等お待ちしております。
+[ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")からは遅れること4日、Ethna 2.3.0 Preview2をリリースしました。ご要望、バグ報告等お待ちしております。
 
 - [ダウンロード](pear/Ethna-2.3.0-preview2.tgz)
 
@@ -389,7 +389,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 ### 2006/07/10 Ethna 2.3.0 Preview1リリース
 
-[ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")からは1日遅れてしまいましたが、Ethna 2.3.0 Preview1をリリースしました(思わずPreview2の予定だったEthna\_Loggerまで手を出してしまいました)。ご要望、バグ報告等お待ちしております。
+[ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")からは1日遅れてしまいましたが、Ethna 2.3.0 Preview1をリリースしました(思わずPreview2の予定だったEthna\_Loggerまで手を出してしまいました)。ご要望、バグ報告等お待ちしております。
 
 - [ダウンロード](pear/Ethna-2.3.0-preview1.tgz)
 
@@ -401,8 +401,8 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
   - Ethna\_Handle, Ethna\_CacheManager, Ethna\_LogWriterをプラグインシステムに移行
   - Ethna\_ActionFormのバリデータをプラグインシステムに移行(Ethna\_ActionForm::use\_validator\_pluginがtrueのときのみ)
   - see also
-    - [http://ethna.jp/ethna-document-dev\_guide-plugin.html](ethna-document-dev_guide-plugin.html)
-    - [http://ethna.jp/ethna-document-dev\_guide-form-validate\_with\_plugin.html](ethna-document-dev_guide-form-validate_with_plugin.html)
+    - [http://ethna.jp/ethna-document-dev\_guide-plugin.html](ethna-document-dev_guide-plugin.md)
+    - [http://ethna.jp/ethna-document-dev\_guide-form-validate\_with\_plugin.html](ethna-document-dev_guide-form-validate_with_plugin.md)
 3. - [breaking B.C.] Ethna\_Loggerリファクタリング
   - Ethna\_LogWriterのプラグイン化
   - カンマ区切りでの複数ファシリティサポート
@@ -415,16 +415,16 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 なお、修正点は1箇所で、2.1.0で新規に導入された{form}というSmartyプラグインのethna\_action引数を指定した場合の振舞いに関するものです。
 
 - [ダウンロード](ethna-download.html "ethna-download (25d)")
-- [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
-- [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(今後のToDo)
+- [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")
+- [ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")(今後のToDo)
 
 ### 2006/06/07 Ethna 2.1.1リリース
 
 いきなりですが、Windows版ethna.batのパスを修正して、2.1.1としてリリースしました。（特にWindowsユーザの方は）こちらのバージョンをご利用ください。
 
 - [ダウンロード](ethna-download.html "ethna-download (25d)")
-- [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
-- [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(今後のToDo)
+- [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")
+- [ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")(今後のToDo)
 
 ### 2006/06/06 Ethna 2.1.0リリース
 
@@ -439,10 +439,10 @@ Ethna 0.xをご利用の皆様からのフィードバック、 [GREE](http://gr
 - その他15以上のバグ修正
 
 - [ダウンロード](ethna-download.html "ethna-download (25d)")
-- [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
-- [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(今後のToDo)
+- [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")
+- [ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")(今後のToDo)
 
-後方互換性が失われた点につきましては、上記 [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")にて「breaking B.C.」という形で記述されています。ほぼ全ては問題ないものですが、唯一の大きな変更点は
+後方互換性が失われた点につきましては、上記 [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")にて「breaking B.C.」という形で記述されています。ほぼ全ては問題ないものですが、唯一の大きな変更点は
 
 - [breaking B.C.] main\_CLIのアクション定義ディレクトリをaction\_cliに変更
 
@@ -455,8 +455,8 @@ Ethna 0.xをご利用の皆様からのフィードバック、 [GREE](http://gr
 [http://beta.ethna.jp/](http://beta.ethna.jp/)を開設して、2.0.xとして開発されている現時点のバージョンを2.1.0-preview1としてリリースしました。
 
 - [ダウンロード](ethna-download.html "ethna-download (25d)")
-- [変更点一覧](ethna-document-changes.html "ethna-document-changes (294d)")
-- [ロードマップ](ethna-document-roadmap.html "ethna-document-roadmap (1240d)")(正式リリースまでのToDo)
+- [変更点一覧](ethna-document-changes.md "ethna-document-changes (294d)")
+- [ロードマップ](ethna-document-roadmap.md "ethna-document-roadmap (1240d)")(正式リリースまでのToDo)
 
 ### 2006/01/29 Ethna 0.2.0リリース
 
@@ -568,14 +568,14 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-5 "ethna-changes (1240d)")を御覧下さい。
 
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
-- [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
+- [アップデート方法](ethna-document-tutorial-install_guide.md#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
 ### 2005/02/01 開発マニュアル(フォーム値検証)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [フォーム値の自動検証を行う(フィルタ編)](ethna-document-dev_guide-form-filter.html "ethna-document-dev\_guide-form-filter (619d)")
-- [フォーム値の自動検証を行う(カスタムチェック編)](ethna-document-dev_guide-form-customvalidate.html "ethna-document-dev\_guide-form-customvalidate (1120d)")
+- [フォーム値の自動検証を行う(フィルタ編)](ethna-document-dev_guide-form-filter.md "ethna-document-dev\_guide-form-filter (619d)")
+- [フォーム値の自動検証を行う(カスタムチェック編)](ethna-document-dev_guide-form-customvalidate.md "ethna-document-dev\_guide-form-customvalidate (1120d)")
 
 ### 2005/01/14 バージョン0.1.4リリース
 
@@ -584,7 +584,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-4 "ethna-changes (1240d)")を御覧下さい。
 
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
-- [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
+- [アップデート方法](ethna-document-tutorial-install_guide.md#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
 ### 2005/01/13 バージョン0.1.3
 
@@ -617,7 +617,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-3 "ethna-changes (1240d)")を御覧下さい。
 
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
-- [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
+- [アップデート方法](ethna-document-tutorial-install_guide.md#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
 ### 2005/01/05 新年のご挨拶
 
@@ -627,15 +627,15 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 ### 2004/12/27 開発マニュアル(フォーム値検証)を追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.html "ethna-document-dev\_guide-form-validate (737d)")
+- [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.md "ethna-document-dev\_guide-form-validate (737d)")
 
 ### 2004/12/23-2 開発マニュアル(Ethna\_Info)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [設定情報や定義済みアクション等を一覧する](ethna-document-dev_guide-misc-info.html "ethna-document-dev\_guide-misc-info (1240d)")
+- [設定情報や定義済みアクション等を一覧する](ethna-document-dev_guide-misc-info.md "ethna-document-dev\_guide-misc-info (1240d)")
 
 ### 2004/12/23-1 バージョン0.1.2リリース
 
@@ -647,48 +647,48 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-2 "ethna-changes (1240d)")を御覧下さい。
 
 - [ダウンロード](http://sourceforge.jp/projects/ethna/files/)
-- [アップデート方法](ethna-document-tutorial-install_guide.html#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
+- [アップデート方法](ethna-document-tutorial-install_guide.md#content_1_7 "ethna-document-tutorial-install\_guide (16d)")
 
 ### 2004/12/21 開発マニュアル(フォーム値アクセス(配列/ファイル))
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.html "ethna-document-dev\_guide-form-type (1006d)")
+- [ファイルや配列にアクセスする](ethna-document-dev_guide-form-type.md "ethna-document-dev\_guide-form-type (1006d)")
 
 ### 2004/12/18 開発マニュアル(フォーム値アクセス)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [フォーム値にアクセスする](ethna-document-dev_guide-form-overview.html "ethna-document-dev\_guide-form-overview (1240d)")
+- [フォーム値にアクセスする](ethna-document-dev_guide-form-overview.md "ethna-document-dev\_guide-form-overview (1240d)")
 
 ### 2004/12/17 開発マニュアル(スクリプト統合)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [スクリプトを1ファイルに統合する](ethna-document-dev_guide-misc-unify.html "ethna-document-dev\_guide-misc-unify (1240d)")
+- [スクリプトを1ファイルに統合する](ethna-document-dev_guide-misc-unify.md "ethna-document-dev\_guide-misc-unify (1240d)")
 
 ### 2004/12/16 開発マニュアル(フィルタチェイン)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [フィルタチェインを使用する](ethna-document-dev_guide-app-filterchain.html "ethna-document-dev\_guide-app-filterchain (1240d)")
+- [フィルタチェインを使用する](ethna-document-dev_guide-app-filterchain.md "ethna-document-dev\_guide-app-filterchain (1240d)")
 
 ### 2004/12/14 開発マニュアル(スケルトン生成等)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [アクションスクリプトのスケルトンを生成する](ethna-document-dev_guide-action-skelton.html "ethna-document-dev\_guide-action-skelton (1240d)")
-- [複数のエントリポイントを作成する](ethna-document-dev_guide-app-multientrypoint.html "ethna-document-dev\_guide-app-multientrypoint (1181d)")
-- [エントリポイント毎に実行可能なアクションを制限する](ethna-document-dev_guide-app-limitentrypoint.html "ethna-document-dev\_guide-app-limitentrypoint (706d)")
-- [未定義のアクションが指定された場合に特定のアクションを実行する](ethna-document-dev_guide-app-fallbackentrypoint.html "ethna-document-dev\_guide-app-fallbackentrypoint (1240d)")
-- [アクション名のリクエスト方法を変更する](ethna-document-dev_guide-action-formname.html "ethna-document-dev\_guide-action-formname (1026d)")
-- [アクションスクリプトの配置ディレクトリを変更する](ethna-document-dev_guide-action-dir.html "ethna-document-dev\_guide-action-dir (1240d)")
+- [アクションスクリプトのスケルトンを生成する](ethna-document-dev_guide-action-skelton.md "ethna-document-dev\_guide-action-skelton (1240d)")
+- [複数のエントリポイントを作成する](ethna-document-dev_guide-app-multientrypoint.md "ethna-document-dev\_guide-app-multientrypoint (1181d)")
+- [エントリポイント毎に実行可能なアクションを制限する](ethna-document-dev_guide-app-limitentrypoint.md "ethna-document-dev\_guide-app-limitentrypoint (706d)")
+- [未定義のアクションが指定された場合に特定のアクションを実行する](ethna-document-dev_guide-app-fallbackentrypoint.md "ethna-document-dev\_guide-app-fallbackentrypoint (1240d)")
+- [アクション名のリクエスト方法を変更する](ethna-document-dev_guide-action-formname.md "ethna-document-dev\_guide-action-formname (1026d)")
+- [アクションスクリプトの配置ディレクトリを変更する](ethna-document-dev_guide-action-dir.md "ethna-document-dev\_guide-action-dir (1240d)")
 
 ### 2004/12/13 開発マニュアル(命名規則変更)追加
 
-[開発マニュアル](ethna-document-dev_guide.html "ethna-document-dev\_guide (302d)")を追加しました。
+[開発マニュアル](ethna-document-dev_guide.md "ethna-document-dev\_guide (302d)")を追加しました。
 
-- [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.html "ethna-document-dev\_guide-action-namingconvention (1240d)")
+- [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")
 
 ### 2004/12/12 N/A
 

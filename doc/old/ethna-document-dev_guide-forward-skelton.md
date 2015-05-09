@@ -3,7 +3,7 @@
 
 ## ビュースクリプトのスケルトンを生成する
 
-[遷移先定義を省略する](ethna-document-dev_guide-forward-omit.html "ethna-document-dev\_guide-forward-omit (1240d)")にて記述したとおり、一定のルールでビュースクリプトのファイル名やビュークラス名が決まるのでしたら、遷移先を追加するたびに毎回スクリプトを1から記述するのは面倒です\*1。
+[遷移先定義を省略する](ethna-document-dev_guide-forward-omit.md "ethna-document-dev\_guide-forward-omit (1240d)")にて記述したとおり、一定のルールでビュースクリプトのファイル名やビュークラス名が決まるのでしたら、遷移先を追加するたびに毎回スクリプトを1から記述するのは面倒です\*1。
 
 そんなときには、ethnaコマンドのadd-viewオプションを利用して、スケルトンファイルを生成すると楽です。
 

@@ -1,5 +1,5 @@
 # フォームヘルパ サンプル集
-[フォームヘルパのページ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)") で説明した通り、フォームヘルパはアクションフォームのフォーム定義を読み取り、入力フォームを自動生成してくれる優れた機能です。
+[フォームヘルパのページ](ethna-document-dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)") で説明した通り、フォームヘルパはアクションフォームのフォーム定義を読み取り、入力フォームを自動生成してくれる優れた機能です。
 
 非常に強力な分、機能も複雑なため、ここではその使い方をサンプルという形で示しています。
 

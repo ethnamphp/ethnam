@@ -1,5 +1,5 @@
 # フォームヘルパ タグリファレンス
-[フォームヘルパのページ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)") で説明した通り、フォームヘルパはアクションフォームのフォーム定義を読み取り、入力フォームを自動生成してくれる優れた機能です。ここでは、フォームヘルパで使えるタグのすべてをリファレンスとして示します。
+[フォームヘルパのページ](ethna-document-dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)") で説明した通り、フォームヘルパはアクションフォームのフォーム定義を読み取り、入力フォームを自動生成してくれる優れた機能です。ここでは、フォームヘルパで使えるタグのすべてをリファレンスとして示します。
 
 - フォームヘルパ タグリファレンス 
   - {form}{/form} ブロックタグ 
@@ -160,5 +160,5 @@ submitボタンだけを作りたい場合、(テンプレートにそのままh
 
 ### 注意事項
 
-[{form}ブロックタグ](ethna-document-dev_guide-view-form_helper-ref.html#rbb7b355 "ethna-document-dev\_guide-view-form\_helper-ref (999d)")の項にも書きましたが、タグを出力するときにまと めてエスケープ処理が入るので、パラメータとして指定する値はエスケープしないように気をつけてください。
+[{form}ブロックタグ](ethna-document-dev_guide-view-form_helper-ref.md#rbb7b355 "ethna-document-dev\_guide-view-form\_helper-ref (999d)")の項にも書きましたが、タグを出力するときにまと めてエスケープ処理が入るので、パラメータとして指定する値はエスケープしないように気をつけてください。
 

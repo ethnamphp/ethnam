@@ -185,7 +185,7 @@ Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージ�
 
 ### アプリケーションオブジェクトとの連携
 
-Ethna には、 [アプリケーションオブジェクト](ethna-document-dev_guide-appobj-overview.html) と呼ばれるORマッピングの機能があります。
+Ethna には、 [アプリケーションオブジェクト](ethna-document-dev_guide-appobj-overview.md) と呼ばれるORマッピングの機能があります。
 
 アプリケーションマネージャクラスには、アプリケーションオブジェクトを使ってデータベースを検索するメソッドが複数用意されています。それを使ってデータベースを記述するロジックも実行することが出来ます。
 

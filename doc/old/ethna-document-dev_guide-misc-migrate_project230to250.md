@@ -1,7 +1,7 @@
 # Ethna 2.3.0 から 2.5.0 への移行ガイド
 Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.x 系に対応させるためのガイドラインです。(これに従えばうまくいく、というわけではありません。必ずバックアップを用意した上で、確認しながら作業するようにしてください。)
 
-※ Ethna 2.1.0 から 2.3.0 への移行については、 [こちら](ethna-document-dev_guide-misc-migrate_project210to230.html "ethna-document-dev\_guide-misc-migrate\_project210to230 (1217d)") を御覧下さい。
+※ Ethna 2.1.0 から 2.3.0 への移行については、 [こちら](ethna-document-dev_guide-misc-migrate_project210to230.md "ethna-document-dev\_guide-misc-migrate\_project210to230 (1217d)") を御覧下さい。
 
 - Ethna 2.3.0 から 2.5.0 への移行ガイド 
   - タグの説明 
@@ -64,7 +64,7 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 また、3番目の要素はテンプレートのエンコーディングを指定して下さい。このエンコーディングでブラウザからの入力があることを 2.5.x では想定するため、この指定も非常に重要です。
 
-上記3つの要素のそれぞれの意味や、影響する範囲の詳細については、 [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.html "ethna-document-dev\_guide-app-setlanguage (737d)") のページを御覧下さい。
+上記3つの要素のそれぞれの意味や、影響する範囲の詳細については、 [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.md "ethna-document-dev\_guide-app-setlanguage (737d)") のページを御覧下さい。
 
 #### [必須] ロケール指定に伴うディレクトリ名の変更
 

@@ -44,7 +44,7 @@ Controllerにアクション定義を追加します。具体的には、app/Sam
 
 アクション定義と、インクルードされるスクリプトファイル名やアクションクラス名の関係、省略方法については、下記をご覧下さい。
 
-_see also:_ [アクション定義を省略する](ethna-document-dev_guide-action-omit.html "ethna-document-dev\_guide-action-omit (1240d)")
+_see also:_ [アクション定義を省略する](ethna-document-dev_guide-action-omit.md "ethna-document-dev\_guide-action-omit (1240d)")
 
 ### (5) アクションクラスの記述
 
@@ -89,15 +89,15 @@ _なにもしないで'login'というビューを表示する_
 
     $ ethna add-action login
 
-_see also:_ [アクションスクリプトのスケルトンを生成する](ethna-document-dev_guide-action-skelton.html "ethna-document-dev\_guide-action-skelton (1240d)")
+_see also:_ [アクションスクリプトのスケルトンを生成する](ethna-document-dev_guide-action-skelton.md "ethna-document-dev\_guide-action-skelton (1240d)")
 
 なお、アクションスクリプトを配置するディレクトリは適宜変更することが可能です。
 
-_see also:_ [アクションスクリプトの配置ディレクトリを変更する](ethna-document-dev_guide-action-dir.html "ethna-document-dev\_guide-action-dir (1240d)")
+_see also:_ [アクションスクリプトの配置ディレクトリを変更する](ethna-document-dev_guide-action-dir.md "ethna-document-dev\_guide-action-dir (1240d)")
 
 また、前述したアクションクラスやアクションスクリプトのファイル命名規則等も変更することが可能です。
 
-_see also:_ [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.html "ethna-document-dev\_guide-action-namingconvention (1240d)")
+_see also:_ [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")
 
 ### (6) ビュー定義の追加(省略可)
 
@@ -139,13 +139,13 @@ _see also:_ [アクション定義省略時の命名規則を変更する](ethna
 
 なお、実際にビュー1つ作るたびにこのような定義を記述するのは煩雑なので、アクション定義と同様にビュー定義も省略することが可能です。
 
-_see also:_ [遷移先定義を省略する](ethna-document-dev_guide-forward-omit.html "ethna-document-dev\_guide-forward-omit (1240d)")
+_see also:_ [遷移先定義を省略する](ethna-document-dev_guide-forward-omit.md "ethna-document-dev\_guide-forward-omit (1240d)")
 
 さらに、アクションクラス等と同様に、省略時のビュークラスやテンプレートファイル名の命名規則を変更することも可能です。
 
-_see also:_ [ビューの命名規則を変更する](ethna-document-dev_guide-forward-view_namingconvention.html "ethna-document-dev\_guide-forward-view\_namingconvention (1240d)")
+_see also:_ [ビューの命名規則を変更する](ethna-document-dev_guide-forward-view_namingconvention.md "ethna-document-dev\_guide-forward-view\_namingconvention (1240d)")
 
-_see also:_ [テンプレートの命名規則を変更する](ethna-document-dev_guide-forward-template_namingconvention.html "ethna-document-dev\_guide-forward-template\_namingconvention (1240d)")
+_see also:_ [テンプレートの命名規則を変更する](ethna-document-dev_guide-forward-template_namingconvention.md "ethna-document-dev\_guide-forward-template\_namingconvention (1240d)")
 
 ### (7) ビュークラスの記述
 
@@ -208,7 +208,7 @@ preforward()メソッドはテンプレート表示前に呼び出され、テ�
 
 なお、テンプレートディレクトリを変更することも可能です。
 
-_see also:_ [テンプレートディレクトリを変更する](ethna-document-dev_guide-forward-template_dir.html "ethna-document-dev\_guide-forward-template\_dir (432d)")
+_see also:_ [テンプレートディレクトリを変更する](ethna-document-dev_guide-forward-template_dir.md "ethna-document-dev\_guide-forward-template\_dir (432d)")
 
 ### (9) 確認
 
@@ -220,7 +220,7 @@ _see also:_ [テンプレートディレクトリを変更する](ethna-document
 
  ![ethna-fig6.jpg](http://ethna.jp/image/ethna-fig6.jpg "ethna-fig6.jpg")
 
-もう少し複雑なアクションについては、次節 [アプリケーション構築手順(3)](ethna-document-tutorial-practice3.html "ethna-document-tutorial-practice3 (1240d)")をご覧下さい。
+もう少し複雑なアクションについては、次節 [アプリケーション構築手順(3)](ethna-document-tutorial-practice3.md "ethna-document-tutorial-practice3 (1240d)")をご覧下さい。
 
 
 * * *

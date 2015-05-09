@@ -562,10 +562,10 @@
 - ethna\_make\_packageで.svnに対応
 - Ethna\_Plugin\_Validator\_Mbregexp　追加 (thx: mumumu)
   - mb\_eregを使ったマルチバイト対応正規表現プラグイン
-  - [http://ethna.jp/ethna-document-dev\_guide-form-validate.html](ethna-document-dev_guide-form-validate.html)
+  - [http://ethna.jp/ethna-document-dev\_guide-form-validate.html](ethna-document-dev_guide-form-validate.md)
 - Ethna\_Plugin\_Handle\_PearLocal　追加
   - PEARパッケージを各プロジェクト毎に管理できるプラグイン
-  - [http://ethna.jp/ethna-document-dev\_guide-pearlocal.html](ethna-document-dev_guide-pearlocal.html)
+  - [http://ethna.jp/ethna-document-dev\_guide-pearlocal.html](ethna-document-dev_guide-pearlocal.md)
 - View のユニットテストができなくなっていたバグを修正(thx: sfio, ethna-users:0651)
 
 #### bug fixes
@@ -761,8 +761,8 @@
   - Ethna\_Handle, Ethna\_CacheManager, Ethna\_LogWriterをプラグインシステムに移行
   - Ethna\_ActionFormのバリデータをプラグインシステムに移行(Ethna\_ActionForm::use\_validator\_pluginがtrueのときのみ)
   - see also
-    - [Ethna\_Pluginのつかいかた](ethna-document-dev_guide-plugin.html)
-    - [フォーム値の自動検証を行う(プラグイン編)](ethna-document-dev_guide-form-validate_with_plugin.html)
+    - [Ethna\_Pluginのつかいかた](ethna-document-dev_guide-plugin.md)
+    - [フォーム値の自動検証を行う(プラグイン編)](ethna-document-dev_guide-form-validate_with_plugin.md)
 - ethnaコマンドにアクション名、ビュー名のチェック処理を追加(Ethna\_Controller::checkActionName(), Ethna\_Controller::checkViewName()を追加)
 - Ethna\_CacheManager\_Memcache(キャッシュマネージャのmemcacheサポート)追加
 - Ethna\_Sessionにregenerate\_idメソッドの追加

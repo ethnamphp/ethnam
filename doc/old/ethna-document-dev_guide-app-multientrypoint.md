@@ -3,7 +3,7 @@
 
 ## 複数のエントリポイントを作成する
 
-[アプリケーション構築手順(1)](ethna-document-tutorial-practice1.html "ethna-document-tutorial-practice1 (23d)")での例では、エントリポイントは常に1つでしたが、実際のアプリケーションでは様々な事情で、複数のエントリポイントを利用したい場合も出てくるかと思います。
+[アプリケーション構築手順(1)](ethna-document-tutorial-practice1.md "ethna-document-tutorial-practice1 (23d)")での例では、エントリポイントは常に1つでしたが、実際のアプリケーションでは様々な事情で、複数のエントリポイントを利用したい場合も出てくるかと思います。
 
 ここでは/index.phpと/admin/index.phpの2つのエントリポイントを作成する例を挙げます。
 
@@ -35,7 +35,7 @@
 
 ですのでEthnaでは各エントリポイント毎に実行可能なアクションを制限することも可能です。詳細は以下をご参照ください。
 
-_see also:_ [エントリポイント毎に実行可能なアクションを制限する](ethna-document-dev_guide-app-limitentrypoint.html "ethna-document-dev\_guide-app-limitentrypoint (706d)")
+_see also:_ [エントリポイント毎に実行可能なアクションを制限する](ethna-document-dev_guide-app-limitentrypoint.md "ethna-document-dev\_guide-app-limitentrypoint (706d)")
 
 ### [参考] Ethna\_Controller::main()メソッド
 

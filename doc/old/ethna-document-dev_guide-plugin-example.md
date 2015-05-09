@@ -113,7 +113,7 @@ action formではフィルタとしてこのプラグインを使いたいので
 
 ### 絵文字用の文字数カウント
 
-action formのバリデータで、max, minは絵文字の場合に意味が違ってしまうので、絵文字用のバリデータプラグインを用意しておきます。(これは Emoji プラグインではなく Validator プラグインであることに注意してください。詳しくは [バリデータプラグインを作る](ethna-document-dev_guide-form-validate_with_plugin.html#eebb5029 "ethna-document-dev\_guide-form-validate\_with\_plugin (513d)")を参照)
+action formのバリデータで、max, minは絵文字の場合に意味が違ってしまうので、絵文字用のバリデータプラグインを用意しておきます。(これは Emoji プラグインではなく Validator プラグインであることに注意してください。詳しくは [バリデータプラグインを作る](ethna-document-dev_guide-form-validate_with_plugin.md#eebb5029 "ethna-document-dev\_guide-form-validate\_with\_plugin (513d)")を参照)
 
 - プラグイン名
   - $type = 'Validator', $name = 'Emojistrlen'
@@ -170,7 +170,7 @@ action formのバリデータで、max, minは絵文字の場合に意味が違�
 
 プラグイン自体は非常に役割は小さいので、新たに自分でプラグインを作ろうとすると、プラグインの中身よりもプラグインを使う側のほうに手間取るかもしれません。この例はストーリーの割りに中身が少ないので、もうすこし盛りこんで欲しい内容などありましたら下のコメント欄にご記入ください。
 
-- onRCMHmIjpbKChfbul -- xvzimsfvswg [?](cmd=edit&page=xvzimsfvswg&refer=ethna-document-dev_guide-plugin-example.html) 2009-07-30 (木) 17:22:19
+- onRCMHmIjpbKChfbul -- xvzimsfvswg [?](cmd=edit&page=xvzimsfvswg&refer=ethna-document-dev_guide-plugin-example.md) 2009-07-30 (木) 17:22:19
   
 <form action="http://ethna.jp/index.php" method="post"> 
 <div><input type="hidden" name="encode_hint" value="ぷ"></div>
