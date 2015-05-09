@@ -1102,19 +1102,3 @@ Ethna\_ClassFactoryの導入により、コントローラの$classメンバに�
 <!-- END id:download_link -->
 <!-- ??BEGIN id:search_form -->
 
-## Powered by GREE
-
- [![GREE Labs](http://labs.gree.jp/image/greelabs_logo.gif)](http://labs.gree.jp/)
-
-<!-- END id:search_form -->
- [![SourceForge.jp](http://sourceforge.jp/sflogo.php?group_id=1343)](http://sourceforge.jp/)
-
-<!-- ??END id:sidebar -->
-<!-- ??END id:wrap_sidebar -->
-<!-- ??END id:main --><!-- ?? Footer ?? ========================================================== -->
-<!-- ??BEGIN id:footer -->
-<!-- ??BEGIN id:copyright --> **PukiWiki 1.4.6** Copyright © 2001-2005 [PukiWiki Developers Team](http://pukiwiki.sourceforge.jp/). License is [GPL](http://www.gnu.org/licenses/gpl.html).  
- Based on "PukiWiki" 1.3 by [yu-ji](http://factage.com/yu-ji/).
-<!-- ??END id:copyright -->
-<!-- ??END id:footer --><!-- ?? END ?? ============================================================= -->
-<!-- ??END id:wrapper -->
