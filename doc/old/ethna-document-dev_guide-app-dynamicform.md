@@ -1,5 +1,4 @@
-<title>
-フォーム定義を動的に変更する - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# フォーム定義を動的に変更する - Ethna - PHPウェブアプリケーションフレームワーク</title>
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

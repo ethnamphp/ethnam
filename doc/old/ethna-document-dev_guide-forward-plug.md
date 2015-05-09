@@ -1,5 +1,4 @@
-<title>
-アクションクラスからの戻り値に応じてコントローラで遷移先を決定する - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# アクションクラスからの戻り値に応じてコントローラで遷移先を決定する - Ethna - PHPウェブアプリケーションフレームワーク</title>
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

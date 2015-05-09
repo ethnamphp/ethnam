@@ -1,5 +1,4 @@
-<title>
-Ethna 2.5.0 から 2.6.0 への移行ガイド - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# Ethna 2.5.0 から 2.6.0 への移行ガイド - Ethna - PHPウェブアプリケーションフレームワーク</title>
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

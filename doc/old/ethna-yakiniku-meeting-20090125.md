@@ -1,5 +1,4 @@
-<title>
-Ethna 焼肉会議 議事録 - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# Ethna 焼肉会議 議事録 - Ethna - PHPウェブアプリケーションフレームワーク</title>
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

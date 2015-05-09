@@ -1,5 +1,4 @@
-<title>
-エラーレベルに応じて共通の画面を表示させる - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# エラーレベルに応じて共通の画面を表示させる - Ethna - PHPウェブアプリケーションフレームワーク</title>
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
