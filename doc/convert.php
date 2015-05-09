@@ -16,5 +16,6 @@ $Parsedown = new Parsedown();
 $mdContent = file_get_contents($file);
 $html = $Parsedown->text($mdContent);
 
+$html = preg_replace('/\.md/', '.html', $html);
 $htmlFile = preg_replace('/\.md$/', '.html', $file);
 file_put_contents($targetDir . '/' . $htmlFile, $html);
