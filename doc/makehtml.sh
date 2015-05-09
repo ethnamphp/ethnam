@@ -11,3 +11,7 @@ do
 done
 
 cd $target_dir
+ln README.html index.html
+git add .
+git commit -m "auto generated"
+git push
