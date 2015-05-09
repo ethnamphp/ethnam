@@ -1,0 +1,27 @@
+## ドキュメントのTOOD
+
+- 「マニュアル（仕様）」
+  - ActionForm
+    - Form 定義
+    - validator
+    - filter
+    - custom
+  - ActionClass
+    - prepare
+    - perform
+  - ViewClass
+    - preforward
+    - forward
+    - 汎用 View
+  - Template
+    - Smarty
+  - I18N
+  - etc
+  - AppObject/AppManager
+  - ActionError
+  - Plugin
+    - Filter
+    - CacheManager
+  - Ethnaコマンドリファレンス
+- 「プラグインの作り方」
+  - 作り方．ルールなど．
