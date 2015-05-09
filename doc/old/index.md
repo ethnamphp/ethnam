@@ -1,17 +1,4 @@
 #  Ethna - PHPウェブアプリケーションフレームワーク</title>
-Ethna(えすな)は、PHPを利用したウェブアプリケーションフレームワークで **似たようなコードを書かなくてよい** ことを目標に作成しています。
-
-### Quick Link [](ethna.html#g040e01c "g040e01c")
-
-最新の安定版は [バージョン 2.5.0](ethna-download.html "ethna-download (25d)") です！ (PHP 5.3 非対応)   
-開発版は [バージョン 2.6.0 beta2](ethna-download.html "ethna-download (25d)") (PHP 5.3 対応)   
-  
-**バグ報告/要望/質問等 は [メーリングリスト、IRC、Github](ethna-community.html "ethna-community (619d)") のいずれかにお願いします！**
-
-- [ダウンロード](ethna-download.html "ethna-download (25d)")
-- [インストール](ethna-document-tutorial-install_guide.html "ethna-document-tutorial-install\_guide (16d)")
-- [ドキュメント](ethna-document.html "ethna-document (884d)")
-- [チュートリアル](ethna-document-tutorial.html "ethna-document-tutorial (545d)")
 
 ### 最新ニュース [](ethna.html#yb7257a2 "yb7257a2")
 
