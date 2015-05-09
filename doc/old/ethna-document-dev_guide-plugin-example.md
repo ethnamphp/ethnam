@@ -1,4 +1,4 @@
-# プラグイン導入の例 - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# プラグイン導入の例
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

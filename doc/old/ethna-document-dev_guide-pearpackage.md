@@ -1,4 +1,4 @@
-# Ethna用 PEARパッケージの作成と配布 - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# Ethna用 PEARパッケージの作成と配布
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

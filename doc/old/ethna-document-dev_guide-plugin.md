@@ -1,4 +1,4 @@
-# Ethna_Pluginのつかいかた(簡易) - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# Ethna_Pluginのつかいかた(簡易)
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

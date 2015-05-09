@@ -1,4 +1,4 @@
-# エントリポイント毎に実行可能なアクションを制限する - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# エントリポイント毎に実行可能なアクションを制限する
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

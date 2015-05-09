@@ -1,4 +1,4 @@
-# フィルタチェインを使用する - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# フィルタチェインを使用する
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

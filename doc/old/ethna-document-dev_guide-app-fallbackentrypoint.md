@@ -1,4 +1,4 @@
-# 未定義のアクションが指定された場合に特定のアクションを実行する - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# 未定義のアクションが指定された場合に特定のアクションを実行する
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">

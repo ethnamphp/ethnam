@@ -1,4 +1,4 @@
-# 遷移時のデフォルトマクロを指定する。 - Ethna - PHPウェブアプリケーションフレームワーク</title>
+# 遷移時のデフォルトマクロを指定する。
  <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
 
  <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
