@@ -1,6 +1,6 @@
 # Ethnamドキュメント目次
 
-*   [概要](01-intro.md)
+*   [概要](00-intro.md)
 *   チュートリアル
  *  [インストール](02-install.md)
  *  [ディレクトリ解説](03-directories.md)
