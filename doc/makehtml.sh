@@ -1,6 +1,8 @@
 #!/bin/bash
 
-test -d html || mkdir html
+set -e
+rm html -rf
+mkdir html
 
 for i  in *.md
 do
