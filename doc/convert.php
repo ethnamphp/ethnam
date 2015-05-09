@@ -13,4 +13,8 @@ $file = $argv[1];
 //echo $parser->parse(file_get_contents($file));
 
 $Parsedown = new Parsedown();
-echo $Parsedown->text(file_get_contents($file));
+$mdContent = file_get_contents($file);
+$html = $Parsedown->text($mdContent);
+
+$htmlFile = preg_replace('/\.md$/', '.html', $file);
+file_put_contents($htmlFile, $html);
