@@ -1,3 +1,3 @@
-doc:
-	./makedoc.sh
+all:
+	./makehtml.sh
 
