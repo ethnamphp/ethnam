@@ -1,33 +1,4 @@
 # 多次元配列へのアクセス
- <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
-
- <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
-
- <script type="text/javascript" src="skin/trackback.js"></script>
-
-</head>
-ここは以前の ethna.jp サイトを表示したものです。ここにあるドキュメントはバージョン2.6以降更新されません。  
-最新のドキュメントは [現在のethna.jp](http://ethna.jp/) を閲覧してください。現ドキュメントが整備されるまでは、ここを閲覧してください。
-
-<!-- ??BEGIN id:wrapper --><!-- ?? Navigator ?? ======================================================= -->
-
-[![Ethna](image/navlogo.gif)](/)
-
-[トップ](ethna.html "ethna (11d)") [二ュース](ethna-news.html "ethna-news (11d)") [概要](ethna-about.html "ethna-about (11d)") [ダウンロード](ethna-download.html "ethna-download (25d)") [ドキュメント](ethna-document.html "ethna-document (884d)") [コミュニティ](ethna-community.html "ethna-community (619d)") [FAQ](ethna-document-faq.html "ethna-document-faq (1240d)")
-
-<!-- ?? Header ?? ========================================================== -->
-
-# 多次元配列へのアクセス 
-
-<!-- ?? Content ?? ========================================================= -->
-<!-- ??BEGIN id:main -->
-<!-- ??BEGIN id:wrap_content -->
-<!-- ??BEGIN id:content -->
-<!-- ??BEGIN id:page_navigator -->
-<!-- ??END id:PageNavigator -->
-<!-- ??BEGIN id:body --> [Ethna](index.html) > [ドキュメント](ethna-document.html) > [開発マニュアル](ethna-document-dev_guide.html) > [フォーム定義](ethna-document-dev_guide-form.html) > 多次元配列へのアクセス 
-## 多次元配列へのアクセス [](ethna-document-dev_guide-form-multiarray.html#n1c71644 "n1c71644")
-
 配列をグループ化するために、多次元配列を使うこともできます。グループ化することで、 フォーム項目の名前が重複したり、ひとつのフォーム内に複数のテーブルへの項目が存在 していた場合に有利になる局面があります。
 
 多次元でフォーム定義を行うことで、通常のアクションフォームの使い方と同様のやり方で、グループ化して値を取得することができるようになります。

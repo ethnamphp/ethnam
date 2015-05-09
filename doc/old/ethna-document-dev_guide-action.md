@@ -1,33 +1,4 @@
 # アクション定義
- <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
-
- <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
-
- <script type="text/javascript" src="skin/trackback.js"></script>
-
-</head>
-ここは以前の ethna.jp サイトを表示したものです。ここにあるドキュメントはバージョン2.6以降更新されません。  
-最新のドキュメントは [現在のethna.jp](http://ethna.jp/) を閲覧してください。現ドキュメントが整備されるまでは、ここを閲覧してください。
-
-<!-- ??BEGIN id:wrapper --><!-- ?? Navigator ?? ======================================================= -->
-
-[![Ethna](image/navlogo.gif)](/)
-
-[トップ](ethna.html "ethna (11d)") [二ュース](ethna-news.html "ethna-news (11d)") [概要](ethna-about.html "ethna-about (11d)") [ダウンロード](ethna-download.html "ethna-download (25d)") [ドキュメント](ethna-document.html "ethna-document (884d)") [コミュニティ](ethna-community.html "ethna-community (619d)") [FAQ](ethna-document-faq.html "ethna-document-faq (1240d)")
-
-<!-- ?? Header ?? ========================================================== -->
-
-# アクション定義 
-
-<!-- ?? Content ?? ========================================================= -->
-<!-- ??BEGIN id:main -->
-<!-- ??BEGIN id:wrap_content -->
-<!-- ??BEGIN id:content -->
-<!-- ??BEGIN id:page_navigator -->
-<!-- ??END id:PageNavigator -->
-<!-- ??BEGIN id:body --> [Ethna](index.html) > [ドキュメント](ethna-document.html) > [開発マニュアル](ethna-document-dev_guide.html) > アクション定義 
-## アクション定義 [](ethna-document-dev_guide-action.html#i1a2d46d "i1a2d46d")
-
 **[アクション定義を省略する](ethna-document-dev_guide-action-omit.html "ethna-document-dev\_guide-action-omit (1240d)")**  
 Ethnaでは、Mojaviのように命名規則に従ってファイル名とクラス名を作成することで、アクション定義を省略することができます。
 

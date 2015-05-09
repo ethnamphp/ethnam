@@ -1,33 +1,4 @@
 # 個々のEthnaプロジェクト毎にPEARパッケージを管理する
- <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
-
- <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
-
- <script type="text/javascript" src="skin/trackback.js"></script>
-
-</head>
-ここは以前の ethna.jp サイトを表示したものです。ここにあるドキュメントはバージョン2.6以降更新されません。  
-最新のドキュメントは [現在のethna.jp](http://ethna.jp/) を閲覧してください。現ドキュメントが整備されるまでは、ここを閲覧してください。
-
-<!-- ??BEGIN id:wrapper --><!-- ?? Navigator ?? ======================================================= -->
-
-[![Ethna](image/navlogo.gif)](/)
-
-[トップ](ethna.html "ethna (11d)") [二ュース](ethna-news.html "ethna-news (11d)") [概要](ethna-about.html "ethna-about (11d)") [ダウンロード](ethna-download.html "ethna-download (25d)") [ドキュメント](ethna-document.html "ethna-document (884d)") [コミュニティ](ethna-community.html "ethna-community (619d)") [FAQ](ethna-document-faq.html "ethna-document-faq (1240d)")
-
-<!-- ?? Header ?? ========================================================== -->
-
-# 個々のEthnaプロジェクト毎にPEARパッケージを管理する 
-
-<!-- ?? Content ?? ========================================================= -->
-<!-- ??BEGIN id:main -->
-<!-- ??BEGIN id:wrap_content -->
-<!-- ??BEGIN id:content -->
-<!-- ??BEGIN id:page_navigator -->
-<!-- ??END id:PageNavigator -->
-<!-- ??BEGIN id:body --> [Ethna](index.html) > [ドキュメント](ethna-document.html) > [開発マニュアル](ethna-document-dev_guide.html) > 個々のEthnaプロジェクト毎にPEARパッケージを管理する 
-## 個々のEthnaプロジェクト毎にPEARパッケージを管理する [](ethna-document-dev_guide-pearlocal.html#u48708e4 "u48708e4")
-
 複数の Ethna のプロジェクトを作ると、 それらでひとつの PHP のインス トールを共有する状況が往々にして起こります。こういう場合、PEAR のイン ストール設定は共有されてしまい、特定のパッケージを特定の Ethna プロジ ェクト用にアップグレード/削除/追加 したいといった要求に応えることが難 しくなります。
 
 また、レンタルサーバに代表されるように、PEAR パッケージを簡単にインス トールするのに管理者権限(root)が必要とされる場合も少なくありません。 この場合は、パッケージを手動でダウンロードしてきて include\_path が通 った場所に展開(Ethna プロジェクトでは多くの場合 [APP\_DIR]/lib）するわ けですが、面倒な作業です。アップグレード等を行なうときも同様でしょう。

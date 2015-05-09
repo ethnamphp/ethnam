@@ -1,33 +1,4 @@
 # 複数のエントリポイントを作成する
- <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
-
- <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
-
- <script type="text/javascript" src="skin/trackback.js"></script>
-
-</head>
-ここは以前の ethna.jp サイトを表示したものです。ここにあるドキュメントはバージョン2.6以降更新されません。  
-最新のドキュメントは [現在のethna.jp](http://ethna.jp/) を閲覧してください。現ドキュメントが整備されるまでは、ここを閲覧してください。
-
-<!-- ??BEGIN id:wrapper --><!-- ?? Navigator ?? ======================================================= -->
-
-[![Ethna](image/navlogo.gif)](/)
-
-[トップ](ethna.html "ethna (11d)") [二ュース](ethna-news.html "ethna-news (11d)") [概要](ethna-about.html "ethna-about (11d)") [ダウンロード](ethna-download.html "ethna-download (25d)") [ドキュメント](ethna-document.html "ethna-document (884d)") [コミュニティ](ethna-community.html "ethna-community (619d)") [FAQ](ethna-document-faq.html "ethna-document-faq (1240d)")
-
-<!-- ?? Header ?? ========================================================== -->
-
-# 複数のエントリポイントを作成する 
-
-<!-- ?? Content ?? ========================================================= -->
-<!-- ??BEGIN id:main -->
-<!-- ??BEGIN id:wrap_content -->
-<!-- ??BEGIN id:content -->
-<!-- ??BEGIN id:page_navigator -->
-<!-- ??END id:PageNavigator -->
-<!-- ??BEGIN id:body --> [Ethna](index.html) > [ドキュメント](ethna-document.html) > [開発マニュアル](ethna-document-dev_guide.html) > [ethna-document-dev\_guide-app](ethna-document-dev_guide-app.html) > 複数のエントリポイントを作成する 
-
-- 複数のエントリポイントを作成する 
   - [参考] Ethna\_Controller::main()メソッド 
 
 ## 複数のエントリポイントを作成する [](ethna-document-dev_guide-app-multientrypoint.html#ff3257c1 "ff3257c1")

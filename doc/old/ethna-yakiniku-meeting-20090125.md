@@ -1,33 +1,4 @@
 # Ethna 焼肉会議 議事録
- <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
-
- <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
-
- <script type="text/javascript" src="skin/trackback.js"></script>
-
-</head>
-ここは以前の ethna.jp サイトを表示したものです。ここにあるドキュメントはバージョン2.6以降更新されません。  
-最新のドキュメントは [現在のethna.jp](http://ethna.jp/) を閲覧してください。現ドキュメントが整備されるまでは、ここを閲覧してください。
-
-<!-- ??BEGIN id:wrapper --><!-- ?? Navigator ?? ======================================================= -->
-
-[![Ethna](image/navlogo.gif)](/)
-
-[トップ](ethna.html "ethna (11d)") [二ュース](ethna-news.html "ethna-news (11d)") [概要](ethna-about.html "ethna-about (11d)") [ダウンロード](ethna-download.html "ethna-download (25d)") [ドキュメント](ethna-document.html "ethna-document (884d)") [コミュニティ](ethna-community.html "ethna-community (619d)") [FAQ](ethna-document-faq.html "ethna-document-faq (1240d)")
-
-<!-- ?? Header ?? ========================================================== -->
-
-# Ethna 焼肉会議 議事録 
-
-<!-- ?? Content ?? ========================================================= -->
-<!-- ??BEGIN id:main -->
-<!-- ??BEGIN id:wrap_content -->
-<!-- ??BEGIN id:content -->
-<!-- ??BEGIN id:page_navigator -->
-<!-- ??END id:PageNavigator -->
-<!-- ??BEGIN id:body --> [Ethna](index.html) > [ethna-yakiniku](ethna-yakiniku.html) > [ethna-yakiniku-meeting](ethna-yakiniku-meeting.html) > Ethna 焼肉会議 議事録 
-## Ethna 焼肉会議 議事録 [](ethna-yakiniku-meeting-20090125.html#qc9871a1 "qc9871a1")
-
 2009年1月25日に、焼肉をつつきながらEthna について話す会が開かれました。非常に中身が濃く、有意義なものでした。
 
 その議事録を以下にアップします。こうした議論を元に、これからのEthnaの進化にご期待下さい。

@@ -1,33 +1,4 @@
 # Ethna で コマンドラインから利用するスクリプトを書く。
- <link rel="stylesheet" href="skin/ethna/ethna.css" title="ethna" type="text/css" charset="utf-8">
-
- <link rel="alternate" type="application/rss+xml" title="RSS" href="cmd=rss.html">
-
- <script type="text/javascript" src="skin/trackback.js"></script>
-
-</head>
-ここは以前の ethna.jp サイトを表示したものです。ここにあるドキュメントはバージョン2.6以降更新されません。  
-最新のドキュメントは [現在のethna.jp](http://ethna.jp/) を閲覧してください。現ドキュメントが整備されるまでは、ここを閲覧してください。
-
-<!-- ??BEGIN id:wrapper --><!-- ?? Navigator ?? ======================================================= -->
-
-[![Ethna](image/navlogo.gif)](/)
-
-[トップ](ethna.html "ethna (11d)") [二ュース](ethna-news.html "ethna-news (11d)") [概要](ethna-about.html "ethna-about (11d)") [ダウンロード](ethna-download.html "ethna-download (25d)") [ドキュメント](ethna-document.html "ethna-document (884d)") [コミュニティ](ethna-community.html "ethna-community (619d)") [FAQ](ethna-document-faq.html "ethna-document-faq (1240d)")
-
-<!-- ?? Header ?? ========================================================== -->
-
-# Ethna で コマンドラインから利用するスクリプトを書く。 
-
-<!-- ?? Content ?? ========================================================= -->
-<!-- ??BEGIN id:main -->
-<!-- ??BEGIN id:wrap_content -->
-<!-- ??BEGIN id:content -->
-<!-- ??BEGIN id:page_navigator -->
-<!-- ??END id:PageNavigator -->
-<!-- ??BEGIN id:body --> [Ethna](index.html) > [ドキュメント](ethna-document.html) > [開発マニュアル](ethna-document-dev_guide.html) > Ethna で コマンドラインから利用するスクリプトを書く。 
-## Ethna で コマンドラインから利用するスクリプトを書く。 [](ethna-document-dev_guide-cli.html#a21d661c "a21d661c")
-
 Webアプリケーション を書いていると、コマンドラインから利用するスクリプトを書きたくなるときがあるかもしれません。たとえばバッチ処理や、データベースのテストデータ生成等、Webアプリケーションのメインの処理からは外れた、細々とした処理が考えられます。
 
 たとえば、「データベースのデータを集計して集計用のテーブルに書き込む」という一定時間毎に実行する単純なバッチ処理を考えてみましょう。新たに接続処理やクエリを流す処理を **独自に書きたくない** なぁと思いませんか？ こうした場合は、既にあるフレームワークの枠組みを使い回せると便利な場合があります。
