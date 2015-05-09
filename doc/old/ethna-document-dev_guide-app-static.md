@@ -16,5 +16,3 @@
 
 とすることで，なにもしないで，スタティックなloginビューを表示することが可能です．
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

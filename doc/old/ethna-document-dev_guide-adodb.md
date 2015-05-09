@@ -75,8 +75,6 @@ Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設
     $rs = $db->query('SELECT * FROM test');
     var_dump($rs);
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1PEAR::DB より [速いといわれる根拠の一例](http://phplens.com/lens/adodb/)。ベンチマークの結果はともかく、データベースへのアクセス速度を決定付ける最も重要な要素はDBスキーマやインデックス等の DB設計にあると思います。  
@@ -84,4 +82,3 @@ Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設
 \*3adodb の配布物には、多様な用途に合わせて多数のファイルが含まれています。 [Minimum Install](http://phplens.com/lens/adodb/docs-adodb.htm#mininstall)のページを参考にして、あなたの用途に照らして不要なものは削除しておくと良いでしょう。  
 \*4Ethna では実際に使用しているDBアクセスライブラリは、総じて見事に隠蔽されています。  
 
-<!-- ??END id:note -->

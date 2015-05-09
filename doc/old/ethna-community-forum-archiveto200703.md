@@ -1316,5 +1316,3 @@ line:122行目〜
 > 837: $sql = "INSERT INTO $tables SET $set_list";
 - いやー、基本的にナシだとは思います(MySQL only?)。次バージョンで、Ethna\_AppObjectのDB依存解消をしようと思ってますんでその際には必ず。 [http://ml.ethna.jp/pipermail/users/2006-June/000301.html](http://ml.ethna.jp/pipermail/users/2006-June/000301.html)もご覧いただければと思います。 -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-06-07 (水) 09:38:12
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

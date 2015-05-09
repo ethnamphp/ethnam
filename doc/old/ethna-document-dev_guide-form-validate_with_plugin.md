@@ -285,10 +285,7 @@ Requiredプラグインは，(なんでもいいので)値が入力されてい�
 - $this->isEmpty($var, $type)
   - VAR\_TYPE\_\* に応じて，フォームの値が空と見なせるかどうかを判定します。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1厳密には，typeはTypeプラグインによって検証されています  
 
-<!-- ??END id:note -->

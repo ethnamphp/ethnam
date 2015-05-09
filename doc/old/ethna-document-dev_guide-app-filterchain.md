@@ -95,11 +95,8 @@ Sample\_Filter\_ExecutionTime.php:
 
 [![http://ethna.jp/image/ethna-fig13.jpg](http://ethna.jp/image/ethna-fig13.jpg)](image/ethna-fig13.jpg)
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1元はTomcatとかだと思います  
 \*2よくあるヤツです  
 
-<!-- ??END id:note -->

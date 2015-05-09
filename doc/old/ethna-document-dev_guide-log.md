@@ -288,5 +288,3 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
         'log_filter_do' => '',
         'log_filter_ignore' => 'Undefined index.*%%.*tpl',
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

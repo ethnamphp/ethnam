@@ -301,11 +301,8 @@ gettext を使う場合は、etc/[appid]-ini.php の use\_gettext を true に�
 - [gettextを使うべき場合](ethna-document-dev_guide-i18n.html#l4e0ac9b) でも述べていますが、Ethna は生成したメッセージカタログに対して状態を付加するなどして長期に渡ってメンテナンスするための便利な仕組みを持っていません。gettextの方がそうした点や翻訳のフォーマット（複数形など）の点で多くの機能を備えていますので、そういった要求がある場合はgettextの使用を強く推奨します。
 - 現行のEthnaの実装では、メッセージの翻訳(LC\_MESSAGES)に対応しているだけで、その他のお金や日時の変換等のAPIは未実装です。それらについては独自に実装するなり、外部ライブラリを使うなりして、Ethna\_I18n.php を拡張して頂ければと思います。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1ロケールとは、言語や特定の地域におけるお金、日付などの表記規則の集合のことです。ロケール名とは、ここでは特定の地域の名前くらいの意味で使っています。ロケール名の詳細については、 [gettextのマニュアル](http://www.gnu.org/software/gettext/manual/html_node/Locale-Names.html#Locale-Names) が非常にうまく説明しています。  
 \*2複数の言語を同時に表現できる文字コードであればOKなのですが、、UTF-8が現実的な選択肢だと思います  
 
-<!-- ??END id:note -->

@@ -161,5 +161,3 @@
   - [http://d.hatena.ne.jp/maru\_cc/20080625/ethna\_template\_db](http://d.hatena.ne.jp/maru_cc/20080625/ethna_template_db)
   - [http://d.hatena.ne.jp/maru\_cc/20080325/1206453551](http://d.hatena.ne.jp/maru_cc/20080325/1206453551) ＜たぶん話してたのはこっち
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

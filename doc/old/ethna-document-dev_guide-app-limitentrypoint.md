@@ -52,5 +52,3 @@
 
 _see also:_ [未定義のアクションが指定された場合に特定のアクションを実行する](ethna-document-dev_guide-app-fallbackentrypoint.html "ethna-document-dev\_guide-app-fallbackentrypoint (1240d)")
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

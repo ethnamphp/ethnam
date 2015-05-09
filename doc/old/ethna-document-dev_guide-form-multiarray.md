@@ -302,5 +302,3 @@ Ethna では、多次元配列の処理に再帰処理を使用しています�
          'form_type' => FORM_TYPE_TEXT,
      ),
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

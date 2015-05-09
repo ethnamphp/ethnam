@@ -53,10 +53,7 @@
 
 なお、\_\_ethna\_info\_\_アクションは「とりあえず作ってみた」という実験的な段階にありますので、不具合やご要望等ありましたら [ご意見/ご要望/バグ報告](ethna-community.html#content_1_4 "ethna-community (619d)")ページからお知らせ下さい。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1どこかで見たようなデザインです  
 
-<!-- ??END id:note -->

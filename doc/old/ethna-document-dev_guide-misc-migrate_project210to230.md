@@ -182,5 +182,3 @@ Ethna\_UrlHandlerクラスはエントリポイント、path infoと、アクシ
 
 詳細については、 [PATH\_INFOを使ったRequest-URIからのパラメータの取得](ethna-document-dev_guide-urlhandler.html "ethna-document-dev\_guide-urlhandler (926d)")を参照してください。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

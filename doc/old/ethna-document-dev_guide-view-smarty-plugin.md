@@ -270,5 +270,3 @@ CSRF対策のためのIDをhiddenタグもしくはGETのリクエストパラ�
 
 詳細は [フォームヘルパ](ethna-document-dev_guide-view-form_helper.html "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -22,5 +22,3 @@
 
 これを記述することで、すべてのアクションやビューでsite\_nameやbase\_urlを assignするというような手間をはぶくことができます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -138,5 +138,3 @@ formのデータ送信先であるinput\_doアクションで、Postの正当性
 
 などは、無くても問題ない場合が多いと思います。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

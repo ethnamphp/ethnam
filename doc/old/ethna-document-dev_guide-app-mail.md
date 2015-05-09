@@ -182,5 +182,3 @@ Ethna ではメール送信の処理に、内部で [mail() 関数](http://www.p
         'mail_func_workaround' => true,
     );
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

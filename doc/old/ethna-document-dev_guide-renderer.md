@@ -61,5 +61,3 @@ $renderer は Ethna\_Renderer の継承クラスのインスタンスで、デ�
            $smarty->assign_by_ref('session_id', session_id());
        }
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -702,5 +702,3 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 バージョン0.1.0をリリースしました。ダウンロードは [こちら](http://sourceforge.jp/projects/ethna/files/)です。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -104,5 +104,3 @@ Ethna\_Util::getDirectLinkList()を使用してページャを作成します。
 
 - スパムから復旧．たぶんこれでいいと思うんですけど．(2009/10/17) --sotarok
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -231,5 +231,3 @@
 - REST対応
   - 真の意味での Restful なアクション生成を
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

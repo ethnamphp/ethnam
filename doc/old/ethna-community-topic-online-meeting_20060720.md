@@ -40,5 +40,3 @@ Ethna/testディレクトリにいくつかのテストコードがあるので�
   <input type="submit" name="comment" value="コメントの挿入">
  </div>
 </form>
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -29,10 +29,7 @@ Sample\_Controller.php:
 
 ちなみに、デフォルトでの処理は [こちら](doc/ __filesource/fsource_Ethna__ classEthna_Controller.php.html#a1137)を御覧下さい。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1なお、なぜわざわざ(フォーム値ではなく)わざわざフォーム名を利用しているかと言うと、複数のsubmitボタンでアクションを振り分けることが出来るようにするためなのです(場合によっては必要かな、と  
 
-<!-- ??END id:note -->

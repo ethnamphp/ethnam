@@ -74,5 +74,3 @@ Ethna 2.5.0 より以前のバージョンでは自動生成機能はありま�
     + 'Ethna_Plugin_Filter_Hoge',
      );
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

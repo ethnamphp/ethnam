@@ -100,5 +100,3 @@
 
 と指定します。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

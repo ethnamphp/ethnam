@@ -128,5 +128,3 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 
 - [リリース手順](ethna-document-misc-release.html "ethna-document-misc-release (855d)")
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

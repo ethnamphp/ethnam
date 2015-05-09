@@ -23,5 +23,3 @@ Ethnaを用いて,簡単にサインアップ処理を構築できます．
 - [適当サイト管理ツール](http://wiki.riaf.org/kinowiki?n=240)
 - [インチキフォーラム](http://wiki.riaf.org/kinowiki?n=250)
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

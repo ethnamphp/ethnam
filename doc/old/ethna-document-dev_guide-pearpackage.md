@@ -94,5 +94,3 @@ pear.ethna.jp という pear のチャンネルがあって，そこで公開さ
   - 16M とか 24M くらいにすれば OK なはず
 - ハンドラ関連はflockしてないので同時に実行しないでください
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

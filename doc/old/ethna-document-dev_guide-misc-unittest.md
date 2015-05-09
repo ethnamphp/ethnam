@@ -152,12 +152,9 @@ simpletest でのテストケースの書き方の詳細は、以下を参照し
 
 www/unittest.phpをブラウザで表示。ローカルファイルを直接表示してもだめですよ。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1Ethna 2.3.2以前では、このフラグがtrueになっていないと、 Ethna\_UnitTestCase が 見つからない等と文句を言われます。www/unittest.php をブラウザから見た場合に画面が真っ白になった場合にも、この点を疑ったほうが良いです。  
 \*2Ethna-2.1.2以前でadd-action-testすると、app/action\_cli以下にテストケースが出来てしまいます（バグです）。お手数ですがapp/action以下にファイルを移動してくださいm(\_ \_)m  
 \*3アクションとビューのテストはethnaコマンドで生成した場合、{appid}\_UnitTestManagerへのテストケースの追加をする必要はありません。  
 
-<!-- ??END id:note -->

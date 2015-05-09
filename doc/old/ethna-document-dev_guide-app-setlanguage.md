@@ -178,11 +178,8 @@ Ethna\_Controller#getClientEncoding メソッドを使います。
     $ctl = Ethna_Controller::getInstance();
     $client_encoding = $ctl->getClientEncoding();
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1Ethna 2.5.0 以降では、内部のエンコーディング、およびエラーメッセージが utf-8 決め打ちから、エンコーディングに依存しない方式に変更されました。それに伴う変更について述べています。  
 \*2PHP5以降でEthnaを使用した場合、-eオプションで不正なエンコーディングを入力するとエラーにしています。PHP4 では、サポートされるエンコーディングがわからないため、このチェックは行われません。(mb\_list\_encodings 関数がPHP5以降なため  
 
-<!-- ??END id:note -->

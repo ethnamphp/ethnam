@@ -194,10 +194,7 @@ iniファイルとほとんど同じ手法でできます。 bogoYAMLのスタ�
 
 [http://hatotech.org/kumatch/archives/000492.html](http://hatotech.org/kumatch/archives/000492.html)
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1この例では、 [parse\_ini\_file 関数](http://jp.php.net/manual/ja/function.parse-ini-file.php)への第二引数を true にして、セクション定義を解釈させるようになっていますが、dsn のようなEthnaの動作の根本に関わる一部の設定値については、 [セクション定義されていないことを前提に値を取得する実装](doc/ __filesource/fsource_Ethna__ classEthna_Controller.php.html#a1878)が Ethna でなされているため、セクション定義しない方が無難かもしれません  
 
-<!-- ??END id:note -->

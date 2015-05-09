@@ -162,5 +162,3 @@ submitボタンだけを作りたい場合、(テンプレートにそのままh
 
 [{form}ブロックタグ](ethna-document-dev_guide-view-form_helper-ref.html#rbb7b355 "ethna-document-dev\_guide-view-form\_helper-ref (999d)")の項にも書きましたが、タグを出力するときにまと めてエスケープ処理が入るので、パラメータとして指定する値はエスケープしないように気をつけてください。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

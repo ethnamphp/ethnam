@@ -28,5 +28,3 @@ Controllerに記述する遷移先定義を省略できます。
 
 **[テンプレート定義省略時の命名規則を変更する](ethna-document-dev_guide-forward-template_namingconvention.html "ethna-document-dev\_guide-forward-template\_namingconvention (1240d)")**
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

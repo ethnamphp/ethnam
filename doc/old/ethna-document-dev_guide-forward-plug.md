@@ -25,5 +25,3 @@ Controllerに遷移先定義を追加します。app/{$アプリケーションI
 
 これで、'login'という遷移先にSample\_View\_Loginというビュークラスと、login.tplというテンプレートファイルが関連付けられます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

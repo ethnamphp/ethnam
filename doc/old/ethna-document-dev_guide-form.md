@@ -26,5 +26,3 @@ Ethnaを利用した際に、フォーム値へアクセスする方法につい
 **[フォームテンプレート](ethna-document-dev_guide-form_template.html "ethna-document-dev\_guide-form\_template (737d)")**  
 アクションフォームのForm定義に毎回書くのが面倒な場合、親クラスのActionFormにForm定義のテンプレートを作成できます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

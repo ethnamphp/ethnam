@@ -108,5 +108,3 @@ Ethna\_AppManagerのコンストラクタにより、既にDBオブジェクト�
     $stmt =& $this->db->db->prepare($sql);
     $res =& $this->db->db->execute($stmt, $data);
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

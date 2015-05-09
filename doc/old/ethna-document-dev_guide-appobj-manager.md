@@ -191,5 +191,3 @@ Ethna には、 [アプリケーションオブジェクト](ethna-document-dev_
 
 詳細は、 [アプリケーションマネージャのAPIドキュメント](doc/Ethna/Ethna_AppManager.html) を御覧下さい。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

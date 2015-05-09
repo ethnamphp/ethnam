@@ -351,10 +351,7 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
     Plugin/Hoge/Fuga.php
     (クラス名は「Ethna_Plugin_Hoge_Fuga」（変更なし）)
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1Ethna 2.3.6 以降  
 
-<!-- ??END id:note -->

@@ -48,5 +48,3 @@ Ethnaフレームワークでは，全てのエラーをコントローラのhan
                    $renderer->perform('error.tpl');
            }
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

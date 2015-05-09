@@ -88,10 +88,7 @@ smartyテンプレート内で {sample foo=bar} のように書くと、smarty�
 
 **注意** : この場合、$smarty\_function\_pluginのほうは指定 **しない** でください。指定すると、smartyはファイルを探さなくてもどこかに関数が定義されていると思い、「関数が見付からない」といったエラーを出すかもしれません。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1このあたりはsmartyのregister\_functionメソッドのマニュアルを参照  
 
-<!-- ??END id:note -->

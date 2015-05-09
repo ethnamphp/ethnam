@@ -71,5 +71,3 @@ ActionErrorの内容を表示するには，ビューで次のように書きま
          <td>{message name="testError"}</td>
       </tr>
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

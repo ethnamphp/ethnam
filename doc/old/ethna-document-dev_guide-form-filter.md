@@ -108,5 +108,3 @@
 
 と記述することが出来ます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

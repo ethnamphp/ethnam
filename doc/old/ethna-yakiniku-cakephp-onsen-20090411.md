@@ -121,5 +121,3 @@ ViewHelperが現状は Smartyプラグインとして実装されているため
 - APPID\_Controller.php から var $smarty\_xxx\_plugin 関連の定義を消したい
   - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16107](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16107)
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -86,11 +86,8 @@ Smartyフィルタで、出力コードをShift\_JISにしてしまいます。
         return parent::_parse($mail);
     }
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1これはこれで、まずいと思う。  
 \*2無限ループっぽくなる。詳しくは追ってない。  
 
-<!-- ??END id:note -->

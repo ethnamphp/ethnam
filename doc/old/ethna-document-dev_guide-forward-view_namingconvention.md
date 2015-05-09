@@ -60,10 +60,7 @@ Sample\_Controller.php:
 
 なお2番目の引数$fallbackは、現在アクティブなクライアントタイプ(PCブラウザ、i-mode、SOAP、etc...)に応じてデフォルト値を変更した場合等に使用しますが、とりあえず無視して頂いてOKです。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1 [遷移先定義を省略する](ethna-document-dev_guide-forward-omit.html "ethna-document-dev\_guide-forward-omit (1240d)")を参照  
 
-<!-- ??END id:note -->

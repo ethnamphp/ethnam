@@ -154,12 +154,9 @@ validate前に動的にフォーム定義の内容を変更する技がある。
   <input type="submit" name="comment" value="コメントの挿入">
  </div>
 </form>
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1ふじもとさん自身も [[Ethna-users:00012] ](http://ml.ethna.jp/pipermail/users/2005-March/000012.html)で似たような事をおっしゃってますね。\*2  
 \*2というか、そっちが先:-)   
 \*3Mojaviのmoveメソッドみたいな感じ？あくまで希望  
 
-<!-- ??END id:note -->

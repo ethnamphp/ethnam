@@ -1054,5 +1054,3 @@ Ethna\_ClassFactoryの導入により、コントローラの$classメンバに�
 
 - 初期リリース
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

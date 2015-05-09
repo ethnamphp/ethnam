@@ -74,8 +74,6 @@ _see also:_ [アクションクラスの命名規則を変更する](ethna-docum
 
 _see also:_ [アクションスクリプトのスケルトンを生成する](ethna-document-dev_guide-action-skelton.html "ethna-document-dev\_guide-action-skelton (1240d)")
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1勝手に命名  
@@ -83,4 +81,3 @@ _see also:_ [アクションスクリプトのスケルトンを生成する](et
 \*3デフォルトのアクションスクリプトの決定方法については [アクションクラスの命名規則を変更する](ethna-document-dev_guide-action-namingconvention.html "ethna-document-dev\_guide-action-namingconvention (1240d)")を参照してください  
 \*4デフォルトのアクションスクリプトの決定方法については [アクションクラスの命名規則を変更する](ethna-document-dev_guide-action-namingconvention.html "ethna-document-dev\_guide-action-namingconvention (1240d)")を参照してください  
 
-<!-- ??END id:note -->

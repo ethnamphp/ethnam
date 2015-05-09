@@ -12,5 +12,3 @@ app/Sample\_Error.php:
 
 259までのエラーコードはフレームワークで予約されていますのでエラーコードには300以上の整数を使用してください。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

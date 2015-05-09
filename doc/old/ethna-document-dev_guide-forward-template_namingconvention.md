@@ -51,10 +51,7 @@ Ethna\_Controllerでは、パス名は
         return $forward_name;
     }
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1 [遷移先定義を省略する](ethna-document-dev_guide-forward-omit.html "ethna-document-dev\_guide-forward-omit (1240d)")を参照  
 
-<!-- ??END id:note -->

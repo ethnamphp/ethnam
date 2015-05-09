@@ -118,5 +118,3 @@ Haste/Aeroマージ
 
 - サーバほしいよ
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

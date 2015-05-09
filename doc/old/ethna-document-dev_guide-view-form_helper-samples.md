@@ -123,5 +123,3 @@
 
 ... 執筆中
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -186,10 +186,7 @@ $\_FILESの配列とは構造が変わっています。基本的には、単一
            ),
        );
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1PHP 4.3.0以降ではUPLOAD\_ERR\_NO\_FILEという定数が割り当てられています  
 
-<!-- ??END id:note -->

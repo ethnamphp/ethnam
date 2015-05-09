@@ -25,10 +25,7 @@ $ ethna add-view some\_view\_name
 
 この場合は、プロジェクトスケルトン生成後にskelディレクトリに生成されているはずのskel.view.phpを変更することで、生成されるファイルを任意に変更することが出来ます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1他のスクリプトからコピー&ペースト、という方法もありますがあんまりカッコよくないし  
 
-<!-- ??END id:note -->

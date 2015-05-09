@@ -67,5 +67,3 @@ Ethna 2.3.0 からは、プロジェクトごとの親クラスとして次の�
     {APPID}/app/{APPID}_ActionForm_Hoge.php
     {APPID}/app/{APPID}_ActionForm_Fuga.php
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

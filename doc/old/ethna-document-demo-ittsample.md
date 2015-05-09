@@ -239,8 +239,6 @@ ActionClassは「状態の遷移を決めるだけ」ということにしたい
 
 としてやります。こうすることで、さきほどのエントリポイントからはアクセスが出来なくなります。なお、admin\_news\_doアクションにも自動的にこのauthenticateが引き継がれます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1最初は私も違和感を感じたのですが、慣れるとこの方法がとてもコントローラブルなものであることに気が付きました。  
@@ -248,4 +246,3 @@ ActionClassは「状態の遷移を決めるだけ」ということにしたい
 \*3実は、この「テンプレートに値を渡す」というのはViewクラスの仕事になります。ActionClassはあくまでどのテンプレートに辿り着くか(つまりどのViewに辿り着くか)の遷移を把握しておくだけの存在だからです。複雑なActionを考える時には便利な思考パターンになると思います。しかし、こんな簡単な処理にまでViewを使うと面倒なのでここではActionClassでテンプレートに値を渡しています。  
 \*4厳密にはEthna\_AppManager::getObjectPropListとEthna\_AppManager::getObjectList  
 
-<!-- ??END id:note -->

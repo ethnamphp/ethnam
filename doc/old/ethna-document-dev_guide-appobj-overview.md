@@ -185,5 +185,3 @@ AppObjectとEthna\_PEAR\_DBを同時に利用してトランザクションを�
 
 のようにして、$db->db->autocommit(false)を挟むことでトランザクション処理をすることが出来ます。たいへん気持ち悪いですが…。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

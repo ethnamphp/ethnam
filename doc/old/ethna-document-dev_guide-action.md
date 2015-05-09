@@ -14,5 +14,3 @@ Ethnaでは、Mojaviのように命名規則に従ってファイル名とクラ
 **[アクションスクリプトの配置ディレクトリを変更する](ethna-document-dev_guide-action-dir.html "ethna-document-dev\_guide-action-dir (1240d)")**  
 アクションスクリプトの配置ディレクトリを自由に変更することが出来ます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

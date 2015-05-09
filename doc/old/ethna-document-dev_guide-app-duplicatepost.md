@@ -51,5 +51,3 @@ uniqid\_{REMOTE\_ADDR}\_{uniqid} というファイルを探します。
 リクエストに uniqid というパラメータがない場合は 常に falseを返します。  
 一時ファイルは1時間で削除されます。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

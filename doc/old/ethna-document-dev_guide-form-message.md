@@ -36,5 +36,3 @@ mixi:Ethnaコミュニティ:雑談:74(いちいさん)より
 
 　5種類が用意されている。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

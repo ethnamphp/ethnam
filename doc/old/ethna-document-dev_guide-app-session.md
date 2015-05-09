@@ -76,5 +76,3 @@ roleの概念を付加した認証の仕組みも簡単に作れます。 ユー
 
 上記の方法だと認証が必要になるページはすべてauthenticateメソッドを書くハメになります。 それは面倒なのでauthenticateメソッドを書いたActionクラスを継承してしまいましょう。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -116,8 +116,6 @@ Ethna は、こうした場合もきちんと考慮して設計されていま�
 
     php -f /tmp/batch_sum_daily.php
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1ただし、アクションクラスにロジックを長々と書くのはおすすめしません。 [http://ethna.jp/ethna-document-tutorial-practice3.html#x9a32944](ethna-document-tutorial-practice3.html#x9a32944)   
@@ -125,4 +123,3 @@ Ethna は、こうした場合もきちんと考慮して設計されていま�
 \*3後で述べるエントリポイントさえ間違わなければ、ですが。  
 \*4これが プロジェクト の app ディレクトリと lib ディレクトリに include\_path を通してくれているので、間違うとEthna の機構が全て使えなくなって終了、、です。  
 
-<!-- ??END id:note -->

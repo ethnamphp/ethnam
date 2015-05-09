@@ -209,10 +209,7 @@ Ethna\_ActionForm#setDef を呼び出しただけでは、アクションフォ�
 
 [http://ethna.jp/ethna-document-faq-dev\_guide\_faq.html#jee57430](ethna-document-faq-dev_guide_faq.html#jee57430)
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1(クラスのメンバ変数が固定でなければならない根拠としては、PHP4では、 [http://jp.php.net/manual/ja/keyword.class.php](http://jp.php.net/manual/ja/keyword.class.php) が、PHP5 では、 [http://jp.php.net/manual/ja/language.oop5.basic.php](http://jp.php.net/manual/ja/language.oop5.basic.php) があります。  
 
-<!-- ??END id:note -->

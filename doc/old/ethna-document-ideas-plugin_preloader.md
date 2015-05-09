@@ -142,12 +142,9 @@ Example: app/action/Index.php
     % cd ethna
     % git checkout -b plugin_preloader origin/plugin_preloader
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1 [http://ethna.jp/ethna-document-dev\_guide-plugin.html#j3c3ba62](ethna-document-dev_guide-plugin.html#j3c3ba62)  
 \*2当然みなさんは補完機能付きのエディタを使っているとは思いますが，それでも面倒っちゃ面倒です  
 \*3が，実際にコードを書くときはどちらかのポリシーに統一したほうがチーム開発の面ではよろしいでしょう  
 
-<!-- ??END id:note -->

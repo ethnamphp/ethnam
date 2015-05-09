@@ -301,10 +301,7 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 実装の大部分はEthna\_Renderer\_SmartyではなくEthna\_ViewClassが持っているため、本当はSmartyに限らずさまざまなレンダラで利用可能なはずです。しかし、現時点ではSmartyしかレンダラが用意されていません。素のPHPや、flexy等、他のテンプレートエンジンもサポートすべきだと考えています。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1Ethna 2.3.5 以前は、1テンプレートに複数 {form}{/form} ブロックタグを指定した場合は、エラーで戻ってきた場合等に、すべてのフォームに submit した値を補完するバグがありました。2.5.0 preview3 以降、この問題は改善しています。  
 
-<!-- ??END id:note -->

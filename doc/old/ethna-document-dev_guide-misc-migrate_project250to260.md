@@ -7,5 +7,3 @@ Ethna2.6.0からは、クラスのコンストラクタが\_\_constructに統一
 
 あなたが使用しているアプリケーションの中で、例えばparent::Ethna\_ActionClass()などとしている場合は、これをparent::\_\_constructに変更する必要があります。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??END id:note -->

@@ -222,10 +222,7 @@ _see also:_ [テンプレートディレクトリを変更する](ethna-document
 
 もう少し複雑なアクションについては、次節 [アプリケーション構築手順(3)](ethna-document-tutorial-practice3.html "ethna-document-tutorial-practice3 (1240d)")をご覧下さい。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1FLASHと紛らわしいですが  
 
-<!-- ??END id:note -->

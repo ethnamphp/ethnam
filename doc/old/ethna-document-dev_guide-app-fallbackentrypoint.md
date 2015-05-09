@@ -13,10 +13,7 @@
 
 のように記述します。この場合は、第2引数に指定したアクション以外が指定されると'undef'アクションが実行されます(undefアクションが定義されていない場合はエラーとなります)。
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1 [エントリポイント毎に実行可能なアクションを制限する](ethna-document-dev_guide-app-limitentrypoint.html "ethna-document-dev\_guide-app-limitentrypoint (706d)")参照  
 
-<!-- ??END id:note -->

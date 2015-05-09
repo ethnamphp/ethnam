@@ -77,10 +77,7 @@ Ethnaでは、アクション実行中に発生したエラーをビューの遷
         }
     }
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1より正確にはzend\_error()でエラーハンドラに渡るもの  
 
-<!-- ??END id:note -->

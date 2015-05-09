@@ -28,10 +28,7 @@ ethnaコマンドは、".ethna"ファイルを読み込むことによりその�
     controller_file = "app/Sample_Controller.php"
     controller_class = "Sample_Controller"
 
-<!-- ??END id:body -->
-<!-- ??BEGIN id:summary --><!-- ??BEGIN id:note -->
 
 * * *
 \*1[ethna]は適当  
 
-<!-- ??END id:note -->
