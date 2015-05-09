@@ -1,11 +1,17 @@
 #!/usr/bin/env php
 <?php
+/**
+ * a converter from md to html
+ *
+ * Usage $0 <md_file> <target_dir>
+ */
 require_once __DIR__ . '/vendor/autoload.php';
 
 
 global $argv;
-$targetDir = 'html';
 $file = $argv[1];
+$targetDir = $argv[2];
+
 // use github markdown
 
 // this is broken
