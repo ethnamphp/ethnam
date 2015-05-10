@@ -71,8 +71,6 @@ ethna コマンドの pear-local コマンドで、プロジェクト毎に独�
 
 ### 発展編
 
-- [アプリケーションオブジェクト](ethna-document-dev_guide-appobj-overview.md "ethna-document-dev\_guide-appobj-overview (273d)")
-  - 機能は弱いながら、ORマッピングのようなものを提供します。
 - [アプリケーションマネージャ](ethna-document-dev_guide-appobj-manager.md "ethna-document-dev\_guide-appobj-manager (965d)")  
 
   - Webアプリケーションの共通処理を記述するオブジェクトについて説明します。
