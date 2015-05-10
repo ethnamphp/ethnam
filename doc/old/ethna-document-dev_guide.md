@@ -123,8 +123,3 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 開発に関するFAQはこちらをご覧ください。
 
 **[開発FAQ](ethna-document-faq-dev_guide_faq.md "ethna-document-faq-dev\_guide\_faq (155d)")**
-
-## その他
-
-- [リリース手順](ethna-document-misc-release.md "ethna-document-misc-release (855d)")
-
