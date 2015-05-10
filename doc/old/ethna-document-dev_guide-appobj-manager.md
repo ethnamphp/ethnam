@@ -183,11 +183,3 @@ Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージ�
            return sprintf('%s_%sManager', $this->getAppId(), ucfirst($name));
        }
 
-### アプリケーションオブジェクトとの連携
-
-Ethna には、 [アプリケーションオブジェクト](ethna-document-dev_guide-appobj-overview.md) と呼ばれるORマッピングの機能があります。
-
-アプリケーションマネージャクラスには、アプリケーションオブジェクトを使ってデータベースを検索するメソッドが複数用意されています。それを使ってデータベースを記述するロジックも実行することが出来ます。
-
-詳細は、 [アプリケーションマネージャのAPIドキュメント](doc/Ethna/Ethna_AppManager.html) を御覧下さい。
-
