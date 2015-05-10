@@ -112,8 +112,6 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 - [設定情報や定義済みアクション等を一覧する](ethna-document-dev_guide-misc-info.md "ethna-document-dev\_guide-misc-info (1240d)")  
 バージョン0.1.2で追加された\_\_ethna\_info\_\_アクションを利用することで、設定情報や定義したアクションやビューの状態を一覧することが出来ます
 
-- [EthnaでShift\_JISなサイトを作る](ethna-document-dev_guide-app-sjis.md "ethna-document-dev\_guide-app-sjis (1240d)")
-
 - [".ethna"ファイルについて](ethna-document-dev_resourcefile.md "ethna-document-dev\_resourcefile (1240d)")
 
 - [クロスサイトリクエストフォージェリの対策コードについて](ethna-document-dev_guide-csrf.md "ethna-document-dev\_guide-csrf (1240d)")
