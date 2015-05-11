@@ -100,7 +100,6 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 
 - 古いプロジェクトを新しいEthnaに対応させる  
 古いバージョンのEthnaで作ったプロジェクトを新しいバージョンに対応させるガイドです。
-  - [Ethna 2.5.x から 2.6.0 への移行ガイド (準備中)](ethna-document-dev_guide-misc-migrate_project250to260.md "ethna-document-dev\_guide-misc-migrate\_project250to260 (157d)")
   - [Ethna 2.3.x から 2.5.0 への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.md "ethna-document-dev\_guide-misc-migrate\_project230to250 (737d)")
   - [Ethna 2.1.x から 2.3.0 への移行ガイド](ethna-document-dev_guide-misc-migrate_project210to230.md "ethna-document-dev\_guide-misc-migrate\_project210to230 (1217d)")  
   
