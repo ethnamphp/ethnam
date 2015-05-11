@@ -207,7 +207,7 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 ### 生成されるHTML に style 等のパラメータを指定したい場合
 
-これまで説明してきた、「自動生成されるHTML」に、css の style 属性や、フォームの size 属性等の HTMLな属性を付け加えたいという要求は自然なことです。フォームヘルパでは、 [フォームヘルパ タグリファレンス](ethna-document-dev_guide-view-form_helper-ref.md "ethna-document-dev\_guide-view-form\_helper-ref (999d)") にあるパラメータ以外のパラメータを渡すと、HTML の属性としてそのまま埋め込まれるようになっています。
+これまで説明してきた、「自動生成されるHTML」に、css の style 属性や、フォームの size 属性等の HTMLな属性を付け加えたいという要求は自然なことです。フォームヘルパでは、 [フォームヘルパ タグリファレンス](dev_guide-view-form_helper-ref.md "ethna-document-dev\_guide-view-form\_helper-ref (999d)") にあるパラメータ以外のパラメータを渡すと、HTML の属性としてそのまま埋め込まれるようになっています。
 
 これを利用すれば、任意のHTML の属性を埋め込むことが出来ます。
 
@@ -291,11 +291,11 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 ### サンプルコード
 
-[フォームヘルパ サンプル集](ethna-document-dev_guide-view-form_helper-samples.md "ethna-document-dev\_guide-view-form\_helper-samples (999d)") のページを参照してください。
+[フォームヘルパ サンプル集](dev_guide-view-form_helper-samples.md "ethna-document-dev\_guide-view-form\_helper-samples (999d)") のページを参照してください。
 
 ### フォームヘルパで使用できるすべてのタグ
 
-[フォームヘルパ タグリファレンス](ethna-document-dev_guide-view-form_helper-ref.md "ethna-document-dev\_guide-view-form\_helper-ref (999d)") のページを参照してください。
+[フォームヘルパ タグリファレンス](dev_guide-view-form_helper-ref.md "ethna-document-dev\_guide-view-form\_helper-ref (999d)") のページを参照してください。
 
 ### TODO
 

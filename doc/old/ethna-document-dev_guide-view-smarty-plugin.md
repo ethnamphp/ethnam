@@ -185,7 +185,7 @@ i18nメッセージを取得します。 Ethna\_I18N クラスを利用します
 
 #### {url}
 
-Ethna\_UrlHandler を使って、アクション名とパラメータからURLを生成します。UrlHandlerについての説明については [Ethna\_UrlHandler](ethna-document-dev_guide-urlhandler.md "ethna-document-dev\_guide-urlhandler (926d)")を参照してください。
+Ethna\_UrlHandler を使って、アクション名とパラメータからURLを生成します。UrlHandlerについての説明については [Ethna\_UrlHandler](dev_guide-urlhandler.md "ethna-document-dev\_guide-urlhandler (926d)")を参照してください。
 
 以下では、アプリの設定ファイル (app-ini.php) で 'url' => ' [http://example.jp/index.php'](http://example.jp/index.php') が設定され、 /show/article/3/2 で show\_article アクションにパラメータ chapter=3, sectio=2 を与えるものとします。
 
@@ -223,11 +223,11 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
 
 - 引数
   - name: フォーム名(連想配列$formのキー)を指定します。(必須)
-  - action: フォーム定義を取得するアクションを指定します。省略時の動作については [フォームヘルパ](ethna-document-dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
+  - action: フォーム定義を取得するアクションを指定します。省略時の動作については [フォームヘルパ](dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 
 #### {form\_submit}
 
-フォームのsubmitボタンを生成します。Ethna\_ViewClassのgetFormSubmit()を用いています。詳しくは [Ethna\_ViewClass](ethna-document-dev_guide-view.md "ethna-document-dev\_guide-view (1240d)")を参照してください。
+フォームのsubmitボタンを生成します。Ethna\_ViewClassのgetFormSubmit()を用いています。詳しくは [Ethna\_ViewClass](dev_guide-view.md "ethna-document-dev\_guide-view (1240d)")を参照してください。
 
 - 入力
 
@@ -244,7 +244,7 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
 
 Ethna\_ViewClassのgetFormInput() (および \_getFormInput\_\*()) を使い、アクションフォームのフォーム定義から、自動的にそのフォームを送信するためのHTMLタグを生成します。
 
-詳細は [フォームヘルパ](ethna-document-dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
+詳細は [フォームヘルパ](dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 
 #### {csrfid}
 
@@ -268,5 +268,5 @@ CSRF対策のためのIDをhiddenタグもしくはGETのリクエストパラ�
 
 #### {form}...{/form}
 
-詳細は [フォームヘルパ](ethna-document-dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
+詳細は [フォームヘルパ](dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)")を参照してください。
 

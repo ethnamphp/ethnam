@@ -46,11 +46,11 @@
 
 なお、これらの命名規則はアプリケーションによって好みの形に変更することが出来ます。詳細は下記をご覧下さい。
 
-_see also:_ [ビュークラスの命名規則を変更する](ethna-document-dev_guide-forward-view_namingconvention.md "ethna-document-dev\_guide-forward-view\_namingconvention (1240d)")
+_see also:_ [ビュークラスの命名規則を変更する](dev_guide-forward-view_namingconvention.md "ethna-document-dev\_guide-forward-view\_namingconvention (1240d)")
 
 また、定義した命名規則に従っていちいちファイルを作成するのが面倒な場合は、binディレクトリに生成されるgenerate\_view\_script.phpを利用することで、ビュースクリプトのスケルトンを生成することが出来ます。
 
-_see also:_ [ビュースクリプトのスケルトンを生成する](ethna-document-dev_guide-forward-skelton.md "ethna-document-dev\_guide-forward-skelton (1240d)")
+_see also:_ [ビュースクリプトのスケルトンを生成する](dev_guide-forward-skelton.md "ethna-document-dev\_guide-forward-skelton (1240d)")
 
 ※ ビュークラスが不要な場合(単純にテンプレートを表示したい場合等)は、ビュークラスの記述を省略することも可能です。
 

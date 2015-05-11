@@ -144,7 +144,7 @@ Example: app/action/Index.php
 
 
 * * *
-\*1 [http://ethna.jp/ethna-document-dev\_guide-plugin.html#j3c3ba62](ethna-document-dev_guide-plugin.md#j3c3ba62)  
+\*1 [http://ethna.jp/ethna-document-dev\_guide-plugin.html#j3c3ba62](dev_guide-plugin.md#j3c3ba62)  
 \*2当然みなさんは補完機能付きのエディタを使っているとは思いますが，それでも面倒っちゃ面倒です  
 \*3が，実際にコードを書くときはどちらかのポリシーに統一したほうがチーム開発の面ではよろしいでしょう  
 

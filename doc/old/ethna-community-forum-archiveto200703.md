@@ -588,7 +588,7 @@ line:122行目〜
 > ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) (2006-11-09 (木) 13:21:36)  
 >   
 > Ethna-2.1.2 の Ethna\_MailSender ですが、  
-> [http://ethna.jp/ethna-document-dev\_guide-app-mail.html](ethna-document-dev_guide-app-mail.md) にある  
+> [http://ethna.jp/ethna-document-dev\_guide-app-mail.html](dev_guide-app-mail.md) にある  
 > メールを送信する最短のサンプルがうまくうごきません。
 > 
 > ethna_mail =& new Ethna_MailSender($this->backend);
@@ -818,7 +818,7 @@ line:122行目〜
 > 2.著作権の表示をしなければならないとのことですが、  
 > どこに表示すればよいでしょうか？(作成したサイトの各ページ等)
 - そこらへん、あんまり詳しくない＆作者の意向によるんで明言できないですが、修正済みかつ、著作権表示は、すでにEthna自体のソースに書いてあるのでいらないと思います。HTMLに出力する必要はないと思います。 -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-10-12 (木) 04:33:13
-- [http://ethna.jp/ethna-document-faq-license.html](ethna-document-faq-license.md)にはしっかりと宣伝条項があるため修正前のBSDライセンスですね．> Neither the name of the author nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+- [http://ethna.jp/ethna-document-faq-license.html](faq-license.md)にはしっかりと宣伝条項があるため修正前のBSDライセンスですね．> Neither the name of the author nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 - BSDライセンスの宣伝条項問題はGNUの [BSD ライセンスが抱える問題](http://www.gnu.org/philosophy/bsd.ja.html)が詳しいです． -- Anonymous Coward 2007-06-07 (木) 22:34:02
 
@@ -864,7 +864,7 @@ line:122行目〜
 >   
 > はじめまして PHP5.1でEthna2.1.2を利用中です。PHP自身が初級者ということもあって、Ethnaと楽しく悪戦苦闘しています。  
 >   
-> [http://ethna.jp/ethna-document-dev\_guide-db.html](ethna-document-dev_guide-db.md) には、『EthnaのDBはPEAR::DBを継承しているので・・・』と書いてあるのですが、これは『PEAR::DBに処理を委譲しているので・・・』の誤りでは無いでしょうか。  
+> [http://ethna.jp/ethna-document-dev\_guide-db.html](dev_guide-db.md) には、『EthnaのDBはPEAR::DBを継承しているので・・・』と書いてあるのですが、これは『PEAR::DBに処理を委譲しているので・・・』の誤りでは無いでしょうか。  
 > PEAR\_DBのいろいろ便利なメソッドが使えないなーと思ってソースを見たら、継承ではなく委譲のようだったので。  
 > 正しいかどうか自信が無く、とりあえずフォーラムで質問してみます。
 - その通りです。現在のバージョンのethnaは継承しているわけではありません。Ethna\_DB\_PEARからPEAR::DBのメソッドを呼び出すには$ethna\_db\_pear->db->autoExecute();のような感じでEthna\_DB\_PEARが持っているPEAR\_DBのオブジェクトを呼ぶことで使うことができます。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-09-28 (木) 18:35:17
@@ -883,7 +883,7 @@ line:122行目〜
 > Dora-kou [?](cmd=edit&page=Dora-kou&refer=ethna-community-forum-archiveto200703.html) (2006-09-13 (水) 16:33:58)  
 >   
 > はじめましてです。本格的なMVC系のフレームワークは初挑戦です。  
-> [http://ethna.jp/index.php?ethna-document-dev\_guide-action-formname](ethna-document-dev_guide-action-formname.md)  
+> [http://ethna.jp/index.php?ethna-document-dev\_guide-action-formname](dev_guide-action-formname.md)  
 > で規定動作としてのEthna\_Controller::\_getActionName\_Form()のリンク  
 > が最後の方にあったのですが、その行数がずれていたようなので直しておきました。  
 >   
@@ -1280,7 +1280,7 @@ line:122行目〜
 ### ".ethna"ファイルについて
 > (2006-06-15 (木) 12:04:55)  
 >   
-> [http://ethna.jp/index.php?ethna-document-dev\_resourcefile](ethna-document-dev_resourcefile.md)  
+> [http://ethna.jp/index.php?ethna-document-dev\_resourcefile](dev_resourcefile.md)  
 > こちらですが、Windowsの場合ホームディレクトリの環境変数が「HOME」ではないため利用できません。  
 > 環境変数にHOMEを「%HOMEDRIVE%%HOMEPATH%」を追加したらうまくいきました。
 - CVS上ですが、USERPROFILEを見るように修正が入っています。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-06-19 (月) 18:58:11

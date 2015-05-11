@@ -82,7 +82,7 @@ Ethnaには設定値の制御を行うクラスとして Ethna\_Config があり
 1. www/info.php によるアプリケーション情報の一覧
 2. www/unittest.php による単体テスト実行
 
-[ユニットテストを実行する](ethna-document-dev_guide-misc-unittest.html "ethna-document-dev\_guide-misc-unittest (1240d)") と [設定情報や定義済みアクション等を一覧する](ethna-document-dev_guide-misc-info.md "ethna-document-dev\_guide-misc-info (1240d)") も参照してください。
+[ユニットテストを実行する](ethna-document-dev_guide-misc-unittest.html "ethna-document-dev\_guide-misc-unittest (1240d)") と [設定情報や定義済みアクション等を一覧する](dev_guide-misc-info.md "ethna-document-dev\_guide-misc-info (1240d)") も参照してください。
 
 **本番環境でこの値を絶対trueに設定しないで下さい！ 上記の機能はユーザーに見せるものではないからです！**
 
@@ -112,11 +112,11 @@ Ethnaには設定値の制御を行うクラスとして Ethna\_Config があり
 
     $this->backend->getDB('r2'); // dsn_r2 の接続を返す。
 
-[データベースアクセス](ethna-document-dev_guide-db.md)のページも参照してください。
+[データベースアクセス](dev_guide-db.md)のページも参照してください。
 
 #### ログ出力の設定
 
-ログ出力の設定の詳細については、 [Ethnaでログ出力を制御する](ethna-document-dev_guide-log.md "ethna-document-dev\_guide-log (874d)") のページを参照してください。
+ログ出力の設定の詳細については、 [Ethnaでログ出力を制御する](dev_guide-log.md "ethna-document-dev\_guide-log (874d)") のページを参照してください。
 
 #### memcached
 
@@ -157,7 +157,7 @@ memcached も、データベース接続設定と同様に多様な設定が可�
         'use_gettext' => false,
     );
 
-Ethnaプロジェクトを国際化する手段として、iniファイルを利用する方法と、gettext を利用する方法の２種類が用意されています。デフォルトは iniファイルを利用する方法です。詳細は [プロジェクトの国際化(2.5.0 preview2以降)](ethna-document-dev_guide-i18n.md "ethna-document-dev\_guide-i18n (737d)") を参照してください。
+Ethnaプロジェクトを国際化する手段として、iniファイルを利用する方法と、gettext を利用する方法の２種類が用意されています。デフォルトは iniファイルを利用する方法です。詳細は [プロジェクトの国際化(2.5.0 preview2以降)](dev_guide-i18n.md "ethna-document-dev\_guide-i18n (737d)") を参照してください。
 
 gettext を利用する場合に、この値を true にします。
 
@@ -167,7 +167,7 @@ gettext を利用する場合に、この値を true にします。
         'csrf' => 'Session',
     );
 
-CSRF とは、ログイン済みのユーザーに細工したURLを踏ませることで、ログイン済みユーザの権限を利用して意図しない操作を実行させるものです。詳細は [クロスサイトリクエストフォージェリの対策コードについて](ethna-document-dev_guide-csrf.md "ethna-document-dev\_guide-csrf (1240d)") を参照してください。
+CSRF とは、ログイン済みのユーザーに細工したURLを踏ませることで、ログイン済みユーザの権限を利用して意図しない操作を実行させるものです。詳細は [クロスサイトリクエストフォージェリの対策コードについて](dev_guide-csrf.md "ethna-document-dev\_guide-csrf (1240d)") を参照してください。
 
 デフォルト値は、上記のように 'Session' となっており、正当な値をセッションに格納するようになっています。現状はこの値を変更できません。
 

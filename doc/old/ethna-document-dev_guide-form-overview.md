@@ -110,7 +110,7 @@
 
 余計なお世話かもしれませんが、アプリケーションを構築していく上でのアクションフォームへのアクセスに関するポリシーについて少しだけ...。
 
-まず、 [アプリケーション構築手順(3)](ethna-document-tutorial-practice3.md#content_1_7 "ethna-document-tutorial-practice3 (1240d)")に書きましたが、アクションクラス(prepare()perform()メソッド)には最低限必要な処理のみ(必要なオブジェクトを生成してメソッドを実行+エラー処理程度)を記述し、実際のロジックは別途クラスを作成してそこに記述することを推奨します。
+まず、 [アプリケーション構築手順(3)](tutorial-practice3.md#content_1_7 "ethna-document-tutorial-practice3 (1240d)")に書きましたが、アクションクラス(prepare()perform()メソッド)には最低限必要な処理のみ(必要なオブジェクトを生成してメソッドを実行+エラー処理程度)を記述し、実際のロジックは別途クラスを作成してそこに記述することを推奨します。
 
 それと同様に、アクションフォームへのアクセスもアクションクラス(+ビュー)にでのみ行うことを推奨します。手続き上はアクションフォームオブジェクトはあちこちから参照可能ではありますが、例えばアクションクラス以外のどこかでアクションフォームがあれこれ弄られていると、アプリケーションの規模が大きくなってきたときに、個々のアクションでの独立性が低くなって来てメンテナンス性が低下してしまいます。
 
@@ -137,7 +137,7 @@
 
 * * *
 \*1Ethnaでは基本的に、クライアントから送信されアクションフォームに格納されたフォーム値がGET/POST(REQUEST\_METHOD)のどちらに由来するかを区別しません。理由は、GET/POSTで振舞いを変えていると思わぬところでダサダサな振舞いをしたり、場合によっては(ここはGETしかこないと思い込んでコードを書いていたりすると)セキュリティホールになる可能性もなくもなくも無いためです  
-\*2アクションに対応するアクションフォームのファイル名やクラス名については [アクション定義を省略する](ethna-document-dev_guide-action-omit.html "ethna-document-dev\_guide-action-omit (1240d)")、または [アクション定義省略時の命名規則を変更する](ethna-document-dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")を参照してください  
-\*3詳細は [フォーム値の自動検証を行う(基本編)](ethna-document-dev_guide-form-validate.md "ethna-document-dev\_guide-form-validate (737d)")を御覧下さい  
+\*2アクションに対応するアクションフォームのファイル名やクラス名については [アクション定義を省略する](ethna-document-dev_guide-action-omit.html "ethna-document-dev\_guide-action-omit (1240d)")、または [アクション定義省略時の命名規則を変更する](dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")を参照してください  
+\*3詳細は [フォーム値の自動検証を行う(基本編)](dev_guide-form-validate.md "ethna-document-dev\_guide-form-validate (737d)")を御覧下さい  
 \*4もちろん省略も可能ですが  
 

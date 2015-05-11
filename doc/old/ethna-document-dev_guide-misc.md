@@ -4,7 +4,7 @@
 ### サインアップ
 
 Ethnaを用いて,簡単にサインアップ処理を構築できます．  
- **[サインアップ](ethna-document-demo-signup.md "ethna-document-demo-signup (1240d)")**
+ **[サインアップ](demo-signup.md "ethna-document-demo-signup (1240d)")**
 
 ### Randolph＠wideが作ったサンプル
 
@@ -16,7 +16,7 @@ Ethnaを用いて,簡単にサインアップ処理を構築できます．
 
 ### itoh@ [http://www.itt-web.net/bwiki/index.html](http://www.itt-web.net/bwiki/index.html)が作ったサンプル
 
-- [Ethnaでアプリを作ってみましょう。](ethna-document-demo-ittsample.md "ethna-document-demo-ittsample (1240d)")
+- [Ethnaでアプリを作ってみましょう。](demo-ittsample.md "ethna-document-demo-ittsample (1240d)")
 
 ### riafさんのサンプル
 

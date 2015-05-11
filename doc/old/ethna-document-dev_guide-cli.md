@@ -118,7 +118,7 @@ Ethna は、こうした場合もきちんと考慮して設計されていま�
 
 
 * * *
-\*1ただし、アクションクラスにロジックを長々と書くのはおすすめしません。 [http://ethna.jp/ethna-document-tutorial-practice3.html#x9a32944](ethna-document-tutorial-practice3.md#x9a32944)   
+\*1ただし、アクションクラスにロジックを長々と書くのはおすすめしません。 [http://ethna.jp/ethna-document-tutorial-practice3.html#x9a32944](tutorial-practice3.md#x9a32944)   
 \*2アクションフォームクラスも生成されますが、コマンドラインを解釈してEthnaがフォーム定義に突っ込んでくれるわけではないので、役に立ちません  
 \*3後で述べるエントリポイントさえ間違わなければ、ですが。  
 \*4これが プロジェクト の app ディレクトリと lib ディレクトリに include\_path を通してくれているので、間違うとEthna の機構が全て使えなくなって終了、、です。  
