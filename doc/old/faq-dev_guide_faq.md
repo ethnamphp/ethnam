@@ -120,11 +120,7 @@ Symfony HttpFoundation のRedirectResponseを使えるようにする予定で�
 - さくら(SAKURA)のレンタルサーバも DocumentRoot 配下でないとファイルを置けません。シンボリックリンクは使用できず 500 エラーになります。これに気づかず時間を無駄にしました。 -- p2 [?](cmd=edit&page=p2&refer=faq-dev_guide_faq.md) 2007-04-12 (木) 00:05:54
 - [http://ethna.jp/ethna-document-dev_guide-db.html](ethna-document-dev_guide-db.html) のページがクラックされたのか書き換わってます。本ページ管理者さんへメールなどしようと思いましたが連絡先が見当たらない為、このComment欄にて失礼します。後でこのコメントを削除していただければと思います。 -- ume [?](cmd=edit&page=ume&refer=faq-dev_guide_faq.md) 2007-11-14 (水) 15:25:58
 - Ethna_Plugin_Cachemanager_Memcacheでの文字列をmemcachedサーバの台数で割っていますが、文字列を数値でわると「0」になると思うのですがどうでしょうか。 -- hoge [?](cmd=edit&page=hoge&refer=faq-dev_guide_faq.md) 2008-11-14 (金) 20:37:16
-- good -- niba [?](cmd=edit&page=niba&refer=faq-dev_guide_faq.md) 2009-10-29 (木) 14:37:24
-- いいな -- えすな [?](cmd=edit&page=%A4%A8%A4%B9%A4%CA&refer=faq-dev_guide_faq.md) 2009-11-25 (水) 18:40:22
 - Cachemanager_Memcacheのindex計算は確かにバグっていた気がします。 -- DQNEO [?](cmd=edit&page=DQNEO&refer=faq-dev_guide_faq.md) 2010-04-10 (土) 03:37:22
-- fdf -- fdf [?](cmd=edit&page=fdf&refer=faq-dev_guide_faq.md) 2011-05-18 (水) 10:49:57
-- ff -- af [?](cmd=edit&page=af&refer=faq-dev_guide_faq.md) 2011-05-23 (月) 16:26:16
   
 <form action="http://ethna.jp/index.php" method="post"> 
 <div><input type="hidden" name="encode_hint" value="ぷ"></div>
