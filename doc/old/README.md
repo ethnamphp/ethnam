@@ -46,8 +46,6 @@ URLHandler と呼ばれる機能を利用すれば、RESTfulなURLを実現で�
 ethna コマンドの pear-local コマンドで、プロジェクト毎に独立してPEARパッケージを管理できます。
 - [コマンドラインから実行するスクリプトを書く](dev_guide-cli.md)  
 バッチ処理など、CLIを使う処理もEthnaで簡単に記述できます。
-- [ethnaコマンドリファレンス](dev_guide-ethna_command.md)  
-プロジェクトに対して様々な操作を行う ethnaコマンドの操作一覧です。
 
 ### 発展編
 
