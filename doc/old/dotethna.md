@@ -7,7 +7,7 @@ ethnaコマンドは、".ethna"ファイルを読み込むことによりその�
 
 これは、いわゆる.bash_rcなどと同じような意味合いのファイルで、ethnaコマンドの挙動を変更する項目があります。
 
-/.ethnaの記述例\*1:
+/.ethnaの記述例 ([ethna]は適当 )
 
     [ethna]
     author = "username <username@exsample.com>"
@@ -27,8 +27,4 @@ ethnaコマンドは、".ethna"ファイルを読み込むことによりその�
     [project]
     controller_file = "app/Sample_Controller.php"
     controller_class = "Sample_Controller"
-
-
-* * *
-\*1[ethna]は適当  
 
