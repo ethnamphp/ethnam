@@ -97,8 +97,6 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
     - [Ethnaの組込みSmartyプラグイン一覧](ethna-document-dev_guide-view-smarty-plugin.md "ethna-document-dev\_guide-view-smarty-plugin (737d)")  
 
 ### 補足編
-
-- [Ethna 2.3.x から 2.5.0 への移行ガイド](ethna-document-dev_guide-misc-migrate_project230to250.md "ethna-document-dev\_guide-misc-migrate\_project230to250 (737d)")
   
 - [スクリプトを1ファイルに統合する](ethna-document-dev_guide-misc-unify.md "ethna-document-dev\_guide-misc-unify (1240d)")  
 ファイルシステムへの負荷を低減したい場合、全てのスクリプトを1ファイルに統合することも出来ます
