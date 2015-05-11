@@ -70,7 +70,7 @@
 
 beta1 に引き続き、開発版のリリースです。 beta1 のバグフィックスと、Smarty 3 用のRendererの追加をしました。また、2.5.0 preview5 と 2.6.0 beta の CHANGES を整理し、まとめ直しましたので、既存のプロジェクトを移行する際にはご参照ください。
 
-- 変更点一覧 [http://ethna.jp/index.php?ethna-document-changes#f019cfd1](changes.md#f019cfd1)
+- 変更点一覧 [changes#f019cfd1](changes.md#f019cfd1)
 
 ### 2010/12/27 Ethna 2.6.0 beta1 リリース
 
@@ -80,7 +80,7 @@ PHP 5.3 に関しては、3.0 を開発するという予定でしたが、ゼ�
 
 詳細は CHANGES をご覧ください。
 
-- [http://ethna.jp/index.php?ethna-document-changes#c2bb8363](changes.md#c2bb8363)
+- [changes#c2bb8363](changes.md#c2bb8363)
 
 ### 2009/10/18 Ethna 2.5.0 リリース
 

@@ -883,7 +883,7 @@ line:122行目〜
 > Dora-kou [?](cmd=edit&page=Dora-kou&refer=ethna-community-forum-archiveto200703.html) (2006-09-13 (水) 16:33:58)  
 >   
 > はじめましてです。本格的なMVC系のフレームワークは初挑戦です。  
-> [http://ethna.jp/index.php?ethna-document-dev_guide-action-formname](dev_guide-action-formname.md)  
+> [dev_guide-action-formname](dev_guide-action-formname.md)  
 > で規定動作としてのEthna_Controller::_getActionName_Form()のリンク  
 > が最後の方にあったのですが、その行数がずれていたようなので直しておきました。  
 >   
@@ -1280,7 +1280,7 @@ line:122行目〜
 ### ".ethna"ファイルについて
 > (2006-06-15 (木) 12:04:55)  
 >   
-> [http://ethna.jp/index.php?ethna-document-dev_resourcefile](dev_resourcefile.md)  
+> [dev_resourcefile](dev_resourcefile.md)  
 > こちらですが、Windowsの場合ホームディレクトリの環境変数が「HOME」ではないため利用できません。  
 > 環境変数にHOMEを「%HOMEDRIVE%%HOMEPATH%」を追加したらうまくいきました。
 - CVS上ですが、USERPROFILEを見るように修正が入っています。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-06-19 (月) 18:58:11
