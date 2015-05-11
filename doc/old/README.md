@@ -106,9 +106,6 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 - [スクリプトを1ファイルに統合する](ethna-document-dev_guide-misc-unify.md "ethna-document-dev\_guide-misc-unify (1240d)")  
 ファイルシステムへの負荷を低減したい場合、全てのスクリプトを1ファイルに統合することも出来ます
 
-- [設定情報や定義済みアクション等を一覧する](ethna-document-dev_guide-misc-info.md "ethna-document-dev\_guide-misc-info (1240d)")  
-バージョン0.1.2で追加された\_\_ethna\_info\_\_アクションを利用することで、設定情報や定義したアクションやビューの状態を一覧することが出来ます
-
 - [".ethna"ファイルについて](ethna-document-dev_resourcefile.md "ethna-document-dev\_resourcefile (1240d)")
 
 - [クロスサイトリクエストフォージェリの対策コードについて](ethna-document-dev_guide-csrf.md "ethna-document-dev\_guide-csrf (1240d)")
