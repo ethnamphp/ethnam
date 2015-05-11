@@ -1,5 +1,4 @@
 # 開発FAQ
-  - Q. Ethnaって使えるの? 
   - Q. Ethna は何故 Ethna_ViewClass っていう層を設けているの？ Cakeとかのフレームワークにはこんなのないよ！ 
   - Q.テンプレートエンジンはSmartyしか使えないの? 
   - Q.?action_login=trueでアクションを選ぶのが嫌 
@@ -12,9 +11,6 @@
   - Q.　アクションフォームクラスは省略できるの？ 
 - Comment 
 
-### Q. Ethnaって使えるの?
-
-[導入事例](ethna-about-cases.html)をごらんください。 「理想の追及」よりも「実際のアプリケーション開発」に重点をおいたフレームワークだと思ってます。
 
 ### Q. Ethna は何故 Ethna_ViewClass っていう層を設けているの？ Cakeとかのフレームワークにはこんなのないよ！
 
