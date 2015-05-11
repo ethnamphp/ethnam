@@ -21,7 +21,7 @@
 > echo "eeeeeeeeeeeee<br>";
 - なんかいろいろと根本的に勉強したほうがいいきがする。 -- 2007-03-15 (木) 10:32:36
 - こちらを参考にするとよいかも  
- [http://ethna.jp/ethna-document-dev_guide-db.html#zc5316fe](ethna-document-dev_guide-db.html#zc5316fe) -- psuke [?](cmd=edit&page=psuke&refer=ethna-community-forum-archiveto200703.md) 2007-03-15 (木) 13:48:29
+ [dev_guide-db.md#zc5316fe](ethna-document-dev_guide-db.html#zc5316fe) -- psuke [?](cmd=edit&page=psuke&refer=ethna-community-forum-archiveto200703.md) 2007-03-15 (木) 13:48:29
 - 参考にしました。でも、Ethna以外の方法では、難しいのですね？（というか、ルール違反か？） -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-03-16 (金) 14:03:57
 
 ### シフトJISに変換して出力する方法。
@@ -496,7 +496,7 @@ line:122行目〜
 - あ、ありました。ありがとうございます。あとあまり関係ないですが、_setDefault....を検索して「Ethna_Rendererの使い方」というページを見つけましたが、「開発マニュアル」からリンクが貼られてないようです。ワザとでしょうか？ -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-11-23 (木) 15:30:27
 - まだ書いてる途中なかんじです。 -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-23 (木) 20:59:52
 - そうですか。すみませんが、2.3の場合だとどうなりますか？　もう正式版リリース間近のようですので、こっちで開発しようと思います。まだ本格的に進める前で良かった$,1s&。(B -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-11-24 (金) 14:37:20
-- [http://ethna.jp/ethna-document-dev_guide-renderer.html](ethna-document-dev_guide-renderer.html) を書き直したので参照してください。(ドキュメント不備ですいません) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.md) 2006-11-24 (金) 16:29:57
+- [dev_guide-renderer.md](ethna-document-dev_guide-renderer.html) を書き直したので参照してください。(ドキュメント不備ですいません) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.md) 2006-11-24 (金) 16:29:57
 - 具体例までありがとうございました。ドキュメントがこれからなのもあって、古い方でやろうかなーと思ってましたが、でもすぐ新しいのが出るのにそれも悔しいなと思い直して挑戦することにしました（笑）。ほぼリアルタイムで追従しますのでよろしくお願いします。 -- fm [?](cmd=edit&page=fm&refer=ethna-community-forum-archiveto200703.html) 2006-11-24 (金) 18:05:04
 
 ### Ethna_Backend.php で発生するNoticeメッセージ
@@ -588,7 +588,7 @@ line:122行目〜
 > ff [?](cmd=edit&page=ff&refer=ethna-community-forum-archiveto200703.html) (2006-11-09 (木) 13:21:36)  
 >   
 > Ethna-2.1.2 の Ethna_MailSender ですが、  
-> [http://ethna.jp/ethna-document-dev_guide-app-mail.html](dev_guide-app-mail.md) にある  
+> [dev_guide-app-mail.md](dev_guide-app-mail.md) にある  
 > メールを送信する最短のサンプルがうまくうごきません。
 > 
 > ethna_mail =& new Ethna_MailSender($this->backend);
@@ -818,7 +818,7 @@ line:122行目〜
 > 2.著作権の表示をしなければならないとのことですが、  
 > どこに表示すればよいでしょうか？(作成したサイトの各ページ等)
 - そこらへん、あんまり詳しくない＆作者の意向によるんで明言できないですが、修正済みかつ、著作権表示は、すでにEthna自体のソースに書いてあるのでいらないと思います。HTMLに出力する必要はないと思います。 -- 個々一番 [?](cmd=edit&page=%B8%C4%A1%B9%B0%EC%C8%D6&refer=ethna-community-forum-archiveto200703.html) 2006-10-12 (木) 04:33:13
-- [http://ethna.jp/ethna-document-faq-license.html](faq-license.md)にはしっかりと宣伝条項があるため修正前のBSDライセンスですね．> Neither the name of the author nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+- [faq-license.md](faq-license.md)にはしっかりと宣伝条項があるため修正前のBSDライセンスですね．> Neither the name of the author nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 - BSDライセンスの宣伝条項問題はGNUの [BSD ライセンスが抱える問題](http://www.gnu.org/philosophy/bsd.ja.html)が詳しいです． -- Anonymous Coward 2007-06-07 (木) 22:34:02
 
@@ -864,7 +864,7 @@ line:122行目〜
 >   
 > はじめまして PHP5.1でEthna2.1.2を利用中です。PHP自身が初級者ということもあって、Ethnaと楽しく悪戦苦闘しています。  
 >   
-> [http://ethna.jp/ethna-document-dev_guide-db.html](dev_guide-db.md) には、『EthnaのDBはPEAR::DBを継承しているので・・・』と書いてあるのですが、これは『PEAR::DBに処理を委譲しているので・・・』の誤りでは無いでしょうか。  
+> [dev_guide-db.md](dev_guide-db.md) には、『EthnaのDBはPEAR::DBを継承しているので・・・』と書いてあるのですが、これは『PEAR::DBに処理を委譲しているので・・・』の誤りでは無いでしょうか。  
 > PEAR_DBのいろいろ便利なメソッドが使えないなーと思ってソースを見たら、継承ではなく委譲のようだったので。  
 > 正しいかどうか自信が無く、とりあえずフォーラムで質問してみます。
 - その通りです。現在のバージョンのethnaは継承しているわけではありません。Ethna_DB_PEARからPEAR::DBのメソッドを呼び出すには$ethna_db_pear->db->autoExecute();のような感じでEthna_DB_PEARが持っているPEAR_DBのオブジェクトを呼ぶことで使うことができます。 -- halt [?](cmd=edit&page=halt&refer=ethna-community-forum-archiveto200703.html) 2006-09-28 (木) 18:35:17

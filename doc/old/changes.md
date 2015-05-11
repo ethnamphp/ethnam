@@ -562,10 +562,10 @@
 - ethna_make_packageで.svnに対応
 - Ethna_Plugin_Validator_Mbregexp　追加 (thx: mumumu)
   - mb_eregを使ったマルチバイト対応正規表現プラグイン
-  - [http://ethna.jp/ethna-document-dev_guide-form-validate.html](dev_guide-form-validate.md)
+  - [dev_guide-form-validate.md](dev_guide-form-validate.md)
 - Ethna_Plugin_Handle_PearLocal　追加
   - PEARパッケージを各プロジェクト毎に管理できるプラグイン
-  - [http://ethna.jp/ethna-document-dev_guide-pearlocal.html](dev_guide-pearlocal.md)
+  - [dev_guide-pearlocal.md](dev_guide-pearlocal.md)
 - View のユニットテストができなくなっていたバグを修正(thx: sfio, ethna-users:0651)
 
 #### bug fixes

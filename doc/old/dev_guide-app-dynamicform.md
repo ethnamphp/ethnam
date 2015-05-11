@@ -207,7 +207,7 @@ Ethna_ActionForm#setDef を呼び出しただけでは、アクションフォ�
 
 別のやり方として、prepare内で、$this->af->formを直接変更するやり方もあります。
 
-[http://ethna.jp/ethna-document-faq-dev_guide_faq.html#jee57430](faq-dev_guide_faq.md#jee57430)
+[faq-dev_guide_faq.md#jee57430](faq-dev_guide_faq.md#jee57430)
 
 
 * * *

@@ -89,25 +89,25 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 2.5.0 では、2.3系と比較して、utf-8 ではなく UTF-8 をデフォルトとしたこと、国際化、多次元配列等の新機能をメインとして、多くの変更が加えられています。新機能については、以下のURLを参照してください。
 
 「言語とエンコーディングの設定」  
- [http://ethna.jp/ethna-document-dev_guide-app-setlanguage.html](dev_guide-app-setlanguage.md)  
+ [dev_guide-app-setlanguage.md](dev_guide-app-setlanguage.md)  
 「プロジェクトの国際化」  
- [http://ethna.jp/ethna-document-dev_guide-i18n.html](dev_guide-i18n.md)  
+ [dev_guide-i18n.md](dev_guide-i18n.md)  
 「多次元配列」  
- [http://ethna.jp/ethna-document-dev_guide-form-multiarray.html](dev_guide-form-multiarray.md)  
+ [dev_guide-form-multiarray.md](dev_guide-form-multiarray.md)  
 「フォームテンプレートへの変更」  
- [http://ethna.jp/ethna-document-dev_guide-form_template.html](dev_guide-form_template.md)  
+ [dev_guide-form_template.md](dev_guide-form_template.md)  
 「動的フォームAPI」  
- [http://ethna.jp/ethna-document-dev_guide-app-dynamicform.html](dev_guide-app-dynamicform.md)  
+ [dev_guide-app-dynamicform.md](dev_guide-app-dynamicform.md)  
 「VAR_TYPE_STRING の max, min 属性に関する詳細」  
- [http://ethna.jp/ethna-document-dev_guide-form-validate-vartypestring.html](dev_guide-form-validate-vartypestring.md)
+ [dev_guide-form-validate-vartypestring.md](dev_guide-form-validate-vartypestring.md)
 
 詳細な変更点は 以下のURLを参照してください
 
-[http://ethna.jp/ethna-document-changes.html#b00186c9](changes.md#b00186c9)
+[changes.md#b00186c9](changes.md#b00186c9)
 
 このリリースに伴い、2.5.0 が新たに安定版としてメンテナンスされます。よって、2.3.7 以前のバージョンのサポートは打ち切られます。新たに Ethna でプロジェクトを作成される方は、このバージョンを使用してください。また、2.3.x から移行を行いたい方は、以下のドキュメントを参照してください。
 
-[http://ethna.jp/ethna-document-dev_guide-misc-migrate_project230to250.html](dev_guide-misc-migrate_project230to250.md)
+[dev_guide-misc-migrate_project230to250.md](dev_guide-misc-migrate_project230to250.md)
 
 ### 2009/06/22 Ethna 2.5.0 preview5 リリース
 
@@ -115,7 +115,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 詳細な変更点は 以下のURLを参照してください
 
-[http://ethna.jp/ethna-document-changes.html#x29fc02d](changes.md#x29fc02d)
+[changes.md#x29fc02d](changes.md#x29fc02d)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.xとの互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
@@ -177,7 +177,7 @@ Ethna 2.3.6 をリリースしました。
 
 詳細な変更点については、以下のページを御覧下さい。
 
-[http://ethna.jp/ethna-document-changes.html#w8dda865](changes.md#w8dda865)
+[changes.md#w8dda865](changes.md#w8dda865)
 
 ### 2009/01/29 Ethna 2.5.0 preview3 リリース
 
@@ -186,7 +186,7 @@ Ethna 2.5.0 preview 3 をリリースしました。このリリースでは、�
 また、Smarty のプラグインを分割し、ユーザがより独自のプラグインを作りやす くしました。勿論、2.5.0 preview2 以降で発見された複数のバグも修正されてい ます。
 
 詳細な変更点は 以下のURLを参照してください  
- [http://ethna.jp/ethna-document-changes.html#y2250027](changes.md#y2250027)
+ [changes.md#y2250027](changes.md#y2250027)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。 よって 2.3.5との互換性は \*ありません\*。そして、バージョンナンバーにもある通 り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不 安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを 頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
@@ -215,7 +215,7 @@ Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PE
 今回はユーザから見ると目立った変更は国際化の実装くらいしかないように見えますが、PEAR 依存を外すための布石として、Ethnaクラスが PEAR クラスを継承していたのを外しているため、その関連で割と変更が加わっています。ethna コマンドの Console_Getopt も独自実装に置き換わっているため、ethna コマンドにもバグが残っている可能性があります。よって、目立つ変更点が少ないからといって侮らず、テストに御協力頂ければ幸いです。
 
 詳細な変更点は以下のドキュメントをご覧下さい。  
- [http://ethna.jp/ethna-document-changes.html#d0c37223](changes.md#d0c37223)
+ [changes.md#d0c37223](changes.md#d0c37223)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.5 との互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
@@ -231,7 +231,7 @@ Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PE
 Ethna 2.5.0 preview 1をリリースしました。このリリースでは、ユーザからの要望が特に高かったUTF-8への移行及びエンコーディング依存への解消、および国際化(i18n)の基礎となる変更が盛り込まれ、かつ 2.3.5 以降の複数のバグが修正されています。
 
 詳細な変更点は以下のドキュメントをご覧下さい。  
- [http://ethna.jp/ethna-document-changes.html#f9c85729](changes.md#f9c85729)
+ [changes.md#f9c85729](changes.md#f9c85729)
 
 このリリースは、2.3.x からのメジャーバージョンアップと位置付けられています。よって 2.3.5との互換性は \*ありません\*。そして、バージョンナンバーにもある通り、このリリースは安定版に移行する前に様々な機能をテストするプレビュー版(不安定版)です。追加された機能やAPIは、変更される可能性があります。そのリスクを頭に置いた上で、テスト及びフィードバックを行って下さる方々を求めています。
 
@@ -401,8 +401,8 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
   - Ethna_Handle, Ethna_CacheManager, Ethna_LogWriterをプラグインシステムに移行
   - Ethna_ActionFormのバリデータをプラグインシステムに移行(Ethna_ActionForm::use_validator_pluginがtrueのときのみ)
   - see also
-    - [http://ethna.jp/ethna-document-dev_guide-plugin.html](dev_guide-plugin.md)
-    - [http://ethna.jp/ethna-document-dev_guide-form-validate_with_plugin.html](dev_guide-form-validate_with_plugin.md)
+    - [dev_guide-plugin.md](dev_guide-plugin.md)
+    - [dev_guide-form-validate_with_plugin.md](dev_guide-form-validate_with_plugin.md)
 3. - [breaking B.C.] Ethna_Loggerリファクタリング
   - Ethna_LogWriterのプラグイン化
   - カンマ区切りでの複数ファシリティサポート
