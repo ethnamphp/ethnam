@@ -103,9 +103,8 @@ Symfony HttpFoundation のRedirectResponseを使えるようにする予定で�
 
 ### Q.　アクションクラスは省略できるの？
 
-場合によってはできます。
-
-[Action_A]が[View_AまたはView_B]に遷移するケースで、[View_B]が必ず[Action_A]からのみ呼ばれるのなら、[Action_B]は必要ありません。
+FooアクションクラスなしでFooビュー(orテンプレート)を作ることはできます。
+その場合は、他のアクションからFooビューを呼び出せばOKです。
 
 ### Q.　アクションフォームクラスは省略できるの？
 
