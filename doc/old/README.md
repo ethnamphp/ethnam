@@ -73,4 +73,4 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 ### 補足編
 - [".ethna"ファイルについて](dotethna.md)
 - [クロスサイトリクエストフォージェリの対策コードについて](dev_guide-csrf.md)
-- [開発FAQ](faq-dev_guide_faq.md)
+- [FAQ](faq.md)
