@@ -16,7 +16,7 @@
 
 このドキュメントは、以下の作業が完了していることを前提にして書かれています。仮に以下の作業が完了していなければ、下のリンクを参考に作業を行っておいてください。
 
-- [Ethna のインストール](tutorial-install_guide.md "ethna-document-tutorial-install\_guide (16d)")
+- [Ethna のインストール](tutorial-install_guide.md)
 - [Ethna のプロジェクトを生成する](tutorial-practice1.md#ud75ed71)
 
 以下では、プロジェクトの アプリケーションID が「sample」、アプリケーション配置ディレクトリを /tmp として説明を行います。  

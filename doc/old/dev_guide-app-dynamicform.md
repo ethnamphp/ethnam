@@ -96,7 +96,7 @@ Ethna 2.5.0 以降では、Ethna\_ActionForm#setFormDef\_PreHelper を使いま�
 
 #### フォームヘルパが絡んだ場合
 
-フォームヘルパについては、 [フォームヘルパ](dev_guide-view-form_helper.md "ethna-document-dev\_guide-view-form\_helper (998d)") の説明も参照してください。
+フォームヘルパについては、 [フォームヘルパ](dev_guide-view-form_helper.md) の説明も参照してください。
 
 少し高度な話題ですが、フォームヘルパは、Ethna\_ViewClass で現在のフォームとは別に、以下のように ethna\_action で指定されたアクションフォームを初期化します。それは、Submit されたときに初期化されたアクションフォームとは別のため、動的に値を設定したい場合は別のAPI が必要になります。
 

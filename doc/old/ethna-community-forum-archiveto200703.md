@@ -483,7 +483,7 @@ line:122行目〜
 > 宜しくお願いいたします。
 - $af->get()で取れないですか? -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.html) 2006-11-27 (月) 20:17:29
 - 有難うございます。DHTMLで「TEXTAREA 」を使用してます、$af->get()で出来なかった。何も表示されなかったです。$\_REQUEST["gdDescription"]使用すると値が入ってます。 -- シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) 2006-11-27 (月) 20:35:19
-- エラーメッセージがなにも出てないなら、"gdDescription"というフォームが正しく定義されていないのかもしれません。( [ethna-document-dev\_guide-form-type#dfb5b67e](ethna-document-dev_guide-form-type.html#dfb5b67e "ethna-document-dev\_guide-form-type (1006d)")とかを参考にしてください) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.md) 2006-11-28 (火) 00:15:54
+- エラーメッセージがなにも出てないなら、"gdDescription"というフォームが正しく定義されていないのかもしれません。( [ethna-document-dev\_guide-form-type#dfb5b67e](ethna-document-dev_guide-form-type.html#dfb5b67e)とかを参考にしてください) -- いちい [?](cmd=edit&page=%A4%A4%A4%C1%A4%A4&refer=ethna-community-forum-archiveto200703.md) 2006-11-28 (火) 00:15:54
 - これで解決出来ました。有難うございます。 -- シワクマル [?](cmd=edit&page=%A5%B7%A5%EF%A5%AF%A5%DE%A5%EB&refer=ethna-community-forum-archiveto200703.html) 2006-11-28 (火) 07:40:21
 
 ### デリミタ変えたい

@@ -95,5 +95,5 @@ Sample\_Controller.php:
 
 
 * * *
-\*1 [アクション定義を省略する](dev_guide-action-omit.md "ethna-document-dev\_guide-action-omit (1240d)")を参照  
+\*1 [アクション定義を省略する](dev_guide-action-omit.md)を参照  
 

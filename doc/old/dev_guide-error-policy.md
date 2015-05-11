@@ -50,7 +50,7 @@ EthnaクラスのisError()メソッドで、エラーの有無を確認できま
 
 エラーオブジェクトには、Notice,Warning,Errorの3つがあります。 エラーの内容に応じて，これらを使い分けます． アプリケーション固有のエラーメッセージを渡したい場合は、EthnaクラスのraiseNotice,raiseWarning,raiseErrorメソッドを使って，Ethna\_Errorオブジェクトを生成します． この例では，raiseNoticeを用いてエラーオブジェクトを返しています． 引数には，メッセージとエラーコードを与えます．
 
-**[アプリケーションエラーコードの定義](dev_guide-error-definecode.md "ethna-document-dev\_guide-error-definecode (1240d)")**
+**[アプリケーションエラーコードの定義](dev_guide-error-definecode.md)**
 
 ### ActionError
 

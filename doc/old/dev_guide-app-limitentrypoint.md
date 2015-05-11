@@ -50,5 +50,5 @@
 
 なお、未定義のアクションが指定された場合に特定のアクションを実行させる方法については下記をご覧下さい。
 
-_see also:_ [未定義のアクションが指定された場合に特定のアクションを実行する](dev_guide-app-fallbackentrypoint.md "ethna-document-dev\_guide-app-fallbackentrypoint (1240d)")
+_see also:_ [未定義のアクションが指定された場合に特定のアクションを実行する](dev_guide-app-fallbackentrypoint.md)
 

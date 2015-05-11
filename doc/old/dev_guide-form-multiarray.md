@@ -115,7 +115,7 @@
 
 ### 配列型を指定した場合
 
-[ファイルや配列にアクセスする](dev_guide-form-type.md "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
+[ファイルや配列にアクセスする](dev_guide-form-type.md) のページも参照してください。
 
 上記のページが理解できていれば、配列の階層が増えるだけで、あとは通常のEthnaと変わりありません。
 
@@ -172,7 +172,7 @@
 
 ### ファイルを指定した場合
 
-[ファイルや配列にアクセスする](dev_guide-form-type.md "ethna-document-dev\_guide-form-type (1006d)") のページも参照してください。
+[ファイルや配列にアクセスする](dev_guide-form-type.md) のページも参照してください。
 
 上記のページが理解できていれば、他の型を使用した場合と特に変化ありません。つまり、階層構造を指定すれば、それに従った階層構造で値が取得できるようになります。
 
@@ -253,8 +253,8 @@
 
     {form_input name="User[phone][name]"}
 
-フォーム値の自動検証については、 [フォーム定義のページ](dev_guide-form.md "ethna-document-dev\_guide-form (1006d)")を参照してください。  
-フォームヘルパについては、 [フォームヘルパ](dev_guide-form-multiarray.md "ethna-document-dev\_guide-form-multiarray (737d)") を参照してください。
+フォーム値の自動検証については、 [フォーム定義のページ](dev_guide-form.md)を参照してください。  
+フォームヘルパについては、 [フォームヘルパ](dev_guide-form-multiarray.md) を参照してください。
 
 ### 多次元配列を指定する場合の制限事項
 

@@ -18,7 +18,7 @@ Ethnaを使い始めてとりあえずでてくる悩みとその解決方法に
 
 ### Q. Ethnaって使えるの?
 
-[導入事例](ethna-about-cases.html "ethna-about-cases (194d)")をごらんください。 「理想の追及」よりも「実際のアプリケーション開発」に重点をおいたフレームワークだと思ってます。
+[導入事例](ethna-about-cases.html)をごらんください。 「理想の追及」よりも「実際のアプリケーション開発」に重点をおいたフレームワークだと思ってます。
 
 ### Q. Ethna は何故 Ethna\_ViewClass っていう層を設けているの？ Cakeとかのフレームワークにはこんなのないよ！
 
@@ -38,7 +38,7 @@ PHPを使った例 [http://eringi.com/weblog/archives/2007/02/ethna\_renderer.ht
 
 アクションを呼び出す方法は自由にカスタマイズできます。
 
-**[アクション名の決定方法を変更する](dev_guide-action-formname.md "ethna-document-dev\_guide-action-formname (1026d)")**
+**[アクション名の決定方法を変更する](dev_guide-action-formname.md)**
 
 ### Q.デバッグはどうするの？
 
@@ -69,7 +69,7 @@ ethnaが作ったプロジェクトの中のetcディレクトリに設定項目
 
 ログ関連の情報については下記が参考になります。
 
-**[ログ](dev_guide-log.md "ethna-document-dev\_guide-log (874d)")**
+**[ログ](dev_guide-log.md)**
 
 ### Q.複数のフォーム値をまたぐチェックはどうやってやるの？
 

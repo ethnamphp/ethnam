@@ -10,7 +10,7 @@
 
 アップロードされたファイルへのアクセスは、その処理の大部分をPHPが行ってくれるので至って簡単です。
 
-まず、 [フォーム値にアクセスする](dev_guide-form-overview.md "ethna-document-dev\_guide-form-overview (1240d)")で記述した場合と同様に、フォーム値を定義します。
+まず、 [フォーム値にアクセスする](dev_guide-form-overview.md)で記述した場合と同様に、フォーム値を定義します。
 
     'sample_file' => array(
         'type' => VAR_TYPE_FILE,
@@ -166,7 +166,7 @@ $\_FILESの配列とは構造が変わっています。基本的には、単一
 
 ### 多次元配列
 
-フォーム定義を以下のように [] を使ってグループ化することで、グループ化した値を簡単に受け取ることができます。詳しくは [多次元配列にアクセスする](dev_guide-form-multiarray.md "ethna-document-dev\_guide-form-multiarray (737d)") のページを参照してください。
+フォーム定義を以下のように [] を使ってグループ化することで、グループ化した値を簡単に受け取ることができます。詳しくは [多次元配列にアクセスする](dev_guide-form-multiarray.md) のページを参照してください。
 
     var $form = array(
            'User[name]' => array(

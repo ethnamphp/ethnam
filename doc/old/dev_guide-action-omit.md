@@ -37,7 +37,7 @@ Ethnaフレームワークのアクションは以下の手順で決定されま
   4. (アクションフォームについても同様)
 4. アクション定義に'class\_name'属性が存在しない場合、デフォルトのアクションクラス名を設定\*4
 5. 4.で決定されたアクションクラスが定義されていれば正しいアクション名とみなす  
-アクションクラスが定義されていない場合、$fallback\_action\_nameをアクション名とみなしてアクションを実行する(($fallback\_action\_nameについては [未定義のアクションが指定された場合に特定のアクションを実行する](dev_guide-app-fallbackentrypoint.md "ethna-document-dev\_guide-app-fallbackentrypoint (1240d)")を参照してください))
+アクションクラスが定義されていない場合、$fallback\_action\_nameをアクション名とみなしてアクションを実行する(($fallback\_action\_nameについては [未定義のアクションが指定された場合に特定のアクションを実行する](dev_guide-app-fallbackentrypoint.md)を参照してください))
 
 ### アクション定義の省略方法
 
@@ -68,16 +68,16 @@ Ethnaフレームワークのアクションは以下の手順で決定されま
 
 なお、これらの命名規則はアプリケーションによって好みの形に変更することが出来ます。詳細は下記をご覧下さい。
 
-_see also:_ [アクションクラスの命名規則を変更する](dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")
+_see also:_ [アクションクラスの命名規則を変更する](dev_guide-action-namingconvention.md)
 
 また、定義した命名規則に従っていちいちファイルを作成するのが面倒な場合は、binディレクトリに生成されるgenerate\_action\_script.phpを利用することで、アクションスクリプトのスケルトンを生成することが出来ます。
 
-_see also:_ [アクションスクリプトのスケルトンを生成する](dev_guide-action-skelton.md "ethna-document-dev\_guide-action-skelton (1240d)")
+_see also:_ [アクションスクリプトのスケルトンを生成する](dev_guide-action-skelton.md)
 
 
 * * *
 \*1勝手に命名  
-\*2アクション名の決定方法については [アクション名の決定方法を変更する](dev_guide-action-formname.md "ethna-document-dev\_guide-action-formname (1026d)")を参照してください  
-\*3デフォルトのアクションスクリプトの決定方法については [アクションクラスの命名規則を変更する](dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")を参照してください  
-\*4デフォルトのアクションスクリプトの決定方法については [アクションクラスの命名規則を変更する](dev_guide-action-namingconvention.md "ethna-document-dev\_guide-action-namingconvention (1240d)")を参照してください  
+\*2アクション名の決定方法については [アクション名の決定方法を変更する](dev_guide-action-formname.md)を参照してください  
+\*3デフォルトのアクションスクリプトの決定方法については [アクションクラスの命名規則を変更する](dev_guide-action-namingconvention.md)を参照してください  
+\*4デフォルトのアクションスクリプトの決定方法については [アクションクラスの命名規則を変更する](dev_guide-action-namingconvention.md)を参照してください  
 

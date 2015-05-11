@@ -113,7 +113,7 @@ action formではフィルタとしてこのプラグインを使いたいので
 
 ### 絵文字用の文字数カウント
 
-action formのバリデータで、max, minは絵文字の場合に意味が違ってしまうので、絵文字用のバリデータプラグインを用意しておきます。(これは Emoji プラグインではなく Validator プラグインであることに注意してください。詳しくは [バリデータプラグインを作る](dev_guide-form-validate_with_plugin.md#eebb5029 "ethna-document-dev\_guide-form-validate\_with\_plugin (513d)")を参照)
+action formのバリデータで、max, minは絵文字の場合に意味が違ってしまうので、絵文字用のバリデータプラグインを用意しておきます。(これは Emoji プラグインではなく Validator プラグインであることに注意してください。詳しくは [バリデータプラグインを作る](dev_guide-form-validate_with_plugin.md#eebb5029)を参照)
 
 - プラグイン名
   - $type = 'Validator', $name = 'Emojistrlen'

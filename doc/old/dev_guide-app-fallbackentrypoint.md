@@ -15,5 +15,5 @@
 
 
 * * *
-\*1 [エントリポイント毎に実行可能なアクションを制限する](dev_guide-app-limitentrypoint.md "ethna-document-dev\_guide-app-limitentrypoint (706d)")参照  
+\*1 [エントリポイント毎に実行可能なアクションを制限する](dev_guide-app-limitentrypoint.md)参照  
 

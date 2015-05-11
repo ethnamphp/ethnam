@@ -1,5 +1,5 @@
 # ethnaコマンドリファレンス
-[アプリケーション構築手順(1)](tutorial-practice1.md "ethna-document-tutorial-practice1 (23d)") のページにあるように、Ethna では、プロジェクトの作成から、作成されたプロジェクトに関わる様々な操作を ethna コマンドと呼ばれるコマンドラインから行えるようになっています。
+[アプリケーション構築手順(1)](tutorial-practice1.md) のページにあるように、Ethna では、プロジェクトの作成から、作成されたプロジェクトに関わる様々な操作を ethna コマンドと呼ばれるコマンドラインから行えるようになっています。
 
 ethna コマンドには様々なサブコマンドが用意されており、プロジェクトに対する様々な操作が行えます。このページでは、ethnaコマンドで出来ることをリファレンスとして紹介します。
 
@@ -65,12 +65,12 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 
   - ロケール（言語や文化の規則)を指定します。
   - デフォルトはja\_JPです。
-  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md "ethna-document-dev\_guide-app-setlanguage (737d)") も参照して下さい
+  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md) も参照して下さい
 - [-e|--encoding] (2.5.0 preview1以降)  
 
   - プロジェクトで使用するエンコーディングを指定します。
   - デフォルトはUTF-8です。
-  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md "ethna-document-dev\_guide-app-setlanguage (737d)") も参照して下さい
+  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md) も参照して下さい
 - [Application ID]  
 
   - アプリケーションIDです。最低限これだけは指定して下さい。
@@ -161,7 +161,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - これにより、プロジェクトのテンプレートディレクトリ以下に、指定したロケール名のディ  
 レクトリが作られます。
   - -t オプションを指定したときのみ意味を持ちます。
-  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md "ethna-document-dev\_guide-app-setlanguage (737d)") も参照して下さい
+  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md) も参照して下さい
 - [-e|--encoding] (2.5.0 preview1以降)  
 
   - プロジェクトで使用するエンコーディングを指定します。
@@ -199,7 +199,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - デフォルトはja\_JPです。
   - これにより、プロジェクトのテンプレートディレクトリ以下に、指定したロケール名のディ  
 レクトリが作られます。
-  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md "ethna-document-dev\_guide-app-setlanguage (737d)") も参照して下さい
+  - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md) も参照して下さい
 - [-e|--encoding] (2.5.0 preview1以降)  
 プロジェクトで使用するエンコーディングを指定します。
   - デフォルトはUTF-8です。
@@ -385,7 +385,7 @@ Ethna 2.3.5 以降では、作成したテストはデフォルトで失敗す�
     $ ethna pear-local [-c|--channel=channel] [-b|--basedir=dir] [pear command ...]
 
 pearコマンド と全く同じ操作で、プロジェクト内でPEARパッケージを楽に管理できます。  
-詳細は、 [Ethnaプロジェクト内で PEAR パッケージを管理する](dev_guide-pearlocal.md "ethna-document-dev\_guide-pearlocal (858d)") を参照して下さい。
+詳細は、 [Ethnaプロジェクト内で PEAR パッケージを管理する](dev_guide-pearlocal.md) を参照して下さい。
 
 オプションは以下の通りです。
 
@@ -397,7 +397,7 @@ pearコマンド と全く同じ操作で、プロジェクト内でPEARパッ�
   - 省略時は、現在のディレクトリから親ディレクトリをたどってプロジェクトを自動的に探索します。
 - [pear command ...]
   - pearコマンド と同様のオプションやパッケージ名を指定します
-  - [Ethnaプロジェクト内で PEAR パッケージを管理する](dev_guide-pearlocal.md "ethna-document-dev\_guide-pearlocal (858d)") も参照して下さい。
+  - [Ethnaプロジェクト内で PEAR パッケージを管理する](dev_guide-pearlocal.md) も参照して下さい。
 
 ### プラグイン関連
 
@@ -416,7 +416,7 @@ pearコマンド と全く同じ操作で、プロジェクト内でPEARパッ�
 
 - [-l|--local], [-m|--master]
   - local, masterどちらのプラグインを表示するかを切替えます。  
-local/master の違いは [プラグインの説明](dev_guide-plugin.md "ethna-document-dev\_guide-plugin (737d)")を参照してください。
+local/master の違いは [プラグインの説明](dev_guide-plugin.md)を参照してください。
   - 省略時はlocalが指定されたとみなされます。
 - [-b|--basedir]
   - プロジェクトのあるディレクトリを指定します。
@@ -483,7 +483,7 @@ Ethnaのパッケージをダウンロードするpear channelの情報をアッ
     $ ethna make-plugin-package [-i|--inifile=file] [-s|--skelfile=file]
                                 [-w|--workdir=dir]
 
-プラグインのパッケージを作ります。詳しくは [プラグインのパッケージを作る](dev_guide-pearpackage.md#k085db20 "ethna-document-dev\_guide-pearpackage (856d)")を参照してください。 このコマンドを使うには、 [PEAR\_PackageFileManager](http://pear.php.net/manual/ja/package.pear.pear-packagefilemanager.php) がインストールされている必要があります。
+プラグインのパッケージを作ります。詳しくは [プラグインのパッケージを作る](dev_guide-pearpackage.md#k085db20)を参照してください。 このコマンドを使うには、 [PEAR\_PackageFileManager](http://pear.php.net/manual/ja/package.pear.pear-packagefilemanager.php) がインストールされている必要があります。
 
 - [-i|--inifile]
   - パッケージの情報ファイル(ini形式)を指定します。

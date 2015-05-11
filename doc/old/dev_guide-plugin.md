@@ -47,7 +47,7 @@ Ethna\_Pluginがプラグインを管理しています。$type(=Hoge)と$name(=
 
 のようにしてプラグインを使うことができます。
 
-アプリケーションごとのプラグインの一覧は [InfoManager](dev_guide-misc-info.md "ethna-document-dev\_guide-misc-info (1240d)")で見ることができます。
+アプリケーションごとのプラグインの一覧は [InfoManager](dev_guide-misc-info.md)で見ることができます。
 
 ### プラグインを用いた例
 
@@ -88,9 +88,9 @@ Regexpバリデータプラグインは，パラメータとしてフォーム�
 
 の部分をパラメータとしてフォーム値の検証を行います。
 
-バリデータプラグインの詳細については、 [フォーム値の自動検証を行う(プラグイン編)](dev_guide-form-validate_with_plugin.md "ethna-document-dev\_guide-form-validate\_with\_plugin (513d)")を参照してください。
+バリデータプラグインの詳細については、 [フォーム値の自動検証を行う(プラグイン編)](dev_guide-form-validate_with_plugin.md)を参照してください。
 
-また、新規にプラグインを導入するときの具体例については、 [プラグイン導入の例](dev_guide-plugin-example.md "ethna-document-dev\_guide-plugin-example (817d)")を参照してください。
+また、新規にプラグインを導入するときの具体例については、 [プラグイン導入の例](dev_guide-plugin-example.md)を参照してください。
 
 ## Ethna\_Pluginのつかいかた(詳細)
 

@@ -33,11 +33,11 @@ Ethna\_UrlHandlerは次の2つの機能を持っています。
 
 また、Ethna-2.3.2からEthna\_UrlHandlerがプラグインを使っても利用できるようになりました。
 
-**[Net\_URL\_Mapperを使ったUrlhandlerプラグイン](dev_guide-urlhandler-plugin-neturlmapper.md "ethna-document-dev\_guide-urlhandler-plugin-neturlmapper (1240d)")**
+**[Net\_URL\_Mapperを使ったUrlhandlerプラグイン](dev_guide-urlhandler-plugin-neturlmapper.md)**
 
 UrlHandlerとエントリポイント、mod\_rewriteとの関係などについては、以下を参照してください。
 
-**[URLHandlerの設定例](dev_guide-urlhandler-example.md "ethna-document-dev\_guide-urlhandler-example (926d)")**
+**[URLHandlerの設定例](dev_guide-urlhandler-example.md)**
 
 ### 使用例
 
