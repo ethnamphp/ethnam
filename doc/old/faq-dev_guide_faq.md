@@ -121,22 +121,6 @@ Symfony HttpFoundation のRedirectResponseを使えるようにする予定で�
 - [http://ethna.jp/ethna-document-dev_guide-db.html](ethna-document-dev_guide-db.html) のページがクラックされたのか書き換わってます。本ページ管理者さんへメールなどしようと思いましたが連絡先が見当たらない為、このComment欄にて失礼します。後でこのコメントを削除していただければと思います。 -- ume [?](cmd=edit&page=ume&refer=faq-dev_guide_faq.md) 2007-11-14 (水) 15:25:58
 - Ethna_Plugin_Cachemanager_Memcacheでの文字列をmemcachedサーバの台数で割っていますが、文字列を数値でわると「0」になると思うのですがどうでしょうか。 -- hoge [?](cmd=edit&page=hoge&refer=faq-dev_guide_faq.md) 2008-11-14 (金) 20:37:16
 - Cachemanager_Memcacheのindex計算は確かにバグっていた気がします。 -- DQNEO [?](cmd=edit&page=DQNEO&refer=faq-dev_guide_faq.md) 2010-04-10 (土) 03:37:22
-  
-<form action="http://ethna.jp/index.php" method="post"> 
-<div><input type="hidden" name="encode_hint" value="ぷ"></div>
- <div>
-  <input type="hidden" name="plugin" value="comment">
-  <input type="hidden" name="refer" value="ethna-document-faq-dev_guide_faq">
-  <input type="hidden" name="comment_no" value="0">
-  <input type="hidden" name="nodate" value="0">
-  <input type="hidden" name="above" value="1">
-  <input type="hidden" name="digest" value="a251531a610be6805025f9f16875ecb2">
-  <label for="_p_comment_name_0">お名前: </label><input type="text" name="name" id="_p_comment_name_0" size="15">
-
-  <input type="text" name="msg" id="_p_comment_comment_0" size="70">
-  <input type="submit" name="comment" value="コメントの挿入">
- </div>
-</form>
 
 * * *
 \*1ふじもとさん自身も [[Ethna-users:00012] ](http://ml.ethna.jp/pipermail/users/2005-March/000012.html)で似たような事をおっしゃってますね。\*2  
