@@ -10,9 +10,6 @@ Ethnaを用いて,簡単にサインアップ処理を構築できます．
 
 - [Yahoo Web APIを使って検索](http://asougi.mine.nu/yjs/www/)
   - [上のhaltさんによるリファクタリング](http://project-p.jp/halt/temp/YahooSearch_halt.tgz)
-  - [MLのログ](http://ml.ethna.jp/pipermail/users/2005-December/000151.html)
-
-- [prototype.jsを使ってDNSサーチ（Web+DB Press Vol31の例からインスパイア）](http://asougi.mine.nu/dnsresolv/www/)
 
 - [Ethnaでアプリを作ってみましょう。](demo-ittsample.md)
 
