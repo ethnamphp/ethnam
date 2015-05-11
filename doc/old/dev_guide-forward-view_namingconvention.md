@@ -62,5 +62,5 @@ Sample_Controller.php:
 
 
 * * *
-\*1 [遷移先定義を省略する](dev_guide-forward-omit.md)を参照  
+\*1 [遷移先定義を省略する](forward-omit.md)を参照  
 

@@ -6,11 +6,11 @@
   - Ethna_ActionErrorクラス 
   - 具体例 
 
-**[エラー処理ポリシー](dev_guide-error-policy.md)**
+**[エラー処理ポリシー](error-policy.md)**
 
-**[エラーコードの定義](dev_guide-error-definecode.md)**
+**[エラーコードの定義](error-definecode.md)**
 
-**[エラーレベルに応じて共通画面を表示させる](dev_guide-error-fatal.md)**
+**[エラーレベルに応じて共通画面を表示させる](error-fatal.md)**
 
 書いた人: いちい
 
@@ -34,7 +34,7 @@ Ethnaで登場するエラーを、大きく次の2つに分類することに�
 
 ### ethna_error_handler()の処理内容
 
-error_reporting()の値を考慮しつつ、発生したエラーをアプリケーションのログに出力します。ログについては [ログ](dev_guide-log.md)のページを参照してください。
+error_reporting()の値を考慮しつつ、発生したエラーをアプリケーションのログに出力します。ログについては [ログ](log.md)のページを参照してください。
 
 また、アプリケーションの設定ファイル etc/app-ini.php 内で 'debug' => true と指定されてあり、さらにログに 'echo' が含まれない場合は、エラー内容を printf で出力します。
 

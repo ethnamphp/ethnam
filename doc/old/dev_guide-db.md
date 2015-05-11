@@ -46,7 +46,7 @@ Ethna では、デフォルトの PEAR::DB の他に、 [ADODB](http://adodb.sou
 
 ADODB についての詳細は、下記をご覧下さい。
 
-_see also:_ [ADODB を Ethna で使う](dev_guide-adodb.md)
+_see also:_ [ADODB を Ethna で使う](adodb.md)
 
 ### 複数のDBオブジェクトを扱う場合
 

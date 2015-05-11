@@ -95,5 +95,5 @@ Sample_Controller.php:
 
 
 * * *
-\*1 [アクション定義を省略する](dev_guide-action-omit.md)を参照  
+\*1 [アクション定義を省略する](action-omit.md)を参照  
 

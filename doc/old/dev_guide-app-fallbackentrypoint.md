@@ -15,5 +15,5 @@
 
 
 * * *
-\*1 [エントリポイント毎に実行可能なアクションを制限する](dev_guide-app-limitentrypoint.md)参照  
+\*1 [エントリポイント毎に実行可能なアクションを制限する](app-limitentrypoint.md)参照  
 

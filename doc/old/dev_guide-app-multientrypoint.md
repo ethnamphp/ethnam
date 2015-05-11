@@ -35,7 +35,7 @@
 
 ですのでEthnaでは各エントリポイント毎に実行可能なアクションを制限することも可能です。詳細は以下をご参照ください。
 
-_see also:_ [エントリポイント毎に実行可能なアクションを制限する](dev_guide-app-limitentrypoint.md)
+_see also:_ [エントリポイント毎に実行可能なアクションを制限する](app-limitentrypoint.md)
 
 ### [参考] Ethna_Controller::main()メソッド
 

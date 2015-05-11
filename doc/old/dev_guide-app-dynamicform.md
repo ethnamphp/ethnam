@@ -96,7 +96,7 @@ Ethna 2.5.0 以降では、Ethna_ActionForm#setFormDef_PreHelper を使います
 
 #### フォームヘルパが絡んだ場合
 
-フォームヘルパについては、 [フォームヘルパ](dev_guide-view-form_helper.md) の説明も参照してください。
+フォームヘルパについては、 [フォームヘルパ](view-form_helper.md) の説明も参照してください。
 
 少し高度な話題ですが、フォームヘルパは、Ethna_ViewClass で現在のフォームとは別に、以下のように ethna_action で指定されたアクションフォームを初期化します。それは、Submit されたときに初期化されたアクションフォームとは別のため、動的に値を設定したい場合は別のAPI が必要になります。
 
@@ -104,7 +104,7 @@ Ethna 2.5.0 以降では、Ethna_ActionForm#setFormDef_PreHelper を使います
       {* [appid]Form_Formhelper というアクションフォームが初期化される *} 
     {/form}
 
-フォームヘルパで利用するフォーム定義を動的に変更したい場合は、以下の特別なメソッドを使います。使い方は [フォーム定義変更専用のヘルパメソッド](dev_guide-app-dynamicform.md#j5cff07b) で説明した setFormDef_PreHelper() と全く同じです。
+フォームヘルパで利用するフォーム定義を動的に変更したい場合は、以下の特別なメソッドを使います。使い方は [フォーム定義変更専用のヘルパメソッド](app-dynamicform.md#j5cff07b) で説明した setFormDef_PreHelper() と全く同じです。
 
     /**
       * フォーム定義変更用、ユーザ定義ヘルパメソッド
