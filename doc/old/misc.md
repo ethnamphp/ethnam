@@ -14,12 +14,5 @@ Ethnaを用いて,簡単にサインアップ処理を構築できます．
 
 - [prototype.jsを使ってDNSサーチ（Web+DB Press Vol31の例からインスパイア）](http://asougi.mine.nu/dnsresolv/www/)
 
-### itoh@ [http://www.itt-web.net/bwiki/index.html](http://www.itt-web.net/bwiki/index.html)が作ったサンプル
-
 - [Ethnaでアプリを作ってみましょう。](demo-ittsample.md)
-
-### riafさんのサンプル
-
-- [適当サイト管理ツール](http://wiki.riaf.org/kinowiki?n=240)
-- [インチキフォーラム](http://wiki.riaf.org/kinowiki?n=250)
 
