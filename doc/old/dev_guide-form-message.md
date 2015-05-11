@@ -11,9 +11,9 @@ mixi:Ethnaコミュニティ:雑談:74(いちいさん)より
     	'required_error' => '入力してね',
     	'type_error' => '整数にしてね',
 
-上記の例の場合、'required'に対してのエラーが'required\_error'に対応していて、エラーが起きると「入力してね」が、'type'に対してのエラーが'type\_error'に対応していて「整数にしてね」とエラーメッセージが設定される。
+上記の例の場合、'required'に対してのエラーが'required_error'に対応していて、エラーが起きると「入力してね」が、'type'に対してのエラーが'type_error'に対応していて「整数にしてね」とエラーメッセージが設定される。
 
-エラーのタイプとしては、Ethna\_ActionFormのhandleErrorでマッピングされているとおり、
+エラーのタイプとしては、Ethna_ActionFormのhandleErrorでマッピングされているとおり、
 
     'required_error'	E_FORM_REQUIRED
     	'type_error' E_FORM_WRONGTYPE_SCALAR

@@ -29,12 +29,12 @@
 
 とう3つの手順だけでOKです。
 
-遷移名が"some\_action\_name"だとすると、ビュー定義省略時にインクルードされるビュースクリプト，テンプレートはそれぞれ
+遷移名が"some_action_name"だとすると、ビュー定義省略時にインクルードされるビュースクリプト，テンプレートはそれぞれ
 
     view/Some/Action/Name.php
     template/ja/some/action/name.tpl
 
-となります("\_" -> "/"+先頭1文字を大文字)。
+となります("_" -> "/"+先頭1文字を大文字)。
 
 また、ビュークラス名は
 
@@ -48,7 +48,7 @@
 
 _see also:_ [ビュークラスの命名規則を変更する](dev_guide-forward-view_namingconvention.md)
 
-また、定義した命名規則に従っていちいちファイルを作成するのが面倒な場合は、binディレクトリに生成されるgenerate\_view\_script.phpを利用することで、ビュースクリプトのスケルトンを生成することが出来ます。
+また、定義した命名規則に従っていちいちファイルを作成するのが面倒な場合は、binディレクトリに生成されるgenerate_view_script.phpを利用することで、ビュースクリプトのスケルトンを生成することが出来ます。
 
 _see also:_ [ビュースクリプトのスケルトンを生成する](dev_guide-forward-skelton.md)
 

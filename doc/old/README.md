@@ -28,7 +28,7 @@ TomcatやMojaviにあるようなフィルタチェインを使用すること�
 - [ユニットテストを実行する](dev_guide-misc-unittest.md)  
 simpletest を利用したユニットテストを行えます。
 - [メールを送信する](dev_guide-app-mail.md)  
-Ethna\_MailSender クラスを利用して、様々な種類のメールを送信できます。
+Ethna_MailSender クラスを利用して、様々な種類のメールを送信できます。
 - [二重POSTを防止する](dev_guide-app-duplicatepost.md)  
 ブラウザ側で複数回ボタンを押した場合に、それを検知することができます。
 - [(ほぼ)スタティックなページを表示させる](dev_guide-app-static.md)
@@ -37,7 +37,7 @@ etc/XXXX-ini.php に書く設定値に関する説明です。
 - [フォーム定義を動的に変更する](dev_guide-app-dynamicform.md)  
 動的に、入力フォームとActionFormの定義を変更したい場合の対処法です。
 - [ページャを作成する](dev_guide-misc-pager.md)  
-Ethna\_Util クラスの getDirectLinkList メソッドを使って容易にページャを追加できます。
+Ethna_Util クラスの getDirectLinkList メソッドを使って容易にページャを追加できます。
 - [ログ出力を行う](dev_guide-log.md)  
 ログ出力を行う方法と、必要なアプリケーションの設定について説明しています。
 - [URLルーティング](dev_guide-urlhandler.md)  
@@ -65,7 +65,7 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 ### 拡張編
 
 - Ethnaのプラグイン機構一般
-  - [Ethna\_Pluginに関する説明(2.3.x, 2.5.0)](dev_guide-plugin.md)
+  - [Ethna_Pluginに関する説明(2.3.x, 2.5.0)](dev_guide-plugin.md)
 - プラグインを書いてみる
   - [バリデータプラグイン](dev_guide-form-validate_with_plugin.md)
   - [フィルタプラグイン](dev-guide-make-filterplugin.md)

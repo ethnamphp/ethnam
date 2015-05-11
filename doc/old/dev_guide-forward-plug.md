@@ -2,7 +2,7 @@
 
 ## アクションクラスからの戻り値に応じてコントローラで遷移先を決定する
 
-Controllerに遷移先定義を追加します。app/{$アプリケーションID}\_Controller.phpを以下のように編集してください。
+Controllerに遷移先定義を追加します。app/{$アプリケーションID}_Controller.phpを以下のように編集してください。
 
     /**
      * @var array forward定義
@@ -23,5 +23,5 @@ Controllerに遷移先定義を追加します。app/{$アプリケーションI
     + ),
     );
 
-これで、'login'という遷移先にSample\_View\_Loginというビュークラスと、login.tplというテンプレートファイルが関連付けられます。
+これで、'login'という遷移先にSample_View_Loginというビュークラスと、login.tplというテンプレートファイルが関連付けられます。
 

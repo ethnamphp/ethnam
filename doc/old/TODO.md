@@ -58,19 +58,19 @@
 #### 2.5.0 preview3: NOW WORKING
 
 - DBまわり
-  - 既存ドライバを Ethna\_DBインターフェイスにあわせる
+  - 既存ドライバを Ethna_DBインターフェイスにあわせる
     - インターフェイス及び、その子クラスの実装がバラバラで腐ってるのを再実装
     - インターフェイスは汎用的なDBアクセスレイヤを選ぶ方向。PDOや、JDBC等。
-    - 各DBドライバ（PEAR::DB, adodb, CreOle 等) の独自機能については、PHP5 であれば \_\_call を呼べばよいが、PHP4 も一応扱うからにはwrapperを書くしかない
-    - [http://www.mumumu.org/~mumumu/tmp/Ethna\_DB.phps](http://www.mumumu.org/~mumumu/tmp/Ethna_DB.phps)
-    - [http://www.mumumu.org/~mumumu/tmp/Ethna\_DB\_Statement.phps](http://www.mumumu.org/~mumumu/tmp/Ethna_DB_Statement.phps)
+    - 各DBドライバ（PEAR::DB, adodb, CreOle 等) の独自機能については、PHP5 であれば __call を呼べばよいが、PHP4 も一応扱うからにはwrapperを書くしかない
+    - [http://www.mumumu.org/~mumumu/tmp/Ethna_DB.phps](http://www.mumumu.org/~mumumu/tmp/Ethna_DB.phps)
+    - [http://www.mumumu.org/~mumumu/tmp/Ethna_DB_Statement.phps](http://www.mumumu.org/~mumumu/tmp/Ethna_DB_Statement.phps)
     - AppObject をその上でSelectableにする
   - ロギング周りを可能なら見直し検討
-  - Ethna\_DB\_PDO の追加
+  - Ethna_DB_PDO の追加
   - テストを書いて確認しながら作業
 
 - 動的フォームを ActionForm とうまく連携できるように
-  - Ethna\_ActionFormのコンストラクタから呼ばれるフックを追加 -> 追加済
+  - Ethna_ActionFormのコンストラクタから呼ばれるフックを追加 -> 追加済
   - フォームヘルパ用の動的フォームAPIも追加する
   - validate() する前に、どう値の正当性を確保させるかが課題
     - View との連携なので、基本的にはvalidate済みなのが前提だが、validateone あたりが欲しいところか
@@ -83,8 +83,8 @@
     - submitしたフォームを区別するようにした
 
 - Session
-  - Ethna\_DB\_Session (assigned to maru\_cc)
-  - Ethna\_Session\_MobileJP(assigned to maru\_cc)
+  - Ethna_DB_Session (assigned to maru_cc)
+  - Ethna_Session_MobileJP(assigned to maru_cc)
   - セッション格納ディレクトリ等の設定を [appid]-config.php で可変に出来るように
 
 - フォームテンプレートのシンタックスシュガー -> 実装済み
@@ -93,7 +93,7 @@
 - URLHandler
   - プラグイン化して取り込み
 
-- Ethna\_SmartyPlugin -> 分割済み
+- Ethna_SmartyPlugin -> 分割済み
   - ファイル毎に分割してプラグイン化する
 
 - 多次元配列 -> 取り込み済
@@ -101,25 +101,25 @@
   - test を書くこと
   - [http://d.hatena.ne.jp/syachi5150/20081022/1224676038](http://d.hatena.ne.jp/syachi5150/20081022/1224676038)
 
-- set\_exception\_handler
+- set_exception_handler
   - 未実装なので実装すること
 
 - Testing -> DONE
-  - Ethna\_ActionForm#validate 配列関連テスト
+  - Ethna_ActionForm#validate 配列関連テスト
   - 新規に実装した部分のリグレッションテスト
 
 - Bug Fix
   - 複数ファイルアップロード時にrequiredが効かない件の調査 -> 修正済 DONE
-    - [http://www.mumumu.org/~mumumu/sample/www/index.php?action\_upload=true](http://www.mumumu.org/~mumumu/sample/www/index.php?action_upload=true)
-  - Ethna\_ActionForm::getHiddenVars で定義が配列で、値が非配列の場合にエラーになる件 -> 修正済
+    - [http://www.mumumu.org/~mumumu/sample/www/index.php?action_upload=true](http://www.mumumu.org/~mumumu/sample/www/index.php?action_upload=true)
+  - Ethna_ActionForm::getHiddenVars で定義が配列で、値が非配列の場合にエラーになる件 -> 修正済
     - patch あり。テスト中
-    - [http://maru.cc/~maru/ethna/tmp/ethna\_actionform\_gethiddenvars.patch](http://maru.cc/~maru/ethna/tmp/ethna_actionform_gethiddenvars.patch)
+    - [http://maru.cc/~maru/ethna/tmp/ethna_actionform_gethiddenvars.patch](http://maru.cc/~maru/ethna/tmp/ethna_actionform_gethiddenvars.patch)
   - ethna pearlocal コマンドがなぜか list -a オプションだけ効かなくなっている件 -> 影響が大きいので 2.5.0 preview4 で取り込むことに
     - 原因判明 patchあり。テスト中
-    - [http://www.mumumu.org/~mumumu/tmp/ethna\_getopt\_new\_nontest.patch](http://www.mumumu.org/~mumumu/tmp/ethna_getopt_new_nontest.patch)
+    - [http://www.mumumu.org/~mumumu/tmp/ethna_getopt_new_nontest.patch](http://www.mumumu.org/~mumumu/tmp/ethna_getopt_new_nontest.patch)
   - UnitTest が動作しないソースが存在する -> 修正済
-    - [http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group\_id=1343&atid=5092](http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group_id=1343&atid=5092)
-    - [http://maru.cc/~maru/ethna/ethna\_infomanager/Ethna\_InfoManager\_analyzeActionScript.patch](http://maru.cc/~maru/ethna/ethna_infomanager/Ethna_InfoManager_analyzeActionScript.patch)
+    - [http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group_id=1343&atid=5092](http://sourceforge.jp/tracker/index.php?func=detail&aid=10006&group_id=1343&atid=5092)
+    - [http://maru.cc/~maru/ethna/ethna_infomanager/Ethna_InfoManager_analyzeActionScript.patch](http://maru.cc/~maru/ethna/ethna_infomanager/Ethna_InfoManager_analyzeActionScript.patch)
   - loggerのendメソッドが呼ばれる箇所がないため、Logwriterプラグインのendメソッドの実装がすべて、呼ばれる場所がない件 -> 修正済
     - [http://d.hatena.ne.jp/sotarok/20081204/1228394337](http://d.hatena.ne.jp/sotarok/20081204/1228394337)
 
@@ -138,12 +138,12 @@
   - B.C コードのうち、可能な部分の排除 -> DONE
   - メッセージカタログのパーサが Line Parser でしかない点を修正し、複数行にも対処できるようにする -> DONE
   - sekido さんによるパッチ取り込み [ethna-users:1053] -> DONE
-  - smarty\_modifier\_checkbox の修正(実装が仕様に反している) -> DONE
-  - Ethna\_ActionClass に $logger を付け足す -> DONE
-  - Ethna\_ViewClass に $ctl を付け足す -> DONE
+  - smarty_modifier_checkbox の修正(実装が仕様に反している) -> DONE
+  - Ethna_ActionClass に $logger を付け足す -> DONE
+  - Ethna_ViewClass に $ctl を付け足す -> DONE
   - フォームのテストでNOTICEが出て Exception としてカウントされる問題の対処 -> DONE
-    - raiseError してもEthnaはログを吐いてコールバックを呼ぶのみ。trigger\_error はしないので、E\_NOTICE を吐くのはEthna内部の問題
-    - 調べてみると、Ethna\_ActionError#\_getActionForm が E\_NOTICE を吐いていたので対処したところ、exception はカウントされなくなったとのこと。
+    - raiseError してもEthnaはログを吐いてコールバックを呼ぶのみ。trigger_error はしないので、E_NOTICE を吐くのはEthna内部の問題
+    - 調べてみると、Ethna_ActionError#_getActionForm が E_NOTICE を吐いていたので対処したところ、exception はカウントされなくなったとのこと。
 
 - Testing
   - "ethna i18n" コマンド リグレッションテスト -> DONE
@@ -160,32 +160,32 @@
   - PEAR パッケージは チャンネルサーバには入れず、2.5.0 preview1のそれも削除>する。
   - stable しかチャンネルサーバには入れないポリシーにする
   - beta 版は [http://pear.ethna.jp/get/Ethna-x.x.x-YYYYMMDDMM.tgz](http://pear.ethna.jp/get/Ethna-x.x.x-YYYYMMDDMM.tgz) にしか置か>ない
-  - pear config-set preferred\_state [beta|alpha] とかにしている人がアップグレードでハマるため。
+  - pear config-set preferred_state [beta|alpha] とかにしている人がアップグレードでハマるため。
 
 #### 2.5.0 preview1: DONE 2008/07/16 release
 
 - UTF-8化
   - エンコーディング依存の関数または動作洗い出し -> OK
-    - Ethna\_Plugin\_Validator\_[Min|Max] -> OK
-    - Ethna\_UnitTestReporter#\_\_construct -> OK
-    - Ethna\_Plugin\_Validator\_Mbregexp -> OK
-    - smarty\_modifier\_wordwrap\_i18n -> OK
+    - Ethna_Plugin_Validator_[Min|Max] -> OK
+    - Ethna_UnitTestReporter#__construct -> OK
+    - Ethna_Plugin_Validator_Mbregexp -> OK
+    - smarty_modifier_wordwrap_i18n -> OK
     - 全角半角のvalidateメッセージ -> OK
 
 - バグ(?) 修正
-  - Ethna\_ClassFactory#get[Manager|Object] -> OK
+  - Ethna_ClassFactory#get[Manager|Object] -> OK
 
 ### 2.3.x〜: DONE
 
 #### 2.3.0-preview1: DONE 2006/07/09 release
 
-- Ethna\_Plugin追加
-- Ethna\_Renderer追加
+- Ethna_Plugin追加
+- Ethna_Renderer追加
 
-- Ethna\_Handleのプラグイン対応
-- Ethna\_CacheManagerのプラグイン対応
+- Ethna_Handleのプラグイン対応
+- Ethna_CacheManagerのプラグイン対応
 
-- Ethna\_LogWriterのプラグイン対応
+- Ethna_LogWriterのプラグイン対応
 
 #### 2.3.0-preview2: DONE 2006/07/16 release
 
@@ -193,14 +193,14 @@
 
 - ハードタブをソフトタブに
 
-- Ethna\_ClassFactoryの汎用化
-- Ethna\_AppManagerの汎用化(やっぱりやめました→近い将来プラグインのネットワークインストール対応→アプリケーションマネージャ、アプリケーションオブジェクトのネットワークインストール対応、という形で進めていきます)
+- Ethna_ClassFactoryの汎用化
+- Ethna_AppManagerの汎用化(やっぱりやめました→近い将来プラグインのネットワークインストール対応→アプリケーションマネージャ、アプリケーションオブジェクトのネットワークインストール対応、という形で進めていきます)
 
 #### 2.3.0-preview3: DONE 2006/07/23 release
 
-- Ethna\_ActionForm改善-- フォームレンダリングサポート
+- Ethna_ActionForm改善-- フォームレンダリングサポート
 
-- Ethna\_AppObject改善-- テーブル定義->フォーム定義自動生成
+- Ethna_AppObject改善-- テーブル定義->フォーム定義自動生成
 
 - プラグインリポジトリ構築/ネットワークインストール対応
 
@@ -213,12 +213,12 @@
 - AppObjectの扱いとORMの扱いを再検討
   - 捨てる？ 生かす？ 車輪の再発明する？ もしくは既存の実装を利用する？
   - 同じ BSD-revised な rhaco のORMとかおもしろいかも
-- Ethna\_Controller のリファクタリング
+- Ethna_Controller のリファクタリング
   - XMLRPC, SOAP などを別コントローラに
-  - simpletest 依存コードを Ethna\_UnitTestManger に追い出す
+  - simpletest 依存コードを Ethna_UnitTestManger に追い出す
 - ビューコンポーネントサポート
   - 汎用Viewを加えていく (redirect, 404, JSON 等)
-- Ethna\_Util#getDirectLinkList の改善
+- Ethna_Util#getDirectLinkList の改善
 - PHP5 専用にする(Ethna 3.0 以降)
 - 更なるドキュメントの整備
 - ethnaコマンド改善

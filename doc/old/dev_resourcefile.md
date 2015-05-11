@@ -5,7 +5,7 @@ ethnaコマンドは、".ethna"ファイルを読み込むことによりその�
 
 #### ユーザのホームディレクトリに置かれる".ethna"ファイル
 
-これは、いわゆる.bash\_rcなどと同じような意味合いのファイルで、ethnaコマンドの挙動を変更する項目があります。
+これは、いわゆる.bash_rcなどと同じような意味合いのファイルで、ethnaコマンドの挙動を変更する項目があります。
 
 /.ethnaの記述例\*1:
 
@@ -22,7 +22,7 @@ ethnaコマンドは、".ethna"ファイルを読み込むことによりその�
 
 これは、ethnaコマンドがプロジェクト固有のファイル((ActionとかView ))を作る時に参照するファイルです。基本的に弄る必要はありません。
 
-{project\_name}/.ethna:
+{project_name}/.ethna:
 
     [project]
     controller_file = "app/Sample_Controller.php"

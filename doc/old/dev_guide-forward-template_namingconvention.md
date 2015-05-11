@@ -6,7 +6,7 @@
 
 - テンプレートが定義されたファイルのパス名
 
-これらの命名規則は、Ethna\_Controllerに定義されている以下のメソッドをオーバーライドすることで変更することが出来ます。
+これらの命名規則は、Ethna_Controllerに定義されている以下のメソッドをオーバーライドすることで変更することが出来ます。
 
 <dl class="list1" style="padding-left:16px;margin-left:16px">
 <dt>テンプレートが定義されたファイルのパス名</dt>
@@ -15,17 +15,17 @@
 
 また，以下のメソッドも変更することを推奨します。
 
-:テンプレートパス名から遷移名を取得する |Ethna\_Controller::forwardPathToName($forward\_path)
+:テンプレートパス名から遷移名を取得する |Ethna_Controller::forwardPathToName($forward_path)
 
 ※forwardPathToNameは、コードをリバースエンジニアリングしたい場合に使います。
 
-Ethna\_Controllerでは、パス名は
+Ethna_Controllerでは、パス名は
 
     return str_replace('_', '/', $forward_name) . '.' . $this->ext['tpl'];
 
-つまり"foo\_bar\_hoge" -> "foo/bar/hoge.tpl"となります。 好みに応じて適宜オーバーライドしてください(それほどお勧めはしません)。
+つまり"foo_bar_hoge" -> "foo/bar/hoge.tpl"となります。 好みに応じて適宜オーバーライドしてください(それほどお勧めはしません)。
 
-例えば、"foo\_bar\_hoge"というビュークラスに対応するファイル名を"foo\_bar\_hoge.tpl"としたい場合は、以下のアプリケーションのコントローラに以下のような定義を追加します。
+例えば、"foo_bar_hoge"というビュークラスに対応するファイル名を"foo_bar_hoge.tpl"としたい場合は、以下のアプリケーションのコントローラに以下のような定義を追加します。
 
     /**
      * @access public

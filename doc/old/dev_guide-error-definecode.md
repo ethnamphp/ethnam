@@ -2,9 +2,9 @@
 
 ## エラーコードの定義
 
-エラーコードは，app/{アプリケーションID}\_Error.phpに定義します．
+エラーコードは，app/{アプリケーションID}_Error.phpに定義します．
 
-app/Sample\_Error.php:
+app/Sample_Error.php:
 
     $i = 259;
     /** エラーコード: ユーザ認証エラー */

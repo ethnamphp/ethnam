@@ -1,23 +1,23 @@
 # Ethna 2.3.0 から 2.5.0 への移行ガイド
 Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.x 系に対応させるためのガイドラインです。(これに従えばうまくいく、というわけではありません。必ずバックアップを用意した上で、確認しながら作業するようにしてください。)
 
-※ Ethna 2.1.0 から 2.3.0 への移行については、 [こちら](ethna-document-dev_guide-misc-migrate_project210to230.md "ethna-document-dev\_guide-misc-migrate\_project210to230 (1217d)") を御覧下さい。
+※ Ethna 2.1.0 から 2.3.0 への移行については、 [こちら](ethna-document-dev_guide-misc-migrate_project210to230.md "ethna-document-dev_guide-misc-migrate_project210to230 (1217d)") を御覧下さい。
 
 - Ethna 2.3.0 から 2.5.0 への移行ガイド 
   - タグの説明 
   - 必ずチェックし、対応すべき点 
-    - [必須] [Appid]\_Controller#getDefaultLanguage メソッドのオーバライド 
+    - [必須] [Appid]_Controller#getDefaultLanguage メソッドのオーバライド 
     - [必須] ロケール指定に伴うディレクトリ名の変更 
     - [必須] Ethna が出力するデフォルトメッセージファイルのコピー 
     - [必須] Smarty のデリミタの変更方法 
     - [必須] Ethnaクラス は PEAR に依存しない 
     - [必須] gettext を使うときは明示的に設定ファイルに記す 
     - [必須] 国名指定の定数の再定義 
-    - [必須] Ethna\_Plugin\_CacheManager\_Memcache の接続設定 
+    - [必須] Ethna_Plugin_CacheManager_Memcache の接続設定 
     - [必須] 互換性確保のためのAPIを削除 
   - 移行の際に注意すべき点 
-    - [注意] Ethna\_ActionForm のバリデータ 
-    - [注意] [Appid]\_Controllerで定義したinclude\_path の順番 
+    - [注意] Ethna_ActionForm のバリデータ 
+    - [注意] [Appid]_Controllerで定義したinclude_path の順番 
     - [注意] ethna コマンドで自動生成されるスケルトン 
 
 | 書いた人 | mumumu | 2008-06-25 | 新規作成 |
@@ -33,11 +33,11 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
 ### 必ずチェックし、対応すべき点
 
-#### [必須] [Appid]\_Controller#getDefaultLanguage メソッドのオーバライド
+#### [必須] [Appid]_Controller#getDefaultLanguage メソッドのオーバライド
 
 2.5.x では、Ethna のソースコードそのものからエンコーディング依存のエラーメッセージを追い出し、プロジェクトで使用するエンコーディングをユーザが自由に指定できるように変更されました。 これは Ethna が世に出てから脈々と息付いてきた「utf-8固定」の常識を破る一番大きな変更です。
 
-それにより、[appid]\_Controller.php での ロケール指定、エンコーディング指定が必須になりました。2.3.x 以前で作ったプロジェクトを 2.5.x へ移行させる方は、[appid]\_Controller.php で、Ethna\_Controller#\_getDefaultLanguage メソッドを以下の形で必ずオーバーライドするようにしてください。
+それにより、[appid]_Controller.php での ロケール指定、エンコーディング指定が必須になりました。2.3.x 以前で作ったプロジェクトを 2.5.x へ移行させる方は、[appid]_Controller.php で、Ethna_Controller#_getDefaultLanguage メソッドを以下の形で必ずオーバーライドするようにしてください。
 
     /**
      * デフォルト状態での使用言語を取得する
@@ -60,11 +60,11 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
         //return array('ja', 'UTF-8', 'UTF-8');
     }
 
-上では、3つの要素からなる配列を返していますが、1番目と3番目が重要です。新しいやり方では、1番目の要素は ja\_JP のようなロケールを指定するのが新しい流儀ですが、単に「ja」と指定しておけば 2. で述べるディレクトリ名の変更をする必要もなくなります。
+上では、3つの要素からなる配列を返していますが、1番目と3番目が重要です。新しいやり方では、1番目の要素は ja_JP のようなロケールを指定するのが新しい流儀ですが、単に「ja」と指定しておけば 2. で述べるディレクトリ名の変更をする必要もなくなります。
 
 また、3番目の要素はテンプレートのエンコーディングを指定して下さい。このエンコーディングでブラウザからの入力があることを 2.5.x では想定するため、この指定も非常に重要です。
 
-上記3つの要素のそれぞれの意味や、影響する範囲の詳細については、 [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.md "ethna-document-dev\_guide-app-setlanguage (737d)") のページを御覧下さい。
+上記3つの要素のそれぞれの意味や、影響する範囲の詳細については、 [言語とエンコーディングの設定](ethna-document-dev_guide-app-setlanguage.md "ethna-document-dev_guide-app-setlanguage (737d)") のページを御覧下さい。
 
 #### [必須] ロケール指定に伴うディレクトリ名の変更
 
@@ -77,7 +77,7 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
     - [appid]/locale/ja_JP
     - [appid]/template/ja_JP
 
-但し、上記 1. で [appid]\_Controller#\_getDefaultLanguage で返す配列の第1要素を 「ja」とオーバーライドした人は、この変更は必要ありません。
+但し、上記 1. で [appid]_Controller#_getDefaultLanguage で返す配列の第1要素を 「ja」とオーバーライドした人は、この変更は必要ありません。
 
 #### [必須] Ethna が出力するデフォルトメッセージファイルのコピー
 
@@ -85,12 +85,12 @@ Ethna 2.3.x で作った古いプロジェクトを新しいバージョン 2.5.
 
     [appid]/locale/ja_JP/LC_MESSAGES/ethna_sysmsg.ini
 
-デフォルトのスケルトンファイルは、以下にあります。 (ETHNA\_BASE は、Ethnaをインストールしたディレクトリを指します)
+デフォルトのスケルトンファイルは、以下にあります。 (ETHNA_BASE は、Ethnaをインストールしたディレクトリを指します)
 
     ETHNA_BASE/skel/locale/ethna_sysmsg.default.ini
     ETHNA_BASE/skel/locale/ja_JP/ethna_sysmsg.ini
 
-古い 2.3.x 系のプロジェクトを移行する人は、ファイル ETHNA\_BASE/skel/locale/ja\_JP/ethna\_sysmsg.ini を [appid]/locale/ja[\_JP]/LC\_MESSAGES/ ディレクトリに必ずコピーする必要があります。
+古い 2.3.x 系のプロジェクトを移行する人は、ファイル ETHNA_BASE/skel/locale/ja_JP/ethna_sysmsg.ini を [appid]/locale/ja[_JP]/LC_MESSAGES/ ディレクトリに必ずコピーする必要があります。
 
 これらのファイルは、iniファイルライクな形式をとっており、以下のようになります。
 
@@ -131,7 +131,7 @@ Smarty のデフォルトのデリミタ 「{」は JavaScript との兼ね合�
         ),
     );
 
-これ以外の方法で設定している場合でも、[APPID]-ViewClass#\_setDefault メソッドに設定している場合は上記の変更の影響を受けませんが、それ以外の場合は必ずチェックするようにしてください。
+これ以外の方法で設定している場合でも、[APPID]-ViewClass#_setDefault メソッドに設定している場合は上記の変更の影響を受けませんが、それ以外の場合は必ずチェックするようにしてください。
 
 #### [必須] Ethnaクラス は PEAR に依存しない
 
@@ -169,7 +169,7 @@ Smarty のデフォルトのデリミタ 「{」は JavaScript との兼ね合�
 
 #### [必須] 国名指定の定数の再定義
 
-Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定するための LANG\_JA, LANG\_EN の定数が Ethna.php から削除されました。これらは、Ethna\_I18N.php でのみ使用されており、ロケール指定の観 点から不要なためです。
+Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定するための LANG_JA, LANG_EN の定数が Ethna.php から削除されました。これらは、Ethna_I18N.php でのみ使用されており、ロケール指定の観 点から不要なためです。
 
     (削除された定数定義)
     /** クライアント言語定義: 英語 */
@@ -177,11 +177,11 @@ Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定�
     /** クライアント言語定義: 日本語 */
     define('LANG_JA', 'ja');
 
-よって、これらの定数を万が一使用していた古いプロジェクトでは、[appid]\_Controller.php の先頭 で再定義する必要があります。
+よって、これらの定数を万が一使用していた古いプロジェクトでは、[appid]_Controller.php の先頭 で再定義する必要があります。
 
-#### [必須] Ethna\_Plugin\_CacheManager\_Memcache の接続設定
+#### [必須] Ethna_Plugin_CacheManager_Memcache の接続設定
 
-2.3.x までは、Ethna\_Plugin\_CacheManager\_Memcache の接続設定は、持続的接続がデフォルトでON になっていました。持続的でない通常接続を使用する場合は、以下のように [appid]/etc/[appid]-ini.php で設定する必要がありました。
+2.3.x までは、Ethna_Plugin_CacheManager_Memcache の接続設定は、持続的接続がデフォルトでON になっていました。持続的でない通常接続を使用する場合は、以下のように [appid]/etc/[appid]-ini.php で設定する必要がありました。
 
     'memcache_use_connect' => true, // 2.3.x まで
 
@@ -189,7 +189,7 @@ Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定�
 
     'memcache_use_pconnect' => true, // デフォルトはfalse
 
-よって、既存の memcache\_use\_connect の設定は意味をなさなくなっています。 持続的接続は、memcached サーバへの接続コストを低減する必要がある場合に使用します。
+よって、既存の memcache_use_connect の設定は意味をなさなくなっています。 持続的接続は、memcached サーバへの接続コストを低減する必要がある場合に使用します。
 
 #### [必須] 互換性確保のためのAPIを削除
 
@@ -200,13 +200,13 @@ Ethna 2.5.x では、ロケール指定への移行に伴い、国名を指定�
 
 ### 移行の際に注意すべき点
 
-#### [注意] Ethna\_ActionForm のバリデータ
+#### [注意] Ethna_ActionForm のバリデータ
 
-2.5.x では、フォームの入力値検証にプラグインのみを使用し、プラグインを使用しないコードは全 て削除されました。2.3.x からの移行の観点からは、明示的な影響はないようにコードは書かれている はずですが、自動生成されるアクションスクリプトの $use\_validator\_plugin = true; の指定は最早 不要です。
+2.5.x では、フォームの入力値検証にプラグインのみを使用し、プラグインを使用しないコードは全 て削除されました。2.3.x からの移行の観点からは、明示的な影響はないようにコードは書かれている はずですが、自動生成されるアクションスクリプトの $use_validator_plugin = true; の指定は最早 不要です。
 
-#### [注意] [Appid]\_Controllerで定義したinclude\_path の順番
+#### [注意] [Appid]_Controllerで定義したinclude_path の順番
 
-2.5.x では、include\_path の順番が [appid]/app,lib を最も優先するように変更されました。これは自由に外部スクリプトをインストールできないレンタルサーバを考慮した変更であり、新しいプロジェクトのみに適用されます。
+2.5.x では、include_path の順番が [appid]/app,lib を最も優先するように変更されました。これは自由に外部スクリプトをインストールできないレンタルサーバを考慮した変更であり、新しいプロジェクトのみに適用されます。
 
 #### [注意] ethna コマンドで自動生成されるスケルトン
 

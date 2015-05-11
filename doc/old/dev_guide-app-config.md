@@ -45,11 +45,11 @@ Ethnaの設定ファイルは素のPHPを使って記述します。上で説明
 
 #### 設定値を取得する
 
-Ethnaには設定値の制御を行うクラスとして Ethna\_Config があります。このクラスを利用すれば、上記で設定したファイルの設定値が容易に取得できます。
+Ethnaには設定値の制御を行うクラスとして Ethna_Config があります。このクラスを利用すれば、上記で設定したファイルの設定値が容易に取得できます。
 
-ユーザーが主に触ることになるアクションクラスやビュークラス、アプリケーションマネージャークラスには、$config というメンバで Ethna\_Config クラスのインスタンスが定義されています。よって、getメソッドを使って設定値を取得することができます。
+ユーザーが主に触ることになるアクションクラスやビュークラス、アプリケーションマネージャークラスには、$config というメンバで Ethna_Config クラスのインスタンスが定義されています。よって、getメソッドを使って設定値を取得することができます。
 
-以下はアクションクラスで設定値を取得する例です。 [Ethna\_ConfigクラスのAPIドキュメント](doc/Ethna/Ethna_Config.html)も参照してください。
+以下はアクションクラスで設定値を取得する例です。 [Ethna_ConfigクラスのAPIドキュメント](doc/Ethna/Ethna_Config.html)も参照してください。
 
     class Sample_Action_Index extends Ethna_ActionClass
     {
@@ -196,5 +196,5 @@ iniファイルとほとんど同じ手法でできます。 bogoYAMLのスタ�
 
 
 * * *
-\*1この例では、 [parse\_ini\_file 関数](http://jp.php.net/manual/ja/function.parse-ini-file.php)への第二引数を true にして、セクション定義を解釈させるようになっていますが、dsn のようなEthnaの動作の根本に関わる一部の設定値については、 [セクション定義されていないことを前提に値を取得する実装](doc/ __filesource/fsource_Ethna__ classEthna_Controller.php.html#a1878)が Ethna でなされているため、セクション定義しない方が無難かもしれません  
+\*1この例では、 [parse_ini_file 関数](http://jp.php.net/manual/ja/function.parse-ini-file.php)への第二引数を true にして、セクション定義を解釈させるようになっていますが、dsn のようなEthnaの動作の根本に関わる一部の設定値については、 [セクション定義されていないことを前提に値を取得する実装](doc/ __filesource/fsource_Ethna__ classEthna_Controller.php.html#a1878)が Ethna でなされているため、セクション定義しない方が無難かもしれません  
 

@@ -39,9 +39,9 @@ Ethna 2.5.0 以降では、これらの欠点を解消するために、メッ�
     (/tmp ディレクトリに sampleプロジェクトを作成 文字コードはデフォルトのUTF-8)
     ethna add-project -b /tmp sample
 
-デフォルトのロケール名は、Ethna\_Controller#\_getDefaultLanguage メソッドを以下のようにオーバーライドすることで設定します。詳しくは [言語とエンコーディングの設定](dev_guide-app-setlanguage.md#v4c471ad) を参照して下さい。
+デフォルトのロケール名は、Ethna_Controller#_getDefaultLanguage メソッドを以下のようにオーバーライドすることで設定します。詳しくは [言語とエンコーディングの設定](dev_guide-app-setlanguage.md#v4c471ad) を参照して下さい。
 
-/tmp/sample/app/Sample\_Controller.php には、デフォルトで以下のように、「ja\_JP」が設定されています。
+/tmp/sample/app/Sample_Controller.php には、デフォルトで以下のように、「ja_JP」が設定されています。
 
     /**
      * デフォルト状態での使用言語を取得する
@@ -60,7 +60,7 @@ Ethna 2.5.0 以降では、これらの欠点を解消するために、メッ�
 
 ### PHPスクリプト、テンプレートへのメッセージの埋め込み
 
-プロジェクト内のPHPスクリプト(テストスクリプトを除く)、テンプレートにメッセージを埋め込みます。PHPスクリプトでは \_et 関数を使い、テンプレートには i18n 修正子を埋め込みます。
+プロジェクト内のPHPスクリプト(テストスクリプトを除く)、テンプレートにメッセージを埋め込みます。PHPスクリプトでは _et 関数を使い、テンプレートには i18n 修正子を埋め込みます。
 
 以下では、i18ntest アクションを作成し、挨拶文を埋め込んでいます。
 
@@ -98,7 +98,7 @@ Ethna 2.5.0 以降では、これらの欠点を解消するために、メッ�
        } 
     }
 
-テンプレートは対応させるロケールの数だけ作成します。以下では、デフォルトの ja\_JP(日本語) のものと、ko\_KR(韓国語) のものを /tmp/sample/templates/[ja\_JP|ko\_KR]/i18ntest.tpl に 作成しています。
+テンプレートは対応させるロケールの数だけ作成します。以下では、デフォルトの ja_JP(日本語) のものと、ko_KR(韓国語) のものを /tmp/sample/templates/[ja_JP|ko_KR]/i18ntest.tpl に 作成しています。
 
     ethna add-template i18ntest
     ethna add-template -l ko_KR i18ntest
@@ -115,7 +115,7 @@ Ethna 2.5.0 以降では、これらの欠点を解消するために、メッ�
 
 プロジェクト内のファイルにメッセージを埋め込んだら、メッセージカタログの作成です。これは、プロジェクトディレクトリに移動して [ethna i18n コマンド](dev_guide-ethna_command.md#vd9b3c8f)を実行するだけです。これは、作成したロケールの数だけ実行する必要があります。
 
-実行すると、/tmp/sample/locale/[ja\_JP|ko\_KR]/LC\_MESSAGES/[ja\_JP|ko\_KR].ini が生成されます。
+実行すると、/tmp/sample/locale/[ja_JP|ko_KR]/LC_MESSAGES/[ja_JP|ko_KR].ini が生成されます。
 
     ethna i18n -l ja_JP
     ethna i18n -l ko_KR
@@ -125,7 +125,7 @@ ethna i18n コマンドで作成できるカタログは、ethna 組み込みの
     ethna i18n -l ja_JP -g
     ethna i18n -l ko_KR -g
 
-実行すると、/tmp/sample/locale/[ja\_JP|ko\_KR]/LC\_MESSAGES/[ja\_JP|ko\_KR].po が生成されます。
+実行すると、/tmp/sample/locale/[ja_JP|ko_KR]/LC_MESSAGES/[ja_JP|ko_KR].po が生成されます。
 
 既にファイルがあった場合、iniファイルの場合は、既存の翻訳を引き継いだ上でファイルが上書きされます。gettext の場合は、最新のメッセージを抜き出した（但し翻訳語は空）の新しくファイルが作られます。gettext は、 [msgmerge プログラム](http://www.gnu.org/software/gettext/manual/html_node/msgmerge-Invocation.html#msgmerge-Invocation) を使うことで古い po ファイルと内容をマージすることが出来ます。
 
@@ -139,7 +139,7 @@ Ethna のデフォルトのカタログファイルです。gettext が入って
 
 内容としては、「"元のメッセージ" = "翻訳語"」 というフォーマットになります。
 
-これまで例として作ってきた sample プロジェクトに ethna i18n コマンドを実行すると、/tmp/sample/locale/ja\_JP/LC\_MESSAGES/ja\_JP.ini は以下のようになります。
+これまで例として作ってきた sample プロジェクトに ethna i18n コマンドを実行すると、/tmp/sample/locale/ja_JP/LC_MESSAGES/ja_JP.ini は以下のようになります。
 
     ;
     ; ja_JP.ini
@@ -171,7 +171,7 @@ Ethna のデフォルトのカタログファイルです。gettext が入って
 
 gettext 向けのカタログファイルは poファイルと呼ばれるものです。ただ、gettext を実際に使うときはこのファイルで動作するわけではありません。このファイルを翻訳した上でさらに [msgfmt コマンド](http://www.gnu.org/software/gettext/manual/html_node/msgfmt-Invocation.html#msgfmt-Invocation) を実行し、moファイルと呼ばれるバイナリファイルを生成する必要があります。
 
-これまで例として作ってきた sample プロジェクトに ethna i18n -g コマンドを実行すると、/tmp/sample/locale/ja\_JP/LC\_MESSAGES/ja\_JP.po は以下のようになります。
+これまで例として作ってきた sample プロジェクトに ethna i18n -g コマンドを実行すると、/tmp/sample/locale/ja_JP/LC_MESSAGES/ja_JP.po は以下のようになります。
 
     #
     # ja_JP.po
@@ -244,12 +244,12 @@ gettext の場合は、msgstr の部分に翻訳語を入れていく形式で�
 
 複数のロケールに対してメッセージカタログを作成したら、あとは必要に応じて、PHPスクリプト内でロケールを切り替えるだけです。
 
-それには、適切な場所で Ethna\_Controllerクラスの setLocale メソッドを使います。
+それには、適切な場所で Ethna_Controllerクラスの setLocale メソッドを使います。
 
     $ctl = Ethna_Controller::getInstance();
     $ctl->setLocale('ko_KR');
 
-Ethna\_Controller には、アクションが実行される「直前」に呼ばれる \_setLanguage というメソッドがあります。これをオーバライドすれば、条件に応じてデフォルトのロケールを上書きすることが出来ます。
+Ethna_Controller には、アクションが実行される「直前」に呼ばれる _setLanguage というメソッドがあります。これをオーバライドすれば、条件に応じてデフォルトのロケールを上書きすることが出来ます。
 
     function _setLanguage($locale, $system_encoding = null, $client_encoding = null)
      {
@@ -265,7 +265,7 @@ Ethna\_Controller には、アクションが実行される「直前」に呼�
           $i18n->setLanguage($locale, $system_encoding, $client_encoding);
      }
 
-または、言語毎にコントローラーを複数作り、そこの \_getDefaultLanguage() メソッドでロケールをそれぞれ設定するというのも手です。以下のように作り、それを www 以下のエントリポイントから呼び出してやります。
+または、言語毎にコントローラーを複数作り、そこの _getDefaultLanguage() メソッドでロケールをそれぞれ設定するというのも手です。以下のように作り、それを www 以下のエントリポイントから呼び出してやります。
 
     // .snip
     
@@ -288,7 +288,7 @@ Ethna\_Controller には、アクションが実行される「直前」に呼�
     Sample_ko_KR_Controller::main('Sample_ko_KR_Controller', 'index');
     ?>
 
-gettext を使う場合は、etc/[appid]-ini.php の use\_gettext を true にする必要があります。
+gettext を使う場合は、etc/[appid]-ini.php の use_gettext を true にする必要があります。
 
     $config = array(
         // i18n
@@ -297,9 +297,9 @@ gettext を使う場合は、etc/[appid]-ini.php の use\_gettext を true に�
 
 ### 制限事項、TODO
 
-- 既にサンプルソースのコメントでも述べていますが、\_et 関数や i18n 修正子に渡す引数は固定文字列であることを強く推奨します。ethna i18n コマンドはその形式しか解釈できないからです。どうしても動的な(実行時にしか決まらない)値を渡したい場合は、自分でその値を見極めた上でカタログを手動で追加する必要があります。
+- 既にサンプルソースのコメントでも述べていますが、_et 関数や i18n 修正子に渡す引数は固定文字列であることを強く推奨します。ethna i18n コマンドはその形式しか解釈できないからです。どうしても動的な(実行時にしか決まらない)値を渡したい場合は、自分でその値を見極めた上でカタログを手動で追加する必要があります。
 - [gettextを使うべき場合](dev_guide-i18n.md#l4e0ac9b) でも述べていますが、Ethna は生成したメッセージカタログに対して状態を付加するなどして長期に渡ってメンテナンスするための便利な仕組みを持っていません。gettextの方がそうした点や翻訳のフォーマット（複数形など）の点で多くの機能を備えていますので、そういった要求がある場合はgettextの使用を強く推奨します。
-- 現行のEthnaの実装では、メッセージの翻訳(LC\_MESSAGES)に対応しているだけで、その他のお金や日時の変換等のAPIは未実装です。それらについては独自に実装するなり、外部ライブラリを使うなりして、Ethna\_I18n.php を拡張して頂ければと思います。
+- 現行のEthnaの実装では、メッセージの翻訳(LC_MESSAGES)に対応しているだけで、その他のお金や日時の変換等のAPIは未実装です。それらについては独自に実装するなり、外部ライブラリを使うなりして、Ethna_I18n.php を拡張して頂ければと思います。
 
 
 * * *

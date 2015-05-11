@@ -1,15 +1,15 @@
 # Ethna_Pluginのつかいかた(簡易)
   - プラグインオブジェクトの取得，実行 
   - プラグインを用いた例 
-- Ethna\_Pluginのつかいかた(詳細) 
+- Ethna_Pluginのつかいかた(詳細) 
   - 概要 
-  - Ethna\_Plugin 
+  - Ethna_Plugin 
   - 命名規則 
     - Ethna本体に付属するプラグイン 
     - アプリケーション固有のプラグイン 
     - $type ごとの親クラス 
   - 自動でincludeされるファイルについて 
-  - Ethna\_Plugin::includePlugin() 
+  - Ethna_Plugin::includePlugin() 
   - アプリケーション固有のプラグインについて 
     - 特定のprefixをもつプラグインを使う 
   - より細かい注意事項 
@@ -23,9 +23,9 @@
 | 書いた人 | いちい | 新規 |
 | 編集した人 | sotarok | 2.5.0p4以降に関して |
 
-## Ethna\_Pluginのつかいかた(簡易)
+## Ethna_Pluginのつかいかた(簡易)
 
-プラグインは$type(種類)と$name(名前)で区別されます。プラグインのマネージャ(Ethna\_Pluginクラス)は，命名規則にしたがってファイルを探索し，インクルードとインスタンス作成を代行します。
+プラグインは$type(種類)と$name(名前)で区別されます。プラグインのマネージャ(Ethna_Pluginクラス)は，命名規則にしたがってファイルを探索し，インクルードとインスタンス作成を代行します。
 
 現時点では，
 
@@ -39,7 +39,7 @@
 
 ### プラグインオブジェクトの取得，実行
 
-Ethna\_Pluginがプラグインを管理しています。$type(=Hoge)と$name(=Fuga)を指定して，
+Ethna_Pluginがプラグインを管理しています。$type(=Hoge)と$name(=Fuga)を指定して，
 
     $plugin =& $controller->getPlugin();
     $hoge_plugin =& $plugin->getPlugin('Hoge', 'Fuga');
@@ -55,13 +55,13 @@ Ethna\_Pluginがプラグインを管理しています。$type(=Hoge)と$name(=
 
 Regexpバリデータプラグインは，パラメータとしてフォームの値と，バリデートするための正規表現を受け取り，フォームの値が正規表現にマッチするかを検証します。
 
-- クラス名: Ethna\_Plugin\_Validator\_Regexp
-- ファイル名: $ETHNA\_HOME/Plugin/Validator/Ethna\_Plugin\_Validator\_Regexp.php
+- クラス名: Ethna_Plugin_Validator_Regexp
+- ファイル名: $ETHNA_HOME/Plugin/Validator/Ethna_Plugin_Validator_Regexp.php
 
 バリデータプラグインの親クラスで，どのようなパラメータを受け取るのかなどが規定されています。
 
-- クラス名: Ethna\_Plugin\_Validator
-- ファイル名: $ETHNA\_HOME/Plugin/Ethna\_Plugin\_Validator.php
+- クラス名: Ethna_Plugin_Validator
+- ファイル名: $ETHNA_HOME/Plugin/Ethna_Plugin_Validator.php
 
 アプリケーションのフォーム定義において，
 
@@ -92,30 +92,30 @@ Regexpバリデータプラグインは，パラメータとしてフォーム�
 
 また、新規にプラグインを導入するときの具体例については、 [プラグイン導入の例](dev_guide-plugin-example.md)を参照してください。
 
-## Ethna\_Pluginのつかいかた(詳細)
+## Ethna_Pluginのつかいかた(詳細)
 
-Ethna-2.3.0からEthna\_Pluginクラスが追加されました。Smartyのプラグインのように，Ethnaでもプラグイン方式の機能追加ができるようになります。
+Ethna-2.3.0からEthna_Pluginクラスが追加されました。Smartyのプラグインのように，Ethnaでもプラグイン方式の機能追加ができるようになります。
 
 ### 概要
 
-現状，プラグイン自体は「ある命名規則に従ったファイル名とクラス名をもったオブジェクト」でしかありません。Ethna\_Plugin\_Validatorのように，そのプラグインの種類に応じた親クラスを用意して，その継承クラスとして定義されることを期待しています。そして，Ethna\_ActionFormのように，そのプラグインを呼び出す側もプラグインを使うことを意識しておかなければなりません。
+現状，プラグイン自体は「ある命名規則に従ったファイル名とクラス名をもったオブジェクト」でしかありません。Ethna_Plugin_Validatorのように，そのプラグインの種類に応じた親クラスを用意して，その継承クラスとして定義されることを期待しています。そして，Ethna_ActionFormのように，そのプラグインを呼び出す側もプラグインを使うことを意識しておかなければなりません。
 
-プラグインのマネージャとして，Ethna\_Pluginクラス(class/Ethna\_Plugin.php)があります。Ethna\_Pluginは，種類($type)と名前($name)から，ある命名規則にしたがってプラグインのソースファイルを探索し，includeし，インスタンスを作ってアプリケーションに受け渡しをします。なお，Ethna\_Pluginのインスタンス自体はEthna\_ClassFactoryによって管理されます。
+プラグインのマネージャとして，Ethna_Pluginクラス(class/Ethna_Plugin.php)があります。Ethna_Pluginは，種類($type)と名前($name)から，ある命名規則にしたがってプラグインのソースファイルを探索し，includeし，インスタンスを作ってアプリケーションに受け渡しをします。なお，Ethna_Pluginのインスタンス自体はEthna_ClassFactoryによって管理されます。
 
 プラグインは，Ethna本体に付属する形のものと，アプリケーション固有のものとがあります。たとえばすべてのアプリケーションに共通するプラグインをEthna本体のディレクトリに配置したり，特定のアプリケーションでのみ必要なプラグインを作ったりすることができます。また，Ethna本体のプラグインを，命名規則に従うことでアプリケーションのプラグインによって上書きすることができます。
 
-### Ethna\_Plugin
+### Ethna_Plugin
 
-Ethna\_PluginクラスはEthnaにおけるプラグインの管理機構を提供します。
+Ethna_PluginクラスはEthnaにおけるプラグインの管理機構を提供します。
 
 - getPlugin()
-  - Ethna\_Plugin::getPlugin($type, $name) によって，プラグインのインスタンスを取得できます。
+  - Ethna_Plugin::getPlugin($type, $name) によって，プラグインのインスタンスを取得できます。
   - 各プラグインは，$type(種類)と$name(名前)のペアで識別されます。
   - 初めてgetPluginを呼び出すときに，プラグインのソースファイルを自動的に探索し，インスタンス化します。
   - プラグインが見つからないときなどはエラーオブジェクトが返されます。(レジストリにはnullがセットされます。)
 
 - レジストリ
-  - Ethna\_Pluginは内部に，ソースファイルやクラス名のレジストリと，プラグインのインスタンスのレジストリを持っています。
+  - Ethna_Pluginは内部に，ソースファイルやクラス名のレジストリと，プラグインのインスタンスのレジストリを持っています。
   - getPlugin()が呼び出されると，レジストリからインスタンス(の参照)を返します。
   - 毎回インスタンスを作り直しているわけでは **ない** ことに注意してください。(レジストリからunloadすることも一応できます。)
 
@@ -123,7 +123,7 @@ Ethna\_PluginクラスはEthnaにおけるプラグインの管理機構を提�
   - 後に説明する命名規則によってファイルを探索し，ファイルの存在確認，インクルード，クラスの存在確認，インスタンス化が行われます。
   - プラグインはEthna本体に付属するものと，アプリケーション固有のものとがあります。同じ$typeと$nameを持つプラグインが両方に存在する場合，アプリケーション固有のものが優先されます。
 
-Ethna\_Plugin自体のインスタンスはEthna\_Controller::getPlugin()から取得することができます。
+Ethna_Plugin自体のインスタンスはEthna_Controller::getPlugin()から取得することができます。
 
     $plugin =& $controller->getPlugin();
     $hoge_plugin =& $plugin->getPlugin('Hoge', 'Fuga');
@@ -145,13 +145,13 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
     Ethna_Plugin_{$type}_{$name}.php
 
-  - ex. Ethna\_Plugin\_Validator\_Regexp.php
+  - ex. Ethna_Plugin_Validator_Regexp.php
 
 - クラス名
 
     Ethna_Plugin_{$type}_{$name}
 
-  - ex. class Ethna\_Plugin\_Validator\_Regexp
+  - ex. class Ethna_Plugin_Validator_Regexp
 
 #### アプリケーション固有のプラグイン
 
@@ -167,13 +167,13 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
     Sample_Plugin_{$type}_{$name}.php
 
-  - ex. Sample\_Plugin\_Filter\_ExecutionTime.php
+  - ex. Sample_Plugin_Filter_ExecutionTime.php
 
 - クラス名
 
     Sample_Plugin_{$type}_{$name}
 
-  - ex. class Sample\_Plugin\_Filter\_ExecutionTime
+  - ex. class Sample_Plugin_Filter_ExecutionTime
 
 #### $type ごとの親クラス
 
@@ -189,32 +189,32 @@ $type, $nameは大文字／小文字を区別しています。新たにプラ�
 
     Ethna_Plugin_{$type}.php
 
-  - ex. Ethna\_Plugin\_Validator.php
+  - ex. Ethna_Plugin_Validator.php
 
 - クラス名
 
     Ethna_Plugin_{$type}
 
-- ex. class Ethna\_Plugin\_Validator
+- ex. class Ethna_Plugin_Validator
 
 ### 自動でincludeされるファイルについて
 
 上で述べたように，同じ$type(種類)と$name(名前)をもつプラグインは，Ethna本体に付属するものとアプリケーション固有のものがあり，アプリケーション固有のものが優先されます。
 
-一方，クラス名においては， Ethna\_Plugin\_Validator\_Regexp と Sample\_Plugin\_Validator\_Regexp のように異なる名前を持つため，両方を共存させることができます。このことは特に，Ethna本体に付属するプラグインのクラスを継承してアプリケーション固有のプラグインを作りたい場合に重要です。
+一方，クラス名においては， Ethna_Plugin_Validator_Regexp と Sample_Plugin_Validator_Regexp のように異なる名前を持つため，両方を共存させることができます。このことは特に，Ethna本体に付属するプラグインのクラスを継承してアプリケーション固有のプラグインを作りたい場合に重要です。
 
-Ethna\_Plugin::getPlugin()は，指定された$typeと$nameから自動でソースファイルを探索しincludeしますが，インスタンスを作るべきクラスのソースファイルしかincludeしないことに注意してください。すなわち，アプリケーション固有のプラグインが存在する場合に，おなじ$typeと$nameを持つEthna本体付属のプラグインファイルは無視されます。
+Ethna_Plugin::getPlugin()は，指定された$typeと$nameから自動でソースファイルを探索しincludeしますが，インスタンスを作るべきクラスのソースファイルしかincludeしないことに注意してください。すなわち，アプリケーション固有のプラグインが存在する場合に，おなじ$typeと$nameを持つEthna本体付属のプラグインファイルは無視されます。
 
-### Ethna\_Plugin::includePlugin()
+### Ethna_Plugin::includePlugin()
 
-Ethna\_Pluginには，内部で管理しているレジストリとは別に，命名規則にしたがってincludeのみを行うstaticメソッド
+Ethna_Pluginには，内部で管理しているレジストリとは別に，命名規則にしたがってincludeのみを行うstaticメソッド
 
-- Ethna\_Plugin::includePlugin()
-- Ethna\_Plugin::includeEthnaPlugin()
+- Ethna_Plugin::includePlugin()
+- Ethna_Plugin::includeEthnaPlugin()
 
-が用意されました。Ethna\_Pluginのインスタンスが手元にない，class定義の前に include しておきたいときなどに便利です。
+が用意されました。Ethna_Pluginのインスタンスが手元にない，class定義の前に include しておきたいときなどに便利です。
 
-Ethna\_Plugin\_Validator\_Regexp を継承して Sample\_Plugin\_Validator\_Regexp を作る例:
+Ethna_Plugin_Validator_Regexp を継承して Sample_Plugin_Validator_Regexp を作る例:
 
     <?php
     Ethna_Plugin::includeEthnaPlugin('Validator', 'Regexp');
@@ -239,9 +239,9 @@ Ethna\_Plugin\_Validator\_Regexp を継承して Sample\_Plugin\_Validator\_Rege
 
 #### 特定のprefixをもつプラグインを使う
 
-sample という名前のアプリケーションに固有なプラグインは、基本的には Sample\_Plugin\_Hoge\_Fuga という命名規則をに従うことになります。
+sample という名前のアプリケーションに固有なプラグインは、基本的には Sample_Plugin_Hoge_Fuga という命名規則をに従うことになります。
 
-Sample\_Controller.phpの以下の設定を変更すれば、sampleに加えて特定のprefixを使うよう指示することもできます。
+Sample_Controller.phpの以下の設定を変更すれば、sampleに加えて特定のprefixを使うよう指示することもできます。
 
     var $plugin_search_appids = array(
            /*
@@ -264,7 +264,7 @@ Sample\_Controller.phpの以下の設定を変更すれば、sampleに加えて�
 
 #### $typeと$nameについて
 
-Ethna\_Plugin::getPlugin($type, $name) は与えられた $type と $name を上の命名規則にそのまま代入します。ディレクトリ名やファイル名にそのまま使われるので、 **信用できない文字列を$type, $nameにそのまま代入しない** よう気を付けてください。
+Ethna_Plugin::getPlugin($type, $name) は与えられた $type と $name を上の命名規則にそのまま代入します。ディレクトリ名やファイル名にそのまま使われるので、 **信用できない文字列を$type, $nameにそのまま代入しない** よう気を付けてください。
 
 また、大文字／小文字の違いでプラグインファイルが見付からないこともありますので、プラグインが認識されないときなどはこの点にも注意してください。なお、アプリケーションのログレベルをdebugに設定すると、プラグインを探す過程が詳細に記録されます。
 
@@ -286,7 +286,7 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
 
 ### プラグインprefixの廃止
 
-これまでは，'Ethna', 'APPID' などのprefixを，APPID\_Controllerに
+これまでは，'Ethna', 'APPID' などのprefixを，APPID_Controllerに
 
     /**
          * @var array list of application id where Ethna searches plugin.
@@ -308,7 +308,7 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
 プラグイン検索ディレクトリは，以下の順序で行われます．
 
 - app/plugin/
-- include\_path 順に
+- include_path 順に
   - Ethna/exlib/Plugin
   - Ethna/class/Plugin
 
@@ -322,14 +322,14 @@ $type, $name ともに、自作するときは **Ucfirst** (先頭が大文字�
 3. Ethna本体にバンドルされたプラグイン (Ethna/class/Plugin)
   - これまでどおり，Ethna本体に同梱されて配布されるプラグインです．
 
-アプリケーション固有のプラグイン以外は， **include\_pathを考慮した相対パスで読み込まれます** ．たとえば 「Ethna\_Plugin\_Hoge\_Fuga」を読み込みたいとします．
+アプリケーション固有のプラグイン以外は， **include_pathを考慮した相対パスで読み込まれます** ．たとえば 「Ethna_Plugin_Hoge_Fuga」を読み込みたいとします．
 
     /home/user/hogeproject
 
 にプロジェクトが作成されているとして，
 
 - /home/user/hogeproject/lib/Ethna
-- /usr/share/pear/Ethna の2箇所にEthnaの本体が置いてあるとします．（プロジェクトのlib以下にEthna本体を設置することはわりとよくあることです） この場合，初期設定\*1では，app/lib以下のinclude\_pathが優先されるため，次の順序で検索されます．
+- /usr/share/pear/Ethna の2箇所にEthnaの本体が置いてあるとします．（プロジェクトのlib以下にEthna本体を設置することはわりとよくあることです） この場合，初期設定\*1では，app/lib以下のinclude_pathが優先されるため，次の順序で検索されます．
 
 1. /home/user/hogeproject/app/plugin/Hoge/Fuga.php
 2. /home/user/hogeproject/lib/Ethna/class/Plugin/Hoge/Fuga.php

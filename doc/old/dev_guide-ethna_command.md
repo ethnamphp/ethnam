@@ -33,7 +33,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - その他 
     - clear-cache コマンド 
 - ethna コマンドを拡張する 
-  - Ethna\_Handle について 
+  - Ethna_Handle について 
 
 | いちい | - | 新規作成 |
 | mumumu | 2008-07-30 | 最新の状態を反映 |
@@ -64,7 +64,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 - [-l|--locale] (2.5.0 preview1以降)  
 
   - ロケール（言語や文化の規則)を指定します。
-  - デフォルトはja\_JPです。
+  - デフォルトはja_JPです。
   - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md) も参照して下さい
 - [-e|--encoding] (2.5.0 preview1以降)  
 
@@ -96,12 +96,12 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 
   - アクションファイルを生成する元となるスケルトンファイルを指定します。相対／絶対パスが指定できます。
   - 指定されたファイルが見つからないときはアプリケーションのskelディレクトリ、Ethna本体のskelディレクトリを順に探します。
-  - 省略時は、gatewayの指定に従い、プロジェクトのskel/skel.{action,actio\_cli,action\_xmlrpc}.phpが使われます。
+  - 省略時は、gatewayの指定に従い、プロジェクトのskel/skel.{action,actio_cli,action_xmlrpc}.phpが使われます。
   - このオプションはスケルトンを改造していた場合に有用です。
 - [-g|--gateway=www|cli|xmlrpc]  
 
   - アクションのゲートウェイを指定します。
-  - それぞれaction, action\_cli,action\_xmlrpcディレクトリの下にアクションが追加されます。
+  - それぞれaction, action_cli,action_xmlrpcディレクトリの下にアクションが追加されます。
   - 省略時は www が指定されたものとみなされます。
 - [-w|--with-unittest] (2.3.5 以降)  
 
@@ -115,15 +115,15 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 
   - アクション名を指定します。最低限これだけは指定して下さい。
 
-- 【補足１】"add-action Foo\_Bar"と "add-action foo\_bar"の違い
+- 【補足１】"add-action Foo_Bar"と "add-action foo_bar"の違い
   - 生成されるファイル名・クラス名は同じです。
-  - performのreturn値は異なります。( 'Foo\_Bar' と 'foo\_bar' )
+  - performのreturn値は異なります。( 'Foo_Bar' と 'foo_bar' )
   - どちらの形式でも可能ですが、add-view, add-templateする際は、同じ形式で入力する必要があります。
 
-- 【補足２】"add-action Foo\_Bar"と "add-action FooBar"の違い
+- 【補足２】"add-action Foo_Bar"と "add-action FooBar"の違い
   - 生成されるファイル名は異なります。( 'Foo/Bar.php' と 'FooBar.php' )
   - 生成されるクラス名は同じです。
-  - performのreturn値は異なります。( 'Foo\_Bar' と 'FooBar' )
+  - performのreturn値は異なります。( 'Foo_Bar' と 'FooBar' )
 
 #### add-view コマンド
 
@@ -157,7 +157,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 - [-l|--locale] (2.5.0 preview1以降)  
 
   - ロケール（言語や文化の規則)を指定します。
-  - デフォルトはja\_JPです。
+  - デフォルトはja_JPです。
   - これにより、プロジェクトのテンプレートディレクトリ以下に、指定したロケール名のディ  
 レクトリが作られます。
   - -t オプションを指定したときのみ意味を持ちます。
@@ -171,10 +171,10 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 - [view]
   - 追加したいビュー名を指定します。最低これだけは指定して下さい。
 
-- 【補足１】"add-view Foo\_Bar"と "add-view foo\_bar"の違い
+- 【補足１】"add-view Foo_Bar"と "add-view foo_bar"の違い
   - 挙動は全く同じです。ただし、-tオプションをつけると、tplファイル名が異なります。（後述)
 
-- 【補足２】"add-view Foo\_Bar"と "add-view FooBar"の違い
+- 【補足２】"add-view Foo_Bar"と "add-view FooBar"の違い
   - 生成されるファイル名は異なります。( 'Foo/Bar.php' と 'FooBar.php' )
   - 生成されるクラス名は同じです。
 
@@ -196,7 +196,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - このオプションはスケルトンを改造していた場合に有用です。
 - [-l|--locale] (2.5.0 preview1以降)  
 ロケール（言語や文化の規則)を指定します。
-  - デフォルトはja\_JPです。
+  - デフォルトはja_JPです。
   - これにより、プロジェクトのテンプレートディレクトリ以下に、指定したロケール名のディ  
 レクトリが作られます。
   - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md) も参照して下さい
@@ -207,8 +207,8 @@ ethna コマンドには様々なサブコマンドが用意されており、�
 - [template]
   - 追加したいテンプレート名を指定します。最低これだけは指定して下さい。
 
-- 【補足】"add-template Foo\_Bar"と "add-template foo\_bar"の違い
-  - 生成されるファイル名は異なります。( 'Foo\_Bar' と 'foo\_bar' )
+- 【補足】"add-template Foo_Bar"と "add-template foo_bar"の違い
+  - 生成されるファイル名は異なります。( 'Foo_Bar' と 'foo_bar' )
   - アクションクラスのprepare/performが返す文字列と完全一致している必要があります。
 
 #### add-entry-point コマンド
@@ -232,7 +232,7 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - このオプションはスケルトンを改造していた場合に有用です。
 - [-g|--gateway=www|cli]  
 アクションのゲートウェイを指定します。
-  - それぞれaction, action\_cli ディレクトリの下にアクションが追加されます。
+  - それぞれaction, action_cli ディレクトリの下にアクションが追加されます。
   - 省略時は www が指定されたものとみなされます。
 - [action]  
 追加したいエントリポイントで起動するアクション名を指定します。
@@ -302,15 +302,15 @@ ethna コマンドには様々なサブコマンドが用意されており、�
   - 省略時は、現在のディレクトリから親ディレクトリをたどってプロジェクトを自動的に探索します。
 - [-l|--locale=locale]
   - 生成したいカタログのロケールを指定します。
-  - デフォルトは ja\_JP です。
-  - 実際のカタログは [appid]/locale/[指定したロケール名]/LC\_MESSAGES/[指定したロケール名].[ini|po] に作られます。デフォルトでは ini ファイルが生成されます。
+  - デフォルトは ja_JP です。
+  - 実際のカタログは [appid]/locale/[指定したロケール名]/LC_MESSAGES/[指定したロケール名].[ini|po] に作られます。デフォルトでは ini ファイルが生成されます。
 - [-g|--gettext]
   - gettext を使う場合、このオプションを指定します。
   - このオプションを指定すると、デフォルトの iniファイルではなく、po ファイルが自動生成されます。
   - 生成された po ファイルに対して、xgettext や msgmerge コマンドを使用して mo ファイルを生成するのはユーザの責任です。
 - [extdir1] [extdir2] ...
   - デフォルトでは プロジェクト内の app ディレクトリ内と、templateディレクトリしか調べられませんが、任意のディレクトリをコマンドの最後に追加できます。
-  - ここで指定したディレクトリ内のファイルは、PHPスクリプトの \_et 関数の呼び出ししか解釈されません
+  - ここで指定したディレクトリ内のファイルは、PHPスクリプトの _et 関数の呼び出ししか解釈されません
 
 ### テストケースの追加
 
@@ -483,7 +483,7 @@ Ethnaのパッケージをダウンロードするpear channelの情報をアッ
     $ ethna make-plugin-package [-i|--inifile=file] [-s|--skelfile=file]
                                 [-w|--workdir=dir]
 
-プラグインのパッケージを作ります。詳しくは [プラグインのパッケージを作る](dev_guide-pearpackage.md#k085db20)を参照してください。 このコマンドを使うには、 [PEAR\_PackageFileManager](http://pear.php.net/manual/ja/package.pear.pear-packagefilemanager.php) がインストールされている必要があります。
+プラグインのパッケージを作ります。詳しくは [プラグインのパッケージを作る](dev_guide-pearpackage.md#k085db20)を参照してください。 このコマンドを使うには、 [PEAR_PackageFileManager](http://pear.php.net/manual/ja/package.pear.pear-packagefilemanager.php) がインストールされている必要があります。
 
 - [-i|--inifile]
   - パッケージの情報ファイル(ini形式)を指定します。
@@ -505,7 +505,7 @@ Ethnaのパッケージをダウンロードするpear channelの情報をアッ
 - [-s|--smarty]
   - smartyのキャッシュ、コンパイル済みファイルを削除
 - [-c|--cachemanager]
-  - Cachemanager\_Localfileが作るキャッシュファイルを削除します。デフォルトではアプリケーションの tmp/.cache/ 以下のファイルです。
+  - Cachemanager_Localfileが作るキャッシュファイルを削除します。デフォルトではアプリケーションの tmp/.cache/ 以下のファイルです。
 - [-p|--pear]
   - ethnaコマンドで使っているpearチャンネル関連のキャッシュを削除します。
 - [-a|--any-tmp-files]
@@ -513,17 +513,17 @@ Ethnaのパッケージをダウンロードするpear channelの情報をアッ
 
 ## ethna コマンドを拡張する
 
-ethna で指定できる各コマンドは Ethna\_Plugin\_Handle\_\* プラグインで作られています。プラグインはアプリケーション固有のものもありますが、現在のところ ethna コマンド用 のプラグインはEthna本体のものしか使えません。
+ethna で指定できる各コマンドは Ethna_Plugin_Handle_\* プラグインで作られています。プラグインはアプリケーション固有のものもありますが、現在のところ ethna コマンド用 のプラグインはEthna本体のものしか使えません。
 
-### Ethna\_Handle について
+### Ethna_Handle について
 
-Ethna\_Handleはコントローラから独立したクラスです。ethnaコマンドが実行されてまずインスタンスが作られます。Ethna\_Handleのコンストラクタ内でようやくEthna\_Controllerのインスタンスが作られます。
+Ethna_Handleはコントローラから独立したクラスです。ethnaコマンドが実行されてまずインスタンスが作られます。Ethna_Handleのコンストラクタ内でようやくEthna_Controllerのインスタンスが作られます。
 
 Ethna本体のディレクトリやアプリケーションのディレクトリに何か指示をするときは、いったん以下のメソッドで各コントローラを取得し、$ctl->getDirectory('tmp')とかするといいと思います。
 
 - getEthnaController()
-  - Ethna\_Controllerのインスタンスを取得します。これはEthna本体のEthna\_Controller.phpで定義されたEthna\_Controllerそのものです。
-- getAppController($app\_dir)
+  - Ethna_Controllerのインスタンスを取得します。これはEthna本体のEthna_Controller.phpで定義されたEthna_Controllerそのものです。
+- getAppController($app_dir)
   - 指定されたディレクトリからアプリケーションのコントローラをさがし、そのインスタンスを返します。
 
 

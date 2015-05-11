@@ -40,7 +40,7 @@
 
 ### ライブラリを整える
 
-Ethnaアプリがが必要とするライブラリを整えます。include\_pathに置けばいいのですが、私はEthnaアプリのlibに入れています。つまり今回の場合だと、sample1/libになります。入れるのは
+Ethnaアプリがが必要とするライブラリを整えます。include_pathに置けばいいのですが、私はEthnaアプリのlibに入れています。つまり今回の場合だと、sample1/libになります。入れるのは
 
 - Ethna本体
 - Smarty
@@ -50,7 +50,7 @@ Ethnaアプリがが必要とするライブラリを整えます。include\_pat
 
 ### DB設計をして、DB設定をして、AppObjectを作成してマネージャに登録
 
-AppObject生成スクリプトがあるので、DBテーブルを先に作っておきます。使ったSQLはschema/に入れておきます。今回は、ethna\_sampleというDBにsample1\_newsというテーブルを作りました。
+AppObject生成スクリプトがあるので、DBテーブルを先に作っておきます。使ったSQLはschema/に入れておきます。今回は、ethna_sampleというDBにsample1_newsというテーブルを作りました。
 
 DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
@@ -64,11 +64,11 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 でオッケーです。この時、AppManagerとAppObjectを記述したファイルはsample1/libにできるのですが、私はlibには「PEARなど汎用的なもの」を入れることにしているんので、sample1/appに移動させています。
 
-できたSample1\_Sample1Newsクラスには、auto\_incrementな要素に
+できたSample1_Sample1Newsクラスには、auto_incrementな要素に
 
     seq => true ,
 
-を入れておきます。また、今後のアクションの追加でActionClassで簡単に使えるようにするために、Sample1\_ControllerにManagerを登録しておきます。また、また、Sample\_Controller.phpにこのマネージャクラスのファイルをincludeさせる必要があります。sample1/app/Sample1\_Controller.phpに
+を入れておきます。また、今後のアクションの追加でActionClassで簡単に使えるようにするために、Sample1_ControllerにManagerを登録しておきます。また、また、Sample_Controller.phpにこのマネージャクラスのファイルをincludeさせる必要があります。sample1/app/Sample1_Controller.phpに
 
     include_once 'Sample1_Sample1News.php' ;
     class Sample1_Controller extends Ethna_Controller
@@ -91,7 +91,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 #### アクションフォームの追加
 
-このファイルのアクションフォームクラスのSample1\_Form\_AdminNewsに、表画面で作りたいフォーム要素のプロパティを登録します。詳しくは、ダウンロードサンプルをご覧下さい。
+このファイルのアクションフォームクラスのSample1_Form_AdminNewsに、表画面で作りたいフォーム要素のプロパティを登録します。詳しくは、ダウンロードサンプルをご覧下さい。
 
 ### テンプレートの作成
 
@@ -99,7 +99,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
     <input type="text" name="n_title" value="{$form.n_title}" size="20" id="n_title">
 
-とか書いてもいいのですが、typeとかnameとかvalueの属性はActionFormで定義されているものです。そこで、Smartyプレースホルダを使います。Smarty関数を登録するだけです。藤本さんのサンプルを拡張したものがあるので、それをsample1/appディレクトリに置き、Sample1\_Controllerクラスでincludeさせます。また、このSmarty関数をSample1\_Controllerクラス内の所定の場所で登録します。
+とか書いてもいいのですが、typeとかnameとかvalueの属性はActionFormで定義されているものです。そこで、Smartyプレースホルダを使います。Smarty関数を登録するだけです。藤本さんのサンプルを拡張したものがあるので、それをsample1/appディレクトリに置き、Sample1_Controllerクラスでincludeさせます。また、このSmarty関数をSample1_Controllerクラス内の所定の場所で登録します。
 
     include_once('Sample1_SmartyPlugin.php');
     ....
@@ -121,7 +121,7 @@ DB設定は、DSNをsample1/etc/sample1-ini.phpに記述します。
 
 ### とりあえず、チェック
 
-ココまできたら、とりあえずチェックします。sample1/www/index.phpをコピーして、自分の好きなDocumentRootのところにもって行ってください。ダウンロードサンプルではpublic\_html/sample1/index.phpとしました。それがSample1\_Controller.phpを適切にincludeできるようにパスを調整する必要があります。ダウンロードサンプルの場合は、
+ココまできたら、とりあえずチェックします。sample1/www/index.phpをコピーして、自分の好きなDocumentRootのところにもって行ってください。ダウンロードサンプルではpublic_html/sample1/index.phpとしました。それがSample1_Controller.phpを適切にincludeできるようにパスを調整する必要があります。ダウンロードサンプルの場合は、
 
     include_once('../../include/sample1/app/Sample1_Controller.php');
     Sample1_Controller::main('Sample1_Controller', 'index');
@@ -179,7 +179,7 @@ Doのアクションを定義する際には、前のアクションがあって
 performでの処理は、AppObjectを使うことで極めて簡単に処理できます。 具体的処理は、ソースを見てもらうとして、ポイントは、
 
 - データのプライマリIDがあればUPDATE処理、無ければADD処理
-- importFormを継承してそのオブジェクトに適した形にする かなと思います。後者は、Sample1\_Sample1Newsクラスを見てみてください。Formから投稿された時点では「公開日」「掲載終了日」は文字列ですからunixtimestampに直してからimportFormしてやる必要があります。
+- importFormを継承してそのオブジェクトに適した形にする かなと思います。後者は、Sample1_Sample1Newsクラスを見てみてください。Formから投稿された時点では「公開日」「掲載終了日」は文字列ですからunixtimestampに直してからimportFormしてやる必要があります。
 
 ### exportFormを使う
 
@@ -189,7 +189,7 @@ performでの処理は、AppObjectを使うことで極めて簡単に処理で�
 
 とかにアクセスします。それだけだと、フォームの中身は空のままなので、ActionFormにnid=3の時の値を入れてやります。そのメソッドがexportFormです。
 
-Sample1\_Sample1AdminNews::prepare()で、AppObjectを取得して行います。\*2
+Sample1_Sample1AdminNews::prepare()で、AppObjectを取得して行います。\*2
 
     if($this->af->get('nid')){
        $news =& new Sample1_Sample1News(&$this->backend, array('nid'), array($this->af->get('nid')));
@@ -204,7 +204,7 @@ Sample1\_Sample1AdminNews::prepare()で、AppObjectを取得して行います�
 
     C:\...\sample1\bin>php generate_action_script.php news
 
-で、sample1/app/action/News.phpを編集します。表面では、フォームは必要ないので特に定義しません。その代わり、投稿されたニュースを複数持ってくるという作業が必要になります。これは、Sample1\_Sample1News::perform()メソッドで行います
+で、sample1/app/action/News.phpを編集します。表面では、フォームは必要ないので特に定義しません。その代わり、投稿されたニュースを複数持ってくるという作業が必要になります。これは、Sample1_Sample1News::perform()メソッドで行います
 
 ただし、ActionClassではあくまでActionだけを書きたいので、実際の処理はManagerに任せます。そのため、performには
 
@@ -227,9 +227,9 @@ ActionClassは「状態の遷移を決めるだけ」ということにしたい
 
     Sample1_Controller::main('Sample1_Controller', 'admin_news');
 
-としておくと、ここにアクセスした時に、デフォルトのアクションがadmin\_newsとなり便利です。
+としておくと、ここにアクセスした時に、デフォルトのアクションがadmin_newsとなり便利です。
 
-そして、Sample1\_Action\_AdminNewsクラスのauthenticateメソッドを
+そして、Sample1_Action_AdminNewsクラスのauthenticateメソッドを
 
     function authenticate(){
     		if(!preg_match('/admin/', $_SERVER['SCRIPT_NAME'])){
@@ -237,12 +237,12 @@ ActionClassは「状態の遷移を決めるだけ」ということにしたい
     		}
     	}
 
-としてやります。こうすることで、さきほどのエントリポイントからはアクセスが出来なくなります。なお、admin\_news\_doアクションにも自動的にこのauthenticateが引き継がれます。
+としてやります。こうすることで、さきほどのエントリポイントからはアクセスが出来なくなります。なお、admin_news_doアクションにも自動的にこのauthenticateが引き継がれます。
 
 
 * * *
 \*1最初は私も違和感を感じたのですが、慣れるとこの方法がとてもコントローラブルなものであることに気が付きました。  
 \*2別にperformでも良いですけど。  
 \*3実は、この「テンプレートに値を渡す」というのはViewクラスの仕事になります。ActionClassはあくまでどのテンプレートに辿り着くか(つまりどのViewに辿り着くか)の遷移を把握しておくだけの存在だからです。複雑なActionを考える時には便利な思考パターンになると思います。しかし、こんな簡単な処理にまでViewを使うと面倒なのでここではActionClassでテンプレートに値を渡しています。  
-\*4厳密にはEthna\_AppManager::getObjectPropListとEthna\_AppManager::getObjectList  
+\*4厳密にはEthna_AppManager::getObjectPropListとEthna_AppManager::getObjectList  
 

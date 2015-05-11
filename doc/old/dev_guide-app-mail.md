@@ -1,8 +1,8 @@
 # Ethnaを使ってメールを送信する
   - テンプレートファイルの作成 
   - MailSenderの実行 
-- Ethna\_MailSenderを拡張する 
-  - (1) Ethna\_MailSenderをextendsしたクラスの作成 
+- Ethna_MailSenderを拡張する 
+  - (1) Ethna_MailSenderをextendsしたクラスの作成 
   - (2) メールテンプレートの設置 
   - (3) 送信処理 
 - 添付ファイル 
@@ -12,14 +12,14 @@
 
 | halt | 2006-11-06 17:53 | メールを送信する最短のサンプルを追加 |
 | psuke | 2006-12-07 09:53 | 最短のサンプルを修正してみました。 |
-| ichii386 | 2007-01-18 | Ethna\_MailSender.php,vの1.9にあわせて修正 |
+| ichii386 | 2007-01-18 | Ethna_MailSender.php,vの1.9にあわせて修正 |
 | mumumu | 2009-10-18 | 「メール送信がうまくいかない場合」のセクションを追加 |
 
 ## Ethnaを使ってメールを送信する
 
 ### テンプレートファイルの作成
 
-project\_dirの/template/jaにmailフォルダを作成、そこにテンプレートを配置します。
+project_dirの/template/jaにmailフォルダを作成、そこにテンプレートを配置します。
 
 テンプレートはこんな感じで書きます。
 
@@ -42,11 +42,11 @@ welcome.tpl
 
 とすれば送信できます。
 
-## Ethna\_MailSenderを拡張する
+## Ethna_MailSenderを拡張する
 
-### (1) Ethna\_MailSenderをextendsしたクラスの作成
+### (1) Ethna_MailSenderをextendsしたクラスの作成
 
-PATH\_TO\_PROJECT\_ROOT/lib/Sample\_MailSender.php   
+PATH_TO_PROJECT_ROOT/lib/Sample_MailSender.php   
 テンプレートの指定は、$defメンバに定義します。（0は使われてるので1から）
 
     <?php
@@ -69,15 +69,15 @@ PATH\_TO\_PROJECT\_ROOT/lib/Sample\_MailSender.php
     }
     ?>
 
-app/Sample\_Controller.php で include します。
+app/Sample_Controller.php で include します。
 
     + include_once('Sample_MailSender.php');
 
 ### (2) メールテンプレートの設置
 
-テンプレートのディレクトリはデフォルトでは PATH\_TO\_PROJECT\_ROOT/template/ja/mail になります。このディレクトリに user\_resign と user\_register というファイルを設置します。
+テンプレートのディレクトリはデフォルトでは PATH_TO_PROJECT_ROOT/template/ja/mail になります。このディレクトリに user_resign と user_register というファイルを設置します。
 
-メールのテンプレートもHTMLのテンプレートと同じ要領でアサインされた変数を使えます。（使える Smarty 変数は \_setDefaultMacro とか後で Ethna\_MailSender::send で引数で与えられます）普通のメールと同じように **最初の空行でメールヘッダとメール本文を区別します** ので、入れたいヘッダがあれば以下のように記述します。
+メールのテンプレートもHTMLのテンプレートと同じ要領でアサインされた変数を使えます。（使える Smarty 変数は _setDefaultMacro とか後で Ethna_MailSender::send で引数で与えられます）普通のメールと同じように **最初の空行でメールヘッダとメール本文を区別します** ので、入れたいヘッダがあれば以下のように記述します。
 
     From: webmaster@example.com
     Subject: ユーザが退会しました
@@ -98,7 +98,7 @@ ActionClassとかで
         '1',
         array('username'=>$resign_user));
 
-とすれば、Smarty変数usernameに$resign\_userがアサインされてメールが [send\_to\_mail@example.com](mailto:send_to_mail@example.com) 宛に送信されます。
+とすれば、Smarty変数usernameに$resign_userがアサインされてメールが [send_to_mail@example.com](mailto:send_to_mail@example.com) 宛に送信されます。
 
 ## 添付ファイル
 
@@ -150,13 +150,13 @@ send()の4つめの引数に添付ファイル(multipart)を指定すること�
 
 ### 文字化けの対応
 
-Ethna\_MailSender は php の [mail()](http://jp.php.net/manual/ja/function.mail.php)関数を使っています。ほかのライブラリに依存しないメリットがあるものの、 Ethna のデフォルトである euc-jp 以外で運用すると文字化けしやすいかもしれません。
+Ethna_MailSender は php の [mail()](http://jp.php.net/manual/ja/function.mail.php)関数を使っています。ほかのライブラリに依存しないメリットがあるものの、 Ethna のデフォルトである euc-jp 以外で運用すると文字化けしやすいかもしれません。
 
 届いたメールの subject などが文字化けする場合、次のことを確認してください。
 
-- mb\_language()
+- mb_language()
   - 'Japanese' にすると直るかもしれません。
-- mb\_internal\_encoding()
+- mb_internal_encoding()
   - 'euc-jp' にすると直るかもしれません。
 - 添付ファイルの 'content-type'
   - 本文をテンプレートから読み込むときは、内部エンコーディングから iso-2022-jp に自動で変換します。添付ファイルについては適切なエンコーディングを自分で指定しなければなりません。
@@ -171,7 +171,7 @@ Ethna\_MailSender は php の [mail()](http://jp.php.net/manual/ja/function.mail
 Ethna ではメール送信の処理に、内部で [mail() 関数](http://www.php.net/manual/ja/function.mail.php)を使っています。ですので、使用するMTA(特にqmail等) によっては、メールに対する改行コードの扱いによって以下のような挙動をすることがあります。
 
 - メール本体が空で送信される
-- Ethna\_MailSender自体はエラーを吐かないのに、メールが送信されない
+- Ethna_MailSender自体はエラーを吐かないのに、メールが送信されない
 
 こういった場合、[appid]-ini.php に以下の設定を行って再度メール送信を行ってみてください。この設定を行うと、mail() 関数で発生する問題の大半の原因となる 「改行コード CRLF を一律にメールに付加する動き」を回避するようになります。
 

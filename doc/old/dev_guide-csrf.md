@@ -4,7 +4,7 @@
   - (1) POSTの正当性を保証するためのIDを生成する 
     - (余談) 
   - (2)テンプレートで{csrfid}でHidden値を生成する 
-  - (3) Ehna\_Util::isCsrfSafe()で、正当性を確認する。 
+  - (3) Ehna_Util::isCsrfSafe()で、正当性を確認する。 
     - (余談） 
 
 | 書いた人 | 日付 | 備考 |
@@ -64,11 +64,11 @@ DeleteAction
 
 ### 準備
 
-etc/APPID.ini.phpに、Ethna\_Plugin\_Csrfのどの実装を利用するかを指定します。 デフォルトでは、Sessionが呼び出されます。(現状では、Sessionしか用意されていません）
+etc/APPID.ini.phpに、Ethna_Plugin_Csrfのどの実装を利用するかを指定します。 デフォルトでは、Sessionが呼び出されます。(現状では、Sessionしか用意されていません）
 
 ### (1) POSTの正当性を保証するためのIDを生成する
 
-まず、入力画面もしくは、APPID\_ActionClassのデフォルトの動作のどちらかで、IDを生成します。 難しく聞こえますが、要するにロジックのどこかで
+まず、入力画面もしくは、APPID_ActionClassのデフォルトの動作のどちらかで、IDを生成します。 難しく聞こえますが、要するにロジックのどこかで
 
     Ethna_Util::setCsrfID();
 
@@ -89,7 +89,7 @@ etc/APPID.ini.phpに、Ethna\_Plugin\_Csrfのどの実装を利用するかを�
 
 #### (余談)
 
-また、一度実行されれば（実装によりますが、たとえばSessionの場合は）その、Sessionが削除されるまでは同一のIDが保証されます。 Ethna\_Util::setCsrfID();を二回実行しても動作に影響はありません。 また、Sessionの実装の場合は、これを実行するとSessionが開始されることも注意してください。
+また、一度実行されれば（実装によりますが、たとえばSessionの場合は）その、Sessionが削除されるまでは同一のIDが保証されます。 Ethna_Util::setCsrfID();を二回実行しても動作に影響はありません。 また、Sessionの実装の場合は、これを実行するとSessionが開始されることも注意してください。
 
 ### (2)テンプレートで{csrfid}でHidden値を生成する
 
@@ -103,9 +103,9 @@ Inputアクションから呼び出されるテンプレートInput.tplのForm�
     {form_input name="submit"}
     {/form}
 
-### (3) Ehna\_Util::isCsrfSafe()で、正当性を確認する。
+### (3) Ehna_Util::isCsrfSafe()で、正当性を確認する。
 
-formのデータ送信先であるinput\_doアクションで、Postの正当性を確認します。
+formのデータ送信先であるinput_doアクションで、Postの正当性を確認します。
 
     class Csrf_Action_Input_Do extends Csrf_ActionClass
     {

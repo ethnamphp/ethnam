@@ -7,9 +7,9 @@
 
 そんなときには、ethnaコマンドのadd-actionオプションを利用して、スケルトンファイルを生成すると楽です。
 
-例えば、"some\_action\_name"というアクションを追加したい場合は、
+例えば、"some_action_name"というアクションを追加したい場合は、
 
-$ ethna add-action some\_action\_name
+$ ethna add-action some_action_name
 
 とするだけです。すると
 
@@ -21,7 +21,7 @@ $ ethna add-action some\_action\_name
 
 ### スケルトンファイルを変更する
 
-実際にはアプリケーション毎にある程度「スケルトンの元になるファイル」を変更したくなると思います。例えば、継承するクラスをEthna\_ActionFormではなく、(Ethna\_ActionFormを継承した)アプリケーション固有のアクションフォームにしたい、といったケースです。
+実際にはアプリケーション毎にある程度「スケルトンの元になるファイル」を変更したくなると思います。例えば、継承するクラスをEthna_ActionFormではなく、(Ethna_ActionFormを継承した)アプリケーション固有のアクションフォームにしたい、といったケースです。
 
 この場合は、プロジェクトスケルトン生成後にskelディレクトリに生成されているはずのskel.action.phpを変更することで、生成されるファイルを任意に変更することが出来ます。
 

@@ -68,21 +68,21 @@
       <input value="Submit!" type="submit" />
     </form>
 
-このように、{form} {/form} ブロックタグを外側に配置し、その内側で {form\_input} タグや {form\_submit} タグを使うのが基本になります。{form} ブロックタグには、 ethna\_action という属性に、フォーム定義を読み取らせるアクション名を指定します。 ethna\_action が指定されない場合は、現在のアクションにあるフォーム定義が使われます。
+このように、{form} {/form} ブロックタグを外側に配置し、その内側で {form_input} タグや {form_submit} タグを使うのが基本になります。{form} ブロックタグには、 ethna_action という属性に、フォーム定義を読み取らせるアクション名を指定します。 ethna_action が指定されない場合は、現在のアクションにあるフォーム定義が使われます。
 
 hidden タグも生成されていますが、それはこの後で説明します。
 
-アクションフォームのフォーム定義で特に重要なのは以下の部分です。form\_type の値によって、生成される入力フォームが決まります。ここでは、FORM\_TYPE\_TEXT が指定されているため、テキスト入力フォームが生成されます。
+アクションフォームのフォーム定義で特に重要なのは以下の部分です。form_type の値によって、生成される入力フォームが決まります。ここでは、FORM_TYPE_TEXT が指定されているため、テキスト入力フォームが生成されます。
 
     'form_type' => FORM_TYPE_TEXT,
 
 #### フォーム値の補完
 
-ethna\_action と現在のアクションが同じ場合、フォームヘルパは自動的に Submit した値を入力フォームに補完してくれます。具体的には、Submitしたあとに同じ画面に戻 ってくるときが典型例です。
+ethna_action と現在のアクションが同じ場合、フォームヘルパは自動的に Submit した値を入力フォームに補完してくれます。具体的には、Submitしたあとに同じ画面に戻 ってくるときが典型例です。
 
 これは、Submit した値を検証した結果エラーになって入力をやり直させる場合に、ユーザ が同じことを入力させなくて良いようにとのフレームワークの配慮です。
 
-先ほどの具体例で、hidden タグが以下のように出力されていました。これは、ethna\_action を指定した場合に、ethna\_action と submit 先のアクションが同じになるようにする ためです。
+先ほどの具体例で、hidden タグが以下のように出力されていました。これは、ethna_action を指定した場合に、ethna_action と submit 先のアクションが同じになるようにする ためです。
 
     <form method="post">
       <input type="hidden" name="action_formhelper" value="true">
@@ -91,7 +91,7 @@ ethna\_action と現在のアクションが同じ場合、フォームヘルパ
 
 ### 基本的な書き方
 
-既に述べたように、フォームヘルパの基本的な使い方は、外側に {form} {/form} ブロッ クタグを外側に配置し、その内側で {form\_input} タグや {form\_submit} タグを使 うのが基本になります。
+既に述べたように、フォームヘルパの基本的な使い方は、外側に {form} {/form} ブロッ クタグを外側に配置し、その内側で {form_input} タグや {form_submit} タグを使 うのが基本になります。
 
 但し、フォーム定義によって、出力されるタグが異なってきます。ここでは、それについて具体例を交えて説明します。
 
@@ -99,15 +99,15 @@ ethna\_action と現在のアクションが同じ場合、フォームヘルパ
 
 選択肢がないフォームとは、以下を指します。
 
-| form\_type に指定する定数 | 生成されるコントロール名 |
-| FORM\_TYPE\_TEXT | テキストボックス |
-| FORM\_TYPE\_PASSWORD | パスワード |
-| FORM\_TYPE\_TEXTAREA | テキストエリア |
-| FORM\_TYPE\_BUTTON | ボタン |
-| FORM\_TYPE\_FILE | ファイル |
-| FORM\_TYPE\_HIDDEN | 隠しコントロール |
+| form_type に指定する定数 | 生成されるコントロール名 |
+| FORM_TYPE_TEXT | テキストボックス |
+| FORM_TYPE_PASSWORD | パスワード |
+| FORM_TYPE_TEXTAREA | テキストエリア |
+| FORM_TYPE_BUTTON | ボタン |
+| FORM_TYPE_FILE | ファイル |
+| FORM_TYPE_HIDDEN | 隠しコントロール |
 
-選択肢がないフォームの場合は、フォーム定義の form\_type に、上記の該当する値を 指定して、テンプレート側で {form\_input} の name 属性に、フォーム定義の名前 を指定するだけです。
+選択肢がないフォームの場合は、フォーム定義の form_type に、上記の該当する値を 指定して、テンプレート側で {form_input} の name 属性に、フォーム定義の名前 を指定するだけです。
 
 たとえばテキストエリアの場合は、以下のようになります。
 
@@ -128,18 +128,18 @@ ethna\_action と現在のアクションが同じ場合、フォームヘルパ
 
     <textarea name="sample" value=""></textarea>
 
-他の form\_type の場合も、対応したタグがそれぞれ出力されます。
+他の form_type の場合も、対応したタグがそれぞれ出力されます。
 
 #### 選択肢があるフォーム
 
 HTML で指定できるフォーム要素の中には、選択肢を作ることができるものがあります。 この場合、微妙に扱いが異なります。選択肢が指定できるフォームには以下があります。
 
-| form\_type に指定する定数 | 生成されるコントロール名 |
-| FORM\_TYPE\_SELECT | セレクトボックス |
-| FORM\_TYPE\_RADIO | ラジオボタン |
-| FORM\_TYPE\_CHECKBOX | チェックボックス |
+| form_type に指定する定数 | 生成されるコントロール名 |
+| FORM_TYPE_SELECT | セレクトボックス |
+| FORM_TYPE_RADIO | ラジオボタン |
+| FORM_TYPE_CHECKBOX | チェックボックス |
 
-選択肢を複数使って1つのフォーム(コントロール)をつくる SELECT タグの場合、選 択肢を次のように指定できます。form\_type の値と、選択肢に option で配列を 指定しているのに注目してください。
+選択肢を複数使って1つのフォーム(コントロール)をつくる SELECT タグの場合、選 択肢を次のように指定できます。form_type の値と、選択肢に option で配列を 指定しているのに注目してください。
 
 option には、input タグの value 値をキーにして、表示するラベルを値にした 配列を指定します。
 
@@ -163,7 +163,7 @@ option には、input タグの value 値をキーにして、表示するラベ
       <option value="2">2番目</option>
     </select>
 
-フォーム定義に FORM\_TYPE\_RADIO を指定した場合、以下のように出力されます。
+フォーム定義に FORM_TYPE_RADIO を指定した場合、以下のように出力されます。
 
     <label for="sample1_1">
       <input type="radio" name="sample" value="1" id="sample1_1" />1番目
@@ -172,7 +172,7 @@ option には、input タグの value 値をキーにして、表示するラベ
       <input type="radio" name="sample" value="2" id="sample1_2" />2番目
     </label>
 
-フォーム定義に FORM\_TYPE\_CHECKBOX を指定した場合、以下のように出力されます。
+フォーム定義に FORM_TYPE_CHECKBOX を指定した場合、以下のように出力されます。
 
     <label for="sample2_1">
       <input type="checkbox" name="sample" value="1" id="sample2_1" />1番目
@@ -199,7 +199,7 @@ option には、input タグの value 値をキーにして、表示するラベ
     {form_input name="sample"}
     {form_input name="sample"}
 
-つまり、出力は以下のようになります。{form\_input} を並べた数だけ、配列向けのフォームが自動 生成されるということです。
+つまり、出力は以下のようになります。{form_input} を並べた数だけ、配列向けのフォームが自動 生成されるということです。
 
     <input type="text" name="sample[]" value="" />
      <input type="text" name="sample[]" value="" />
@@ -227,7 +227,7 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 ### フォーム値の補完の詳細
 
-入力フォームを自動生成するために使う {form\_input} は、設定する値(<input type="..." value="hoge" /> の hoge の部分) の属性として default と value 属性が用意されています。
+入力フォームを自動生成するために使う {form_input} は、設定する値(<input type="..." value="hoge" /> の hoge の部分) の属性として default と value 属性が用意されています。
 
     {form_input name="sample" default="1"}
     {form_input name="sample" value="1"}
@@ -235,7 +235,7 @@ option には、input タグの value 値をキーにして、表示するラベ
 - valueはその値が編集されることを期待しない場合に指定します。また、submitされて戻ってきた場合は、このvalue属性に値が補完されます。
 - defaultは、編集されるフォームに初期値を与える場合に指定します。valueが指定されている場合はdefaultよりも優先されます。
 
-{form\_input} タグの default 属性が配列で指定された場合、上から順に 同じ名前のdefaultの値を埋めていきます。これは、以下のようにフォーム定義が配列の場合に有用です。
+{form_input} タグの default 属性が配列で指定された場合、上から順に 同じ名前のdefaultの値を埋めていきます。これは、以下のようにフォーム定義が配列の場合に有用です。
 
     // Viewやアクション側で以下のように設定する
     $this->af->setApp('default', 
@@ -247,7 +247,7 @@ option には、input タグの value 値をキーにして、表示するラベ
       {form_input name="sample[]" default="$app.default"} {* b が補完される *}
       {form_input name="sample[]" default="$app.default"} {* c が補完される *}
 
-また、{form}{/form} ブロックタグの default 属性が以下のように指定されると、その値はこのブロックタグで囲まれた {form\_input} のdefault属性すべてに適用されます。例を以下に示します。
+また、{form}{/form} ブロックタグの default 属性が以下のように指定されると、その値はこのブロックタグで囲まれた {form_input} のdefault属性すべてに適用されます。例を以下に示します。
 
     // アクションや View で以下のように指定してみる
     $this->af->setApp('sample',
@@ -276,7 +276,7 @@ option には、input タグの value 値をキーにして、表示するラベ
     {form name="hoge1"}{/form}
     {form name="hoge2"}{/form}
 
-この場合は、以下のように ethna\_fid というフォームを識別するための隠しフィールドが出力されます。\*1
+この場合は、以下のように ethna_fid というフォームを識別するための隠しフィールドが出力されます。\*1
 
     <form name="hoge1">
       <input type="hidden" name="ethna_fid" value="hoge1" />
@@ -287,7 +287,7 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 #### default 属性を指定する
 
-複数のフォームを並べていくと、{form\_input} タグの value や default 属性の指定が非常に大変になります。その場合こそ、{form}{/form} タグの default 属性の使用を検討すべきです。
+複数のフォームを並べていくと、{form_input} タグの value や default 属性の指定が非常に大変になります。その場合こそ、{form}{/form} タグの default 属性の使用を検討すべきです。
 
 ### サンプルコード
 
@@ -299,7 +299,7 @@ option には、input タグの value 値をキーにして、表示するラベ
 
 ### TODO
 
-実装の大部分はEthna\_Renderer\_SmartyではなくEthna\_ViewClassが持っているため、本当はSmartyに限らずさまざまなレンダラで利用可能なはずです。しかし、現時点ではSmartyしかレンダラが用意されていません。素のPHPや、flexy等、他のテンプレートエンジンもサポートすべきだと考えています。
+実装の大部分はEthna_Renderer_SmartyではなくEthna_ViewClassが持っているため、本当はSmartyに限らずさまざまなレンダラで利用可能なはずです。しかし、現時点ではSmartyしかレンダラが用意されていません。素のPHPや、flexy等、他のテンプレートエンジンもサポートすべきだと考えています。
 
 
 * * *

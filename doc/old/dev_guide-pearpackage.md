@@ -50,12 +50,12 @@ ethnaのリリースファイルにプラグインのパッケージャが含ま
     % cd /tmp/ethna_package
     % ethna make-plugin-package --inifile=sample_package.ini --skelfile=sample_plugin.php
 
-とすると、/tmp/ethna\_packageディレクトリに
+とすると、/tmp/ethna_packageディレクトリに
 
-- Ethna\_Plugin\_Sample\_Phpinfo-1.0.0.tgz
-- App\_Plugin\_Sample\_Phpinfo-1.0.0.tgz の2つのパッケージが作られます。
+- Ethna_Plugin_Sample_Phpinfo-1.0.0.tgz
+- App_Plugin_Sample_Phpinfo-1.0.0.tgz の2つのパッケージが作られます。
 
-プラグインのサンプルが設定ファイルはてきとうに編集すれば分かると思います。スケルトンは、プラグインファイル中のクラス名のprefix(masterとlocalでインストール時に変わる部分)を {$application\_id} としていることに注意してください。
+プラグインのサンプルが設定ファイルはてきとうに編集すれば分かると思います。スケルトンは、プラグインファイル中のクラス名のprefix(masterとlocalでインストール時に変わる部分)を {$application_id} としていることに注意してください。
 
 #### PEAR パッケージについての簡単な説明
 
@@ -65,7 +65,7 @@ pear.ethna.jp という pear のチャンネルがあって，そこで公開さ
 
     % ethna install-plugin --master Hoge Fuga
 
-とやると，プラグイン Ethna\_Plugin\_Hoge\_Fuga をネットワークからダウンロードしてEthna本体のディレクトリにインストールしてくれます。
+とやると，プラグイン Ethna_Plugin_Hoge_Fuga をネットワークからダウンロードしてEthna本体のディレクトリにインストールしてくれます。
 
 #### master と local
 
@@ -76,7 +76,7 @@ pear.ethna.jp という pear のチャンネルがあって，そこで公開さ
 
 - local
   - アプリケーション(プロジェクト)のディレクトリにパッケージを入れます
-  - いわゆる php\_dir は skel/ です。 skel/.pearrc があるので
+  - いわゆる php_dir は skel/ です。 skel/.pearrc があるので
 
     % pear -c skel/.pearrc config-show
 
@@ -90,7 +90,7 @@ pear.ethna.jp という pear のチャンネルがあって，そこで公開さ
 
 #### いろいろ
 
-- (CLIの) php.ini で memory\_limit = 8M だと足りないかもしれません。
+- (CLIの) php.ini で memory_limit = 8M だと足りないかもしれません。
   - 16M とか 24M くらいにすれば OK なはず
 - ハンドラ関連はflockしてないので同時に実行しないでください
 

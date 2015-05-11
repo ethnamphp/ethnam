@@ -18,7 +18,7 @@
 
 検索結果やリストの一覧などのページにGoogle風のページリンクを作成します。
 
-Ethna\_Util::getDirectLinkList()を使用してページャを作成します。 Ethna\_Util::getDirectLinkList(全データ数, 表示オフセット, 1ページあたりに表示する件数)となっています。以下の例ではstartが指定されるオフセットになっています。
+Ethna_Util::getDirectLinkList()を使用してページャを作成します。 Ethna_Util::getDirectLinkList(全データ数, 表示オフセット, 1ページあたりに表示する件数)となっています。以下の例ではstartが指定されるオフセットになっています。
 
 ### Pagerを作成する例
 

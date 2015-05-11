@@ -2,7 +2,7 @@
 箱根で行われた CakePHP 開発合宿にて、Ethnaのコミッタが集う機会がありました。その際に行われた議論を以下に残しておきます。
 
 - Ethna オフラインミーティング @Cake開発合宿 
-  - Ethna\_ActionForm#validate + フィルタの実行タイミング 
+  - Ethna_ActionForm#validate + フィルタの実行タイミング 
   - JavaScript の連携 
   - フォームヘルパについて 
   - ドキュメント 
@@ -16,11 +16,11 @@
     - mumumu 
     - sotarok 
     - ichii386 
-    - maru\_cc 
+    - maru_cc 
 
 | 書いた人 | mumumu | 2009-04-11 | 新規作成 |
 
-### Ethna\_ActionForm#validate + フィルタの実行タイミング
+### Ethna_ActionForm#validate + フィルタの実行タイミング
 
 - 現在はActionFormのvalidateメソッド実行時に、filter定義を実行してから、validateを実行している。
   - このフィルタ実行のタイミングはもっとユーザが制御できてもいいのではないか
@@ -40,24 +40,24 @@
 
 ### ドキュメント
 
-- entrypoint, configのurl, mod\_rewriteとかの設定のサンプル
+- entrypoint, configのurl, mod_rewriteとかの設定のサンプル
 - 環境差異の設定サンプル
 
 ### プラグイン読み込み順序の変更
 
 これは，やる． extlibディレクトリの配置とか．(sotarok)
 
-- [https://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=15930](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15930)
+- [https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15930](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15930)
 
 ### tarball 配布パッケージ化
 
 (sotarok) これも，やる
 
-- [https://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=15931](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15931)
+- [https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15931](https://sourceforge.jp/ticket/browse.php?group_id=1343&tid=15931)
 
 ### 複数定義にまたがる ActionForm 定義の記述法
 
-- required\_if とか(sotarok)
+- required_if とか(sotarok)
 - DBが絡むものは手をつけない．とりあえずaf内でできることだけ
 
 ### skel ファイルの命名規則
@@ -99,25 +99,25 @@ ViewHelperが現状は Smartyプラグインとして実装されているため
 - ドキュメント整備(catch upしつつ)
 - <select>のoptgroup対応
 
-#### maru\_cc
+#### maru_cc
 
 - 新規プロジェクト時のエントリポイントのフルパスを相対パスに
-  - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16089](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16089)
+  - [http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16089](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16089)
 - add-entry-point の挙動も要変更ではないか？
   - あと、作成すると同盟の actionを作ろうとするのは変なのでは？
-  - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16102](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16102)
-- Ethna\_Renderer\_Php.php Ethna\_Renderer\_Flexy.php とか
+  - [http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16102](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16102)
+- Ethna_Renderer_Php.php Ethna_Renderer_Flexy.php とか
   - Smartyプラグインにべったりな部分を ViewHelperとして切り出したい
   - プラグインの仕様変更の話が出たのでそれ次第
 - ethnaコマンドが縦に長すぎる件をなんとかする
-  - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16093](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16093)
+  - [http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16093](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16093)
 - 存在しない action名を指定された場合に app/action 以下を全includeをなんとかしたい
   - テストがapp/action以下にあることも関係しているが、不正なアクセス時に全ファイル読み込みという状況が発生してしまっている
-  - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16094](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16094)
+  - [http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16094](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16094)
 - testを別ディレクトリ、appと並列なtestディレクトリに移動したい
 - add-project 時に、APPIDのディレクトリを自動作成する挙動を無くしたい
   - APPIDを固定にしようかという話が議題に出ていまして、それにも関係するかと思ってます
-  - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16103](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16103)
-- APPID\_Controller.php から var $smarty\_xxx\_plugin 関連の定義を消したい
-  - [http://sourceforge.jp/ticket/browse.php?group\_id=1343&tid=16107](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16107)
+  - [http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16103](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16103)
+- APPID_Controller.php から var $smarty_xxx_plugin 関連の定義を消したい
+  - [http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16107](http://sourceforge.jp/ticket/browse.php?group_id=1343&tid=16107)
 

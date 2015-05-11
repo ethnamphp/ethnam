@@ -28,7 +28,7 @@ GET の場合
 
 ### (2) 登録処理の Action で二重POSTをチェックする
 
-Ethna\_Util::isDuplicatePost() の返り値が true の場合二重POSTです。 それ以降の処理をスキップして return します。
+Ethna_Util::isDuplicatePost() の返り値が true の場合二重POSTです。 それ以降の処理をスキップして return します。
 
     function perform()
     	{
@@ -45,8 +45,8 @@ Ethna\_Util::isDuplicatePost() の返り値が true の場合二重POSTです。
 
 ### (捕捉) 動作原理
 
-Ethna\_Util::isDuplicatePost() が呼ばれると、project\_root/tmp/ から  
-uniqid\_{REMOTE\_ADDR}\_{uniqid} というファイルを探します。  
+Ethna_Util::isDuplicatePost() が呼ばれると、project_root/tmp/ から  
+uniqid_{REMOTE_ADDR}_{uniqid} というファイルを探します。  
 そのファイルが既に存在する場合は二重POSTとみなし true を返し、ない場合は作成します。  
 リクエストに uniqid というパラメータがない場合は 常に falseを返します。  
 一時ファイルは1時間で削除されます。

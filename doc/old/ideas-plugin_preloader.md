@@ -58,7 +58,7 @@ Example: app/action/Index.php
 
 ### 別名の付け方
 
-これで，キャッシュプラグインなどが幾分使いやすくなりました．とはいえ，Cachemanager\_Localfile と毎回打つのもなかなか骨が折れます\*2
+これで，キャッシュプラグインなどが幾分使いやすくなりました．とはいえ，Cachemanager_Localfile と毎回打つのもなかなか骨が折れます\*2
 
 ですので，別名でアクセスする方法も提供しています． 連想配列のキーに別名を指定すると，その名前で使えるようになります．
 
@@ -132,9 +132,9 @@ Example: app/action/Index.php
 
 ### コード
 
-この変更は git の plugin\_preloader ブランチで適用されています．
+この変更は git の plugin_preloader ブランチで適用されています．
 
-- [http://git.sourceforge.jp/view?p=ethna/ethna.git;a=shortlog;h=refs/heads/plugin\_preload](http://git.sourceforge.jp/view?p=ethna/ethna.git;a=shortlog;h=refs/heads/plugin_preload)
+- [http://git.sourceforge.jp/view?p=ethna/ethna.git;a=shortlog;h=refs/heads/plugin_preload](http://git.sourceforge.jp/view?p=ethna/ethna.git;a=shortlog;h=refs/heads/plugin_preload)
 
 チェックアウト例：
 
@@ -144,7 +144,7 @@ Example: app/action/Index.php
 
 
 * * *
-\*1 [http://ethna.jp/ethna-document-dev\_guide-plugin.html#j3c3ba62](dev_guide-plugin.md#j3c3ba62)  
+\*1 [http://ethna.jp/ethna-document-dev_guide-plugin.html#j3c3ba62](dev_guide-plugin.md#j3c3ba62)  
 \*2当然みなさんは補完機能付きのエディタを使っているとは思いますが，それでも面倒っちゃ面倒です  
 \*3が，実際にコードを書くときはどちらかのポリシーに統一したほうがチーム開発の面ではよろしいでしょう  
 

@@ -13,14 +13,14 @@
 概念も簡単なら実装も簡単で、以下のようになります。
 
 1. コントローラの$filterメンバにフィルタクラス名を追加します
-2. フィルタディレクトリ(デフォルトではapp/filter)に"1.で追加したクラス名" + ".php"というファイル名でEthna\_Filterを継承したクラスを記述します
+2. フィルタディレクトリ(デフォルトではapp/filter)に"1.で追加したクラス名" + ".php"というファイル名でEthna_Filterを継承したクラスを記述します
 3. prefilterメソッドとpostfilterメソッドを実装します
 
 以上で終了です。
 
 これだけでは分かりにくいので、実際に「アクションの処理時間を計測する」というフィルタを1つ作成してみます\*2。まずはコントローラの$filterメンバにフィルタクラス名を追加します。
 
-Sample\_Controller.php:
+Sample_Controller.php:
 
     /**
       * @var array フィルタ設定
@@ -29,9 +29,9 @@ Sample\_Controller.php:
     + 'Sample_Filter_ExecutionTime',
      );
 
-次に、フィルタディレクトリ(コントローラのメンバ変数$directory['filter']で指定されているディレクトリです)にフィルタクラス名と同じ名前で以下のようにスクリプトを生成します。ここではapp/filter/Sample\_Filter\_ExecutionTime.phpとなります。
+次に、フィルタディレクトリ(コントローラのメンバ変数$directory['filter']で指定されているディレクトリです)にフィルタクラス名と同じ名前で以下のようにスクリプトを生成します。ここではapp/filter/Sample_Filter_ExecutionTime.phpとなります。
 
-Sample\_Filter\_ExecutionTime.php:
+Sample_Filter_ExecutionTime.php:
 
     class Sample_Filter_ExecutionTime extends Ethna_Filter
     {
@@ -48,9 +48,9 @@ prefilter()メソッドがアクション実行前に、postfilter()メソッド
 
 _なお、フィルタオブジェクトはprefilter()が呼ばれる前に生成され、postfilter()呼出し後に破棄されます。従って、prefilter()で設定したメンバ変数等はpostfilter()からも問題なくアクセスすることが出来ます。_
 
-また、generate\_project\_skelton.phpを使ってプロジェクトスケルトンを生成していると、フィルタディレクトリに予めSample\_Filter\_ExecutionTimeクラスが定義されたファイルが生成されていると思います。こちらを参考に素晴らしいフィルタを実装してください。ここでは以下のようにしてみます。
+また、generate_project_skelton.phpを使ってプロジェクトスケルトンを生成していると、フィルタディレクトリに予めSample_Filter_ExecutionTimeクラスが定義されたファイルが生成されていると思います。こちらを参考に素晴らしいフィルタを実装してください。ここでは以下のようにしてみます。
 
-Sample\_Filter\_ExecutionTime.php:
+Sample_Filter_ExecutionTime.php:
 
     class Sample_Filter_ExecutionTime extends Ethna_Filter
     {

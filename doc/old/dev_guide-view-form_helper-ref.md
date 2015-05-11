@@ -3,14 +3,14 @@
 
 - フォームヘルパ タグリファレンス 
   - {form}{/form} ブロックタグ 
-  - {form\_input} 
+  - {form_input} 
     - パラメータの渡し方 
     - もう少し細かく 
     - 一般的なフォーム 
     - 配列で指定されたフォーム 
     - 選択肢が必要なフォーム 
-  - {form\_name} 
-  - {form\_submit} 
+  - {form_name} 
+  - {form_submit} 
   - 注意事項 
 
 | 書いた人 | mumumu | 2009-01-23 | 新規作成 |
@@ -23,9 +23,9 @@
 
 - name
   - フォーム名を指定します。ひとつのテンプレート内に複数 {form} ブロックタグを指定する場合、この指定は必須です。それぞれの名前は重複しないようにしてください。
-- ethna\_action
-  - フォーム定義を読み取る対象のアクション名を指定します。{form}ブロック内で{form\_input name="foo"}と指定されていたとき、"foo"というフォームがどのアクションで定義されているかを指定します。省略時は現在のアクションになります(フォーム値が不正で戻ってくるときなど)
-  - ethna\_actionで指定したアクション名で、
+- ethna_action
+  - フォーム定義を読み取る対象のアクション名を指定します。{form}ブロック内で{form_input name="foo"}と指定されていたとき、"foo"というフォームがどのアクションで定義されているかを指定します。省略時は現在のアクションになります(フォーム値が不正で戻ってくるときなど)
+  - ethna_actionで指定したアクション名で、
 
     <input type="hidden" name="action_XXX" value="true">
 
@@ -48,11 +48,11 @@
 
 と出力されます。
 
-### {form\_input}
+### {form_input}
 
 #### パラメータの渡し方
 
-{form\_input}タグは以下の二つでパラメータを受けとることができます。
+{form_input}タグは以下の二つでパラメータを受けとることができます。
 
 - ActionForm での定義
 - Smarty テンプレートでの指定
@@ -74,12 +74,12 @@
 という流れになります。どちらでも指定できるものについては、次の順に評価され、後ろにあるものほど優先されます。
 
 - ActionFormでの指定
-- {form\_input}を囲む{form}ブロックでの指定
+- {form_input}を囲む{form}ブロックでの指定
 - {form}での指定
 
 #### 一般的なフォーム
 
-ほとんどの場合、フォームの種類(FORM\_TYPE)に従い対応するhtmlタグを出力するだけです。
+ほとんどの場合、フォームの種類(FORM_TYPE)に従い対応するhtmlタグを出力するだけです。
 
 パラメータとして指定できるdefault, valueは、どちらもフォームの値を指定するものですが、次のような違いがあります。
 
@@ -104,11 +104,11 @@
     {form_input name="foo"}
     {form_input name="foo"}
 
-と3つ{form\_input}を並べると<input>タグが3つ生成されます。defaultが配列で指定されている場合、上から順にdefaultの値を埋めていきます。
+と3つ{form_input}を並べると<input>タグが3つ生成されます。defaultが配列で指定されている場合、上から順にdefaultの値を埋めていきます。
 
 #### 選択肢が必要なフォーム
 
-選択肢が必要なフォームはFORM\_TYPE\_SELECT, FORM\_TYPE\_CHECKBOX, FORM\_TYPE\_RADIOの3つがあります。
+選択肢が必要なフォームはFORM_TYPE_SELECT, FORM_TYPE_CHECKBOX, FORM_TYPE_RADIOの3つがあります。
 
 選択肢はActionForm (またはテンプレート) で'option'パラメータによって指定します。ActionForm で、以下の option の \*\*\* の部分に以下の3通りが指定できます。
 
@@ -132,7 +132,7 @@
 
     {form_input emptyoption="選択してね"}
 
-### {form\_name}
+### {form_name}
 
 フォーム定義の 'name' 属性の値をそのまま出力します。
 
@@ -152,9 +152,9 @@
 
     3つ入力してね
 
-### {form\_submit}
+### {form_submit}
 
-submitボタンだけを作りたい場合、(テンプレートにそのままhtmlタグを書いてもいいですが)送信先のActionFormにボタンの定義をするのは面倒なので、{form\_submit}を使って定義によらずに送信ボタンを出力することができます。
+submitボタンだけを作りたい場合、(テンプレートにそのままhtmlタグを書いてもいいですが)送信先のActionFormにボタンの定義をするのは面倒なので、{form_submit}を使って定義によらずに送信ボタンを出力することができます。
 
     {form_submit value="送信するよ!"}
 

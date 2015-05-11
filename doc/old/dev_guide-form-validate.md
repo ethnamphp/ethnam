@@ -2,8 +2,8 @@
   - (1) 属性を設定する 
     - type属性 
     - 制限属性 
-    - VAR\_TYPE\_DATETIME に関する注意事項 
-    - VAR\_TYPE\_STRING の max, min属性に関する注意事項 
+    - VAR_TYPE_DATETIME に関する注意事項 
+    - VAR_TYPE_STRING の max, min属性に関する注意事項 
     - 制限属性(配列使用時) 
     - 補足属性 
     - 属性設定例 
@@ -46,44 +46,44 @@ validate()メソッドは戻り値として発生したエラーの数を返す�
 また、補助的な値として以下の2つを設定することが出来ます。
 
 1. name(エラーメッセージ表示時等のための、表示用フォーム名)
-2. form\_type(エラーメッセージ表示等のためのフォーム種別\*3)
+2. form_type(エラーメッセージ表示等のためのフォーム種別\*3)
 
 上記に加えて、任意のメソッドによるチェックも可能です(メールアドレス、URL、アプリケーション固有ID等)。詳細は [フォーム値の自動検証を行う(カスタムチェック編)](dev_guide-form-customvalidate.md)を御覧下さい。
 
 #### type属性
 
-type属性に設定可能な値は以下の通りとなりますので、受け取りたい値に応じて設定します。型として特に制限を設けない場合にはVAR\_TYPE\_STRINGを設定します。
+type属性に設定可能な値は以下の通りとなりますので、受け取りたい値に応じて設定します。型として特に制限を設けない場合にはVAR_TYPE_STRINGを設定します。
 
-| VAR\_TYPE\_INT | 整数(+/-) |
-| VAR\_TYPE\_FLOAT | 小数(+/-) |
-| VAR\_TYPE\_STRING | 文字列 |
-| VAR\_TYPE\_DATETIME | 日付(YYYY/MM/DD HH:MM:SS等) |
-| VAR\_TYPE\_BOOLEAN | 真偽値(1 or 0) |
-| VAR\_TYPE\_FILE | ファイル |
+| VAR_TYPE_INT | 整数(+/-) |
+| VAR_TYPE_FLOAT | 小数(+/-) |
+| VAR_TYPE_STRING | 文字列 |
+| VAR_TYPE_DATETIME | 日付(YYYY/MM/DD HH:MM:SS等) |
+| VAR_TYPE_BOOLEAN | 真偽値(1 or 0) |
+| VAR_TYPE_FILE | ファイル |
 
 #### 制限属性
 
 required/min/max/regexpの各属性はtype属性に設定された値によって意味合いが変化します。詳細は以下の通りです。
 
 | type属性 | required属性 | min属性 | max属性 | (mb)regexp属性 |
-| VAR\_TYPE\_INT | 必須チェック | 数値としての最小値 | 数値としての最大値 | 正規表現 |
-| VAR\_TYPE\_FLOAT | 必須チェック | 数値としての最小値 | 数値としての最大値 | 正規表現 |
-| VAR\_TYPE\_STRING | 必須チェック | 最小文字(バイト)数 | 最大文字(バイト)数 | 正規表現 |
-| VAR\_TYPE\_DATETIME | 必須チェック | 入力可能な最も古い日付 | 入力可能な最も新しい日付 | 正規表現 |
-| VAR\_TYPE\_BOOLEAN | 必須チェック | - | - | - |
-| VAR\_TYPE\_FILE | 必須チェック | ファイルの最小サイズ(KB) | ファイルの最大サイズ(KB) | - |
+| VAR_TYPE_INT | 必須チェック | 数値としての最小値 | 数値としての最大値 | 正規表現 |
+| VAR_TYPE_FLOAT | 必須チェック | 数値としての最小値 | 数値としての最大値 | 正規表現 |
+| VAR_TYPE_STRING | 必須チェック | 最小文字(バイト)数 | 最大文字(バイト)数 | 正規表現 |
+| VAR_TYPE_DATETIME | 必須チェック | 入力可能な最も古い日付 | 入力可能な最も新しい日付 | 正規表現 |
+| VAR_TYPE_BOOLEAN | 必須チェック | - | - | - |
+| VAR_TYPE_FILE | 必須チェック | ファイルの最小サイズ(KB) | ファイルの最大サイズ(KB) | - |
 
-#### VAR\_TYPE\_DATETIME に関する注意事項
+#### VAR_TYPE_DATETIME に関する注意事項
 
-type 属性に VAR\_TYPE\_DATETIME を指定する場合は、PHP の [strtotime関数](http://jp.php.net/strtotime) が動作する英文形式の入力があることを期待することに注意して下さい。そのため、日本語等のマルチバイト文字が含まれた日付等では max, min 属性は動作しません\*4。また、負のUnixタイムスタンプに対応しているかどうか、そしてサポートするタイムスタンプの範囲もプラットフォーム依存です。
+type 属性に VAR_TYPE_DATETIME を指定する場合は、PHP の [strtotime関数](http://jp.php.net/strtotime) が動作する英文形式の入力があることを期待することに注意して下さい。そのため、日本語等のマルチバイト文字が含まれた日付等では max, min 属性は動作しません\*4。また、負のUnixタイムスタンプに対応しているかどうか、そしてサポートするタイムスタンプの範囲もプラットフォーム依存です。
 
-よって、こうした制限事項にひっかかるような日付の入力値の検証を行いたい場合は、VAR\_TYPE\_DATETIME は使わないで下さい。その場合は、年・月・日 などのフィールドをそれぞれフォーム定義で指定するなどして、カスタムバリデータを書いたほうが無難です。
+よって、こうした制限事項にひっかかるような日付の入力値の検証を行いたい場合は、VAR_TYPE_DATETIME は使わないで下さい。その場合は、年・月・日 などのフィールドをそれぞれフォーム定義で指定するなどして、カスタムバリデータを書いたほうが無難です。
 
-#### VAR\_TYPE\_STRING の max, min属性に関する注意事項
+#### VAR_TYPE_STRING の max, min属性に関する注意事項
 
-Ethna 2.5.0 以降では、VAR\_TYPE\_STRING のフォーム定義に対して maxとmin の属性を設定するとデフォルトで最大（最小）文字数のチェックが行われるようになりました。これに対して 2.3.x より前のバージョンでは、最大（最小）バイト数でチェックを行います。
+Ethna 2.5.0 以降では、VAR_TYPE_STRING のフォーム定義に対して maxとmin の属性を設定するとデフォルトで最大（最小）文字数のチェックが行われるようになりました。これに対して 2.3.x より前のバージョンでは、最大（最小）バイト数でチェックを行います。
 
-2.5.0 以降でバイト数によるチェックを行いたい場合は、 [VAR\_TYPE\_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md) を参照して下さい。
+2.5.0 以降でバイト数によるチェックを行いたい場合は、 [VAR_TYPE_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md) を参照して下さい。
 
 #### 制限属性(配列使用時)
 
@@ -93,7 +93,7 @@ type属性に **配列が指定されている場合** は、以下のルール�
   
 required 属性を true にすると、配列の場合はデフォルトで **Submitされた配列の全ての要素** が入力されていなければなりません。  
   
-「特定の数以上の要素」が入力されなければならない場合は、'required' => true の指定に加え、以下のように _required\_num_ 属性を指定します。  
+「特定の数以上の要素」が入力されなければならない場合は、'required' => true の指定に加え、以下のように _required_num_ 属性を指定します。  
   
 
     $form = array(
@@ -106,7 +106,7 @@ required 属性を true にすると、配列の場合はデフォルトで **Su
     );
 
   
-また、特定の要素（例：2番目の要素と3番目の要素）のみ入力を必須にしたい場合もあると思います。その場合は、'required' => true の指定に加え、以下の通り _required\_key_ 要素を指定します。この場合は 最初の要素を「0」として、その後順番に必要な要素の位置を指定します。  
+また、特定の要素（例：2番目の要素と3番目の要素）のみ入力を必須にしたい場合もあると思います。その場合は、'required' => true の指定に加え、以下の通り _required_key_ 要素を指定します。この場合は 最初の要素を「0」として、その後順番に必要な要素の位置を指定します。  
   
 
     $form = array(
@@ -122,19 +122,19 @@ required 属性を true にすると、配列の場合はデフォルトで **Su
 
 #### 補足属性
 
-name属性にはフォームの表示名(フォーム名が'mailaddress'なら'メールアドレス'のようになる)を、form\_type属性にはフォームの種別を設定します。form\_typeに設定可能な値は以下の通りです。この属性は、フォームヘルパで特に重要です。
+name属性にはフォームの表示名(フォーム名が'mailaddress'なら'メールアドレス'のようになる)を、form_type属性にはフォームの種別を設定します。form_typeに設定可能な値は以下の通りです。この属性は、フォームヘルパで特に重要です。
 
 [フォームヘルパのページ](dev_guide-view-form_helper.md) も参照してください。
 
-| FORM\_TYPE\_TEXT | テキストボックス |
-| FORM\_TYPE\_PASSWORD | パスワード |
-| FORM\_TYPE\_TEXTAREA | テキストエリア |
-| FORM\_TYPE\_SELECT | セレクトボックス |
-| FORM\_TYPE\_RADIO | ラジオボタン |
-| FORM\_TYPE\_CHECKBOX | チェックボックス |
-| FORM\_TYPE\_BUTTON | ボタン |
-| FORM\_TYPE\_FILE | ファイル |
-| FORM\_TYPE\_HIDDEN | 隠れコントロール |
+| FORM_TYPE_TEXT | テキストボックス |
+| FORM_TYPE_PASSWORD | パスワード |
+| FORM_TYPE_TEXTAREA | テキストエリア |
+| FORM_TYPE_SELECT | セレクトボックス |
+| FORM_TYPE_RADIO | ラジオボタン |
+| FORM_TYPE_CHECKBOX | チェックボックス |
+| FORM_TYPE_BUTTON | ボタン |
+| FORM_TYPE_FILE | ファイル |
+| FORM_TYPE_HIDDEN | 隠れコントロール |
 
 #### 属性設定例
 
@@ -199,7 +199,7 @@ question[]というチェックボックス(表示名「質問」):
     ...
     }
 
-要するに、アクションフォーム(アクションクラスのメンバ変数$action\_formあるいは$afとして予め設定されています)のvalidate()メソッドを実行して、1以上の値が返されたら再度入力画面へ遷移すればよいだけです。
+要するに、アクションフォーム(アクションクラスのメンバ変数$action_formあるいは$afとして予め設定されています)のvalidate()メソッドを実行して、1以上の値が返されたら再度入力画面へ遷移すればよいだけです。
 
 ### (3) エラーメッセージを表示する
 
@@ -228,7 +228,7 @@ question[]というチェックボックス(表示名「質問」):
     <input type="text" name="mailaddress" value="{$form.mailaddress}">
     {message name="mailaddress"}
 
-また、特定のフォームでエラーが発生しているかどうかを知るには同じくEthna組み込みのSmarty関数{is\_error}を利用します。
+また、特定のフォームでエラーが発生しているかどうかを知るには同じくEthna組み込みのSmarty関数{is_error}を利用します。
 
     {if is_error('mailaddress')}
     エラー

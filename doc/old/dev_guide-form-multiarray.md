@@ -119,7 +119,7 @@
 
 上記のページが理解できていれば、配列の階層が増えるだけで、あとは通常のEthnaと変わりありません。
 
-たとえば、以下のようなフォームを定義したとします。typeにarray(VAR\_TYPE\_STRING)を指定しています。
+たとえば、以下のようなフォームを定義したとします。typeにarray(VAR_TYPE_STRING)を指定しています。
 
     var $form = array(
            'Artist[name]' => array(

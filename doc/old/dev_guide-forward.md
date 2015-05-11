@@ -6,7 +6,7 @@
 
 ### アクションから遷移させる View スクリプトの扱い方
 
-**[遷移時のデフォルトマクロを指定する。 - \_setDefaultTemplateEngine](dev_guide-forward-defaultmacro.md)**  
+**[遷移時のデフォルトマクロを指定する。 - _setDefaultTemplateEngine](dev_guide-forward-defaultmacro.md)**  
 すべてのアクションやビューに共通する値をあらかじめSmartyにassignすることができます。
 
 **[遷移先定義を省略する](dev_guide-forward-omit.md)**   

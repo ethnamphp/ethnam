@@ -40,7 +40,7 @@ app/Plugin/Smarty 以下に作成したプラグインを置いておけば、�
 
 #### クラスのメソッドをSmartyFunctionとして登録する方法
 
-以下のように配列で指定することでクラスのメソッドをsmarty\_functionとして登録することが可能です。
+以下のように配列で指定することでクラスのメソッドをsmarty_functionとして登録することが可能です。
 
     179 /**
        180 * @var array smarty function定義
@@ -67,7 +67,7 @@ app/Plugin/Smarty 以下に作成したプラグインを置いておけば、�
 
 smartyは特定のディレクトリにsmartyの流儀でファイルを作れば自動的にmodifierなどを見付けてくれます。上の方法は、smartyの流儀によらずにアプリで用意したクラス関数をsmarty functionに登録するための方法です。
 
-smartyの流儀に従う場合は、App\_Controllerの中でファイルを置くディレクトリを指定します。たとえばアプリのlibディレクトリにsmartyディレクトリを用意する場合は、以下のように指定してください。
+smartyの流儀に従う場合は、App_Controllerの中でファイルを置くディレクトリを指定します。たとえばアプリのlibディレクトリにsmartyディレクトリを用意する場合は、以下のように指定してください。
 
 - lib/smarty/function.sample.php (smarty functionを定義したファイル)
 
@@ -76,7 +76,7 @@ smartyの流儀に従う場合は、App\_Controllerの中でファイルを置�
         ...
     }
 
-- app/App\_Controller.php
+- app/App_Controller.php
 
     var $directory = array(
         ...
@@ -86,9 +86,9 @@ smartyの流儀に従う場合は、App\_Controllerの中でファイルを置�
 
 smartyテンプレート内で {sample foo=bar} のように書くと、smartyはlib/smartyディレクトリ内から自動的にsample関数の定義を見付けてくれます。(くわしくはSmarty自体のドキュメントを参照してください)
 
-**注意** : この場合、$smarty\_function\_pluginのほうは指定 **しない** でください。指定すると、smartyはファイルを探さなくてもどこかに関数が定義されていると思い、「関数が見付からない」といったエラーを出すかもしれません。
+**注意** : この場合、$smarty_function_pluginのほうは指定 **しない** でください。指定すると、smartyはファイルを探さなくてもどこかに関数が定義されていると思い、「関数が見付からない」といったエラーを出すかもしれません。
 
 
 * * *
-\*1このあたりはsmartyのregister\_functionメソッドのマニュアルを参照  
+\*1このあたりはsmartyのregister_functionメソッドのマニュアルを参照  
 

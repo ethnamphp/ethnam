@@ -44,7 +44,7 @@
   - 2005/01/13 バージョン0.1.3 
   - 2005/01/05 新年のご挨拶 
   - 2004/12/27 開発マニュアル(フォーム値検証)を追加 
-  - 2004/12/23-2 開発マニュアル(Ethna\_Info)追加 
+  - 2004/12/23-2 開発マニュアル(Ethna_Info)追加 
   - 2004/12/23-1 バージョン0.1.2リリース 
   - 2004/12/21 開発マニュアル(フォーム値アクセス(配列/ファイル)) 
   - 2004/12/18 開発マニュアル(フォーム値アクセス)追加 
@@ -89,17 +89,17 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 2.5.0 では、2.3系と比較して、utf-8 ではなく UTF-8 をデフォルトとしたこと、国際化、多次元配列等の新機能をメインとして、多くの変更が加えられています。新機能については、以下のURLを参照してください。
 
 「言語とエンコーディングの設定」  
- [http://ethna.jp/ethna-document-dev\_guide-app-setlanguage.html](dev_guide-app-setlanguage.md)  
+ [http://ethna.jp/ethna-document-dev_guide-app-setlanguage.html](dev_guide-app-setlanguage.md)  
 「プロジェクトの国際化」  
- [http://ethna.jp/ethna-document-dev\_guide-i18n.html](dev_guide-i18n.md)  
+ [http://ethna.jp/ethna-document-dev_guide-i18n.html](dev_guide-i18n.md)  
 「多次元配列」  
- [http://ethna.jp/ethna-document-dev\_guide-form-multiarray.html](dev_guide-form-multiarray.md)  
+ [http://ethna.jp/ethna-document-dev_guide-form-multiarray.html](dev_guide-form-multiarray.md)  
 「フォームテンプレートへの変更」  
- [http://ethna.jp/ethna-document-dev\_guide-form\_template.html](dev_guide-form_template.md)  
+ [http://ethna.jp/ethna-document-dev_guide-form_template.html](dev_guide-form_template.md)  
 「動的フォームAPI」  
- [http://ethna.jp/ethna-document-dev\_guide-app-dynamicform.html](dev_guide-app-dynamicform.md)  
-「VAR\_TYPE\_STRING の max, min 属性に関する詳細」  
- [http://ethna.jp/ethna-document-dev\_guide-form-validate-vartypestring.html](dev_guide-form-validate-vartypestring.md)
+ [http://ethna.jp/ethna-document-dev_guide-app-dynamicform.html](dev_guide-app-dynamicform.md)  
+「VAR_TYPE_STRING の max, min 属性に関する詳細」  
+ [http://ethna.jp/ethna-document-dev_guide-form-validate-vartypestring.html](dev_guide-form-validate-vartypestring.md)
 
 詳細な変更点は 以下のURLを参照してください
 
@@ -107,7 +107,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 このリリースに伴い、2.5.0 が新たに安定版としてメンテナンスされます。よって、2.3.7 以前のバージョンのサポートは打ち切られます。新たに Ethna でプロジェクトを作成される方は、このバージョンを使用してください。また、2.3.x から移行を行いたい方は、以下のドキュメントを参照してください。
 
-[http://ethna.jp/ethna-document-dev\_guide-misc-migrate\_project230to250.html](dev_guide-misc-migrate_project230to250.md)
+[http://ethna.jp/ethna-document-dev_guide-misc-migrate_project230to250.html](dev_guide-misc-migrate_project230to250.md)
 
 ### 2009/06/22 Ethna 2.5.0 preview5 リリース
 
@@ -121,12 +121,12 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 ### 2009/06/16 Ethna 2.5.0 preview4, 2.3.7 リリース
 
-開発版 Ethna 2.5.0 preview4 と 安定版 2.3.7 をリリースしました。これらのリリースには、以前のバージョンで見つかった Ethna\_ActionForm#getHiddenVars のクロスサイトスクリプティングの脆弱性を修正したものが含まれています。
+開発版 Ethna 2.5.0 preview4 と 安定版 2.3.7 をリリースしました。これらのリリースには、以前のバージョンで見つかった Ethna_ActionForm#getHiddenVars のクロスサイトスクリプティングの脆弱性を修正したものが含まれています。
 
 具体的には、以下の条件を全て満たした場合にセキュリティ上の問題が再現します。
 
 1. 配列のフォーム定義を行っている
-2. 上記のフォームを、Ethna\_Actionform#getHiddenVars でHTMLの出力として取得し、 (setAppNEする等して)テンプレートにそのまま出力している。
+2. 上記のフォームを、Ethna_Actionform#getHiddenVars でHTMLの出力として取得し、 (setAppNEする等して)テンプレートにそのまま出力している。
 
 セキュリティに関わるリリースであるため、すべてのユーザーにアップデートを推奨します。
 
@@ -139,7 +139,7 @@ Ethna 2.5.0 をリリースしました。このリリースでは Ethna 2.5.0 p
 
 5月13日、17日の両日に Smarty 2.6.23, 2.6.24 がリリースされ、pear.ethna.jp もそれに追随しました。
 
-これらのバージョンには、スーパーグローバル変数をテンプレートから読み取り専用にする、という変更が含まれていますが、まだバグが残っている状態です。(session\_start しないと E\_NOTICE が出ます)
+これらのバージョンには、スーパーグローバル変数をテンプレートから読み取り専用にする、という変更が含まれていますが、まだバグが残っている状態です。(session_start しないと E_NOTICE が出ます)
 
 よって新バージョンが出るまで、 pear.ethna.jp の Smartyは 2.6.22 のままにすることにします。これに伴い 2.6.23, 2.6.24 は削除しました。2009年5月13日から17日の間に、pear.ethna.jp を利用して Smarty をアップグレードした方は、以下の手順でダウングレードされることをお勧めします。
 
@@ -197,7 +197,7 @@ Ethna 2.5.0 preview 3 をリリースしました。このリリースでは、�
 - [フォームテンプレートへの変更](dev_guide-form_template.md)
 - [動的フォームAPI](dev_guide-app-dynamicform.md)
 - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md)
-- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md)
+- [VAR_TYPE_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md)
 - [プロジェクトの国際化](dev_guide-i18n.md)
 
 ### 2009/01/25 Ethna 焼肉会議開催
@@ -212,7 +212,7 @@ Ethna について焼肉をつついて話す会が行われました。Ethna �
 
 Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PEAR依存を排除するための基礎的な変更及び、プロジェクトのi18n化を楽にするためのコマンド実装が盛り込まれています。また、2.5.0 preview1 以降で発見された複数のバグが修正され、APIの微調整が行われています。
 
-今回はユーザから見ると目立った変更は国際化の実装くらいしかないように見えますが、PEAR 依存を外すための布石として、Ethnaクラスが PEAR クラスを継承していたのを外しているため、その関連で割と変更が加わっています。ethna コマンドの Console\_Getopt も独自実装に置き換わっているため、ethna コマンドにもバグが残っている可能性があります。よって、目立つ変更点が少ないからといって侮らず、テストに御協力頂ければ幸いです。
+今回はユーザから見ると目立った変更は国際化の実装くらいしかないように見えますが、PEAR 依存を外すための布石として、Ethnaクラスが PEAR クラスを継承していたのを外しているため、その関連で割と変更が加わっています。ethna コマンドの Console_Getopt も独自実装に置き換わっているため、ethna コマンドにもバグが残っている可能性があります。よって、目立つ変更点が少ないからといって侮らず、テストに御協力頂ければ幸いです。
 
 詳細な変更点は以下のドキュメントをご覧下さい。  
  [http://ethna.jp/ethna-document-changes.html#d0c37223](changes.md#d0c37223)
@@ -223,7 +223,7 @@ Ethna 2.5.0 preview 2をリリースしました。このリリースでは、PE
 
 - [2.3.x から 2.5.0への移行ガイド](dev_guide-misc-migrate_project230to250.md)
 - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md)
-- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md)
+- [VAR_TYPE_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md)
 - [プロジェクトの国際化](dev_guide-i18n.md)
 
 ### 2008/07/05 Ethna 2.5.0 preview1 リリース
@@ -239,7 +239,7 @@ Ethna 2.5.0 preview 1をリリースしました。このリリースでは、�
 
 - [2.3.x から 2.5.0への移行ガイド](dev_guide-misc-migrate_project230to250.md)
 - [言語とエンコーディングの設定](dev_guide-app-setlanguage.md)
-- [VAR\_TYPE\_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md)
+- [VAR_TYPE_STRING の max, min 属性に関する詳細](dev_guide-form-validate-vartypestring.md)
 
 主な変更点は以下の通りです。
 
@@ -250,7 +250,7 @@ Ethna 2.5.0 preview 1をリリースしました。このリリースでは、�
   - メッセージカタログ追加(gettext の支援機能はpreview2以降)
   - ethna コマンドの必要な部分にエンコーディングとロケール指定オプション追加
   - スケルトン全体をASCIIに変更
-  - VAR\_TYPE\_STRING のプラグインを再編
+  - VAR_TYPE_STRING のプラグインを再編
 - 2.3.5 以降報告された諸々のバグ修正。  
   
 - [ダウンロード](pear/Ethna-2.5.2008070519.tgz)
@@ -310,7 +310,7 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 ### 2007/07/16 Ethna 2.3.2 リリース
 
-お待たせしました。半年ぶりに新バージョン 2.3.2 をリリースします。本バージョンでは、2.3.1 以降報告されていた複数のバグが修正されている他、Ethna\_MailSenderの改善、プラグインの追加、改善等が行われています。
+お待たせしました。半年ぶりに新バージョン 2.3.2 をリリースします。本バージョンでは、2.3.1 以降報告されていた複数のバグが修正されている他、Ethna_MailSenderの改善、プラグインの追加、改善等が行われています。
 
 - [ダウンロード](pear/Ethna-2.3.2.tgz)
 
@@ -338,9 +338,9 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
 - Preview2で発見されたたくさんのバグフィックス(みなさまありがとうございます)
 - ethnaコマンドの再編, getopt化, スケルトンファイル指定オプション追加
-- Ethna\_AppObject, Ethna\_DB\_PEARをmysql, postgresql, spliteに簡易対応
-- Smartyの{form\_input}ヘルパーの整備
-- Ethna\_UrlHandlerクラス追加
+- Ethna_AppObject, Ethna_DB_PEARをmysql, postgresql, spliteに簡易対応
+- Smartyの{form_input}ヘルパーの整備
+- Ethna_UrlHandlerクラス追加
 
 バグフィックス、ドキュメント整備などを経て、月末くらいには2.3.0がリリースされる予定です。
 
@@ -353,9 +353,9 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 主な変更点は下記の通りです。
 
 - Preview1で発見された幾つかのバグフィックス(みなさまありがとうございます)
-- [breaking B.C.] Ethna\_ClassFactoryのリファクタリング
-  - Ethna\_Backend::getObject()メソッドを追加しました
-  - これにより、Ethna\_Controllerの$classメンバに
+- [breaking B.C.] Ethna_ClassFactoryのリファクタリング
+  - Ethna_Backend::getObject()メソッドを追加しました
+  - これにより、Ethna_Controllerの$classメンバに
 
     $class = array(
       // ...
@@ -366,53 +366,53 @@ Smarty, Simpletestは、以下のコマンドでインストールできるよ�
 
     $user =& $this->backend->getObject('user');
 
-としてSome\_Foo\_Barクラスのオブジェクトを取得することが出来ます
-  - クラス定義が見つからない場合は下記の順でファイルを探しに行きます(include\_path)
-    1. Some\_Foo\_Bar.php
+としてSome_Foo_Barクラスのオブジェクトを取得することが出来ます
+  - クラス定義が見つからない場合は下記の順でファイルを探しに行きます(include_path)
+    1. Some_Foo_Bar.php
     2. Some/Foo/Bar.php
-    3. Some/Foo/Some\_Foo\_Bar.php
-  - アプリケーションマネージャの生成もEthna\_ClassFactoryで行われます(Ethna\_ClassFactory::getManager()が追加されています)
+    3. Some/Foo/Some_Foo_Bar.php
+  - アプリケーションマネージャの生成もEthna_ClassFactoryで行われます(Ethna_ClassFactory::getManager()が追加されています)
   - これに伴い、〜2.1.xではコントローラクラスに
 
     $manager = array(
       'um' => 'User',
     );
 
-のように記述されていると、Ethna\_ActionClass、Ethna\_ViewClass、Ethna\_AppObject、Ethna\_\*Managerで
+のように記述されていると、Ethna_ActionClass、Ethna_ViewClass、Ethna_AppObject、Ethna_\*Managerで
 
     $this->um
 
 としてマネージャオブジェクトにアクセスできていたのですが、この機能が廃止されています(不評なら戻します@preview2)
-- Ethna\_Plugin\_Logwriter\_File::begin()でログファイルのパーミッションを設定するように変更
+- Ethna_Plugin_Logwriter_File::begin()でログファイルのパーミッションを設定するように変更
 - ハードタブ -> ソフトタブ
 - test runnerの追加
 
 ### 2006/07/10 Ethna 2.3.0 Preview1リリース
 
-[ロードマップ](roadmap.md)からは1日遅れてしまいましたが、Ethna 2.3.0 Preview1をリリースしました(思わずPreview2の予定だったEthna\_Loggerまで手を出してしまいました)。ご要望、バグ報告等お待ちしております。
+[ロードマップ](roadmap.md)からは1日遅れてしまいましたが、Ethna 2.3.0 Preview1をリリースしました(思わずPreview2の予定だったEthna_Loggerまで手を出してしまいました)。ご要望、バグ報告等お待ちしております。
 
 - [ダウンロード](pear/Ethna-2.3.0-preview1.tgz)
 
 主な変更点は下記の通りです。
 
-1. Ethna\_Renderer追加
+1. Ethna_Renderer追加
   - 激しく実験中@preview1
-2. プラグインシステム追加(w/ Ethna\_Pluginクラス)
-  - Ethna\_Handle, Ethna\_CacheManager, Ethna\_LogWriterをプラグインシステムに移行
-  - Ethna\_ActionFormのバリデータをプラグインシステムに移行(Ethna\_ActionForm::use\_validator\_pluginがtrueのときのみ)
+2. プラグインシステム追加(w/ Ethna_Pluginクラス)
+  - Ethna_Handle, Ethna_CacheManager, Ethna_LogWriterをプラグインシステムに移行
+  - Ethna_ActionFormのバリデータをプラグインシステムに移行(Ethna_ActionForm::use_validator_pluginがtrueのときのみ)
   - see also
-    - [http://ethna.jp/ethna-document-dev\_guide-plugin.html](dev_guide-plugin.md)
-    - [http://ethna.jp/ethna-document-dev\_guide-form-validate\_with\_plugin.html](dev_guide-form-validate_with_plugin.md)
-3. - [breaking B.C.] Ethna\_Loggerリファクタリング
-  - Ethna\_LogWriterのプラグイン化
+    - [http://ethna.jp/ethna-document-dev_guide-plugin.html](dev_guide-plugin.md)
+    - [http://ethna.jp/ethna-document-dev_guide-form-validate_with_plugin.html](dev_guide-form-validate_with_plugin.md)
+3. - [breaking B.C.] Ethna_Loggerリファクタリング
+  - Ethna_LogWriterのプラグイン化
   - カンマ区切りでの複数ファシリティサポート
-  - \_getLogWriter()クラスをオーバーライドしている方に影響があります(2.3.0以降はPlugin/Logwriter以下にLogwriterクラスを置いて、ファシリティでその名前を指定すれば任意のLogwriterを追加可能です)
+  - _getLogWriter()クラスをオーバーライドしている方に影響があります(2.3.0以降はPlugin/Logwriter以下にLogwriterクラスを置いて、ファシリティでその名前を指定すれば任意のLogwriterを追加可能です)
 
 ### 2006/06/07 Ethna 2.1.2リリース
 
 ほんとにたびたびすみません、全く致命的ではないのですが1つだけどうしても直したいバグを見つけてしまったので2.1.2としてリリースをさせて頂きました。よろしければこちらをご利用ください。
 
-なお、修正点は1箇所で、2.1.0で新規に導入された{form}というSmartyプラグインのethna\_action引数を指定した場合の振舞いに関するものです。
+なお、修正点は1箇所で、2.1.0で新規に導入された{form}というSmartyプラグインのethna_action引数を指定した場合の振舞いに関するものです。
 
 - [ダウンロード](ethna-download.html)
 - [変更点一覧](changes.md)
@@ -435,7 +435,7 @@ Ethna 0.xをご利用の皆様からのフィードバック、 [GREE](http://gr
 - ethnaコマンドの導入(多くの基本処理の簡略化)
 - gatewayシステムの導入(XMLRPCゲートウェイサポート)
 - SimpleTest連携
-- Ethna\_AppObjectクラスのテーブル定義自動取得
+- Ethna_AppObjectクラスのテーブル定義自動取得
 - その他15以上のバグ修正
 
 - [ダウンロード](ethna-download.html)
@@ -444,9 +444,9 @@ Ethna 0.xをご利用の皆様からのフィードバック、 [GREE](http://gr
 
 後方互換性が失われた点につきましては、上記 [変更点一覧](changes.md)にて「breaking B.C.」という形で記述されています。ほぼ全ては問題ないものですが、唯一の大きな変更点は
 
-- [breaking B.C.] main\_CLIのアクション定義ディレクトリをaction\_cliに変更
+- [breaking B.C.] main_CLIのアクション定義ディレクトリをaction_cliに変更
 
-です(お手数おかけいたしますです)。2.1.0以降、main\_CLIで起動された場合、アクションをaction\_cliディレクトリに探しに行きますので、アクションを記述したファイルの移動が必要となります。
+です(お手数おかけいたしますです)。2.1.0以降、main_CLIで起動された場合、アクションをaction_cliディレクトリに探しに行きますので、アクションを記述したファイルの移動が必要となります。
 
 ということで、新しいEthnaが皆様のお役に立てれば幸いです。
 
@@ -541,7 +541,7 @@ PHP-UsersメーリングリストでもちらほらMojaviに関する投稿を�
 
 ### 2005/03/02-3 ちょこっとお詫び
 
-さっそく(2005/03/02 20:00くらいまでに)MLに登録してくださった皆様、mailmanのプロセスが寝ていたためconfirmメールの配送が止まってました。すみませんでしたm(\_ \_)m (てへ）
+さっそく(2005/03/02 20:00くらいまでに)MLに登録してくださった皆様、mailmanのプロセスが寝ていたためconfirmメールの配送が止まってました。すみませんでしたm(_ _)m (てへ）
 
 ### 2005/03/02-2 [メーリングリストのご案内](http://ml.ethna.jp/mailman/listinfo/users)
 
@@ -559,11 +559,11 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 [バージョン0.1.5](http://sourceforge.jp/projects/ethna/files/)をリリースしました。主な変更点は以下の通りです。
 
-- Ethna\_Controller::getCLI()(CLIで実行中かどうかを返すメソッド)を追加
-- ethna\_error\_handlerがphp.iniの設定に応じてPHPログも出力するように変更
-- Smartyプラグイン(truncate\_i18n)を追加
+- Ethna_Controller::getCLI()(CLIで実行中かどうかを返すメソッド)を追加
+- ethna_error_handlerがphp.iniの設定に応じてPHPログも出力するように変更
+- Smartyプラグイン(truncate_i18n)を追加
 - MIMEエンコード用ユーティリティメソッドを追加
-- include\_pathのセパレータのwin32対応
+- include_pathのセパレータのwin32対応
 
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-5)を御覧下さい。
 
@@ -579,7 +579,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 ### 2005/01/14 バージョン0.1.4リリース
 
-[バージョン0.1.4](http://sourceforge.jp/projects/ethna/files/)をリリースしました。0.1.3でEthna\_InfoManagerが動作しない問題が解決されていますm(\_ \_)m
+[バージョン0.1.4](http://sourceforge.jp/projects/ethna/files/)をリリースしました。0.1.3でEthna_InfoManagerが動作しない問題が解決されていますm(_ _)m
 
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-4)を御覧下さい。
 
@@ -590,14 +590,14 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 [バージョン0.1.3](http://sourceforge.jp/projects/ethna/files/)をリリースしました。主な変更点は以下の通りです。
 
-- Ethna\_ActionClassにauthenticateメソッドを追加
-- Ethna\_ClassFactoryクラスを追加
+- Ethna_ActionClassにauthenticateメソッドを追加
+- Ethna_ClassFactoryクラスを追加
 - 配列型のフォームを使用する際の検証処理を修正
-- \_\_ethna\_info\_\_がサブディレクトリに定義されたアクションを正しく取得できない問題を修正
+- __ethna_info__がサブディレクトリに定義されたアクションを正しく取得できない問題を修正
 
 また、このリリースでは2つの後方互換性が失われていますのでご注意下さい。
 
-1. Ethna\_ActionForm::\_handleError() -> Ethna\_ActionForm::handleError()
+1. Ethna_ActionForm::_handleError() -> Ethna_ActionForm::handleError()
 2. コントローラクスのclassメンバに定義すべきエントリが増えました。お手数ですが、_コントローラクラスのclassメンバを以下のように変更してください_  
 
     var $class = array(
@@ -631,7 +631,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 - [フォーム値の自動検証を行う(基本編)](dev_guide-form-validate.md)
 
-### 2004/12/23-2 開発マニュアル(Ethna\_Info)追加
+### 2004/12/23-2 開発マニュアル(Ethna_Info)追加
 
 [開発マニュアル](dev_guide.md)を追加しました。
 
@@ -641,7 +641,7 @@ Ethna Usersメーリングリストを開設してみました。開発マニュ
 
 [バージョン0.1.2](http://sourceforge.jp/projects/ethna/files/)をリリースしました。このバージョンで失われた後方互換性はありません。主な変更点は以下の通りです。
 
-- 設定情報や定義済みアクションやビューを一覧表示する\_\_ethna\_info\_\_アクションの追加
+- 設定情報や定義済みアクションやビューを一覧表示する__ethna_info__アクションの追加
 - プロジェクトスケルトン生成コマンドへの予約語チェック追加
 
 詳細は [変更点一覧](ethna-changes.html#rel-0-1-2)を御覧下さい。

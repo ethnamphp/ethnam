@@ -13,7 +13,7 @@
   - 言語設定を動的に変更する 
     - ロケールの変更 
     - プロジェクトで使用するエンコーディングの変更 
-    - Ethna\_Controller#\_setLanguage メソッドをオーバーライドする 
+    - Ethna_Controller#_setLanguage メソッドをオーバーライドする 
     - 言語設定の変更は慎重に行うべき 
   - 言語設定を取得する 
     - ロケール名、エンコーディングの設定を一気に取得する 
@@ -24,7 +24,7 @@
 
 ### Ethna における言語設定の要素とその設定
 
-Ethna では、[appid]\_Controller の \_getDefaultLanguage メソッドをオーバーライドすることで言語設定を行い、ロケール名とテンプレートのエンコーディング(クライアントエンコーディングと呼びます)を設定します。デフォルトの実装は以下のようになります。
+Ethna では、[appid]_Controller の _getDefaultLanguage メソッドをオーバーライドすることで言語設定を行い、ロケール名とテンプレートのエンコーディング(クライアントエンコーディングと呼びます)を設定します。デフォルトの実装は以下のようになります。
 
     /**
      * デフォルト状態での使用言語を取得する
@@ -43,8 +43,8 @@ Ethna では、[appid]\_Controller の \_getDefaultLanguage メソッドをオ�
 
 このメソッドでは、以下の3つの値を配列として返します。
 
-- 1. ロケール名(デフォルト ja\_JP)  
-ロケールとは地域の文化、言語等を表す規則です。具体的には ja\_JP, en\_US のように、[言語コード]\_[国名コード] の値を設定します。  
+- 1. ロケール名(デフォルト ja_JP)  
+ロケールとは地域の文化、言語等を表す規則です。具体的には ja_JP, en_US のように、[言語コード]_[国名コード] の値を設定します。  
   
 - 2. システムエンコーディング（デフォルトUTF-8)  
 現状未使用ですが、将来の拡張のために予約されています。基本的には何を設定しても構いませんが、将来の拡張に備えて意味のあるエンコーディングを設定するようにしましょう。  
@@ -54,11 +54,11 @@ Ethna では、[appid]\_Controller の \_getDefaultLanguage メソッドをオ�
 
 #### プロジェクトで使用するロケールの設定と影響範囲
 
-プロジェクトで設定するロケールは、ethnaコマンドの add-project 時に決まります([appid]\_Controller の \_getDefaultLanguage メソッドでも変更可)。すでに述べたように、何も指定しないとデフォルトのロケールとして ja\_JP が仮定されますが、ethna コマンド実行時にそれを変更することも出来ます。
+プロジェクトで設定するロケールは、ethnaコマンドの add-project 時に決まります([appid]_Controller の _getDefaultLanguage メソッドでも変更可)。すでに述べたように、何も指定しないとデフォルトのロケールとして ja_JP が仮定されますが、ethna コマンド実行時にそれを変更することも出来ます。
 
     ethna add-project -l en_US sample
 
-こうすると、デフォルトのロケールは en\_US となり、テンプレートディレクトリとして [appid]/template/en\_US が作られます。また、Ethnaが出力するエラーメッセージのカタログファイルが以下の場所に作成されます。
+こうすると、デフォルトのロケールは en_US となり、テンプレートディレクトリとして [appid]/template/en_US が作られます。また、Ethnaが出力するエラーメッセージのカタログファイルが以下の場所に作成されます。
 
     [appid]/locale/en_US/LC_MESSAGES/ethna_sysmsg.ini
 
@@ -69,11 +69,11 @@ Ethna では、[appid]\_Controller の \_getDefaultLanguage メソッドをオ�
 
 #### プロジェクトで使用するエンコーディングの設定と影響範囲
 
-ロケールと同様、プロジェクトで使用するエンコーディングは、ethnaコマンドの add-project 時に決まります([appid]\_Controller の \_getDefaultLanguage メソッドでも変更可)。すでに述べたように、何も指定しないとデフォルトのエンコーディングとして UTF-8 が仮定されますが、ethna コマンド実行時にそれを変更することも出来ます。
+ロケールと同様、プロジェクトで使用するエンコーディングは、ethnaコマンドの add-project 時に決まります([appid]_Controller の _getDefaultLanguage メソッドでも変更可)。すでに述べたように、何も指定しないとデフォルトのエンコーディングとして UTF-8 が仮定されますが、ethna コマンド実行時にそれを変更することも出来ます。
 
     ethna add-project -e utf-8 sample
 
-こうすると、プロジェクトのエンコーディングとして EUC\_JP が仮定されます。但し、ここで設定するエンコーディングは、 [PHPの mbstring が認識できるもの](http://www.php.net/manual/en/function.mb-list-encodings.php) を設定して下さい。\*2
+こうすると、プロジェクトのエンコーディングとして EUC_JP が仮定されます。但し、ここで設定するエンコーディングは、 [PHPの mbstring が認識できるもの](http://www.php.net/manual/en/function.mb-list-encodings.php) を設定して下さい。\*2
 
 つまり、Ethnaのエンコーディング設定/変更 で影響するのは以下の2つです。
 
@@ -109,11 +109,11 @@ add-view コマンドおよび、add-template コマンドでもロケールと�
 
 ### 言語設定を動的に変更する
 
-Web からのリクエストに応じて、[appid]\_Controller の \_getDefaultLanguage で行った設定を変えたい場合もあると思います。その方法を以下で説明します。
+Web からのリクエストに応じて、[appid]_Controller の _getDefaultLanguage で行った設定を変えたい場合もあると思います。その方法を以下で説明します。
 
 #### ロケールの変更
 
-Ethna\_Controller#setLocale メソッドを使います。ただし、このメソッドを使うとテンプレートのディレクトリや、Ethna が出力するエラーメッセージのカタログディレクトリもそのロケールに変更されますので注意して下さい。
+Ethna_Controller#setLocale メソッドを使います。ただし、このメソッドを使うとテンプレートのディレクトリや、Ethna が出力するエラーメッセージのカタログディレクトリもそのロケールに変更されますので注意して下さい。
 
 [appid]/locale 指定したロケールファイルがない場合は、デフォルトの英語のシステムメッセージが使われます。また、[appid]/template 以下に指定したロケールのディレクトリがない場合は単にエラーになるでしょう。
 
@@ -122,14 +122,14 @@ Ethna\_Controller#setLocale メソッドを使います。ただし、このメ�
 
 #### プロジェクトで使用するエンコーディングの変更
 
-Ethna\_Controller#setClientEncoding メソッドを使います。ただし、このメソッドを使うと Ethna が mbstring で使う内部エンコーディングも変更されるので注意して下さい。つまり、Ethnaが出力するエラーメッセージのエンコーディングも変更されます。
+Ethna_Controller#setClientEncoding メソッドを使います。ただし、このメソッドを使うと Ethna が mbstring で使う内部エンコーディングも変更されるので注意して下さい。つまり、Ethnaが出力するエラーメッセージのエンコーディングも変更されます。
 
     $ctl = Ethna_Controller::getInstance();
     $ctl->setClientEncoding('utf-8');
 
-#### Ethna\_Controller#\_setLanguage メソッドをオーバーライドする
+#### Ethna_Controller#_setLanguage メソッドをオーバーライドする
 
-言語を変更するためのフックとして Ethna\_Controllerクラスに \_setLanguage メソッドが用意されています。このメソッドはアクションクラスが呼ばれる直前、かつ Session, Backend, ActionForm が初期化された直後に必ず呼び出されます。ここで、Ethna\_Controller のプロパティを書き換えた上で、Ethna\_I18n#setLanguage を呼び出してロケールやカタログの中身を再ロードさせるようにします。
+言語を変更するためのフックとして Ethna_Controllerクラスに _setLanguage メソッドが用意されています。このメソッドはアクションクラスが呼ばれる直前、かつ Session, Backend, ActionForm が初期化された直後に必ず呼び出されます。ここで、Ethna_Controller のプロパティを書き換えた上で、Ethna_I18n#setLanguage を呼び出してロケールやカタログの中身を再ロードさせるようにします。
 
     function _setLanguage($locale, $system_encoding = null, $client_encoding = null)
        {
@@ -145,7 +145,7 @@ Ethna\_Controller#setClientEncoding メソッドを使います。ただし、�
            $i18n->setLanguage($locale, $system_encoding, $client_encoding);
        }
 
-コントローラーを複数用意し、それぞれに \_getDefaultLanguage をオーバライドしてエントリポイントから呼び出してやるという手もあります。
+コントローラーを複数用意し、それぞれに _getDefaultLanguage をオーバライドしてエントリポイントから呼び出してやるという手もあります。
 
 #### 言語設定の変更は慎重に行うべき
 
@@ -155,25 +155,25 @@ Ethna\_Controller#setClientEncoding メソッドを使います。ただし、�
 
 ### 言語設定を取得する
 
-Ethna\_Controller クラスに、\_getDefaultLanguage メソッドや、set[Locale|ClientEncoding] メソッドで設定された言語設定を取得するAPIが定義されているので、それを使います。
+Ethna_Controller クラスに、_getDefaultLanguage メソッドや、set[Locale|ClientEncoding] メソッドで設定された言語設定を取得するAPIが定義されているので、それを使います。
 
 #### ロケール名、エンコーディングの設定を一気に取得する
 
-Ethna\_Controller#getLanguage メソッドを使います。
+Ethna_Controller#getLanguage メソッドを使います。
 
     $ctl = Ethna_Controller::getInstance();
     list($locale, $system_encoding, $client_encoding) = $ctl->getLanguage();
 
 #### ロケール名を取得する
 
-Ethna\_Controller#getLocale メソッドを使います。
+Ethna_Controller#getLocale メソッドを使います。
 
     $ctl = Ethna_Controller::getInstance();
     $locale = $ctl->getLocale();
 
 #### エンコーディングを取得する
 
-Ethna\_Controller#getClientEncoding メソッドを使います。
+Ethna_Controller#getClientEncoding メソッドを使います。
 
     $ctl = Ethna_Controller::getInstance();
     $client_encoding = $ctl->getClientEncoding();
@@ -181,5 +181,5 @@ Ethna\_Controller#getClientEncoding メソッドを使います。
 
 * * *
 \*1Ethna 2.5.0 以降では、内部のエンコーディング、およびエラーメッセージが utf-8 決め打ちから、エンコーディングに依存しない方式に変更されました。それに伴う変更について述べています。  
-\*2PHP5以降でEthnaを使用した場合、-eオプションで不正なエンコーディングを入力するとエラーにしています。PHP4 では、サポートされるエンコーディングがわからないため、このチェックは行われません。(mb\_list\_encodings 関数がPHP5以降なため  
+\*2PHP5以降でEthnaを使用した場合、-eオプションで不正なエンコーディングを入力するとエラーにしています。PHP4 では、サポートされるエンコーディングがわからないため、このチェックは行われません。(mb_list_encodings 関数がPHP5以降なため  
 

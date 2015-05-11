@@ -60,34 +60,34 @@
 
     $this->ae->add([フォーム名], [エラーメッセージ], [エラーコード]);
 
-となります。フォーム名には迷わず$nameを指定して問題ありません。また、エラーコードは以下のいずれか、あるいはアプリケーション定義の任意のエラーコードを指定することが出来ますが、通常はE\_FORM\_INVALIDVALUEあるいはE\_FORM\_INVALIDCHARで問題ありません。
+となります。フォーム名には迷わず$nameを指定して問題ありません。また、エラーコードは以下のいずれか、あるいはアプリケーション定義の任意のエラーコードを指定することが出来ますが、通常はE_FORM_INVALIDVALUEあるいはE_FORM_INVALIDCHARで問題ありません。
 
-- E\_FORM\_WRONGTYPE\_SCALAR(フォーム値型エラー(スカラー引数に配列指定))
-- E\_FORM\_WRONGTYPE\_ARRAY(フォーム値型エラー(配列引数にスカラー指定))
-- E\_FORM\_WRONGTYPE\_INT(フォーム値型エラー(整数型))
-- E\_FORM\_WRONGTYPE\_FLOAT(フォーム値型エラー(浮動小数点数型))
-- E\_FORM\_WRONGTYPE\_DATETIME(フォーム値型エラー(日付型))
-- E\_FORM\_WRONGTYPE\_BOOLEAN(フォーム値型エラー(BOOL型))
-- E\_FORM\_WRONGTYPE\_FILE(フォーム値型エラー(FILE型))
-- E\_FORM\_REQUIRED(フォーム値必須エラー)
-- E\_FORM\_MIN\_INT(フォーム値最小値エラー(整数型))
-- E\_FORM\_MIN\_FLOAT(フォーム値最小値エラー(浮動小数点数型))
-- E\_FORM\_MIN\_STRING(フォーム値最小値エラー(文字列型))
-- E\_FORM\_MIN\_DATETIME(フォーム値最小値エラー(日付型))
-- E\_FORM\_MIN\_FILE(フォーム値最小値エラー(ファイル型))
-- E\_FORM\_MAX\_INT(フォーム値最大値エラー(整数型))
-- E\_FORM\_MAX\_FLOAT(フォーム値最大値エラー(浮動小数点数型))
-- E\_FORM\_MAX\_STRING(フォーム値最大値エラー(文字列型))
-- E\_FORM\_MAX\_DATETIME(フォーム値最大値エラー(日付型))
-- E\_FORM\_MAX\_FILE(フォーム値最大値エラー(ファイル型))
-- E\_FORM\_REGEXP(フォーム値文字種(正規表現)エラー)
-- E\_FORM\_INVALIDVALUE(フォーム値数値(カスタムチェック)エラー)
-- E\_FORM\_INVALIDCHAR(フォーム値文字種(カスタムチェック)エラー)
-- E\_FORM\_CONFIRM(確認用エントリ入力エラー)
+- E_FORM_WRONGTYPE_SCALAR(フォーム値型エラー(スカラー引数に配列指定))
+- E_FORM_WRONGTYPE_ARRAY(フォーム値型エラー(配列引数にスカラー指定))
+- E_FORM_WRONGTYPE_INT(フォーム値型エラー(整数型))
+- E_FORM_WRONGTYPE_FLOAT(フォーム値型エラー(浮動小数点数型))
+- E_FORM_WRONGTYPE_DATETIME(フォーム値型エラー(日付型))
+- E_FORM_WRONGTYPE_BOOLEAN(フォーム値型エラー(BOOL型))
+- E_FORM_WRONGTYPE_FILE(フォーム値型エラー(FILE型))
+- E_FORM_REQUIRED(フォーム値必須エラー)
+- E_FORM_MIN_INT(フォーム値最小値エラー(整数型))
+- E_FORM_MIN_FLOAT(フォーム値最小値エラー(浮動小数点数型))
+- E_FORM_MIN_STRING(フォーム値最小値エラー(文字列型))
+- E_FORM_MIN_DATETIME(フォーム値最小値エラー(日付型))
+- E_FORM_MIN_FILE(フォーム値最小値エラー(ファイル型))
+- E_FORM_MAX_INT(フォーム値最大値エラー(整数型))
+- E_FORM_MAX_FLOAT(フォーム値最大値エラー(浮動小数点数型))
+- E_FORM_MAX_STRING(フォーム値最大値エラー(文字列型))
+- E_FORM_MAX_DATETIME(フォーム値最大値エラー(日付型))
+- E_FORM_MAX_FILE(フォーム値最大値エラー(ファイル型))
+- E_FORM_REGEXP(フォーム値文字種(正規表現)エラー)
+- E_FORM_INVALIDVALUE(フォーム値数値(カスタムチェック)エラー)
+- E_FORM_INVALIDCHAR(フォーム値文字種(カスタムチェック)エラー)
+- E_FORM_CONFIRM(確認用エントリ入力エラー)
 
 最後に、エラーメッセージにはユーザ向けに表示したいエラーメッセージを指定します。なお、ここで「{form}」と記述するとフォーム表示名に置換されます。
 
-なお、Ethna\_ActionFormには予め以下のようなカスタムメソッドが定義されています。
+なお、Ethna_ActionFormには予め以下のようなカスタムメソッドが定義されています。
 
 - checkVendorChar: 機種依存文字
 - checkBoolean: bool値

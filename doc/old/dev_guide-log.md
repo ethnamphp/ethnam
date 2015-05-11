@@ -14,9 +14,9 @@ Ethna では、実行時に様々なログを出力することができます�
     - default 
   - ログ出力のフィルタ 
   - プログラムでログ出力を制御する方法 
-    - Ethna\_Logger へ直接指示する 
+    - Ethna_Logger へ直接指示する 
     - Ethna::raiseError() が実行されたとき 
-    - trigger\_error() や fatal errorなどが発生したとき 
+    - trigger_error() や fatal errorなどが発生したとき 
   - ログ出力設定のサンプル 
     - ログをファイルに出力する 
     - ログレベルに応じてアラートメールを送信させる 
@@ -30,7 +30,7 @@ Ethna では、実行時に様々なログを出力することができます�
 
 アプリケーションの etc/[アプリケーションID]-ini.php の $config グローバル変数に 'log' というキーで設定を記述します。その中にログ出力方式をキーとして設定を記述していきます。
 
-共通のログ設定については log\_option, log\_filter\_do, log\_filter\_ignoreにて設定可能です。
+共通のログ設定については log_option, log_filter_do, log_filter_ignoreにて設定可能です。
 
     $config = array( 
     
@@ -53,27 +53,27 @@ Ethna では、実行時に様々なログを出力することができます�
 
 ### ログレベルについて
 
-ログレベルは、出力する情報の重要度をあらわすものです。Ethnaでは、 「LOG\_」 というプレフィックスがついたPHPの定数が定義されています。
+ログレベルは、出力する情報の重要度をあらわすものです。Ethnaでは、 「LOG_」 というプレフィックスがついたPHPの定数が定義されています。
 
 また、PHPスクリプトのパースエラー等のPHP組み込みのエラーについては、それらのエラーレベルに対応するログレベルが定義されています。利用できるログレベルは、緊急度の順に以下の通りです。
 
 Ethna では、設定されたログレベルより高いレベルのログを出力するようになっているので注意して下さい。たとえば、alert に設定した場合は alert と emerg は出力されますが、notice レベルのログは出力されません。
 
 | ログレベル | 設定ファイルへの記述 | 説明 | 対応するPHPの組み込みエラーレベル |
-| LOG\_EMERG | emerg | システムが使用不可となるような状態 | ----- |
-| LOG\_ALERT | alert | 対応が直ちに必要な緊急の状態 | ----- |
-| LOG\_CRIT | crit | システムに対して致命的な影響があるもの | E\_PARSE |
-| LOG\_ERR | err | エラーが発生する条件 | E\_ERROR, E\_USER\_ERROR |
-| LOG\_WARNING | warning | 警告が発生する条件 | E\_WARNING, E\_USER\_WARNING |
-| LOG\_NOTICE | notice | 通常の動作だが、特徴的な条件 | E\_NOTICE, E\_USER\_NOTICE, E\_STRICT |
-| LOG\_INFO | info | 情報を与えたい場合 | ----- |
-| LOG\_DEBUG | debug | デバッグ時の情報を与えたい場合 | 上記以外の全て |
+| LOG_EMERG | emerg | システムが使用不可となるような状態 | ----- |
+| LOG_ALERT | alert | 対応が直ちに必要な緊急の状態 | ----- |
+| LOG_CRIT | crit | システムに対して致命的な影響があるもの | E_PARSE |
+| LOG_ERR | err | エラーが発生する条件 | E_ERROR, E_USER_ERROR |
+| LOG_WARNING | warning | 警告が発生する条件 | E_WARNING, E_USER_WARNING |
+| LOG_NOTICE | notice | 通常の動作だが、特徴的な条件 | E_NOTICE, E_USER_NOTICE, E_STRICT |
+| LOG_INFO | info | 情報を与えたい場合 | ----- |
+| LOG_DEBUG | debug | デバッグ時の情報を与えたい場合 | 上記以外の全て |
 
-ログレベルの決定方針は明確ではありませんが、LOG\_NOTICE までは、アプリケーションとして正常な動作でも発生することがあります(フォーム値の検証でエラーが発生した場合など)。また、LOG\_DEBUGレベルでは、Ethna内部で実行される情報がかなり詳細に出力されます(ethnaコマンドなど)。
+ログレベルの決定方針は明確ではありませんが、LOG_NOTICE までは、アプリケーションとして正常な動作でも発生することがあります(フォーム値の検証でエラーが発生した場合など)。また、LOG_DEBUGレベルでは、Ethna内部で実行される情報がかなり詳細に出力されます(ethnaコマンドなど)。
 
 ### ログの出力方式と出力オプション
 
-Ethna\_LoggerはLogwriterプラグインを使ってログの出力をします。Logwriterプラグインには以下の5通りが用意されています。それぞれのオプションについてはログの設定方法の項を参照してください。
+Ethna_LoggerはLogwriterプラグインを使ってログの出力をします。Logwriterプラグインには以下の5通りが用意されています。それぞれのオプションについてはログの設定方法の項を参照してください。
 
 #### echo
 
@@ -159,7 +159,7 @@ syslogを使ってログを出力します。出力先は syslog の設定、及
 
 ### ログ出力のフィルタ
 
-各ログの出力方式の設定には、'filter\_do', 'filter\_ignore' というキーでそれぞれ「マッチするログを出力する」, 「出力しない」、を設定できます。たとえば echoの設定を例にとると、以下のようになります。
+各ログの出力方式の設定には、'filter_do', 'filter_ignore' というキーでそれぞれ「マッチするログを出力する」, 「出力しない」、を設定できます。たとえば echoの設定を例にとると、以下のようになります。
 
     'log' => array(
         'echo' => array(
@@ -180,11 +180,11 @@ syslogを使ってログを出力します。出力先は syslog の設定、及
 
 ### プログラムでログ出力を制御する方法
 
-Ethna では基本的にEthna\_Loggerクラスを使ってアプリケーションのログを管理していますが、出力されるタイミングは以下の3つがあります。
+Ethna では基本的にEthna_Loggerクラスを使ってアプリケーションのログを管理していますが、出力されるタイミングは以下の3つがあります。
 
-#### Ethna\_Logger へ直接指示する
+#### Ethna_Logger へ直接指示する
 
-Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の形で取得できます。
+Ethna_Logger クラスは、Ethna_Controller, Ethna_Backend から以下の形で取得できます。
 
     // Ethna_Controller から直接取得する
     $ctl =& Ethna_Controller::getInstance();
@@ -193,7 +193,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
     // Ethna_Backend から取得する(アクションクラス、ビュークラス上で有効
     $logger =& $backend->getLogger();
 
-こうして取得した Ethna\_Loggerクラスのインスタンスに対して、ログレベルとメッセージを引数として以下の形で直接指示します。エラー関連の処理については [エラー処理](dev_guide-error.md) のページも参照してください。
+こうして取得した Ethna_Loggerクラスのインスタンスに対して、ログレベルとメッセージを引数として以下の形で直接指示します。エラー関連の処理については [エラー処理](dev_guide-error.md) のページも参照してください。
 
     // NOTICE レベルのメッセージを出力
     $logger->log(LOG_NOTICE, "メッセージ");
@@ -202,7 +202,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
 
     $errobj =& Ethna::raiseError("エラーだよ[%s]", E_USER_ERROR, $err_submsg);
 
-#### trigger\_error() や fatal errorなどが発生したとき
+#### trigger_error() や fatal errorなどが発生したとき
 
     trigger_error("大変だ！エラーだよ！");
 
@@ -243,7 +243,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
 
 #### アプリ開発中の詳細なログ
 
-方針: typoを発見するためにLOG\_NOTICEレベル(E\_NOTICEを出力するレベル)まで画面に表示し、fileにはデータベースに問い合わせた全てのSQL文を出力する。
+方針: typoを発見するためにLOG_NOTICEレベル(E_NOTICEを出力するレベル)まで画面に表示し、fileにはデータベースに問い合わせた全てのSQL文を出力する。
 
     $config = array( 
     
@@ -266,7 +266,7 @@ Ethna\_Logger クラスは、Ethna\_Controller, Ethna\_Backend から以下の�
 
 #### 公開する本番環境のログ
 
-方針: とにかく画面にはなにも表示しない。回避可能だが意図した動作になっていないなどのLOG\_WARNINGレベルはファイルに出力。データベースに接続できないなどの緊急時に発生するLOG\_ERRレベルのログはメールでアラート用メーリングリストに送信する。
+方針: とにかく画面にはなにも表示しない。回避可能だが意図した動作になっていないなどのLOG_WARNINGレベルはファイルに出力。データベースに接続できないなどの緊急時に発生するLOG_ERRレベルのログはメールでアラート用メーリングリストに送信する。
 
     $config = array( 
     

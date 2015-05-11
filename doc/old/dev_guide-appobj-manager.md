@@ -30,7 +30,7 @@
 
 ### アプリケーションマネージャ の作成
 
-まず最初にAppManagerを作成します。例として、アプリケーションマネージャー名を 「hoge」としてみましょう。以下のように実行することで、app/Sample\_HogeManager.php が自動生成されます。 中身は以下のようになるでしょう。
+まず最初にAppManagerを作成します。例として、アプリケーションマネージャー名を 「hoge」としてみましょう。以下のように実行することで、app/Sample_HogeManager.php が自動生成されます。 中身は以下のようになるでしょう。
 
     $ ethna add-app-manager hoge
 
@@ -59,7 +59,7 @@
 
 ### 共通のロジックを記述する
 
-上記で生成されたアプリケーションマネージャーは、Ethna\_AppManagerクラスを継承しています。よって、Ethna\_AppManagerで定義されている以下のプロパティをそのまま使うことが出来ます。見てわかるとおり、Ethnaで使う基本的なオブジェクトが全て網羅されているので、アクションフォームから値を取得するコードや、データベースにアクセスするコードなど、どのようなロジックでも記述することができます。
+上記で生成されたアプリケーションマネージャーは、Ethna_AppManagerクラスを継承しています。よって、Ethna_AppManagerで定義されている以下のプロパティをそのまま使うことが出来ます。見てわかるとおり、Ethnaで使う基本的なオブジェクトが全て網羅されているので、アクションフォームから値を取得するコードや、データベースにアクセスするコードなど、どのようなロジックでも記述することができます。
 
     /** @var object Ethna_Backend backendオブジェクト */
         var $backend;
@@ -110,9 +110,9 @@
 
 #### Ethna 2.3.0 preview2 以降の場合
 
-Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージャー名を指定することで、アプリケーションマネージャのインスタンスを取得することができます。
+Ethna_Backend クラスのgetManagerメソッドに、作成したマネージャー名を指定することで、アプリケーションマネージャのインスタンスを取得することができます。
 
-取得したインスタンスから、メソッドを呼び出してやるだけです。 以下のように sampleアクションクラスに 追記してみましょう。「Hello Sample\_HogeManager!」が表示されるはずです。
+取得したインスタンスから、メソッドを呼び出してやるだけです。 以下のように sampleアクションクラスに 追記してみましょう。「Hello Sample_HogeManager!」が表示されるはずです。
 
     class Sample_Action_Sample extends Sample_ActionClass
     {
@@ -130,7 +130,7 @@ Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージ�
 
     app/Sample_Controller.php
 
-で、上で作ったクラス(この場合はSample\_HogeManager.php)をrequireし、コントローラーのファイルの中にある、
+で、上で作ったクラス(この場合はSample_HogeManager.php)をrequireし、コントローラーのファイルの中にある、
 
     var $manager
 
@@ -140,9 +140,9 @@ Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージ�
 
 配列のキーとして指定している Test は、各アクションクラス内で呼び出す時の名称。配列の値として指定している hoge は ethna add-app-managerコマンドで指定したアプリケーションマネージャーの名前です。
 
-このように指定することで、アクションクラスの $this->Test に、Sample\_HogeManager のインスタンスが自動的にロードされます。
+このように指定することで、アクションクラスの $this->Test に、Sample_HogeManager のインスタンスが自動的にロードされます。
 
-早速試してみましょう。sampleアクションクラスのperformメソッドに以下を追記して、実行してみてください。「Hello Sample\_HogeManager!」が表示されるはずです。
+早速試してみましょう。sampleアクションクラスのperformメソッドに以下を追記して、実行してみてください。「Hello Sample_HogeManager!」が表示されるはずです。
 
     class Sample_Action_Sample extends Sample_ActionClass
     {
@@ -157,7 +157,7 @@ Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージ�
 
 既に述べた通り Ethna 2.3.0 preview1 以前では、コントローラーにマネージャーを登録し、自動ロードさせるやり方でした。しかし、数が多くなったときに登録が大変なことと、ロードのコストがかかるという理由から、Ethna 2.3.0 preview2 以降では、明示的に必要なもののみを取得するやり方に変更されています。
 
-各Action毎に毎回手動で呼び出すのが面倒な場合、 app/[APPID]\_ActionClass.php などのベースの関数のコンストラクタの中などで呼び出すようにすると良いでしょう。
+各Action毎に毎回手動で呼び出すのが面倒な場合、 app/[APPID]_ActionClass.php などのベースの関数のコンストラクタの中などで呼び出すようにすると良いでしょう。
 
 ### アプリケーションマネージャの命名規約を変更する
 
@@ -167,7 +167,7 @@ Ethna\_Backend クラスのgetManagerメソッドに、作成したマネージ�
 
     [アプリケーションID]_[マネージャー名のはじめを大文字にしたもの]Manager
 
-この名前は、Ethna\_Controller#getManagerClassName をオーバライドすることで変更することが出来ます。命名規約が変わったとしても、既に述べた呼び出し方は変化ありません。
+この名前は、Ethna_Controller#getManagerClassName をオーバライドすることで変更することが出来ます。命名規約が変わったとしても、既に述べた呼び出し方は変化ありません。
 
     /**
         * マネージャクラス名を取得する

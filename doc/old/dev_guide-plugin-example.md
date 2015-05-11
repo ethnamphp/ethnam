@@ -24,17 +24,17 @@
 
 また、このプラグインは他のアプリケーションでも使いそうなので、プラグインとしてはアプリではなくEthna本体に付属させる形にします。もしアプリに付属させる場合は、以下のプラグインを作る場面で
 
-- クラス名のprefixを 'Ethna\_' ではなく 'Sample\_' のようにアプリ名にする
-- ファイルを置く場所を $ETHNA\_HOME/class/Plugin 以下ではなく、 app/plugin 以下に置く(親クラス含む) のようにしてください。
+- クラス名のprefixを 'Ethna_' ではなく 'Sample_' のようにアプリ名にする
+- ファイルを置く場所を $ETHNA_HOME/class/Plugin 以下ではなく、 app/plugin 以下に置く(親クラス含む) のようにしてください。
 
 ### 親クラスを作る
 
 プラグインの親クラスを作ります。$nameに共通したメソッドをここで定義しておきます。
 
 - クラス名
-  - Ethna\_Plugin\_Emoji
+  - Ethna_Plugin_Emoji
 - ファイル
-  - $ETHNA\_HOME/class/Plugin/Ethna\_Plugin\_Emoji.php
+  - $ETHNA_HOME/class/Plugin/Ethna_Plugin_Emoji.php
 
     class Ethna_Plugin_Emoji
     {
@@ -70,9 +70,9 @@
 $name = 'pc' ならば次のような感じになります。親クラスのabstractなメソッドの実装をします。
 
 - クラス名
-  - Ethna\_Plugin\_Emoji\_Pc
+  - Ethna_Plugin_Emoji_Pc
 - ファイル名
-  - $ETHNA\_HOME/class/Plugin/Emoji/Ethna\_Plugin\_Emoji\_Pc.php
+  - $ETHNA_HOME/class/Plugin/Emoji/Ethna_Plugin_Emoji_Pc.php
 
     class Ethna_Plugin_Emoji_Pc extends Ethna_Plugin_Emoji
     {
@@ -89,7 +89,7 @@ $name = 'pc' ならば次のような感じになります。親クラスのabst
 
 ### action formに入力フィルタを追加する
 
-action formではフィルタとしてこのプラグインを使いたいので、アプリケーションのaction formの基底クラス app/Sample\_ActionForm.php に次の内容を追加してフィルタ 'emoji\_encode' を用意します。($this->ctl->getCareer()でキャリアが区別できるものとします)
+action formではフィルタとしてこのプラグインを使いたいので、アプリケーションのaction formの基底クラス app/Sample_ActionForm.php に次の内容を追加してフィルタ 'emoji_encode' を用意します。($this->ctl->getCareer()でキャリアが区別できるものとします)
 
     function _filter_emoji_encode($value)
     {
@@ -101,7 +101,7 @@ action formではフィルタとしてこのプラグインを使いたいので
 
 まるまる出力フィルタにしてしまってもいいですが、必要なところだけ絵文字のdecodeをするほうが効率がいいので、smartyのmodifierとして登録することにします。
 
-アプリケーションのviewの基底クラス app/Sample\_ViewClass.php に次の内容を追加して、{$text|emoji} というかんじのsmarty modifierを用意します。
+アプリケーションのviewの基底クラス app/Sample_ViewClass.php に次の内容を追加して、{$text|emoji} というかんじのsmarty modifierを用意します。
 
     function _setDefault(&$renderer)
     {
@@ -118,9 +118,9 @@ action formのバリデータで、max, minは絵文字の場合に意味が違�
 - プラグイン名
   - $type = 'Validator', $name = 'Emojistrlen'
 - クラス名
-  - Ethna\_Plugin\_Validator\_Emojistrlen
+  - Ethna_Plugin_Validator_Emojistrlen
 - ファイル名
-  - $ETHNA\_HOME/class/Plugin/Validator/Ethna\_Plugin\_Validator\_Emojistrlen.php
+  - $ETHNA_HOME/class/Plugin/Validator/Ethna_Plugin_Validator_Emojistrlen.php
 
     class Ethna_Plugin_Validator_Emojistrlen extends Ethna_Plugin_Validator
     {

@@ -1,5 +1,5 @@
 # エラー処理ポリシー
-  - Ethna\_Error 
+  - Ethna_Error 
   - ActionError 
 
 ## エラー処理ポリシー
@@ -11,13 +11,13 @@
 - User error
   - ユーザがフォームに入力した値が不正である場合のエラー。
 
-Ethnaフレームワークでは、これらのエラーは全てEthna\_Error（またはPEAR\_Error）によって処理されます。
+Ethnaフレームワークでは、これらのエラーは全てEthna_Error（またはPEAR_Error）によって処理されます。
 
-[![Ethna_Error1.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-error-policy&src=Ethna_Error1.png "Ethna\_Error1.png")](plugin=attach&refer=ethna-document-dev_guide-error-policy&openfile=Ethna_Error1.png.md "Ethna\_Error1.png")
+[![Ethna_Error1.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-error-policy&src=Ethna_Error1.png "Ethna_Error1.png")](plugin=attach&refer=ethna-document-dev_guide-error-policy&openfile=Ethna_Error1.png.md "Ethna_Error1.png")
 
-### Ethna\_Error
+### Ethna_Error
 
-Ethna\_Errorには、エラーコードとエラーメッセージが格納されています。 Ethna\_Errorはシステムとしてエラーハンドリングを行うので，実際のアプリケーションでは，Ethna\_Errorをアクションクラスで処理し，ユーザに必要な情報のみを提示します．
+Ethna_Errorには、エラーコードとエラーメッセージが格納されています。 Ethna_Errorはシステムとしてエラーハンドリングを行うので，実際のアプリケーションでは，Ethna_Errorをアクションクラスで処理し，ユーザに必要な情報のみを提示します．
 
     function perform()
         {
@@ -48,13 +48,13 @@ EthnaクラスのisError()メソッドで、エラーの有無を確認できま
         }
     }
 
-エラーオブジェクトには、Notice,Warning,Errorの3つがあります。 エラーの内容に応じて，これらを使い分けます． アプリケーション固有のエラーメッセージを渡したい場合は、EthnaクラスのraiseNotice,raiseWarning,raiseErrorメソッドを使って，Ethna\_Errorオブジェクトを生成します． この例では，raiseNoticeを用いてエラーオブジェクトを返しています． 引数には，メッセージとエラーコードを与えます．
+エラーオブジェクトには、Notice,Warning,Errorの3つがあります。 エラーの内容に応じて，これらを使い分けます． アプリケーション固有のエラーメッセージを渡したい場合は、EthnaクラスのraiseNotice,raiseWarning,raiseErrorメソッドを使って，Ethna_Errorオブジェクトを生成します． この例では，raiseNoticeを用いてエラーオブジェクトを返しています． 引数には，メッセージとエラーコードを与えます．
 
 **[アプリケーションエラーコードの定義](dev_guide-error-definecode.md)**
 
 ### ActionError
 
-[![Ethna_ActionError.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-error-policy&src=Ethna_ActionError.png "Ethna\_ActionError.png")](plugin=attach&refer=ethna-document-dev_guide-error-policy&openfile=Ethna_ActionError.png.md "Ethna\_ActionError.png")
+[![Ethna_ActionError.png](http://ethna.jp/index.php?plugin=ref&page=ethna-document-dev_guide-error-policy&src=Ethna_ActionError.png "Ethna_ActionError.png")](plugin=attach&refer=ethna-document-dev_guide-error-policy&openfile=Ethna_ActionError.png.md "Ethna_ActionError.png")
 
 エラーの内容をユーザに提示した場合，アクションクラスで受け取ったエラーオブジェクトをActionErrorに格納します。 具体的には、下記のようにae(actionError)のaddObjectメソッドを使います。
 

@@ -18,7 +18,7 @@
         'dsn' => 'mysql://user:pass@unix+localhost/dbname',
     );
 
-2. Ethna\_Backend::getDBメソッドを利用してDBオブジェクトを取り出す。
+2. Ethna_Backend::getDBメソッドを利用してDBオブジェクトを取り出す。
 
     function perform()
     {
@@ -27,7 +27,7 @@
         return 'index';
     }
 
-Ethnaの デフォルトの DB接続クラス( [Ethna\_DB\_PEAR](doc/Ethna/Ethna_DB_PEAR.html)) はPEAR::DBを継承しているので、
+Ethnaの デフォルトの DB接続クラス( [Ethna_DB_PEAR](doc/Ethna/Ethna_DB_PEAR.html)) はPEAR::DBを継承しているので、
 
     $sql = "SELECT id FROM test";
     $result =& $db->query($sql);
@@ -50,11 +50,11 @@ _see also:_ [ADODB を Ethna で使う](dev_guide-adodb.md)
 
 ### 複数のDBオブジェクトを扱う場合
 
-1. iniファイルに「dsn\_（接続名）」でエントリを追加
+1. iniファイルに「dsn_（接続名）」でエントリを追加
 
     'dsn_r' => 'mysql://user:pass@unix+localhost/dbname',
 
-2. [appid]\_Controller.phpに
+2. [appid]_Controller.phpに
 
     /**
      * @var array DBアクセス定義
@@ -95,13 +95,13 @@ _see also:_ [ADODB を Ethna で使う](dev_guide-adodb.md)
 
 ### AppManager内でのDBオブジェクトの使用方法
 
-Ethna\_AppManagerのコンストラクタにより、既にDBオブジェクトは 取得されていますので、下記の様に操作する事が可能です。
+Ethna_AppManagerのコンストラクタにより、既にDBオブジェクトは 取得されていますので、下記の様に操作する事が可能です。
 
     $this->db->query("SELECT id FROM test");
     // 上記「複数のDBオブジェクトを扱う場合」の(1)を行った場合の例
     $this->db_r->query("SELECT id FROM test");
 
-なお、上記方法で取得できるクラスはEthna\_DB\_PEARクラスです。 prepared statementなど、PEAR\_DBの機能をフルに使うには、Ethna\_DB\_PEARクラスのメンバに直接アクセスする必要があります。
+なお、上記方法で取得できるクラスはEthna_DB_PEARクラスです。 prepared statementなど、PEAR_DBの機能をフルに使うには、Ethna_DB_PEARクラスのメンバに直接アクセスする必要があります。
 
     $sql = "SELECT id FROM test WHERE id = ?";
     $data = array($id);

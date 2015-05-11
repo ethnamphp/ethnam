@@ -9,7 +9,7 @@
 - アクションフォームが定義されたファイルのパス名
 - アクションフォーム名
 
-これらの命名規則は、Ethna\_Controllerに定義されている以下のメソッドをオーバーライドすることで変更することが出来ます。
+これらの命名規則は、Ethna_Controllerに定義されている以下のメソッドをオーバーライドすることで変更することが出来ます。
 
 <dl class="list1" style="padding-left:16px;margin-left:16px">
 <dt>アクションクラスが定義されたファイルのパス名</dt>
@@ -22,22 +22,22 @@
 <dd>Ethna_Controller::getDefaultFormClass($action_name, $fallback)</dd>
 </dl>
 
-Ethna\_Controllerでは、パス名は(アクションクラス/アクションフォーム共通で):
+Ethna_Controllerでは、パス名は(アクションクラス/アクションフォーム共通で):
 
     $default_path = preg_replace('/_(.)/e', "'/' . strtoupper('\$1')",
     ucfirst($action_name)) . '.php';
 
-つまり"foo\_bar\_hoge" -> "Foo/Bar/Hoge.php"となり、アクションクラス名は
+つまり"foo_bar_hoge" -> "Foo/Bar/Hoge.php"となり、アクションクラス名は
 
     $postfix = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($action_name));
     ...
     $r = sprintf("%s_Action_%s", $this->getAppId(), $postfix);
 
-となります(アクションフォームは、上記"\_Action\_"の部分が"\_Form\_"になります)。好みに応じて適宜オーバーライドしてください(それほどお勧めはしません)。
+となります(アクションフォームは、上記"_Action_"の部分が"_Form_"になります)。好みに応じて適宜オーバーライドしてください(それほどお勧めはしません)。
 
-例えば、"foo\_bar\_hoge"というアクションに対応するファイル名を"foo\_bar\_hoge.php"にして、アクションクラス名を"foo\_bar\_hoge\_action"、アクションフォーム名を"foo\_bar\_hoge\_form"としたい場合は、以下のアプリケーションのコントローラに以下のような定義を追加します。
+例えば、"foo_bar_hoge"というアクションに対応するファイル名を"foo_bar_hoge.php"にして、アクションクラス名を"foo_bar_hoge_action"、アクションフォーム名を"foo_bar_hoge_form"としたい場合は、以下のアプリケーションのコントローラに以下のような定義を追加します。
 
-Sample\_Controller.php:
+Sample_Controller.php:
 
     /**
      * アクションに対応するアクションパス名が省略された場合のデフォルトパス名を返す

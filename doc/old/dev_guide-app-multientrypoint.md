@@ -1,5 +1,5 @@
 # 複数のエントリポイントを作成する
-  - [参考] Ethna\_Controller::main()メソッド 
+  - [参考] Ethna_Controller::main()メソッド 
 
 ## 複数のエントリポイントを作成する
 
@@ -37,9 +37,9 @@
 
 _see also:_ [エントリポイント毎に実行可能なアクションを制限する](dev_guide-app-limitentrypoint.md)
 
-### [参考] Ethna\_Controller::main()メソッド
+### [参考] Ethna_Controller::main()メソッド
 
-なお、Ethna\_Controller::main($class\_name, $action\_name = "", $fallback\_action\_name = "")メソッドは最低1つ、最大で3つの引数をとります。
+なお、Ethna_Controller::main($class_name, $action_name = "", $fallback_action_name = "")メソッドは最低1つ、最大で3つの引数をとります。
 
 <dl class="list1" style="padding-left:16px;margin-left:16px">
 <dt>$class_name</dt>

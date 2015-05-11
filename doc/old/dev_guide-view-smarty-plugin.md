@@ -2,25 +2,25 @@
 - Ethna組込みのSmartyプラグイン 
   - 概要 
   - modifier 
-    - {...|number\_format} 
+    - {...|number_format} 
     - {...|strftime} 
     - {...|count} 
     - {...|join} 
     - {...|filter} 
     - {...|explode} 
     - {...|unique} 
-    - {...|wordwrap\_i18n} 
-    - {...|truncate\_i18n} 
+    - {...|wordwrap_i18n} 
+    - {...|truncate_i18n} 
     - {...|i18n} 
-    - {...|checkbox}, {...|select}, {...|form\_value} 
+    - {...|checkbox}, {...|select}, {...|form_value} 
   - function 
     - {message} 
     - {url} 
-    - {form\_name} 
-    - {form\_submit} 
-    - {form\_input} 
+    - {form_name} 
+    - {form_submit} 
+    - {form_input} 
     - {csrfid} 
-    - {is\_error}, {uniqid}, {select}, {checkbox\_list} 
+    - {is_error}, {uniqid}, {select}, {checkbox_list} 
   - block 
     - {form}...{/form} 
 
@@ -30,13 +30,13 @@
 
 EthnaでSmartyを使う場合に利用できる、組込みの便利なプラグイン(modfier, function, block)についての説明です。
 
-基本的に Ethna\_ViewClass で提供されているヘルパ関数や、 php の組込み関数、 Ethna\_Util の関数などを呼び出すラッパーになっています。
+基本的に Ethna_ViewClass で提供されているヘルパ関数や、 php の組込み関数、 Ethna_Util の関数などを呼び出すラッパーになっています。
 
 ### modifier
 
-#### {...|number\_format}
+#### {...|number_format}
 
-number\_format()関数のラッパーです。
+number_format()関数のラッパーです。
 
 - 入力
 
@@ -112,7 +112,7 @@ strftime()関数のラッパーです。
 
     {$array|unique:"foo"}
 
-#### {...|wordwrap\_i18n}
+#### {...|wordwrap_i18n}
 
 **utf-8のみ対応** 指定された文字数で文字列をワードラップします。
 
@@ -134,9 +134,9 @@ strftime()関数のラッパーです。
   - 改行文字
   - 半角スペースでのインデント数
 
-#### {...|truncate\_i18n}
+#### {...|truncate_i18n}
 
-文字列を指定された文字数で切り詰めます。 mb\_strimwidth() を用いています。
+文字列を指定された文字数で切り詰めます。 mb_strimwidth() を用いています。
 
 - 入力
 
@@ -152,7 +152,7 @@ strftime()関数のラッパーです。
 
 #### {...|i18n}
 
-i18nメッセージを取得します。 Ethna\_I18N クラスを利用します。
+i18nメッセージを取得します。 Ethna_I18N クラスを利用します。
 
 - 入力
 
@@ -162,7 +162,7 @@ i18nメッセージを取得します。 Ethna\_I18N クラスを利用します
 
     英語
 
-#### {...|checkbox}, {...|select}, {...|form\_value}
+#### {...|checkbox}, {...|select}, {...|form_value}
 
 詳しくはAPIドキュメントをご覧ください。多くの場合、もっと簡単な代替手段があります。
 
@@ -185,9 +185,9 @@ i18nメッセージを取得します。 Ethna\_I18N クラスを利用します
 
 #### {url}
 
-Ethna\_UrlHandler を使って、アクション名とパラメータからURLを生成します。UrlHandlerについての説明については [Ethna\_UrlHandler](dev_guide-urlhandler.md)を参照してください。
+Ethna_UrlHandler を使って、アクション名とパラメータからURLを生成します。UrlHandlerについての説明については [Ethna_UrlHandler](dev_guide-urlhandler.md)を参照してください。
 
-以下では、アプリの設定ファイル (app-ini.php) で 'url' => ' [http://example.jp/index.php'](http://example.jp/index.php') が設定され、 /show/article/3/2 で show\_article アクションにパラメータ chapter=3, sectio=2 を与えるものとします。
+以下では、アプリの設定ファイル (app-ini.php) で 'url' => ' [http://example.jp/index.php'](http://example.jp/index.php') が設定され、 /show/article/3/2 で show_article アクションにパラメータ chapter=3, sectio=2 を与えるものとします。
 
 - 入力
 
@@ -203,9 +203,9 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
   - anchor: '#anchor' 形式のアンカーを付加します。
   - 上にあげた以外のパラメータ: GETパラメータとしてURLに付加されます。
 
-#### {form\_name}
+#### {form_name}
 
-アクションフォームで定義された、フォームの表示名を取得します。Ethna\_ViewClassのgetFormName()を用いています。
+アクションフォームで定義された、フォームの表示名を取得します。Ethna_ViewClassのgetFormName()を用いています。
 
     var $form = array(
         'text' => array(
@@ -225,9 +225,9 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
   - name: フォーム名(連想配列$formのキー)を指定します。(必須)
   - action: フォーム定義を取得するアクションを指定します。省略時の動作については [フォームヘルパ](dev_guide-view-form_helper.md)を参照してください。
 
-#### {form\_submit}
+#### {form_submit}
 
-フォームのsubmitボタンを生成します。Ethna\_ViewClassのgetFormSubmit()を用いています。詳しくは [Ethna\_ViewClass](dev_guide-view.md)を参照してください。
+フォームのsubmitボタンを生成します。Ethna_ViewClassのgetFormSubmit()を用いています。詳しくは [Ethna_ViewClass](dev_guide-view.md)を参照してください。
 
 - 入力
 
@@ -240,9 +240,9 @@ Ethna\_UrlHandler を使って、アクション名とパラメータからURL�
 - 引数
   - すべて getFormSubmit() にそのまま渡されます。
 
-#### {form\_input}
+#### {form_input}
 
-Ethna\_ViewClassのgetFormInput() (および \_getFormInput\_\*()) を使い、アクションフォームのフォーム定義から、自動的にそのフォームを送信するためのHTMLタグを生成します。
+Ethna_ViewClassのgetFormInput() (および _getFormInput_\*()) を使い、アクションフォームのフォーム定義から、自動的にそのフォームを送信するためのHTMLタグを生成します。
 
 詳細は [フォームヘルパ](dev_guide-view-form_helper.md)を参照してください。
 
@@ -260,7 +260,7 @@ CSRF対策のためのIDをhiddenタグもしくはGETのリクエストパラ�
     <input type="hidden" name="csrfid" value="a0f24f75e...e48864d3e">
     <a href="index.php?action_do_something=true&csrfid=a0f24f75e...e48864d3e">
 
-#### {is\_error}, {uniqid}, {select}, {checkbox\_list}
+#### {is_error}, {uniqid}, {select}, {checkbox_list}
 
 詳しくはAPIドキュメントをご覧ください。多くの場合、もっと簡単な代替手段があります。
 

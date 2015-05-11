@@ -7,7 +7,7 @@
   - DBレイヤの抽象化 
   - プラグインどうする？ 
   - View の扱い方と連携に関する考え方 
-  - Ethna\_Session 
+  - Ethna_Session 
   - 認証(Auth) の機構はなんとかしたい 
   - URLHandler 
   - サンプルを増やす努力 
@@ -26,7 +26,7 @@
 - AppObject 捨てでいいと思う
   - 捨てるとして、既存のORMを取り込むか、ライブラリを使うかを決める
   - ActionForm との連携をとりやすくするのが何よりも重要
-    - ActionForm は、複数の項目を連携するための仕組みがない。カスタムチェックもありだけど、'required\_if' => 'hoge > 5 AND fuga < 0' のように、項目を連携するValidate の仕組みもありではないか
+    - ActionForm は、複数の項目を連携するための仕組みがない。カスタムチェックもありだけど、'required_if' => 'hoge > 5 AND fuga < 0' のように、項目を連携するValidate の仕組みもありではないか
 
 ### プラグインどうする？
 
@@ -48,14 +48,14 @@
 
 ### View の扱い方と連携に関する考え方
 
-- Ethna\_ViewClass はコンテキストに依存した値を処理することで、If 文を action や テンプレートに書くのを極力防ぐための仕組みです。
+- Ethna_ViewClass はコンテキストに依存した値を処理することで、If 文を action や テンプレートに書くのを極力防ぐための仕組みです。
   - その意味で、Viewは不要とは思えないが、Actionや ActionForm(フォームヘルパ）等との連携を改良する必要がある
     - View と ActionForm の連携にはフォームヘルパを使うべき。サンプルを増やす努力を。
     - [http://ml.ethna.jp/pipermail/users/2009-January/001092.html](http://ml.ethna.jp/pipermail/users/2009-January/001092.html)
-    - アクションからViewに値をどうしても渡したい場合、call\_user\_func\_array を使う案はどうか(sotarok)
+    - アクションからViewに値をどうしても渡したい場合、call_user_func_array を使う案はどうか(sotarok)
     - [http://d.hatena.ne.jp/sotarok/20090125/1232900121](http://d.hatena.ne.jp/sotarok/20090125/1232900121)
 - 複数テンプレートを組み合わせられるように改良したい
-  - Ethna\_Renderer#perform(true) を使えば、テンプレートの出力を取り出せるので、それを再度 assign する形で。
+  - Ethna_Renderer#perform(true) を使えば、テンプレートの出力を取り出せるので、それを再度 assign する形で。
 - 汎用Viewの実現
   - 汎用のものは取り込む方向で
   - JSON
@@ -65,7 +65,7 @@
     - [http://d.hatena.ne.jp/okonomi/20090125/1232876245](http://d.hatena.ne.jp/okonomi/20090125/1232876245)
 - View のテストには、prefoward より、forward で exit させたほうがしっくりくるかも
 
-### Ethna\_Session
+### Ethna_Session
 
 - 実装がボロいとの批判が多い
   - セッションを保存するディレクトリが固定な件
@@ -77,7 +77,7 @@
 
 ### 認証(Auth) の機構はなんとかしたい
 
-- Ethna\_ActionClass を継承する方法は間違いが多い
+- Ethna_ActionClass を継承する方法は間違いが多い
   - 継承を忘れればセキュリティ上の致命的なミスとなる。これはどうすれば防げる？
     - authenticate インターフェイスを除いて全部ユーザの責任にする？
 - プラグイン化しようよ
@@ -86,11 +86,11 @@
 
 ### URLHandler
 
-- 現状はアクション名ありきで path\_info をアクション名にマッピングしている
-  - アクション名ありきで path\_info の解釈が後付けなこの実装には確固たる根拠が あるわけではない（いちい）
-  - mod\_rewrite や Net\_URL\_Mapper を使わざるを得ない
+- 現状はアクション名ありきで path_info をアクション名にマッピングしている
+  - アクション名ありきで path_info の解釈が後付けなこの実装には確固たる根拠が あるわけではない（いちい）
+  - mod_rewrite や Net_URL_Mapper を使わざるを得ない
 
-- 上記のような仕組みではなくて、path\_info をもとに、デフォルトでアクション名 を推定する仕組みが欲しい(重要)
+- 上記のような仕組みではなくて、path_info をもとに、デフォルトでアクション名 を推定する仕組みが欲しい(重要)
   - この仕組みを実現するのに、URLHandler の仕組みをごそっと置き換えても構わな いと思う
 
 ### サンプルを増やす努力
@@ -106,7 +106,7 @@
     - [http://ml.ethna.jp/pipermail/users/2009-January/001092.html](http://ml.ethna.jp/pipermail/users/2009-January/001092.html)
 - 簡単なテキスト整形ツールが必要
   - DocBook(?) -> 学習コストが高い
-  - Structured\_Text (python)
+  - Structured_Text (python)
   - halt たんと simpledoc について話をしたのだけれども、あれはJavaコードにヘッダとか直に書いているのでカスタマイズが不能で彼とはうまく折り合えなかったと記憶している
   - Ethna でドキュメント管理ツールを再実装する案もあり
     - サンプルコードをコメントとかみたいな形で管理できないですかね
@@ -137,13 +137,13 @@
 
 ### 新しいコミッタ。新しい流れを
 
-- １年半近く mumumu がひとりで Ethna をいじってきたのだけど、一人の発想だと必ず進化が止まるので、新たに sotarok と maru\_cc というコミッタを迎えた(mumumu)
+- １年半近く mumumu がひとりで Ethna をいじってきたのだけど、一人の発想だと必ず進化が止まるので、新たに sotarok と maru_cc というコミッタを迎えた(mumumu)
   - [http://d.hatena.ne.jp/sotarok](http://d.hatena.ne.jp/sotarok)
-  - [http://d.hatena.ne.jp/maru\_cc](http://d.hatena.ne.jp/maru_cc)
+  - [http://d.hatena.ne.jp/maru_cc](http://d.hatena.ne.jp/maru_cc)
 - 新しい発想、フィードバックの流れを作れればいいなと思う(mumumu)
   - その意味で、新しいコミッタには「新しい血」を期待している
   - 気負わずに自分ができることを。
-- 業務でやってることをうまくフィードバックする流れを作れたらいいなと思う(maru\_cc)
+- 業務でやってることをうまくフィードバックする流れを作れたらいいなと思う(maru_cc)
 
 ### 番外編
 
@@ -158,6 +158,6 @@
   - いちいさんをキャラクター担当に任命する
 - ふじもとさんどうしてる？
 - Smarty にDBコードを埋め込む変態コード。
-  - [http://d.hatena.ne.jp/maru\_cc/20080625/ethna\_template\_db](http://d.hatena.ne.jp/maru_cc/20080625/ethna_template_db)
-  - [http://d.hatena.ne.jp/maru\_cc/20080325/1206453551](http://d.hatena.ne.jp/maru_cc/20080325/1206453551) ＜たぶん話してたのはこっち
+  - [http://d.hatena.ne.jp/maru_cc/20080625/ethna_template_db](http://d.hatena.ne.jp/maru_cc/20080625/ethna_template_db)
+  - [http://d.hatena.ne.jp/maru_cc/20080325/1206453551](http://d.hatena.ne.jp/maru_cc/20080325/1206453551) ＜たぶん話してたのはこっち
 

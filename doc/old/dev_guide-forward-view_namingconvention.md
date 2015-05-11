@@ -7,7 +7,7 @@
 - ビュークラスが定義されたファイルのパス名
 - ビュークラス名
 
-これらの命名規則は、Ethna\_Controllerに定義されている以下のメソッドをオーバーライドすることで変更することが出来ます。
+これらの命名規則は、Ethna_Controllerに定義されている以下のメソッドをオーバーライドすることで変更することが出来ます。
 
 <dl class="list1" style="padding-left:16px;margin-left:16px">
 <dt>ビュークラスが定義されたファイルのパス名</dt>
@@ -16,11 +16,11 @@
 <dd>Ethna_Controller::getDefaultViewClass($forward_name, $fallback)</dd>
 </dl>
 
-Ethna\_Controllerでは、パス名は
+Ethna_Controllerでは、パス名は
 
     $default_path = preg_replace('/_(.)/e', "'/' . strtoupper('\$1')", ucfirst($forward_name)) . '.' . $this->getExt('php');
 
-つまり"foo\_bar\_hoge" -> "Foo/Bar/Hoge.php"となり、ビュークラス名は
+つまり"foo_bar_hoge" -> "Foo/Bar/Hoge.php"となり、ビュークラス名は
 
     $postfix = preg_replace('/_(.)/e', "strtoupper('\$1')", ucfirst($forward_name));
     ...
@@ -28,9 +28,9 @@ Ethna\_Controllerでは、パス名は
 
 となります。好みに応じて適宜オーバーライドしてください(それほどお勧めはしません)。
 
-例えば、"foo\_bar\_hoge"というビュークラスに対応するファイル名を"foo\_bar\_hoge.php"にして、遷移名を"foo\_bar\_hoge\_view"としたい場合は、以下のアプリケーションのコントローラに以下のような定義を追加します。
+例えば、"foo_bar_hoge"というビュークラスに対応するファイル名を"foo_bar_hoge.php"にして、遷移名を"foo_bar_hoge_view"としたい場合は、以下のアプリケーションのコントローラに以下のような定義を追加します。
 
-Sample\_Controller.php:
+Sample_Controller.php:
 
     /**
      * 遷移名に対応するビューパス名が省略された場合のデフォルトパス名を返す
