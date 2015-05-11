@@ -20,8 +20,6 @@ Ethna は View（テンプレート）に書かれるコンテキストに依存
 
 現状は、デフォルトの状態ではSmartyしか使えません。 Ethna_Rendererを継承したクラスを作成すればSmarty以外でも可能です。
 
-Flexyを使った例 [http://ethna.jp/ethna-flexy.html](ethna-flexy.html)
-
 PHPを使った例 [http://eringi.com/weblog/archives/2007/02/ethna_renderer.html](http://eringi.com/weblog/archives/2007/02/ethna_renderer.html)
 
 **[Ethna_Rendererの使い方](dev_guide-renderer.md)**
