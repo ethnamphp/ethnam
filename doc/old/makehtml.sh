@@ -1,3 +1,4 @@
 #!/bin/bash
 
-for i in  *.md ; do ../convert.php $i > ${i%*.md}.html; done
+[[ ! -d .html ]] && mkdir .html
+for i in  *.md ; do ../convert.php $i > .html/${i%*.md}.html; done
