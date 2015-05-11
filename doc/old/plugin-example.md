@@ -168,25 +168,8 @@ action formのバリデータで、max, minは絵文字の場合に意味が違�
 
 ### まとめ
 
-プラグイン自体は非常に役割は小さいので、新たに自分でプラグインを作ろうとすると、プラグインの中身よりもプラグインを使う側のほうに手間取るかもしれません。この例はストーリーの割りに中身が少ないので、もうすこし盛りこんで欲しい内容などありましたら下のコメント欄にご記入ください。
+プラグイン自体は非常に役割は小さいので、新たに自分でプラグインを作ろうとすると、プラグインの中身よりもプラグインを使う側のほうに手間取るかもしれません。
 
-- onRCMHmIjpbKChfbul -- xvzimsfvswg [?](cmd=edit&page=xvzimsfvswg&refer=plugin-example.md) 2009-07-30 (木) 17:22:19
-  
-<form action="http://ethna.jp/index.php" method="post"> 
-<div><input type="hidden" name="encode_hint" value="ぷ"></div>
- <div>
-  <input type="hidden" name="plugin" value="comment">
-  <input type="hidden" name="refer" value="ethna-document-dev_guide-plugin-example">
-  <input type="hidden" name="comment_no" value="0">
-  <input type="hidden" name="nodate" value="0">
-  <input type="hidden" name="above" value="1">
-  <input type="hidden" name="digest" value="c789e4c7138ee171cfba4c619edc8ed9">
-  <label for="_p_comment_name_0">お名前: </label><input type="text" name="name" id="_p_comment_name_0" size="15">
-
-  <input type="text" name="msg" id="_p_comment_comment_0" size="70">
-  <input type="submit" name="comment" value="コメントの挿入">
- </div>
-</form>
 
 * * *
 \*1あくまで例です!!  
