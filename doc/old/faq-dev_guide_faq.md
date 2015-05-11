@@ -83,12 +83,9 @@ validate前に動的にフォーム定義の内容を変更する技がある。
 
 ### Q.locationさせるメソッドはないの？
 
-今のところ、locationをさせるメソッドはありません。 Ethna_ActionClass::performあたりで
+今のところ、locationをさせるメソッドはありません。
 
-    header('location: http://exsample.com/');
-    exit;
-
-とでもしましょう。 そのうち、どこかにメソッドとして実装されかなぁ・・？\*3
+Symfony HttpFoundation のRedirectResponseを使えるようにする予定です。
 
 ### Q. DocumentRoot配下にEthnaとEthnaアプリケーションを置きたいけど・・・
 
@@ -148,5 +145,3 @@ validate前に動的にフォーム定義の内容を変更する技がある。
 * * *
 \*1ふじもとさん自身も [[Ethna-users:00012] ](http://ml.ethna.jp/pipermail/users/2005-March/000012.html)で似たような事をおっしゃってますね。\*2  
 \*2というか、そっちが先:-)   
-\*3Mojaviのmoveメソッドみたいな感じ？あくまで希望  
-
