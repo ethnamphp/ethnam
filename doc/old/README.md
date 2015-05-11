@@ -75,4 +75,4 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 ### 補足編
 - [".ethna"ファイルについて](ethna-document-dev_resourcefile.md "ethna-document-dev\_resourcefile (1240d)")
 - [クロスサイトリクエストフォージェリの対策コードについて](ethna-document-dev_guide-csrf.md "ethna-document-dev\_guide-csrf (1240d)")
-- [開発FAQ](ethna-document-faq-dev_guide_faq.md "ethna-document-faq-dev\_guide\_faq (155d)")**
+- [開発FAQ](ethna-document-faq-dev_guide_faq.md "ethna-document-faq-dev\_guide\_faq (155d)")
