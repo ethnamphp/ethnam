@@ -13,25 +13,6 @@
 *  [実用的なアプリケーション開発 5 ビジネスロジック(実装)](17-business-logic-actual.md)
 *  [Ethnamの内部動作の概要](18-internals.md)
 
-## [開発マニュアル](old/README.md)
-
-```
-*   [ActionClass](ActionClass.md)
-*   [ActionForm](AcionForm.md)
-*   [ViewClass](ViewClass.md)
-*   ActionError
-*   EthnaError
-*   [template](template.md)
-*   [国際化(i18n)](i18n.md)
-*   [設定ファイル](config.md)
-*   [ロギング](logging.md)
-*   [エントリポイント](entrypoint.md)
-*   ethna command
-*   upgrade
-*   plugin
-*   unittest
-```
-
 ## 開発マニュアル
 
 ### 基本編
@@ -115,6 +96,25 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 *   [リリースルール](90-release.md)
 *   [UnitTest](98-unittest.md)
 *   [Ethna本家との関係](99-relationship-with-ethna.md)
+
+## ドキュメントのTODO
+
+```
+*   [ActionClass](ActionClass.md)
+*   [ActionForm](AcionForm.md)
+*   [ViewClass](ViewClass.md)
+*   ActionError
+*   EthnaError
+*   [template](template.md)
+*   [国際化(i18n)](i18n.md)
+*   [設定ファイル](config.md)
+*   [ロギング](logging.md)
+*   [エントリポイント](entrypoint.md)
+*   ethna command
+*   upgrade
+*   plugin
+*   unittest
+```
 
 
 ## (参考)Ethnaドキュメント
