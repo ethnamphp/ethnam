@@ -79,7 +79,7 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
   - [Smartyプラグイン](dev-guide-make-smartyplugin.md)
     - [Ethnaの組込みSmartyプラグイン一覧](view-smarty-plugin.md)  
 
-### 補足編
+## 補足
 - [".ethna"ファイルについて](dotethna.md)
 - [クロスサイトリクエストフォージェリの対策コードについて](csrf.md)
 - [FAQ](faq.md)
