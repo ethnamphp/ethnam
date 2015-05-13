@@ -23,4 +23,6 @@ $html = $Parsedown->text($mdContent);
 
 $html = preg_replace('/\.md/', '.html', $html);
 
+require_once __DIR__ . '/_header.html';
+
 echo $html;
