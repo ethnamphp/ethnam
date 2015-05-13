@@ -15,7 +15,7 @@ composerをまだインストールしてない場合はインストールして
 https://getcomposer.org/doc/00-intro.md#globally
 
 ## 軽く試してみたい場合は
-[README](https://github.com/DQNEO/ethnam/blob/master/README.md#installtion) に書いてるとおりにやればOKです。
+[README](https://github.com/DQNEO/ethnam#installtion) に書いてるとおりにやればOKです。
 
 ただ、`composer create-project`を使う方法は一見簡単ですが、内部で何が行われているかが隠されてしまうので学習上あまり好ましくありません。
 本格的にEthhamを使う場合はこれから説明するやり方で手動で環境構築することをおすすめします。
