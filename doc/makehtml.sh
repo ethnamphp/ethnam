@@ -9,8 +9,7 @@ do
     ./convert.php $i > $target_dir/${i%*.md}.html
 done
 
-cp style.css $target_dir
-cp github.css $target_dir
+cp -ar css $target_dir
 
 cd $target_dir
 
