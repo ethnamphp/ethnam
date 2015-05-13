@@ -1,4 +1,4 @@
-[[目次](README.md)]
+
 ## Ethna本家との関係
 
 Ethnaの2.6.0beta4の途中からforkして、PHP5.4に正式対応し、一部古いコード(ver2.5.0やver2.3.5)を取り込んだのがEthnamです。

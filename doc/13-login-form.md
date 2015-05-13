@@ -1,4 +1,4 @@
-[[目次](README.md)]
+
 # 実用的なアプリケーション開発 1 (ログイン画面)
 
 (旧: http://ethna.jp/old/ethna-document-tutorial-practice3.html )
