@@ -86,7 +86,7 @@ Ethnaプロジェクトを複数の言語に対応(i18n)させる方法を紹介
 - [Ethna 2.3から 2.5への移行ガイド](migration_2.3to2.5.md)
 - [Ethna 2.1から2.3への移行ガイド](migration_2.1to2.3.md)
 
-## Ethnam開発者向け
+## Ethnam本体の開発者向け
 *   [リリースルール](90-release.md)
 *   [UnitTest](98-unittest.md)
 *   [Ethna本家との関係](99-relationship-with-ethna.md)
