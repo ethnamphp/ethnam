@@ -28,3 +28,5 @@ $config['title'] = "Ethnamドキュメント";
 require_once __DIR__ . '/_header.html';
 
 echo $html;
+
+require_once __DIR__ . '/_footer.html';
