@@ -26,8 +26,10 @@ $html = preg_replace('/\.md/', '.html', $html);
 $config['title'] = "Ethnamドキュメント";
 $config['basename'] = basename($file, '.md');
 
-require_once __DIR__ . '/_header.html';
+$partialDir = __DIR__ . '/partial';
+
+require_once $partialDir . '/_header.html';
 
 echo $html;
 
-require_once __DIR__ . '/_footer.html';
+require_once $partialDir . '/_footer.html';
