@@ -24,6 +24,7 @@ $html = $Parsedown->text($mdContent);
 $html = preg_replace('/\.md/', '.html', $html);
 
 $config['title'] = "Ethnamドキュメント";
+$config['basename'] = basename($file, '.md');
 
 require_once __DIR__ . '/_header.html';
 
