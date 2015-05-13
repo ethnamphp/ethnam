@@ -26,9 +26,6 @@
 
 - [セッションを利用する](app-session.md)
 - [データベースアクセス](db.md)
-
-### 実践編
-
 - [言語とエンコーディングの設定](app-setlanguage.md)  
 言語設定に関する説明です。
 - [複数のエントリポイントを作成する](app-multientrypoint.md)  
