@@ -56,6 +56,7 @@ vendor/bin/ethnam-generator add-project -b . Sample
 ## 簡易サーバを起動
 
 ```
+cd Sample
 php -t www -S localhost:8080
 ```
 
