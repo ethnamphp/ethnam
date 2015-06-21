@@ -33,7 +33,7 @@ php -t www -S localhost:8000
 
 ## Packagist
 
-https://packagist.org/packages/dqneo/ethnam
+https://packagist.org/packages/ethnam/ethnam
 
 ## Contact
 
