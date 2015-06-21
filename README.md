@@ -18,6 +18,7 @@ composer create-project ethnam/project myproject
 
 プロジェクト作成したらPHP組み込みサーバで動作確認できます。
 ```
+cd myproject
 php -t www -S localhost:8000
 ```
 
