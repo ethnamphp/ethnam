@@ -7,7 +7,7 @@
   "homepage": "https://github.com/ethnamphp/ethnam",
   "authors": [
         { "name": "DQNEO", "role" : "Administrator"},
-        { "name": "contributors", "homepage": "https://github.com/DQNEO/ethnam/blob/master/AUTHORS" }
+        { "name": "contributors", "homepage": "https://github.com/ethnamphp/ethnam/blob/master/AUTHORS" }
     ],
   "require": {
     "php" : ">=5.4.0"
