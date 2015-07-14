@@ -1,4 +1,8 @@
 # 変更点一覧
+## 3.1での変更点
+* [plugin] Cachemanager_Memcachedが動くようになりました。
+
+
 ## 3.0での変更点
 * [core] `ethna`コマンド一式(Ethna_Comman, Subcommandプラグイン, Generatorプラグイン, 全skelファイル)をethnam-generatorパッケージに分離。`ethnam-generate`コマンドに名称変更。
 * [core] Ethna_ControllerのcheckAppId, checkActionName, checkViewNameを`ethnam-generator`に移管。
