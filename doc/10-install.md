@@ -34,7 +34,7 @@ cd sample
 ```json
 {
   "require": {
-    "dqneo/ethnam": "dev-master",
+    "ethnam/ethnam": "dev-master",
     "ethnam/generator": "dev-master",
     "smarty/smarty": "2.6.*"
   }
