@@ -34,7 +34,7 @@ cd sample
 ```json
 {
   "require": {
-    "dqneo/ethnam": "dev-master",
+    "ethnam/ethnam": "dev-master",
     "ethnam/generator": "dev-master",
     "smarty/smarty": "2.6.*"
   }
@@ -57,8 +57,8 @@ vendor/bin/ethnam-generator add-project -b . Sample
 
 ```
 cd Sample
-php -t www -S localhost:8080
+php -t www -S localhost:8000
 ```
 
-ブラウザで`http://localhost:8080/` にアクセスして "Welcome to Ethnam!"の画面が表示されたらOKです。
+ブラウザで`http://localhost:8000/` にアクセスして "Welcome to Ethnam!"の画面が表示されたらOKです。
 

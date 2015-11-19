@@ -35,13 +35,13 @@ app/Sample_Error.php:
 + define('E_SAMPLE_AUTH', -128);
 ```
 
-先ほど作成したSample_UserManager.phpをControllerでインクルードします。
+先ほど作成したSample_UserManager.phpをControllerでrequire_onceします。
 
 app/Sample_Controller.php:
 
 ```diff
-  include_once BASE . '/Sample_Error.php';
-+ include_once BASE . '/app/Sample_UserManager.php';
+  require_once 'Sample_Error.php';
++ require_once 'Sample_UserManager.php';
 ```
 
 最後に、アクションクラスのperform()メソッドを記述します。ここでは、ユーザマネージャで認証処理を行うだけです。
