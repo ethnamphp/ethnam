@@ -1,44 +1,4 @@
 # ethna-community-forum-archiveto200703- Ethna - PHPウェブアプリケーションフレームワーク</title>
-
-### シフトJISに変換して出力する方法。
-> （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-03-08 (木) 22:50:51)  
->   
-> 運用環境が、OS：euc-jp html出力が、SJISで困っています。  
->   
-> Ethnaに組み込まれているFilter機能と、ob_start()関数で、入出力時に各エンコードに変換して(Filterを使って)回避できるようなのですが、やり方がわかりません。  
->   
-> どなたか解決方法ご存知の方いらっしゃいませんか？
-- Smartyフィルタって何？（＾＾；） -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-03-09 (金) 12:36:50
-- こんな感じでやってます -- ここいち [?](cmd=edit&page=%A4%B3%A4%B3%A4%A4%A4%C1&refer=ethna-community-forum-archiveto200703.html) 2007-03-12 (月) 01:12:02
-
-    class Aero_Plugin_Filter_OutputFilter extends Ethna_Plugin_Filter
-    {
-        /**
-         * 実行前フィルタ
-         *
-         * @access public
-         */
-        function preFilter()
-        {
-           ob_start();
-        }
-    
-        /**
-         * 実行後フィルタ
-         *
-         * @access public
-         */
-        function postFilter()
-        {
-            $str = mb_convert_encoding(ob_get_contents(), 'sjis-win','eucjp-win');
-            ob_clean();
-            echo $str;
-            ob_end_flush();
-        }
-    }
-
-- ありがとございあした。 -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-03-14 (水) 20:38:27
-
 ### DBでセッションを行うには
 > jitto [?](cmd=edit&page=jitto&refer=ethna-community-forum-archiveto200703.html) (2007-02-13 (火) 12:33:33)  
 >   
