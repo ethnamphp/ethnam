@@ -1,28 +1,4 @@
 # ethna-community-forum-archiveto200703- Ethna - PHPウェブアプリケーションフレームワーク</title>
-### Ethna_DBのqueryが動かない。
-> （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-03-14 (水) 20:40:03)  
->   
-> 以下のように、ソースを書いたのですが、queryのところで何も表示されません。  
-> 使い方が誤っているのでしょうか？   
->   
-> 要するに、複数のDBの読み書きがしたいのです。  
->   
-> $db =& new Ethna_DB($this, $tooldb_dsn, FALSE);  
-> echo "Ethna_DB<br>";  
-> $ret = $db->begin();  
-> echo "eeeeeeeeeeeee<br>";  
-> $ret = $db->connect();  
-> echo "eeeeeeeeeeeee<br>";  
-> $tooldb_mainte_inup_data =& $db->query(" SELECT \* FROM tbl_sample ");  
-> echo "eeeeeeeeeeeee<br>";  
-> $db->commit();  
-> echo "eeeeeeeeeeeee<br>";  
-> $db->disconnect();  
-> echo "eeeeeeeeeeeee<br>";
-- なんかいろいろと根本的に勉強したほうがいいきがする。 -- 2007-03-15 (木) 10:32:36
-- こちらを参考にするとよいかも  
- [db.md#zc5316fe](ethna-document-dev_guide-db.html#zc5316fe) -- psuke [?](cmd=edit&page=psuke&refer=ethna-community-forum-archiveto200703.md) 2007-03-15 (木) 13:48:29
-- 参考にしました。でも、Ethna以外の方法では、難しいのですね？（というか、ルール違反か？） -- （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) 2007-03-16 (金) 14:03:57
 
 ### シフトJISに変換して出力する方法。
 > （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-03-08 (木) 22:50:51)  
