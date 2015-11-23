@@ -1218,9 +1218,3 @@ line:122行目〜
 > たぶん、256以内に修正したらいいのかな？ と思うので修正されるといいなぁと思います。
 - おぉ！はげしくすみませんm(_ _)m はげしくなおします！ -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-06-13 (火) 10:56:30
 - すばやい修正ありがとうございます〜。 -- BoBpp [?](cmd=edit&page=BoBpp&refer=ethna-community-forum-archiveto200703.html) 2006-06-14 (水) 10:05:13
-
-### 記事出ましたね
-> ましゅりく [?](cmd=edit&page=%A4%DE%A4%B7%A4%E5%A4%EA%A4%AF&refer=ethna-community-forum-archiveto200703.html) (2006-06-13 (火) 01:30:59)  
->   
-> 【PHPウォッチ】第27回 国産有力フレームワークEthnaの新版2.1.2リリース：ITpro  
-> [http://itpro.nikkeibp.co.jp/article/COLUMN/20060612/240709/](http://itpro.nikkeibp.co.jp/article/COLUMN/20060612/240709/)
