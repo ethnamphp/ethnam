@@ -1,11 +1,4 @@
 # ethna-community-forum-archiveto200703- Ethna - PHPウェブアプリケーションフレームワーク</title>
-### DBでセッションを行うには
-> jitto [?](cmd=edit&page=jitto&refer=ethna-community-forum-archiveto200703.html) (2007-02-13 (火) 12:33:33)  
->   
-> [http://www.itt-web.net/modules/bwiki/index.php?Ethna%A4%C7Session%A4%F2DB%A4%CB%BB%FD%A4%C3%A4%C6%A4%DF%A4%EB](http://www.itt-web.net/modules/bwiki/index.php?Ethna%A4%C7Session%A4%F2DB%A4%CB%BB%FD%A4%C3%A4%C6%A4%DF%A4%EB)  
-> こちらの記事によるとethna自体へハックしないとDBセッションが出来ない様ですが（２００６/５の記事）  
-> それは未だに変わってませんか？
-- Sessionクラスの _read,_writeあたりをオーバーライドして Controller でそのクラスを指定すれば動きます。_read,_writeメソッド内でAppObjectも使えました。 -- iyoda [?](cmd=edit&page=iyoda&refer=ethna-community-forum-archiveto200703.html) 2007-02-15 (木) 15:58:00
 
 ### トラックバックの受信について
 > sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) (2007-02-11 (日) 19:43:51)  
