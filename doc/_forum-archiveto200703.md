@@ -1224,11 +1224,3 @@ line:122行目〜
 >   
 > 【PHPウォッチ】第27回 国産有力フレームワークEthnaの新版2.1.2リリース：ITpro  
 > [http://itpro.nikkeibp.co.jp/article/COLUMN/20060612/240709/](http://itpro.nikkeibp.co.jp/article/COLUMN/20060612/240709/)
-### インサート文について
-> えすなかすき [?](cmd=edit&page=%A4%A8%A4%B9%A4%CA%A4%AB%A4%B9%A4%AD&refer=ethna-community-forum-archiveto200703.html) (2006-06-07 (水) 03:49:16)  
->   
-> Ethna_AppObjectの以下の記述ってありなんすか？
-> 
-> 837: $sql = "INSERT INTO $tables SET $set_list";
-- いやー、基本的にナシだとは思います(MySQL only?)。次バージョンで、Ethna_AppObjectのDB依存解消をしようと思ってますんでその際には必ず。 [http://ml.ethna.jp/pipermail/users/2006-June/000301.html](http://ml.ethna.jp/pipermail/users/2006-June/000301.html)もご覧いただければと思います。 -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-06-07 (水) 09:38:12
-
