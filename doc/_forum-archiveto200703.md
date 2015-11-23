@@ -1,17 +1,4 @@
 # ethna-community-forum-archiveto200703- Ethna - PHPウェブアプリケーションフレームワーク</title>
-
-### トラックバックの受信について
-> sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) (2007-02-11 (日) 19:43:51)  
->   
-> Ethnaを用いてトラックバックを受信したいと思っているのですが、  
-> [http://url/?action_trackback=true&key=4](http://url/?action_trackback=true&key=4)  
-> をトラックバック送信先URLとして指定しているのですが、  
-> POST(トラックバック)とGET(キー情報やアクション情報)の両方が取得されないために、ethna側で対応するアクションがわからず、indexへと飛ばされてしまうようです。  
-> 何か解決策などありますでしょうか？
-- Ethna_ActionFormのsetFormVarsをオーバーライドして、GETとPOSTの両方を取得するようにするだけです。 -- sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) 2007-02-12 (月) 15:47:54
-- ありがとうございます。さっそくやってみます。それにしてもスパムがうざいですね^^ -- sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) 2007-02-12 (月) 18:37:03
-- Trackback.phpのActionFormクラスで、setFormVarsの冒頭を if(isset($_SERVER['REQUEST_METHOD']) == false) {return;} else {$http_vars =& array_merge($_POST, $_GET);} としてみたのですが、うまくいきません。どこが間違っているのでしょうか。-- sohta [?](cmd=edit&page=sohta&refer=ethna-community-forum-archiveto200703.html) 2007-02-12 (月) 18:54:00
-
 ### PDOが、使えないと聞きましたが？
 > （び） [?](cmd=edit&page=%A1%CA%A4%D3%A1%CB&refer=ethna-community-forum-archiveto200703.html) (2007-01-24 (水) 19:38:20)  
 >   
