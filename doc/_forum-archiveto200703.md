@@ -905,19 +905,6 @@ line:122行目〜
 - よろしくお願いします。昨日1日チュートリアルで、基本の使い方なんとか習得しました。。 -- kokoroman [?](cmd=edit&page=kokoroman&refer=ethna-community-forum-archiveto200703.html) 2006-08-24 (木) 00:33:36
 - Debian GNU/Linuxの安定版だとsmarty/libs/Smarty.class.phpになりました。 -- 通りすがりのものですが [?](cmd=edit&page=%C4%CC%A4%EA%A4%B9%A4%AC%A4%EA%A4%CE%A4%E2%A4%CE%A4%C7%A4%B9%A4%AC&refer=ethna-community-forum-archiveto200703.html) 2006-08-31 (木) 13:35:15
 
-### Xzavier
-> Jayson [?](cmd=edit&page=Jayson&refer=ethna-community-forum-archiveto200703.html) (2006-08-22 (火) 05:35:22)
-- たまたま見たら遭遇したのでスパムを消しときました。スパム対策必要なんでしょうけどフィルタリング考えるのが面倒ってのがあるでしょうね。「http://」付きの投稿だけでも弾けば大分ちがうかな -- sora [?](cmd=edit&page=sora&refer=ethna-community-forum-archiveto200703.html) 2006-08-22 (火) 09:55:47
-- と思ったけど、直接編集でやればBBSモジュール介さず意味無し・・対策考えるのはやはり時間要りますね -- sora [?](cmd=edit&page=sora&refer=ethna-community-forum-archiveto200703.html) 2006-08-22 (火) 10:00:02
-
-### スパム
-> sfio [?](cmd=edit&page=sfio&refer=ethna-community-forum-archiveto200703.html) (2006-08-18 (金) 10:35:50)  
->   
-> このフォーラムに対するスパムが鬱陶しいので、  
-> [http://pukiwiki.sourceforge.jp/?%E6%AC%B2%E3%81%97%E3%81%84%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%2F209](http://pukiwiki.sourceforge.jp/?%E6%AC%B2%E3%81%97%E3%81%84%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%2F209)  
-> を参考にして対策してみてはいかがでしょうか。
-- ですねー、一応一度きたIPはbanしてるのですが、captchaなりキーワードフィルタなり、入れてみます -- ふじもと [?](cmd=edit&page=%A4%D5%A4%B8%A4%E2%A4%C8&refer=ethna-community-forum-archiveto200703.html) 2006-08-23 (水) 09:54:16
-
 ### Ethna_Controller.php の 1697 行目
 > m [?](cmd=edit&page=m&refer=ethna-community-forum-archiveto200703.html) (2006-08-04 (金) 11:17:10)  
 >   
