@@ -42,7 +42,6 @@
      *
      * @author {$author}
      * @package Sample
-     * @version $Id$
      */
     
     /**

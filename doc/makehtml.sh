@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-target_dir=~/src/github.com/DQNEO/ethnamdoc
+target_dir=~/src/github.com/ethnamphp/ethnamdoc
 
 ( cd $target_dir && rm -f *.html )
 

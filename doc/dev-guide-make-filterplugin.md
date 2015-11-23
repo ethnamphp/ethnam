@@ -32,7 +32,6 @@ Ethna 2.5.0 より以前のバージョンでは自動生成機能はありま�
      * @author your name <yourname@example.com>
      * @license http://www.opensource.org/licenses/bsd-license.php The BSD License
      * @package Ethna_Plugin
-     * @version $Id$
      */
     
     // {{{ [APPID]_Plugin_Filter_Hoge
