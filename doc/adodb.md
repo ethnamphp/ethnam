@@ -41,20 +41,20 @@ PHP 4/5 対応版\*2 の出来るだけ最新のものを取得すると良い�
 ### コントローラークラスの書き換え
 
 インストール作業が終わったら、app/Sample_Controller.php の以下の部分を書き換えます。
-
+    
     /**
-        * @var array クラス定義
-        */
-       var $class = array(
-           /*
-            * TODO: 設定クラス、ログクラス、SQLクラスをオーバーライド
-            * した場合は下記のクラス名を忘れずに変更してください
-            */
-           'class' => 'Ethna_ClassFactory',
-           'backend' => 'Ethna_Backend',
-           'config' => 'Ethna_Config',
-    - 'db' => 'Ethna_DB_PEAR',
-    + 'db' => 'Ethna_DB_ADOdb',
+     *  @var    array   class definition.
+     */
+    public $class = array(
+        /*
+         *  TODO: When you override Configuration class, Logger class,
+         *        SQL class, don't forget to change definition as follows!
+         */
+        'class'         => 'Ethna_ClassFactory',
+        'backend'       => 'Ethna_Backend',
+        'config'        => 'Ethna_Config',
+    -   'db'            => 'Ethna_DB_PEAR',
+    +   'db'            => 'Ethna_DB_ADOdb',
 
 ### dsn の設定
 
