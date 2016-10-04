@@ -58,11 +58,11 @@ PHP 4/5 対応版\*2 の出来るだけ最新のものを取得すると良い�
 
 ### dsn の設定
 
-Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設定しておいて下さい。
+Ethna の通常のDBアクセスと同じく、etc/config.php の dsn を設定しておいて下さい。
 
     $config = array(
        'debug' => false,
-       'dsn' => 'mysql://user:pass@unix+localhost/dbname',
+    +  'dsn' => 'mysql://user:pass@unix+localhost/dbname',
     );
 
 これで Ethna で ADODB を使う準備は整いました。
