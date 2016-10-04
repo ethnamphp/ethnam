@@ -64,7 +64,7 @@ template/ja_JP/login.tpl:
     <tr>
      <td>パスワード</td>
      <td><input type="password" name="password" value="">{message name="password"}</td>
-     </tr>
+    </tr>
 ```
 
 Ethnamフレームワークにおけるエラー処理ポリシーについては以下をご覧下さい。
