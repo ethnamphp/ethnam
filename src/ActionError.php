@@ -180,7 +180,7 @@ class Ethna_ActionError
     /**
      *  アプリケーションエラーメッセージを取得する
      *
-     *  @param  array   エラーエントリ
+     *  @param  array   $error エラーエントリ
      *  @return string  エラーメッセージ
      */
     protected function getMessageByEntry(&$error)
