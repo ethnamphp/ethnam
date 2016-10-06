@@ -5,9 +5,6 @@
   - dsn の設定 
   - 実際に使ってみる 
 
-| 書いた人 | 日付 | 備考 |
-| mumumu | 2007-02-14 | 初版 |
-
 ## ADODBをEthnaで使う
 
 ### はじめに
@@ -27,42 +24,42 @@
 まずは ADODB を sourceforge.net から [ダウンロード](http://adodb.sourceforge.net/#download)します。  
 PHP 4/5 対応版\*2 の出来るだけ最新のものを取得すると良いでしょう。
 
-ダウンロードしたら、任意の場所に展開します。ここでは、執筆時点での最新版 4.94 を使います。
+ダウンロードしたら、任意の場所に展開します。ここでは、執筆時点での最新版 5.20.7 を使います。
 
-    unzip adodb494.zip
-    tar xvfz adodb494.tgz
+    unzip adodb-5.20.7.zip
+    tar xvfz adodb-5.20.7.tgz
 
-すると、adodb というディレクトリができると思いますので、それを プロジェクトの lib ディレクトリ以下に移動します。
+すると、adodb5 というディレクトリができると思いますので、それを プロジェクトの lib ディレクトリ以下に移動します。
 
-    mv adodb /tmp/sample/lib/
+    mv adodb5 /tmp/sample/lib/
 
 これで ADODB を Ethna のプロジェクトにインストールできました。\*3
 
 ### コントローラークラスの書き換え
 
 インストール作業が終わったら、app/Sample_Controller.php の以下の部分を書き換えます。
-
+    
     /**
-        * @var array クラス定義
-        */
-       var $class = array(
-           /*
-            * TODO: 設定クラス、ログクラス、SQLクラスをオーバーライド
-            * した場合は下記のクラス名を忘れずに変更してください
-            */
-           'class' => 'Ethna_ClassFactory',
-           'backend' => 'Ethna_Backend',
-           'config' => 'Ethna_Config',
-    - 'db' => 'Ethna_DB_PEAR',
-    + 'db' => 'Ethna_DB_ADOdb',
+     *  @var    array   class definition.
+     */
+    public $class = array(
+        /*
+         *  TODO: When you override Configuration class, Logger class,
+         *        SQL class, don't forget to change definition as follows!
+         */
+        'class'         => 'Ethna_ClassFactory',
+        'backend'       => 'Ethna_Backend',
+        'config'        => 'Ethna_Config',
+    -   'db'            => 'Ethna_DB_PEAR',
+    +   'db'            => 'Ethna_DB_ADOdb',
 
 ### dsn の設定
 
-Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設定しておいて下さい。
+Ethna の通常のDBアクセスと同じく、etc/config.php の dsn を設定しておいて下さい。
 
     $config = array(
        'debug' => false,
-       'dsn' => 'mysql://user:pass@unix+localhost/dbname',
+    +  'dsn' => 'mysql://user:pass@unix+localhost/dbname',
     );
 
 これで Ethna で ADODB を使う準備は整いました。
@@ -70,7 +67,9 @@ Ethna の通常のDBアクセスと同じく、etc/sample-ini.php の dsn を設
 ### 実際に使ってみる
 
 あとは、通常のデータベースアクセスと使い方は同じです。但し、ADODB を使用しているので、アクセスのAPI は Ethna_DB_ADOdb クラスのそれに従います。\*4 [クラスリファレンス](doc/Ethna/Ethna_DB_ADOdb.html)を参考にして、利用してみて下さい。
-
+    
+    require_once('adodb5/adodb.inc.php');
+    
     $db = $this->backend->getDB();
     $rs = $db->query('SELECT * FROM test');
     var_dump($rs);
