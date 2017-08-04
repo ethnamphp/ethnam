@@ -316,9 +316,10 @@ class Ethna_Util
      *
      *  @access public
      *  @param  string  $string     MIMEエンコードする文字列
+     *  @param  string  $linefeed   EOLマーカー
      *  @return エンコード済みの文字列
      */
-    public static function encode_MIME($string)
+    public static function encode_MIME($string, $linefeed = "\r\n")
     {
         $pos = 0;
         $split = 36;
@@ -327,7 +328,7 @@ class Ethna_Util
         {
             $tmp = mb_strimwidth($string, $pos, $split, "");
             $pos += mb_strlen($tmp);
-            $_string .= (($_string)? ' ' : '') . mb_encode_mimeheader($tmp, 'UTF-8');
+            $_string .= (($_string)? ' ' : '') . mb_encode_mimeheader($tmp, 'UTF-8', 'B', $linefeed);
         }
 
         return $_string;
