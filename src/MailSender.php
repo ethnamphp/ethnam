@@ -261,7 +261,7 @@ class Ethna_MailSender
             $header[$i] = array();
             $header[$i][] = $key;
             $header[$i][] = preg_replace_callback('/([^\x00-\x7f]+)/',
-	        function($matches){ return Ethna_Util::encode_MIME($matches[1]); },
+	        function($matches){ return Ethna_Util::encode_MIME($matches[1], "\n"); },
 		$value);
         }
 
