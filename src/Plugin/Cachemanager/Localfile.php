@@ -267,6 +267,6 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
      */
     private function _escape($string)
     {
-        return preg_replace('/([^0-9A-Za-z_])/e', "sprintf('%%%02X', ord('\$1'))", $string);
+        return preg_replace_callback('/([^0-9A-Za-z_])/', function($matches){return sprintf('%%%02X', ord($matches[1]));}, $string);
     }
 }
