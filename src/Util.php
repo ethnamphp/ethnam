@@ -501,8 +501,8 @@ class Ethna_Util
                         }
                         $v = preg_split('/[:\s]+/', $s);
                         if (is_array($v) && count($v) > 10) {
-                            $rx += $v[2];
-                            $tx += $v[10];
+                            $rx += intval($v[2]);
+                            $tx += intval($v[10]);
                         }
                     }
                 }
