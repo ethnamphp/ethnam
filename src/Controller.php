@@ -1235,7 +1235,7 @@ class Ethna_Controller
         }
         $target = $match[1];
 
-        $action_name = substr(preg_replace('/([A-Z])/e', "'_' . strtolower('\$1')", $target), 1);
+        $action_name = substr(preg_replace_callback('/([A-Z])/', function(array $matches){return '_' . strtolower($matches[1]);}, $target), 1);
 
         return $action_name;
     }
@@ -1312,7 +1312,7 @@ class Ethna_Controller
         }
         $target = $match[1];
 
-        $action_name = substr(preg_replace('/([A-Z])/e', "'_' . strtolower('\$1')", $target), 1);
+        $action_name = substr(preg_replace_callback('/([A-Z])/', function(array $matches){return '_' . strtolower($matches[1]);}, $target), 1);
 
         return $action_name;
     }
