@@ -181,6 +181,9 @@ class Ethna_Plugin_Logwriter
                 break;
             }
         }
+        if ($i >= count($bt)) {
+            $i = count($bt) - 1;
+        }
 
         $c = Ethna_Controller::getInstance();
         $basedir = $c->getBasedir();
