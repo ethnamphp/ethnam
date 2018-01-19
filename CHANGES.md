@@ -1,7 +1,13 @@
 # 変更点一覧
+
+## 3.2での変更点
+* [document] チュートリアルを修正しました。
+* [core] MailSenderのバグを修正しました。
+* [core] PHP7.1に対応しました。
+* [core] LogwriterのNOTICEの原因となりそうな部分を修正しました。
+
 ## 3.1での変更点
 * [plugin] Cachemanager_Memcachedが動くようになりました。
-
 
 ## 3.0での変更点
 * [core] `ethna`コマンド一式(Ethna_Comman, Subcommandプラグイン, Generatorプラグイン, 全skelファイル)をethnam-generatorパッケージに分離。`ethnam-generate`コマンドに名称変更。
