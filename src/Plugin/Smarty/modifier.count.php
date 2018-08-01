@@ -19,5 +19,8 @@
  */
 function smarty_modifier_count($array)
 {
-    return count($array);
+    if (is_array($array)) {
+        return count($array);
+    }
+    return 0;
 }
