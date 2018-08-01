@@ -976,7 +976,7 @@ class Ethna_Controller
         $this->logger->log(LOG_DEBUG, 'form_action_name[%s]', $form_action_name);
 
         // フォームからの指定が無い場合はエントリポイントに指定されたデフォルト値を利用する
-        if ($form_action_name == "" && count($default_action_name) > 0) {
+        if ($form_action_name == "" && !empty($default_action_name)) {
             $tmp = is_array($default_action_name) ? $default_action_name[0] : $default_action_name;
             if ($tmp{strlen($tmp)-1} == '*') {
                 $tmp = substr($tmp, 0, -1);
