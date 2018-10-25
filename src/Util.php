@@ -716,9 +716,9 @@ class Ethna_Util
                     continue;
                 } else if (strncmp($file, $prefix, strlen($prefix)) == 0) {
                     $f = $c->getDirectory('tmp') . "/" . $file;
-                    $st = stat($f);
+                    $st = @stat($f);
                     if ($st[9] + $timeout < time()) {
-                        unlink($f);
+                        @unlink($f);
                     }
                 }
             }
