@@ -22,6 +22,9 @@ class Ethna_Plugin_Cachemanager_Localfile extends Ethna_Plugin_Cachemanager
 
     /**#@-*/
 
+    /** @var    array   plugin configure */
+    protected $config_default = array();
+
     /**
      *  キャッシュに設定された値を取得する
      *
