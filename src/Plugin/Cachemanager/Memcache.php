@@ -226,9 +226,10 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
      *  @param  string  $key        キャッシュキー
      *  @param  mixed   $value      キャッシュ値
      *  @param  int     $timestamp  キャッシュ最終更新時刻(unixtime)
+     *  @param  int     $expire     カッシュの有効期限(秒数 0の場合有効期限なし)
      *  @param  string  $namespace  キャッシュネームスペース
      */
-    public function set($key, $value, $timestamp = null, $namespace = null)
+    public function set($key, $value, $timestamp = null, $namespace = null, $expire = 0)
     {
         $this->_getMemcache($key, $namespace);
         if ($this->memcache == null) {
@@ -243,7 +244,7 @@ class Ethna_Plugin_Cachemanager_Memcache extends Ethna_Plugin_Cachemanager
         }
 
         $time = $timestamp ? $timestamp : time();
-        $this->memcache->set($cache_key, array('time' => $time, 'data' => $value), $this->compress ? MEMCACHE_COMPRESSED : null);
+        $this->memcache->set($cache_key, array('time' => $time, 'data' => $value), $this->compress ? MEMCACHE_COMPRESSED : null, $expire);
     }
 
     /**
