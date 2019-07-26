@@ -234,9 +234,9 @@ class Ethna_DB_ADOdb extends Ethna_DB
      *  結果レコードセットのうち第１行第１列目の値を返す
      *
      *  @access public
-     *  @param  string  $query  SQL
-     *  @param  mixed   $inputarr  プレースホルダ(スカラまたは配列)
-     *  @return string  $value
+     *  @param  string       $query     SQL
+     *  @param  mixed        $inputarr  プレースホルダ(スカラまたは配列)
+     *  @return string|null  $value     (結果レコードセットが0件ならnull)
      */
     public function getOne($query, $inputarr = false)
     {
